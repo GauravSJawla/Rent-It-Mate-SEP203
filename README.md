@@ -1,6 +1,7 @@
 # SEP203
-SEP 2020 Group 3
 
-- [ ] TODO: CHANGE THIS PAGE TO SOMETHING USEFUL
-- [ ] TODO: Organization of wiki pages much conform to naming conventsion at https://github.com/UIOWAjohnsonhj/SEPSharedTemplates
-- [ ] TODO: Create a great project
+## RENT IT MATE!!
+
+A web-based application that will serve as one place for the users who would like to rent products or rent products out at any point in time.
+
+## Reference document links:
