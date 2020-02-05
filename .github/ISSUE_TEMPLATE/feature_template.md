@@ -1,6 +1,18 @@
 ---
 
 name: Feature_template
-About: Template to create user Stories/ Issues
+about: Template to create user Stories/ Issues
+assignee:
 
 ---
+
+# Expected Behaviour
+
+As a
+
+I want to
+
+So that
+
+Metric:
+
