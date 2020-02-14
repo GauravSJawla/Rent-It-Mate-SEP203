@@ -9,5 +9,5 @@ assignee: 🔍status/open, 🐛 type/bug
 ## Subject of the issue
 ## Your environment
 ## Steps to reproduce
-## Expected behaviou
+## Expected behaviour
 ## Actual behaviour
