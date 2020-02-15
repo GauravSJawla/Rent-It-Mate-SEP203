@@ -11,6 +11,7 @@ const Landing = () => {
               <p className='lead'>
               Create a developer profile/portfolio, share posts and get help from
               other developers
+              Welcome to react
               </p>
             </div>
           </div>
@@ -19,4 +20,4 @@ const Landing = () => {
     );
 };
 
-export default connect(Landing);
+export default Landing;
