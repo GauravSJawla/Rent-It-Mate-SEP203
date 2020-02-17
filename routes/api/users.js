@@ -28,10 +28,8 @@ router.post(
     ).isLength({ min: 6 })
   ],
   async(req,res) => {
-    console.log('inside user route register post method');
-    console.log(req.body);
+  
     const { name, username, email, password} = req.body;
-    console.log(email);
     try{
         let user = await Users.findOne({email});
         if(user){
@@ -40,8 +38,8 @@ router.post(
         user = new Users({name,username,email,password});
         const salt = await bcrypt.genSalt(10);
         user.password = await bcrypt.hash(password,salt);
-        await user.save().then(() => res.json('User added'))
-        .catch(err =>res.status(400).json('Error:' + err));
+        const result = await user.save();
+        res.json(result);
 
     }
     catch(err){
