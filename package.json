@@ -33,6 +33,7 @@
   },
   "devDependencies": {
     "concurrently": "^5.1.0",
+    "cypress": "^4.0.2",
     "nodemon": "^2.0.2"
   }
 }
