@@ -8,6 +8,7 @@
     "start": "node server",
     "server": "nodemon server",
     "client": "npm start --prefix client",
+    "cypress:open": "cypress open",
     "dev": "concurrently \"npm run server\" \"npm run client\""
   },
   "repository": {
