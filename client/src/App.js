@@ -1,10 +1,11 @@
 import React, { Fragment } from 'react';
+import Landing from './Components/Landing';
 import './App.css';
 
-const App = () => (
-  <Fragment>
-    <h1>App</h1>
-  </Fragment>
+const App = () => ( 
+    <div className="App">
+      <Landing />
+    </div>
 );
 
 export default App;
