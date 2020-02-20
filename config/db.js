@@ -2,6 +2,11 @@ const mongoose = require('mongoose');
 const config = require('config');
 const db = config.get('mongoURI');
 
+/**
+ * This is used to connect db asynchronously 
+ * it will throw an error if db does not connect
+ * and will print mongo db connected if it does.
+ */
 const connectDB = async () => {
   try {
     await mongoose.connect(db, {
