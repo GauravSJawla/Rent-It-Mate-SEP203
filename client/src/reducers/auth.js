@@ -1,8 +1,9 @@
 import {REGISTER_SUCCESS, REGISTER_FAIL} from '../actions/types';
 
 const initialState = {
-    isAuthenticated : null,
-    loading : true
+    isAuthenticated : false,
+    loading : true,
+    user : null
 };
 
 export default function(state = initialState, action){

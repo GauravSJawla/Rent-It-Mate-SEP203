@@ -8,22 +8,19 @@ import Register from './components/auth/Register';
 import store from './store';
 
 const App = () => (
-    <Provider store = {store}>
-      <Router>
-        <Fragment>
+      <Provider store = {store}>
+        <Router>
+          <Fragment>
             <Header/>
             <Route exact path = '/' component = {Landing} />
             <section className="container">
-                <Switch>
-                    <Route exact path="/register" component = {Register}/>
-                </Switch>
+               <Switch>
+                  <Route exact path='/register' component = {Register}/>
+               </Switch>
             </section>
-        </Fragment>
-    </Router>
-
-    </Provider>
-   
-  
+          </Fragment>
+        </Router>
+      </Provider>
 );
 
 export default App;
