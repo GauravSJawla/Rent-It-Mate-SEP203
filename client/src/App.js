@@ -10,9 +10,12 @@ import LandingPage from 'views/LandingPage/LandingPage';
 import LoginPage from 'views/LoginPage/LoginPage';
 import RegisterPage from 'views/RegisterPage/RegisterPage';
 import ProfilePage from 'views/ProfilePage/ProfilePage';
+import {Provider} from 'react-redux';
+import store from './store';
 
 const App = () => (
-  <Router>
+  <Provider store = {store}>
+    <Router>
     <Fragment>
       <Header
         absolute
@@ -28,6 +31,9 @@ const App = () => (
       </Switch>
     </Fragment>
   </Router>
+
+  </Provider>
+  
 );
 
 export default App;

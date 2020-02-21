@@ -4,6 +4,7 @@ import {REGISTER_FAIL,REGISTER_SUCCESS} from './types';
 //Register User method on a successful submit
 
 export const register = ({name,username,email,password}) => async dispatch => {
+    console.log('name in auth.js' + name);
     const config = {
         headers: {
             'Content-Type' : 'application/json'

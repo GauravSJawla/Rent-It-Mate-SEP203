@@ -1,4 +1,7 @@
-import React from 'react';
+import React, {useState} from 'react';
+import {connect} from 'react-redux';
+import propTypes from 'prop-types';
+import {Redirect} from 'react-router-dom';
 // @material-ui/core components
 import { makeStyles } from '@material-ui/core/styles';
 import InputAdornment from '@material-ui/core/InputAdornment';
@@ -17,20 +20,58 @@ import CardBody from 'components/Card/CardBody.js';
 import CardHeader from 'components/Card/CardHeader.js';
 import CardFooter from 'components/Card/CardFooter.js';
 import CustomInput from 'components/CustomInput/CustomInput.js';
-
 import styles from 'assets/jss/material-kit-react/views/loginPage.js';
 
 import image from 'assets/img/bg7.jpg';
 
+//Import register from other component
+import { register } from '../../actions/auth';
+
+//const register = require('../../actions/auth');
+
 const useStyles = makeStyles(styles);
 
-export default function RegisterPage() {
+function RegisterPage ({register, isAuthenticated}) {
   const [cardAnimaton, setCardAnimation] = React.useState('cardHidden');
   setTimeout(function() {
     setCardAnimation('');
   }, 700);
+
+  const [formData,setFormData] = useState({
+    name: '',
+    username: '',
+    email: '',
+    password : '',
+    password2 : ''
+});
   const classes = useStyles();
 
+  //OnChange event Handler
+  const onChange = (e) =>
+  setFormData({
+      ...formData,
+      [e.target.id] : e.target.value
+  });
+
+
+  const {name,username,email,password,password2} = formData;
+  console.log('inside register page');
+
+  const onClick =(e) => {
+    e.preventDefault();
+    console.log('name in else:' + {name});
+    if(password !== password2){
+        alert('Passwords do not match');
+    }
+    else{
+        
+        register({name,username,email,password});
+    }
+};
+
+if(isAuthenticated){
+  return <Redirect to ='/login'/>;
+};
   return (
     <div>
       <div
@@ -65,6 +106,8 @@ export default function RegisterPage() {
                     <CustomInput
                       labelText='Full Name...'
                       id='name'
+                      value ={name}
+                      onChange = { (e) => onChange(e)}
                       formControlProps={{
                         fullWidth: true
                       }}
@@ -80,11 +123,13 @@ export default function RegisterPage() {
                     <CustomInput
                       labelText='User Name...'
                       id='username'
+                      value = {username}
+                      onChange = { (e) => onChange(e)}
                       formControlProps={{
                         fullWidth: true
                       }}
                       inputProps={{
-                        type: 'username',
+                        type: 'username', 
                         endAdornment: (
                           <InputAdornment position='end'>
                             <PersonIcon className={classes.inputIconsColor} />
@@ -95,6 +140,8 @@ export default function RegisterPage() {
                     <CustomInput
                       labelText='Email...'
                       id='email'
+                      value = {email}
+                      onChange = { (e) => onChange(e)}
                       formControlProps={{
                         fullWidth: true
                       }}
@@ -110,6 +157,8 @@ export default function RegisterPage() {
                     <CustomInput
                       labelText='Password'
                       id='password'
+                      value = {password}
+                      onChange = { (e) => onChange(e)}
                       formControlProps={{
                         fullWidth: true
                       }}
@@ -128,6 +177,8 @@ export default function RegisterPage() {
                     <CustomInput
                       labelText='Confirm Password'
                       id='password2'
+                      value = {password2}
+                      onChange = { (e) => onChange(e)}
                       formControlProps={{
                         fullWidth: true
                       }}
@@ -145,7 +196,7 @@ export default function RegisterPage() {
                     />
                   </CardBody>
                   <CardFooter className={classes.cardFooter}>
-                    <Button simple color='primary' size='lg'>
+                    <Button simple color='primary' size='lg' onClick = {e => onClick(e)}>
                       Get started
                     </Button>
                   </CardFooter>
@@ -159,3 +210,17 @@ export default function RegisterPage() {
     </div>
   );
 }
+
+RegisterPage.propTypes = {
+  register : propTypes.func.isRequired,
+  isAuthenticated: propTypes.bool
+};
+
+const mapStateToProps = state => ({
+  isAuthenticated : state.auth.isAuthenticated
+});
+
+export default connect(
+  mapStateToProps,
+  { register }
+)(RegisterPage);
