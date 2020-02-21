@@ -1,8 +1,12 @@
 
 //import statements from core packages
 import React,{Fragment, useState} from 'react';
-import Redirect from 'react-router-dom';
+import {connect} from 'react-redux';
+import {Redirect} from 'react-router-dom';
 import propTypes from 'prop-types';
+
+//Import register from other component
+import {register} from '../../actions/auth';
 
 //Component for Register
 const Register = (register, isAuthenticated) => {
@@ -17,16 +21,16 @@ const Register = (register, isAuthenticated) => {
     const {name,username,email,password,password2} = formData;
 
     //OnChange event Handler
-    const onChange = (event) =>
+    const onChange = (e) =>
         setFormData({
             ...formData,
-            [event.target.name] : event.target.value
+            [e.target.name] : e.target.value
         });
 
     // On submit event handler
     const onSubmit = (event) => {
         event.preventDefault();
-        if(password != password2){
+        if(password !== password2){
             alert('Passwords do not match');
             console.log('Passwords do not match');
         }
@@ -95,4 +99,16 @@ const Register = (register, isAuthenticated) => {
 
 };
 
-export default Register;
+Register.propTypes = {
+    register : propTypes.func.isRequired,
+    isAuthenticated: propTypes.bool
+};
+
+const mapStateToProps = state => ({
+    isAuthenticated : state.auth.isAuthenticated
+});
+
+export default connect(
+    mapStateToProps,
+    { register }
+  )(Register);
