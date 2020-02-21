@@ -1,5 +1,6 @@
 import React from 'react';
 import { fade, makeStyles } from '@material-ui/core/styles';
+import {Link} from 'react-router-dom';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import IconButton from '@material-ui/core/IconButton';
@@ -121,8 +122,8 @@ export default function PrimarySearchAppBar() {
       open={isMenuOpen}
       onClose={handleMenuClose}
     >
-      <MenuItem onClick={handleMenuClose} to="/login">Login</MenuItem>
-      <MenuItem onClick={handleMenuClose}>My account</MenuItem>
+      <MenuItem component={Link} to="/login">Login</MenuItem>
+      <MenuItem component= {Link} to ='/register'>Register</MenuItem>
     </Menu>
   );
 
