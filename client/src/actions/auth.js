@@ -1,7 +1,5 @@
 import axios from 'axios';
-
-export const REGISTER_SUCCESS = 'REGISTER_SUCCESS';
-export const REGISTER_FAIL = 'REGISTER_FAIL';
+import {REGISTER_FAIL,REGISTER_SUCCESS} from './types';
 
 //Register User method on a successful submit
 

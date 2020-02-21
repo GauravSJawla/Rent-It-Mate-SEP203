@@ -9,7 +9,7 @@ import propTypes from 'prop-types';
 import {register} from '../../actions/auth';
 
 //Component for Register
-const Register = (register, isAuthenticated) => {
+const Register = ({register, isAuthenticated}) => {
     const [formData, setFormData] = useState({
         name: '',
         username: '',
@@ -28,27 +28,25 @@ const Register = (register, isAuthenticated) => {
         });
 
     // On submit event handler
-    const onSubmit = (event) => {
-        event.preventDefault();
+    const onSubmit = (e) => {
+        e.preventDefault();
         if(password !== password2){
             alert('Passwords do not match');
-            console.log('Passwords do not match');
         }
         else{
-            console.log(username);
             register({name,username,email,password});
         }
     };
 
     if(isAuthenticated){
-        return <Redirect to ='/'/>;
-    }
+        return <Redirect to ='/login'/>;
+    };
 
 
     return (
         <Fragment>
             <h2 className='page-title'>Create your Account</h2>
-            <form className = 'form' onSubmit = {event => onSubmit(event)}>
+            <form className = 'form' onSubmit = {e => onSubmit(e)}>
                     <div className = 'form-group'>
                             <input type = 'text'
                             placeholder = 'Name'
@@ -60,8 +58,8 @@ const Register = (register, isAuthenticated) => {
                     <div className = 'form-group'>
                         <input type = 'text'
                         placeholder = 'Username'
-                        name = 'name' 
-                        value = {name}
+                        name = 'username' 
+                        value = {username}
                         onChange = {e => onChange(e)}
                         required/>
                     </div>
