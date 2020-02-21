@@ -23,8 +23,7 @@ export const register = ({name,username,email,password}) => async dispatch => {
             error.forEach(err => console.log(err));
         }
         dispatch({
-            type: REGISTER_FAIL
-
+            type: REGISTER_FAIL,
         })
     }
 }
