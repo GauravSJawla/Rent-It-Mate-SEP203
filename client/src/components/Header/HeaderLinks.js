@@ -24,7 +24,12 @@ export default function HeaderLinks(props) {
   return (
     <List className={classes.list}>
       <ListItem className={classes.listItem}>
-        <Button color='transparent' component={Link} to='/register-page'>
+        <Button
+          color='transparent'
+          component={Link}
+          to='/register-page'
+          className={classes.navLink}
+        >
           Register
         </Button>
       </ListItem>

@@ -84,7 +84,7 @@ export default function LoginPage() {
                         fullWidth: true
                       }}
                       inputProps={{
-                        type: 'text',
+                        type: 'username',
                         endAdornment: (
                           <InputAdornment position='end'>
                             <PersonIcon className={classes.inputIconsColor} />
@@ -109,7 +109,25 @@ export default function LoginPage() {
                     />
                     <CustomInput
                       labelText='Password'
-                      id='pass'
+                      id='password'
+                      formControlProps={{
+                        fullWidth: true
+                      }}
+                      inputProps={{
+                        type: 'password',
+                        endAdornment: (
+                          <InputAdornment position='end'>
+                            <Icon className={classes.inputIconsColor}>
+                              lock_outline
+                            </Icon>
+                          </InputAdornment>
+                        ),
+                        autoComplete: 'off'
+                      }}
+                    />
+                    <CustomInput
+                      labelText='Confirm Password'
+                      id='password2'
                       formControlProps={{
                         fullWidth: true
                       }}
