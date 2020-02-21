@@ -5,6 +5,7 @@ import {connect} from 'react-redux';
 import {Redirect} from 'react-router-dom';
 import propTypes from 'prop-types';
 
+
 //Import register from other component
 import {register} from '../../actions/auth';
 
