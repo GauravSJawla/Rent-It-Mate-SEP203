@@ -30,7 +30,7 @@ const Register = ({ register, isAuthenticated }) => {
   const onSubmit = e => {
     e.preventDefault();
     if (password !== password2) {
-      alert('Passwords do not match');
+      console.log('Passwords do not match');
     } else {
       register({ name, username, email, password });
     }

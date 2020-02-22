@@ -24,10 +24,9 @@ const App = () => {
       <Router>
         <Fragment>
           <Header />
-
+          <Route exact path='/' component={Landing} />
           <section className='container'>
             <Switch>
-              <Route exact path='/' component={Landing} />
               <Route exact path='/login' component={Login} />
               <Route exact path='/register' component={Register} />
             </Switch>
