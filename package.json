@@ -17,7 +17,8 @@
     "server": "nodemon server",
     "client": "npm start --prefix client",
     "cypress:open": "cypress open",
-    "dev": "concurrently \"npm run server\" \"npm run client\""
+    "dev": "concurrently \"npm run server\" \"npm run client\"",
+    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix client && npm run build --prefix client"
   },
   "repository": {
     "type": "git",
@@ -34,6 +35,7 @@
     "bcryptjs": "^2.4.3",
     "config": "^3.2.5",
     "create-react-app": "^3.3.1",
+    "dotenv": "^8.2.0",
     "express": "^4.17.1",
     "express-validator": "^6.4.0",
     "gravatar": "^1.8.0",
