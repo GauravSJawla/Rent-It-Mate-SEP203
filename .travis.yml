@@ -1,5 +1,9 @@
 language: node_js
-node_js:
-  - 10
-  before_install:
-  - npm i -g npm@version-number
+node_js: node
+script:
+  -ls
+  -npm ci
+  -npm start -- --silent &
+  -sleep 10
+  -npx cypress run
+  -npm run build
