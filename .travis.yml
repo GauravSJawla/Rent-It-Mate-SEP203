@@ -10,4 +10,3 @@ script:
   - npm start -- --silent &
   - sleep 10
   - npm run cy:run
-  - npm test
