@@ -12,9 +12,10 @@ const Login = ({ login, isAuthenticated }) => {
 
   useEffect(() => {
      var query = queryString.parse(window.location.search);
+     console.log( query.token + " token is" );
       if(query.token){
         window.localStorage.setItem('jwt', query.token);
-       // props.history.push('/');
+        window.history.push('/');
       }
   });
 
