@@ -1,8 +1,9 @@
 const express = require('express');
 const connectDB = require('./config/db');
 const path = require('path');
-var passport = require('passport');
 const app = express();
+// Requiring passport as we've configured it
+var passport = require("passport");
 
 // Connect Database
 connectDB();
@@ -20,9 +21,9 @@ if (process.env.NODE_ENV === 'production') {
   // Set static folder
   app.use(express.static('client/build'));
 
-  //using for third party authentication
-  var passport = require("passport");
-  var app = express();
+  app.use(passport.initialize()); 
+  require("./config/passport");
+
 
 
   app.get('*', (req, res) => {
