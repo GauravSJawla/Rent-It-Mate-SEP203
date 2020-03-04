@@ -1,28 +1,27 @@
-var passport = require("passport");
-var GoogleStrategy = require("passport-google-oauth").OAuth2Strategy;
+var passport = require('passport');
+var GoogleStrategy = require('passport-google-oauth').OAuth2Strategy;
+const config = require('config');
+const googleClientID = config.get('googleClientID');
+const googleClientSecret = config.get('googleClientSecret');
 
-passport.serializeUser(function(user, done) {
-	done(null, user);
-});
-
-passport.deserializeUser(function(user, done) {
-	done(null, user);
-});
+/**
+ * This is used to do Google Oauth v2 authentication asynchronously.
+ *
+ */
 
 passport.use(
-	new GoogleStrategy(
-		{
-			clientID: "GOOGLE_CLIENT_ID",
-			clientSecret: "GOOGLE_CLIENT_SECRET",
-			callbackURL: "http://localhost:4500/auth/google/callback"
-		},
-		function(accessToken, refreshToken, profile, done) {
-			var userData = {
-				email: profile.emails[0].value,
-				name: profile.displayName,
-				token: accessToken
-			};
-			done(null, userData);
-		}
-	)
+  'googleToken',
+  new GoogleStrategy(
+    {
+      clientID: googleClientID,
+      clientSecret: googleClientSecret,
+      callbackURL: '/api/auth/google/callback'
+    },
+    async function(accessToken, refreshToken, profile, done) {
+      console.log('access token', accessToken);
+      console.log('refresh token', refreshToken);
+      console.log('profile', profile);
+      console.log('done', done);
+    }
+  )
 );

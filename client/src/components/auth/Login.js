@@ -48,7 +48,8 @@ const Login = ({ login, isAuthenticated }) => {
             />
           </div>
           <input type='submit' className='btn btn-primary' value='Login' />
-          <Link to='/register'>Sign Up ?</Link>
+          <Link to='/register'>Sign Up ?</Link>{' '}
+          <a href='/api/auth/google'>Sign In with Google</a>
         </form>
       </div>
     </Fragment>

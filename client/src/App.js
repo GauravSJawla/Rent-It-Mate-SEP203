@@ -11,24 +11,13 @@ import store from './store';
 import { loadUser } from './actions/auth';
 import setAuthToken from './utils/setAuthToken';
 
-import queryString from 'query-string';
-
 if (localStorage.token) {
   setAuthToken(localStorage.token);
 }
 
 const App = () => {
-
-
   useEffect(() => {
     store.dispatch(loadUser());
-    // componentWillMount(){
-    //   var query = queryString.parse(this.PaymentResponse.location.search);
-    //   if(query.token){
-    //     window.localStorage.setItem('', query.token);
-    //     this.props.history.push('/');
-    //   }
-    // }
   }, []);
   return (
     <Provider store={store}>
