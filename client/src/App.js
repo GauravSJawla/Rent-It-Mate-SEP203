@@ -28,6 +28,7 @@ const App = () => {
           <section className='container'>
             <Switch>
               <Route exact path='/login' component={Login} />
+              <Route exact path='/' component={Landing} />
               <Route exact path='/register' component={Register} />
             </Switch>
           </section>

@@ -1,13 +1,22 @@
-import React, { Fragment, useState } from 'react';
+import React, { Fragment, useState, useEffect } from 'react';
 import { connect } from 'react-redux';
 import { Redirect, Link } from 'react-router-dom';
 import { login } from '../../actions/auth';
 import PropTypes from 'prop-types';
-
+import queryString from 'query-string';
 const Login = ({ login, isAuthenticated }) => {
   const [formData, setFormData] = useState({
     username: '',
     password: ''
+  });
+
+  useEffect(() => {
+    var query = queryString.parse(window.location.search);
+    console.log(query.token + ' token is');
+    if (query.token) {
+      window.localStorage.setItem('jwt', query.token);
+      window.history.push('/');
+    }
   });
 
   const { username, password } = formData;
