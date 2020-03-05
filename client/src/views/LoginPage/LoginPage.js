@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { Redirect } from 'react-router-dom';
 // @material-ui/core components
 import { makeStyles } from '@material-ui/core/styles';
 import InputAdornment from '@material-ui/core/InputAdornment';
@@ -22,13 +23,35 @@ import image from 'assets/img/bg7.jpg';
 
 const useStyles = makeStyles(styles);
 
-export default function LoginPage() {
+export default function LoginPage({ login, isAuthenticated }) {
   const [cardAnimaton, setCardAnimation] = React.useState('cardHidden');
   setTimeout(function() {
     setCardAnimation('');
   }, 700);
   const classes = useStyles();
 
+  const [formData, setFormData] = useState({
+    username: '',
+    password: ''
+  });
+
+  const { username, password } = formData;
+
+  const onChange = e =>
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value
+    });
+
+  const onSubmit = e => {
+    e.preventDefault();
+    login(username, password);
+  };
+
+  // Redirect if logged in
+  if (isAuthenticated) {
+    return <Redirect to='/dashboard' />;
+  }
   return (
     <div>
       <div
@@ -43,7 +66,7 @@ export default function LoginPage() {
           <GridContainer justify='center'>
             <GridItem xs={12} sm={12} md={4}>
               <Card className={classes[cardAnimaton]}>
-                <form className={classes.form}>
+                <form className={classes.form} onSubmit={e => onSubmit(e)}>
                   <CardHeader color='primary' className={classes.cardHeader}>
                     <h4>Login</h4>
                     <div className={classes.socialLine}>
@@ -67,7 +90,9 @@ export default function LoginPage() {
                         fullWidth: true
                       }}
                       inputProps={{
+                        value: username,
                         type: 'text',
+                        onChange: e => onChange(e),
                         endAdornment: (
                           <InputAdornment position='end'>
                             <PersonIcon className={classes.inputIconsColor} />
@@ -77,12 +102,14 @@ export default function LoginPage() {
                     />
                     <CustomInput
                       labelText='Password'
-                      id='pass'
+                      id='password'
                       formControlProps={{
                         fullWidth: true
                       }}
                       inputProps={{
+                        value: password,
                         type: 'password',
+                        onChange: e => onChange(e),
                         endAdornment: (
                           <InputAdornment position='end'>
                             <Icon className={classes.inputIconsColor}>
@@ -95,7 +122,7 @@ export default function LoginPage() {
                     />
                   </CardBody>
                   <CardFooter className={classes.cardFooter}>
-                    <Button simple color='primary' size='lg'>
+                    <Button type='submit' simple color='primary' size='lg'>
                       Log In
                     </Button>
                   </CardFooter>
