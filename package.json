@@ -46,6 +46,7 @@
     "node-mocks-http": "^1.8.1",
     "passport": "^0.4.1",
     "passport-google-oauth": "^2.0.0",
+    "query-string": "^6.11.1",
     "request": "^2.88.0",
     "supertest": "^4.0.2"
   },
