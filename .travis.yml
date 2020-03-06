@@ -1,5 +1,13 @@
 language: node_js
-node_js:
-  - 10
-  before_install:
-  - npm i -g npm@version-number
+node_js: node
+services: mongodb
+install:
+  - npm install
+env:
+  - NODE_ENV=ci PORT=5000
+script:
+  - npm ci
+  - npm start -- --silent &
+  - sleep 10
+  - npm run test
+  - npm run cy:run

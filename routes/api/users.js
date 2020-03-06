@@ -139,8 +139,12 @@ router.get("/verify",
             });
             if(frontend == 3000){
               res.redirect('http://localhost:' + frontend + '/login');
+            
             }
-            res.redirect(frontend+'/login');
+            if( frontend == process.env.PORT){
+              res.redirect(frontend+'/login');
+            }
+            
             
           }
         });
