@@ -12,7 +12,7 @@
   "description": "Renting Platform for local communities",
   "main": "server.js",
   "scripts": {
-    "test": "jest",
+    "test": "jest --verbose ./tests",
     "start": "node server",
     "server": "nodemon server",
     "client": "npm start --prefix client",

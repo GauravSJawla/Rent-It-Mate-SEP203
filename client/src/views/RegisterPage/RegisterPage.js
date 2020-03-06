@@ -107,6 +107,7 @@ function RegisterPage({ register, isAuthenticated }) {
                       inputProps={{
                         type: 'text',
                         value: name,
+                        required : true,
                         onChange: e => onChange(e),
                         endAdornment: (
                           <InputAdornment position='end'>
@@ -124,6 +125,7 @@ function RegisterPage({ register, isAuthenticated }) {
                       inputProps={{
                         type: 'username',
                         value: username,
+                        required: true,
                         onChange: e => onChange(e),
                         endAdornment: (
                           <InputAdornment position='end'>
@@ -141,6 +143,7 @@ function RegisterPage({ register, isAuthenticated }) {
                       inputProps={{
                         type: 'email',
                         value: email,
+                        required : true,
                         onChange: e => onChange(e),
                         endAdornment: (
                           <InputAdornment position='end'>
@@ -158,6 +161,7 @@ function RegisterPage({ register, isAuthenticated }) {
                       inputProps={{
                         type: 'password',
                         value: password,
+                        required: true,
                         onChange: e => onChange(e),
                         endAdornment: (
                           <InputAdornment position='end'>
@@ -178,6 +182,7 @@ function RegisterPage({ register, isAuthenticated }) {
                       inputProps={{
                         type: 'password',
                         value: password2,
+                        required : true,
                         onChange: e => onChange(e),
                         endAdornment: (
                           <InputAdornment position='end'>

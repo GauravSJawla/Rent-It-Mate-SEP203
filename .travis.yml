@@ -9,4 +9,5 @@ script:
   - npm ci
   - npm start -- --silent &
   - sleep 10
+  - npm run test
   - npm run cy:run
