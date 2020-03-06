@@ -16,14 +16,17 @@ import CardBody from 'components/Card/CardBody.js';
 import CardHeader from 'components/Card/CardHeader.js';
 import CardFooter from 'components/Card/CardFooter.js';
 import CustomInput from 'components/CustomInput/CustomInput.js';
+//importing login for login
+import { login } from '../../actions/auth';
+import propTypes from 'prop-types';
+import { connect } from 'react-redux';
 
 import styles from 'assets/jss/material-kit-react/views/loginPage.js';
 
 import image from 'assets/img/bg7.jpg';
 
 const useStyles = makeStyles(styles);
-
-export default function LoginPage({ login, isAuthenticated }) {
+const LoginPage = ({ login, isAuthenticated }) => {
   const [cardAnimaton, setCardAnimation] = React.useState('cardHidden');
   setTimeout(function() {
     setCardAnimation('');
@@ -40,7 +43,7 @@ export default function LoginPage({ login, isAuthenticated }) {
   const onChange = e =>
     setFormData({
       ...formData,
-      [e.target.name]: e.target.value
+      [e.target.id]: e.target.value
     });
 
   const onSubmit = e => {
@@ -86,6 +89,7 @@ export default function LoginPage({ login, isAuthenticated }) {
                     <CustomInput
                       labelText='User Name...'
                       id='username'
+                      name='username'
                       formControlProps={{
                         fullWidth: true
                       }}
@@ -103,6 +107,7 @@ export default function LoginPage({ login, isAuthenticated }) {
                     <CustomInput
                       labelText='Password'
                       id='password'
+                      name='password'
                       formControlProps={{
                         fullWidth: true
                       }}
@@ -135,4 +140,18 @@ export default function LoginPage({ login, isAuthenticated }) {
       </div>
     </div>
   );
-}
+};
+
+LoginPage.propTypes = {
+  login: propTypes.func.isRequired,
+  isAuthenticated: propTypes.bool
+};
+
+const mapStateToProps = state => ({
+  isAuthenticated: state.auth.isAuthenticated
+});
+
+export default connect(
+  mapStateToProps,
+  { login }
+)(LoginPage);
