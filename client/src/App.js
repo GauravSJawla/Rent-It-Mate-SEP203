@@ -1,5 +1,5 @@
 // eslint-disable-next-line
-import React, { Fragment } from 'react';
+import React, { Fragment, useEffect } from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import 'assets/scss/material-kit-react.scss?v=1.8.0';
 
@@ -10,30 +10,39 @@ import LandingPage from 'views/LandingPage/LandingPage';
 import LoginPage from 'views/LoginPage/LoginPage';
 import RegisterPage from 'views/RegisterPage/RegisterPage';
 import ProfilePage from 'views/ProfilePage/ProfilePage';
-import {Provider} from 'react-redux';
+import { Provider } from 'react-redux';
 import store from './store';
+import { loadUser } from './actions/auth';
+import setAuthToken from './utils/setAuthToken';
 
-const App = () => (
-  <Provider store = {store}>
-    <Router>
-    <Fragment>
-      <Header
-        absolute
-        color='transparent'
-        brand='Rent It Mate!'
-        rightLinks={<HeaderLinks />}
-      />
-      <Switch>
-        <Route exact path='/' component={LandingPage} />
-        <Route exact path='/login-page' component={LoginPage} />
-        <Route exact path='/register-page' component={RegisterPage} />
-        <Route exact path='/profile' component={ProfilePage} />
-      </Switch>
-    </Fragment>
-  </Router>
+if (localStorage.token) {
+  setAuthToken(localStorage.token);
+}
 
-  </Provider>
-  
-);
+const App = () => {
+  useEffect(() => {
+    store.dispatch(loadUser());
+  }, []);
+  return (
+    <Provider store={store}>
+      <Router>
+        <Fragment>
+          <Header
+            absolute
+            color='transparent'
+            brand='Rent It Mate!'
+            rightLinks={<HeaderLinks />}
+          />
+          <Switch>
+            <Route exact path='/' component={LandingPage} />
+            <Route exact path='/login-page' component={LoginPage} />
+            <Route exact path='/register-page' component={RegisterPage} />
+            <Route exact path='/profile' component={ProfilePage} />
+          </Switch>
+        </Fragment>
+      </Router>
+    </Provider>
+  );
+};
 
 export default App;

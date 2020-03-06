@@ -216,7 +216,4 @@ const mapStateToProps = state => ({
   isAuthenticated: state.auth.isAuthenticated
 });
 
-export default connect(
-  mapStateToProps,
-  { register }
-)(RegisterPage);
+export default connect(mapStateToProps, { register })(RegisterPage);

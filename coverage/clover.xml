@@ -1,11 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<<<<<<< HEAD
 <coverage generated="1582285548594" clover="3.2.0">
   <project timestamp="1582285548595" name="All files">
     <metrics statements="93" coveredstatements="60" conditionals="14" coveredconditionals="4" methods="10" coveredmethods="3" elements="117" coveredelements="67" complexity="0" loc="93" ncloc="93" packages="5" files="7" classes="7"/>
+=======
+<coverage generated="1582302882294" clover="3.2.0">
+  <project timestamp="1582302882295" name="All files">
+    <metrics statements="93" coveredstatements="81" conditionals="14" coveredconditionals="9" methods="10" coveredmethods="7" elements="117" coveredelements="97" complexity="0" loc="93" ncloc="93" packages="5" files="7" classes="7"/>
+>>>>>>> d6138e66b94b31eb741f5d07eeb0974c93c2f099
     <package name="SEP203">
       <metrics statements="12" coveredstatements="12" conditionals="2" coveredconditionals="2" methods="2" coveredmethods="1"/>
-      <file name="server.js" path="/Users/hemalatharamachandran/Documents/Univ_documents/SEP/SEP203/server.js">
+      <file name="server.js" path="/Users/aishwarya/Documents/react/SEP203/server.js">
         <metrics statements="12" coveredstatements="12" conditionals="2" coveredconditionals="2" methods="2" coveredmethods="1"/>
+<<<<<<< HEAD
         <line num="1" count="1" type="stmt"/>
         <line num="2" count="1" type="stmt"/>
         <line num="4" count="1" type="stmt"/>
@@ -18,12 +25,27 @@
         <line num="19" count="1" type="cond" truecount="2" falsecount="0"/>
         <line num="21" count="1" type="stmt"/>
         <line num="23" count="1" type="stmt"/>
+=======
+        <line num="1" count="2" type="stmt"/>
+        <line num="2" count="2" type="stmt"/>
+        <line num="4" count="2" type="stmt"/>
+        <line num="7" count="2" type="stmt"/>
+        <line num="10" count="2" type="stmt"/>
+        <line num="12" count="2" type="stmt"/>
+        <line num="15" count="2" type="stmt"/>
+        <line num="16" count="2" type="stmt"/>
+        <line num="17" count="2" type="stmt"/>
+        <line num="19" count="2" type="cond" truecount="2" falsecount="0"/>
+        <line num="21" count="2" type="stmt"/>
+        <line num="23" count="2" type="stmt"/>
+>>>>>>> d6138e66b94b31eb741f5d07eeb0974c93c2f099
       </file>
     </package>
     <package name="SEP203.config">
       <metrics statements="10" coveredstatements="8" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
-      <file name="db.js" path="/Users/hemalatharamachandran/Documents/Univ_documents/SEP/SEP203/config/db.js">
+      <file name="db.js" path="/Users/aishwarya/Documents/react/SEP203/config/db.js">
         <metrics statements="10" coveredstatements="8" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+<<<<<<< HEAD
         <line num="1" count="1" type="stmt"/>
         <line num="2" count="1" type="stmt"/>
         <line num="3" count="1" type="stmt"/>
@@ -50,19 +72,48 @@
         <line num="15" count="0" type="stmt"/>
         <line num="17" count="0" type="stmt"/>
         <line num="18" count="0" type="stmt"/>
+=======
+        <line num="1" count="2" type="stmt"/>
+        <line num="2" count="2" type="stmt"/>
+        <line num="3" count="2" type="stmt"/>
+        <line num="10" count="2" type="stmt"/>
+        <line num="11" count="2" type="stmt"/>
+        <line num="12" count="2" type="stmt"/>
+        <line num="17" count="2" type="stmt"/>
+        <line num="19" count="0" type="stmt"/>
+        <line num="21" count="0" type="stmt"/>
+        <line num="25" count="2" type="stmt"/>
+      </file>
+    </package>
+    <package name="SEP203.middleware">
+      <metrics statements="11" coveredstatements="9" conditionals="2" coveredconditionals="1" methods="1" coveredmethods="1"/>
+      <file name="auth.js" path="/Users/aishwarya/Documents/react/SEP203/middleware/auth.js">
+        <metrics statements="11" coveredstatements="9" conditionals="2" coveredconditionals="1" methods="1" coveredmethods="1"/>
+        <line num="1" count="2" type="stmt"/>
+        <line num="2" count="2" type="stmt"/>
+        <line num="4" count="2" type="stmt"/>
+        <line num="6" count="1" type="stmt"/>
+        <line num="9" count="1" type="cond" truecount="1" falsecount="1"/>
+        <line num="10" count="0" type="stmt"/>
+        <line num="14" count="1" type="stmt"/>
+        <line num="15" count="1" type="stmt"/>
+        <line num="17" count="1" type="stmt"/>
+        <line num="18" count="1" type="stmt"/>
+>>>>>>> d6138e66b94b31eb741f5d07eeb0974c93c2f099
         <line num="20" count="0" type="stmt"/>
       </file>
     </package>
     <package name="SEP203.models">
       <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
-      <file name="Users.js" path="/Users/hemalatharamachandran/Documents/Univ_documents/SEP/SEP203/models/Users.js">
+      <file name="Users.js" path="/Users/aishwarya/Documents/react/SEP203/models/Users.js">
         <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
-        <line num="1" count="1" type="stmt"/>
-        <line num="3" count="1" type="stmt"/>
-        <line num="29" count="1" type="stmt"/>
+        <line num="1" count="2" type="stmt"/>
+        <line num="3" count="2" type="stmt"/>
+        <line num="29" count="2" type="stmt"/>
       </file>
     </package>
     <package name="SEP203.routes.api">
+<<<<<<< HEAD
       <metrics statements="57" coveredstatements="34" conditionals="10" coveredconditionals="2" methods="6" coveredmethods="1"/>
       <file name="auth.js" path="/Users/hemalatharamachandran/Documents/Univ_documents/SEP/SEP203/routes/api/auth.js">
         <metrics statements="33" coveredstatements="11" conditionals="8" coveredconditionals="0" methods="3" coveredmethods="0"/>
@@ -99,24 +150,62 @@
         <line num="75" count="0" type="stmt"/>
         <line num="76" count="0" type="stmt"/>
         <line num="81" count="1" type="stmt"/>
+=======
+      <metrics statements="57" coveredstatements="49" conditionals="10" coveredconditionals="6" methods="6" coveredmethods="4"/>
+      <file name="auth.js" path="/Users/aishwarya/Documents/react/SEP203/routes/api/auth.js">
+        <metrics statements="33" coveredstatements="26" conditionals="8" coveredconditionals="4" methods="3" coveredmethods="3"/>
+        <line num="1" count="2" type="stmt"/>
+        <line num="2" count="2" type="stmt"/>
+        <line num="3" count="2" type="stmt"/>
+        <line num="4" count="2" type="stmt"/>
+        <line num="5" count="2" type="stmt"/>
+        <line num="6" count="2" type="stmt"/>
+        <line num="7" count="2" type="stmt"/>
+        <line num="9" count="2" type="stmt"/>
+        <line num="14" count="2" type="stmt"/>
+        <line num="15" count="1" type="stmt"/>
+        <line num="16" count="1" type="stmt"/>
+        <line num="17" count="1" type="stmt"/>
+        <line num="19" count="0" type="stmt"/>
+        <line num="20" count="0" type="stmt"/>
+        <line num="27" count="2" type="stmt"/>
+        <line num="34" count="1" type="stmt"/>
+        <line num="37" count="1" type="cond" truecount="1" falsecount="1"/>
+        <line num="38" count="0" type="stmt"/>
+        <line num="40" count="1" type="stmt"/>
+        <line num="42" count="1" type="stmt"/>
+        <line num="44" count="1" type="stmt"/>
+        <line num="45" count="1" type="cond" truecount="1" falsecount="1"/>
+        <line num="46" count="0" type="stmt"/>
+        <line num="51" count="1" type="stmt"/>
+        <line num="53" count="1" type="cond" truecount="1" falsecount="1"/>
+        <line num="54" count="0" type="stmt"/>
+        <line num="59" count="1" type="stmt"/>
+        <line num="65" count="1" type="stmt"/>
+        <line num="70" count="1" type="cond" truecount="1" falsecount="1"/>
+        <line num="71" count="1" type="stmt"/>
+        <line num="75" count="0" type="stmt"/>
+        <line num="76" count="0" type="stmt"/>
+        <line num="81" count="2" type="stmt"/>
+>>>>>>> d6138e66b94b31eb741f5d07eeb0974c93c2f099
       </file>
-      <file name="profile.js" path="/Users/hemalatharamachandran/Documents/Univ_documents/SEP/SEP203/routes/api/profile.js">
+      <file name="profile.js" path="/Users/aishwarya/Documents/react/SEP203/routes/api/profile.js">
         <metrics statements="4" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
-        <line num="1" count="1" type="stmt"/>
-        <line num="2" count="1" type="stmt"/>
-        <line num="7" count="1" type="stmt"/>
-        <line num="9" count="1" type="stmt"/>
+        <line num="1" count="2" type="stmt"/>
+        <line num="2" count="2" type="stmt"/>
+        <line num="7" count="2" type="stmt"/>
+        <line num="9" count="2" type="stmt"/>
       </file>
-      <file name="users.js" path="/Users/hemalatharamachandran/Documents/Univ_documents/SEP/SEP203/routes/api/users.js">
+      <file name="users.js" path="/Users/aishwarya/Documents/react/SEP203/routes/api/users.js">
         <metrics statements="20" coveredstatements="19" conditionals="2" coveredconditionals="2" methods="2" coveredmethods="1"/>
-        <line num="1" count="1" type="stmt"/>
-        <line num="2" count="1" type="stmt"/>
-        <line num="3" count="1" type="stmt"/>
-        <line num="4" count="1" type="stmt"/>
-        <line num="5" count="1" type="stmt"/>
-        <line num="7" count="1" type="stmt"/>
-        <line num="12" count="1" type="stmt"/>
-        <line num="18" count="1" type="stmt"/>
+        <line num="1" count="2" type="stmt"/>
+        <line num="2" count="2" type="stmt"/>
+        <line num="3" count="2" type="stmt"/>
+        <line num="4" count="2" type="stmt"/>
+        <line num="5" count="2" type="stmt"/>
+        <line num="7" count="2" type="stmt"/>
+        <line num="12" count="2" type="stmt"/>
+        <line num="18" count="2" type="stmt"/>
         <line num="32" count="2" type="stmt"/>
         <line num="33" count="2" type="stmt"/>
         <line num="34" count="2" type="stmt"/>
@@ -128,7 +217,11 @@
         <line num="41" count="1" type="stmt"/>
         <line num="42" count="1" type="stmt"/>
         <line num="46" count="0" type="stmt"/>
+<<<<<<< HEAD
         <line num="54" count="1" type="stmt"/>
+=======
+        <line num="54" count="2" type="stmt"/>
+>>>>>>> d6138e66b94b31eb741f5d07eeb0974c93c2f099
       </file>
     </package>
   </project>
