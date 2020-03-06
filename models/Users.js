@@ -19,7 +19,15 @@ const UserSchema = new mongoose.Schema({
     type: String,
     required: true
   },
-  
+  temporarytoken: {
+    type: String,
+    required: true
+  },
+  verifiedStatus: {
+    type: Boolean,
+    required: true,
+    default: false
+  },
   date: {
     type: Date,
     default: Date.now

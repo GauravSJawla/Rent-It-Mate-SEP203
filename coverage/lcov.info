@@ -1,11 +1,33 @@
 TN:
+<<<<<<< HEAD
+SF:/Users/hemalatharamachandran/Documents/Univ_documents/SEP/SEP203/server.js
+=======
 SF:/Users/aishwarya/Documents/react/SEP203/server.js
+>>>>>>> d6138e66b94b31eb741f5d07eeb0974c93c2f099
 FN:12,(anonymous_0)
 FN:21,(anonymous_1)
 FNF:2
 FNH:1
 FNDA:0,(anonymous_0)
 FNDA:1,(anonymous_1)
+<<<<<<< HEAD
+DA:1,1
+DA:2,1
+DA:4,1
+DA:7,1
+DA:10,1
+DA:12,1
+DA:15,1
+DA:16,1
+DA:17,1
+DA:19,1
+DA:21,1
+DA:23,1
+LF:12
+LH:12
+BRDA:19,0,0,1
+BRDA:19,0,1,1
+=======
 DA:1,2
 DA:2,2
 DA:4,2
@@ -22,10 +44,28 @@ LF:12
 LH:12
 BRDA:19,0,0,2
 BRDA:19,0,1,2
+>>>>>>> d6138e66b94b31eb741f5d07eeb0974c93c2f099
 BRF:2
 BRH:2
 end_of_record
 TN:
+<<<<<<< HEAD
+SF:/Users/hemalatharamachandran/Documents/Univ_documents/SEP/SEP203/config/db.js
+FN:10,(anonymous_0)
+FNF:1
+FNH:1
+FNDA:1,(anonymous_0)
+DA:1,1
+DA:2,1
+DA:3,1
+DA:10,1
+DA:11,1
+DA:12,1
+DA:17,1
+DA:19,0
+DA:21,0
+DA:25,1
+=======
 SF:/Users/aishwarya/Documents/react/SEP203/config/db.js
 FN:10,(anonymous_0)
 FNF:1
@@ -41,12 +81,40 @@ DA:17,2
 DA:19,0
 DA:21,0
 DA:25,2
+>>>>>>> d6138e66b94b31eb741f5d07eeb0974c93c2f099
 LF:10
 LH:8
 BRF:0
 BRH:0
 end_of_record
 TN:
+<<<<<<< HEAD
+SF:/Users/hemalatharamachandran/Documents/Univ_documents/SEP/SEP203/middleware/auth.js
+FN:4,(anonymous_0)
+FNF:1
+FNH:0
+FNDA:0,(anonymous_0)
+DA:1,1
+DA:2,1
+DA:4,1
+DA:6,0
+DA:9,0
+DA:10,0
+DA:14,0
+DA:15,0
+DA:17,0
+DA:18,0
+DA:20,0
+LF:11
+LH:3
+BRDA:9,0,0,0
+BRDA:9,0,1,0
+BRF:2
+BRH:0
+end_of_record
+TN:
+SF:/Users/hemalatharamachandran/Documents/Univ_documents/SEP/SEP203/models/Users.js
+=======
 SF:/Users/aishwarya/Documents/react/SEP203/middleware/auth.js
 FN:4,(anonymous_0)
 FNF:1
@@ -72,6 +140,7 @@ BRH:1
 end_of_record
 TN:
 SF:/Users/aishwarya/Documents/react/SEP203/models/Users.js
+>>>>>>> d6138e66b94b31eb741f5d07eeb0974c93c2f099
 FNF:0
 FNH:0
 DA:1,2
@@ -83,11 +152,69 @@ BRF:0
 BRH:0
 end_of_record
 TN:
+<<<<<<< HEAD
+SF:/Users/hemalatharamachandran/Documents/Univ_documents/SEP/SEP203/routes/api/auth.js
+=======
 SF:/Users/aishwarya/Documents/react/SEP203/routes/api/auth.js
+>>>>>>> d6138e66b94b31eb741f5d07eeb0974c93c2f099
 FN:14,(anonymous_0)
 FN:33,(anonymous_1)
 FN:69,(anonymous_2)
 FNF:3
+<<<<<<< HEAD
+FNH:0
+FNDA:0,(anonymous_0)
+FNDA:0,(anonymous_1)
+FNDA:0,(anonymous_2)
+DA:1,1
+DA:2,1
+DA:3,1
+DA:4,1
+DA:5,1
+DA:6,1
+DA:7,1
+DA:9,1
+DA:14,1
+DA:15,0
+DA:16,0
+DA:17,0
+DA:19,0
+DA:20,0
+DA:27,1
+DA:34,0
+DA:37,0
+DA:38,0
+DA:40,0
+DA:42,0
+DA:44,0
+DA:45,0
+DA:46,0
+DA:51,0
+DA:53,0
+DA:54,0
+DA:59,0
+DA:65,0
+DA:70,0
+DA:71,0
+DA:75,0
+DA:76,0
+DA:81,1
+LF:33
+LH:11
+BRDA:37,0,0,0
+BRDA:37,0,1,0
+BRDA:45,1,0,0
+BRDA:45,1,1,0
+BRDA:53,2,0,0
+BRDA:53,2,1,0
+BRDA:70,3,0,0
+BRDA:70,3,1,0
+BRF:8
+BRH:0
+end_of_record
+TN:
+SF:/Users/hemalatharamachandran/Documents/Univ_documents/SEP/SEP203/routes/api/profile.js
+=======
 FNH:3
 FNDA:1,(anonymous_0)
 FNDA:1,(anonymous_1)
@@ -140,6 +267,7 @@ BRH:4
 end_of_record
 TN:
 SF:/Users/aishwarya/Documents/react/SEP203/routes/api/profile.js
+>>>>>>> d6138e66b94b31eb741f5d07eeb0974c93c2f099
 FN:7,(anonymous_0)
 FNF:1
 FNH:0
@@ -154,7 +282,11 @@ BRF:0
 BRH:0
 end_of_record
 TN:
+<<<<<<< HEAD
+SF:/Users/hemalatharamachandran/Documents/Univ_documents/SEP/SEP203/routes/api/users.js
+=======
 SF:/Users/aishwarya/Documents/react/SEP203/routes/api/users.js
+>>>>>>> d6138e66b94b31eb741f5d07eeb0974c93c2f099
 FN:12,(anonymous_0)
 FN:30,(anonymous_1)
 FNF:2
@@ -180,7 +312,11 @@ DA:40,1
 DA:41,1
 DA:42,1
 DA:46,0
+<<<<<<< HEAD
+DA:54,1
+=======
 DA:54,2
+>>>>>>> d6138e66b94b31eb741f5d07eeb0974c93c2f099
 LF:20
 LH:19
 BRDA:35,0,0,1
