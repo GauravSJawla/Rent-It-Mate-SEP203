@@ -14,6 +14,8 @@ import { Provider } from 'react-redux';
 import store from './store';
 import { loadUser } from './actions/auth';
 import setAuthToken from './utils/setAuthToken';
+import Dashboard from 'views/Dashboard/Dashboard';
+import EmailVerifyPage from 'views/EmailVerifyPage/EmailVerifyPage';
 
 if (localStorage.token) {
   setAuthToken(localStorage.token);
@@ -33,11 +35,13 @@ const App = () => {
             brand='Rent It Mate!'
             rightLinks={<HeaderLinks />}
           />
+          <Route exact path='/' component={LandingPage} />
           <Switch>
-            <Route exact path='/' component={LandingPage} />
-            <Route exact path='/login-page' component={LoginPage} />
-            <Route exact path='/register-page' component={RegisterPage} />
+            <Route exact path='/login' component={LoginPage} />
+            <Route exact path='/register' component={RegisterPage} />
             <Route exact path='/profile' component={ProfilePage} />
+            <Route exact path='/dashboard' component={Dashboard} />
+            <Route exact path='/emailVerifyPage' component={EmailVerifyPage} />
           </Switch>
         </Fragment>
       </Router>

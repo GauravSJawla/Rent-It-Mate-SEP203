@@ -27,8 +27,6 @@ import image from 'assets/img/bg7.jpg';
 //Import register from other component
 import { register } from '../../actions/auth';
 
-//const register = require('../../actions/auth');
-
 const useStyles = makeStyles(styles);
 
 function RegisterPage({ register, isAuthenticated }) {
@@ -55,6 +53,7 @@ function RegisterPage({ register, isAuthenticated }) {
 
   const { name, username, email, password, password2 } = formData;
 
+  // OnSubmit Event Handler
   const onSubmit = e => {
     e.preventDefault();
     console.log('name in else:' + { name });
@@ -66,7 +65,7 @@ function RegisterPage({ register, isAuthenticated }) {
   };
 
   if (isAuthenticated) {
-    return <Redirect to='/login' />;
+    return <Redirect to='/emailVerifyPage' />;
   }
   return (
     <div>
@@ -216,4 +215,7 @@ const mapStateToProps = state => ({
   isAuthenticated: state.auth.isAuthenticated
 });
 
-export default connect(mapStateToProps, { register })(RegisterPage);
+export default connect(
+  mapStateToProps,
+  { register }
+)(RegisterPage);

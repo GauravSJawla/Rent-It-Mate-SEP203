@@ -1,9 +1,10 @@
 /*eslint-disable*/
-import React from 'react';
-import DeleteIcon from '@material-ui/icons/Delete';
-import IconButton from '@material-ui/core/IconButton';
+import React, { Fragment } from 'react';
+import { connect } from 'react-redux';
+import { logout } from '../../actions/auth';
 // react components for routing our app without refresh
 import { Link } from 'react-router-dom';
+import PropTypes from 'prop-types';
 
 // @material-ui/core components
 import { makeStyles } from '@material-ui/core/styles';
@@ -19,15 +20,16 @@ import styles from 'assets/jss/material-kit-react/components/headerLinksStyle.js
 
 const useStyles = makeStyles(styles);
 
-export default function HeaderLinks(props) {
+const HeaderLinks = ({ auth: { isAuthenticated, loading }, logout }) => {
   const classes = useStyles();
-  return (
+
+  const guestRender = (
     <List className={classes.list}>
       <ListItem className={classes.listItem}>
         <Button
           color='transparent'
           component={Link}
-          to='/register-page'
+          to='/register'
           className={classes.navLink}
         >
           Register
@@ -37,7 +39,7 @@ export default function HeaderLinks(props) {
         <Button
           color='transparent'
           component={Link}
-          to='/login-page'
+          to='/login'
           className={classes.navLink}
         >
           Login In
@@ -45,4 +47,52 @@ export default function HeaderLinks(props) {
       </ListItem>
     </List>
   );
-}
+
+  const authRender = (
+    <List className={classes.list}>
+      <ListItem className={classes.listItem}>
+        <Button
+          color='transparent'
+          component={Link}
+          to='/profile'
+          className={classes.navLink}
+        >
+          Profile
+        </Button>
+      </ListItem>
+      <ListItem className={classes.listItem}>
+        <Button
+          color='transparent'
+          onClick={logout}
+          component={Link}
+          to='/'
+          className={classes.navLink}
+        >
+          Logout
+        </Button>
+      </ListItem>
+    </List>
+  );
+
+  return (
+    <div>
+      {!loading && (
+        <Fragment>{isAuthenticated ? authRender : guestRender}</Fragment>
+      )}
+    </div>
+  );
+};
+
+HeaderLinks.propTypes = {
+  logout: PropTypes.func.isRequired,
+  auth: PropTypes.object.isRequired
+};
+
+const mapStateToProps = state => ({
+  auth: state.auth
+});
+
+export default connect(
+  mapStateToProps,
+  { logout }
+)(HeaderLinks);
