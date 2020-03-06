@@ -10,6 +10,9 @@
   },
   "version": "1.0.0",
   "description": "Renting Platform for local communities",
+  "engines": {
+    "node": "10.16.3"
+  },
   "main": "server.js",
   "scripts": {
     "test": "jest --verbose --forceExit --detectOpenHandles ./tests",
