@@ -40,8 +40,12 @@
     "gravatar": "^1.8.0",
     "jest": "^24.9.0",
     "jsonwebtoken": "^8.5.1",
+    "mailslurp-client": "^6.7.4",
     "mongoose": "^5.9.1",
+    "node-html-parser": "^1.2.8",
     "node-mocks-http": "^1.8.1",
+    "nodemailer": "^6.4.3",
+    "nodemailer-sendgrid-transport": "^0.2.0",
     "request": "^2.88.2",
     "supertest": "^4.0.2"
   },
