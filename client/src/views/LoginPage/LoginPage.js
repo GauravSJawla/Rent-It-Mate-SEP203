@@ -96,6 +96,7 @@ const LoginPage = ({ login, isAuthenticated }) => {
                       inputProps={{
                         value: username,
                         type: 'text',
+                        required : true,
                         onChange: e => onChange(e),
                         endAdornment: (
                           <InputAdornment position='end'>
@@ -114,6 +115,7 @@ const LoginPage = ({ login, isAuthenticated }) => {
                       inputProps={{
                         value: password,
                         type: 'password',
+                        required : true,
                         onChange: e => onChange(e),
                         endAdornment: (
                           <InputAdornment position='end'>
