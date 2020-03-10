@@ -3,9 +3,14 @@ node_js: node
 services: mongodb
 install:
   - npm install
+
 script:
+  - cd client
+  - npm install
+  - cd ..
   - npm ci
-  - npm run client & wait-on http://localhost:3000
+  - npm run client -- --silent &
   - npm run cy:run
-  - npm run server
+  - npm run server -- --silent &
+  - sleep 10 
   - npm test
