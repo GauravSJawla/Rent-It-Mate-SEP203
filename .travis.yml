@@ -7,8 +7,6 @@ install:
 script:
   - cd client
   - npm install
-  - cd ..
-  - npm ci
-  - npm run client -- --silent &
+  - npm start -- --silent &
   - npm run cy:run
   - npm test
