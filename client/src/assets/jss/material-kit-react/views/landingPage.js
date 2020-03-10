@@ -35,6 +35,9 @@ const landingPageStyle = {
     color: "#FFFFFF",
     ...landingContainer
   },
+  gallaryContainer: {
+    zIndex: "12"
+  },
   title: {
     ...title,
     display: "inline-block",

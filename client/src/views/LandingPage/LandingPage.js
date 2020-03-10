@@ -5,7 +5,7 @@ import classNames from "classnames";
 // @material-ui/core components
 import { makeStyles } from "@material-ui/core/styles";
 
-// @material-ui/icons
+// enhancement packages
 
 // core components
 import Footer from "components/Footer/Footer.js";
@@ -13,15 +13,12 @@ import GridContainer from "components/Grid/GridContainer.js";
 import GridItem from "components/Grid/GridItem.js";
 import Button from "components/CustomButtons/Button.js";
 import Parallax from "components/Parallax/Parallax.js";
+import ProductGallary from "components/ProductGallary/ProductGallary.js";
 
 import styles from "assets/jss/material-kit-react/views/landingPage.js";
-import { landingContainer } from "assets/jss/material-kit-react/views/landingPage.js";
 
 // Sections for this page
 import Carousel from "views/Components/Sections/SectionCarousel";
-import ProductSection from "./Sections/ProductSection.js";
-import TeamSection from "./Sections/TeamSection.js";
-import WorkSection from "./Sections/WorkSection.js";
 
 const useStyles = makeStyles(styles);
 
@@ -58,14 +55,21 @@ export default function LandingPage() {
         </div>
       </Parallax>
       <div className={classNames(classes.main, classes.mainRaised)}>
-        <div className={classes.container}>
-          <ProductSection />
+        <div className={classes.gallaryContainer}>
+          <h2>New Arrivals</h2>
+          <ProductGallary />
         </div>
       </div>
       <div className={classNames(classes.main, classes.mainRaised)}>
-        <div className={classes.container}>
-          <TeamSection />
-          <WorkSection />
+        <div className={classes.gallaryContainer}>
+          <h2>Books</h2>
+          <ProductGallary />
+        </div>
+      </div>
+      <div className={classNames(classes.main, classes.mainRaised)}>
+        <div className={classes.gallaryContainer}>
+          <h2>Headphones</h2>
+          <ProductGallary />
         </div>
       </div>
       <Footer />
