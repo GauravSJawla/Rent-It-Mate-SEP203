@@ -1,10 +1,39 @@
 import { container, title } from "assets/jss/material-kit-react.js";
 
+const conatinerFluid = {
+  paddingRight: "10px",
+  paddingLeft: "10px",
+  marginRight: "auto",
+  marginLeft: "auto",
+  width: "100%"
+};
+
+const landingContainer = {
+  ...conatinerFluid,
+  "@media (min-width: 576px)": {
+    maxWidth: "606px"
+  },
+  "@media (min-width: 768px)": {
+    maxWidth: "808px"
+  },
+  "@media (min-width: 992px)": {
+    maxWidth: "1044px"
+  },
+  "@media (min-width: 1200px)": {
+    maxWidth: "1264px"
+  }
+};
+
 const landingPageStyle = {
   container: {
     zIndex: "12",
     color: "#FFFFFF",
     ...container
+  },
+  landingContainer: {
+    zIndex: "12",
+    color: "#FFFFFF",
+    ...landingContainer
   },
   title: {
     ...title,
