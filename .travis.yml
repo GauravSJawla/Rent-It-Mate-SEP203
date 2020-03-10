@@ -11,6 +11,4 @@ script:
   - npm ci
   - npm run client -- --silent &
   - npm run cy:run
-  - npm run server -- --silent &
-  - sleep 10 
   - npm test
