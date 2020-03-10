@@ -5,7 +5,7 @@ install:
   - npm install
 script:
   - npm ci
-  - npm start -- --silent &
-  - sleep 10
-  - npm run test
+  - npm run client & wait-on http://localhost:3000
   - npm run cy:run
+  - npm run server
+  - npm test

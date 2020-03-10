@@ -12,10 +12,11 @@ describe('test user sign up', () => {
     const mongoURI = config.get('mongoURI');
     const mailSlurpAPIKey = config.get('mailSlurpAPIKey');
     const mailslurp = new MailSlurp({apiKey: mailSlurpAPIKey })
-    let inbox, connection, emailAddress, token; 
+    let inbox, connection, emailAddress, token, server; 
      beforeAll( async() => {
         connection = await MongoClient.connect(mongoURI, {useNewUrlParser: true,
             useUnifiedTopology: true});
+        //server = app.listen(done);
         inbox = await mailslurp.createInbox();
         emailAddress = inbox.emailAddress;
         const duplicateUser = await User.findOne({username: 'TestUser'})
@@ -26,6 +27,11 @@ describe('test user sign up', () => {
     afterAll( () => {
         connection.close();
         request.close();
+        app.destroy();
+
+        //server.close(done);
+       
+           
     });
     it('can create an user in the database', async () => {
        const response = await request.post('/api/users')
