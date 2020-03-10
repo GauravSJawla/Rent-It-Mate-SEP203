@@ -7,7 +7,6 @@ env:
   - NODE_ENV=ci PORT=5000
 script:
   - npm ci
-  - npm start -- --silent &
-  - sleep 10
+  - npm start -- --silent & wait-on http://localhost:3000
   - npm run test
   - npm run cy:run
