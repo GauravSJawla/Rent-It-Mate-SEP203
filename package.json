@@ -48,10 +48,9 @@
     "passport": "^0.4.1",
     "passport-google-oauth": "^2.0.0",
     "query-string": "^6.11.1",
-    "request": "^2.88.0",
+    "request": "^2.88.2",
     "nodemailer": "^6.4.3",
     "nodemailer-sendgrid-transport": "^0.2.0",
-    "request": "^2.88.2",
     "supertest": "^4.0.2"
   },
   "devDependencies": {
