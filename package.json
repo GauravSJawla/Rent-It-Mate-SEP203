@@ -12,7 +12,7 @@
   "description": "Renting Platform for local communities",
   "main": "server.js",
   "scripts": {
-    "test": "jest",
+    "test": "jest --verbose --forceExit --detectOpenHandles ./tests",
     "start": "node server",
     "server": "nodemon server",
     "client": "npm start --prefix client",
@@ -45,16 +45,13 @@
     "mongoose": "^5.9.1",
     "node-html-parser": "^1.2.8",
     "node-mocks-http": "^1.8.1",
-<<<<<<< HEAD
     "passport": "^0.4.1",
     "passport-google-oauth": "^2.0.0",
     "query-string": "^6.11.1",
     "request": "^2.88.0",
-=======
     "nodemailer": "^6.4.3",
     "nodemailer-sendgrid-transport": "^0.2.0",
     "request": "^2.88.2",
->>>>>>> 1080638581629aaf59404474bf0a2c92ec397664
     "supertest": "^4.0.2"
   },
   "devDependencies": {
