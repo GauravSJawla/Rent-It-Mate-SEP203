@@ -22,6 +22,10 @@ const ProfileSchema = new mongoose.Schema({
                 type: String,
                 required:true
             },
+            Country:{
+                type: String,
+                required : true
+            },
             Zipcode:{
                 type: Number,
                 required: true
@@ -30,13 +34,22 @@ const ProfileSchema = new mongoose.Schema({
         }    
     ],
     HomePhone:{
-        type: Number
+        type: Number,
+        required: true
     },
     MobilePhone:{
         type: Number
     },
     AlternateEmail:{
         type: String
+    },
+    Role:{
+        type: String,
+        required: true
+    },
+    History:{
+        type: Array,
+        default: []
     },
     UpdatedDate:{
         type: Date,
