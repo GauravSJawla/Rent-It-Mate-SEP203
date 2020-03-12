@@ -5,16 +5,8 @@
   "private": true,
   "main": "dist/index.js",
   "dependencies": {
-<<<<<<< HEAD
-    "@material-ui/core": "^4.9.3",
-    "@material-ui/icons": "^4.9.1",
-    "@testing-library/jest-dom": "^4.2.4",
-    "@testing-library/react": "^9.4.0",
-    "@testing-library/user-event": "^7.2.1",
-=======
     "@material-ui/core": "4.3.2",
     "@material-ui/icons": "4.2.1",
->>>>>>> 1080638581629aaf59404474bf0a2c92ec397664
     "axios": "^0.19.2",
     "classnames": "2.2.6",
     "core-js": "^3.6.4",
@@ -27,15 +19,10 @@
     "react-datetime": "2.16.3",
     "react-dom": "16.9.0",
     "react-redux": "^7.1.3",
-<<<<<<< HEAD
-    "react-router-dom": "^5.1.2",
-    "react-scripts": "3.4.0",
-=======
     "react-router-dom": "5.0.1",
     "react-scripts": "^3.4.0",
     "react-slick": "0.25.2",
     "react-swipeable-views": "0.13.3",
->>>>>>> 1080638581629aaf59404474bf0a2c92ec397664
     "redux": "^4.0.5",
     "redux-devtools-extension": "^2.13.8",
     "redux-thunk": "^2.3.0"
