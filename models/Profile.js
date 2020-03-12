@@ -5,53 +5,53 @@ const ProfileSchema = new mongoose.Schema({
         type: mongoose.Schema.Types.ObjectId,
         ref: 'users'
     },
-    Address: [
+    address: 
         {
-            Address1:{
+            address1:{
                 type: String,
                 required : true
             },
-            Address2:{
+            address2:{
                 type: String
             },
-            City:{
+            city:{
                 type: String,
                 required: true
             },
-            State:{
+            state:{
                 type: String,
                 required:true
             },
-            Country:{
+            country:{
                 type: String,
                 required : true
             },
-            Zipcode:{
+            zipcode:{
                 type: Number,
                 required: true
             }
 
-        }    
-    ],
-    HomePhone:{
+        },
+    homePhone:{
         type: Number,
-        required: true
+        required:true
     },
-    MobilePhone:{
+    mobilePhone:{
         type: Number
     },
-    AlternateEmail:{
+    alternateEmail:{
         type: String
     },
-    Role:{
+    role:{
         type: String,
-        required: true
+        required: true,
+        default: 'user'
     },
-    History:{
+    history:{
         type: Array,
         default: []
     },
-    UpdatedDate:{
+    updatedDate:{
         type: Date,
         default : Date.now
     }
