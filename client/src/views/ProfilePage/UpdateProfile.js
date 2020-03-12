@@ -8,8 +8,8 @@ import InputAdornment from '@material-ui/core/InputAdornment';
 import Icon from '@material-ui/core/Icon';
 // @material-ui/icons
 import Email from '@material-ui/icons/Email';
-import PeopleIcon from '@material-ui/icons/People';
-import PersonIcon from '@material-ui/icons/Person';
+import AddLocationIcon from '@material-ui/icons/AddLocation';
+import PhoneIcon from '@material-ui/icons/Phone';
 // core components
 import Footer from 'components/Footer/Footer.js';
 import GridContainer from 'components/Grid/GridContainer.js';
@@ -89,17 +89,8 @@ function UpdateProfile() {
                 <form className={classes.form}>
                   <CardHeader color='primary' className={classes.cardHeader}>
                     <h4>Edit Profile</h4>
-                    <p>Complete your profile</p>
+                    <p>We will be happy to have your information!!!!!</p>
                     <div className={classes.socialLine}>
-                      <Button
-                        justIcon
-                        href='#pablo'
-                        target='_blank'
-                        color='transparent'
-                        //onClick={e => e.preventDefault()}
-                      >
-                        <i className={'fab fa-google'} />
-                      </Button>
                     </div>
                   </CardHeader>
                   <CardBody>
@@ -116,7 +107,7 @@ function UpdateProfile() {
                        // onChange: e => onChange(e),
                         endAdornment: (
                           <InputAdornment position='end'>
-                            <PeopleIcon className={classes.inputIconsColor} />
+                            <AddLocationIcon className={classes.inputIconsColor} />
                           </InputAdornment>
                         )
                       }}
@@ -133,7 +124,7 @@ function UpdateProfile() {
                        // onChange: e => onChange(e),
                         endAdornment: (
                           <InputAdornment position='end'>
-                            <PersonIcon className={classes.inputIconsColor} />
+                            <AddLocationIcon className={classes.inputIconsColor} />
                           </InputAdornment>
                         )
                       }}
@@ -151,7 +142,7 @@ function UpdateProfile() {
                        // onChange: e => onChange(e),
                         endAdornment: (
                           <InputAdornment position='end'>
-                            <Email className={classes.inputIconsColor} />
+                            <AddLocationIcon className={classes.inputIconsColor} />
                           </InputAdornment>
                         )
                       }}
@@ -169,9 +160,7 @@ function UpdateProfile() {
                         //onChange: e => onChange(e),
                         endAdornment: (
                           <InputAdornment position='end'>
-                            <Icon className={classes.inputIconsColor}>
-                              lock_outline
-                            </Icon>
+                            <AddLocationIcon className={classes.inputIconsColor} />
                           </InputAdornment>
                         ),
                         autoComplete: 'off'
@@ -190,9 +179,7 @@ function UpdateProfile() {
                         //onChange: e => onChange(e),
                         endAdornment: (
                           <InputAdornment position='end'>
-                            <Icon className={classes.inputIconsColor}>
-                              lock_outline
-                            </Icon>
+                           <AddLocationIcon className={classes.inputIconsColor} />
                           </InputAdornment>
                         ),
                         autoComplete: 'off'
@@ -211,9 +198,7 @@ function UpdateProfile() {
                         //onChange: e => onChange(e),
                         endAdornment: (
                           <InputAdornment position='end'>
-                            <Icon className={classes.inputIconsColor}>
-                              lock_outline
-                            </Icon>
+                            <AddLocationIcon className={classes.inputIconsColor} />
                           </InputAdornment>
                         ),
                         autoComplete: 'off'
@@ -232,9 +217,7 @@ function UpdateProfile() {
                         //onChange: e => onChange(e),
                         endAdornment: (
                           <InputAdornment position='end'>
-                            <Icon className={classes.inputIconsColor}>
-                              lock_outline
-                            </Icon>
+                            <PhoneIcon className={classes.inputIconsColor} />
                           </InputAdornment>
                         ),
                         autoComplete: 'off'
@@ -252,9 +235,7 @@ function UpdateProfile() {
                         //onChange: e => onChange(e),
                         endAdornment: (
                           <InputAdornment position='end'>
-                            <Icon className={classes.inputIconsColor}>
-                              lock_outline
-                            </Icon>
+                             <PhoneIcon className={classes.inputIconsColor} />
                           </InputAdornment>
                         ),
                         autoComplete: 'off'
@@ -281,7 +262,7 @@ function UpdateProfile() {
                   </CardBody>
                   <CardFooter className={classes.cardFooter}>
                     <Button simple type='submit' color='primary' size='lg'>
-                      Get started
+                      Update My Profile
                     </Button>
                   </CardFooter>
                 </form>
