@@ -68,7 +68,7 @@ export default function LandingPage() {
       </div>
       <div className={classNames(classes.main, classes.mainRaised)}>
         <div className={classes.gallaryContainer}>
-          <h2>Headphones</h2>
+          <h2>Toys</h2>
           <ProductGallary />
         </div>
       </div>

@@ -77,10 +77,6 @@ const HeaderLinks = ({ auth: { isAuthenticated, loading }, logout }) => {
             >
               Profile
             </Link>,
-            "Another action",
-            "Something else here",
-            { divider: true },
-            "Separated link",
             { divider: true },
             <Link
               onClick={logout}
