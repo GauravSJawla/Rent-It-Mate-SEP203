@@ -3,7 +3,7 @@ const router = express.Router();
 const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
 const config = require('config');
-const {check } = require('express-validator/check');
+const {check } = require('express-validator');
 //Import packages to send emails
 const nodemailer = require('nodemailer');
 const sendgridTransport = require('nodemailer-sendgrid-transport');
@@ -86,7 +86,7 @@ router.post(
         success: true,
         message: 'Email sent'
     });
-        res.json(result);
+        //res.json(result);
 
     }
     catch(err){
