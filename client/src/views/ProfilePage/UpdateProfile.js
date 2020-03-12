@@ -35,13 +35,17 @@ function UpdateProfile() {
     setCardAnimation('');
   }, 700);
 
-//   const [formData, setFormData] = useState({
-//     name: '',
-//     username: '',
-//     email: '',
-//     password: '',
-//     password2: ''
-//   });
+  const [formData, setFormData] = useState({
+    address1: '',
+    address2: '',
+    city: '',
+    state: '',
+    country: '',
+    zipcode:'',
+    homephone:'',
+    mobilephone:'',
+    altemail:''
+  });
  const classes = useStyles();
 
 //   //OnChange event Handler
@@ -51,7 +55,8 @@ function UpdateProfile() {
 //       [e.target.id]: e.target.value
 //     });
 
-//   const { name, username, email, password, password2 } = formData;
+   const { address1, address2, city, state, country, 
+                zipcode, homephone, mobilephone, altemail } = formData;
 
 //   // OnSubmit Event Handler
 //   const onSubmit = e => {
@@ -84,6 +89,7 @@ function UpdateProfile() {
                 <form className={classes.form}>
                   <CardHeader color='primary' className={classes.cardHeader}>
                     <h4>Edit Profile</h4>
+                    <p>Complete your profile</p>
                     <div className={classes.socialLine}>
                       <Button
                         justIcon
@@ -96,18 +102,18 @@ function UpdateProfile() {
                       </Button>
                     </div>
                   </CardHeader>
-                  {/* <CardBody>
+                  <CardBody>
                     <CustomInput
-                      labelText='Full Name...'
-                      id='name'
+                      labelText='Address1...'
+                      id='address1'
                       formControlProps={{
                         fullWidth: true
                       }}
                       inputProps={{
                         type: 'text',
-                        value: name,
+                        value: address1,
                         required : true,
-                        onChange: e => onChange(e),
+                       // onChange: e => onChange(e),
                         endAdornment: (
                           <InputAdornment position='end'>
                             <PeopleIcon className={classes.inputIconsColor} />
@@ -116,16 +122,15 @@ function UpdateProfile() {
                       }}
                     />
                     <CustomInput
-                      labelText='User Name...'
-                      id='username'
+                      labelText='Address2...'
+                      id='address2'
                       formControlProps={{
                         fullWidth: true
                       }}
                       inputProps={{
-                        type: 'username',
-                        value: username,
-                        required: true,
-                        onChange: e => onChange(e),
+                        type: 'text',
+                        value: address2,
+                       // onChange: e => onChange(e),
                         endAdornment: (
                           <InputAdornment position='end'>
                             <PersonIcon className={classes.inputIconsColor} />
@@ -134,16 +139,16 @@ function UpdateProfile() {
                       }}
                     />
                     <CustomInput
-                      labelText='Email...'
-                      id='email'
+                      labelText='City...'
+                      id='city'
                       formControlProps={{
                         fullWidth: true
                       }}
                       inputProps={{
-                        type: 'email',
-                        value: email,
+                        type: 'text',
+                        value: city,
                         required : true,
-                        onChange: e => onChange(e),
+                       // onChange: e => onChange(e),
                         endAdornment: (
                           <InputAdornment position='end'>
                             <Email className={classes.inputIconsColor} />
@@ -152,16 +157,16 @@ function UpdateProfile() {
                       }}
                     />
                     <CustomInput
-                      labelText='Password'
-                      id='password'
+                      labelText='State...'
+                      id='state'
                       formControlProps={{
                         fullWidth: true
                       }}
                       inputProps={{
-                        type: 'password',
-                        value: password,
+                        type: 'text',
+                        value: state,
                         required: true,
-                        onChange: e => onChange(e),
+                        //onChange: e => onChange(e),
                         endAdornment: (
                           <InputAdornment position='end'>
                             <Icon className={classes.inputIconsColor}>
@@ -173,21 +178,101 @@ function UpdateProfile() {
                       }}
                     />
                     <CustomInput
-                      labelText='Confirm Password'
-                      id='password2'
+                      labelText='Country...'
+                      id='country'
                       formControlProps={{
                         fullWidth: true
                       }}
                       inputProps={{
-                        type: 'password',
-                        value: password2,
+                        type: 'text',
+                        value: country,
                         required : true,
-                        onChange: e => onChange(e),
+                        //onChange: e => onChange(e),
                         endAdornment: (
                           <InputAdornment position='end'>
                             <Icon className={classes.inputIconsColor}>
                               lock_outline
                             </Icon>
+                          </InputAdornment>
+                        ),
+                        autoComplete: 'off'
+                      }}
+                    />
+                    <CustomInput
+                      labelText='Zipcode...'
+                      id='zipcode'
+                      formControlProps={{
+                        fullWidth: true
+                      }}
+                      inputProps={{
+                        type: 'text',
+                        value: zipcode,
+                        required : true,
+                        //onChange: e => onChange(e),
+                        endAdornment: (
+                          <InputAdornment position='end'>
+                            <Icon className={classes.inputIconsColor}>
+                              lock_outline
+                            </Icon>
+                          </InputAdornment>
+                        ),
+                        autoComplete: 'off'
+                      }}
+                    />
+                    <CustomInput
+                      labelText='HomePhone...'
+                      id='homephone'
+                      formControlProps={{
+                        fullWidth: true
+                      }}
+                      inputProps={{
+                        type: 'text',
+                        value: homephone,
+                        required : true,
+                        //onChange: e => onChange(e),
+                        endAdornment: (
+                          <InputAdornment position='end'>
+                            <Icon className={classes.inputIconsColor}>
+                              lock_outline
+                            </Icon>
+                          </InputAdornment>
+                        ),
+                        autoComplete: 'off'
+                      }}
+                    />
+                    <CustomInput
+                      labelText='MobilePhone'
+                      id='mobilephone'
+                      formControlProps={{
+                        fullWidth: true
+                      }}
+                      inputProps={{
+                        type: 'text',
+                        value: mobilephone,
+                        //onChange: e => onChange(e),
+                        endAdornment: (
+                          <InputAdornment position='end'>
+                            <Icon className={classes.inputIconsColor}>
+                              lock_outline
+                            </Icon>
+                          </InputAdornment>
+                        ),
+                        autoComplete: 'off'
+                      }}
+                    />
+                    <CustomInput
+                      labelText='Alternate Email...'
+                      id='altemail'
+                      formControlProps={{
+                        fullWidth: true
+                      }}
+                      inputProps={{
+                        type: 'email',
+                        value: altemail,
+                        //onChange: e => onChange(e),
+                        endAdornment: (
+                            <InputAdornment position='end'>
+                            <Email className={classes.inputIconsColor} />
                           </InputAdornment>
                         ),
                         autoComplete: 'off'
@@ -198,7 +283,7 @@ function UpdateProfile() {
                     <Button simple type='submit' color='primary' size='lg'>
                       Get started
                     </Button>
-                  </CardFooter> */}
+                  </CardFooter>
                 </form>
               </Card>
             </GridItem>
