@@ -17,7 +17,7 @@ describe('test user sign up', () => {
         connection = await MongoClient.connect(mongoURI, {useNewUrlParser: true,
             useUnifiedTopology: true});
         //server = app.listen(done);
-        inbox = await mailslurp.createInbox();
+        //inbox = await mailslurp.createInbox();
         emailAddress = inbox.emailAddress;
         const duplicateUser = await User.findOne({username: 'TestUser'})
         if (duplicateUser){
