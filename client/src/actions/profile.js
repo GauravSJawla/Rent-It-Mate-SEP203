@@ -14,21 +14,23 @@ export const createProfile = (formData, edit = false) => async dispatch => {
             }
         };
         const res = await axios.post('/api/profile', formData, config);
-        dispatch(
-            {
-                type:GET_PROFILE,
-                payload: res.data
-            }
-        );
+            dispatch(
+                {
+                    type:GET_PROFILE,
+                    payload: res.data
+                }
+            );
+    
+        
     }
     catch(err){
-        const errors = err.res.data.errors;
-        if(errors){
-            errors.forEach(error => (console.log(error)));
-        }
+        // const errors = err.response.data.errors;
+        // if(errors){
+        //     errors.forEach(error => (console.log(error)));
+        // }
         dispatch({
             type: PROFILE_ERROR,
-            payload:{status : err.res.status}
+            payload:{status : err}
         })
     }
 };

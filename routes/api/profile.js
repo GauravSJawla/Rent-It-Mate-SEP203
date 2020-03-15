@@ -39,7 +39,7 @@ router.post('/', [auth, [
     check('zipcode', 'Zipcode is required').not().isEmpty(),
     //check('HomePhone','Mobile number is required').not().isEmpty(),
     check('homePhone','Mobile number has to be exact 10-digit number').isLength({max:10,min:10}),
-    check('role','Role is required').not().isEmpty()
+    //check('role','Role is required').not().isEmpty()
 ]], async(req,res) => {
     const errors = validationResult(req);
     if(!errors.isEmpty()){
@@ -79,7 +79,7 @@ router.post('/', [auth, [
         profile = new Profile(profileFields);
 
         await profile.save();
-        res.json(profile);
+        return res.json(profile);
         
 
     }

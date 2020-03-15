@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
 import { connect } from 'react-redux';
-import propTypes from 'prop-types';
+import PropTypes from 'prop-types';
 import { Redirect } from 'react-router-dom';
 // @material-ui/core components
 import { makeStyles } from '@material-ui/core/styles';
 import InputAdornment from '@material-ui/core/InputAdornment';
-import Icon from '@material-ui/core/Icon';
+//import Icon from '@material-ui/core/Icon';
 // @material-ui/icons
 import Email from '@material-ui/icons/Email';
 import AddLocationIcon from '@material-ui/icons/AddLocation';
@@ -30,7 +30,8 @@ import { createProfile } from '../../actions/profile';
 
 const useStyles = makeStyles(styles);
 
-function CreateProfile({createProfile}) {
+function CreateProfile({createProfile,
+      profile : {profile,loading}}) {
   const [cardAnimaton, setCardAnimation] = React.useState('cardHidden');
   setTimeout(function() {
     setCardAnimation('');
@@ -43,14 +44,14 @@ function CreateProfile({createProfile}) {
     state: '',
     country: '',
     zipcode:'',
-    homephone:'',
-    mobilephone:'',
-    altemail:''
+    homePhone:'',
+    mobilePhone:'',
+    alternateEmail:''
   });
  const classes = useStyles();
 
  const { address1, address2, city, state, country, 
-  zipcode, homephone, mobilephone, altemail } = formData;
+  zipcode, homePhone, mobilePhone, alternateEmail } = formData;
 
   //OnChange event Handler
   const onChange = e =>
@@ -68,9 +69,9 @@ function CreateProfile({createProfile}) {
     
   };
 
-//   if (isAuthenticated) {
-//     return <Redirect to='/emailVerifyPage' />;
-//   }
+  if (profile != null) {
+    return <Redirect to='/dashboard' />;
+  }
   return (
     <div>
       <div
@@ -85,7 +86,7 @@ function CreateProfile({createProfile}) {
           <GridContainer justify='center'>
             <GridItem xs={12} sm={12} md={4}>
               <Card className={classes[cardAnimaton]}>
-                <form className={classes.form}>
+                <form className={classes.form} onSubmit={e => onSubmit(e)}>
                   <CardHeader color='primary' className={classes.cardHeader}>
                     <h4>Edit Profile</h4>
                     <p>We will be happy to have your information!!!!!</p>
@@ -103,7 +104,7 @@ function CreateProfile({createProfile}) {
                         type: 'text',
                         value: address1,
                         required : true,
-                       // onChange: e => onChange(e),
+                        onChange: e => onChange(e),
                         endAdornment: (
                           <InputAdornment position='end'>
                             <AddLocationIcon className={classes.inputIconsColor} />
@@ -120,7 +121,7 @@ function CreateProfile({createProfile}) {
                       inputProps={{
                         type: 'text',
                         value: address2,
-                       // onChange: e => onChange(e),
+                        onChange: e => onChange(e),
                         endAdornment: (
                           <InputAdornment position='end'>
                             <AddLocationIcon className={classes.inputIconsColor} />
@@ -138,7 +139,7 @@ function CreateProfile({createProfile}) {
                         type: 'text',
                         value: city,
                         required : true,
-                       // onChange: e => onChange(e),
+                        onChange: e => onChange(e),
                         endAdornment: (
                           <InputAdornment position='end'>
                             <AddLocationIcon className={classes.inputIconsColor} />
@@ -156,7 +157,7 @@ function CreateProfile({createProfile}) {
                         type: 'text',
                         value: state,
                         required: true,
-                        //onChange: e => onChange(e),
+                        onChange: e => onChange(e),
                         endAdornment: (
                           <InputAdornment position='end'>
                             <AddLocationIcon className={classes.inputIconsColor} />
@@ -175,7 +176,7 @@ function CreateProfile({createProfile}) {
                         type: 'text',
                         value: country,
                         required : true,
-                        //onChange: e => onChange(e),
+                        onChange: e => onChange(e),
                         endAdornment: (
                           <InputAdornment position='end'>
                            <AddLocationIcon className={classes.inputIconsColor} />
@@ -194,7 +195,7 @@ function CreateProfile({createProfile}) {
                         type: 'text',
                         value: zipcode,
                         required : true,
-                        //onChange: e => onChange(e),
+                        onChange: e => onChange(e),
                         endAdornment: (
                           <InputAdornment position='end'>
                             <AddLocationIcon className={classes.inputIconsColor} />
@@ -205,15 +206,15 @@ function CreateProfile({createProfile}) {
                     />
                     <CustomInput
                       labelText='HomePhone...'
-                      id='homephone'
+                      id='homePhone'
                       formControlProps={{
                         fullWidth: true
                       }}
                       inputProps={{
                         type: 'text',
-                        value: homephone,
+                        value: homePhone,
                         required : true,
-                        //onChange: e => onChange(e),
+                        onChange: e => onChange(e),
                         endAdornment: (
                           <InputAdornment position='end'>
                             <PhoneIcon className={classes.inputIconsColor} />
@@ -224,14 +225,14 @@ function CreateProfile({createProfile}) {
                     />
                     <CustomInput
                       labelText='MobilePhone'
-                      id='mobilephone'
+                      id='mobilePhone'
                       formControlProps={{
                         fullWidth: true
                       }}
                       inputProps={{
                         type: 'text',
-                        value: mobilephone,
-                        //onChange: e => onChange(e),
+                        value: mobilePhone,
+                        onChange: e => onChange(e),
                         endAdornment: (
                           <InputAdornment position='end'>
                              <PhoneIcon className={classes.inputIconsColor} />
@@ -242,14 +243,14 @@ function CreateProfile({createProfile}) {
                     />
                     <CustomInput
                       labelText='Alternate Email...'
-                      id='altemail'
+                      id='alternateEmail'
                       formControlProps={{
                         fullWidth: true
                       }}
                       inputProps={{
                         type: 'email',
-                        value: altemail,
-                        //onChange: e => onChange(e),
+                        value: alternateEmail,
+                        onChange: e => onChange(e),
                         endAdornment: (
                             <InputAdornment position='end'>
                             <Email className={classes.inputIconsColor} />
@@ -275,17 +276,20 @@ function CreateProfile({createProfile}) {
   );
 }
 
-// RegisterPage.propTypes = {
-//   register: propTypes.func.isRequired,
-//   isAuthenticated: propTypes.bool
-// };
+CreateProfile.propTypes = {
+  createProfile: PropTypes.func.isRequired,
+  profile: PropTypes.object.isRequired
+};
 
-// const mapStateToProps = state => ({
-//   isAuthenticated: state.auth.isAuthenticated
-// });
+const mapStateToProps = state => ({
+  profile: state.profile
+});
 
 // export default connect(
 //   mapStateToProps,
 //   { register }
 // )(RegisterPage);
-export default CreateProfile;
+export default connect(
+  mapStateToProps,
+  {createProfile}
+)(CreateProfile);
