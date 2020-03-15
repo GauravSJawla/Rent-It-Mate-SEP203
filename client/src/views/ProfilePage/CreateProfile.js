@@ -24,12 +24,13 @@ import styles from 'assets/jss/material-kit-react/views/loginPage.js';
 
 import image from 'assets/img/bg7.jpg';
 
+
 //Import register from other component
-import { register } from '../../actions/auth';
+import { createProfile } from '../../actions/profile';
 
 const useStyles = makeStyles(styles);
 
-function CreateProfile() {
+function CreateProfile({createProfile}) {
   const [cardAnimaton, setCardAnimation] = React.useState('cardHidden');
   setTimeout(function() {
     setCardAnimation('');
@@ -63,6 +64,7 @@ function CreateProfile() {
   // OnSubmit Event Handler
   const onSubmit = e => {
     e.preventDefault();
+    createProfile(formData);
     
   };
 
