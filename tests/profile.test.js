@@ -98,9 +98,7 @@ describe('user create/update/delete profile', () => {
 
     it('should give yet to create profile if no profile', async() => {
       const duplicateProfile = await Profile.findOne({user:id});
-      console.log(duplicateProfile);
         if (duplicateProfile){
-          console.log('inside yet to create duplciate')
             await Profile.deleteOne(duplicateProfile);
         }
         const response = await request.get('/api/profile/me')
