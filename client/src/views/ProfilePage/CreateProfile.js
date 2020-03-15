@@ -29,7 +29,7 @@ import { register } from '../../actions/auth';
 
 const useStyles = makeStyles(styles);
 
-function UpdateProfile() {
+function CreateProfile() {
   const [cardAnimaton, setCardAnimation] = React.useState('cardHidden');
   setTimeout(function() {
     setCardAnimation('');
@@ -48,26 +48,23 @@ function UpdateProfile() {
   });
  const classes = useStyles();
 
-//   //OnChange event Handler
-//   const onChange = e =>
-//     setFormData({
-//       ...formData,
-//       [e.target.id]: e.target.value
-//     });
+ const { address1, address2, city, state, country, 
+  zipcode, homephone, mobilephone, altemail } = formData;
 
-   const { address1, address2, city, state, country, 
-                zipcode, homephone, mobilephone, altemail } = formData;
+  //OnChange event Handler
+  const onChange = e =>
+    setFormData({
+      ...formData,
+      [e.target.id]: e.target.value
+    });
 
-//   // OnSubmit Event Handler
-//   const onSubmit = e => {
-//     e.preventDefault();
-//     console.log('name in else:' + { name });
-//     if (password !== password2) {
-//       alert('Passwords do not match');
-//     } else {
-//       register({ name, username, email, password });
-//     }
-//   };
+   
+
+  // OnSubmit Event Handler
+  const onSubmit = e => {
+    e.preventDefault();
+    
+  };
 
 //   if (isAuthenticated) {
 //     return <Redirect to='/emailVerifyPage' />;
@@ -289,4 +286,4 @@ function UpdateProfile() {
 //   mapStateToProps,
 //   { register }
 // )(RegisterPage);
-export default UpdateProfile;
+export default CreateProfile;
