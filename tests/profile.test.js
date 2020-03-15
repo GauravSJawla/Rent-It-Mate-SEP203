@@ -37,6 +37,8 @@ describe('user create/update/delete profile', () => {
       });
 
     it('can create a profile', async() => {
+        const user = await User.findOne({username:'mercy'});
+        id = user.id;
         const duplicateProfile = await Profile.findOne({user:id});
         if (duplicateProfile){
             await Profile.deleteOne(duplicateProfile);
