@@ -9,26 +9,31 @@ const _ = require('lodash');
 const fs = require('fs');
 const { errorHandler } = require('../../helpers/dbErrorHandler');
 
+router.get('/findById' , (req, res, next, id) => {
+  Product.findById(id).exec( (err , product) =>{
+    if( err || !product){
+      return res.status(400).json({
+        error: 'Product could not be found'
+       });
+    }
+    req.product = product;
+    next();
+ 
+});
+});
+
+// @route   GET api/product/create
+// @desc    Add a product
+// @access  Private
+router.get('/:id' , (req , res) =>{
+  req.product.photo = undefined
+  return res.json(req.product);
+})
 // @route   POST api/product/create
 // @desc    Add a product
 // @access  Private
 
 router.post('/create', auth, (req, res) => {
-  // const errors = validationResult(req);
-  // if (!errors.isEmpty()) {
-  //   return res.status(400).json({ errors: errors.array() });
-  // }
-
-  // const { product_id ,name , description , price, category , quantity, sold, photo, shipping} = req.body;
-
-  // try {
-  //   let product = await Product.findOne({ product_id });
-
-  //   if (product) {
-  //     return res
-  //       .status(400)
-  //       .json({ errors: [{ msg: 'product already exists!' }] });
-  //   }
     let form = new formidable.IncomingForm()
     form.keepExtensions = true
     form.parse(req , (err, fields , files) =>{
@@ -47,8 +52,15 @@ router.post('/create', auth, (req, res) => {
       }
 
       let product = new Product(fields);
+      // 1kb = 1000
+      // 1mb = 1000000
 
      if(files.photo){
+       if(files.photo.size >1000000){
+         return res.status(400).json({
+           error :" Image should be less than 1mb in size"
+         });
+       }
        product.photo.data = fs.readFileSync(files.photo.path)
        product.photo.contentType = files.photo.type
      }
@@ -66,20 +78,6 @@ router.post('/create', auth, (req, res) => {
  
 });
 
-// @route   GET api/products/
-// @desc    get a product
-// @access  Private
 
-// router.get('/' , auth, async(req , res) =>{
-//   const error = validationResult(req);
-//   if(!errors.isEmpty()){
-//     return res
-//           .status(400)
-//           .json({ errors:erros.array() });
-//   }
-
- 
-
-// })
 
 module.exports = router;
