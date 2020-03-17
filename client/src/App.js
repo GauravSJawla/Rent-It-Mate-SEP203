@@ -17,7 +17,7 @@ import { loadUser } from './actions/auth';
 import setAuthToken from './utils/setAuthToken';
 import Dashboard from 'views/Dashboard/Dashboard';
 import EmailVerifyPage from 'views/EmailVerifyPage/EmailVerifyPage';
-import CreateProfile from 'views/ProfilePage/CreateProfile';
+import CreateProfile from 'views/ProfilePage/CreateUpdateProfile';
 
 if (localStorage.token) {
   setAuthToken(localStorage.token);
