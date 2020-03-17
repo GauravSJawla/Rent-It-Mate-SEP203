@@ -28,11 +28,17 @@ router.param('productId' , (req, res, next, id) => {
 // @route   GET api/product/:id
 // @desc    get a product
 // @access  public
+/**
+ * any get request with product id comes to this method
+ * and it then follows to the router.param which checks for the parameter 
+ * and then returns the product and moves on to next() application flow.
+ */
 router.get('/:productId',(req , res) =>{
   console.log(req.product);
   req.product.photo = undefined
   return res.json(req.product);
 })
+
 // @route   POST api/product/create
 // @desc    Add a product
 // @access  Private
@@ -84,24 +90,19 @@ router.post('/create', auth, (req, res) => {
 // @route DELETE api/product
 //@desc This method is responsible for deleting a product from
 // the database
-router.delete('/' , auth , async (req , res) =>{
-  // try{
-  //   await Product.findByIdAndDelete({ _id : req._id });
-  // }catch (err){
-  //   console.error(err.message);
-  //   res.status(500).send('server error')
-  // }
-  let product = req.product;
-  product.remove((err, deletedProduct) => {
-      if (err) {
-          return res.status(400).json({
-              error: errorHandler(err)
-          });
-      }
-      res.json({
-          message: 'Product deleted successfully'
-      });
+router.delete('/:productId/:username' , auth , async (req , res) =>{
+  let product = req.product
+  product.remove( (err, deletedProduct) =>{
+    if(err){
+      return res.status(400).json({
+        error: errorHandler(err)
+      })
+    }
+    res.json({
+      deletedProduct,
+      message:'product deleted successfully'
     })
+  })
 })
 
 
