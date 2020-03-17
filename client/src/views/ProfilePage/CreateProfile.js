@@ -88,7 +88,7 @@ function CreateProfile({createProfile,
               <Card className={classes[cardAnimaton]}>
                 <form className={classes.form} onSubmit={e => onSubmit(e)}>
                   <CardHeader color='primary' className={classes.cardHeader}>
-                    <h4>Edit Profile</h4>
+                    <h4>Create Your Profile</h4>
                     <p>We will be happy to have your information!!!!!</p>
                     <div className={classes.socialLine}>
                     </div>
