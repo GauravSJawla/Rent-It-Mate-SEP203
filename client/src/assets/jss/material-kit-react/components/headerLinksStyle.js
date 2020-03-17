@@ -108,6 +108,13 @@ const headerLinksStyle = theme => ({
       padding: '10px 20px'
     }
   },
+  listLink: {
+    '&,&:hover,&:focus': {
+      color: 'inherit',
+      textDecoration: 'none',
+      display: 'block'
+    }
+  },
   ...tooltip,
   marginRight5: {
     marginRight: '5px'
