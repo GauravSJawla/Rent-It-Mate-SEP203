@@ -10,6 +10,9 @@
   },
   "version": "1.0.0",
   "description": "Renting Platform for local communities",
+  "engines": {
+    "node": "10.16.3"
+  },
   "main": "server.js",
   "scripts": {
     "test": "jest --verbose --forceExit --detectOpenHandles ./tests",
@@ -40,6 +43,7 @@
     "express-validator": "^6.4.0",
     "gravatar": "^1.8.0",
     "jest": "^24.9.0",
+    "jest-cli": "^25.1.0",
     "jsonwebtoken": "^8.5.1",
     "mailslurp-client": "^6.7.4",
     "mongoose": "^5.9.1",
