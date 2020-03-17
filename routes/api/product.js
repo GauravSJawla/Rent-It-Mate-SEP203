@@ -9,10 +9,13 @@ const _ = require('lodash');
 const fs = require('fs');
 const { errorHandler } = require('../../helpers/dbErrorHandler');
 
-router.get('/findById' , (req, res, next, id) => {
-  Product.findById(id).exec( (err , product) =>{
+router.param('productId' , (req, res, next, id) => {
+ // console.log('inside product get by id'+id+' console '+JSON.stringify(Product.findById(id)));
+  Product.findById(id)
+  .exec( (err , product) =>{
     if( err || !product){
       return res.status(400).json({
+       
         error: 'Product could not be found'
        });
     }
@@ -22,10 +25,11 @@ router.get('/findById' , (req, res, next, id) => {
 });
 });
 
-// @route   GET api/product/create
-// @desc    Add a product
-// @access  Private
-router.get('/:id' , (req , res) =>{
+// @route   GET api/product/:id
+// @desc    get a product
+// @access  public
+router.get('/:productId',(req , res) =>{
+  console.log(req.product);
   req.product.photo = undefined
   return res.json(req.product);
 })
@@ -45,11 +49,11 @@ router.post('/create', auth, (req, res) => {
       //check for all fields
       const { name, description, price, category, quantity, shipping } = fields;
 
-      if (!name || !description || !price || !category || !quantity || !shipping) {
-          return res.status(400).json({
-              error: 'All fields are required'
-          });
-      }
+      // if (!name || !description || !price || !category || !quantity || !shipping) {
+      //     return res.status(400).json({
+      //         error: 'All fields are required'
+      //     });
+      // }
 
       let product = new Product(fields);
       // 1kb = 1000
@@ -77,7 +81,28 @@ router.post('/create', auth, (req, res) => {
   });
  
 });
-
+// @route DELETE api/product
+//@desc This method is responsible for deleting a product from
+// the database
+router.delete('/' , auth , async (req , res) =>{
+  // try{
+  //   await Product.findByIdAndDelete({ _id : req._id });
+  // }catch (err){
+  //   console.error(err.message);
+  //   res.status(500).send('server error')
+  // }
+  let product = req.product;
+  product.remove((err, deletedProduct) => {
+      if (err) {
+          return res.status(400).json({
+              error: errorHandler(err)
+          });
+      }
+      res.json({
+          message: 'Product deleted successfully'
+      });
+    })
+})
 
 
 module.exports = router;
