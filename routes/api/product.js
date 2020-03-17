@@ -92,14 +92,13 @@ router.post('/create', auth, (req, res) => {
 // the database
 router.delete('/:productId/:username' , auth , async (req , res) =>{
   let product = req.product
-  product.remove( (err, deletedProduct) =>{
+  product.remove( (err) =>{
     if(err){
       return res.status(400).json({
         error: errorHandler(err)
       })
     }
     res.json({
-      deletedProduct,
       message:'product deleted successfully'
     })
   })
