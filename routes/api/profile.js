@@ -12,7 +12,7 @@ const {check, validationResult} = require('express-validator/check');
 router.get('/me', auth, async(req,res) => {
     try{
         const userProfile = await profile.findOne({user: req.user.id}).populate(
-            'user',['name','email']
+            'users',['name','email']
         );
         if(!userProfile){
             return res.status(400).json({msg: 'You are yet to create your profile'});
@@ -21,7 +21,7 @@ router.get('/me', auth, async(req,res) => {
 
     }
     catch(err){
-        //console.err(err.message);
+        console.log(err.message);
         res.status(500).send('server error');  
     }  
 })

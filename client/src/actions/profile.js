@@ -34,3 +34,22 @@ export const createProfile = (formData, edit = false) => async dispatch => {
         })
     }
 };
+
+//Get current profile
+
+export const getUserProfile = () => async dispatch => {
+    try{
+        const res = await axios.get('/api/profile/me');
+        console.log(res);
+        dispatch({
+            type: GET_PROFILE,
+            payload: res.data
+        });
+    }
+    catch(err){
+        dispatch({
+            type: PROFILE_ERROR,
+            payload: {status : err}
+        });
+    }
+};

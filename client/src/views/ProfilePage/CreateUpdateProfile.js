@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { Redirect } from 'react-router-dom';
@@ -26,12 +26,13 @@ import image from 'assets/img/bg7.jpg';
 
 
 //Import register from other component
-import { createProfile } from '../../actions/profile';
+import { createProfile, getUserProfile } from '../../actions/profile';
 
 const useStyles = makeStyles(styles);
 
 function CreateProfile({createProfile,
-      profile : {profile,loading}}) {
+      getUserProfile,
+      profile : {profile,loading}})  {
   const [cardAnimaton, setCardAnimation] = React.useState('cardHidden');
   setTimeout(function() {
     setCardAnimation('');
@@ -49,6 +50,27 @@ function CreateProfile({createProfile,
     alternateEmail:''
   });
  const classes = useStyles();
+
+ useEffect(() => {
+   getUserProfile();
+   setFormData({
+     address1: loading || !profile.address1 ? '' : profile.address1,
+     address2: loading || !profile.address2 ? '' : profile.address2,
+     city: loading || !profile.city ? '' : profile.city,
+     state: loading || !profile.state ? '' : profile.state,
+     country: loading || !profile.country ? '' : profile.country,
+     zipcode: loading || !profile.zipcode ? '' : profile.zipcode,
+     homePhone : loading || !profile.homePhone ? '' : profile.homePhone,
+     mobilePhone : loading || !profile.mobilePhone ? '' : profile.mobilePhone,
+     alternateEmail : loading || !profile.alternateEmail ? '' : profile.alternateEmail
+   });
+ }, [loading]);
+
+ useEffect(() => {
+  return () => {
+    console.log("cleaned up");
+  };
+}, []);
 
  const { address1, address2, city, state, country, 
   zipcode, homePhone, mobilePhone, alternateEmail } = formData;
@@ -69,7 +91,8 @@ function CreateProfile({createProfile,
     
   };
 
-  if (profile != null) {
+  if (!loading) {
+    console.log('inside loading');
     return <Redirect to='/dashboard' />;
   }
   return (
@@ -278,7 +301,8 @@ function CreateProfile({createProfile,
 
 CreateProfile.propTypes = {
   createProfile: PropTypes.func.isRequired,
-  profile: PropTypes.object.isRequired
+  profile: PropTypes.object.isRequired,
+  getUserProfile:PropTypes.func.isRequired
 };
 
 const mapStateToProps = state => ({
@@ -291,5 +315,5 @@ const mapStateToProps = state => ({
 // )(RegisterPage);
 export default connect(
   mapStateToProps,
-  {createProfile}
+  {createProfile, getUserProfile}
 )(CreateProfile);
