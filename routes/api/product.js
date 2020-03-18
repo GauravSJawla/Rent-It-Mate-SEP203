@@ -130,7 +130,6 @@ router.put('/:productId', auth, (req, res)=>{
       //         error: 'All fields are required'
       //     });
       // }
-      try{
         let product = req.product;
         product = _.extend(product , fields)
       
@@ -147,14 +146,15 @@ router.put('/:productId', auth, (req, res)=>{
        product.photo.data = fs.readFileSync(files.photo.path)
        product.photo.contentType = files.photo.type
       }
-    }catch (err) {
-      console.log(err)
-      return res.status(500).json({
-        
-        message : 'update not successful'         
-      })
-    }
-    });
+      product.save((err, result) => {
+        if (err) {
+            return res.status(400).json({
+                error: errorHandler(err)
+            });
+        }
+        res.json(result);
+      
+      });
   });
-
+});
 module.exports = router;
