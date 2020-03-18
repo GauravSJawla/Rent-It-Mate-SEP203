@@ -38,11 +38,13 @@ router.get('/:productId',(req , res) =>{
   req.product.photo = undefined
   return res.json(req.product);
 })
-
-// @route   POST api/product/create
-// @desc    Add a product
-// @access  Private
-
+/**
+ * @route api/product/create
+ * @desc This method is used to create a product using form-data and not json.
+ *       While testing with postman always use key-value pairs to test the API 
+ *       for this method.
+ *      
+ */
 router.post('/create', auth, (req, res) => {
     let form = new formidable.IncomingForm()
     form.keepExtensions = true
@@ -87,12 +89,14 @@ router.post('/create', auth, (req, res) => {
   });
  
 });
-// @route DELETE api/product
-//@desc This method is responsible for deleting a product from
-// the database
+/** 
+ *  @route DELETE api/product
+ *  @desc This method is responsible for deleting a product from
+  *        the database
+*/
 router.delete('/:productId/:username' , auth , async (req , res) =>{
   let product = req.product
-  product.remove( (err) =>{
+  await product.remove( (err) =>{
     if(err){
       return res.status(400).json({
         error: errorHandler(err)
@@ -104,5 +108,53 @@ router.delete('/:productId/:username' , auth , async (req , res) =>{
   })
 })
 
+/**
+ * @route PUT/UPDATE api/product
+ * @desc  This method is used to update the products entered by the user
+ *        
+ */
+router.put('/:productId', auth, (req, res)=>{
+  let form = new formidable.IncomingForm()
+    form.keepExtensions = true
+    form.parse(req , (err, fields , files) =>{
+      if(err){
+        return res.status(400).json({
+          error: 'Image could not be uploaded'
+        })
+      }
+      //check for all fields
+      const { name, description, price, category, quantity, shipping } = fields;
+
+      // if (!name || !description || !price || !category || !quantity || !shipping) {
+      //     return res.status(400).json({
+      //         error: 'All fields are required'
+      //     });
+      // }
+      try{
+        let product = req.product;
+        product = _.extend(product , fields)
+      
+     
+
+      // 1kb = 1000
+      // 1mb = 1000000
+      if(files.photo){
+       if(files.photo.size >1000000){
+         return res.status(400).json({
+           error :" Image should be less than 1mb in size"
+         });
+       }
+       product.photo.data = fs.readFileSync(files.photo.path)
+       product.photo.contentType = files.photo.type
+      }
+    }catch (err) {
+      console.log(err)
+      return res.status(500).json({
+        
+        message : 'update not successful'         
+      })
+    }
+    });
+  });
 
 module.exports = router;
