@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
-import { Redirect } from 'react-router-dom';
+import { Redirect, Link, withRouter } from 'react-router-dom';
 // @material-ui/core components
 import { makeStyles } from '@material-ui/core/styles';
 import InputAdornment from '@material-ui/core/InputAdornment';
@@ -31,8 +31,7 @@ import { createProfile, getUserProfile } from '../../actions/profile';
 const useStyles = makeStyles(styles);
 
 function CreateProfile({createProfile,
-      getUserProfile,
-      profile : {profile,loading}})  {
+      history})  {
   const [cardAnimaton, setCardAnimation] = React.useState('cardHidden');
   setTimeout(function() {
     setCardAnimation('');
@@ -51,27 +50,6 @@ function CreateProfile({createProfile,
   });
  const classes = useStyles();
 
- useEffect(() => {
-   getUserProfile();
-   setFormData({
-     address1: loading || !profile.address1 ? '' : profile.address1,
-     address2: loading || !profile.address2 ? '' : profile.address2,
-     city: loading || !profile.city ? '' : profile.city,
-     state: loading || !profile.state ? '' : profile.state,
-     country: loading || !profile.country ? '' : profile.country,
-     zipcode: loading || !profile.zipcode ? '' : profile.zipcode,
-     homePhone : loading || !profile.homePhone ? '' : profile.homePhone,
-     mobilePhone : loading || !profile.mobilePhone ? '' : profile.mobilePhone,
-     alternateEmail : loading || !profile.alternateEmail ? '' : profile.alternateEmail
-   });
- }, [loading]);
-
- useEffect(() => {
-  return () => {
-    console.log("cleaned up");
-  };
-}, []);
-
  const { address1, address2, city, state, country, 
   zipcode, homePhone, mobilePhone, alternateEmail } = formData;
 
@@ -87,14 +65,14 @@ function CreateProfile({createProfile,
   // OnSubmit Event Handler
   const onSubmit = e => {
     e.preventDefault();
-    createProfile(formData);
+    createProfile(formData,history);
     
   };
 
-  if (!loading) {
-    console.log('inside loading');
-    return <Redirect to='/dashboard' />;
-  }
+  // if (!loading) {
+  //   console.log('inside loading');
+  //   return <Redirect to='/dashboard' />;
+  // }
   return (
     <div>
       <div
@@ -300,20 +278,14 @@ function CreateProfile({createProfile,
 }
 
 CreateProfile.propTypes = {
-  createProfile: PropTypes.func.isRequired,
-  profile: PropTypes.object.isRequired,
-  getUserProfile:PropTypes.func.isRequired
+  createProfile: PropTypes.func.isRequired
 };
-
-const mapStateToProps = state => ({
-  profile: state.profile
-});
 
 // export default connect(
 //   mapStateToProps,
 //   { register }
 // )(RegisterPage);
 export default connect(
-  mapStateToProps,
-  {createProfile, getUserProfile}
-)(CreateProfile);
+  null,
+  {createProfile}
+)(withRouter(CreateProfile));
