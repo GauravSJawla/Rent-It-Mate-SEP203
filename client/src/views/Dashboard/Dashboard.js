@@ -3,13 +3,11 @@ import PropTypes from 'prop-types';
 import {connect} from 'react-redux';
 import {getUserProfile} from '../../actions/profile';
 
-const Dashboard = ({getUserProfile, auth, profile:{profile,loading}}) => {
-  getUserProfile();
+const Dashboard = ({auth, profile:{profile,loading}}) => {
   return loading && profile === null ? <Fragment>Dashboard Page</Fragment> : <Fragment>User logged in</Fragment>;
 };
 
 Dashboard.propTypes = {
-  getUserProfile : PropTypes.func.isRequired,
   auth : PropTypes.object.isRequired,
   profile : PropTypes.object.isRequired
 };
@@ -19,4 +17,4 @@ const mapStateToProps = state => ({
   profile : state.profile
 });
 
-export default connect(mapStateToProps,{getUserProfile})(Dashboard);
+export default connect(mapStateToProps)(Dashboard);
