@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const auth = require('../../middleware/auth');
-const { validationResult } = require('express-validator/check');
+const { check } = require('express-validator');
 const Category = require('../../models/Category');
 const Product = require('../../models/Product');
 const formidable = require('formidable')
@@ -54,7 +54,26 @@ router.get('/:productId',(req , res) =>{
  *       for this method.
  * @access  private  
  */
-router.post('/create', auth, (req, res) => {
+router.post('/create',[
+    check('name','please include a product name')
+    .not()
+    .isEmpty(),
+    check('description','please include a descriptiom')
+    .not()
+    .isEmpty(),
+    check('price','please include a price')
+    .not()
+    .isEmpty(),
+    check('category','please include a category')
+    .not()
+    .isEmpty(),
+    check('quantity','please include quantity')
+    .not()
+    .isEmpty(),
+    check('shipping','do you want to ship right now or not')
+    .not()
+    .isEmpty()
+], auth, (req, res) => {
     let form = new formidable.IncomingForm()
     form.keepExtensions = true
     form.parse(req , (err, fields , files) =>{
@@ -63,8 +82,10 @@ router.post('/create', auth, (req, res) => {
           error: 'Image could not be uploaded'
         })
       }
+      
       //check for all fields
       const { name, description, price, category, quantity, shipping } = fields;
+      console.log(name);
       if (!name || !description || !price || !category || !quantity || !shipping) {
           return res.status(400).json({
               error: 'All fields are required'
