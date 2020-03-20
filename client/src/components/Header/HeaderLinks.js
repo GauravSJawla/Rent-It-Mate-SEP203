@@ -79,6 +79,17 @@ const HeaderLinks = ({ auth: { isAuthenticated, loading }, logout }) => {
             </Link>,
 
             { divider: true },
+
+            <Link
+              component={Link}
+              to="/get-profile"
+              className={classes.listLink}
+            >
+              Get Profile
+            </Link>,
+
+            { divider: true },
+
             <Link
               component={Link}
               to="/edit-profile"

@@ -15,6 +15,7 @@ router.get('/me', auth, async(req,res) => {
             'users',['name','email']
         );
         if(!userProfile){
+            console.log('inside no user profile');
             return res.status(400).json({msg: 'You are yet to create your profile'});
         }
         res.json(userProfile);
