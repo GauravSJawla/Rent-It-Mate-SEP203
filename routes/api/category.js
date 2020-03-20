@@ -25,7 +25,7 @@ router.post('/', auth, async (req, res) => {
     if (category) {
       return res
         .status(400)
-        .json({ errors: [{ msg: 'Category already exists!' }] });
+        .json({ errors: [{ msg: 'Category already exists! Update it!' }] });
     }
 
     //create
@@ -72,6 +72,38 @@ router.get('/:category_id', auth, async (req, res) => {
     if (err.kind == 'ObjectId') {
       return res.status(400).json({ msg: 'Category not found!' });
     }
+    res.status(500).send('Server Error');
+  }
+});
+
+// @route   POST api/category/:category_id
+// @desc    Update a category by category ID
+// @access  Private
+
+router.post('/:category_id', auth, async (req, res) => {
+  const errors = validationResult(req);
+  if (!errors.isEmpty()) {
+    return res.status(400).json({ errors: errors.array() });
+  }
+
+  const { name } = req.body;
+  const categoryFields = {};
+  if (name) categoryFields.name = name;
+
+  try {
+    let category = await Category.findOne({ _id: req.params.category_id });
+
+    if (category) {
+      //Update
+      category = await Category.findOneAndUpdate(
+        { _id: req.params.category_id },
+        { $set: categoryFields },
+        { new: true }
+      );
+      return res.json(category);
+    }
+  } catch (err) {
+    console.error(err.message);
     res.status(500).send('Server Error');
   }
 });
