@@ -19,6 +19,8 @@ import Dashboard from 'views/Dashboard/Dashboard';
 import EmailVerifyPage from 'views/EmailVerifyPage/EmailVerifyPage';
 import CreateProfile from 'views/ProfilePage/CreateProfile';
 
+import Alert from '../src/components/Alert/Alert';
+
 if (localStorage.token) {
   setAuthToken(localStorage.token);
 }
@@ -38,6 +40,7 @@ const App = () => {
             rightLinks={<HeaderLinks />}
           />
           <Route exact path='/' component={LandingPage} />
+          <Alert />
           <Switch>
             <Route exact path='/login' component={LoginPage} />
             <Route exact path='/register' component={RegisterPage} />

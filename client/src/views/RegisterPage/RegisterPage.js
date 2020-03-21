@@ -27,9 +27,11 @@ import image from 'assets/img/bg7.jpg';
 //Import register from other component
 import { register } from '../../actions/auth';
 
+import { setAlert } from '../../actions/alert';
+
 const useStyles = makeStyles(styles);
 
-function RegisterPage({ register, isAuthenticated }) {
+function RegisterPage({ register, isAuthenticated, setAlert }) {
   const [cardAnimaton, setCardAnimation] = React.useState('cardHidden');
   setTimeout(function() {
     setCardAnimation('');
@@ -58,7 +60,7 @@ function RegisterPage({ register, isAuthenticated }) {
     e.preventDefault();
     console.log('name in else:' + { name });
     if (password !== password2) {
-      alert('Passwords do not match');
+      setAlert('Passwords do not match', 'danger');
     } else {
       register({ name, username, email, password });
     }
@@ -107,7 +109,7 @@ function RegisterPage({ register, isAuthenticated }) {
                       inputProps={{
                         type: 'text',
                         value: name,
-                        required : true,
+                        required: true,
                         onChange: e => onChange(e),
                         endAdornment: (
                           <InputAdornment position='end'>
@@ -143,7 +145,7 @@ function RegisterPage({ register, isAuthenticated }) {
                       inputProps={{
                         type: 'email',
                         value: email,
-                        required : true,
+                        required: true,
                         onChange: e => onChange(e),
                         endAdornment: (
                           <InputAdornment position='end'>
@@ -182,7 +184,7 @@ function RegisterPage({ register, isAuthenticated }) {
                       inputProps={{
                         type: 'password',
                         value: password2,
-                        required : true,
+                        required: true,
                         onChange: e => onChange(e),
                         endAdornment: (
                           <InputAdornment position='end'>
@@ -222,5 +224,5 @@ const mapStateToProps = state => ({
 
 export default connect(
   mapStateToProps,
-  { register }
+  { register, setAlert }
 )(RegisterPage);
