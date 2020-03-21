@@ -3,7 +3,8 @@ import{
     UPDATE_PROFILE,
     GET_PROFILE,
     PROFILE_ERROR,
-    CLEAR_PROFILE
+    CLEAR_PROFILE,
+    ACCOUNT_DELETED
 } from './types';
 
 export const createProfile = (formData, history, edit = false) => async dispatch => {
@@ -55,3 +56,28 @@ export const getUserProfile = () => async dispatch => {
         });
     }
 };
+
+// Delete Account
+
+export const deleteProfile = () => async dispatch => {
+    if(window.confirm('Are you sure to delete your account?')){
+        try{
+            const res =  await axios.delete('/api/profile');
+            dispatch({
+                type: CLEAR_PROFILE
+            });
+            dispatch({
+                type: ACCOUNT_DELETED
+            });
+          //  dispatch(setAlert('Your account is been removed','success'));
+        }
+        catch(err){
+            dispatch({
+                type: PROFILE_ERROR,
+                payload: {status : err}
+            });
+        }
+
+    }
+    
+}
