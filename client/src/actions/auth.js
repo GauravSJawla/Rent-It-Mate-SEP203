@@ -29,7 +29,6 @@ export const loadUser = () => async dispatch => {
   }
 };
 
-
 //Register User method on a successful submit
 export const register = ({
   name,
