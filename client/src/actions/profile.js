@@ -60,6 +60,7 @@ export const getUserProfile = () => async dispatch => {
 // Delete Account
 
 export const deleteProfile = () => async dispatch => {
+    console.log('inside delete profile action')
     if(window.confirm('Are you sure to delete your account?')){
         try{
             const res =  await axios.delete('/api/profile');
