@@ -3,6 +3,13 @@ const { ObjectId } = mongoose.Schema;
 
 const productSchema = new mongoose.Schema(
   {
+    product_id: {
+      type: String,
+      trim: true,
+      required: true,
+      maxlength: 32,
+      unique: true
+    },
     name: {
       type: String,
       trim: true,
@@ -26,7 +33,8 @@ const productSchema = new mongoose.Schema(
       required: true
     },
     quantity: {
-      type: Number
+      type: Number,
+      default:0
     },
     sold: {
       type: Number,
