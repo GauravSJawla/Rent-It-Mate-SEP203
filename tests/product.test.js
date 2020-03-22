@@ -38,53 +38,35 @@ describe('product create/update/delete product', () => {
         return expect(token).toBeTruthy();
       });
 
-    // it('can create a product', async() => {
-    //   jest.setTimeout(10000);
-    //   //creating a product in form
-    //   var form = new FormData();
-    //   form.append('name' , 'test product');
-    //   form.append('description' , 'test')
-    //   form.append('price',10)
-    //   form.append('category', '5e69c7e27cd0040a7a1c0d7e')
-    //   form.append('quantity', 1)
-    //   form.append('shipping','true')
-    //   form.append('photo', fs.createReadStream('/buffer/table.jpeg'))
-    //   console.log(token)
-    //    const response = await request.post('/api/product/create')
-    //                                  .set('x-auth-token' , token)
-    //                                  .set('form-data' , form)
-    //                                 //  .field('description' , 'test')
-    //                                 //  .field('price',10)
-    //                                 //  .field('category', '5e69c7e27cd0040a7a1c0d7e')
-    //                                 //  .field('quantity', 1)
-    //                                 //  .field('shipping','true')
-    //                                  .attach('file','./buffer/table.jpeg')
-    //                                  .expect(response => {
-    //                                   expect(response.status).toBe(200)})
-                                     
-    //   return expect(JSON.stringify(response.body)).toMatch('test product')
-    // })
-
-    it('can delete a product', async() => {
-        const response = await request.delete('/api/product')
-                                .query({
-                                  productId : ''
-                                })
-                                .set('x-auth-token', token)
-                                .send({
-                                    "address1" : "Quail Hollow",
-	                                "address2" : "",
-	                                "city" : "Cedar rapids",
-	                                "state" : "iowa",
-	                                "country": "USA",
-	                                "zipcode" : 52402,
-	                                "homePhone": 8888899999,
-	                                "mobilePhone" : 1234567890,
-	                                "alternateEmail":"yyy@xxx.com",
-	                                "role" : "user"
-                                }).expect(200);
-        return expect(JSON.stringify(response.body)).toMatch("Quail Hollow"); 
+    it('can create a product', async() => {
+      jest.setTimeout(10000);
+      //creating a product in form
+      console.log(token)
+      var form = new FormData();
+            const response = await request.post('/api/product/create')
+                                          .set('x-auth-token' , token)
+                                          .set('form-data' , form)
+                                          .field('name','test product')
+                                          .field('description' , 'test')
+                                          .field('price',10)
+                                          .field('category', '5e69c7e27cd0040a7a1c0d7e')
+                                          .field('quantity', 1)
+                                          .field('shipping','true')
+                                          .attach('file','./buffer/table.jpeg')
+                                          .expect(response => {
+                                          expect(response.status).toBe(200)})
+    return expect(JSON.stringify(response.body)).toMatch('test product')
     })
+
+    // it('can delete a product', async() => {
+    //     const response = await request.delete('/api/product/')
+    //                             .query({
+    //                               productId : '5e6fed44b76c720a212a1f98',
+    //                               username : 'mercy'
+    //                             })
+    //                             .set('x-auth-token', token)
+    //                             .send().expect(200);
+    // })
 
     // it('throw validation errors on invalid entry', async() => {
     //   const response = await request.post('/api/profile')
