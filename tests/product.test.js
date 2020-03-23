@@ -9,7 +9,12 @@ const request = supertest(app);
 //form data
 const FormData = require('formidable')
 const fs = require('fs');
-
+/**
+ * This is a test framework for product.js.
+ * It works by first creating a test product using authentication.
+ * It updates this product by adding a different picture and name for it and we can also change the description and everything
+ * Then we delete this product.
+ */
 describe('product create/update/delete product', () => {
     const mongoURI = config.get('mongoURI');
     let connection,token, duplicateProduct;
@@ -100,6 +105,17 @@ describe('product create/update/delete product', () => {
                                           .expect(response => {
                                           expect(response.status).toBe(200)})
     });
+    /**
+     * Test case to get or display the updated product
+     */
+    it('can get a product' , async() =>{
+      console.log(duplicateProduct._id +' the id is')
+                       await request.get('/api/product/'+duplicateProduct._id)
+                                    .send()
+                                    .expect(response => {
+                                      expect(response.status).toBe(200)
+                                    })
+    })
     /**
      * test case for deletion
      */

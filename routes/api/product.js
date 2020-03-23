@@ -17,7 +17,7 @@ const { errorHandler } = require('../../helpers/dbErrorHandler');
  * @access  public
  */
 router.param('productId' , (req, res, next, id) => {
- // console.log('inside product get by id'+id+' console '+JSON.stringify(Product.findById(id)));
+  //console.log('inside product get by id'+id+' console '+JSON.stringify(Product.findById(id)));
   Product.findById(id)
   .exec( (err , product) =>{
     if( err || !product){
@@ -42,7 +42,7 @@ router.param('productId' , (req, res, next, id) => {
  * @access  public 
  */
 router.get('/:productId',(req , res) =>{
-  console.log(req.product);
+  console.log(req.product+' inside get');
   req.product.photo = undefined
   return res.json(req.product);
 })
