@@ -13,6 +13,7 @@ import setAuthToken from '../utils/setAuthToken';
 
 // Load User
 export const loadUser = () => async dispatch => {
+  console.log('insude loaduser');
   if (localStorage.token) {
     setAuthToken(localStorage.token);
   }
@@ -70,12 +71,13 @@ export const login = (username, password) => async dispatch => {
   try {
     const res = await axios.post('/api/auth', body, config);
     console.log(res.data);
-
+    dispatch(loadUser());
     dispatch({
       type: LOGIN_SUCCESS,
       payload: res.data
     });
-    dispatch(loadUser());
+    
+    
   } catch (err) {
     const errors = err.response.data.errors;
     if (errors) {

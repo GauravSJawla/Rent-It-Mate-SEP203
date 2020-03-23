@@ -36,6 +36,16 @@ describe('user create/update/delete profile', () => {
         return expect(token).toBeTruthy();
       });
 
+    it('should give yet to create profile if no profile', async() => {
+        const duplicateProfile = await Profile.findOne({user:id});
+          if (duplicateProfile){
+              await Profile.deleteOne(duplicateProfile);
+          }
+          const response = await request.get('/api/profile/me')
+                                      .set('x-auth-token', token).expect(400);
+          return expect(JSON.stringify(response.body)).toMatch('You are yet to create your profile');
+    })
+
     it('can create a profile', async() => {
         const user = await User.findOne({username:'mercy'});
         id = user.id;
@@ -46,7 +56,7 @@ describe('user create/update/delete profile', () => {
         const response = await request.post('/api/profile')
                                 .set('x-auth-token', token)
                                 .send({
-                                    "address1" : "pinehurst drive",
+                                  "address1" : "pinehurst drive",
 	                                "address2" : "",
 	                                "city" : "Cedar rapids",
 	                                "state" : "iowa",
@@ -64,7 +74,7 @@ describe('user create/update/delete profile', () => {
         const response = await request.post('/api/profile')
                                 .set('x-auth-token', token)
                                 .send({
-                                    "address1" : "Quail Hollow",
+                                  "address1" : "Quail Hollow",
 	                                "address2" : "",
 	                                "city" : "Cedar rapids",
 	                                "state" : "iowa",
@@ -96,13 +106,14 @@ describe('user create/update/delete profile', () => {
       return expect(JSON.stringify(response.error));
     })
 
-    it('should give yet to create profile if no profile', async() => {
-      const duplicateProfile = await Profile.findOne({user:id});
-        if (duplicateProfile){
-            await Profile.deleteOne(duplicateProfile);
-        }
-        const response = await request.get('/api/profile/me')
-                                    .set('x-auth-token', token).expect(400);
-        return expect(JSON.stringify(response.body)).toMatch('You are yet to create your profile');
+    it('should delete the profile', async() => {
+      const response = await request.delete('/api/profile').
+                                  set('x-auth-token',token).
+                                  expect(200);
+      return expect(JSON.stringify(response.body)).toMatch('User removed');
     })
+
+    
+
+    
 })

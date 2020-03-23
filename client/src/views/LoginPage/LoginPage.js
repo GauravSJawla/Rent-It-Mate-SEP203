@@ -47,6 +47,7 @@ const LoginPage = ({ login, isAuthenticated }) => {
     });
 
   const onSubmit = e => {
+    console.log('inside login submit');
     e.preventDefault();
     login(username, password);
   };

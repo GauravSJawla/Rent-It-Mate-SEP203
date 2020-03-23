@@ -15,14 +15,15 @@ const Dashboard = ({getUserProfile, deleteProfile,
   profile:{profile,loading}}) => {
     const classes = useStyles();
   useEffect(() => {
+    console.log('inside dashboard getuser')
     getUserProfile();
-  },[loading]);
+  },[]);
 
   const onSubmit = e => {
     deleteProfile();
   };
 
-  return loading && profile === null ? <Fragment>Dashboard Page</Fragment> : <Fragment>
+  return !loading && profile === null ? (<Fragment>Dashboard Page</Fragment> ): ( <Fragment>
     <Parallax filter image={require("assets/img/landing-bg.jpg")}>
         <div className={classes.landingContainer}>
           <GridContainer>
@@ -34,7 +35,7 @@ const Dashboard = ({getUserProfile, deleteProfile,
           </GridContainer>
         </div>
     </Parallax>
-</Fragment>;
+</Fragment>);
 };
 
 Dashboard.propTypes = {

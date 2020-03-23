@@ -1,6 +1,5 @@
 import axios from 'axios';
 import{
-    UPDATE_PROFILE,
     GET_PROFILE,
     PROFILE_ERROR,
     CLEAR_PROFILE,
@@ -43,7 +42,9 @@ export const createProfile = (formData, history, edit = false) => async dispatch
 
 export const getUserProfile = () => async dispatch => {
     try{
+        console.log('inside get user prfile');
         const res = await axios.get('/api/profile/me');
+        console.log('user profile ',res)
         dispatch({
             type: GET_PROFILE,
             payload: res.data
