@@ -186,6 +186,7 @@ router.put('/:productId', auth, (req, res)=>{
                 error: errorHandler(err)
             });
         }
+        console.log('update result '+ result)
         res.json(result);
       
       });

@@ -12,12 +12,12 @@ const fs = require('fs');
 
 describe('product create/update/delete product', () => {
     const mongoURI = config.get('mongoURI');
-    let connection,token, id;
+    let connection,token, duplicateProduct;
 
     beforeAll( async() => {
         connection = await MongoClient.connect(mongoURI, {useNewUrlParser: true,
             useUnifiedTopology: true});
-        let duplicateProduct = await Product.findOne({
+        duplicateProduct = await Product.findOne({
               name : 'test product',
               description :'test',
               price : 10,
@@ -26,7 +26,6 @@ describe('product create/update/delete product', () => {
               shipping : true,
               username :'5e7920901c9d44000040af6a'
             })
-          console.log(duplicateProduct+'test ')
         if(duplicateProduct){
           console.log('inside delete')
              await Product.deleteOne(duplicateProduct);
@@ -72,23 +71,47 @@ describe('product create/update/delete product', () => {
                                           expect(response.status).toBe(200)})
     return expect(JSON.stringify(response.body)).toMatch('test product')
     });
-
-    it('can delete a product', async() => {
-      jest.setTimeout(1000)
-       const product = await Product.findOne({
+   /**
+     * test for update
+     */
+    it('can update a product', async() => {
+      //creating a product in form
+      var form = new FormData();
+      duplicateProduct = await Product.findOne({
         name : 'test product',
         description :'test',
         price : 10,
         category : '5e69c7e27cd0040a7a1c0d7e',
         quantity : 1,
         shipping : true,
-        username: '5e7920901c9d44000040af6a'
+        username :'5e7920901c9d44000040af6a'
       })
+       const response = await request.put('/api/product/'+duplicateProduct._id)
+                                          .set('x-auth-token' , token)
+                                          .set('form-data' , form)
+                                          .field('name','test product updated')
+                                          .field('description' , 'test')
+                                          .field('price',10)
+                                          .field('category', '5e69c7e27cd0040a7a1c0d7e')
+                                          .field('quantity', 1)
+                                          .field('shipping','true')
+                                          .field('username' , '5e7920901c9d44000040af6a')
+                                          .attach('photo','./buffer/table_01.jpeg')
+                                          .expect(response => {
+                                          expect(response.status).toBe(200)})
+    });
+    /**
+     * test case for deletion
+     */
+    it('can delete a product', async() => {
+      jest.setTimeout(1000)
+      const product = await Product.findById(duplicateProduct._id)
       const unm = 'mercy'
-        const response = await request.delete('/api/product/'+product._id+'/'+unm)
+      const response = await request.delete('/api/product/'+product._id+'/'+unm)
                                 .set('x-auth-token', token)
                                 .send()
         return expect(JSON.stringify(response.body)).toMatch('product deleted successfully')
     });
+    
 
 })
