@@ -19,7 +19,7 @@ import Dashboard from 'views/Dashboard/Dashboard';
 import EmailVerifyPage from 'views/EmailVerifyPage/EmailVerifyPage';
 import CreateProfile from 'views/ProfilePage/CreateProfile';
 
-import Alert from '../src/components/Alert/Alert';
+import Alert from './components/Layouts/Alert/Alert';
 
 if (localStorage.token) {
   setAuthToken(localStorage.token);

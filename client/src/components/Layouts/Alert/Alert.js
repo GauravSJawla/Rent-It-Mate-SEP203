@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react';
+import React from 'react';
 // @material-ui/core components
 import { makeStyles } from '@material-ui/core/styles';
 
@@ -24,7 +24,6 @@ const Alert = ({ alerts }) => {
         <SnackbarContent
           key={alert.id}
           message={<span>{alert.msg}</span>}
-          close
           color={alert.alertType}
           icon='info_outline'
         />
