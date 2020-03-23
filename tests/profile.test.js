@@ -20,11 +20,22 @@ describe('user create/update/delete profile', () => {
         request.close();
         app.destroy();
     });
+
+    it('can create an user in the database', async () => {
+      const response = await request.post('/api/users')
+      .send({
+          name : 'Test',
+          username : 'TestUser1',
+          email : 'testuser1@gmail.com',
+          password : 'test'
+
+      }).expect(200);
+    });
     it('can get token', async () => {
         response = await request
           .post('/api/auth')
           .send({
-            username: 'TestUser',
+            username: 'TestUser1',
             password: 'test'
           })
           .expect(200);
