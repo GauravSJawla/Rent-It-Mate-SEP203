@@ -24,8 +24,8 @@ describe('user create/update/delete profile', () => {
         response = await request
           .post('/api/auth')
           .send({
-            username: 'mercy',
-            password: 'gentle'
+            username: 'TestUser',
+            password: 'test'
           })
           .expect(200);
         token = response.body.token;
