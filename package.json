@@ -15,7 +15,7 @@
   },
   "main": "server.js",
   "scripts": {
-    "test": "jest --verbose --forceExit --detectOpenHandles ./tests",
+    "test": "NODE_ENV=test jest --verbose --forceExit --detectOpenHandles ./tests",
     "start": "node server",
     "server": "nodemon server",
     "client": "npm start --prefix client",
