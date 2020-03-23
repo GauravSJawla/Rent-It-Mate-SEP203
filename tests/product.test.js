@@ -1,4 +1,5 @@
 const Product = require('../models/Product');
+const Users = require('../models/Users');
 const config = require('config');
 const expect = require('expect');
 const MongoClient = require('mongodb');
@@ -12,18 +13,34 @@ const fs = require('fs');
 describe('product create/update/delete product', () => {
     const mongoURI = config.get('mongoURI');
     let connection,token, id;
+
     beforeAll( async() => {
         connection = await MongoClient.connect(mongoURI, {useNewUrlParser: true,
             useUnifiedTopology: true});
+        let duplicateProduct = await Product.findOne({
+              name : 'test product',
+              description :'test',
+              price : 10,
+              category : '5e69c7e27cd0040a7a1c0d7e',
+              quantity : 1,
+              shipping : true,
+              username :'5e7920901c9d44000040af6a'
+            })
+          console.log(duplicateProduct+'test ')
+        if(duplicateProduct){
+          console.log('inside delete')
+             await Product.deleteOne(duplicateProduct);
+            }
      });
+     beforeEach(() => {
+      jest.setTimeout(10000);
+    });
      afterAll( () => {
         connection.close();
         request.close();
-        app.destroy();
     });
     it('can get token', async () => {
-      jest.setTimeout(10000);
-        response = await request
+        const response = await request
           .post('/api/auth')
           .send({
             username: 'mercy',
@@ -31,7 +48,6 @@ describe('product create/update/delete product', () => {
           })
           .expect(200);
         token = response.body.token;
-        id = response.body.id;
         if (token) {
           return expect(token).toBeTruthy();
         }
@@ -39,11 +55,9 @@ describe('product create/update/delete product', () => {
       });
 
     it('can create a product', async() => {
-      jest.setTimeout(10000);
       //creating a product in form
-      console.log(token)
       var form = new FormData();
-            const response = await request.post('/api/product/create')
+       const response = await request.post('/api/product/create')
                                           .set('x-auth-token' , token)
                                           .set('form-data' , form)
                                           .field('name','test product')
@@ -52,47 +66,29 @@ describe('product create/update/delete product', () => {
                                           .field('category', '5e69c7e27cd0040a7a1c0d7e')
                                           .field('quantity', 1)
                                           .field('shipping','true')
-                                          .attach('file','./buffer/table.jpeg')
+                                          .field('username' , '5e7920901c9d44000040af6a')
+                                          .attach('photo','./buffer/table.jpeg')
                                           .expect(response => {
                                           expect(response.status).toBe(200)})
     return expect(JSON.stringify(response.body)).toMatch('test product')
-    })
+    });
 
-    // it('can delete a product', async() => {
-    //     const response = await request.delete('/api/product/')
-    //                             .query({
-    //                               productId : '5e6fed44b76c720a212a1f98',
-    //                               username : 'mercy'
-    //                             })
-    //                             .set('x-auth-token', token)
-    //                             .send().expect(200);
-    // })
+    it('can delete a product', async() => {
+      jest.setTimeout(1000)
+       const product = await Product.findOne({
+        name : 'test product',
+        description :'test',
+        price : 10,
+        category : '5e69c7e27cd0040a7a1c0d7e',
+        quantity : 1,
+        shipping : true,
+        username: '5e7920901c9d44000040af6a'
+      })
+      const unm = 'mercy'
+        const response = await request.delete('/api/product/'+product._id+'/'+unm)
+                                .set('x-auth-token', token)
+                                .send()
+        return expect(JSON.stringify(response.body)).toMatch('product deleted successfully')
+    });
 
-    // it('throw validation errors on invalid entry', async() => {
-    //   const response = await request.post('/api/profile')
-    //                             .set('x-auth-token', token)
-    //                             .send({
-    //                               "address1" : "",
-	//                                 "address2" : "",
-	//                                 "city" : "Cedar rapids",
-	//                                 "state" : "iowa",
-	//                                 "country": "USA",
-	//                                 "zipcode" : 52402,
-	//                                 "homePhone": 8888899999,
-	//                                 "mobilePhone" : 1234567890,
-	//                                 "alternateEmail":"yyy@xxx.com",
-	//                                 "role" : "user"
-    //                             });
-    //   return expect(JSON.stringify(response.error));
-    // })
-
-    // it('should give yet to create profile if no profile', async() => {
-    //   const duplicateProfile = await Profile.findOne({user:id});
-    //     if (duplicateProfile){
-    //         await Profile.deleteOne(duplicateProfile);
-    //     }
-    //     const response = await request.get('/api/profile/me')
-    //                                 .set('x-auth-token', token).expect(400);
-    //     return expect(JSON.stringify(response.body)).toMatch('You are yet to create your profile');
-    // })
 })

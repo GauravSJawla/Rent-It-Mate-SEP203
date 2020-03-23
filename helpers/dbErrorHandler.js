@@ -32,6 +32,7 @@ exports.errorHandler = error => {
             case 11000:
             case 11001:
                 message = uniqueMessage(error);
+                console.log(error);
                 break;
             default:
                 message = "Something went wrong";

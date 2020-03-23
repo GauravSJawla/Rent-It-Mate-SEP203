@@ -84,9 +84,9 @@ router.post('/create',[
       }
       
       //check for all fields
-      const { name, description, price, category, quantity, shipping } = fields;
-      console.log(name);
-      if (!name || !description || !price || !category || !quantity || !shipping) {
+      const { name, description, price, category, quantity, shipping , username } = fields;
+
+      if (!name || !description || !price || !category || !quantity || !shipping || !username) {
           return res.status(400).json({
               error: 'All fields are required'
           });
@@ -98,6 +98,7 @@ router.post('/create',[
 
      if(files.photo){
        if(files.photo.size >1000000){
+         console.log(' inside greater size')
          return res.status(400).json({
            error :" Image should be less than 1mb in size"
          });
@@ -112,7 +113,6 @@ router.post('/create',[
           error: errorHandler(err)
         });
       }
-      console.log(result);
       res.json(result);
     });
   });
@@ -156,8 +156,8 @@ router.put('/:productId', auth, (req, res)=>{
       /**
        * check for all fields
        */
-      const { name, description, price, category, quantity, shipping } = fields;
-      if (!name || !description || !price || !category || !quantity || !shipping) {
+      const { name, description, price, category, quantity, shipping , username} = fields;
+      if (!name || !description || !price || !category || !quantity || !shipping || !username) {
           return res.status(400).json({
               error: 'All fields are required'
           });

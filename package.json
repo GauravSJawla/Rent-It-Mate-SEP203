@@ -6,7 +6,8 @@
     "testEnvironment": "node",
     "coveragePathIgnorePatterns": [
       "/node_modules/"
-    ]
+    ],
+    "testTimeout": 20000
   },
   "version": "1.0.0",
   "description": "Renting Platform for local communities",
