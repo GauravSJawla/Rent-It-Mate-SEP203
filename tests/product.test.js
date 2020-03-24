@@ -76,6 +76,64 @@ describe('product create/update/delete product', () => {
                                           expect(response.status).toBe(200)})
     return expect(JSON.stringify(response.body)).toMatch('test product')
     });
+    /**
+     * test for update - when one of the parameters does not exist
+     */
+    it('can update a product - when some fields are missing', async() => {
+      //creating a product in form
+      var form = new FormData();
+      duplicateProduct = await Product.findOne({
+        name : 'test product',
+        description :'test',
+        price : 10,
+        category : '5e69c7e27cd0040a7a1c0d7e',
+        quantity : 1,
+        shipping : true,
+        username :'5e7920901c9d44000040af6a'
+      })
+      await request.put('/api/product/'+duplicateProduct._id)
+                                          .set('x-auth-token' , token)
+                                          .set('form-data' , form)
+                                          .field('name','test product updated')
+                                          .field('description' , '')
+                                          .field('price',10)
+                                          .field('category', '')
+                                          .field('quantity', 1)
+                                          .field('shipping','true')
+                                          .field('username' , '5e7920901c9d44000040af6a')
+                                          .attach('photo','./buffer/table_01.jpeg')
+                                          .expect(response => {
+                                          expect(response.status).toBe(400)})
+    });
+    /**
+     * test for update - when one of the parameters does not exist
+     */
+    it('can update a product - when image is greater than 1mb', async() => {
+      //creating a product in form
+      var form = new FormData();
+      duplicateProduct = await Product.findOne({
+        name : 'test product',
+        description :'test',
+        price : 10,
+        category : '5e69c7e27cd0040a7a1c0d7e',
+        quantity : 1,
+        shipping : true,
+        username :'5e7920901c9d44000040af6a'
+      })
+      await request.put('/api/product/'+duplicateProduct._id)
+                                          .set('x-auth-token' , token)
+                                          .set('form-data' , form)
+                                          .field('name','test product updated')
+                                          .field('description' , '')
+                                          .field('price',10)
+                                          .field('category', '')
+                                          .field('quantity', 1)
+                                          .field('shipping','true')
+                                          .field('username' , '5e7920901c9d44000040af6a')
+                                          .attach('photo','./buffer/over_size.jpg')
+                                          .expect(response => {
+                                          expect(response.status).toBe(400)})
+    });
    /**
      * test for update
      */
@@ -109,7 +167,6 @@ describe('product create/update/delete product', () => {
      * Test case to get or display the updated product
      */
     it('can get a product' , async() =>{
-      console.log(duplicateProduct._id +' the id is')
                        await request.get('/api/product/'+duplicateProduct._id)
                                     .send()
                                     .expect(response => {
@@ -117,10 +174,47 @@ describe('product create/update/delete product', () => {
                                     })
     })
     /**
-     * test case for deletion
+     * Test case for failure of get or display the updated product
+     */
+    it('can get a product - failure' , async() =>{
+                       await request.get('/api/product/dummy_id')
+                                    .send()
+                                    .expect(response => {
+                                      expect(response.status).toBe(400)
+                                    })
+    })
+    /**
+     * test case for deletion for failure 
+     * deleting a product by a user that doesn't exist
+     */
+    it('can delete a product - when user does not exist', async() => {
+      const product = await Product.findById(duplicateProduct._id)
+      const unm = 'dummy'
+      await request.delete('/api/product/'+product._id+'/'+unm)
+                                .set('x-auth-token', token)
+                                .send()
+                                .expect(response => {
+                                  expect(response.status).toBe(400)
+                                })
+    });
+    /**
+     * test case for deletion for failure 
+     * deleting a product by a user that doesn't exist
+     */
+    it('can delete a product - when neither the product nor user exist', async() => {
+      const product_id = 'dummy'
+      const unm = 'dummy'
+      const response = await request.delete('/api/product/'+product_id+'/'+unm)
+                                .set('x-auth-token', token)
+                                .send()
+                                .expect(response => {
+                                  expect(response.status).toBe(400)
+                                })
+    });
+    /**
+     * test case for deletion - when both user and product exist
      */
     it('can delete a product', async() => {
-      jest.setTimeout(1000)
       const product = await Product.findById(duplicateProduct._id)
       const unm = 'mercy'
       const response = await request.delete('/api/product/'+product._id+'/'+unm)
@@ -128,6 +222,6 @@ describe('product create/update/delete product', () => {
                                 .send()
         return expect(JSON.stringify(response.body)).toMatch('product deleted successfully')
     });
-    
+     
 
 })

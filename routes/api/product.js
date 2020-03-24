@@ -2,8 +2,8 @@ const express = require('express');
 const router = express.Router();
 const auth = require('../../middleware/auth');
 const { check } = require('express-validator');
-const Category = require('../../models/Category');
 const Product = require('../../models/Product');
+const User = require('../../models/Users');
 const formidable = require('formidable')
 const _ = require('lodash');
 const fs = require('fs');
@@ -126,6 +126,14 @@ router.post('/create',[
 */
 router.delete('/:productId/:username' , auth , async (req , res) =>{
   let product = req.product
+  const user = await User.findOne({
+    username : req.params.username
+  })
+  if(!user){
+    return res.status(400).json({
+      error :  'user not found'
+    })
+  }
   await product.remove( (err) =>{
     if(err){
       return res.status(400).json({
