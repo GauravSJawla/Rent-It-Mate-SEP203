@@ -54,6 +54,7 @@ const LoginPage = ({ login, isAuthenticated }) => {
 
   // Redirect if logged in
   if (isAuthenticated) {
+    console.log('inside is authenticated')
     return <Redirect to='/dashboard' />;
   }
   return (

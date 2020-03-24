@@ -28,7 +28,8 @@ export default function (state = initalState, action){
             return{
                 ...state,
                 profile: null,
-                loading:false
+                loading:false,
+                error:null
             }
         case PROFILE_ERROR:
             return{
