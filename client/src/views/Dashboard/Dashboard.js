@@ -1,102 +1,47 @@
-// import React, { Fragment, useEffect } from 'react';
-// import PropTypes from 'prop-types';
-// import {connect} from 'react-redux';
-// import GridContainer from "components/Grid/GridContainer.js";
-// import GridItem from "components/Grid/GridItem.js";
-// import Button from 'components/CustomButtons/Button.js';
-// import Parallax from "components/Parallax/Parallax.js";
-// import { makeStyles } from "@material-ui/core/styles";
-// import styles from "assets/jss/material-kit-react/views/landingPage.js"
-// import Spinner from './Spinner';
-// import {getUserProfile,deleteProfile} from '../../actions/profile';
-
-// const useStyles = makeStyles(styles);
-// const Dashboard = ({getUserProfile, deleteProfile,
-//   auth : {user}, 
-//   profile:{profile,loading}}) => {
-//     const classes = useStyles();
-//   useEffect(() => {
-//     console.log('inside dashboard getuser')
-//     getUserProfile();
-//   },[getUserProfile]);
-
-//   const onSubmit = e => {
-//     deleteProfile();
-//   };
-
-//   return loading && profile === null ? (<Spinner/> ): ( <Fragment>
-//     <Parallax filter image={require("assets/img/landing-bg.jpg")}>
-//         <div className={classes.landingContainer}>
-//           <GridContainer>
-//             <form className={classes.form} onSubmit={e => onSubmit(e)}>
-//                 <h4>Welcome {user && user.name}</h4>
-//                 <br/>
-//                 <Button type='submit'>Delete Account</Button>
-//                 </form>
-//           </GridContainer>
-//         </div>
-//     </Parallax>
-// </Fragment>);
-// };
-
-// Dashboard.propTypes = {
-//   getUserProfile : PropTypes.func.isRequired,
-//   deleteProfile : PropTypes.func.isRequired,
-//   auth : PropTypes.object.isRequired,
-//   profile : PropTypes.object.isRequired
-// };
-
-// const mapStateToProps = state => ({
-//   auth: state.auth,
-//   profile : state.profile
-// });
-
-// export default connect(mapStateToProps, {getUserProfile,deleteProfile})(Dashboard);
-
-import React, {Fragment, useEffect} from 'react';
+import React, { Fragment, useEffect } from 'react';
 import PropTypes from 'prop-types';
-import {connect} from 'react-redux';
-import Parallax from "components/Parallax/Parallax.js";
-import GridContainer from "components/Grid/GridContainer.js";
-import GridItem from "components/Grid/GridItem.js";
-import Button from 'components/CustomButtons/Button.js';
-// import Parallax from "components/Parallax/Parallax.js";
-import { makeStyles } from "@material-ui/core/styles";
-import styles from "assets/jss/material-kit-react/views/landingPage.js"
-import {getUserProfile} from '../../actions/profile';
+import { Link } from 'react-router-dom';
+import { connect } from 'react-redux';
 import Spinner from './Spinner';
+import { getUserProfile} from '../../actions/profile';
 
-const useStyles = makeStyles(styles);
-const Dashboard = ({getUserProfile,
-   auth:{user}, 
-  profile : {profile, loading}}) => {
-  const classes = useStyles();
+const Dashboard = ({
+  getUserProfile,
+  auth: { user },
+  profile: { profile, loading }
+}) => {
   useEffect(() => {
     getUserProfile();
-  }, []);
-  return loading && profile === null ? <Spinner/> : ( <Fragment>
-  <Parallax filter image={require("assets/img/landing-bg.jpg")}>
-    <div className={classes.landingContainer}>
-      <GridContainer>
-         <form className={classes.form}>
-             <h4>Welcome {user && user.name}</h4>
-             <br/>
-             {profile !== null ? <Fragment>has</Fragment> :
-             <Fragment>has not</Fragment>}
-             
-        </form>
-     </GridContainer>
-    </div>
-  </Parallax>
-  </Fragment>
+  }, [getUserProfile]);
+  return loading && profile === null ? (
+    <Spinner />
+  ) : (
+    <Fragment>
+      <h1 className='large text-primary'>Dashboard</h1>
+      <p className='lead'>
+        <i className='fas fa-user' /> Welcome {user && user.name}
+      </p>
+      {profile !== null ? (
+        <Fragment>
+          has
+        </Fragment>
+      ) : (
+        <Fragment>
+          <p>You have not yet setup a profile, please add some info!</p>
+          <Link to='/create-profile' className='btn btn-primary my-1'>
+            Create Profile
+          </Link>
+        </Fragment>
+      )}
+    </Fragment>
   );
-
 };
 
 Dashboard.propTypes = {
-  getUserProfile : PropTypes.func.isRequired,
-  auth : PropTypes.object.isRequired,
-  profile : PropTypes.object.isRequired
+  getUserProfile: PropTypes.func.isRequired,
+  //deleteAccount: PropTypes.func.isRequired,
+  auth: PropTypes.object.isRequired,
+  profile: PropTypes.object.isRequired
 };
 
 const mapStateToProps = state => ({
@@ -104,4 +49,7 @@ const mapStateToProps = state => ({
   profile: state.profile
 });
 
-export default connect(mapStateToProps,{getUserProfile})(Dashboard);
+export default connect(
+  mapStateToProps,
+  { getUserProfile}
+)(Dashboard);
