@@ -72,11 +72,32 @@ const HeaderLinks = ({ auth: { isAuthenticated, loading }, logout }) => {
           dropdownList={[
             <Link
               component={Link}
-              to="/profile"
+              to="/create-profile"
               className={classes.listLink}
             >
-              Profile
+              Create Profile
             </Link>,
+
+            { divider: true },
+
+            <Link
+              component={Link}
+              to="/get-profile"
+              className={classes.listLink}
+            >
+              Get Profile
+            </Link>,
+
+            { divider: true },
+
+            <Link
+              component={Link}
+              to="/edit-profile"
+              className={classes.listLink}
+            >
+              Update Profile
+            </Link>,
+            
             { divider: true },
             <Link
               onClick={logout}

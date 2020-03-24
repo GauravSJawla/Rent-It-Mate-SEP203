@@ -13,6 +13,7 @@ const User = require('../../models/Users');
 // @access  Public
 router.get('/', auth , async(req , res) =>{
     try{
+        console.log('load user', req.user);
         const user = await User.findById(req.user.id).select('-password');
         res.json(user);
     }catch(err){
@@ -31,6 +32,7 @@ router.post(
         check('password','Password is required').exists()
     ],
     async (req , res) => {
+        console.log('inside login user')
         const errors = validationResult(req);
 
         //if above 2 check show errors, following will display 

@@ -30,7 +30,9 @@ import { createProfile, getUserProfile } from '../../actions/profile';
 
 const useStyles = makeStyles(styles);
 
-function CreateProfile({createProfile,
+function EditProfile({ profile : {profile, loading},
+    createProfile,
+      getUserProfile,
       history})  {
   const [cardAnimaton, setCardAnimation] = React.useState('cardHidden');
   setTimeout(function() {
@@ -50,6 +52,21 @@ function CreateProfile({createProfile,
   });
  const classes = useStyles();
 
+ useEffect(() => {
+     getUserProfile();
+     setFormData({
+        address1: loading || !profile.address ? '' : profile.address.address1,
+        address2: loading || !profile.address ? '' : profile.address.address2,
+        city: loading || !profile.address ? '' : profile.address.city,
+        state: loading || !profile.address ? '' : profile.address.state,
+        country: loading || !profile.address ? '' : profile.address.country,
+        zipcode: loading || !profile.address ? '' : profile.address.zipcode,
+        homePhone : loading || !profile.homePhone ? '' : profile.homePhone,
+        mobilePhone : loading || !profile.mobilePhone ? '' : profile.mobilePhone,
+        alternateEmail : loading || !profile.alternateEmail ? '' : profile.alternateEmail
+     });
+ },[loading]);
+
  const { address1, address2, city, state, country, 
   zipcode, homePhone, mobilePhone, alternateEmail } = formData;
 
@@ -65,7 +82,7 @@ function CreateProfile({createProfile,
   // OnSubmit Event Handler
   const onSubmit = e => {
     e.preventDefault();
-    createProfile(formData,history);
+    createProfile(formData,history,true);
     
   };
 
@@ -89,7 +106,7 @@ function CreateProfile({createProfile,
               <Card className={classes[cardAnimaton]}>
                 <form className={classes.form} onSubmit={e => onSubmit(e)}>
                   <CardHeader color='primary' className={classes.cardHeader}>
-                    <h4>Create Your Profile</h4>
+                    <h4>Edit Your Profile</h4>
                     <p>We will be happy to have your information!!!!!</p>
                     <div className={classes.socialLine}>
                     </div>
@@ -277,15 +294,20 @@ function CreateProfile({createProfile,
   );
 }
 
-CreateProfile.propTypes = {
-  createProfile: PropTypes.func.isRequired
+EditProfile.propTypes = {
+  createProfile: PropTypes.func.isRequired,
+  profile : PropTypes.object.isRequired,
+  getUserProfile : PropTypes.func.isRequired
 };
 
+const mapStateToProps = state => ({
+    profile: state.profile
+});
 // export default connect(
 //   mapStateToProps,
 //   { register }
 // )(RegisterPage);
 export default connect(
-  null,
-  {createProfile}
-)(withRouter(CreateProfile));
+  mapStateToProps,
+  {createProfile, getUserProfile}
+)(withRouter(EditProfile));

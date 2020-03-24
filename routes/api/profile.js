@@ -11,17 +11,19 @@ const {check, validationResult} = require('express-validator/check');
 
 router.get('/me', auth, async(req,res) => {
     try{
+        console.log(req.user.id,' getprofiles')
         const userProfile = await profile.findOne({user: req.user.id}).populate(
-            'user',['name','email']
+            'users',['name','email']
         );
         if(!userProfile){
+            console.log('inside no user profile');
             return res.status(400).json({msg: 'You are yet to create your profile'});
         }
-        res.json(userProfile);
+        return res.json(userProfile);
 
     }
     catch(err){
-        //console.err(err.message);
+        console.log(err.message);
         res.status(500).send('server error');  
     }  
 })
@@ -87,5 +89,23 @@ router.post('/', [auth, [
         console.log(err.message);
         res.status(500).send('server error');
     }
-})
+});
+
+// @route delete api/profile
+// @desc delete particular profile
+// @access Private
+
+router.delete('/', auth, async(req,res) => {
+    try{
+        const userProfile = await Profile.findOneAndRemove({user:req.user.id});
+        const user = await User.findOneAndRemove({_id: req.user.id});
+        res.json({msg: 'User removed'});
+
+    }
+    catch(err){
+        console.log(err.message);
+        res.status(500).send('server error');  
+    }  
+});
+
 module.exports = router;
