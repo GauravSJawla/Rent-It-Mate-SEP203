@@ -1,5 +1,2 @@
 {
-    "baseUrl": "http://localhost:3000",
-    "video": false,
-    "ignoreTestFiles": "*.css"
 }
