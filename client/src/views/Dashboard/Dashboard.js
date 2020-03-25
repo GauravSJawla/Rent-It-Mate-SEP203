@@ -2,11 +2,13 @@ import React, { Fragment, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
+import Button from 'components/CustomButtons/Button.js';
 import Spinner from './Spinner';
-import { getUserProfile} from '../../actions/profile';
+import { getUserProfile, deleteProfile} from '../../actions/profile';
 
 const Dashboard = ({
   getUserProfile,
+  deleteProfile,
   auth: { user },
   profile: { profile, loading }
 }) => {
@@ -23,7 +25,10 @@ const Dashboard = ({
       </p>
       {profile !== null ? (
         <Fragment>
-          has
+          <Button simple type='submit' color='primary' size='lg' 
+                        onClick= {() => deleteProfile()}>
+                      Delete My Account
+                    </Button>
         </Fragment>
       ) : (
         <Fragment>
@@ -39,7 +44,7 @@ const Dashboard = ({
 
 Dashboard.propTypes = {
   getUserProfile: PropTypes.func.isRequired,
-  //deleteAccount: PropTypes.func.isRequired,
+  deleteProfile: PropTypes.func.isRequired,
   auth: PropTypes.object.isRequired,
   profile: PropTypes.object.isRequired
 };
@@ -51,5 +56,5 @@ const mapStateToProps = state => ({
 
 export default connect(
   mapStateToProps,
-  { getUserProfile}
+  { getUserProfile,deleteProfile}
 )(Dashboard);

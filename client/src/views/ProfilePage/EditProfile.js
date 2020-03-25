@@ -90,6 +90,7 @@ function EditProfile({ profile : {profile, loading},
   //   console.log('inside loading');
   //   return <Redirect to='/dashboard' />;
   // }
+
   return (
     <div>
       <div
@@ -281,6 +282,10 @@ function EditProfile({ profile : {profile, loading},
                   <CardFooter className={classes.cardFooter}>
                     <Button simple type='submit' color='primary' size='lg'>
                       Update My Profile
+                    </Button>
+                    <Button simple color="primary" size='lg' component={Link} 
+                            to="/dashboard">
+                        Back to Profile
                     </Button>
                   </CardFooter>
                 </form>
