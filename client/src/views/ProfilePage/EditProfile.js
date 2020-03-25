@@ -65,7 +65,7 @@ function EditProfile({ profile : {profile, loading},
         mobilePhone : loading || !profile.mobilePhone ? '' : profile.mobilePhone,
         alternateEmail : loading || !profile.alternateEmail ? '' : profile.alternateEmail
      });
- },[loading]);
+ },[loading, getUserProfile]);
 
  const { address1, address2, city, state, country, 
   zipcode, homePhone, mobilePhone, alternateEmail } = formData;

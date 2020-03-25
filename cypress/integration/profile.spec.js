@@ -18,6 +18,30 @@ describe('create-profile page', () => {
         cy.get('input[id="password"]').type('minnie')
         cy.get('button[type = "submit"]').click()
         cy.url({timeout : 5000}).should('includes','/dashboard')
+        cy.contains('Profile').click().then(() => {
+            cy.get('a[href="/edit-profile"]').click()
+            cy.url({timeout:5000}).should('includes','/edit-profile')
+        })
+    })
+
+    it('details should be empty in the edit profile page', () => {
+        cy.get('input[id="address1"]').should('have.value','')
+        cy.get('input[id="address2"]').should('have.value','')
+        cy.get('input[id="city"]').should('have.value','')
+        cy.get('input[id="state"]').should('have.value','')
+        cy.get('input[id="country"]').should('have.value','')
+        cy.get('input[id="zipcode"]').should('have.value','')
+        cy.get('input[id="homePhone"]').should('have.value','')
+        cy.get('input[id="mobilePhone"]').should('have.value','')
+        cy.get('input[id="alternateEmail"]').should('have.value','')
+    })
+
+    it('dashboard has create profile link if there is no profile for the user', () => {
+        cy.visit('http://localhost:3000/login')
+        cy.get('input[id="username"]').type('Minnie')
+        cy.get('input[id="password"]').type('minnie')
+        cy.get('button[type = "submit"]').click()
+        cy.url({timeout : 5000}).should('includes','/dashboard')
         cy.contains('Create Profile').click()
         cy.url({timeout:5000}).should('includes','/create-profile')
     })
@@ -122,6 +146,11 @@ describe('create-profile page', () => {
         cy.get('button[type="submit').click()
         cy.url({timeout:5000}).should('includes','/edit-profile')
         cy.get('input[id="address1"]').should('have.value','700,Collins road')
+        cy.get('input[id="city"]').should('have.value','Iowa City')
+        cy.get('input[id="state"]').should('have.value','Iowa')
+        cy.get('input[id="country"]').should('have.value','USA')
+        cy.get('input[id="zipcode"]').should('have.value','87675')
+        cy.get('input[id="homePhone"]').should('have.value','1234567890')
         cy.get('input[id="mobilePhone"]').should('have.value','5698063429')
     })
 
