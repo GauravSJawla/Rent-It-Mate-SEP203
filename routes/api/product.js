@@ -73,7 +73,7 @@ router.post('/create',[
     check('shipping','do you want to ship right now or not')
     .not()
     .isEmpty()
-], auth, (req, res) => {
+], auth, async (req, res) => {
     let form = new formidable.IncomingForm()
     form.keepExtensions = true
     form.parse(req , (err, fields , files) =>{
@@ -82,17 +82,25 @@ router.post('/create',[
           error: 'Image could not be uploaded'
         })
       }
+      const userId = req.user.id 
+      const user = User.findById(userId)
+      if(!user){
+        return res.status(404).json({
+          error :' user not found'
+        })
+      }
       
       //check for all fields
-      const { name, description, price, category, quantity, shipping , username } = fields;
+      const { name, description, price, category, quantity, shipping  } = fields;
 
-      if (!name || !description || !price || !category || !quantity || !shipping || !username) {
+      if (!name || !description || !price || !category || !quantity || !shipping ) {
           return res.status(400).json({
               error: 'All fields are required'
           });
       }
 
       let product = new Product(fields);
+      product.userId = userId;
       // 1kb = 1000
       // 1mb = 1000000
 
@@ -109,8 +117,9 @@ router.post('/create',[
    
     product.save((err , result) => {
       if(err){
+        console.log(err)
         return res.status(400).json({
-          error: errorHandler(err)
+          error: 'sorry try again later'
         });
       }
       res.json(result);
@@ -124,14 +133,13 @@ router.post('/create',[
  *        the database
  * @access private
 */
-router.delete('/:productId/:username' , auth , async (req , res) =>{
+router.delete('/:productId' , auth , async (req , res) =>{
   let product = req.product
-  const user = await User.findOne({
-    username : req.params.username
-  })
+  let userId = req.user.id
+  const user = User.findById(userId)
   if(!user){
     return res.status(400).json({
-      error :  'user not found'
+      error :  'user not found try with different credentials'
     })
   }
   await product.remove( (err) =>{
@@ -161,16 +169,26 @@ router.put('/:productId', auth, (req, res)=>{
           error: 'Image could not be uploaded'
         })
       }
+      let userId = req.user.id
+      const user = User.findById(userId)
+      if(!user){
+        return res.status(400).json({
+          error :  'user not found try with different credentials'
+        })
+      }
+      
       /**
        * check for all fields
        */
-      const { name, description, price, category, quantity, shipping , username} = fields;
-      if (!name || !description || !price || !category || !quantity || !shipping || !username) {
+      const { name, description, price, category, quantity, shipping } = fields;
+      console.log(name + ' '+ description+ ' '+ price+' '+ category+ ' '+ quantity+ ' '+ shipping )
+      if (!name || !description || !price || !category || !quantity || !shipping ) {
           return res.status(400).json({
               error: 'All fields are required'
           });
       }
         let product = req.product;
+        product.userId = userId
         product = _.extend(product , fields)
       
      
@@ -190,6 +208,7 @@ router.put('/:productId', auth, (req, res)=>{
 
       product.save((err, result) => {
         if (err) {
+          console.log(err)
             return res.status(400).json({
                 error: errorHandler(err)
             });

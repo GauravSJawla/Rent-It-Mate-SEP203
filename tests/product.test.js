@@ -40,25 +40,38 @@ describe('product create/update/delete product', () => {
       jest.setTimeout(10000);
     });
      afterAll( () => {
+       Users.deleteOne({ username : 'TestUser1'})
         connection.close();
         request.close();
+        app.destroy();
+    });
+    it('can create an user in the database', async () => {
+      await request.post('/api/users')
+      .send({
+          name : 'Test',
+          username : 'TestUser1',
+          email : 'testuser1@gmail.com',
+          password : 'test'
+
+      }).expect(200);
     });
     it('can get token', async () => {
-        const response = await request
+        response = await request
           .post('/api/auth')
           .send({
-            username: 'mercy',
-            password: 'gentle'
+            username: 'TestUser1',
+            password: 'test'
           })
           .expect(200);
         token = response.body.token;
+        id = response.body.id;
         if (token) {
           return expect(token).toBeTruthy();
         }
         return expect(token).toBeTruthy();
       });
 
-    it('can create a product', async() => {
+      it('can create a product', async() => {
       //creating a product in form
       var form = new FormData();
        const response = await request.post('/api/product/create')
@@ -70,7 +83,6 @@ describe('product create/update/delete product', () => {
                                           .field('category', '5e69c7e27cd0040a7a1c0d7e')
                                           .field('quantity', 1)
                                           .field('shipping','true')
-                                          .field('username' , '5e7920901c9d44000040af6a')
                                           .attach('photo','./buffer/table.jpeg')
                                           .expect(response => {
                                           expect(response.status).toBe(200)})
@@ -88,8 +100,7 @@ describe('product create/update/delete product', () => {
         price : 10,
         category : '5e69c7e27cd0040a7a1c0d7e',
         quantity : 1,
-        shipping : true,
-        username :'5e7920901c9d44000040af6a'
+        shipping : true
       })
       await request.put('/api/product/'+duplicateProduct._id)
                                           .set('x-auth-token' , token)
@@ -100,7 +111,6 @@ describe('product create/update/delete product', () => {
                                           .field('category', '')
                                           .field('quantity', 1)
                                           .field('shipping','true')
-                                          .field('username' , '5e7920901c9d44000040af6a')
                                           .attach('photo','./buffer/table_01.jpeg')
                                           .expect(response => {
                                           expect(response.status).toBe(400)})
@@ -117,8 +127,7 @@ describe('product create/update/delete product', () => {
         price : 10,
         category : '5e69c7e27cd0040a7a1c0d7e',
         quantity : 1,
-        shipping : true,
-        username :'5e7920901c9d44000040af6a'
+        shipping : true
       })
       await request.put('/api/product/'+duplicateProduct._id)
                                           .set('x-auth-token' , token)
@@ -129,7 +138,6 @@ describe('product create/update/delete product', () => {
                                           .field('category', '')
                                           .field('quantity', 1)
                                           .field('shipping','true')
-                                          .field('username' , '5e7920901c9d44000040af6a')
                                           .attach('photo','./buffer/over_size.jpg')
                                           .expect(response => {
                                           expect(response.status).toBe(400)})
@@ -146,8 +154,7 @@ describe('product create/update/delete product', () => {
         price : 10,
         category : '5e69c7e27cd0040a7a1c0d7e',
         quantity : 1,
-        shipping : true,
-        username :'5e7920901c9d44000040af6a'
+        shipping : true
       })
        const response = await request.put('/api/product/'+duplicateProduct._id)
                                           .set('x-auth-token' , token)
@@ -158,7 +165,6 @@ describe('product create/update/delete product', () => {
                                           .field('category', '5e69c7e27cd0040a7a1c0d7e')
                                           .field('quantity', 1)
                                           .field('shipping','true')
-                                          .field('username' , '5e7920901c9d44000040af6a')
                                           .attach('photo','./buffer/table_01.jpeg')
                                           .expect(response => {
                                           expect(response.status).toBe(200)})
@@ -183,29 +189,15 @@ describe('product create/update/delete product', () => {
                                       expect(response.status).toBe(400)
                                     })
     })
-    /**
-     * test case for deletion for failure 
-     * deleting a product by a user that doesn't exist
-     */
-    it('can delete a product - when user does not exist', async() => {
-      const product = await Product.findById(duplicateProduct._id)
-      const unm = 'dummy'
-      await request.delete('/api/product/'+product._id+'/'+unm)
-                                .set('x-auth-token', token)
-                                .send()
-                                .expect(response => {
-                                  expect(response.status).toBe(400)
-                                })
-    });
+    
     /**
      * test case for deletion for failure 
      * deleting a product by a user that doesn't exist
      */
     it('can delete a product - when neither the product nor user exist', async() => {
       const product_id = 'dummy'
-      const unm = 'dummy'
-      const response = await request.delete('/api/product/'+product_id+'/'+unm)
-                                .set('x-auth-token', token)
+      await request.delete('/api/product/'+product_id)
+                                .set('x-auth-token', 123)
                                 .send()
                                 .expect(response => {
                                   expect(response.status).toBe(400)
@@ -216,12 +208,12 @@ describe('product create/update/delete product', () => {
      */
     it('can delete a product', async() => {
       const product = await Product.findById(duplicateProduct._id)
-      const unm = 'mercy'
-      const response = await request.delete('/api/product/'+product._id+'/'+unm)
+      const response = await request.delete('/api/product/'+product._id)
                                 .set('x-auth-token', token)
                                 .send()
         return expect(JSON.stringify(response.body)).toMatch('product deleted successfully')
     });
+    
      
 
 })
