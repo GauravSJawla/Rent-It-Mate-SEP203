@@ -42,10 +42,7 @@ export const createProfile = (formData, history, edit = false) => async dispatch
 
 export const getUserProfile = () => async dispatch => {
     try{
-        const token = localStorage.getItem('token');
-        console.log('inside get user prfile', token);
-        const res = await axios.get('/api/profile/me');
-        console.log('user profile ',res)
+        const res = await axios.get('/api/profile/me'); 
         dispatch({
             type: GET_PROFILE,
             payload: res.data
@@ -62,7 +59,6 @@ export const getUserProfile = () => async dispatch => {
 // Delete Account
 
 export const deleteProfile = () => async dispatch => {
-    console.log('inside delete profile action')
     if(window.confirm('Are you sure to delete your account?')){
         try{
             const res =  await axios.delete('/api/profile');

@@ -11,7 +11,6 @@ const {check, validationResult} = require('express-validator/check');
 
 router.get('/me', auth, async(req,res) => {
     try{
-        console.log(req.user.id,' getprofiles')
         const userProfile = await profile.findOne({user: req.user.id}).populate(
             'users',['name','email']
         );
@@ -97,8 +96,14 @@ router.post('/', [auth, [
 
 router.delete('/', auth, async(req,res) => {
     try{
-        const userProfile = await Profile.findOneAndRemove({user:req.user.id});
-        const user = await User.findOneAndRemove({_id: req.user.id});
+        const userProfile = await Profile.findOne({user:req.user.id});
+        if(userProfile){
+            await Profile.delete(userProfile);
+        }
+        const user = await User.findOne({_id: req.user.id});
+        if(user){
+            await User.delete(user);
+        }
         res.json({msg: 'User removed'});
 
     }
