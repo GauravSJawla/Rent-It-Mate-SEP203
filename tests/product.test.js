@@ -34,9 +34,9 @@ describe('product create/update/delete product', () => {
           console.log('inside delete')
              await Product.deleteOne(duplicateProduct);
             }
-        const user = Users.findOne({ username : 'TestUser1' })   
+        const user = Users.findOne({ username : 'TestUser2' })   
         if(user){
-          await Users.deleteOne({username : 'TestUser1'})
+          await Users.deleteOne({username : 'TestUser2'})
         }
      });
      beforeEach(() => {
@@ -52,8 +52,8 @@ describe('product create/update/delete product', () => {
       await request.post('/api/users')
       .send({
           name : 'Test',
-          username : 'TestUser1',
-          email : 'testuser1@gmail.com',
+          username : 'TestUser2',
+          email : 'testuser2@gmail.com',
           password : 'test'
 
       }).expect(200);
