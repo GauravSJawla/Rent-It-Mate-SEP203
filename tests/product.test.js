@@ -26,32 +26,24 @@ describe('product create/update/delete product', () => {
               name : 'test product',
               description :'test',
               price : 10,
-<<<<<<< HEAD
               category : '5e6a7a324ed00f15930538e7',
               quantity : 1,
               shipping : true
-=======
-              category : '5e69c7e27cd0040a7a1c0d7e',
-              quantity : 1,
-              shipping : true,
-              username :'5e7920901c9d44000040af6a'
->>>>>>> 9db8bc0d8ae53d4b0983d59baa2a511f2e88a411
             })
         if(duplicateProduct){
           console.log('inside delete')
              await Product.deleteOne(duplicateProduct);
             }
+        const user = Users.findOne({ username : 'TestUser1' })   
+        if(user){
+          await Users.deleteOne({username : 'TestUser1'})
+        }
      });
      beforeEach(() => {
       jest.setTimeout(10000);
     });
-<<<<<<< HEAD
      afterAll( () => {
        Users.deleteOne({ username : 'TestUser1'})
-=======
-     afterAll( async() => {
-       await Users.deleteOne({ username : 'TestUser1'})
->>>>>>> 9db8bc0d8ae53d4b0983d59baa2a511f2e88a411
         connection.close();
         request.close();
         app.destroy();
@@ -91,11 +83,7 @@ describe('product create/update/delete product', () => {
                                           .field('name','test product')
                                           .field('description' , 'test')
                                           .field('price',10)
-<<<<<<< HEAD
                                           .field('category', '5e6a7a324ed00f15930538e7')
-=======
-                                          .field('category', '5e69c7e27cd0040a7a1c0d7e')
->>>>>>> 9db8bc0d8ae53d4b0983d59baa2a511f2e88a411
                                           .field('quantity', 1)
                                           .field('shipping','true')
                                           .attach('photo','./buffer/table.jpeg')
@@ -113,11 +101,7 @@ describe('product create/update/delete product', () => {
         name : 'test product',
         description :'test',
         price : 10,
-<<<<<<< HEAD
         category : '5e6a7a324ed00f15930538e7',
-=======
-        category : '5e69c7e27cd0040a7a1c0d7e',
->>>>>>> 9db8bc0d8ae53d4b0983d59baa2a511f2e88a411
         quantity : 1,
         shipping : true
       })
@@ -144,11 +128,7 @@ describe('product create/update/delete product', () => {
         name : 'test product',
         description :'test',
         price : 10,
-<<<<<<< HEAD
         category : '5e6a7a324ed00f15930538e7',
-=======
-        category : '5e69c7e27cd0040a7a1c0d7e',
->>>>>>> 9db8bc0d8ae53d4b0983d59baa2a511f2e88a411
         quantity : 1,
         shipping : true
       })
@@ -175,11 +155,7 @@ describe('product create/update/delete product', () => {
         name : 'test product',
         description :'test',
         price : 10,
-<<<<<<< HEAD
         category : '5e6a7a324ed00f15930538e7',
-=======
-        category : '5e69c7e27cd0040a7a1c0d7e',
->>>>>>> 9db8bc0d8ae53d4b0983d59baa2a511f2e88a411
         quantity : 1,
         shipping : true
       })
@@ -189,11 +165,7 @@ describe('product create/update/delete product', () => {
                                           .field('name','test product updated')
                                           .field('description' , 'test')
                                           .field('price',10)
-<<<<<<< HEAD
                                           .field('category', '5e6a7a324ed00f15930538e7')
-=======
-                                          .field('category', '5e69c7e27cd0040a7a1c0d7e')
->>>>>>> 9db8bc0d8ae53d4b0983d59baa2a511f2e88a411
                                           .field('quantity', 1)
                                           .field('shipping','true')
                                           .attach('photo','./buffer/table_01.jpeg')
