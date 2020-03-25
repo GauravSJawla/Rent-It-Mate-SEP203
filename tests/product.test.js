@@ -43,7 +43,7 @@ describe('product create/update/delete product', () => {
       jest.setTimeout(10000);
     });
      afterAll( () => {
-       Users.deleteOne({ username : 'TestUser1'})
+       Users.deleteOne({ username : 'TestUser2'})
         connection.close();
         request.close();
         app.destroy();
@@ -51,7 +51,7 @@ describe('product create/update/delete product', () => {
     it('can create an user in the database', async () => {
       await request.post('/api/users')
       .send({
-          name : 'Test',
+          name : 'Test2',
           username : 'TestUser2',
           email : 'testuser2@gmail.com',
           password : 'test'
@@ -62,7 +62,7 @@ describe('product create/update/delete product', () => {
         response = await request
           .post('/api/auth')
           .send({
-            username: 'TestUser1',
+            username: 'TestUser2',
             password: 'test'
           })
           .expect(200);
