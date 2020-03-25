@@ -42,9 +42,10 @@ export const createProfile = (formData, history, edit = false) => async dispatch
 
 export const getUserProfile = () => async dispatch => {
     try{
-       // console.log('inside get user prfile', localStorage.getItem('token'));
+        const token = localStorage.getItem('token');
+        console.log('inside get user prfile', token);
         const res = await axios.get('/api/profile/me');
-       // console.log('user profile ',res)
+        console.log('user profile ',res)
         dispatch({
             type: GET_PROFILE,
             payload: res.data
