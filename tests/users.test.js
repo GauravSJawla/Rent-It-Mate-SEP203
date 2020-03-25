@@ -33,30 +33,30 @@ describe('test user sign up', () => {
        
            
     });
-    // it('can create an user in the database', async () => {
-    //    const response = await request.post('/api/users')
-    //    .send({
-    //        name : 'Test',
-    //        username : 'TestUser',
-    //        email : emailAddress,
-    //        password : 'test'
+    it('can create an user in the database', async () => {
+       const response = await request.post('/api/users')
+       .send({
+           name : 'Test',
+           username : 'TestUser',
+           email : emailAddress,
+           password : 'test'
 
-    //    }).expect(200);
-    //    token = response.body.temporarytoken;
-    //    const email = await mailslurp.waitForLatestEmail(inbox.id);
-    //    //const emailCode = parse(email.subject);
-    //    expect(email.subject).toMatch('Please verify your account');
-    //    return expect(JSON.stringify(response.body)).toMatch("Email sent");   
-    // })
-    // it('can update user details after successful verification', async () => {
-    //     const newUser = await User.findOne({email : emailAddress});
-    //     if(newUser){
-    //         const response = await request.get('/api/users/verify/?id=' + newUser.temporarytoken);
-    //         const email = await mailslurp.waitForLatestEmail(inbox.id);
-    //         const user = await User.findOne({email : emailAddress});
-    //         return expect(user.verifiedStatus).toBe(true);
-    //     }
-    // })
+       }).expect(200);
+       token = response.body.temporarytoken;
+       const email = await mailslurp.waitForLatestEmail(inbox.id);
+       //const emailCode = parse(email.subject);
+       expect(email.subject).toMatch('Please verify your account');
+       return expect(JSON.stringify(response.body)).toMatch("Email sent");   
+    })
+    it('can update user details after successful verification', async () => {
+        const newUser = await User.findOne({email : emailAddress});
+        if(newUser){
+            const response = await request.get('/api/users/verify/?id=' + newUser.temporarytoken);
+            const email = await mailslurp.waitForLatestEmail(inbox.id);
+            const user = await User.findOne({email : emailAddress});
+            return expect(user.verifiedStatus).toBe(true);
+        }
+    })
     it('should return link expired if there is no user' , async () => {
         const response = await request.get('/api/users/verify/?id=xxx');
         return expect(JSON.stringify(response.body)).toMatch("Activation Link is expired");
