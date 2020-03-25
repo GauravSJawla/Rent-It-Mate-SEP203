@@ -26,6 +26,7 @@ export const createProfile = (formData, history, edit = false) => async dispatch
     
         
     }
+    /* istanbul ignore catch */
     catch(err){
         // const errors = err.response.data.errors;
         // if(errors){
@@ -70,6 +71,7 @@ export const deleteProfile = () => async dispatch => {
             });
           //  dispatch(setAlert('Your account is been removed','success'));
         }
+        /* istanbul ignore catch */
         catch(err){
             dispatch({
                 type: PROFILE_ERROR,

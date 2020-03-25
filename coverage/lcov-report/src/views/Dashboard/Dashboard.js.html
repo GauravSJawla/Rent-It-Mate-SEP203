@@ -23,9 +23,9 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">100% </span>
+                <span class="strong">90.91% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>8/8</span>
+                <span class='fraction'>10/11</span>
             </div>
         
             
@@ -37,16 +37,16 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">100% </span>
+                <span class="strong">80% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>4/4</span>
+                <span class='fraction'>4/5</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">100% </span>
+                <span class="strong">90% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>7/7</span>
+                <span class='fraction'>9/10</span>
             </div>
         
             
@@ -116,7 +116,18 @@
 <a name='L57'></a><a href='#L57'>57</a>
 <a name='L58'></a><a href='#L58'>58</a>
 <a name='L59'></a><a href='#L59'>59</a>
-<a name='L60'></a><a href='#L60'>60</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L60'></a><a href='#L60'>60</a>
+<a name='L61'></a><a href='#L61'>61</a>
+<a name='L62'></a><a href='#L62'>62</a>
+<a name='L63'></a><a href='#L63'>63</a>
+<a name='L64'></a><a href='#L64'>64</a>
+<a name='L65'></a><a href='#L65'>65</a>
+<a name='L66'></a><a href='#L66'>66</a>
+<a name='L67'></a><a href='#L67'>67</a>
+<a name='L68'></a><a href='#L68'>68</a>
+<a name='L69'></a><a href='#L69'>69</a>
+<a name='L70'></a><a href='#L70'>70</a>
+<a name='L71'></a><a href='#L71'>71</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -124,17 +135,22 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">40x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">46x</span>
+<span class="cline-any cline-yes">46x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">92x</span>
-<span class="cline-any cline-yes">35x</span>
+<span class="cline-any cline-yes">91x</span>
+<span class="cline-any cline-yes">91x</span>
+<span class="cline-any cline-yes">34x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">92x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">91x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -155,19 +171,25 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">40x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">46x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">92x</span>
+<span class="cline-any cline-yes">91x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -179,16 +201,22 @@
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
+import GridContainer from "components/Grid/GridContainer.js";
+import Parallax from "components/Parallax/Parallax.js";
 import Button from 'components/CustomButtons/Button.js';
+import { makeStyles } from "@material-ui/core/styles";
+import styles from "assets/jss/material-kit-react/views/landingPage.js"
 import Spinner from './Spinner';
 import { getUserProfile, deleteProfile} from '../../actions/profile';
 &nbsp;
+const useStyles = makeStyles(styles);
 const Dashboard = ({
   getUserProfile,
   deleteProfile,
   auth: { user },
   profile: { profile, loading }
 }) =&gt; {
+  const classes = useStyles();
   useEffect(() =&gt; {
     getUserProfile();
   }, [getUserProfile]);
@@ -196,25 +224,30 @@ const Dashboard = ({
     &lt;Spinner /&gt;
   ) : (
     &lt;Fragment&gt;
-      &lt;h1 className='large text-primary'&gt;Dashboard&lt;/h1&gt;
-      &lt;p className='lead'&gt;
-        &lt;i className='fas fa-user' /&gt; Welcome {user &amp;&amp; user.name}
-      &lt;/p&gt;
-      {profile !== null ? (
-        &lt;Fragment&gt;
-          &lt;Button simple type='submit' color='primary' size='lg' 
+      &lt;Parallax filter image={require("assets/img/landing-bg.jpg")}&gt;
+        &lt;div className={classes.landingContainer}&gt;
+              &lt;h4&gt;Welcome {user &amp;&amp; user.name}&lt;/h4&gt;
+                {profile !== null ? (
+                  &lt;Fragment&gt;
+                    &lt;Button simple type='submit' color='primary' size='lg' 
                         onClick= {() =&gt; deleteProfile()}&gt;
                       Delete My Account
                     &lt;/Button&gt;
-        &lt;/Fragment&gt;
-      ) : (
-        &lt;Fragment&gt;
-          &lt;p&gt;You have not yet setup a profile, please add some info!&lt;/p&gt;
-          &lt;Link to='/create-profile' className='btn btn-primary my-1'&gt;
-            Create Profile
-          &lt;/Link&gt;
-        &lt;/Fragment&gt;
-      )}
+                   &lt;/Fragment&gt;
+                ) : (
+                  &lt;Fragment&gt;
+                    &lt;p&gt;You have not yet setup a profile, please add some info!&lt;/p&gt;
+                    &lt;Link to='/create-profile' className='btn btn-primary my-1'&gt;
+                         Create Profile
+                    &lt;/Link&gt;
+                    &lt;Button simple type='submit' color='primary' size='lg' 
+                        onClick= {<span class="fstat-no" title="function not covered" >()</span> =&gt; <span class="cstat-no" title="statement not covered" >deleteProfile()}</span>&gt;
+                        Delete My Account
+                    &lt;/Button&gt;
+                  &lt;/Fragment&gt;
+                    )}
+         &lt;/div&gt;
+       &lt;/Parallax&gt;
     &lt;/Fragment&gt;
   );
 };
@@ -241,7 +274,7 @@ export default connect(
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank">istanbul</a>
-                at Wed Mar 25 2020 14:56:02 GMT-0500 (Central Daylight Time)
+                at Wed Mar 25 2020 18:30:44 GMT-0500 (Central Daylight Time)
             </div>
         </div>
         <script src="../../../prettify.js"></script>
