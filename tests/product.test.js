@@ -26,10 +26,9 @@ describe('product create/update/delete product', () => {
               name : 'test product',
               description :'test',
               price : 10,
-              category : '5e69c7e27cd0040a7a1c0d7e',
+              category : '5e6a7a324ed00f15930538e7',
               quantity : 1,
-              shipping : true,
-              username :'5e7920901c9d44000040af6a'
+              shipping : true
             })
         if(duplicateProduct){
           console.log('inside delete')
@@ -80,7 +79,7 @@ describe('product create/update/delete product', () => {
                                           .field('name','test product')
                                           .field('description' , 'test')
                                           .field('price',10)
-                                          .field('category', '5e69c7e27cd0040a7a1c0d7e')
+                                          .field('category', '5e6a7a324ed00f15930538e7')
                                           .field('quantity', 1)
                                           .field('shipping','true')
                                           .attach('photo','./buffer/table.jpeg')
@@ -98,7 +97,7 @@ describe('product create/update/delete product', () => {
         name : 'test product',
         description :'test',
         price : 10,
-        category : '5e69c7e27cd0040a7a1c0d7e',
+        category : '5e6a7a324ed00f15930538e7',
         quantity : 1,
         shipping : true
       })
@@ -125,7 +124,7 @@ describe('product create/update/delete product', () => {
         name : 'test product',
         description :'test',
         price : 10,
-        category : '5e69c7e27cd0040a7a1c0d7e',
+        category : '5e6a7a324ed00f15930538e7',
         quantity : 1,
         shipping : true
       })
@@ -152,7 +151,7 @@ describe('product create/update/delete product', () => {
         name : 'test product',
         description :'test',
         price : 10,
-        category : '5e69c7e27cd0040a7a1c0d7e',
+        category : '5e6a7a324ed00f15930538e7',
         quantity : 1,
         shipping : true
       })
@@ -162,7 +161,7 @@ describe('product create/update/delete product', () => {
                                           .field('name','test product updated')
                                           .field('description' , 'test')
                                           .field('price',10)
-                                          .field('category', '5e69c7e27cd0040a7a1c0d7e')
+                                          .field('category', '5e6a7a324ed00f15930538e7')
                                           .field('quantity', 1)
                                           .field('shipping','true')
                                           .attach('photo','./buffer/table_01.jpeg')

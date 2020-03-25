@@ -2,7 +2,5 @@
   "mongoURI": "mongodb+srv://GauravSJ:Gaurav123@rentitmate-cluster-pgs7u.mongodb.net/test?retryWrites=true&w=majority",
   "jwttoken": "mysecretkey",
   "sendGridAPIKey": "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",
-  "mailSlurpAPIKey": "7d60f75f20596ff1effb1b3ce6a0e6c6e84f2c3afa536dcd081cb682ed1f1ab0",
-  "googleClientID": "1085281884298-8gffbqgihnvvgnficjpuf4o7v1et0ocv.apps.googleusercontent.com",
-  "googleClientSecret": "8T5jimgqYTl_28s_hMa3OQFL"
+  "mailSlurpAPIKey": "7d60f75f20596ff1effb1b3ce6a0e6c6e84f2c3afa536dcd081cb682ed1f1ab0"
 }
