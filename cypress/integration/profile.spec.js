@@ -1,30 +1,6 @@
 /// <reference types="cypress" />
 describe('create-profile page', () => {
-    // beforeEach(() => {
-    //     cy.visit('http://localhost:3000/login')
-    // })
     
-    // before(() => {
-    //     cy.request('POST','/api/auth', 
-    //             {username : 'Minnie', password: 'minnie'}).
-    //             then((response) => {
-    //                 const token = response.body.token;
-    //                 expect(response.body).to.have(token)
-    //                 cy.request('DELETE', '/api/profile', {
-    //                             'auth' : {
-    //                                 'x-auth-token' : token
-    //                              }
-    //     })
-    // })
-    //     cy.request('POST','/api/users', {
-    //         name : 'Minnie',
-    //       username : 'Minnie',
-    //       email : 'minnie@gmail.com',
-    //       password : 'minnie'
-    //     }).then((response) => {
-    //         expect(response.status).to.be(200)
-    //     })
-    // })
     it('should sign up user with valid details', () => {
         cy.visit('http://localhost:3000/register')
         cy.get('input[id="name"]').type('Minnie')
@@ -122,15 +98,6 @@ describe('create-profile page', () => {
         cy.url({timeout : 5000}).should('includes','/dashboard')
         cy.get('span').contains('Delete My Account')
     })
-
-    // it('should not have create-profile if profile is created for the user', () => {
-    //     cy.visit('http://localhost:3000/login')
-    //     cy.get('input[id="username"]').type('Minnie')
-    //     cy.get('input[id="password"]').type('minnie')
-    //     cy.get('button[type = "submit"]').click()
-    //     cy.url({timeout : 5000}).should('includes','/dashboard')
-    //     cy.contains('has')
-    // })
 
     it('redirects to update-profile page', () => {
         cy.contains('Profile').click().then(() => {

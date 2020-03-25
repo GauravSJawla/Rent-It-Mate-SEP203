@@ -57,8 +57,11 @@
     "supertest": "^4.0.2"
   },
   "devDependencies": {
+    "@cypress/code-coverage": "^1.14.0",
     "concurrently": "^5.1.0",
     "cypress": "^4.0.2",
-    "nodemon": "^2.0.2"
+    "istanbul-lib-coverage": "^3.0.0",
+    "nodemon": "^2.0.2",
+    "nyc": "^15.0.0"
   }
 }
