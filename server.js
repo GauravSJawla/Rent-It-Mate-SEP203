@@ -15,6 +15,7 @@ app.use('/api/users', require('./routes/api/users'));
 app.use('/api/auth', require('./routes/api/auth'));
 app.use('/api/profile', require('./routes/api/profile'));
 app.use('/api/category', require('./routes/api/category'));
+app.use('/api/product', require('./routes/api/product'));
 
 // Serve static assets in production
 if (process.env.NODE_ENV === 'production') {
@@ -28,6 +29,11 @@ if (process.env.NODE_ENV === 'production') {
 
 const PORT = process.env.PORT || 5000;
 
-app.listen(PORT, () => console.log(`Server started on port ${PORT}`));
+
+if(process.env.NODE_ENV !== 'test'){
+  app.listen(PORT, () => console.log(`Server started on port ${PORT}`));
+}
+
+//app.listen(PORT, () => console.log(`Server started on port ${PORT}`));
 
 module.exports = app;

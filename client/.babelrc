@@ -4,6 +4,8 @@
     "@babel/react"
   ],
   "plugins": [
+    "istanbul",
     "@babel/plugin-proposal-class-properties"
+    
   ]
 }

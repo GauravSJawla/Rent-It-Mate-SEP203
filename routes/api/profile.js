@@ -9,6 +9,7 @@ const { check, validationResult } = require('express-validator');
 // @desc get current user profile
 // @access Private
 
+<<<<<<< HEAD
 router.get('/me', auth, async (req, res) => {
   try {
     const userProfile = await profile
@@ -25,6 +26,27 @@ router.get('/me', auth, async (req, res) => {
     res.status(500).send('server error');
   }
 });
+=======
+router.get('/me', auth, async(req,res) => {
+    try{
+        console.log(req.user.id,' getprofiles')
+        const userProfile = await profile.findOne({user: req.user.id}).populate(
+            'users',['name','email']
+        );
+        if(!userProfile){
+            console.log('inside no user profile');
+            return res.status(400).json({msg: 'You are yet to create your profile'});
+        }
+        return res.json(userProfile);
+
+    }
+    catch(err){
+        console.log(err.message);
+        res.status(500).send('server error');  
+    }  
+})
+
+>>>>>>> e5fc9d1630a59e76ae30816232607386b5fdf6f8
 
 // @route Post api/profile
 // @desc Add or update it to profile database
@@ -130,6 +152,32 @@ router.post(
       console.log(err.message);
       res.status(500).send('server error');
     }
+<<<<<<< HEAD
   }
 );
+=======
+    catch(err){
+        console.log(err.message);
+        res.status(500).send('server error');
+    }
+});
+
+// @route delete api/profile
+// @desc delete particular profile
+// @access Private
+
+router.delete('/', auth, async(req,res) => {
+    try{
+        const userProfile = await Profile.findOneAndRemove({user:req.user.id});
+        const user = await User.findOneAndRemove({_id: req.user.id});
+        res.json({msg: 'User removed'});
+
+    }
+    catch(err){
+        console.log(err.message);
+        res.status(500).send('server error');  
+    }  
+});
+
+>>>>>>> e5fc9d1630a59e76ae30816232607386b5fdf6f8
 module.exports = router;

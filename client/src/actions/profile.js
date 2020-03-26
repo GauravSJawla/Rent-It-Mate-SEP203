@@ -1,12 +1,12 @@
 import axios from 'axios';
 import{
-    UPDATE_PROFILE,
     GET_PROFILE,
     PROFILE_ERROR,
-    CLEAR_PROFILE
+    CLEAR_PROFILE,
+    ACCOUNT_DELETED
 } from './types';
 
-export const createProfile = (formData, edit = false) => async dispatch => {
+export const createProfile = (formData, history, edit = false) => async dispatch => {
     try{
         const config = {
             headers: {
@@ -20,6 +20,9 @@ export const createProfile = (formData, edit = false) => async dispatch => {
                     payload: res.data
                 }
             );
+        if(!edit){
+            history.push('/dashboard');
+        }
     
         
     }
@@ -34,3 +37,50 @@ export const createProfile = (formData, edit = false) => async dispatch => {
         })
     }
 };
+
+//Get current profile
+
+export const getUserProfile = () => async dispatch => {
+    try{
+        const token = localStorage.getItem('token');
+        console.log('inside get user prfile', token);
+        const res = await axios.get('/api/profile/me');
+        console.log('user profile ',res)
+        dispatch({
+            type: GET_PROFILE,
+            payload: res.data
+        });
+    }
+    catch(err){
+        dispatch({
+            type: PROFILE_ERROR,
+            payload: {status : err}
+        });
+    }
+};
+
+// Delete Account
+
+export const deleteProfile = () => async dispatch => {
+    console.log('inside delete profile action')
+    if(window.confirm('Are you sure to delete your account?')){
+        try{
+            const res =  await axios.delete('/api/profile');
+            dispatch({
+                type: CLEAR_PROFILE
+            });
+            dispatch({
+                type: ACCOUNT_DELETED
+            });
+          //  dispatch(setAlert('Your account is been removed','success'));
+        }
+        catch(err){
+            dispatch({
+                type: PROFILE_ERROR,
+                payload: {status : err}
+            });
+        }
+
+    }
+    
+}

@@ -1,7 +1,7 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
-import { Redirect } from 'react-router-dom';
+import { Redirect, Link, withRouter } from 'react-router-dom';
 // @material-ui/core components
 import { makeStyles } from '@material-ui/core/styles';
 import InputAdornment from '@material-ui/core/InputAdornment';
@@ -26,12 +26,12 @@ import image from 'assets/img/bg7.jpg';
 
 
 //Import register from other component
-import { createProfile } from '../../actions/profile';
+import { createProfile, getUserProfile } from '../../actions/profile';
 
 const useStyles = makeStyles(styles);
 
 function CreateProfile({createProfile,
-      profile : {profile,loading}}) {
+      history})  {
   const [cardAnimaton, setCardAnimation] = React.useState('cardHidden');
   setTimeout(function() {
     setCardAnimation('');
@@ -65,13 +65,14 @@ function CreateProfile({createProfile,
   // OnSubmit Event Handler
   const onSubmit = e => {
     e.preventDefault();
-    createProfile(formData);
+    createProfile(formData,history);
     
   };
 
-  if (profile != null) {
-    return <Redirect to='/dashboard' />;
-  }
+  // if (!loading) {
+  //   console.log('inside loading');
+  //   return <Redirect to='/dashboard' />;
+  // }
   return (
     <div>
       <div
@@ -262,7 +263,7 @@ function CreateProfile({createProfile,
                   </CardBody>
                   <CardFooter className={classes.cardFooter}>
                     <Button simple type='submit' color='primary' size='lg'>
-                      Update My Profile
+                      Create My Profile
                     </Button>
                   </CardFooter>
                 </form>
@@ -277,19 +278,14 @@ function CreateProfile({createProfile,
 }
 
 CreateProfile.propTypes = {
-  createProfile: PropTypes.func.isRequired,
-  profile: PropTypes.object.isRequired
+  createProfile: PropTypes.func.isRequired
 };
-
-const mapStateToProps = state => ({
-  profile: state.profile
-});
 
 // export default connect(
 //   mapStateToProps,
 //   { register }
 // )(RegisterPage);
 export default connect(
-  mapStateToProps,
+  null,
   {createProfile}
-)(CreateProfile);
+)(withRouter(CreateProfile));
