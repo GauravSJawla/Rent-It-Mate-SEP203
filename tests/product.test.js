@@ -26,31 +26,31 @@ describe('product create/update/delete product', () => {
               name : 'test product',
               description :'test',
               price : 10,
-              category : '5e69c7e27cd0040a7a1c0d7e',
+              category : '5e6a7a324ed00f15930538e7',
               quantity : 1,
-              shipping : true,
-              username :'5e7920901c9d44000040af6a'
+              shipping : true
             })
         if(duplicateProduct){
           console.log('inside delete')
              await Product.deleteOne(duplicateProduct);
             }
+        const user = Users.findOne({ username : 'TestUser2' })   
+        if(user){
+          await Users.deleteOne({username : 'TestUser2'})
+        }
      });
-     beforeEach(() => {
-      jest.setTimeout(10000);
-    });
-     afterAll( async() => {
-       await Users.deleteOne({ username : 'TestUser1'})
+     
+     afterAll( () => {
+       Users.deleteOne({ username : 'TestUser2'})
         connection.close();
         request.close();
-        app.destroy();
     });
     it('can create an user in the database', async () => {
       await request.post('/api/users')
       .send({
-          name : 'Test',
-          username : 'TestUser1',
-          email : 'testuser1@gmail.com',
+          name : 'Test2',
+          username : 'TestUser2',
+          email : 'testuser2@gmail.com',
           password : 'test'
 
       }).expect(200);
@@ -59,12 +59,11 @@ describe('product create/update/delete product', () => {
         response = await request
           .post('/api/auth')
           .send({
-            username: 'TestUser1',
+            username: 'TestUser2',
             password: 'test'
           })
           .expect(200);
         token = response.body.token;
-        id = response.body.id;
         if (token) {
           return expect(token).toBeTruthy();
         }
@@ -80,7 +79,7 @@ describe('product create/update/delete product', () => {
                                           .field('name','test product')
                                           .field('description' , 'test')
                                           .field('price',10)
-                                          .field('category', '5e69c7e27cd0040a7a1c0d7e')
+                                          .field('category', '5e6a7a324ed00f15930538e7')
                                           .field('quantity', 1)
                                           .field('shipping','true')
                                           .attach('photo','./buffer/table.jpeg')
@@ -98,7 +97,7 @@ describe('product create/update/delete product', () => {
         name : 'test product',
         description :'test',
         price : 10,
-        category : '5e69c7e27cd0040a7a1c0d7e',
+        category : '5e6a7a324ed00f15930538e7',
         quantity : 1,
         shipping : true
       })
@@ -125,7 +124,7 @@ describe('product create/update/delete product', () => {
         name : 'test product',
         description :'test',
         price : 10,
-        category : '5e69c7e27cd0040a7a1c0d7e',
+        category : '5e6a7a324ed00f15930538e7',
         quantity : 1,
         shipping : true
       })
@@ -152,7 +151,7 @@ describe('product create/update/delete product', () => {
         name : 'test product',
         description :'test',
         price : 10,
-        category : '5e69c7e27cd0040a7a1c0d7e',
+        category : '5e6a7a324ed00f15930538e7',
         quantity : 1,
         shipping : true
       })
@@ -162,7 +161,7 @@ describe('product create/update/delete product', () => {
                                           .field('name','test product updated')
                                           .field('description' , 'test')
                                           .field('price',10)
-                                          .field('category', '5e69c7e27cd0040a7a1c0d7e')
+                                          .field('category', '5e6a7a324ed00f15930538e7')
                                           .field('quantity', 1)
                                           .field('shipping','true')
                                           .attach('photo','./buffer/table_01.jpeg')
