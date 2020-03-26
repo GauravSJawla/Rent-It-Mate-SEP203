@@ -2,7 +2,6 @@ import React, { Fragment, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
-import GridContainer from "components/Grid/GridContainer.js";
 import Parallax from "components/Parallax/Parallax.js";
 import Button from 'components/CustomButtons/Button.js';
 import { makeStyles } from "@material-ui/core/styles";
@@ -27,9 +26,15 @@ const Dashboard = ({
     <Fragment>
       <Parallax filter image={require("assets/img/landing-bg.jpg")}>
         <div className={classes.landingContainer}>
-              <h4>Welcome {user && user.name}</h4>
+              <h3>Welcome {user && user.name}</h3>
                 {profile !== null ? (
                   <Fragment>
+                    <h4>Your Address : </h4>
+                    <h4> {profile.address.address1}, </h4>
+                    <h4> {profile.address.city},</h4>
+                    <h4> {profile.address.state},</h4>
+                    <h4> {profile.address.country}, </h4>
+                    <h4> {profile.address.zipcode} </h4>
                     <Button simple type='submit' color='primary' size='lg' 
                         onClick= {() => deleteProfile()}>
                       Delete My Account

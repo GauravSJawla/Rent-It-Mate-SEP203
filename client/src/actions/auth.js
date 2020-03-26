@@ -51,7 +51,7 @@ export const register = ({
       payload: res.data
     });
   }
-  /* istanbul ignore catch */
+  /* istanbul ignore next */
    catch (err) {
     const errors = err.response.data.errors;
     if (errors) {
@@ -83,7 +83,7 @@ export const login = (username, password) => async dispatch => {
     dispatch(loadUser());
     
   } 
-   /* istanbul ignore catch */
+   /* istanbul ignore next */
   catch (err) {
     const errors = err.response.data.errors;
     if (errors) {
