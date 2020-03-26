@@ -39,9 +39,7 @@ describe('product create/update/delete product', () => {
           await Users.deleteOne({username : 'TestUser2'})
         }
      });
-     beforeEach(() => {
-      jest.setTimeout(10000);
-    });
+     
      afterAll( () => {
        Users.deleteOne({ username : 'TestUser2'})
         connection.close();
