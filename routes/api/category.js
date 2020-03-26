@@ -63,7 +63,7 @@ router.get('/:category_id', auth, async (req, res) => {
       _id: req.params.category_id
     });
 
-    if (!category) return res.status(400).json({ msg: 'Category not found' });
+    if (!category) return res.status(400).json({ msg: 'Category not found!' });
 
     res.json(category);
   } catch (err) {

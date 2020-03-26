@@ -9,20 +9,34 @@ const request = supertest(app);
 
 describe('category create/read/update/delete category', () => {
   const mongoURI = config.get('mongoURI');
-  let connection, token, duplicateCategory;
+  let connection, token;
 
   beforeAll(async () => {
     connection = await MongoClient.connect(mongoURI, {
       useNewUrlParser: true,
       useUnifiedTopology: true
     });
-    duplicateCategory = await Category.findOne({
-      name: 'test category'
+    const duplicateCategory = await Category.findOne({
+      name: 'test category3'
     });
 
     if (duplicateCategory) {
       console.log('inside delete');
       await Category.deleteOne(duplicateCategory);
+    }
+
+    const duplicateCategory2 = await Category.findOne({
+      name: 'test category2'
+    });
+
+    if (duplicateCategory2) {
+      console.log('inside delete2');
+      await Category.deleteOne(duplicateCategory2);
+    }
+
+    const user = Users.findOne({ username: 'AdminUser' });
+    if (user) {
+      await Users.deleteOne({ username: 'AdminUser' });
     }
   });
 
@@ -34,7 +48,7 @@ describe('category create/read/update/delete category', () => {
   });
 
   it('can create an user in the database', async () => {
-    await request
+    const response = await request
       .post('/api/users')
       .send({
         name: 'Admin',
@@ -43,6 +57,7 @@ describe('category create/read/update/delete category', () => {
         password: 'admin'
       })
       .expect(200);
+    return expect(JSON.stringify(response.body));
   });
 
   it('can get token', async () => {
@@ -87,20 +102,55 @@ describe('category create/read/update/delete category', () => {
     );
   });
 
-  // it('can get all categories', async () => {
-  //   const response = await request
-  //     .get('/api/category')
-  //     .set('x-auth-token', token)
-  //     .expect(200);
+  it('can get all categories', async () => {
+    const response = await request
+      .get('/api/category')
+      .set('x-auth-token', token)
+      .expect(200);
 
-  //   return expect(JSON.stringify(response.body));
-  // });
+    return expect(JSON.stringify(response.body));
+  });
 
-  // it('should delete the profile', async () => {
-  //   const response = await request
-  //     .delete('/api/profile')
-  //     .set('x-auth-token', token)
-  //     .expect(200);
-  //   return expect(JSON.stringify(response.body)).toMatch('User removed');
-  // });
+  it('can get a category by category ID', async () => {
+    const category = await Category.findOne({ name: 'test category2' });
+    const response = await request
+      .get('/api/category/' + category._id)
+      .set('x-auth-token', token)
+      .expect(200);
+
+    return expect(JSON.stringify(response.body));
+  });
+
+  it('should give category not found error if no specified category present', async () => {
+    const category_id = 'dummy';
+    const response = await request
+      .get('/api/category/' + category_id)
+      .set('x-auth-token', token)
+      .expect(400);
+
+    return expect(JSON.stringify(response.body)).toMatch('Category not found!');
+  });
+
+  it('should update a category by category ID', async () => {
+    const category = await Category.findOne({ name: 'test category2' });
+    const response = await request
+      .post('/api/category/' + category._id)
+      .set('x-auth-token', token)
+      .send({
+        name: 'test category3'
+      })
+      .expect(200);
+
+    return expect(JSON.stringify(response.body)).toMatch('test category3');
+  });
+
+  it('should delete a category by category ID', async () => {
+    const category = await Category.findOne({ name: 'test category3' });
+    const response = await request
+      .delete('/api/category/' + category._id)
+      .set('x-auth-token', token)
+      .expect(200);
+
+    return expect(JSON.stringify(response.body)).toMatch('Category deleted');
+  });
 });
