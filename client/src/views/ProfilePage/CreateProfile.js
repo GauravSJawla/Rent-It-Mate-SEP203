@@ -263,7 +263,7 @@ function CreateProfile({createProfile,
                   </CardBody>
                   <CardFooter className={classes.cardFooter}>
                     <Button simple type='submit' color='primary' size='lg'>
-                      Update My Profile
+                      Create My Profile
                     </Button>
                   </CardFooter>
                 </form>
