@@ -16,9 +16,8 @@ const headerStyle = {
   appBar: {
     display: "flex",
     border: "0",
-    borderRadius: "3px",
+    // borderRadius: "3px",
     padding: "0.625rem 0",
-    marginBottom: "20px",
     color: "#555",
     width: "100%",
     backgroundColor: "#fff",
@@ -105,7 +104,13 @@ const headerStyle = {
       "0 4px 20px 0px rgba(0, 0, 0, 0.14), 0 7px 12px -5px rgba(233, 30, 99, 0.46)"
   },
   transparent: {
-    backgroundColor: "transparent !important",
+    backgroundColor: "transparent",
+    boxShadow: "none",
+    paddingTop: "25px",
+    color: "#FFFFFF"
+  },
+  black: {
+    backgroundColor: "#000",
     boxShadow: "none",
     paddingTop: "25px",
     color: "#FFFFFF"
