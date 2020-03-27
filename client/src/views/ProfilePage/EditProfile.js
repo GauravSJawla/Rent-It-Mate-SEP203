@@ -284,7 +284,7 @@ function EditProfile({ profile : {profile, loading},
                       Update My Profile
                     </Button>
                     <Button simple color="primary" size='lg' component={Link} 
-                            to="/dashboard">
+                            to="/dashboard/user">
                         Back to Profile
                     </Button>
                   </CardFooter>

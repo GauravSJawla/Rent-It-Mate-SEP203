@@ -41,7 +41,7 @@ describe('login page', () => {
     //     })
     // })
 
-    it('redirects to landing page', () => {
+    it('redirects to landing page on log out', () => {
         cy.contains('Profile').click().then(() => {
             cy.get('a').contains('Logout').click()
             cy.window().its('store').invoke('getState').should('deep.equal',{
