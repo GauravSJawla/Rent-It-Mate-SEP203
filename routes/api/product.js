@@ -42,7 +42,7 @@ router.param('productId' , (req, res, next, id) => {
  * @access  public 
  */
 router.get('/:productId',(req , res) =>{
-  console.log(req.product+' inside get');
+ // console.log(req.product+' inside get');
   req.product.photo = undefined
   return res.json(req.product);
 })
@@ -181,7 +181,7 @@ router.put('/:productId', auth, (req, res)=>{
        * check for all fields
        */
       const { name, description, price, category, quantity, shipping } = fields;
-      console.log(name + ' '+ description+ ' '+ price+' '+ category+ ' '+ quantity+ ' '+ shipping )
+     // console.log(name + ' '+ description+ ' '+ price+' '+ category+ ' '+ quantity+ ' '+ shipping )
       if (!name || !description || !price || !category || !quantity || !shipping ) {
           return res.status(400).json({
               error: 'All fields are required'
@@ -213,7 +213,7 @@ router.put('/:productId', auth, (req, res)=>{
                 error: errorHandler(err)
             });
         }
-        console.log('update result '+ result)
+       // console.log('update result '+ result)
         res.json(result);
       
       });

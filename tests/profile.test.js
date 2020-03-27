@@ -26,7 +26,7 @@ describe('user create/update/delete profile', () => {
       .send({
           name : 'Test',
           username : 'TestUser1',
-          email : 'testuser1@gmail.com',
+          email : 'testttuser@gmail.com',
           password : 'test'
 
       }).expect(200);

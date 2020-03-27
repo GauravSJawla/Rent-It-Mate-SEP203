@@ -40,8 +40,8 @@ describe('product create/update/delete product', () => {
         }
      });
      
-     afterAll( () => {
-       Users.deleteOne({ username : 'TestUser2'})
+     afterAll( async() => {
+      await Users.deleteOne({ username : 'TestUser2'})
         connection.close();
         request.close();
     });
