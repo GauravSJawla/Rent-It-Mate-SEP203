@@ -1,7 +1,7 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
-import { Redirect, Link, withRouter } from 'react-router-dom';
+import { withRouter } from 'react-router-dom';
 // @material-ui/core components
 import { makeStyles } from '@material-ui/core/styles';
 import InputAdornment from '@material-ui/core/InputAdornment';
@@ -26,7 +26,7 @@ import image from 'assets/img/bg7.jpg';
 
 
 //Import register from other component
-import { createProfile, getUserProfile } from '../../actions/profile';
+import { createProfile } from '../../actions/profile';
 
 const useStyles = makeStyles(styles);
 

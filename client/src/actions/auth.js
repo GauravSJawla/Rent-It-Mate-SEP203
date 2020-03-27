@@ -50,7 +50,9 @@ export const register = ({
       type: REGISTER_SUCCESS,
       payload: res.data
     });
-  } catch (err) {
+  }
+  /* istanbul ignore next */
+   catch (err) {
     const errors = err.response.data.errors;
     if (errors) {
       errors.forEach(err => console.log(err));
@@ -72,14 +74,17 @@ export const login = (username, password) => async dispatch => {
   try {
     const res = await axios.post('/api/auth', body, config);
     console.log(res.data);
-    //setAuthToken(localStorage.token);
+    
     dispatch({
       type: LOGIN_SUCCESS,
       payload: res.data
     });
+    
     dispatch(loadUser());
     
-  } catch (err) {
+  } 
+   /* istanbul ignore next */
+  catch (err) {
     const errors = err.response.data.errors;
     if (errors) {
       errors.forEach(error => console.log(error));

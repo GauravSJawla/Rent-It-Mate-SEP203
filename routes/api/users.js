@@ -128,9 +128,9 @@ router.get('/verify', (req, res) => {
               if (err) {
                 console.log(err);
               } else {
-                console.log(
-                  'Activation Message Confirmation -  : ' + info.response
-                );
+                // console.log(
+                //   'Activation Message Confirmation -  : ' + info.response
+                // );
               }
             });
             if (frontend == 3000) {

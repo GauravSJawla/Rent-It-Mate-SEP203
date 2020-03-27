@@ -8,6 +8,8 @@ import {
   LOGOUT,
   ACCOUNT_DELETED
 } from '../actions/types';
+import setAuthToken from '../utils/setAuthToken';
+
 
 const initialState = {
   token: localStorage.getItem('token'),
@@ -36,7 +38,9 @@ export default function(state = initialState, action) {
       };
     case LOGIN_SUCCESS:
       localStorage.setItem('token', payload.token);
-      console.log('inside login success', payload)
+      if (localStorage.token) {
+        setAuthToken(localStorage.token);
+      }
       return {
         ...state,
         ...payload,

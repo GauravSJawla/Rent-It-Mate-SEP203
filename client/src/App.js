@@ -25,6 +25,10 @@ if (localStorage.token) {
 }
 
 const App = () => {
+   // expose store when run in Cypress
+if (window.Cypress) {
+  window.store = store
+}
   useEffect(() => {
     store.dispatch(loadUser());
   }, []);

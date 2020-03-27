@@ -24,7 +24,11 @@ describe('test user sign up', () => {
             await User.deleteOne(duplicateUser);
         }
      });
-    afterAll( () => {
+    afterAll( async() => {
+        const duplicateUser = await User.findOne({username: 'TestUser'})
+        if (duplicateUser){
+            await User.deleteOne(duplicateUser);
+        }
         connection.close();
         request.close();
         app.destroy();

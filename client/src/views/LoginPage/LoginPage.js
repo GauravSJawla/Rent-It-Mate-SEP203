@@ -47,14 +47,12 @@ const LoginPage = ({ login, isAuthenticated }) => {
     });
 
   const onSubmit = e => {
-    console.log('inside login submit');
     e.preventDefault();
     login(username, password);
   };
 
   // Redirect if logged in
   if (isAuthenticated) {
-    console.log('inside is authenticated')
     return <Redirect to='/dashboard' />;
   }
   return (
