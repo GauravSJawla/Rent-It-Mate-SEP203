@@ -20,7 +20,8 @@ import setAuthToken from './utils/setAuthToken';
 import Dashboard from 'views/Dashboard/Dashboard';
 import EmailVerifyPage from 'views/EmailVerifyPage/EmailVerifyPage';
 import CreateProfile from 'views/ProfilePage/CreateProfile';
-import EditProfile from 'views/ProfilePage/EditProfile'
+import EditProfile from 'views/ProfilePage/EditProfile';
+import Alert from './components/Layouts/Alert/Alert';
 
 const switchRoutes = (
   <Switch>
@@ -51,9 +52,10 @@ if (window.Cypress) {
     <Provider store={store}>
       <Router>
         <Fragment>
+          <Alert />
           <Header
-            absolute
-            color={window.location.pathname.indexOf('dashboard') > -1 ? 'black' : 'transparent'}
+            relative
+            color='primary'
             brand='Rent It Mate!'
             rightLinks={<HeaderLinks />}
           />
@@ -61,14 +63,18 @@ if (window.Cypress) {
           <Switch>
             <Route exact path='/login' component={LoginPage} />
             <Route exact path='/register' component={RegisterPage} />
+            <PrivateRoute
+              exact
+              path='/create-profile'
+              component={CreateProfile}
+            />
+            <PrivateRoute exact path='/edit-profile' component={EditProfile} />
             <Route path='/dashboard' render={() =>
               <Dashboard>
                 <Redirect from='/dashboard' to='/dashboard/user'></Redirect>
                 {switchRoutes}
               </Dashboard>
             } />
-            <PrivateRoute exact path='/create-profile' component={CreateProfile} />
-            <PrivateRoute exact path = '/edit-profile' component = {EditProfile} />
             <Route exact path='/emailVerifyPage' component={EmailVerifyPage} />
           </Switch>
         </Fragment>
