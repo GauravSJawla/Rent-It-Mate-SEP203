@@ -18,6 +18,7 @@ import setAuthToken from './utils/setAuthToken';
 import Dashboard from 'views/Dashboard/Dashboard';
 import EmailVerifyPage from 'views/EmailVerifyPage/EmailVerifyPage';
 import CreateProfile from 'views/ProfilePage/CreateProfile';
+import EditProfile from 'views/ProfilePage/EditProfile'
 
 import Alert from './components/Layouts/Alert/Alert';
 
@@ -44,7 +45,8 @@ const App = () => {
           <Switch>
             <Route exact path='/login' component={LoginPage} />
             <Route exact path='/register' component={RegisterPage} />
-            <PrivateRoute exact path='/profile' component={CreateProfile} />
+            <PrivateRoute exact path='/create-profile' component={CreateProfile} />
+            <PrivateRoute exact path = '/edit-profile' component = {EditProfile} />
             <PrivateRoute exact path='/dashboard' component={Dashboard} />
             <Route exact path='/emailVerifyPage' component={EmailVerifyPage} />
           </Switch>

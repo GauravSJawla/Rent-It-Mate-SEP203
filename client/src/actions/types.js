@@ -9,5 +9,9 @@ export const UPDATE_PROFILE = 'UPDATE_PROFILE';
 export const GET_PROFILE = 'GET_PROFILE';
 export const PROFILE_ERROR = 'PROFILE_ERROR';
 export const CLEAR_PROFILE = 'CLEAR_PROFILE';
+<<<<<<< HEAD
 export const SET_ALERT = 'SET_ALERT';
 export const REMOVE_ALERT = 'REMOVE_ALERT';
+=======
+export const ACCOUNT_DELETED = 'ACCOUNT_DELETED';
+>>>>>>> 905d70815f84924df71cfa04d1931347c5f0b015

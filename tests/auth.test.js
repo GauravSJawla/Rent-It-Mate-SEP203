@@ -1,13 +1,13 @@
 const expect = require('expect');
+const config = require('config');
 const MongoClient = require('mongodb');
 const supertest = require('supertest');
 const app = require('../server');
 const request = supertest(app);
 
 // connecting the database in the test class
-describe('test user sign up', () => {
-  const mongoURI =
-    'mongodb+srv://GauravSJ:Gaurav123@rentitmate-cluster-pgs7u.mongodb.net/test?retryWrites=true&w=majority';
+describe('test user login', () => {
+  const mongoURI = config.get('mongoURI');
   let connection;
   let response;
   let token;

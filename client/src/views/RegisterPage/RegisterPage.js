@@ -58,7 +58,7 @@ function RegisterPage({ register, isAuthenticated, setAlert }) {
   // OnSubmit Event Handler
   const onSubmit = e => {
     e.preventDefault();
-    console.log('name in else:' + { name });
+    console.log('name in else:' ,name);
     if (password !== password2) {
       setAlert('Passwords do not match', 'danger');
     } else {
