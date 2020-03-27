@@ -58,19 +58,11 @@ export default function LandingPage() {
       </Parallax>
       <div className={classNames(classes.main, classes.mainRaised)}>
         <div className={classes.gallaryContainer}>
-          <h2>New Arrivals</h2>
+          <h2 className={classes.carouselTitle}>New Arrivals</h2>
           <ProductGallary />
         </div>
-      </div>
-      <div className={classNames(classes.main, classes.mainRaised)}>
         <div className={classes.gallaryContainer}>
-          <h2>Books</h2>
-          <ProductGallary />
-        </div>
-      </div>
-      <div className={classNames(classes.main, classes.mainRaised)}>
-        <div className={classes.gallaryContainer}>
-          <h2>Toys</h2>
+          <h2 className={classes.carouselTitle}>Headphones</h2>
           <ProductGallary />
         </div>
       </div>
