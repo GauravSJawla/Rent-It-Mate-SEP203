@@ -53,10 +53,23 @@ describe('sign up user', () => {
         cy.get('input[id="password"]').type('test')
         cy.get('input[id="password2"]').type('test1')
         cy.get('button[type="submit"]').click()
-        const stub = cy.stub()
-        cy.on('window:alert',(str,stub) => {
-            expect(str).to.equal('Passwords do not match')
+        cy.window().its('store').invoke('getState').should('deep.equal',{
+            auth:{
+                token:null,
+                isAuthenticated:false,
+                loading:false,
+                user:null
+            },
+            profile:{
+                profile:null,
+                profiles:[],
+                loading:true,
+                error:{}
+            },
+            alert:[]
         })
+        // cy.window().its('store').invoke('getState').its('alert.msg').
+        //             should('equal','Passwords do not match')
     })
 
     it('should sign up user with valid details', () => {
@@ -72,7 +85,7 @@ describe('sign up user', () => {
     it('should not sign up user with valid details', () => {
         cy.get('input[id="name"]').type('TestUser')
         cy.get('input[id="username"]').type('testuser1')
-        cy.get('input[id = "email"]').type('testuser@gmail.com')
+        cy.get('input[id = "email"]').type('testuser1@gmail.com')
         cy.get('input[id="password"]').type('test')
         cy.get('input[id="password2"]').type('test')
         cy.get('button[type="submit"]').click()
@@ -84,7 +97,7 @@ describe('sign up user', () => {
         cy.get('input[id="username"]').type('testuser1')
         cy.get('input[id="password"]').type('test')
         cy.get('button[type = "submit"]').click()
-        cy.url({timeout:5000}).should('includes','/dashboard')
+        cy.url({timeout:5000}).should('includes','http://localhost:3000')
 
     })
 

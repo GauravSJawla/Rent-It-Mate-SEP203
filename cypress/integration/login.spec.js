@@ -31,7 +31,7 @@ describe('login page', () => {
         cy.get('input[id="username"]').type('mercy')
         cy.get('input[id="password"]').type('gentle')
         cy.get('button[type = "submit"]').click()
-        cy.url({timeout : 5000}).should('includes','/dashboard')
+        cy.url({timeout : 5000}).should('includes','http://localhost:3000')
     })
 
     // it('redirects to landing page after logout', () => {
@@ -56,7 +56,8 @@ describe('login page', () => {
                     profiles:[],
                     loading:false,
                     error:null
-                }
+                },
+                alert:[]
             })
             cy.url({timeout:5000}).should('includes','http://localhost:3000')
         })
