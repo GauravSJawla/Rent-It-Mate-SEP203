@@ -1,7 +1,9 @@
 // eslint-disable-next-line
 import React, { Fragment, useEffect } from 'react';
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Switch, Redirect } from 'react-router-dom';
 import 'assets/scss/material-kit-react.scss?v=1.8.0';
+
+import dashboardRoutes from "./dashboardRoutes";
 
 // pages for this product
 import Header from 'components/Header/Header';
@@ -20,6 +22,19 @@ import EmailVerifyPage from 'views/EmailVerifyPage/EmailVerifyPage';
 import CreateProfile from 'views/ProfilePage/CreateProfile';
 import EditProfile from 'views/ProfilePage/EditProfile';
 import Alert from './components/Layouts/Alert/Alert';
+
+const switchRoutes = (
+  <Switch>
+    {dashboardRoutes.map((prop, key) => (
+      <Route
+        path={prop.layout + prop.path}
+        component={prop.component}
+        key={key}
+        exact
+      />
+    ))}
+  </Switch>
+);
 
 if (localStorage.token) {
   setAuthToken(localStorage.token);
@@ -54,7 +69,12 @@ if (window.Cypress) {
               component={CreateProfile}
             />
             <PrivateRoute exact path='/edit-profile' component={EditProfile} />
-            <PrivateRoute exact path='/dashboard' component={Dashboard} />
+            <Route path='/dashboard' render={() =>
+              <Dashboard>
+                <Redirect from='/dashboard' to='/dashboard/user'></Redirect>
+                {switchRoutes}
+              </Dashboard>
+            } />
             <Route exact path='/emailVerifyPage' component={EmailVerifyPage} />
           </Switch>
         </Fragment>
