@@ -54,8 +54,8 @@ const LoginPage = ({ login, isAuthenticated }) => {
 
   // Redirect if logged in
   if (isAuthenticated) {
-    console.log('inside is authenticated')
-    return <Redirect to='/dashboard' />;
+    console.log('inside is authenticated');
+    return <Redirect to='/' />;
   }
   return (
     <div>
@@ -98,7 +98,7 @@ const LoginPage = ({ login, isAuthenticated }) => {
                       inputProps={{
                         value: username,
                         type: 'text',
-                        required : true,
+                        required: true,
                         onChange: e => onChange(e),
                         endAdornment: (
                           <InputAdornment position='end'>
@@ -117,7 +117,7 @@ const LoginPage = ({ login, isAuthenticated }) => {
                       inputProps={{
                         value: password,
                         type: 'password',
-                        required : true,
+                        required: true,
                         onChange: e => onChange(e),
                         endAdornment: (
                           <InputAdornment position='end'>
