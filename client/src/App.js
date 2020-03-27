@@ -18,7 +18,8 @@ import setAuthToken from './utils/setAuthToken';
 import Dashboard from 'views/Dashboard/Dashboard';
 import EmailVerifyPage from 'views/EmailVerifyPage/EmailVerifyPage';
 import CreateProfile from 'views/ProfilePage/CreateProfile';
-import EditProfile from 'views/ProfilePage/EditProfile'
+import EditProfile from 'views/ProfilePage/EditProfile';
+import Alert from './components/Layouts/Alert/Alert';
 
 if (localStorage.token) {
   setAuthToken(localStorage.token);
@@ -36,9 +37,10 @@ if (window.Cypress) {
     <Provider store={store}>
       <Router>
         <Fragment>
+          <Alert />
           <Header
-            absolute
-            color='transparent'
+            relative
+            color='primary'
             brand='Rent It Mate!'
             rightLinks={<HeaderLinks />}
           />
@@ -46,8 +48,12 @@ if (window.Cypress) {
           <Switch>
             <Route exact path='/login' component={LoginPage} />
             <Route exact path='/register' component={RegisterPage} />
-            <PrivateRoute exact path='/create-profile' component={CreateProfile} />
-            <PrivateRoute exact path = '/edit-profile' component = {EditProfile} />
+            <PrivateRoute
+              exact
+              path='/create-profile'
+              component={CreateProfile}
+            />
+            <PrivateRoute exact path='/edit-profile' component={EditProfile} />
             <PrivateRoute exact path='/dashboard' component={Dashboard} />
             <Route exact path='/emailVerifyPage' component={EmailVerifyPage} />
           </Switch>
