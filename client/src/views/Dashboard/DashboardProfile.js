@@ -39,7 +39,7 @@ const DashboardProfile = ({
                 simple
                 component={Link}
                 to="/dashboard/edit-profile"
-                color="primary"
+                color="white"
                 size="lg"
               >
                 Update My Account
@@ -47,7 +47,7 @@ const DashboardProfile = ({
               <Button
                 simple
                 type="submit"
-                color="primary"
+                color="white"
                 size="lg"
                 onClick={() => deleteProfile()}
               >
@@ -57,9 +57,15 @@ const DashboardProfile = ({
           ) : (
             <Fragment>
               <p>You have not yet setup a profile, please add some info!</p>
-              <Link to="/dashboard/create-profile" className="btn btn-primary my-1">
+              <Button
+                simple
+                component={Link}
+                to="/dashboard/create-profile"
+                color="white"
+                size="lg"
+              >
                 Create Profile
-              </Link>
+              </Button>
               <Button
                 simple
                 type="submit"
