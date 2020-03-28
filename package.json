@@ -4,6 +4,17 @@
     "verbose": true,
     "preset": "@shelf/jest-mongodb",
     "testEnvironment": "node",
+    "collectCoverage":true,
+    "collectCoverageFrom":[
+      "**/routes/api/**",
+      "!**/node_modules/**",
+      "!**/client/**",
+      "!**/coverage/**",
+      "!**/helpers/**",
+      "!package.json",
+      "!package-lock.json",
+      "!server.js"
+    ],
     "coveragePathIgnorePatterns": [
       "/node_modules/"
     ],

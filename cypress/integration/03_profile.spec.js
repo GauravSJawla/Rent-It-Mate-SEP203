@@ -1,24 +1,28 @@
 /// <reference types="cypress" />
 describe('create-profile page', () => {
    //const getStore = () => cy.window().its('app.$store')
-    it('should sign up user with valid details', () => {
-        cy.visit('http://localhost:3000/register')
-        cy.get('input[id="name"]').type('Minnie')
-        cy.get('input[id="username"]').type('Minnie')
-        cy.get('input[id = "email"]').type('minnie@gmail.com')
-        cy.get('input[id="password"]').type('minnie')
-        cy.get('input[id="password2"]').type('minnie')
-        cy.get('button[type="submit"]').click()
-        cy.url({timeout:5000}).should('includes','/emailVerifyPage')
-    })
 
     it('dashboard has create profile link if there is no profile for the user', () => {
         cy.visit('http://localhost:3000/login')
         cy.get('input[id="username"]').type('Minnie')
         cy.get('input[id="password"]').type('minnie')
         cy.get('button[type = "submit"]').click()
-        cy.url({timeout : 5000}).should('includes','/dashboard')
+        cy.url({timeout : 5000}).should('includes','http://localhost:3000')
         cy.get('button[type="submit"]').click()
+        // const stub = cy.stub()
+        // cy.on('window:confirm',(str,stub) => {
+        //     expect(str).to.equal('Are you sure to delete your account?')
+        //     cy.get('button').contains('cancel').click().
+        //         then(() => {
+        //             cy.url({timeout:5000}).should('includes','/dashboard')
+        //         })
+        // })
+        // cy.contains('Create Profile').click()
+        // cy.url({timeout:5000}).should('includes','/create-profile')
+        cy.contains('Profile').click().then(() => {
+            cy.get('a').contains('Dashboard').click()
+            cy.url({timeout:5000}).should('includes','/dashboard/user')
+        })
         const stub = cy.stub()
         cy.on('window:confirm',(str,stub) => {
             expect(str).to.equal('Are you sure to delete your account?')
@@ -27,6 +31,9 @@ describe('create-profile page', () => {
                     cy.url({timeout:5000}).should('includes','/dashboard')
                 })
         })
+        cy.get('a[href="/dashboard/category"]').click()
+        cy.get('h4').contains('Create a Category')
+        cy.get('a[href="/dashboard/user"]').click()
         cy.contains('Create Profile').click()
         cy.url({timeout:5000}).should('includes','/create-profile')
     })
@@ -107,15 +114,14 @@ describe('create-profile page', () => {
         cy.get('input[id="mobilePhone"]').clear().type(569806342)
         cy.get('input[id="alternateEmail"]').clear().type('xxx@trial.com')
         cy.get('button[type="submit').click()
-        cy.url({timeout : 5000}).should('includes','/dashboard')
+        cy.url({timeout : 5000}).should('includes','/dashboard/user')
+        cy.get('span').contains('Update My Account')
         cy.get('span').contains('Delete My Account')
     })
 
     it('redirects to update-profile page', () => {
-        cy.contains('Profile').click().then(() => {
-            cy.get('a[href="/edit-profile"]').click()
-            cy.url({timeout:5000}).should('includes','/edit-profile')
-        })
+        cy.get('a').get('span').contains('Update My Account').click()
+        cy.url({timeout:5000}).should('includes','/edit-profile')
         
     })
 
@@ -154,8 +160,8 @@ describe('create-profile page', () => {
     }) 
 
     it('redirects to dashboard and contains delete profile button', () => {
-        cy.get('a[href="/dashboard"]').click()
-        cy.url({timeout:5000}).should('includes','/dashboard')
+        cy.get('a').get('span').contains('Back to Profile').click()
+        cy.url({timeout:5000}).should('includes','/dashboard/user')
         cy.get('span').contains('Delete My Account')
     })
 
