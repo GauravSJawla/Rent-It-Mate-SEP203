@@ -137,13 +137,9 @@ router.delete('/:productId' , auth , async (req , res) =>{
   let product = req.product
   let userId = req.user.id
   const user = User.findById(userId)
-  if(!user){
-    /* istanbul ignore next */
-    return res.status(400).json({
-      error :  'user not found try with different credentials'
-    })
-  }
+  
   await product.remove( (err) =>{
+    /* istanbul ignore next */
     if(err){
       return res.status(400).json({
         error: errorHandler(err)
