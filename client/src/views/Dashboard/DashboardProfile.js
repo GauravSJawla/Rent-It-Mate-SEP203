@@ -1,13 +1,13 @@
-import React, { Fragment, useEffect } from "react";
-import PropTypes from "prop-types";
-import { Link } from "react-router-dom";
-import { connect } from "react-redux";
-import Parallax from "components/Parallax/Parallax.js";
-import Button from "components/CustomButtons/Button.js";
-import { makeStyles } from "@material-ui/core/styles";
-import styles from "assets/jss/material-kit-react/views/landingPage.js";
-import Spinner from "./Spinner";
-import { getUserProfile, deleteProfile } from "../../actions/profile";
+import React, { Fragment, useEffect } from 'react';
+import PropTypes from 'prop-types';
+import { Link } from 'react-router-dom';
+import { connect } from 'react-redux';
+//import Parallax from 'components/Parallax/Parallax.js';
+import Button from 'components/CustomButtons/Button.js';
+import { makeStyles } from '@material-ui/core/styles';
+import styles from 'assets/jss/material-kit-react/views/landingPage.js';
+import Spinner from './Spinner';
+import { getUserProfile, deleteProfile } from '../../actions/profile';
 
 const useStyles = makeStyles(styles);
 const DashboardProfile = ({
@@ -24,9 +24,11 @@ const DashboardProfile = ({
     <Spinner />
   ) : (
     <Fragment>
-      <Parallax filter image={require("assets/img/landing-bg.jpg")}>
-        <div className={classes.landingContainer}>
+      <div className={classes.landingContainer}>
+        <div className={classes.dashboardTitle}>
           <h3>Welcome {user && user.name}</h3>
+        </div>
+        <div className={classes.dashboardSubtitle}>
           {profile !== null ? (
             <Fragment>
               <h4>Your Address : </h4>
@@ -37,18 +39,18 @@ const DashboardProfile = ({
               <h4> {profile.address.zipcode} </h4>
               <Button
                 simple
+                color='primary'
                 component={Link}
-                to="/dashboard/edit-profile"
-                color="white"
-                size="lg"
+                to='/edit-profile'
+                size='lg'
               >
                 Update My Account
               </Button>
               <Button
                 simple
-                type="submit"
-                color="white"
-                size="lg"
+                type='submit'
+                color='primary'
+                size='lg'
                 onClick={() => deleteProfile()}
               >
                 Delete My Account
@@ -60,17 +62,17 @@ const DashboardProfile = ({
               <Button
                 simple
                 component={Link}
-                to="/dashboard/create-profile"
-                color="white"
-                size="lg"
+                to='/create-profile'
+                color='primary'
+                size='lg'
               >
                 Create Profile
               </Button>
               <Button
                 simple
-                type="submit"
-                color="white"
-                size="lg"
+                type='submit'
+                color='primary'
+                size='lg'
                 onClick={() => deleteProfile()}
               >
                 Delete My Account
@@ -78,7 +80,7 @@ const DashboardProfile = ({
             </Fragment>
           )}
         </div>
-      </Parallax>
+      </div>
     </Fragment>
   );
 };
