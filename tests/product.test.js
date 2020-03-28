@@ -87,6 +87,22 @@ describe('product create/update/delete product', () => {
                                           expect(response.status).toBe(200)})
     return expect(JSON.stringify(response.body)).toMatch('test product')
     });
+    it('can create a product - fail when fields are missing', async() => {
+      //creating a product in form
+      var form = new FormData();
+       const response = await request.post('/api/product/create')
+                                          .set('x-auth-token' , token)
+                                          .set('form-data' , form)
+                                          .field('name','test product')
+                                          .field('description' , '')
+                                          .field('price',10)
+                                          .field('category', '')
+                                          .field('quantity', 1)
+                                          .field('shipping','true')
+                                          .attach('photo','./buffer/table.jpeg')
+                                          .expect(response => {
+                                          expect(response.status).toBe(400)})
+    });
     /**
      * test for update - when one of the parameters does not exist
      */
@@ -191,17 +207,18 @@ describe('product create/update/delete product', () => {
     
     /**
      * test case for deletion for failure 
-     * deleting a product by a user that doesn't exist
+     * deleting a product by a product that doesn't exist
      */
-    it('can delete a product - when neither the product nor user exist', async() => {
+    it('can delete a product - when the product does not exist', async() => {
       const product_id = 'dummy'
       await request.delete('/api/product/'+product_id)
-                                .set('x-auth-token', 123)
+                                .set('x-auth-token', token)
                                 .send()
                                 .expect(response => {
                                   expect(response.status).toBe(400)
                                 })
     });
+    
     /**
      * test case for deletion - when both user and product exist
      */
