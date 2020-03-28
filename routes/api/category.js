@@ -35,7 +35,6 @@ router.post('/', auth, async (req, res) => {
     res.json(category);
   } catch (err) {
     /* istanbul ignore next */
-    console.error(err.message);
     res.status(500).send('Server Error');
   }
 });
@@ -50,7 +49,6 @@ router.get('/', auth, async (req, res) => {
     res.json(categories);
   } catch (err) {
     /* istanbul ignore next */
-    console.error(err.message);
     res.status(500).send('Server Error');
   }
 });
@@ -74,6 +72,7 @@ router.get('/:category_id', auth, async (req, res) => {
     if (err.kind == 'ObjectId') {
       return res.status(400).json({ msg: 'Category not found!' });
     }
+    /* istanbul ignore next */
     res.status(500).send('Server Error');
   }
 });
@@ -107,7 +106,6 @@ router.post('/:category_id', auth, async (req, res) => {
     }
   } catch (err) {
     /* istanbul ignore next */
-    console.error(err.message);
     res.status(500).send('Server Error');
   }
 });
@@ -124,7 +122,6 @@ router.delete('/:category_id', auth, async (req, res) => {
     res.json({ msg: 'Category deleted' });
   } catch (err) {
     /* istanbul ignore next */
-    console.error(err.message);
     res.status(500).send('Server Error');
   }
 });
