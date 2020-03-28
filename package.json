@@ -6,7 +6,8 @@
     "testEnvironment": "node",
     "collectCoverage":true,
     "collectCoverageFrom":[
-      "/routes/api/*.js"
+      "!**/helpers/**",
+      "!server.js"
     ],
     "coveragePathIgnorePatterns": [
       "/node_modules/"
