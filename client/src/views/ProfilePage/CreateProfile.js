@@ -1,7 +1,7 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
-import { Redirect, Link, withRouter } from 'react-router-dom';
+import { withRouter } from 'react-router-dom';
 // @material-ui/core components
 import { makeStyles } from '@material-ui/core/styles';
 import InputAdornment from '@material-ui/core/InputAdornment';
@@ -20,13 +20,13 @@ import CardBody from 'components/Card/CardBody.js';
 import CardHeader from 'components/Card/CardHeader.js';
 import CardFooter from 'components/Card/CardFooter.js';
 import CustomInput from 'components/CustomInput/CustomInput.js';
-import styles from 'assets/jss/material-kit-react/views/loginPage.js';
+import styles from 'assets/jss/material-kit-react/views/dashboardInnerPage.js';
 
 import image from 'assets/img/bg7.jpg';
 
 
 //Import register from other component
-import { createProfile, getUserProfile } from '../../actions/profile';
+import { createProfile } from '../../actions/profile';
 
 const useStyles = makeStyles(styles);
 
@@ -263,7 +263,7 @@ function CreateProfile({createProfile,
                   </CardBody>
                   <CardFooter className={classes.cardFooter}>
                     <Button simple type='submit' color='primary' size='lg'>
-                      Update My Profile
+                      Create My Profile
                     </Button>
                   </CardFooter>
                 </form>

@@ -25,6 +25,11 @@ const productSchema = new mongoose.Schema(
       ref: 'Category',
       required: true
     },
+    userId: {
+      type: ObjectId,
+      ref: 'Users',
+      required: true
+    },
     quantity: {
       type: Number
     },

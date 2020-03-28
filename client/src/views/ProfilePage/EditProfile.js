@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
-import { Redirect, Link, withRouter } from 'react-router-dom';
+import { Link, withRouter } from 'react-router-dom';
 // @material-ui/core components
 import { makeStyles } from '@material-ui/core/styles';
 import InputAdornment from '@material-ui/core/InputAdornment';
@@ -65,7 +65,7 @@ function EditProfile({ profile : {profile, loading},
         mobilePhone : loading || !profile.mobilePhone ? '' : profile.mobilePhone,
         alternateEmail : loading || !profile.alternateEmail ? '' : profile.alternateEmail
      });
- },[loading]);
+ },[loading, getUserProfile]);
 
  const { address1, address2, city, state, country, 
   zipcode, homePhone, mobilePhone, alternateEmail } = formData;
@@ -90,6 +90,7 @@ function EditProfile({ profile : {profile, loading},
   //   console.log('inside loading');
   //   return <Redirect to='/dashboard' />;
   // }
+
   return (
     <div>
       <div
@@ -281,6 +282,10 @@ function EditProfile({ profile : {profile, loading},
                   <CardFooter className={classes.cardFooter}>
                     <Button simple type='submit' color='primary' size='lg'>
                       Update My Profile
+                    </Button>
+                    <Button simple color="primary" size='lg' component={Link} 
+                            to="/dashboard/user">
+                        Back to Profile
                     </Button>
                   </CardFooter>
                 </form>

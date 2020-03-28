@@ -1,107 +1,51 @@
-// import React, { Fragment, useEffect } from 'react';
-// import PropTypes from 'prop-types';
-// import {connect} from 'react-redux';
-// import GridContainer from "components/Grid/GridContainer.js";
-// import GridItem from "components/Grid/GridItem.js";
-// import Button from 'components/CustomButtons/Button.js';
-// import Parallax from "components/Parallax/Parallax.js";
-// import { makeStyles } from "@material-ui/core/styles";
-// import styles from "assets/jss/material-kit-react/views/landingPage.js"
-// import Spinner from './Spinner';
-// import {getUserProfile,deleteProfile} from '../../actions/profile';
+// eslint-disable-next-line
+import React from 'react';
+import { withRouter } from 'react-router';
+// @material-ui/core components
+import { makeStyles } from '@material-ui/core/styles';
 
-// const useStyles = makeStyles(styles);
-// const Dashboard = ({getUserProfile, deleteProfile,
-//   auth : {user}, 
-//   profile:{profile,loading}}) => {
-//     const classes = useStyles();
-//   useEffect(() => {
-//     console.log('inside dashboard getuser')
-//     getUserProfile();
-//   },[getUserProfile]);
+import styles from 'assets/jss/material-kit-react/views/dashboardPage.js';
+// core components
+import Sidebar from 'components/Sidebar/Sidebar.js';
 
-//   const onSubmit = e => {
-//     deleteProfile();
-//   };
+//import bgImage from 'assets/img/sidebar-2.jpg';
+import logo from 'assets/img/reactlogo.png';
 
-//   return loading && profile === null ? (<Spinner/> ): ( <Fragment>
-//     <Parallax filter image={require("assets/img/landing-bg.jpg")}>
-//         <div className={classes.landingContainer}>
-//           <GridContainer>
-//             <form className={classes.form} onSubmit={e => onSubmit(e)}>
-//                 <h4>Welcome {user && user.name}</h4>
-//                 <br/>
-//                 <Button type='submit'>Delete Account</Button>
-//                 </form>
-//           </GridContainer>
-//         </div>
-//     </Parallax>
-// </Fragment>);
-// };
-
-// Dashboard.propTypes = {
-//   getUserProfile : PropTypes.func.isRequired,
-//   deleteProfile : PropTypes.func.isRequired,
-//   auth : PropTypes.object.isRequired,
-//   profile : PropTypes.object.isRequired
-// };
-
-// const mapStateToProps = state => ({
-//   auth: state.auth,
-//   profile : state.profile
-// });
-
-// export default connect(mapStateToProps, {getUserProfile,deleteProfile})(Dashboard);
-
-import React, {Fragment, useEffect} from 'react';
-import PropTypes from 'prop-types';
-import {connect} from 'react-redux';
-import Parallax from "components/Parallax/Parallax.js";
-import GridContainer from "components/Grid/GridContainer.js";
-import GridItem from "components/Grid/GridItem.js";
-import Button from 'components/CustomButtons/Button.js';
-// import Parallax from "components/Parallax/Parallax.js";
-import { makeStyles } from "@material-ui/core/styles";
-import styles from "assets/jss/material-kit-react/views/landingPage.js"
-import {getUserProfile} from '../../actions/profile';
-import Spinner from './Spinner';
+import dashboardRoutes from 'dashboardRoutes';
+import { whiteColor } from 'assets/jss/material-dashboard-react';
 
 const useStyles = makeStyles(styles);
-const Dashboard = ({getUserProfile,
-   auth:{user}, 
-  profile : {profile, loading}}) => {
+
+const Dashboard = rest => {
+  // states and functions
+  //const image = React.useState(bgImage);
+  const color = React.useState('blue');
   const classes = useStyles();
-  useEffect(() => {
-    getUserProfile();
-  }, []);
-  return loading && profile === null ? <Spinner/> : ( <Fragment>
-  <Parallax filter image={require("assets/img/landing-bg.jpg")}>
-    <div className={classes.landingContainer}>
-      <GridContainer>
-         <form className={classes.form}>
-             <h4>Welcome {user && user.name}</h4>
-             <br/>
-             {profile !== null ? <Fragment>has</Fragment> :
-             <Fragment>has not</Fragment>}
-             
-        </form>
-     </GridContainer>
+  return (
+    <div
+      style={{
+        display: 'flex',
+        height: '100%',
+        width: '100%',
+        backgroundColor: 'white'
+      }}
+    >
+      <div>
+        <Sidebar
+          routes={dashboardRoutes}
+          logoText={'Creative Tim'}
+          logo={logo}
+          // color={color}
+          {...rest}
+        />
+      </div>
+      <div style={{ flex: 1 }}>
+        <div className={classes.content}>
+          <div className={classes.innerContainer}>{rest.children}</div>
+        </div>
+      </div>
     </div>
-  </Parallax>
-  </Fragment>
   );
-
 };
 
-Dashboard.propTypes = {
-  getUserProfile : PropTypes.func.isRequired,
-  auth : PropTypes.object.isRequired,
-  profile : PropTypes.object.isRequired
-};
-
-const mapStateToProps = state => ({
-  auth: state.auth,
-  profile: state.profile
-});
-
-export default connect(mapStateToProps,{getUserProfile})(Dashboard);
+export default withRouter(Dashboard);

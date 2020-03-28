@@ -1,0 +1,212 @@
+// eslint-disable-next-line
+import React, { useState, useEffect } from 'react';
+import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
+import { withRouter } from 'react-router-dom';
+// @material-ui/core components
+import { makeStyles } from '@material-ui/core/styles';
+// core components
+import Footer from 'components/Footer/Footer.js';
+import GridContainer from 'components/Grid/GridContainer.js';
+import GridItem from 'components/Grid/GridItem.js';
+import Button from 'components/CustomButtons/Button.js';
+import Card from 'components/Card/Card.js';
+import CardBody from 'components/Card/CardBody.js';
+import CardHeader from 'components/Card/CardHeader.js';
+import CardFooter from 'components/Card/CardFooter.js';
+import CustomInput from 'components/CustomInput/CustomInput.js';
+import styles from 'assets/jss/material-kit-react/views/loginPage.js';
+import CustomDropdown from 'components/CustomDropdown/CustomDropdown.js';
+
+import image from 'assets/img/bg7.jpg';
+
+//Import register from other component
+import { createProduct } from '../../actions/product';
+
+const useStyles = makeStyles(styles);
+
+function CreateProduct({ createProduct, history }) {
+  const [cardAnimaton, setCardAnimation] = React.useState('cardHidden');
+  setTimeout(function() {
+    setCardAnimation('');
+  }, 700);
+
+  const [formData, setFormData] = useState({
+    name: '',
+    description: '',
+    price: '',
+    quantity: '',
+    shipping: '',
+    category: '',
+    photo: ''
+  });
+  const classes = useStyles();
+
+  const {
+    name,
+    description,
+    price,
+    quantity,
+    shipping,
+    category,
+    photo
+  } = formData;
+
+  //OnChange event Handler
+  const onChange = e =>
+    setFormData({
+      ...formData,
+      [e.target.id]: e.target.value
+    });
+
+  // OnSubmit Event Handler
+  const onSubmit = e => {
+    e.preventDefault();
+    createProduct(formData, history);
+  };
+  return (
+    <div>
+      <div
+        className={classes.pageHeader}
+        style={{
+          backgroundImage: 'url(' + image + ')',
+          backgroundSize: 'cover',
+          backgroundPosition: 'top center'
+        }}
+      >
+        <div className={classes.container}>
+          <GridContainer justify='center'>
+            <GridItem xs={12} sm={12} md={4}>
+              <Card className={classes[cardAnimaton]}>
+                <form className={classes.form} onSubmit={e => onSubmit(e)}>
+                  <CardHeader color='primary' className={classes.cardHeader}>
+                    <h4>Create Your Product</h4>
+                    <p></p>
+                    <div className={classes.socialLine}></div>
+                  </CardHeader>
+                  <CardBody>
+                    <CustomInput
+                      labelText='Name...'
+                      id='name'
+                      formControlProps={{
+                        fullWidth: true
+                      }}
+                      inputProps={{
+                        type: 'text',
+                        value: name,
+                        required: true,
+                        onChange: e => onChange(e)
+                      }}
+                    />
+                    <CustomInput
+                      labelText='Description...'
+                      id='description'
+                      formControlProps={{
+                        fullWidth: true
+                      }}
+                      inputProps={{
+                        type: 'text',
+                        value: description,
+                        onChange: e => onChange(e)
+                      }}
+                    />
+                    <CustomInput
+                      labelText='Price...'
+                      id='price'
+                      formControlProps={{
+                        fullWidth: true
+                      }}
+                      inputProps={{
+                        type: 'number',
+                        value: price,
+                        required: true,
+                        onChange: e => onChange(e)
+                      }}
+                    />
+                    <CustomInput
+                      labelText='Quantity...'
+                      id='quantity'
+                      formControlProps={{
+                        fullWidth: true
+                      }}
+                      inputProps={{
+                        type: 'number',
+                        value: quantity,
+                        required: true,
+                        onChange: e => onChange(e),
+                        autoComplete: 'off'
+                      }}
+                    />
+                    <CustomInput
+                      labelText='Shipping...'
+                      id='shipping'
+                      formControlProps={{
+                        fullWidth: true
+                      }}
+                      inputProps={{
+                        type: 'text',
+                        value: shipping,
+                        required: true,
+                        onChange: e => onChange(e),
+                        autoComplete: 'off'
+                      }}
+                    />
+                    <CustomDropdown
+                      id='category'
+                      formControlProps={{
+                        fullWidth: true
+                      }}
+                      inputProps={{
+                        type: 'text',
+                        value: category,
+                        required: true,
+                        onChange: e => onChange(e),
+                        autoComplete: 'off'
+                      }}
+                      buttonText='Category'
+                      dropdownList={[
+                        'Furniture',
+                        'Electronics',
+                        'Garden',
+                        'Kitchen',
+                        'Home'
+                      ]}
+                    />
+                    <CustomInput
+                      labelText='Photo...'
+                      id='photo'
+                      formControlProps={{
+                        fullWidth: true
+                      }}
+                      inputProps={{
+                        type: 'file',
+                        value: photo,
+                        required: true,
+                        onChange: e => onChange(e)
+                      }}
+                    />
+                  </CardBody>
+                  <CardFooter className={classes.cardFooter}>
+                    <Button simple type='submit' color='primary' size='lg'>
+                      Create My Product
+                    </Button>
+                  </CardFooter>
+                </form>
+              </Card>
+            </GridItem>
+          </GridContainer>
+        </div>
+        <Footer whiteFont />
+      </div>
+    </div>
+  );
+}
+
+CreateProduct.propTypes = {
+  createProduct: PropTypes.func.isRequired
+};
+
+export default connect(
+  null,
+  { createProduct }
+)(withRouter(CreateProduct));
