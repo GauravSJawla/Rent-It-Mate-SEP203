@@ -191,11 +191,31 @@ describe('product create/update/delete product', () => {
     
     /**
      * test case for deletion for failure 
-     * deleting a product by a user that doesn't exist
+     * deleting a product by a product that doesn't exist
      */
     it('can delete a product - when neither the product nor user exist', async() => {
       const product_id = 'dummy'
       await request.delete('/api/product/'+product_id)
+                                .set('x-auth-token', token)
+                                .send()
+                                .expect(response => {
+                                  expect(response.status).toBe(400)
+                                })
+    });
+    /**
+     * test case for deletion for failure 
+     * deleting a product by a user that doesn't exist
+     */
+    it('can delete a product - when neither the product nor user exist', async() => {
+      duplicateProduct = await Product.findOne({
+        name : 'test product',
+        description :'test',
+        price : 10,
+        category : '5e6a7a324ed00f15930538e7',
+        quantity : 1,
+        shipping : true
+      })
+      await request.delete('/api/product/'+duplicateProduct._id)
                                 .set('x-auth-token', 123)
                                 .send()
                                 .expect(response => {

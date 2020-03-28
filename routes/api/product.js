@@ -17,12 +17,11 @@ const { errorHandler } = require('../../helpers/dbErrorHandler');
  * @access  public
  */
 router.param('productId' , (req, res, next, id) => {
-  //console.log('inside product get by id'+id+' console '+JSON.stringify(Product.findById(id)));
   Product.findById(id)
   .exec( (err , product) =>{
     if( err || !product){
+      /* istanbul ignore next */
       return res.status(400).json({
-       
         error: 'Product could not be found'
        });
     }
@@ -107,6 +106,7 @@ router.post('/create',[
      if(files.photo){
        if(files.photo.size >1000000){
          console.log(' inside greater size')
+         /* istanbul ignore next */
          return res.status(400).json({
            error :" Image should be less than 1mb in size"
          });
@@ -138,6 +138,7 @@ router.delete('/:productId' , auth , async (req , res) =>{
   let userId = req.user.id
   const user = User.findById(userId)
   if(!user){
+    /* istanbul ignore next */
     return res.status(400).json({
       error :  'user not found try with different credentials'
     })
