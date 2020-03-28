@@ -83,6 +83,8 @@ router.post(
           link +
           '>Click here to verify</a>'
       };
+
+    /* istanbul ignore next */
       const sentEmail = transporter.sendMail(emailObject, function(err, info) {
         if (err) {
           console.log(err);
@@ -96,6 +98,8 @@ router.post(
       });
       //res.json(result);
     } catch (err) {
+
+    /* istanbul ignore next */
       console.error(err.message);
     }
   }
@@ -111,6 +115,8 @@ router.get('/verify', (req, res) => {
       } else if (!user) {
         res.json({ success: false, message: 'Activation Link is expired' });
       } else {
+
+    /* istanbul ignore next */
         user.temporarytoken = false;
         user.verifiedStatus = true;
         user.save(err => {

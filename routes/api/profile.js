@@ -21,11 +21,13 @@ router.get('/me', auth, async (req, res) => {
         .status(400)
         .json({ msg: 'You are yet to create your profile' });
     }
+    /* istanbul ignore next */
     return res.json(userProfile);
   }
   /* istanbul ignore next */ 
   catch (err) {
     //console.log(err.message);
+    /* istanbul ignore next */
     res.status(500).send('server error');
   }
 });
@@ -88,6 +90,7 @@ router.post(
     if (address1) {
       profileFields.address.address1 = address1;
     }
+    /* istanbul ignore next */
     if (address2) {
       profileFields.address.address2 = address2;
     }
@@ -131,9 +134,10 @@ router.post(
       await profile.save();
       return res.json(profile);
     } 
-    /* istanbul ignore next */
     catch (err) {
      // console.log(err.message);
+
+    /* istanbul ignore next */
       res.status(500).send('server error');
     }
   }
@@ -156,9 +160,10 @@ router.delete('/', auth, async(req,res) => {
         res.json({msg: 'User removed'});
 
     }
-    /* istanbul ignore next */
     catch(err){
       //  console.log(err.message);
+
+    /* istanbul ignore next */
         res.status(500).send('server error');  
     }  
 });
