@@ -1,6 +1,6 @@
 {
   "mongoURI": "mongodb+srv://GauravSJ:Gaurav123@rentitmate-cluster-pgs7u.mongodb.net/test?retryWrites=true&w=majority",
   "jwttoken": "mysecretkey",
-  "sendGridAPIKey": "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",
+  "sendGridAPIKey": "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",
   "mailSlurpAPIKey": "7d60f75f20596ff1effb1b3ce6a0e6c6e84f2c3afa536dcd081cb682ed1f1ab0"
 }
