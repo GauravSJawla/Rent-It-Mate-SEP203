@@ -162,12 +162,14 @@ router.put('/:productId', auth, (req, res)=>{
     form.keepExtensions = true
     form.parse(req , (err, fields , files) =>{
       if(err){
+         /* istanbul ignore next */
         return res.status(400).json({
           error: 'Image could not be uploaded'
         })
       }
       let userId = req.user.id
       const user = User.findById(userId)
+       /* istanbul ignore next */
       if(!user){
         return res.status(400).json({
           error :  'user not found try with different credentials'
@@ -193,6 +195,7 @@ router.put('/:productId', auth, (req, res)=>{
       /**  1kb = 1000
        *   1mb = 1000000
       */
+      /* istanbul ignore next */
       if(files.photo){
        if(files.photo.size >1000000){
          return res.status(400).json({
@@ -204,6 +207,7 @@ router.put('/:productId', auth, (req, res)=>{
       }
 
       product.save((err, result) => {
+         /* istanbul ignore next */
         if (err) {
           console.log(err)
             return res.status(400).json({
