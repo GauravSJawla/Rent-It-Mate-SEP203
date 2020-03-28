@@ -22,8 +22,10 @@ router.get('/me', auth, async (req, res) => {
         .json({ msg: 'You are yet to create your profile' });
     }
     return res.json(userProfile);
-  } catch (err) {
-    console.log(err.message);
+  }
+  /* istanbul ignore next */ 
+  catch (err) {
+    //console.log(err.message);
     res.status(500).send('server error');
   }
 });
@@ -128,8 +130,10 @@ router.post(
 
       await profile.save();
       return res.json(profile);
-    } catch (err) {
-      console.log(err.message);
+    } 
+    /* istanbul ignore next */
+    catch (err) {
+     // console.log(err.message);
       res.status(500).send('server error');
     }
   }
@@ -152,8 +156,9 @@ router.delete('/', auth, async(req,res) => {
         res.json({msg: 'User removed'});
 
     }
+    /* istanbul ignore next */
     catch(err){
-        console.log(err.message);
+      //  console.log(err.message);
         res.status(500).send('server error');  
     }  
 });

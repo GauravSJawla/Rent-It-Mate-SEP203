@@ -125,6 +125,7 @@ router.get('/verify', (req, res) => {
               html: `Hello<strong> ${user.name}</strong>,<br><br>Your account has been successfully activated!`
             };
             transporter.sendMail(emailObject, function(err, info) {
+              /* istanbul ignore next */
               if (err) {
                 console.log(err);
               } else {
@@ -133,9 +134,11 @@ router.get('/verify', (req, res) => {
                 // );
               }
             });
+            /* istanbul ignore next */
             if (frontend == 3000) {
               res.redirect('http://localhost:' + frontend + '/login');
             }
+            /* istanbul ignore next */
             if (frontend == process.env.PORT) {
               res.redirect(frontend + '/login');
             }

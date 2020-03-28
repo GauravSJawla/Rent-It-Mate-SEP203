@@ -71,10 +71,10 @@ export default function Sidebar(props) {
   );
   return (
     <div className={classes.sidebarWrapper}>
-      <div>
+      {/* <div>
         <img style={{ width: 50 }} src={logo} alt="" />
         <span style={{ color: "#fff" }}>{logoText}</span>
-      </div>
+      </div> */}
       {links}
     </div>
   );
