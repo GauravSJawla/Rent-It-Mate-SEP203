@@ -16,6 +16,7 @@ router.get('/', auth , async(req , res) =>{
         const user = await User.findById(req.user.id).select('-password');
         res.json(user);
     }catch(err){
+        /* istanbul ignore next */
         console.error(err.message);
         res.status(500).send('Server Error');
     }
@@ -34,11 +35,12 @@ router.post(
         const errors = validationResult(req);
 
         //if above 2 check show errors, following will display 
+        /* istanbul ignore next */
         if(!errors.isEmpty()){
             return res.status(400).json({errors : errors.array() });
         }
         const {username , password} = req.body;
-
+        /* istanbul ignore next */
         try{
             //see if user exists
             let user = await User.findOne({ username});
@@ -71,7 +73,9 @@ router.post(
                     res.json({token});
                 }
             );
+            
         }catch(err){
+            /* istanbul ignore next */
             console.error(err.message);
             res.status(500).send('Server error');
         }

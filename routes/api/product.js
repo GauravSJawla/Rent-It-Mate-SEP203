@@ -93,6 +93,7 @@ router.post('/create',[
       
       //check for all fields
       const { name, description, price, category, quantity, shipping  } = fields;
+      /* istanbul ignore next */
       if (!name || !description || !price || !category || !quantity || !shipping ) {
           return res.status(400).json({
               error: 'All fields are required'
@@ -105,9 +106,9 @@ router.post('/create',[
       // 1mb = 1000000
 
      if(files.photo){
+       /* istanbul ignore next */
        if(files.photo.size >1000000){
          console.log(' inside greater size')
-         /* istanbul ignore next */
          return res.status(400).json({
            error :" Image should be less than 1mb in size"
          });
@@ -117,6 +118,7 @@ router.post('/create',[
      }
    
     product.save((err , result) => {
+      /* istanbul ignore next */
       if(err){
         console.log(err)
         return res.status(400).json({
