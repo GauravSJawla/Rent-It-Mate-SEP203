@@ -1,7 +1,9 @@
 // eslint-disable-next-line
 import React, { Fragment, useEffect } from 'react';
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Switch, Redirect } from 'react-router-dom';
 import 'assets/scss/material-kit-react.scss?v=1.8.0';
+
+import dashboardRoutes from "./dashboardRoutes";
 
 // pages for this product
 import Header from 'components/Header/Header';
@@ -19,12 +21,31 @@ import setAuthToken from './utils/setAuthToken';
 import Dashboard from 'views/Dashboard/Dashboard';
 import EmailVerifyPage from 'views/EmailVerifyPage/EmailVerifyPage';
 import CreateProfile from 'views/ProfilePage/CreateProfile';
-import EditProfile from 'views/ProfilePage/EditProfile'
+import EditProfile from 'views/ProfilePage/EditProfile';
+import Alert from './components/Layouts/Alert/Alert';
+
+const switchRoutes = (
+  <Switch>
+    {dashboardRoutes.map((prop, key) => (
+      <Route
+        path={prop.layout + prop.path}
+        component={prop.component}
+        key={key}
+        exact
+      />
+    ))}
+  </Switch>
+);
+
 if (localStorage.token) {
   setAuthToken(localStorage.token);
 }
 
 const App = () => {
+   // expose store when run in Cypress
+if (window.Cypress) {
+  window.store = store
+}
   useEffect(() => {
     store.dispatch(loadUser());
   }, []);
@@ -32,9 +53,10 @@ const App = () => {
     <Provider store={store}>
       <Router>
         <Fragment>
+          <Alert />
           <Header
-            absolute
-            color='transparent'
+            relative
+            color='primary'
             brand='Rent It Mate!'
             rightLinks={<HeaderLinks />}
           />
@@ -42,10 +64,18 @@ const App = () => {
           <Switch>
             <Route exact path='/login' component={LoginPage} />
             <Route exact path='/register' component={RegisterPage} />
-            <PrivateRoute exact path='/create-profile' component={CreateProfile} />
-            <PrivateRoute exact path = '/edit-profile' component = {EditProfile} />
-            <PrivateRoute exact path='/dashboard' component={Dashboard} />
-            <PrivateRoute exact path='/create-product' component={ProductPage} />
+            <PrivateRoute
+              exact
+              path='/create-profile'
+              component={CreateProfile}
+            />
+            <PrivateRoute exact path='/edit-profile' component={EditProfile} />
+            <Route path='/dashboard' render={() =>
+              <Dashboard>
+                <Redirect from='/dashboard' to='/dashboard/user'></Redirect>
+                {switchRoutes}
+              </Dashboard>
+            } />
             <Route exact path='/emailVerifyPage' component={EmailVerifyPage} />
           </Switch>
         </Fragment>

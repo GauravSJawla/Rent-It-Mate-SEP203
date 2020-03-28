@@ -47,15 +47,14 @@ const LoginPage = ({ login, isAuthenticated }) => {
     });
 
   const onSubmit = e => {
-    console.log('inside login submit');
     e.preventDefault();
     login(username, password);
   };
 
   // Redirect if logged in
   if (isAuthenticated) {
-    console.log('inside is authenticated')
-    return <Redirect to='/dashboard' />;
+    console.log('inside is authenticated');
+    return <Redirect to='/' />;
   }
   return (
     <div>
@@ -98,7 +97,7 @@ const LoginPage = ({ login, isAuthenticated }) => {
                       inputProps={{
                         value: username,
                         type: 'text',
-                        required : true,
+                        required: true,
                         onChange: e => onChange(e),
                         endAdornment: (
                           <InputAdornment position='end'>
@@ -117,7 +116,7 @@ const LoginPage = ({ login, isAuthenticated }) => {
                       inputProps={{
                         value: password,
                         type: 'password',
-                        required : true,
+                        required: true,
                         onChange: e => onChange(e),
                         endAdornment: (
                           <InputAdornment position='end'>

@@ -1,0 +1,10 @@
+.image-slider {
+    margin: 20px 100px 20px 30px !important;
+  }
+  .image-item {
+    padding: 0px 20px;
+    border-radius: calc(.25rem - 1px);
+    box-shadow:
+        0 5px 15px -8px rgba(0, 0, 0, 0.24), 0 8px 10px -5px rgba(0, 0, 0, 0.2);
+  }
+  

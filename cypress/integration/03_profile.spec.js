@@ -1,47 +1,39 @@
 /// <reference types="cypress" />
 describe('create-profile page', () => {
-    
-    it('should sign up user with valid details', () => {
-        cy.visit('http://localhost:3000/register')
-        cy.get('input[id="name"]').type('Minnie')
+   //const getStore = () => cy.window().its('app.$store')
+
+    it('dashboard has create profile link if there is no profile for the user', () => {
+        cy.visit('http://localhost:3000/login')
         cy.get('input[id="username"]').type('Minnie')
-        cy.get('input[id = "email"]').type('minnie@gmail.com')
         cy.get('input[id="password"]').type('minnie')
-        cy.get('input[id="password2"]').type('minnie')
+        cy.get('button[type = "submit"]').click()
+        cy.url({timeout : 5000}).should('includes','http://localhost:3000')
         cy.get('button[type="submit"]').click()
-        cy.url({timeout:5000}).should('includes','/emailVerifyPage')
-    })
-
-    it('dashboard has create profile link if there is no profile for the user', () => {
-        cy.visit('http://localhost:3000/login')
-        cy.get('input[id="username"]').type('Minnie')
-        cy.get('input[id="password"]').type('minnie')
-        cy.get('button[type = "submit"]').click()
-        cy.url({timeout : 5000}).should('includes','/dashboard')
+        // const stub = cy.stub()
+        // cy.on('window:confirm',(str,stub) => {
+        //     expect(str).to.equal('Are you sure to delete your account?')
+        //     cy.get('button').contains('cancel').click().
+        //         then(() => {
+        //             cy.url({timeout:5000}).should('includes','/dashboard')
+        //         })
+        // })
+        // cy.contains('Create Profile').click()
+        // cy.url({timeout:5000}).should('includes','/create-profile')
         cy.contains('Profile').click().then(() => {
-            cy.get('a[href="/edit-profile"]').click()
-            cy.url({timeout:5000}).should('includes','/edit-profile')
+            cy.get('a').contains('Dashboard').click()
+            cy.url({timeout:5000}).should('includes','/dashboard/user')
         })
-    })
-
-    it('details should be empty in the edit profile page', () => {
-        cy.get('input[id="address1"]').should('have.value','')
-        cy.get('input[id="address2"]').should('have.value','')
-        cy.get('input[id="city"]').should('have.value','')
-        cy.get('input[id="state"]').should('have.value','')
-        cy.get('input[id="country"]').should('have.value','')
-        cy.get('input[id="zipcode"]').should('have.value','')
-        cy.get('input[id="homePhone"]').should('have.value','')
-        cy.get('input[id="mobilePhone"]').should('have.value','')
-        cy.get('input[id="alternateEmail"]').should('have.value','')
-    })
-
-    it('dashboard has create profile link if there is no profile for the user', () => {
-        cy.visit('http://localhost:3000/login')
-        cy.get('input[id="username"]').type('Minnie')
-        cy.get('input[id="password"]').type('minnie')
-        cy.get('button[type = "submit"]').click()
-        cy.url({timeout : 5000}).should('includes','/dashboard')
+        const stub = cy.stub()
+        cy.on('window:confirm',(str,stub) => {
+            expect(str).to.equal('Are you sure to delete your account?')
+            cy.get('button').contains('cancel').click().
+                then(() => {
+                    cy.url({timeout:5000}).should('includes','/dashboard')
+                })
+        })
+        cy.get('a[href="/dashboard/category"]').click()
+        cy.get('h4').contains('Create a Category')
+        cy.get('a[href="/dashboard/user"]').click()
         cy.contains('Create Profile').click()
         cy.url({timeout:5000}).should('includes','/create-profile')
     })
@@ -113,50 +105,63 @@ describe('create-profile page', () => {
 
     it('creates-profile for a new user', () => {
         cy.get('input[id="address1"]').clear().type('688,Collins road')
+        cy.get('input[id="address2"]').clear().type('Apt72')
         cy.get('input[id="city"]').clear().type('Iowa City')
         cy.get('input[id="state"]').clear().type('Iowa')
         cy.get('input[id="country"]').clear().type('USA')
         cy.get('input[id="zipcode"]').clear().type(87675)
         cy.get('input[id="homePhone"]').clear().type(1234567890)
+        cy.get('input[id="mobilePhone"]').clear().type(569806342)
+        cy.get('input[id="alternateEmail"]').clear().type('xxx@trial.com')
         cy.get('button[type="submit').click()
-        cy.url({timeout : 5000}).should('includes','/dashboard')
+        cy.url({timeout : 5000}).should('includes','/dashboard/user')
+        cy.get('span').contains('Update My Account')
         cy.get('span').contains('Delete My Account')
     })
 
     it('redirects to update-profile page', () => {
-        cy.contains('Profile').click().then(() => {
-            cy.get('a[href="/edit-profile"]').click()
-            cy.url({timeout:5000}).should('includes','/edit-profile')
-        })
+        cy.get('a').get('span').contains('Update My Account').click()
+        cy.url({timeout:5000}).should('includes','/edit-profile')
         
     })
 
     it('details should be populated initially in the edit profile page', () => {
         cy.get('input[id="address1"]').should('have.value','688,Collins road')
+        cy.get('input[id="address2"]').should('have.value','Apt72')
         cy.get('input[id="city"]').should('have.value','Iowa City')
         cy.get('input[id="state"]').should('have.value','Iowa')
         cy.get('input[id="country"]').should('have.value','USA')
         cy.get('input[id="zipcode"]').should('have.value','87675')
         cy.get('input[id="homePhone"]').should('have.value','1234567890')
+        cy.get('input[id="mobilePhone"]').should('have.value','569806342')
+        cy.get('input[id="alternateEmail"]').should('have.value','xxx@trial.com')
     })
 
     it('updates the user profile with new information after editing the details in the form', () => {
         cy.get('input[id="address1"]').clear().type('700,Collins road')
+        cy.get('input[id="address2"]').clear().type('Apt73')
+        cy.get('input[id="city"]').clear().type('Iowa City')
+        cy.get('input[id="state"]').clear().type('Iowa')
+        cy.get('input[id="country"]').clear().type('USA')
+        cy.get('input[id="zipcode"]').clear().type(87674)
+        cy.get('input[id="homePhone"]').clear().type(1234567890)
         cy.get('input[id="mobilePhone"]').clear().type(5698063429)
+        cy.get('input[id="alternateEmail"]').clear().type('xxx@trial.com')
         cy.get('button[type="submit').click()
         cy.url({timeout:5000}).should('includes','/edit-profile')
         cy.get('input[id="address1"]').should('have.value','700,Collins road')
+        cy.get('input[id="address2"]').should('have.value','Apt73')
         cy.get('input[id="city"]').should('have.value','Iowa City')
         cy.get('input[id="state"]').should('have.value','Iowa')
         cy.get('input[id="country"]').should('have.value','USA')
-        cy.get('input[id="zipcode"]').should('have.value','87675')
+        cy.get('input[id="zipcode"]').should('have.value','87674')
         cy.get('input[id="homePhone"]').should('have.value','1234567890')
         cy.get('input[id="mobilePhone"]').should('have.value','5698063429')
-    })
+    }) 
 
     it('redirects to dashboard and contains delete profile button', () => {
-        cy.get('a[href="/dashboard"]').click()
-        cy.url({timeout:5000}).should('includes','/dashboard')
+        cy.get('a').get('span').contains('Back to Profile').click()
+        cy.url({timeout:5000}).should('includes','/dashboard/user')
         cy.get('span').contains('Delete My Account')
     })
 
@@ -192,8 +197,13 @@ describe('create-profile page', () => {
         })
     })
 
-    
-    
+    it('should stay in the same login page after deleting the user', () => {
+        cy.visit('http://localhost:3000/login')
+        cy.get('input[id="username"]').type('Minnie')
+        cy.get('input[id="password"]').type('minnie')
+        cy.get('button[type = "submit"]').click()
+        cy.url({timeout:5000}).should('includes','/login')
 
+    })
     
 })

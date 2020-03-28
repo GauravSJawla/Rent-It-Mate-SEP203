@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
-import { Redirect, Link, withRouter } from 'react-router-dom';
+import { Link, withRouter } from 'react-router-dom';
 // @material-ui/core components
 import { makeStyles } from '@material-ui/core/styles';
 import InputAdornment from '@material-ui/core/InputAdornment';
@@ -284,7 +284,7 @@ function EditProfile({ profile : {profile, loading},
                       Update My Profile
                     </Button>
                     <Button simple color="primary" size='lg' component={Link} 
-                            to="/dashboard">
+                            to="/dashboard/user">
                         Back to Profile
                     </Button>
                   </CardFooter>

@@ -21,9 +21,13 @@ router.get('/me', auth, async (req, res) => {
         .status(400)
         .json({ msg: 'You are yet to create your profile' });
     }
+    /* istanbul ignore next */
     return res.json(userProfile);
-  } catch (err) {
-    console.log(err.message);
+  }
+  /* istanbul ignore next */ 
+  catch (err) {
+    //console.log(err.message);
+    /* istanbul ignore next */
     res.status(500).send('server error');
   }
 });
@@ -86,6 +90,7 @@ router.post(
     if (address1) {
       profileFields.address.address1 = address1;
     }
+    /* istanbul ignore next */
     if (address2) {
       profileFields.address.address2 = address2;
     }
@@ -128,8 +133,11 @@ router.post(
 
       await profile.save();
       return res.json(profile);
-    } catch (err) {
-      console.log(err.message);
+    } 
+    catch (err) {
+     // console.log(err.message);
+
+    /* istanbul ignore next */
       res.status(500).send('server error');
     }
   }
@@ -139,15 +147,25 @@ router.post(
 // @desc delete particular profile
 // @access Private
 
-router.delete('/', auth, async (req, res) => {
-  try {
-    const userProfile = await Profile.findOneAndRemove({ user: req.user.id });
-    const user = await User.findOneAndRemove({ _id: req.user.id });
-    res.json({ msg: 'User removed' });
-  } catch (err) {
-    console.log(err.message);
-    res.status(500).send('server error');
-  }
+router.delete('/', auth, async(req,res) => {
+    try{
+        const userProfile = await Profile.findOne({user:req.user.id});
+        if(userProfile){
+            await Profile.deleteOne(userProfile);
+        }
+        const user = await User.findOne({_id: req.user.id});
+        if(user){
+            await User.deleteOne(user);
+        }
+        res.json({msg: 'User removed'});
+
+    }
+    catch(err){
+      //  console.log(err.message);
+
+    /* istanbul ignore next */
+        res.status(500).send('server error');  
+    }  
 });
 
 module.exports = router;

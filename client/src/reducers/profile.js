@@ -1,7 +1,6 @@
 import {
     GET_PROFILE,
     UPDATE_PROFILE,
-    GET_PROFILES,
     CLEAR_PROFILE,
     PROFILE_ERROR
 } from '../actions/types';
@@ -31,6 +30,7 @@ export default function (state = initalState, action){
                 loading:false,
                 error:null
             }
+        /* istanbul ignore next */
         case PROFILE_ERROR:
             return{
                 ...state,

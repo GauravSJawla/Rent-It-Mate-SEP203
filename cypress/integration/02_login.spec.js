@@ -31,7 +31,7 @@ describe('login page', () => {
         cy.get('input[id="username"]').type('mercy')
         cy.get('input[id="password"]').type('gentle')
         cy.get('button[type = "submit"]').click()
-        cy.url({timeout : 5000}).should('includes','/dashboard')
+        cy.url({timeout : 5000}).should('includes','http://localhost:3000')
     })
 
     // it('redirects to landing page after logout', () => {
@@ -41,7 +41,28 @@ describe('login page', () => {
     //     })
     // })
 
-    
+    it('redirects to landing page on log out', () => {
+        cy.contains('Profile').click().then(() => {
+            cy.get('a').contains('Logout').click()
+            cy.window().its('store').invoke('getState').should('deep.equal',{
+                auth:{
+                    token:null,
+                    isAuthenticated:false,
+                    loading:false,
+                    user:null
+                },
+                profile:{
+                    profile:null,
+                    profiles:[],
+                    loading:false,
+                    error:null
+                },
+                alert:[]
+            })
+            cy.url({timeout:5000}).should('includes','http://localhost:3000')
+        })
+        
+    })
 
     
 })

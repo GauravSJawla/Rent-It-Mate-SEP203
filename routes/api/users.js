@@ -83,6 +83,8 @@ router.post(
           link +
           '>Click here to verify</a>'
       };
+
+    /* istanbul ignore next */
       const sentEmail = transporter.sendMail(emailObject, function(err, info) {
         if (err) {
           console.log(err);
@@ -96,6 +98,8 @@ router.post(
       });
       //res.json(result);
     } catch (err) {
+
+    /* istanbul ignore next */
       console.error(err.message);
     }
   }
@@ -111,6 +115,8 @@ router.get('/verify', (req, res) => {
       } else if (!user) {
         res.json({ success: false, message: 'Activation Link is expired' });
       } else {
+
+    /* istanbul ignore next */
         user.temporarytoken = false;
         user.verifiedStatus = true;
         user.save(err => {
@@ -125,17 +131,20 @@ router.get('/verify', (req, res) => {
               html: `Hello<strong> ${user.name}</strong>,<br><br>Your account has been successfully activated!`
             };
             transporter.sendMail(emailObject, function(err, info) {
+              /* istanbul ignore next */
               if (err) {
                 console.log(err);
               } else {
-                console.log(
-                  'Activation Message Confirmation -  : ' + info.response
-                );
+                // console.log(
+                //   'Activation Message Confirmation -  : ' + info.response
+                // );
               }
             });
+            /* istanbul ignore next */
             if (frontend == 3000) {
               res.redirect('http://localhost:' + frontend + '/login');
             }
+            /* istanbul ignore next */
             if (frontend == process.env.PORT) {
               res.redirect(frontend + '/login');
             }

@@ -23,9 +23,9 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">92.59% </span>
+                <span class="strong">91.3% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>25/27</span>
+                <span class='fraction'>21/23</span>
             </div>
         
             
@@ -44,9 +44,9 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">91.67% </span>
+                <span class="strong">90% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>22/24</span>
+                <span class='fraction'>18/20</span>
             </div>
         
             
@@ -140,9 +140,7 @@
 <a name='L81'></a><a href='#L81'>81</a>
 <a name='L82'></a><a href='#L82'>82</a>
 <a name='L83'></a><a href='#L83'>83</a>
-<a name='L84'></a><a href='#L84'>84</a>
-<a name='L85'></a><a href='#L85'>85</a>
-<a name='L86'></a><a href='#L86'>86</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L84'></a><a href='#L84'>84</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -150,7 +148,7 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">40x</span>
+<span class="cline-any cline-yes">45x</span>
 <span class="cline-any cline-yes">15x</span>
 <span class="cline-any cline-yes">15x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -175,6 +173,7 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -184,19 +183,16 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">46x</span>
-<span class="cline-any cline-yes">46x</span>
-<span class="cline-any cline-yes">46x</span>
-<span class="cline-any cline-yes">46x</span>
-<span class="cline-any cline-yes">46x</span>
-<span class="cline-any cline-yes">22x</span>
+<span class="cline-any cline-yes">54x</span>
+<span class="cline-any cline-yes">54x</span>
+<span class="cline-any cline-yes">54x</span>
 <span class="cline-any cline-yes">22x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">22x</span>
+<span class="cline-any cline-yes">32x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -205,15 +201,15 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">40x</span>
-<span class="cline-any cline-yes">7x</span>
-<span class="cline-any cline-yes">7x</span>
+<span class="cline-any cline-yes">45x</span>
+<span class="cline-any cline-yes">9x</span>
 <span class="cline-any cline-yes">4x</span>
 <span class="cline-any cline-yes">4x</span>
 <span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -250,11 +246,12 @@ export const createProfile = (formData, history, edit = false) =&gt; async dispa
                 }
             );
         if(!edit){
-            history.push('/dashboard');
+            history.push('/dashboard/user');
         }
     
         
     }
+    /* istanbul ignore next */
     catch(err){
         // const errors = err.response.data.errors;
         // if(errors){
@@ -271,10 +268,7 @@ export const createProfile = (formData, history, edit = false) =&gt; async dispa
 &nbsp;
 export const getUserProfile = () =&gt; async dispatch =&gt; {
     try{
-        const token = localStorage.getItem('token');
-        console.log('inside get user prfile', token);
-        const res = await axios.get('/api/profile/me');
-        console.log('user profile ',res)
+        const res = await axios.get('/api/profile/me'); 
         dispatch({
             type: GET_PROFILE,
             payload: res.data
@@ -291,7 +285,6 @@ export const getUserProfile = () =&gt; async dispatch =&gt; {
 // Delete Account
 &nbsp;
 export const deleteProfile = () =&gt; async dispatch =&gt; {
-    console.log('inside delete profile action')
     <span class="missing-if-branch" title="else path not taken" >E</span>if(window.confirm('Are you sure to delete your account?')){
         try{
             const res =  await axios.delete('/api/profile');
@@ -303,6 +296,7 @@ export const deleteProfile = () =&gt; async dispatch =&gt; {
             });
           //  dispatch(setAlert('Your account is been removed','success'));
         }
+        /* istanbul ignore next */
         catch(err){
 <span class="cstat-no" title="statement not covered" >            dispatch({</span>
                 type: PROFILE_ERROR,
@@ -319,7 +313,7 @@ export const deleteProfile = () =&gt; async dispatch =&gt; {
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank">istanbul</a>
-                at Wed Mar 25 2020 14:56:02 GMT-0500 (Central Daylight Time)
+                at Fri Mar 27 2020 17:54:28 GMT-0500 (Central Daylight Time)
             </div>
         </div>
         <script src="../../prettify.js"></script>

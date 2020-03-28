@@ -1,60 +1,44 @@
-import React, { Fragment, useEffect } from 'react';
-import PropTypes from 'prop-types';
-import { Link } from 'react-router-dom';
-import { connect } from 'react-redux';
-import Button from 'components/CustomButtons/Button.js';
-import Spinner from './Spinner';
-import { getUserProfile, deleteProfile} from '../../actions/profile';
+import React from "react";
+import { withRouter } from "react-router";
+// @material-ui/core components
+import { makeStyles } from "@material-ui/core/styles";
 
-const Dashboard = ({
-  getUserProfile,
-  deleteProfile,
-  auth: { user },
-  profile: { profile, loading }
-}) => {
-  useEffect(() => {
-    getUserProfile();
-  }, [getUserProfile]);
-  return loading && profile === null ? (
-    <Spinner />
-  ) : (
-    <Fragment>
-      <h1 className='large text-primary'>Dashboard</h1>
-      <p className='lead'>
-        <i className='fas fa-user' /> Welcome {user && user.name}
-      </p>
-      {profile !== null ? (
-        <Fragment>
-          <Button simple type='submit' color='primary' size='lg' 
-                        onClick= {() => deleteProfile()}>
-                      Delete My Account
-                    </Button>
-        </Fragment>
-      ) : (
-        <Fragment>
-          <p>You have not yet setup a profile, please add some info!</p>
-          <Link to='/create-profile' className='btn btn-primary my-1'>
-            Create Profile
-          </Link>
-        </Fragment>
-      )}
-    </Fragment>
+import styles from "assets/jss/material-kit-react/views/dashboardPage.js";
+// core components
+import Sidebar from "components/Sidebar/Sidebar.js";
+
+import bgImage from "assets/img/sidebar-2.jpg";
+import logo from "assets/img/reactlogo.png";
+
+import dashboardRoutes from "dashboardRoutes";
+import { whiteColor } from "assets/jss/material-dashboard-react";
+
+const useStyles = makeStyles(styles);
+
+const Dashboard = (rest) => {
+  // states and functions
+  const image = React.useState(bgImage);
+  const color = React.useState("blue");
+  const classes = useStyles();
+  return (
+      <div style={{ display: 'flex', width: '100%', backgroundColor: 'white', marginTop: 85 }}>
+        <div>
+          <Sidebar
+            routes={dashboardRoutes}
+            logoText={"Creative Tim"}
+            logo={logo}
+            image={image}
+            color={color}
+            {...rest}
+          />
+        </div>
+        <div style={{ flex: 1 }}>
+          <div className={classes.content}>
+            <div className={classes.innerContainer}>{rest.children}</div>
+          </div>
+        </div>
+      </div>
   );
-};
+}
 
-Dashboard.propTypes = {
-  getUserProfile: PropTypes.func.isRequired,
-  deleteProfile: PropTypes.func.isRequired,
-  auth: PropTypes.object.isRequired,
-  profile: PropTypes.object.isRequired
-};
-
-const mapStateToProps = state => ({
-  auth: state.auth,
-  profile: state.profile
-});
-
-export default connect(
-  mapStateToProps,
-  { getUserProfile,deleteProfile}
-)(Dashboard);
+export default withRouter(Dashboard)

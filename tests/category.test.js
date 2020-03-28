@@ -34,31 +34,31 @@ describe('category create/read/update/delete category', () => {
       await Category.deleteOne(duplicateCategory2);
     }
 
-    const user = Users.findOne({ username: 'AdminUser' });
-    if (user) {
-      await Users.deleteOne({ username: 'AdminUser' });
-    }
+    // const user = Users.findOne({ username: 'AdminUser' });
+    // if (user) {
+    //   await Users.deleteOne({ username: 'AdminUser' });
+    // }
   });
 
   afterAll(() => {
-    Users.deleteOne({ username: 'AdminUser' });
+    //Users.deleteOne({ username: 'AdminUser' });
     connection.close();
     request.close();
     app.destroy();
   });
 
-  it('can create an user in the database', async () => {
-    const response = await request
-      .post('/api/users')
-      .send({
-        name: 'Admin',
-        username: 'AdminUser',
-        email: 'adminuser@gmail.com',
-        password: 'admin'
-      })
-      .expect(200);
-    return expect(JSON.stringify(response.body));
-  });
+  // it('can create an user in the database', async () => {
+  //   const response = await request
+  //     .post('/api/users')
+  //     .send({
+  //       name: 'Admin',
+  //       username: 'AdminUser',
+  //       email: 'adminuser@gmail.com',
+  //       password: 'admin'
+  //     })
+  //     .expect(200);
+  //   return expect(JSON.stringify(response.body));
+  // });
 
   it('can get token', async () => {
     response = await request
