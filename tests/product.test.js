@@ -87,6 +87,22 @@ describe('product create/update/delete product', () => {
                                           expect(response.status).toBe(200)})
     return expect(JSON.stringify(response.body)).toMatch('test product')
     });
+    it('can create a product - fail when fields are missing', async() => {
+      //creating a product in form
+      var form = new FormData();
+       const response = await request.post('/api/product/create')
+                                          .set('x-auth-token' , token)
+                                          .set('form-data' , form)
+                                          .field('name','test product')
+                                          .field('description' , '')
+                                          .field('price',10)
+                                          .field('category', '')
+                                          .field('quantity', 1)
+                                          .field('shipping','true')
+                                          .attach('photo','./buffer/table.jpeg')
+                                          .expect(response => {
+                                          expect(response.status).toBe(400)})
+    });
     /**
      * test for update - when one of the parameters does not exist
      */

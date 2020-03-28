@@ -77,6 +77,7 @@ router.post('/create',[
     form.keepExtensions = true
     form.parse(req , (err, fields , files) =>{
       if(err){
+        /* istanbul ignore next */
         return res.status(400).json({
           error: 'Image could not be uploaded'
         })
@@ -84,6 +85,7 @@ router.post('/create',[
       const userId = req.user.id 
       const user = User.findById(userId)
       if(!user){
+        /* istanbul ignore next */
         return res.status(404).json({
           error :' user not found'
         })
@@ -91,7 +93,6 @@ router.post('/create',[
       
       //check for all fields
       const { name, description, price, category, quantity, shipping  } = fields;
-
       if (!name || !description || !price || !category || !quantity || !shipping ) {
           return res.status(400).json({
               error: 'All fields are required'
