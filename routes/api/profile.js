@@ -23,7 +23,7 @@ router.get('/me', auth, async (req, res) => {
     }
     return res.json(userProfile);
   } catch (err) {
-    console.log(err.message);
+    //console.log(err.message);
     res.status(500).send('server error');
   }
 });
@@ -129,7 +129,7 @@ router.post(
       await profile.save();
       return res.json(profile);
     } catch (err) {
-      console.log(err.message);
+     // console.log(err.message);
       res.status(500).send('server error');
     }
   }
@@ -153,7 +153,7 @@ router.delete('/', auth, async(req,res) => {
 
     }
     catch(err){
-        console.log(err.message);
+      //  console.log(err.message);
         res.status(500).send('server error');  
     }  
 });
