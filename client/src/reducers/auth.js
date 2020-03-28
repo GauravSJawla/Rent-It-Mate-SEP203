@@ -5,8 +5,11 @@ import {
   AUTH_ERROR,
   LOGIN_SUCCESS,
   LOGIN_FAIL,
-  LOGOUT
+  LOGOUT,
+  ACCOUNT_DELETED
 } from '../actions/types';
+import setAuthToken from '../utils/setAuthToken';
+
 
 const initialState = {
   token: localStorage.getItem('token'),
@@ -35,6 +38,9 @@ export default function(state = initialState, action) {
       };
     case LOGIN_SUCCESS:
       localStorage.setItem('token', payload.token);
+      if (localStorage.token) {
+        setAuthToken(localStorage.token);
+      }
       return {
         ...state,
         ...payload,
@@ -45,12 +51,14 @@ export default function(state = initialState, action) {
     case LOGIN_FAIL:
     case AUTH_ERROR:
     case LOGOUT:
+    case ACCOUNT_DELETED:
       localStorage.removeItem('token');
       return {
         ...state,
         token: null,
         isAuthenticated: false,
-        loading: false
+        loading: false,
+        user:null
       };
     default:
       return state;

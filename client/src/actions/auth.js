@@ -6,13 +6,16 @@ import {
   LOGIN_SUCCESS,
   USER_LOADED,
   AUTH_ERROR,
-  LOGOUT
+  LOGOUT,
+  CLEAR_PROFILE
 } from './types';
 import setAuthToken from '../utils/setAuthToken';
 
 // Load User
 export const loadUser = () => async dispatch => {
+ // console.log('insude loaduser');
   if (localStorage.token) {
+    //console.log('inside local storage token');
     setAuthToken(localStorage.token);
   }
   try {
@@ -47,7 +50,9 @@ export const register = ({
       type: REGISTER_SUCCESS,
       payload: res.data
     });
-  } catch (err) {
+  }
+  /* istanbul ignore next */
+   catch (err) {
     const errors = err.response.data.errors;
     if (errors) {
       errors.forEach(err => console.log(err));
@@ -69,13 +74,17 @@ export const login = (username, password) => async dispatch => {
   try {
     const res = await axios.post('/api/auth', body, config);
     console.log(res.data);
-
+    
     dispatch({
       type: LOGIN_SUCCESS,
       payload: res.data
     });
+    
     dispatch(loadUser());
-  } catch (err) {
+    
+  } 
+   /* istanbul ignore next */
+  catch (err) {
     const errors = err.response.data.errors;
     if (errors) {
       errors.forEach(error => console.log(error));
@@ -88,5 +97,6 @@ export const login = (username, password) => async dispatch => {
 
 // Logout / Clear Profile
 export const logout = () => dispatch => {
+  dispatch({ type : CLEAR_PROFILE});
   dispatch({ type: LOGOUT });
 };
