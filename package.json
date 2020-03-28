@@ -4,8 +4,8 @@
     "verbose": true,
     "preset": "@shelf/jest-mongodb",
     "testEnvironment": "node",
-    "collectCoverage":true,
-    "collectCoverageFrom":[
+    "collectCoverage": true,
+    "collectCoverageFrom": [
       "**/routes/api/**",
       "!**/node_modules/**",
       "!**/client/**",

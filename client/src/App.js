@@ -22,7 +22,7 @@ import Dashboard from 'views/Dashboard/Dashboard';
 import EmailVerifyPage from 'views/EmailVerifyPage/EmailVerifyPage';
 import CreateProfile from 'views/ProfilePage/CreateProfile';
 import EditProfile from 'views/ProfilePage/EditProfile';
-import Alert from './components/Layouts/Alert/Alert';
+import Alert from './components/Layout/Alert';
 
 const switchRoutes = (
   <Switch>
@@ -70,6 +70,7 @@ if (window.Cypress) {
               component={CreateProfile}
             />
             <PrivateRoute exact path='/edit-profile' component={EditProfile} />
+            <PrivateRoute exact path='/create-product' component={ProductPage} />
             <Route path='/dashboard' render={() =>
               <Dashboard>
                 <Redirect from='/dashboard' to='/dashboard/user'></Redirect>
