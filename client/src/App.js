@@ -60,7 +60,6 @@ const App = () => {
         <Fragment>
           <Alert />
           <Header
-            relative
             color='primary'
             brand='Rent It Mate!'
             rightLinks={<HeaderLinks />}
