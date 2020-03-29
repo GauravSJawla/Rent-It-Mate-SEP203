@@ -52,14 +52,10 @@ function CreateProduct({createProduct,
       ...formData,
       [e.target.id]: e.target.value
     });
-
-   
-
   // OnSubmit Event Handler
   const onSubmit = e => {
     e.preventDefault();
     createProduct(formData,history);
-    
   };
   return (
     <div>
