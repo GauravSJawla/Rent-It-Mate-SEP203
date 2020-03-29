@@ -1,23 +1,23 @@
 /*eslint-disable*/
-import React, { Fragment } from "react";
-import { connect } from "react-redux";
-import { logout } from "../../actions/auth";
+import React, { Fragment } from 'react';
+import { connect } from 'react-redux';
+import { logout } from '../../actions/auth';
 // react components for routing our app without refresh
-import { Link } from "react-router-dom";
-import PropTypes from "prop-types";
+import { Link } from 'react-router-dom';
+import PropTypes from 'prop-types';
 
 // @material-ui/core components
-import { makeStyles } from "@material-ui/core/styles";
-import List from "@material-ui/core/List";
-import ListItem from "@material-ui/core/ListItem";
+import { makeStyles } from '@material-ui/core/styles';
+import List from '@material-ui/core/List';
+import ListItem from '@material-ui/core/ListItem';
 
 // @material-ui/icons
 
 // core components
-import Button from "components/CustomButtons/Button.js";
-import CustomDropdown from "components/CustomDropdown/CustomDropdown.js";
+import Button from 'components/CustomButtons/Button.js';
+import CustomDropdown from 'components/CustomDropdown/CustomDropdown.js';
 
-import styles from "assets/jss/material-kit-react/components/headerLinksStyle.js";
+import styles from 'assets/jss/material-kit-react/components/headerLinksStyle.js';
 
 const useStyles = makeStyles(styles);
 
@@ -28,9 +28,9 @@ const HeaderLinks = ({ auth: { isAuthenticated, loading }, logout }) => {
     <List className={classes.list}>
       <ListItem className={classes.listItem}>
         <Button
-          color="transparent"
+          color='transparent'
           component={Link}
-          to="/register"
+          to='/register'
           className={classes.navLink}
         >
           Register
@@ -38,9 +38,9 @@ const HeaderLinks = ({ auth: { isAuthenticated, loading }, logout }) => {
       </ListItem>
       <ListItem className={classes.listItem}>
         <Button
-          color="transparent"
+          color='transparent'
           component={Link}
-          to="/login"
+          to='/login'
           className={classes.navLink}
         >
           Login In
@@ -53,9 +53,9 @@ const HeaderLinks = ({ auth: { isAuthenticated, loading }, logout }) => {
     <List className={classes.list}>
       <ListItem className={classes.listItem}>
         <Button
-          color="transparent"
+          color='transparent'
           component={Link}
-          to="/"
+          to='/'
           className={classes.navLink}
         >
           Cart
@@ -63,56 +63,23 @@ const HeaderLinks = ({ auth: { isAuthenticated, loading }, logout }) => {
       </ListItem>
       <ListItem className={classes.listItem}>
         <CustomDropdown
-          buttonText="Profile"
-          dropdownHeader="Username"
+          buttonText='Profile'
+          dropdownHeader='Username'
           buttonProps={{
             className: classes.navLink,
-            color: "transparent"
+            color: 'transparent'
           }}
           dropdownList={[
-            <Link
-              component={Link}
-              to="/dashboard"
-              className={classes.listLink}
-            >
+            <Link component={Link} to='/dashboard' className={classes.listLink}>
               Dashboard
             </Link>,
 
             { divider: true },
 
             <Link
-              component={Link}
-              to="/create-profile"
-              className={classes.listLink}
-            >
-              Create Profile
-            </Link>,
-
-            { divider: true },
-
-            <Link
-              component={Link}
-              to="/get-profile"
-              className={classes.listLink}
-            >
-              Get Profile
-            </Link>,
-
-            { divider: true },
-
-            <Link
-              component={Link}
-              to="/edit-profile"
-              className={classes.listLink}
-            >
-              Update Profile
-            </Link>,
-            
-            { divider: true },
-            <Link
               onClick={logout}
               component={Link}
-              to="/"
+              to='/'
               className={classes.listLink}
             >
               Logout

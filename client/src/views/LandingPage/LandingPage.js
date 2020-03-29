@@ -1,5 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import propTypes from 'prop-types';
+import { connect } from 'react-redux';
 // nodejs library that concatenates classes
 import classNames from 'classnames';
 // @material-ui/core components
@@ -22,8 +24,21 @@ import Carousel from 'views/Components/Sections/SectionCarousel';
 
 const useStyles = makeStyles(styles);
 
-export default function LandingPage() {
+const LandingPage = ({ isAuthenticated }) => {
   const classes = useStyles();
+  const guestRender = (
+    <Button
+      color='danger'
+      size='lg'
+      component={Link}
+      to='/register'
+      target='_blank'
+      rel='noopener noreferrer'
+    >
+      <i className='fas fa-play' />
+      Register
+    </Button>
+  );
   return (
     <div>
       <Parallax filter image={require('assets/img/landing-bg.jpg')}>
@@ -37,17 +52,7 @@ export default function LandingPage() {
                   used stuff and earn some money on it. So why wait? Sign Up!
                 </h4>
                 <br />
-                <Button
-                  color='danger'
-                  size='lg'
-                  component={Link}
-                  to='/register'
-                  target='_blank'
-                  rel='noopener noreferrer'
-                >
-                  <i className='fas fa-play' />
-                  Register
-                </Button>
+                <div>{isAuthenticated ? <div /> : guestRender}</div>
               </div>
             </GridItem>
             <GridItem xs={16} sm={16} md={8}>
@@ -69,4 +74,14 @@ export default function LandingPage() {
       <Footer />
     </div>
   );
-}
+};
+
+LandingPage.propTypes = {
+  isAuthenticated: propTypes.bool
+};
+
+const mapStateToProps = state => ({
+  isAuthenticated: state.auth.isAuthenticated
+});
+
+export default connect(mapStateToProps)(LandingPage);

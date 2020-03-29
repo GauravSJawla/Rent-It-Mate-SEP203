@@ -1,3 +1,4 @@
+// eslint-disable-next-line
 import React, { useState, useEffect } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
@@ -19,14 +20,12 @@ import CustomDropdown from 'components/CustomDropdown/CustomDropdown.js';
 
 import image from 'assets/img/bg7.jpg';
 
-
 //Import register from other component
 import { createProduct } from '../../actions/product';
 
 const useStyles = makeStyles(styles);
 
-function CreateProduct({createProduct,
-      history})  {
+function CreateProduct({ createProduct, history }) {
   const [cardAnimaton, setCardAnimation] = React.useState('cardHidden');
   setTimeout(function() {
     setCardAnimation('');
@@ -38,13 +37,20 @@ function CreateProduct({createProduct,
     price: '',
     quantity: '',
     shipping: '',
-    category:'',
-    photo:''
+    category: '',
+    photo: ''
   });
- const classes = useStyles();
+  const classes = useStyles();
 
- const { name, description, price, quantity, shipping, 
-  category, photo } = formData;
+  const {
+    name,
+    description,
+    price,
+    quantity,
+    shipping,
+    category,
+    photo
+  } = formData;
 
   //OnChange event Handler
   const onChange = e =>
@@ -52,10 +58,11 @@ function CreateProduct({createProduct,
       ...formData,
       [e.target.id]: e.target.value
     });
+
   // OnSubmit Event Handler
   const onSubmit = e => {
     e.preventDefault();
-    createProduct(formData,history);
+    createProduct(formData, history);
   };
   return (
     <div>
@@ -75,8 +82,7 @@ function CreateProduct({createProduct,
                   <CardHeader color='primary' className={classes.cardHeader}>
                     <h4>Create Your Product</h4>
                     <p></p>
-                    <div className={classes.socialLine}>
-                    </div>
+                    <div className={classes.socialLine}></div>
                   </CardHeader>
                   <CardBody>
                     <CustomInput
@@ -88,7 +94,7 @@ function CreateProduct({createProduct,
                       inputProps={{
                         type: 'text',
                         value: name,
-                        required : true,
+                        required: true,
                         onChange: e => onChange(e)
                       }}
                     />
@@ -102,7 +108,6 @@ function CreateProduct({createProduct,
                         type: 'text',
                         value: description,
                         onChange: e => onChange(e)
-                        
                       }}
                     />
                     <CustomInput
@@ -114,7 +119,7 @@ function CreateProduct({createProduct,
                       inputProps={{
                         type: 'number',
                         value: price,
-                        required : true,
+                        required: true,
                         onChange: e => onChange(e)
                       }}
                     />
@@ -147,26 +152,26 @@ function CreateProduct({createProduct,
                       }}
                     />
                     <CustomDropdown
-                        id='category'
-                        formControlProps={{
-                          fullWidth: true
-                        }}
-                        inputProps={{
-                          type: 'text',
-                          value: category,
-                          required: true,
-                          onChange: e => onChange(e),
-                          autoComplete: 'off'
-                        }}
-                        buttonText="Category"
-                        dropdownList={[
-                          "Furniture",
-                          "Electronics",
-                          "Garden",
-                          "Kitchen",
-                          "Home",
-                        ]}
-                      />
+                      id='category'
+                      formControlProps={{
+                        fullWidth: true
+                      }}
+                      inputProps={{
+                        type: 'text',
+                        value: category,
+                        required: true,
+                        onChange: e => onChange(e),
+                        autoComplete: 'off'
+                      }}
+                      buttonText='Category'
+                      dropdownList={[
+                        'Furniture',
+                        'Electronics',
+                        'Garden',
+                        'Kitchen',
+                        'Home'
+                      ]}
+                    />
                     <CustomInput
                       labelText='Photo...'
                       id='photo'
@@ -176,11 +181,10 @@ function CreateProduct({createProduct,
                       inputProps={{
                         type: 'file',
                         value: photo,
-                        required : true,
+                        required: true,
                         onChange: e => onChange(e)
                       }}
                     />
-                    
                   </CardBody>
                   <CardFooter className={classes.cardFooter}>
                     <Button simple type='submit' color='primary' size='lg'>
@@ -204,5 +208,5 @@ CreateProduct.propTypes = {
 
 export default connect(
   null,
-  {createProduct}
+  { createProduct }
 )(withRouter(CreateProduct));
