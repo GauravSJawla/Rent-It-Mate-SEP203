@@ -40,7 +40,6 @@ router.post(
             return res.status(400).json({errors : errors.array() });
         }
         const {username , password} = req.body;
-        /* istanbul ignore next */
         try{
             //see if user exists
             let user = await User.findOne({ username});
