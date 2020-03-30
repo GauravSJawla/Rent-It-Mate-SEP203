@@ -27,6 +27,7 @@ import Dashboard from 'views/Dashboard/Dashboard';
 import EmailVerifyPage from 'views/EmailVerifyPage/EmailVerifyPage';
 import CreateProfile from 'views/ProfilePage/CreateProfile';
 import EditProfile from 'views/ProfilePage/EditProfile';
+import adminDashboard from 'views/Dashboard/AdminDashboard'
 import Alert from './components/Layout/Alert';
 
 const switchRoutes = (
@@ -78,6 +79,11 @@ const App = () => {
               exact
               path='/create-product'
               component={ProductPage}
+            />
+            <PrivateRoute
+            exact
+            path='/admin-dashboard'
+            component={adminDashboard}
             />
             <Route
               path='/dashboard'

@@ -13,7 +13,6 @@ import setAuthToken from '../utils/setAuthToken';
 
 // Load User
 export const loadUser = () => async dispatch => {
- // console.log('insude loaduser');
   if (localStorage.token) {
     //console.log('inside local storage token');
     setAuthToken(localStorage.token);
@@ -79,9 +78,7 @@ export const login = (username, password) => async dispatch => {
       type: LOGIN_SUCCESS,
       payload: res.data
     });
-    
-    dispatch(loadUser());
-    
+   // dispatch(loadUser()); 
   } 
    /* istanbul ignore next */
   catch (err) {

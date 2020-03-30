@@ -17,7 +17,7 @@ import CardHeader from 'components/Card/CardHeader.js';
 import CardFooter from 'components/Card/CardFooter.js';
 import CustomInput from 'components/CustomInput/CustomInput.js';
 //importing login for login
-import { login } from '../../actions/auth';
+import { login, loadUser } from '../../actions/auth';
 import propTypes from 'prop-types';
 import { connect } from 'react-redux';
 
@@ -26,7 +26,7 @@ import styles from 'assets/jss/material-kit-react/views/loginPage.js';
 import image from 'assets/img/bg7.jpg';
 
 const useStyles = makeStyles(styles);
-const LoginPage = ({ login, isAuthenticated }) => {
+const LoginPage = ({ login, auth : {isAuthenticated,user}, loadUser}) => {
   const [cardAnimaton, setCardAnimation] = React.useState('cardHidden');
   setTimeout(function() {
     setCardAnimation('');
@@ -54,8 +54,17 @@ const LoginPage = ({ login, isAuthenticated }) => {
   // Redirect if logged in
   if (isAuthenticated) {
     console.log('inside is authenticated');
+    loadUser();
+  }
+  if(user!== null){
+    console.log('after load user', user)
+    if(user.role === 'admin'){
+      return <Redirect to ='/admin-Dashboard'/>
+    }
     return <Redirect to='/' />;
   }
+    
+  
   return (
     <div>
       <div
@@ -147,14 +156,15 @@ const LoginPage = ({ login, isAuthenticated }) => {
 
 LoginPage.propTypes = {
   login: propTypes.func.isRequired,
-  isAuthenticated: propTypes.bool
+  auth:propTypes.object.isRequired,
+  loadUser:propTypes.func.isRequired
 };
 
 const mapStateToProps = state => ({
-  isAuthenticated: state.auth.isAuthenticated
+  auth:state.auth
 });
 
 export default connect(
   mapStateToProps,
-  { login }
+  { login,loadUser }
 )(LoginPage);
