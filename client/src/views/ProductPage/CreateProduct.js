@@ -178,7 +178,25 @@ function CreateProduct({ createProduct, history }) {
                         autoComplete: 'off'
                       }}
                     />
-                    <CustomInput
+                    <CustomDropdown
+                      buttonText="Dropdown"
+                      dropdownHeader="Dropdown Header"
+                      buttonProps={{
+                        className: classes.navLink,
+                        color: "transparent"
+                      }}
+                      dropdownList={[
+                        "Action",
+                        "Another action",
+                        "Something else here",
+                        { divider: true },
+                        "Separated link",
+                        { divider: true },
+                        "One more separated link"
+                      ]}
+                    />
+                    {/* <CustomInput
+                      labelText='Category...'
                       id='category'
                       formControlProps={{
                         fullWidth: true
@@ -190,15 +208,7 @@ function CreateProduct({ createProduct, history }) {
                         onChange: e => onChange(e),
                         autoComplete: 'off'
                       }}
-                     // buttonText='Category'
-                      // dropdownList={[
-                      //   'Furniture',
-                      //   'Electronics',
-                      //   'Garden',
-                      //   'Kitchen',
-                      //   'Home'
-                      // ]}
-                    />
+                    /> */}
                     <CustomInput
                       labelText='Photo...'
                       id='photo'

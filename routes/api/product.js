@@ -8,7 +8,21 @@ const formidable = require('formidable')
 const _ = require('lodash');
 const fs = require('fs');
 const { errorHandler } = require('../../helpers/dbErrorHandler');
-
+/**
+ * @route PUT/UPDATE api/product/:productId
+ * @desc  This method is used to update the products entered by the user. It 
+ *        uses the product that came with the request and persists it to the database.
+ * @access private  
+ */
+router.get('/getAll', auth, async (req, res) => {
+  try {
+    const products = await Product.find();
+    res.json(products);
+  } catch (err) {
+    /* istanbul ignore next */
+    res.status(500).send('Server Error');
+  }
+});
 /**
  * @route   GET api/product/:id
  * @desc    This method gets hit everytime there is productId in the url.
@@ -16,8 +30,8 @@ const { errorHandler } = require('../../helpers/dbErrorHandler');
  *          the application process.
  * @access  public
  */
-router.param('productId' , (req, res, next, id) => {
-  Product.findById(id)
+router.param('productId' , async (req, res, next, id) => {
+  await Product.findById(id)
   .exec( (err , product) =>{
     if( err || !product){
       /* istanbul ignore next */
@@ -94,7 +108,6 @@ router.post('/create',[
       
       //check for all fields
       const { name, description, price, category, quantity, shipping  } = fields;
-      console.log('inside backend' +name+''+ description+' '+ price+' ' +category+''+ quantity+''+shipping)
       /* istanbul ignore next */
       if (!name || !description || !price || !category || !quantity || !shipping ) {
           return res.status(400).json({
@@ -225,4 +238,7 @@ router.put('/:productId', auth, (req, res)=>{
       });
   });
 });
+
+
+
 module.exports = router;
