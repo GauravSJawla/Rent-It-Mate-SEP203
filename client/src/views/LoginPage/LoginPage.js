@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Redirect } from 'react-router-dom';
 // @material-ui/core components
 import { makeStyles } from '@material-ui/core/styles';
@@ -18,15 +18,21 @@ import CardFooter from 'components/Card/CardFooter.js';
 import CustomInput from 'components/CustomInput/CustomInput.js';
 //importing login for login
 import { login } from '../../actions/auth';
-import propTypes from 'prop-types';
+import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
+import { setAlert } from '../../actions/alert';
 
 import styles from 'assets/jss/material-kit-react/views/loginPage.js';
 
 import image from 'assets/img/bg7.jpg';
 
 const useStyles = makeStyles(styles);
-const LoginPage = ({ login, isAuthenticated }) => {
+const LoginPage = ({ login, setAlert, isAuthenticated, auth: { error } }) => {
+  // useEffect(() => {
+  //   if (error !== auth.error) {
+  //   }
+  // }, [error]);
+
   const [cardAnimaton, setCardAnimation] = React.useState('cardHidden');
   setTimeout(function() {
     setCardAnimation('');
@@ -49,6 +55,14 @@ const LoginPage = ({ login, isAuthenticated }) => {
   const onSubmit = e => {
     e.preventDefault();
     login(username, password);
+    console.log('Error value:' + error + ' isAuth value: ' + isAuthenticated);
+    // if (!isAuthenticated && error === 'Invalid Password!') {
+    //   console.log('Password alert: ' + error);
+    //   setAlert('Password in incorrect!', 'danger');
+    // } else if (!isAuthenticated && error === 'Invalid Username!') {
+    //   console.log('Username alert: ' + error);
+    //   setAlert('Username is incorrect!', 'danger');
+    // }
   };
 
   // Redirect if logged in
@@ -146,15 +160,20 @@ const LoginPage = ({ login, isAuthenticated }) => {
 };
 
 LoginPage.propTypes = {
-  login: propTypes.func.isRequired,
-  isAuthenticated: propTypes.bool
+  login: PropTypes.func.isRequired,
+  setAlert: PropTypes.func.isRequired,
+  isAuthenticated: PropTypes.bool,
+  auth: PropTypes.object
 };
 
-const mapStateToProps = state => ({
-  isAuthenticated: state.auth.isAuthenticated
-});
+const mapStateToProps = state => {
+  return {
+    isAuthenticated: state.auth.isAuthenticated,
+    auth: state.auth
+  };
+};
 
 export default connect(
   mapStateToProps,
-  { login }
+  { login, setAlert }
 )(LoginPage);

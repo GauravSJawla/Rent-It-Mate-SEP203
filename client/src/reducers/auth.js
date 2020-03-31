@@ -10,12 +10,12 @@ import {
 } from '../actions/types';
 import setAuthToken from '../utils/setAuthToken';
 
-
 const initialState = {
   token: localStorage.getItem('token'),
   isAuthenticated: null,
   loading: true,
-  user: null
+  user: null,
+  error: {}
 };
 
 export default function(state = initialState, action) {
@@ -47,8 +47,18 @@ export default function(state = initialState, action) {
         isAuthenticated: true,
         loading: false
       };
-    case REGISTER_FAIL:
+
     case LOGIN_FAIL:
+      localStorage.removeItem('token');
+      return {
+        ...state,
+        token: null,
+        isAuthenticated: false,
+        loading: false,
+        user: null,
+        error: payload
+      };
+    case REGISTER_FAIL:
     case AUTH_ERROR:
     case LOGOUT:
     case ACCOUNT_DELETED:
@@ -58,7 +68,7 @@ export default function(state = initialState, action) {
         token: null,
         isAuthenticated: false,
         loading: false,
-        user:null
+        user: null
       };
     default:
       return state;

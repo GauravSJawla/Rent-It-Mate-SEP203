@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { connect } from 'react-redux';
-import propTypes from 'prop-types';
+import PropTypes from 'prop-types';
 import { Redirect } from 'react-router-dom';
 // @material-ui/core components
 import { makeStyles } from '@material-ui/core/styles';
@@ -31,7 +31,12 @@ import { setAlert } from '../../actions/alert';
 
 const useStyles = makeStyles(styles);
 
-function RegisterPage({ register, isAuthenticated, setAlert }) {
+function RegisterPage({
+  register,
+  isAuthenticated,
+  setAlert,
+  auth: { error }
+}) {
   const [cardAnimaton, setCardAnimation] = React.useState('cardHidden');
   setTimeout(function() {
     setCardAnimation('');
@@ -58,7 +63,6 @@ function RegisterPage({ register, isAuthenticated, setAlert }) {
   // OnSubmit Event Handler
   const onSubmit = e => {
     e.preventDefault();
-    console.log('name in else:' ,name);
     if (password !== password2) {
       setAlert('Passwords do not match', 'danger');
     } else {
@@ -214,8 +218,9 @@ function RegisterPage({ register, isAuthenticated, setAlert }) {
 }
 
 RegisterPage.propTypes = {
-  register: propTypes.func.isRequired,
-  isAuthenticated: propTypes.bool
+  setAlert: PropTypes.func.isRequired,
+  register: PropTypes.func.isRequired,
+  isAuthenticated: PropTypes.bool
 };
 
 const mapStateToProps = state => ({
