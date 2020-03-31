@@ -56,8 +56,8 @@ const LoginPage = ({ login, auth : {isAuthenticated,user}, loadUser}) => {
     console.log('inside is authenticated');
     loadUser();
   }
+  //Redirect to admin dashboard
   if(user!== null){
-    console.log('after load user', user)
     if(user.role === 'admin'){
       return <Redirect to ='/admin-Dashboard'/>
     }
