@@ -31,12 +31,7 @@ import { setAlert } from '../../actions/alert';
 
 const useStyles = makeStyles(styles);
 
-function RegisterPage({
-  register,
-  isAuthenticated,
-  setAlert,
-  auth: { error }
-}) {
+function RegisterPage({ register, isAuthenticated, setAlert }) {
   const [cardAnimaton, setCardAnimation] = React.useState('cardHidden');
   setTimeout(function() {
     setCardAnimation('');
