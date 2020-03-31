@@ -17,7 +17,7 @@ import CardHeader from 'components/Card/CardHeader.js';
 import CardFooter from 'components/Card/CardFooter.js';
 import CustomInput from 'components/CustomInput/CustomInput.js';
 //importing login for login
-import { login } from '../../actions/auth';
+import { login, loadUser } from '../../actions/auth';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { setAlert } from '../../actions/alert';
@@ -25,14 +25,16 @@ import { setAlert } from '../../actions/alert';
 import styles from 'assets/jss/material-kit-react/views/loginPage.js';
 
 import image from 'assets/img/bg7.jpg';
+//import store from '../../store';
 
 const useStyles = makeStyles(styles);
-const LoginPage = ({ login, setAlert, isAuthenticated, auth: { error } }) => {
-  // useEffect(() => {
-  //   if (error !== auth.error) {
-  //   }
-  // }, [error]);
-
+const LoginPage = ({
+  loadUser,
+  login,
+  setAlert,
+  isAuthenticated,
+  auth: { error }
+}) => {
   const [cardAnimaton, setCardAnimation] = React.useState('cardHidden');
   setTimeout(function() {
     setCardAnimation('');
@@ -55,21 +57,23 @@ const LoginPage = ({ login, setAlert, isAuthenticated, auth: { error } }) => {
   const onSubmit = e => {
     e.preventDefault();
     login(username, password);
-    console.log('Error value:' + error + ' isAuth value: ' + isAuthenticated);
-    // if (!isAuthenticated && error === 'Invalid Password!') {
-    //   console.log('Password alert: ' + error);
-    //   setAlert('Password in incorrect!', 'danger');
-    // } else if (!isAuthenticated && error === 'Invalid Username!') {
-    //   console.log('Username alert: ' + error);
-    //   setAlert('Username is incorrect!', 'danger');
-    // }
   };
+
+  if (error === 'Invalid Password!') {
+    console.log('Password alert: ' + error);
+    setAlert('Password in incorrect!', 'danger');
+  }
+  if (error === 'Invalid Username!') {
+    console.log('Username alert: ' + error);
+    setAlert('Username is incorrect!', 'danger');
+  }
 
   // Redirect if logged in
   if (isAuthenticated) {
     console.log('inside is authenticated');
     return <Redirect to='/' />;
   }
+
   return (
     <div>
       <div
@@ -160,6 +164,7 @@ const LoginPage = ({ login, setAlert, isAuthenticated, auth: { error } }) => {
 };
 
 LoginPage.propTypes = {
+  loadUser: PropTypes.func.isRequired,
   login: PropTypes.func.isRequired,
   setAlert: PropTypes.func.isRequired,
   isAuthenticated: PropTypes.bool,
@@ -169,11 +174,12 @@ LoginPage.propTypes = {
 const mapStateToProps = state => {
   return {
     isAuthenticated: state.auth.isAuthenticated,
-    auth: state.auth
+    auth: state.auth,
+    error: state.auth.error
   };
 };
 
 export default connect(
   mapStateToProps,
-  { login, setAlert }
+  { loadUser, login, setAlert }
 )(LoginPage);

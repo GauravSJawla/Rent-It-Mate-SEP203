@@ -58,8 +58,17 @@ export default function(state = initialState, action) {
         user: null,
         error: payload
       };
-    case REGISTER_FAIL:
     case AUTH_ERROR:
+      localStorage.removeItem('token');
+      return {
+        ...state,
+        token: null,
+        isAuthenticated: false,
+        loading: false,
+        user: null,
+        error: {}
+      };
+    case REGISTER_FAIL:
     case LOGOUT:
     case ACCOUNT_DELETED:
       localStorage.removeItem('token');

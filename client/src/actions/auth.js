@@ -25,6 +25,10 @@ export const loadUser = () => async dispatch => {
       payload: res.data
     });
   } catch (err) {
+    const errors = err.response.data.errors;
+    if (errors) {
+      errors.forEach(err => console.log(err));
+    }
     dispatch({
       type: AUTH_ERROR
     });
@@ -89,10 +93,12 @@ export const login = (username, password) => async dispatch => {
         error = err.msg;
       });
     }
-
     dispatch({
       type: LOGIN_FAIL,
       payload: error
+    });
+    dispatch({
+      type: AUTH_ERROR
     });
   }
 };
