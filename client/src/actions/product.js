@@ -6,7 +6,15 @@ import{
 
 export const createProduct = (formData, history, edit = false) => async dispatch => {
     try{
-        const res = await axios.post('/api/product/create', formData);
+        console.log('inside create product')
+        console.log(JSON.stringify(formData)+' form data')
+        const config = {
+            headers: {
+              'Content-Type': 'application/json'
+            }
+          };
+        const res = await axios.post('/api/product/create', formData , config);
+        console.log(JSON.stringify(res.data)+ 'response' )
             dispatch(
                 {
                     type:ADD_PRODUCT,

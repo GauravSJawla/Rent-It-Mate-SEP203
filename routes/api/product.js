@@ -82,6 +82,7 @@ router.post('/create',[
           error: 'Image could not be uploaded'
         })
       }
+      
       const userId = req.user.id 
       const user = User.findById(userId)
       if(!user){
@@ -93,6 +94,7 @@ router.post('/create',[
       
       //check for all fields
       const { name, description, price, category, quantity, shipping  } = fields;
+      console.log('inside backend' +name+''+ description+' '+ price+' ' +category+''+ quantity+''+shipping)
       /* istanbul ignore next */
       if (!name || !description || !price || !category || !quantity || !shipping ) {
           return res.status(400).json({
