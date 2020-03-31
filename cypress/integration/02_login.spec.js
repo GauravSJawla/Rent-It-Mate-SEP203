@@ -34,13 +34,6 @@ describe('login page', () => {
         cy.url({timeout : 5000}).should('includes','http://localhost:3000')
     })
 
-    // it('redirects to landing page after logout', () => {
-    //     cy.contains('Profile').click().then(() => {
-    //         cy.get('a[text="Logout"]').click()
-    //         cy.url({timeout:5000}).should('includes','localhost:3000')
-    //     })
-    // })
-
     it('redirects to landing page on log out', () => {
         cy.contains('Profile').click().then(() => {
             cy.get('a').contains('Logout').click()
@@ -60,8 +53,17 @@ describe('login page', () => {
                 alert:[]
             })
             cy.url({timeout:5000}).should('includes','http://localhost:3000')
+            cy.get('a').contains('Login')
         })
         
+    })
+
+    it('redirects to admin dashboard on admin login', () => {
+        cy.visit('http://localhost:3000/login')
+        cy.get('input[id="username"]').type('admin')
+        cy.get('input[id="password"]').type('admin')
+        cy.get('button[type = "submit"]').click()
+        cy.url({timeout : 5000}).should('includes','/admin-Dashboard')
     })
 
     
