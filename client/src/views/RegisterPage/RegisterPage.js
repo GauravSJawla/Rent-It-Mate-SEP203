@@ -31,7 +31,12 @@ import { setAlert } from '../../actions/alert';
 
 const useStyles = makeStyles(styles);
 
-function RegisterPage({ register, isAuthenticated, setAlert }) {
+function RegisterPage({
+  register,
+  isAuthenticated,
+  setAlert,
+  auth: { error }
+}) {
   const [cardAnimaton, setCardAnimation] = React.useState('cardHidden');
   setTimeout(function() {
     setCardAnimation('');
@@ -64,6 +69,14 @@ function RegisterPage({ register, isAuthenticated, setAlert }) {
       register({ name, username, email, password });
     }
   };
+
+  // Alerts for Errors
+  if (error === 'Email already exists!') {
+    setAlert('Email already exists!', 'danger');
+  }
+  if (error === 'Username already exists!') {
+    setAlert('Username already exists!', 'danger');
+  }
 
   if (isAuthenticated) {
     return <Redirect to='/emailVerifyPage' />;
@@ -215,11 +228,15 @@ function RegisterPage({ register, isAuthenticated, setAlert }) {
 RegisterPage.propTypes = {
   setAlert: PropTypes.func.isRequired,
   register: PropTypes.func.isRequired,
-  isAuthenticated: PropTypes.bool
+  isAuthenticated: PropTypes.bool,
+  auth: PropTypes.object,
+  error: PropTypes.object
 };
 
 const mapStateToProps = state => ({
-  isAuthenticated: state.auth.isAuthenticated
+  isAuthenticated: state.auth.isAuthenticated,
+  auth: state.auth,
+  error: state.auth.error
 });
 
 export default connect(

@@ -10,6 +10,7 @@ import {
   CLEAR_PROFILE
 } from './types';
 import setAuthToken from '../utils/setAuthToken';
+import { convertTypeAcquisitionFromJson } from 'typescript';
 
 // Load User
 export const loadUser = () => async dispatch => {
@@ -56,12 +57,19 @@ export const register = ({
     });
   } catch (err) {
     /* istanbul ignore next */
-    const errors = err.response.data.errors;
+    var error;
+    const errors = err.response.data.error;
     if (errors) {
-      errors.forEach(err => console.log(err));
+      errors.forEach(err => {
+        error = err.msg;
+      });
     }
     dispatch({
-      type: REGISTER_FAIL
+      type: REGISTER_FAIL,
+      payload: error
+    });
+    dispatch({
+      type: AUTH_ERROR
     });
   }
 };

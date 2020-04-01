@@ -52,13 +52,11 @@ const LoginPage = ({ login, setAlert, isAuthenticated, auth: { error } }) => {
     e.preventDefault();
     login(username, password);
   };
-
+  // Alerts for Errors
   if (error === 'Invalid Password!') {
-    console.log('Password alert: ' + error);
     setAlert('Password in incorrect!', 'danger');
   }
   if (error === 'Invalid Username!') {
-    console.log('Username alert: ' + error);
     setAlert('Username is incorrect!', 'danger');
   }
 
@@ -161,7 +159,8 @@ LoginPage.propTypes = {
   login: PropTypes.func.isRequired,
   setAlert: PropTypes.func.isRequired,
   isAuthenticated: PropTypes.bool,
-  auth: PropTypes.object
+  auth: PropTypes.object,
+  error: PropTypes.object
 };
 
 const mapStateToProps = state => {
