@@ -14,9 +14,7 @@ import { convertTypeAcquisitionFromJson } from 'typescript';
 
 // Load User
 export const loadUser = () => async dispatch => {
-  // console.log('insude loaduser');
   if (localStorage.token) {
-    //console.log('inside local storage token');
     setAuthToken(localStorage.token);
   }
   try {
@@ -84,7 +82,6 @@ export const login = (username, password) => async dispatch => {
   const body = JSON.stringify({ username, password });
   try {
     const res = await axios.post('/api/auth', body, config);
-    console.log(res.data);
 
     dispatch({
       type: LOGIN_SUCCESS,
