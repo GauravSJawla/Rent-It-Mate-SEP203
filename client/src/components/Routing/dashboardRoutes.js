@@ -32,5 +32,4 @@ const dashboardRoutes = [
     layout: '/dashboard'
   }
 ];
-
 export default dashboardRoutes;

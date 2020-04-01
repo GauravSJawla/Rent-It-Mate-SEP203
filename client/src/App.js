@@ -8,7 +8,7 @@ import {
 } from 'react-router-dom';
 import 'assets/scss/material-kit-react.scss?v=1.8.0';
 
-import dashboardRoutes from './dashboardRoutes';
+import dashboardRoutes from './components/Routing/dashboardRoutes';
 
 // pages for this product
 import Header from 'components/Header/Header';
