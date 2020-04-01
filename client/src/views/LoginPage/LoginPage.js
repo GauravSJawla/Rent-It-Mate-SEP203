@@ -62,7 +62,6 @@ const LoginPage = ({ login, setAlert, isAuthenticated, auth: { error } }) => {
 
   // Redirect if logged in
   if (isAuthenticated) {
-    console.log('inside is authenticated');
     return <Redirect to='/' />;
   }
 
