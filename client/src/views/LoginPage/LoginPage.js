@@ -17,7 +17,7 @@ import CardHeader from 'components/Card/CardHeader.js';
 import CardFooter from 'components/Card/CardFooter.js';
 import CustomInput from 'components/CustomInput/CustomInput.js';
 //importing login for login
-import { login, loadUser } from '../../actions/auth';
+import { login } from '../../actions/auth';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { setAlert } from '../../actions/alert';
@@ -28,13 +28,7 @@ import image from 'assets/img/bg7.jpg';
 //import store from '../../store';
 
 const useStyles = makeStyles(styles);
-const LoginPage = ({
-  loadUser,
-  login,
-  setAlert,
-  isAuthenticated,
-  auth: { error }
-}) => {
+const LoginPage = ({ login, setAlert, isAuthenticated, auth: { error } }) => {
   const [cardAnimaton, setCardAnimation] = React.useState('cardHidden');
   setTimeout(function() {
     setCardAnimation('');
@@ -164,7 +158,6 @@ const LoginPage = ({
 };
 
 LoginPage.propTypes = {
-  loadUser: PropTypes.func.isRequired,
   login: PropTypes.func.isRequired,
   setAlert: PropTypes.func.isRequired,
   isAuthenticated: PropTypes.bool,
@@ -181,5 +174,5 @@ const mapStateToProps = state => {
 
 export default connect(
   mapStateToProps,
-  { loadUser, login, setAlert }
+  { login, setAlert }
 )(LoginPage);
