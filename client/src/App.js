@@ -28,9 +28,7 @@ import EmailVerifyPage from 'views/EmailVerifyPage/EmailVerifyPage';
 import CreateProfile from 'views/ProfilePage/CreateProfile';
 import EditProfile from 'views/ProfilePage/EditProfile';
 import AdminDashboard from 'views/Dashboard/AdminDashboard';
-import adminDashboardRoutes from 'components/Routing/adminDashboardRoutes';
 import Alert from './components/Layout/Alert';
-import ListUsers from 'views/ProfilePage/ListUsers';
 
 const switchRoutes = (
   <Switch>
@@ -44,18 +42,6 @@ const switchRoutes = (
     ))}
   </Switch>
 );
-const adminRoutes = (
-  <Switch>
-  {adminDashboardRoutes.map((prop, key) => (
-    <Route
-      path={prop.layout + prop.path}
-      component={prop.component}
-      key={key}
-      exact
-    />
-  ))}
-</Switch>
-)
 
 if (localStorage.token) {
   setAuthToken(localStorage.token);
@@ -97,12 +83,6 @@ const App = () => {
             <PrivateRoute
                 path='/admin-dashboard'
                 component={AdminDashboard}
-                render={() => (
-                  <AdminDashboard>
-                    {adminRoutes}
-                    {/* <PrivateRoute path = '/admin-dashboard/all-users' component={ListUsers}/> */}
-                  </AdminDashboard>
-                )}
               />
             <Route
               path='/dashboard'

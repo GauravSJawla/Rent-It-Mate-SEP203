@@ -18,9 +18,6 @@ import { whiteColor } from 'assets/jss/material-dashboard-react';
 const useStyles = makeStyles(styles);
 
 const Dashboard = rest => {
-  console.log('inside dashboard' , rest);
-  console.log('rest children for dashboard', rest.children)
-
   // states and functions
   //const image = React.useState(bgImage);
   const color = React.useState('blue');

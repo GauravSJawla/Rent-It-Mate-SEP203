@@ -6,8 +6,6 @@ const useStyles = makeStyles(styles);
 
 const ListUsers = () => {
     const classes = useStyles();
-
-    console.log('inside list users page')
     return(
         <div className={classes.landingContainer}>
         <div className={classes.dashboardTitle}>
