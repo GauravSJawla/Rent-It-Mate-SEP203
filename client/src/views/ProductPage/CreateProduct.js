@@ -17,6 +17,11 @@ import CardFooter from 'components/Card/CardFooter.js';
 import CustomInput from 'components/CustomInput/CustomInput.js';
 import styles from 'assets/jss/material-kit-react/views/loginPage.js';
 import CustomDropdown from 'components/CustomDropdown/CustomDropdown.js';
+import Radio from "@material-ui/core/Radio";
+import FormControlLabel from "@material-ui/core/FormControlLabel";
+//icons
+import FiberManualRecord from "@material-ui/icons/FiberManualRecord";
+
 
 import image from 'assets/img/bg7.jpg';
 
@@ -26,6 +31,8 @@ import { createProduct } from '../../actions/product';
 const useStyles = makeStyles(styles);
 
 function CreateProduct({ createProduct, history }) {
+
+  const [selectedEnabled, setSelectedEnabled] = React.useState("b");
   const [cardAnimaton, setCardAnimation] = React.useState('cardHidden');
   setTimeout(function() {
     setCardAnimation('');
@@ -37,6 +44,7 @@ function CreateProduct({ createProduct, history }) {
     price: '',
     quantity: '',
     shipping: '',
+    categories: [],
     category: '',
     photo: '',
     formData: ''
@@ -49,6 +57,7 @@ function CreateProduct({ createProduct, history }) {
     price,
     quantity,
     shipping,
+    categories,
     category,
     photo,
     createdProduct,
@@ -60,6 +69,7 @@ function CreateProduct({ createProduct, history }) {
     //   if (data.error) {
     //       setValues({ ...values, error: data.error });
     //   } else {
+            
           setValues({
               ...values,
               //categories: data,
@@ -73,12 +83,12 @@ function CreateProduct({ createProduct, history }) {
   useEffect(() => {
     console.log('use effect')
     init();
-  }, []);
+  },[]);
 
   //OnChange event Handler
   const onChange = e => {
       const name = e.target.id
-      const value = name =='photo' ? e.target.files[0] : e.target.value;
+      const value = name ==='photo' ? e.target.files[0] : e.target.value;
       console.log(name+' id and val '+value)
       formData.set(name, value);
       setValues({ ...values, [name]: value});
@@ -164,26 +174,91 @@ function CreateProduct({ createProduct, history }) {
                         autoComplete: 'off'
                       }}
                     />
-                    <CustomInput
-                      labelText='Shipping...'
-                      id='shipping'
-                      formControlProps={{
-                        fullWidth: true
-                      }}
-                      inputProps={{
-                        type: 'text',
-                        value: shipping,
-                        required: true,
-                        onChange: e => onChange(e),
-                        autoComplete: 'off'
+                    <div>
+                    <GridItem xs={12} sm={6} md={4} lg={3}>
+                      <div
+                        className={
+                          classes.checkboxAndRadio +
+                          " " +
+                          classes.checkboxAndRadioHorizontal
+                        }
+                      >
+                    <FormControlLabel
+                      control={
+                      <Radio
+                        checked={selectedEnabled === "a"}
+                        onChange={() => setSelectedEnabled("a")}
+                        value="a"
+                        name="radio button enabled"
+                        aria-label="A"
+                        icon={
+                          <FiberManualRecord className={classes.radioUnchecked} />
+                        }
+                        checkedIcon={
+                          <FiberManualRecord className={classes.radioChecked} />
+                        }
+                        classes={{
+                          checked: classes.radio,
+                          root: classes.radioRoot
+                        }}
+                    />
+                        }
+                  classes={{
+                    label: classes.label,
+                    root: classes.labelRoot
+                  }}
+                  label="I will ship the product"
+                />
+              </div>
+              <div
+                className={
+                  classes.checkboxAndRadio +
+                  " " +
+                  classes.checkboxAndRadioHorizontal
+                }
+              >
+                <FormControlLabel
+                  control={
+                    <Radio
+                      checked={selectedEnabled === "b"}
+                      onChange={() => setSelectedEnabled("b")}
+                      value="b"
+                      name="radio button enabled"
+                      aria-label="B"
+                      icon={
+                        <FiberManualRecord className={classes.radioUnchecked} />
+                      }
+                      checkedIcon={
+                        <FiberManualRecord className={classes.radioChecked} />
+                      }
+                      classes={{
+                        checked: classes.radio,
+                        root: classes.radioRoot
                       }}
                     />
+                  }
+                  classes={{
+                    label: classes.label,
+                    root: classes.labelRoot
+                  }}
+                  label="Umm no i won't ship this product"
+                />
+                </div>
+                </GridItem>
+                </div>
                     <CustomDropdown
-                      buttonText="Dropdown"
-                      dropdownHeader="Dropdown Header"
+                      buttonText="Category"
+                      dropdownHeader="Categories"
                       buttonProps={{
                         className: classes.navLink,
                         color: "transparent"
+                      }}
+                      inputProps={{
+                        type: 'text',
+                        value: category,
+                        required: true,
+                        onChange: e => onChange(e),
+                        autoComplete: 'off'
                       }}
                       dropdownList={[
                         "Action",

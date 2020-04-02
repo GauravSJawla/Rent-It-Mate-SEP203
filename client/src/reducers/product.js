@@ -1,29 +1,39 @@
 import{
     ADD_PRODUCT,
-    PRODUCT_ERROR
-} from './types';
+    PRODUCT_ERROR,
+    GET_PRODUCTS,
+    GET_PRODUCT
+} from '../actions/types';
 
 const initalState = {
-    product : null,
-    error :{}
-}
+    products: [],
+    product: null,
+    loading: true,
+    error: {}
+};
 
 export default function (state = initalState, action){
-    const {type,payload} = action;
+    const {type, payload} = action;
 
-    switch(type){
+    switch(type) {
+        case GET_PRODUCTS:
+            return{
+                ...state,
+                products: payload,
+                loading: false
+            };
         case ADD_PRODUCT:
             return {
                 ...state,
-                profile: payload,
+                product: payload,
                 loading: false
             };
-        case PROFILE_ERROR:
-                return{
-                    ...state,
-                    error: payload,
-                    loading:false
-                }
+        case PRODUCT_ERROR:
+            return{
+                ...state,
+                error: payload,
+                loading: false
+            };
         default:
             return state;
     }

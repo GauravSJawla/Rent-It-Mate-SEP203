@@ -8,6 +8,7 @@ import DashboardProfile from 'views/Dashboard/DashboardProfile';
 //import EditProfile from 'views/ProfilePage/EditProfile';
 import CategoryPage from 'views/CategoryPage/CategoryPage';
 import ProductPage from 'views/ProductPage/CreateProduct';
+import ViewProduct from 'views/ProductPage/ViewProducts';
 
 const dashboardRoutes = [
   {
@@ -29,6 +30,13 @@ const dashboardRoutes = [
     name: 'Add Product',
     icon: AddIcon,
     component: ProductPage,
+    layout: '/dashboard'
+  },
+  {
+    path: '/products',
+    name: 'View My Products',
+    icon: AddIcon,
+    component: ViewProduct,
     layout: '/dashboard'
   }
 ];

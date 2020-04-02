@@ -9,19 +9,68 @@ const _ = require('lodash');
 const fs = require('fs');
 const { errorHandler } = require('../../helpers/dbErrorHandler');
 /**
- * @route PUT/UPDATE api/product/:productId
- * @desc  This method is used to update the products entered by the user. It 
- *        uses the product that came with the request and persists it to the database.
- * @access private  
+ * @route GET api/product/getMyProducts
+ * @desc  This method is used to get all the products present on the site for the user.
+ * @access public  
  */
-router.get('/getAll', auth, async (req, res) => {
+router.get('/getMyProducts',auth ,  async (req, res) => {
   try {
-    const products = await Product.find();
+    const products = await Product.find({
+      userId : req.user.id
+    })
+    .select('-photo');
     res.json(products);
   } catch (err) {
     /* istanbul ignore next */
     res.status(500).send('Server Error');
   }
+});
+
+/**
+ * sell / arrival
+ * by sell = /products?sortBy=sold&order=desc&limit=4
+ * by arrival = /products?sortBy=createdAt&order=desc&limit=4
+ * if no params are sent, then all products are returned
+ */
+router.get("/products", async (req, res) => {
+  let order = req.query.order ? req.query.order : 'asc';
+  let sortBy = req.query.sortBy ? req.query.sortBy : '_id';
+  let limit = req.query.limit ? parseInt(req.query.limit) : 6;
+
+  Product.find()
+      .select('-photo')
+      .populate('Category')
+      .sort([[sortBy, order]])
+      .limit(limit)
+      .exec((err, products) => {
+          if (err) {
+            console.log(err);
+              return res.status(400).json({
+                  error: 'Products not found'
+              });
+          }
+          res.json(products);
+      });
+});
+/**
+ * it will find the products based on the req product category
+ * other products that has the same category, will be returned
+ */
+
+router.get ( "/products/related/:productId",(req, res) => {
+  let limit = req.query.limit ? parseInt(req.query.limit) : 6;
+  //products $ne = not including the req.product
+  Product.find({ _id: { $ne: req.product }, category: req.product.category })
+      .limit(limit)
+      .populate('category', '_id name')
+      .exec((err, products) => {
+          if (err) {
+              return res.status(400).json({
+                  error: 'Products not found'
+              });
+          }
+          res.json(products);
+      });
 });
 /**
  * @route   GET api/product/:id

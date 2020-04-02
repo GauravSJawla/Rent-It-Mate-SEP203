@@ -1,7 +1,8 @@
 import axios from 'axios';
 import{
     ADD_PRODUCT,
-    PRODUCT_ERROR
+    PRODUCT_ERROR,
+    GET_PRODUCTS
 } from './types';
 
 export const createProduct = (formData, history, edit = false) => async dispatch => {
@@ -31,4 +32,20 @@ export const createProduct = (formData, history, edit = false) => async dispatch
         })
     }
 };
+
+export const getUserProducts = () => async dispatch => {
+    try {
+      const res = await axios.get('/api/product/getMyProducts');
+      dispatch({
+        type: GET_PRODUCTS,
+        payload: res.data
+      });
+    } catch (err) {
+      
+      dispatch({
+        type: PRODUCT_ERROR,
+        payload: { msg: err.response.statusText, status: err.response.status}
+      });
+    }
+  };
 
