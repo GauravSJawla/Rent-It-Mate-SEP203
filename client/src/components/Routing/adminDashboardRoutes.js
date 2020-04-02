@@ -3,7 +3,8 @@ import Person from '@material-ui/icons/Person';
 import AddIcon from '@material-ui/icons/Add';
 
 // core components/views for Admin layout
-// import DashboardProfile from 'views/Dashboard/DashboardProfile';
+import ListUsers from '../../views/ProfilePage/ListUsers';
+ //import DashboardProfile from 'views/Dashboard/DashboardProfile';
 // //import CreateProfile from 'views/ProfilePage/CreateProfile';
 // //import EditProfile from 'views/ProfilePage/EditProfile';
 // import CategoryPage from 'views/CategoryPage/CategoryPage';
@@ -11,12 +12,13 @@ import AddIcon from '@material-ui/icons/Add';
 
 const adminDashboardRoutes = [
     {
-        path:'/all-users',
-        name: 'All Users',
+        path: '/all-users',
+        name: 'All users',
         icon: Person,
-        //component: getUserProfile,
-        layout:'/dashboard'
+        component: ListUsers,
+        layout: '/dashboard'
     }
+    
 //   {
 //     path: '/user',
 //     name: 'User Profile',
