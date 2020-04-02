@@ -18,9 +18,10 @@ import { whiteColor } from 'assets/jss/material-dashboard-react';
 const useStyles = makeStyles(styles);
 
 const AdminDashboard = rest => {
+  console.log('inside admin dashboard')
+  console.log('rest in admin dashboard' , rest)
+  console.log('rest children for admin dashboard', rest.children)
   // states and functions
-  //const image = React.useState(bgImage);
-  const color = React.useState('blue');
   const classes = useStyles();
   return (
     <div
@@ -42,7 +43,7 @@ const AdminDashboard = rest => {
       </div>
       <div style={{ flex: 1 }}>
         <div className={classes.content}>
-          <div className={classes.innerContainer}>{rest.children}</div>
+          <div className={classes.innerContainer}>{rest.location.pathname}</div>
         </div>
       </div>
     </div>

@@ -30,6 +30,7 @@ import EditProfile from 'views/ProfilePage/EditProfile';
 import AdminDashboard from 'views/Dashboard/AdminDashboard';
 import adminDashboardRoutes from 'components/Routing/adminDashboardRoutes';
 import Alert from './components/Layout/Alert';
+import ListUsers from 'views/ProfilePage/ListUsers';
 
 const switchRoutes = (
   <Switch>
@@ -88,22 +89,21 @@ const App = () => {
               component={CreateProfile}
             />
             <PrivateRoute exact path='/edit-profile' component={EditProfile} />
-            <PrivateRoute
+            {/* <PrivateRoute
               exact
               path='/create-product'
               component={ProductPage}
-            />
+            /> */}
             <PrivateRoute
-            exact
-            path='/admin-dashboard'
-            component={AdminDashboard}
-           render={() => (
-            <AdminDashboard>
-              <Redirect from='/admin-dashboard' to='/admin-dashboard'></Redirect>
-              {adminRoutes}
-            </AdminDashboard>
-          )}
-            />
+                path='/admin-dashboard'
+                component={AdminDashboard}
+                render={() => (
+                  <AdminDashboard>
+                    {adminRoutes}
+                    {/* <PrivateRoute path = '/admin-dashboard/all-users' component={ListUsers}/> */}
+                  </AdminDashboard>
+                )}
+              />
             <Route
               path='/dashboard'
               render={() => (
