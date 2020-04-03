@@ -9,6 +9,7 @@ const nodemailer = require('nodemailer');
 const sendgridTransport = require('nodemailer-sendgrid-transport');
 //Import user model
 const Users = require('../../models/Users');
+const auth = require('../../middleware/auth');
 const frontend = process.env.PORT || 3000;
 const transporter = nodemailer.createTransport(
   sendgridTransport({
@@ -21,10 +22,19 @@ const transporter = nodemailer.createTransport(
 // @route   GET api/users
 // @desc    retrieve all users
 // @access  admin
-router.get('/', async (req, res) => {
+router.get('/', auth, async (req, res) => {
   try {
-    const users = await Users.find().populate('profile',['address'])
-    res.json(users);
+    const user = await Users.findOne({_id:req.user.id})
+    if(user.username == 'admin'){
+      const users = await Users.find({role:'user'}).populate('profile',['address'])
+      res.json(users);
+    }
+    else
+    {
+      return res
+      .status(400)
+      .json({ msg: 'Access is allowed only to admin' });    }
+    
   } catch (err) {
     console.error(err.message);
     res.status(500).send('Server Error');

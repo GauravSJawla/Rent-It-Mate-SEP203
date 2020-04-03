@@ -5,9 +5,11 @@ import {
   LOGIN_FAIL,
   LOGIN_SUCCESS,
   USER_LOADED,
+  USER_ERROR,
   AUTH_ERROR,
   LOGOUT,
-  CLEAR_PROFILE
+  CLEAR_PROFILE,
+  GET_USERS
 } from './types';
 import setAuthToken from '../utils/setAuthToken';
 
@@ -91,6 +93,24 @@ export const login = (username, password) => async dispatch => {
     });
   }
 };
+
+export const getAllUsers = () => async dispatch => {
+  try{
+    const res = await axios.get('/api/users');
+    dispatch({
+      type: GET_USERS,
+      payload: res.data
+    })
+  }
+  catch(err){
+    dispatch({
+      type: USER_ERROR,
+      payload: { msg: err.response.statusText, status: err.response.status }
+    });
+  }
+  
+
+}
 
 // Logout / Clear Profile
 export const logout = () => dispatch => {
