@@ -47,17 +47,6 @@ describe('test user login', () => {
     return expect(response.body).toBeTruthy();
   });
 
-  it('should return an error if it is an invalid credentials', async () => {
-    response = await request
-      .post('/api/auth')
-      .send({
-        username: 'mercy',
-        password: 'mercy',
-      })
-      .expect(400);
-    return expect(JSON.stringify(response.body)).toMatch('Invalid Credentials');
-  });
-
   it('should return an error if username is incorrect', async () => {
     response = await request
       .post('/api/auth')

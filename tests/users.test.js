@@ -103,7 +103,7 @@ describe('test user sign up', () => {
       })
       .expect(400);
     return expect(JSON.stringify(response.body)).toMatch(
-      'Username already exists!'
+      'Email already exists!'
     );
   });
 });
