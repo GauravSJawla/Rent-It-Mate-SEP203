@@ -32,7 +32,7 @@ const LoginPage = ({
   login,
   auth: { isAuthenticated, user, error },
   setAlert,
-  loadUser
+  loadUser,
 }) => {
   const [cardAnimaton, setCardAnimation] = React.useState('cardHidden');
   setTimeout(function() {
@@ -42,24 +42,24 @@ const LoginPage = ({
 
   const [formData, setFormData] = useState({
     username: '',
-    password: ''
+    password: '',
   });
 
   const { username, password } = formData;
 
-  const onChange = e =>
+  const onChange = (e) =>
     setFormData({
       ...formData,
-      [e.target.id]: e.target.value
+      [e.target.id]: e.target.value,
     });
 
-  const onSubmit = e => {
+  const onSubmit = (e) => {
     e.preventDefault();
     login(username, password);
   };
   // Alerts for Errors
   if (error === 'Invalid Password!') {
-    setAlert('Password in incorrect!', 'danger');
+    setAlert('Password is incorrect!', 'danger');
   }
   if (error === 'Invalid Username!') {
     setAlert('Username is incorrect!', 'danger');
@@ -85,14 +85,14 @@ const LoginPage = ({
         style={{
           backgroundImage: 'url(' + image + ')',
           backgroundSize: 'cover',
-          backgroundPosition: 'top center'
+          backgroundPosition: 'top center',
         }}
       >
         <div className={classes.container}>
           <GridContainer justify='center'>
             <GridItem xs={12} sm={12} md={4}>
               <Card className={classes[cardAnimaton]}>
-                <form className={classes.form} onSubmit={e => onSubmit(e)}>
+                <form className={classes.form} onSubmit={(e) => onSubmit(e)}>
                   <CardHeader color='primary' className={classes.cardHeader}>
                     <h4>Login</h4>
                     <div className={classes.socialLine}>
@@ -101,7 +101,7 @@ const LoginPage = ({
                         href='#pablo'
                         target='_blank'
                         color='transparent'
-                        onClick={e => e.preventDefault()}
+                        onClick={(e) => e.preventDefault()}
                       >
                         <i className={'fab fa-google'} />
                       </Button>
@@ -114,18 +114,18 @@ const LoginPage = ({
                       id='username'
                       name='username'
                       formControlProps={{
-                        fullWidth: true
+                        fullWidth: true,
                       }}
                       inputProps={{
                         value: username,
                         type: 'text',
                         required: true,
-                        onChange: e => onChange(e),
+                        onChange: (e) => onChange(e),
                         endAdornment: (
                           <InputAdornment position='end'>
                             <PersonIcon className={classes.inputIconsColor} />
                           </InputAdornment>
-                        )
+                        ),
                       }}
                     />
                     <CustomInput
@@ -133,13 +133,13 @@ const LoginPage = ({
                       id='password'
                       name='password'
                       formControlProps={{
-                        fullWidth: true
+                        fullWidth: true,
                       }}
                       inputProps={{
                         value: password,
                         type: 'password',
                         required: true,
-                        onChange: e => onChange(e),
+                        onChange: (e) => onChange(e),
                         endAdornment: (
                           <InputAdornment position='end'>
                             <Icon className={classes.inputIconsColor}>
@@ -147,7 +147,7 @@ const LoginPage = ({
                             </Icon>
                           </InputAdornment>
                         ),
-                        autoComplete: 'off'
+                        autoComplete: 'off',
                       }}
                     />
                   </CardBody>
@@ -173,14 +173,14 @@ LoginPage.propTypes = {
   loadUser: PropTypes.func.isRequired,
   isAuthenticated: PropTypes.bool,
   auth: PropTypes.object,
-  error: PropTypes.object
+  error: PropTypes.object,
 };
 
-const mapStateToProps = state => {
+const mapStateToProps = (state) => {
   return {
     isAuthenticated: state.auth.isAuthenticated,
     auth: state.auth,
-    error: state.auth.error
+    error: state.auth.error,
   };
 };
 
