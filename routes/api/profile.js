@@ -32,6 +32,21 @@ router.get('/me', auth, async (req, res) => {
   }
 });
 
+// @route GET api/profile
+// @desc get all profiles
+// @access admin
+
+router.get('/', async (req, res) => {
+  try {
+    const profiles = await Profile.find().populate('user', ['name', 'email']);
+    res.json(profiles);
+  } catch (err) {
+    console.error(err.message);
+    res.status(500).send('Server Error');
+  }
+});
+
+
 // @route Post api/profile
 // @desc Add or update it to profile database
 // @access Private
