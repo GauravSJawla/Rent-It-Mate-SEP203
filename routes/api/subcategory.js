@@ -1,33 +1,44 @@
-const express = require('express');
+const express = require("express");
 const router = express.Router();
-const auth = require('../../middleware/auth');
-const { validationResult } = require('express-validator');
-const SubCategory = require('../../models/SubCategory');
+const auth = require("../../middleware/auth");
+const { validationResult } = require("express-validator");
+const Category = require("../../models/Category");
+const SubCategory = require("../../models/SubCategory");
 
-// @route   POST api/category
-// @desc    Create a category
+// @route   POST api/subcategory525
 // @access  Private
 
-router.post('/', auth, async (req, res) => {
+router.post("/", async (req, res) => {
   const errors = validationResult(req);
   if (!errors.isEmpty()) {
     /* istanbul ignore next */
     return res.status(400).json({ errors: errors.array() });
   }
 
-  const { name } = req.body;
-  const subCategoryFields = {};
+  const name = req.body.name;
+  const categoryId = req.body.categoryId;
+  const subCategoryFields = { name, categoryId };
   if (name) subCategoryFields.name = name;
+  if (categoryId) subCategoryFields.categoryId = categoryId;
+  console.log(subCategoryFields);
 
   try {
-    let subcategory = await SubCategory.findOne({ name });
+    try {
+      let category = await Category.findOne({ _id: categoryId });
+    } catch (err) {
+      return res
+        .status(400)
+        .json({ errors: [{ msg: "Parent Category not found! Please Create A Category First!" }] });
+    }
+
+    let subcategory = await SubCategory.findOne({ name: name });
 
     if (subcategory) {
       return res
         .status(400)
-        .json({ errors: [{ msg: 'Sub-Category already exists! Update it!' }] });
+        .json({ errors: [{ msg: "Sub-Category already exists! Update it!" }] });
     }
-
+    
     //create
     subcategory = new SubCategory(subCategoryFields);
 
@@ -35,7 +46,7 @@ router.post('/', auth, async (req, res) => {
     res.json(subcategory);
   } catch (err) {
     /* istanbul ignore next */
-    res.status(500).send('Server Error');
+    res.status(500).send("Server Error");
   }
 });
 
@@ -43,13 +54,13 @@ router.post('/', auth, async (req, res) => {
 // @desc    Get all sub-categories
 // @access  Private
 
-router.get('/', auth, async (req, res) => {
+router.get("/", auth, async (req, res) => {
   try {
     const subcategories = await SubCategory.find();
     res.json(subcategories);
   } catch (err) {
     /* istanbul ignore next */
-    res.status(500).send('Server Error');
+    res.status(500).send("Server Error");
   }
 });
 
@@ -57,23 +68,24 @@ router.get('/', auth, async (req, res) => {
 // @desc    Get subcategory by subcategory ID
 // @access  Private
 
-router.get('/:subcategory_id', auth, async (req, res) => {
+router.get("/:subcategory_id", auth, async (req, res) => {
   try {
     const subcategory = await SubCategory.findOne({
       _id: req.params.category_id
     });
 
-    if (!subcategory) return res.status(400).json({ msg: 'Sub-Category not found!' });
+    if (!subcategory)
+      return res.status(400).json({ msg: "Sub-Category not found!" });
 
     res.json(subcategory);
   } catch (err) {
     console.error(err.message);
     /* istanbul ignore next */
-    if (err.kind == 'ObjectId') {
-      return res.status(400).json({ msg: 'Sub-Category not found!' });
+    if (err.kind == "ObjectId") {
+      return res.status(400).json({ msg: "Sub-Category not found!" });
     }
     /* istanbul ignore next */
-    res.status(500).send('Server Error');
+    res.status(500).send("Server Error");
   }
 });
 
@@ -81,7 +93,7 @@ router.get('/:subcategory_id', auth, async (req, res) => {
 // @desc    Update a subcategory by subcategory ID
 // @access  Private
 
-router.post('/:subcategory_id', auth, async (req, res) => {
+router.post("/:subcategory_id", auth, async (req, res) => {
   const errors = validationResult(req);
   if (!errors.isEmpty()) {
     /* istanbul ignore next */
@@ -93,7 +105,9 @@ router.post('/:subcategory_id', auth, async (req, res) => {
   if (name) subCategoryFields.name = name;
 
   try {
-    let subcategory = await SubCategory.findOne({ _id: req.params.subcategory_id });
+    let subcategory = await SubCategory.findOne({
+      _id: req.params.subcategory_id
+    });
 
     if (subcategory) {
       //Update
@@ -106,7 +120,7 @@ router.post('/:subcategory_id', auth, async (req, res) => {
     }
   } catch (err) {
     /* istanbul ignore next */
-    res.status(500).send('Server Error');
+    res.status(500).send("Server Error");
   }
 });
 
@@ -114,15 +128,15 @@ router.post('/:subcategory_id', auth, async (req, res) => {
 // @desc    Delete category by category ID
 // @access  Private
 
-router.delete('/:subcategory_id', auth, async (req, res) => {
+router.delete("/:subcategory_id", auth, async (req, res) => {
   try {
     await SubCategory.findOneAndRemove({
       _id: req.params.subcategory_id
     });
-    res.json({ msg: 'Sub-Category ' + req.params.name + ' has been deleted' });
+    res.json({ msg: "Sub-Category " + req.params.name + " has been deleted" });
   } catch (err) {
     /* istanbul ignore next */
-    res.status(500).send('Server Error');
+    res.status(500).send("Server Error");
   }
 });
 
