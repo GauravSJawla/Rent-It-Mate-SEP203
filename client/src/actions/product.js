@@ -51,7 +51,6 @@ export const getUserProducts = () => async dispatch => {
   };
 
   export const deleteProduct = productId => async dispatch => {
-    console.log(productId+'  djnscksn')
     try {
       const res = await axios.delete('/api/product/'+productId);
       dispatch({

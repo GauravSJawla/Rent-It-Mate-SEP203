@@ -217,6 +217,22 @@ router.delete('/:productId' , auth , async (req , res) =>{
     })
   })
 })
+/**
+ * @route   GET api/product/photo/:id
+ * @desc    get a photo
+ * any get request with product id comes to this method
+ * and it then follows to the router.param which checks for the parameter 
+ * and then returns the product and moves on to next() application flow.
+ * @access  public 
+ */
+router.get('/photo/:productId',(req , res, next) =>{
+  // console.log(req.product+' inside get');
+  if (req.product.photo.data) {
+    res.set('Content-Type', req.product.photo.contentType);
+    return res.send(req.product.photo.data);
+}
+next();
+ })
 
 /**
  * @route PUT/UPDATE api/product/:productId

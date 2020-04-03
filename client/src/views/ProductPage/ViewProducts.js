@@ -34,15 +34,11 @@ const ViewProducts = ({
       <Fragment>
            <div className={classes.landingContainer}>
               <GridContainer>
-                  <GridItem xs={8} sm={8} md={4}>
-                      <div>
                         { 
                         products.map(p =>(
                           <SingleProduct key={p._id} product={p}/>
                         )
                         )}
-                      </div>
-                  </GridItem>
               </GridContainer>
           </div>
     </Fragment>
