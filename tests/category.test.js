@@ -64,7 +64,7 @@ describe('category create/read/update/delete category', () => {
     response = await request
       .post('/api/auth')
       .send({
-        username: 'AdminUser',
+        username: 'admin',
         password: 'admin'
       })
       .expect(200);

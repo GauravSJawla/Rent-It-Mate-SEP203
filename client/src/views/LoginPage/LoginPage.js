@@ -17,7 +17,7 @@ import CardHeader from 'components/Card/CardHeader.js';
 import CardFooter from 'components/Card/CardFooter.js';
 import CustomInput from 'components/CustomInput/CustomInput.js';
 //importing login for login
-import { login } from '../../actions/auth';
+import { login, loadUser } from '../../actions/auth';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { setAlert } from '../../actions/alert';
@@ -28,7 +28,12 @@ import image from 'assets/img/bg7.jpg';
 //import store from '../../store';
 
 const useStyles = makeStyles(styles);
-const LoginPage = ({ login, setAlert, isAuthenticated, auth: { error } }) => {
+const LoginPage = ({
+  login,
+  auth: { isAuthenticated, user, error },
+  setAlert,
+  loadUser
+}) => {
   const [cardAnimaton, setCardAnimation] = React.useState('cardHidden');
   setTimeout(function() {
     setCardAnimation('');
@@ -62,6 +67,14 @@ const LoginPage = ({ login, setAlert, isAuthenticated, auth: { error } }) => {
 
   // Redirect if logged in
   if (isAuthenticated) {
+    console.log('inside is authenticated');
+    loadUser();
+  }
+  //Redirect to admin dashboard
+  if (user !== null) {
+    if (user.role === 'admin') {
+      return <Redirect to='/admin-Dashboard' />;
+    }
     return <Redirect to='/' />;
   }
 
@@ -157,6 +170,7 @@ const LoginPage = ({ login, setAlert, isAuthenticated, auth: { error } }) => {
 LoginPage.propTypes = {
   login: PropTypes.func.isRequired,
   setAlert: PropTypes.func.isRequired,
+  loadUser: PropTypes.func.isRequired,
   isAuthenticated: PropTypes.bool,
   auth: PropTypes.object,
   error: PropTypes.object
@@ -172,5 +186,5 @@ const mapStateToProps = state => {
 
 export default connect(
   mapStateToProps,
-  { login, setAlert }
+  { login, setAlert, loadUser }
 )(LoginPage);
