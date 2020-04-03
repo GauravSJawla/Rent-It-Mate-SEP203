@@ -3,7 +3,7 @@
 <html lang="en">
 
 <head>
-    <title>Code coverage report for src/components/Card/CardFooter.js</title>
+    <title>Code coverage report for src/components/Layout/Alert.js</title>
     <meta charset="utf-8" />
     <link rel="stylesheet" href="../../../prettify.css" />
     <link rel="stylesheet" href="../../../base.css" />
@@ -19,7 +19,7 @@
 <body>
 <div class='wrapper'>
     <div class='pad1'>
-        <h1><a href="../../../index.html">All files</a> / <a href="index.html">src/components/Card</a> CardFooter.js</h1>
+        <h1><a href="../../../index.html">All files</a> / <a href="index.html">src/components/Layout</a> Alert.js</h1>
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
@@ -32,21 +32,21 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>0/0</span>
+                <span class='fraction'>3/3</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>1/1</span>
+                <span class='fraction'>3/3</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>6/6</span>
+                <span class='fraction'>5/5</span>
             </div>
         
             
@@ -89,7 +89,36 @@
 <a name='L30'></a><a href='#L30'>30</a>
 <a name='L31'></a><a href='#L31'>31</a>
 <a name='L32'></a><a href='#L32'>32</a>
-<a name='L33'></a><a href='#L33'>33</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L33'></a><a href='#L33'>33</a>
+<a name='L34'></a><a href='#L34'>34</a>
+<a name='L35'></a><a href='#L35'>35</a>
+<a name='L36'></a><a href='#L36'>36</a>
+<a name='L37'></a><a href='#L37'>37</a>
+<a name='L38'></a><a href='#L38'>38</a>
+<a name='L39'></a><a href='#L39'>39</a>
+<a name='L40'></a><a href='#L40'>40</a>
+<a name='L41'></a><a href='#L41'>41</a>
+<a name='L42'></a><a href='#L42'>42</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">10x</span>
+<span class="cline-any cline-yes">14x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -104,55 +133,53 @@
 <span class="cline-any cline-yes">10x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">160x</span>
-<span class="cline-any cline-yes">160x</span>
-<span class="cline-any cline-yes">160x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">160x</span>
+<span class="cline-any cline-yes">36x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">10x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import React from "react";
-// nodejs library that concatenates classes
-import classNames from "classnames";
-// nodejs library to set properties for components
-import PropTypes from "prop-types";
-// @material-ui/core components
-import { makeStyles } from "@material-ui/core/styles";
-// @material-ui/icons
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import React from 'react';
 &nbsp;
 // core components
-import styles from "assets/jss/material-kit-react/components/cardFooterStyle.js";
+import SnackbarContent from 'components/Snackbar/SnackbarContent.js';
+import Clearfix from 'components/Clearfix/Clearfix.js';
 &nbsp;
-const useStyles = makeStyles(styles);
+import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
 &nbsp;
-export default function CardFooter(props) {
-  const classes = useStyles();
-  const { className, children, ...rest } = props;
-  const cardFooterClasses = classNames({
-    [classes.cardFooter]: true,
-    [className]: className !== undefined
-  });
+const Alert = ({ alerts }) =&gt; {
   return (
-    &lt;div className={cardFooterClasses} {...rest}&gt;
-      {children}
-    &lt;/div&gt;
+    alerts !== null &amp;&amp;
+    alerts.length &gt; 0 &amp;&amp;
+    alerts.map(alert =&gt; (
+      &lt;div id='notifications'&gt;
+        &lt;SnackbarContent
+          message={
+            &lt;span&gt;
+              &lt;b&gt;DANGER ALERT:&lt;/b&gt; {' ' + alert.msg}
+            &lt;/span&gt;
+          }
+          close
+          key={alert.id}
+          color={alert.alertType}
+          icon='info_outline'
+        /&gt;
+        &lt;Clearfix /&gt;
+      &lt;/div&gt;
+    ))
   );
-}
-&nbsp;
-CardFooter.propTypes = {
-  className: PropTypes.string,
-  children: PropTypes.node
 };
+&nbsp;
+Alert.propTypes = {
+  alerts: PropTypes.array.isRequired
+};
+&nbsp;
+const mapStateToProps = state =&gt; ({
+  alerts: state.alert
+});
+&nbsp;
+export default connect(mapStateToProps)(Alert);
 &nbsp;</pre></td></tr></table></pre>
 
                 <div class='push'></div><!-- for sticky footer -->

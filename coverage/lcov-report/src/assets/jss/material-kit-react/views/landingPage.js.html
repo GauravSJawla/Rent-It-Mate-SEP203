@@ -133,9 +133,24 @@
 <a name='L74'></a><a href='#L74'>74</a>
 <a name='L75'></a><a href='#L75'>75</a>
 <a name='L76'></a><a href='#L76'>76</a>
-<a name='L77'></a><a href='#L77'>77</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L77'></a><a href='#L77'>77</a>
+<a name='L78'></a><a href='#L78'>78</a>
+<a name='L79'></a><a href='#L79'>79</a>
+<a name='L80'></a><a href='#L80'>80</a>
+<a name='L81'></a><a href='#L81'>81</a>
+<a name='L82'></a><a href='#L82'>82</a>
+<a name='L83'></a><a href='#L83'>83</a>
+<a name='L84'></a><a href='#L84'>84</a>
+<a name='L85'></a><a href='#L85'>85</a>
+<a name='L86'></a><a href='#L86'>86</a>
+<a name='L87'></a><a href='#L87'>87</a>
+<a name='L88'></a><a href='#L88'>88</a>
+<a name='L89'></a><a href='#L89'>89</a>
+<a name='L90'></a><a href='#L90'>90</a>
+<a name='L91'></a><a href='#L91'>91</a>
+<a name='L92'></a><a href='#L92'>92</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">45x</span>
+<span class="cline-any cline-yes">10x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -143,7 +158,7 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">45x</span>
+<span class="cline-any cline-yes">10x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -159,7 +174,7 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">45x</span>
+<span class="cline-any cline-yes">10x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -209,78 +224,108 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import { container, title } from "assets/jss/material-kit-react.js";
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import { container, title } from 'assets/jss/material-kit-react.js';
 &nbsp;
 const conatinerFluid = {
-  paddingRight: "10px",
-  paddingLeft: "10px",
-  marginRight: "auto",
-  marginLeft: "auto",
-  width: "100%"
+  paddingRight: '10px',
+  paddingLeft: '10px',
+  marginRight: 'auto',
+  marginLeft: 'auto',
+  width: '100%'
 };
 &nbsp;
 const landingContainer = {
   ...conatinerFluid,
-  "@media (min-width: 576px)": {
-    maxWidth: "606px"
+  '@media (min-width: 576px)': {
+    maxWidth: '606px'
   },
-  "@media (min-width: 768px)": {
-    maxWidth: "808px"
+  '@media (min-width: 768px)': {
+    maxWidth: '808px'
   },
-  "@media (min-width: 992px)": {
-    maxWidth: "1044px"
+  '@media (min-width: 992px)': {
+    maxWidth: '1044px'
   },
-  "@media (min-width: 1200px)": {
-    maxWidth: "1264px"
+  '@media (min-width: 1200px)': {
+    maxWidth: '1264px'
   }
 };
 &nbsp;
 const landingPageStyle = {
   container: {
-    zIndex: "12",
-    color: "#FFFFFF",
+    zIndex: '12',
+    color: '#FFFFFF',
     ...container
   },
   landingContainer: {
-    zIndex: "12",
-    color: "#FFFFFF",
+    zIndex: '12',
+    color: '#FFFFFF',
     ...landingContainer
   },
   gallaryContainer: {
-    zIndex: "12"
+    zIndex: '12'
   },
   title: {
     ...title,
-    display: "inline-block",
-    position: "relative",
-    marginTop: "30px",
-    minHeight: "32px",
-    color: "#FFFFFF",
-    textDecoration: "none"
+    display: 'inline-block',
+    position: 'relative',
+    marginTop: '30px',
+    minHeight: '32px',
+    color: '#FFFFFF',
+    textDecoration: 'none'
+  },
+  dashboardTitle: {
+    ...title,
+    display: 'inline-block',
+    position: 'relative',
+    marginTop: '30px',
+    minHeight: '32px',
+    color: 'black',
+    textDecoration: 'none'
   },
   carouselTitle: {
     ...title,
-    marginTop: "30px",
-    marginLeft: "30px",
-    minHeight: "32px",
-    textDecoration: "none"
+    marginTop: '30px',
+    marginLeft: '30px',
+    minHeight: '32px',
+    textDecoration: 'none'
+  },
+  dashboardSubtitle: {
+    color: 'black',
+    fontSize: '1.313rem',
+    maxWidth: '500px',
+    margin: '10px auto 0'
   },
   subtitle: {
-    fontSize: "1.313rem",
-    maxWidth: "500px",
-    margin: "10px auto 0"
+    fontSize: '1.313rem',
+    maxWidth: '500px',
+    margin: '10px auto 0'
   },
   main: {
-    background: "#FFFFFF",
-    position: "relative",
-    zIndex: "3"
+    background: '#FFFFFF',
+    position: 'relative',
+    zIndex: '3'
   },
   mainRaised: {
-    margin: "-60px 30px 0px",
-    padding: "1px 30px 0px 0px",
-    borderRadius: "6px",
+    margin: '-60px 30px 0px',
+    padding: '1px 30px 0px 0px',
+    borderRadius: '6px',
     boxShadow:
-      "0 16px 24px 2px rgba(0, 0, 0, 0.14), 0 6px 30px 5px rgba(0, 0, 0, 0.12), 0 8px 10px -5px rgba(0, 0, 0, 0.2)"
+      '0 16px 24px 2px rgba(0, 0, 0, 0.14), 0 6px 30px 5px rgba(0, 0, 0, 0.12), 0 8px 10px -5px rgba(0, 0, 0, 0.2)'
   }
 };
 &nbsp;
@@ -292,7 +337,7 @@ export default landingPageStyle;
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank">istanbul</a>
-                at Fri Mar 27 2020 17:54:28 GMT-0500 (Central Daylight Time)
+                at Thu Apr 02 2020 22:53:40 GMT-0500 (Central Daylight Time)
             </div>
         </div>
         <script src="../../../../../prettify.js"></script>
