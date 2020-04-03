@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Redirect } from 'react-router-dom';
 // @material-ui/core components
 import { makeStyles } from '@material-ui/core/styles';
@@ -18,15 +18,22 @@ import CardFooter from 'components/Card/CardFooter.js';
 import CustomInput from 'components/CustomInput/CustomInput.js';
 //importing login for login
 import { login, loadUser } from '../../actions/auth';
-import propTypes from 'prop-types';
+import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
+import { setAlert } from '../../actions/alert';
 
 import styles from 'assets/jss/material-kit-react/views/loginPage.js';
 
 import image from 'assets/img/bg7.jpg';
+//import store from '../../store';
 
 const useStyles = makeStyles(styles);
-const LoginPage = ({ login, auth : {isAuthenticated,user}, loadUser}) => {
+const LoginPage = ({
+  login,
+  auth: { isAuthenticated, user, error },
+  setAlert,
+  loadUser,
+}) => {
   const [cardAnimaton, setCardAnimation] = React.useState('cardHidden');
   setTimeout(function() {
     setCardAnimation('');
@@ -35,21 +42,28 @@ const LoginPage = ({ login, auth : {isAuthenticated,user}, loadUser}) => {
 
   const [formData, setFormData] = useState({
     username: '',
-    password: ''
+    password: '',
   });
 
   const { username, password } = formData;
 
-  const onChange = e =>
+  const onChange = (e) =>
     setFormData({
       ...formData,
-      [e.target.id]: e.target.value
+      [e.target.id]: e.target.value,
     });
 
-  const onSubmit = e => {
+  const onSubmit = (e) => {
     e.preventDefault();
     login(username, password);
   };
+  // Alerts for Errors
+  if (error === 'Invalid Password!') {
+    setAlert('Password is incorrect!', 'danger');
+  }
+  if (error === 'Invalid Username!') {
+    setAlert('Username is incorrect!', 'danger');
+  }
 
   // Redirect if logged in
   if (isAuthenticated) {
@@ -57,14 +71,13 @@ const LoginPage = ({ login, auth : {isAuthenticated,user}, loadUser}) => {
     loadUser();
   }
   //Redirect to admin dashboard
-  if(user!== null){
-    if(user.role === 'admin'){
-      return <Redirect to ='/admin-Dashboard'/>
+  if (user !== null) {
+    if (user.role === 'admin') {
+      return <Redirect to='/admin-Dashboard' />;
     }
     return <Redirect to='/' />;
   }
-    
-  
+
   return (
     <div>
       <div
@@ -72,14 +85,14 @@ const LoginPage = ({ login, auth : {isAuthenticated,user}, loadUser}) => {
         style={{
           backgroundImage: 'url(' + image + ')',
           backgroundSize: 'cover',
-          backgroundPosition: 'top center'
+          backgroundPosition: 'top center',
         }}
       >
         <div className={classes.container}>
           <GridContainer justify='center'>
             <GridItem xs={12} sm={12} md={4}>
               <Card className={classes[cardAnimaton]}>
-                <form className={classes.form} onSubmit={e => onSubmit(e)}>
+                <form className={classes.form} onSubmit={(e) => onSubmit(e)}>
                   <CardHeader color='primary' className={classes.cardHeader}>
                     <h4>Login</h4>
                     <div className={classes.socialLine}>
@@ -88,7 +101,7 @@ const LoginPage = ({ login, auth : {isAuthenticated,user}, loadUser}) => {
                         href='#pablo'
                         target='_blank'
                         color='transparent'
-                        onClick={e => e.preventDefault()}
+                        onClick={(e) => e.preventDefault()}
                       >
                         <i className={'fab fa-google'} />
                       </Button>
@@ -101,18 +114,18 @@ const LoginPage = ({ login, auth : {isAuthenticated,user}, loadUser}) => {
                       id='username'
                       name='username'
                       formControlProps={{
-                        fullWidth: true
+                        fullWidth: true,
                       }}
                       inputProps={{
                         value: username,
                         type: 'text',
                         required: true,
-                        onChange: e => onChange(e),
+                        onChange: (e) => onChange(e),
                         endAdornment: (
                           <InputAdornment position='end'>
                             <PersonIcon className={classes.inputIconsColor} />
                           </InputAdornment>
-                        )
+                        ),
                       }}
                     />
                     <CustomInput
@@ -120,13 +133,13 @@ const LoginPage = ({ login, auth : {isAuthenticated,user}, loadUser}) => {
                       id='password'
                       name='password'
                       formControlProps={{
-                        fullWidth: true
+                        fullWidth: true,
                       }}
                       inputProps={{
                         value: password,
                         type: 'password',
                         required: true,
-                        onChange: e => onChange(e),
+                        onChange: (e) => onChange(e),
                         endAdornment: (
                           <InputAdornment position='end'>
                             <Icon className={classes.inputIconsColor}>
@@ -134,7 +147,7 @@ const LoginPage = ({ login, auth : {isAuthenticated,user}, loadUser}) => {
                             </Icon>
                           </InputAdornment>
                         ),
-                        autoComplete: 'off'
+                        autoComplete: 'off',
                       }}
                     />
                   </CardBody>
@@ -155,16 +168,23 @@ const LoginPage = ({ login, auth : {isAuthenticated,user}, loadUser}) => {
 };
 
 LoginPage.propTypes = {
-  login: propTypes.func.isRequired,
-  auth:propTypes.object.isRequired,
-  loadUser:propTypes.func.isRequired
+  login: PropTypes.func.isRequired,
+  setAlert: PropTypes.func.isRequired,
+  loadUser: PropTypes.func.isRequired,
+  isAuthenticated: PropTypes.bool,
+  auth: PropTypes.object,
+  error: PropTypes.object,
 };
 
-const mapStateToProps = state => ({
-  auth:state.auth
-});
+const mapStateToProps = (state) => {
+  return {
+    isAuthenticated: state.auth.isAuthenticated,
+    auth: state.auth,
+    error: state.auth.error,
+  };
+};
 
 export default connect(
   mapStateToProps,
-  { login,loadUser }
+  { login, setAlert, loadUser }
 )(LoginPage);

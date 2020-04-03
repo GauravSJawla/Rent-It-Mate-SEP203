@@ -1,6 +1,6 @@
 {
-  "/Users/hemalatharamachandran/Documents/Univ_documents/SEP/SEP203/client/src/assets/jss/material-kit-react.js": {
-    "path": "/Users/hemalatharamachandran/Documents/Univ_documents/SEP/SEP203/client/src/assets/jss/material-kit-react.js",
+  "/Users/gauravsj/Documents/My Web Applications/SEP203/client/src/assets/jss/material-kit-react.js": {
+    "path": "/Users/gauravsj/Documents/My Web Applications/SEP203/client/src/assets/jss/material-kit-react.js",
     "statementMap": {
       "0": {
         "start": {
@@ -373,10 +373,10 @@
     "f": {},
     "b": {},
     "_coverageSchema": "43e27e138ebf9cfc5966b082cf9a028302ed4184",
-    "hash": "3386c419827f7b3e67c53b0ba4bbb2fcdb71f035"
+    "hash": "41094c220471057f1b67488ca3b210474e34d699"
   },
-  "/Users/hemalatharamachandran/Documents/Univ_documents/SEP/SEP203/client/src/assets/jss/material-kit-react/components/buttonStyle.js": {
-    "path": "/Users/hemalatharamachandran/Documents/Univ_documents/SEP/SEP203/client/src/assets/jss/material-kit-react/components/buttonStyle.js",
+  "/Users/gauravsj/Documents/My Web Applications/SEP203/client/src/assets/jss/material-kit-react/components/buttonStyle.js": {
+    "path": "/Users/gauravsj/Documents/My Web Applications/SEP203/client/src/assets/jss/material-kit-react/components/buttonStyle.js",
     "statementMap": {
       "0": {
         "start": {
@@ -397,10 +397,10 @@
     "f": {},
     "b": {},
     "_coverageSchema": "43e27e138ebf9cfc5966b082cf9a028302ed4184",
-    "hash": "c845ec90979c7139cdbed5cc1af993db575e290f"
+    "hash": "f2179df7baf99035697ac27cd66f6d25e631d102"
   },
-  "/Users/hemalatharamachandran/Documents/Univ_documents/SEP/SEP203/client/src/components/CustomButtons/Button.js": {
-    "path": "/Users/hemalatharamachandran/Documents/Univ_documents/SEP/SEP203/client/src/components/CustomButtons/Button.js",
+  "/Users/gauravsj/Documents/My Web Applications/SEP203/client/src/components/CustomButtons/Button.js": {
+    "path": "/Users/gauravsj/Documents/My Web Applications/SEP203/client/src/components/CustomButtons/Button.js",
     "statementMap": {
       "0": {
         "start": {
@@ -538,22 +538,22 @@
       "0": 10,
       "1": 10,
       "2": 10,
-      "3": 280,
-      "4": 280,
-      "5": 280,
-      "6": 280,
+      "3": 382,
+      "4": 382,
+      "5": 382,
+      "6": 382,
       "7": 10
     },
     "f": {
       "0": 10,
-      "1": 280
+      "1": 382
     },
     "b": {},
     "_coverageSchema": "43e27e138ebf9cfc5966b082cf9a028302ed4184",
-    "hash": "7844144edcee2f8e620cf9b3a58b69845e6a9fc8"
+    "hash": "234980f0611b7fc259f8ff53a1449a95f13dec04"
   },
-  "/Users/hemalatharamachandran/Documents/Univ_documents/SEP/SEP203/client/src/assets/jss/material-kit-react/views/landingPage.js": {
-    "path": "/Users/hemalatharamachandran/Documents/Univ_documents/SEP/SEP203/client/src/assets/jss/material-kit-react/views/landingPage.js",
+  "/Users/gauravsj/Documents/My Web Applications/SEP203/client/src/assets/jss/material-kit-react/views/landingPage.js": {
+    "path": "/Users/gauravsj/Documents/My Web Applications/SEP203/client/src/assets/jss/material-kit-react/views/landingPage.js",
     "statementMap": {
       "0": {
         "start": {
@@ -596,10 +596,10 @@
     "f": {},
     "b": {},
     "_coverageSchema": "43e27e138ebf9cfc5966b082cf9a028302ed4184",
-    "hash": "e97a7cdfb624c0b74498339a7eb0c21c8a802952"
+    "hash": "bec8dd984a39d9a9413f883bd844d0223a220cfe"
   },
-  "/Users/hemalatharamachandran/Documents/Univ_documents/SEP/SEP203/client/src/views/Dashboard/Spinner.js": {
-    "path": "/Users/hemalatharamachandran/Documents/Univ_documents/SEP/SEP203/client/src/views/Dashboard/Spinner.js",
+  "/Users/gauravsj/Documents/My Web Applications/SEP203/client/src/views/Dashboard/Spinner.js": {
+    "path": "/Users/gauravsj/Documents/My Web Applications/SEP203/client/src/views/Dashboard/Spinner.js",
     "statementMap": {
       "0": {
         "start": {
@@ -647,10 +647,10 @@
     },
     "b": {},
     "_coverageSchema": "43e27e138ebf9cfc5966b082cf9a028302ed4184",
-    "hash": "ec88b4f97559186021e0193c859407bbf0c0ceb9"
+    "hash": "ae2b81c1b74fd50e8bfa3404d306a50f8fd02eb0"
   },
-  "/Users/hemalatharamachandran/Documents/Univ_documents/SEP/SEP203/client/src/actions/types.js": {
-    "path": "/Users/hemalatharamachandran/Documents/Univ_documents/SEP/SEP203/client/src/actions/types.js",
+  "/Users/gauravsj/Documents/My Web Applications/SEP203/client/src/actions/types.js": {
+    "path": "/Users/gauravsj/Documents/My Web Applications/SEP203/client/src/actions/types.js",
     "statementMap": {
       "0": {
         "start": {
@@ -836,10 +836,10 @@
     "f": {},
     "b": {},
     "_coverageSchema": "43e27e138ebf9cfc5966b082cf9a028302ed4184",
-    "hash": "e0fab55ae74c92de36365b49bde8b7596079b1fd"
+    "hash": "36c69f2ad5a20e89523c1072da7b399c7f85e415"
   },
-  "/Users/hemalatharamachandran/Documents/Univ_documents/SEP/SEP203/client/src/actions/profile.js": {
-    "path": "/Users/hemalatharamachandran/Documents/Univ_documents/SEP/SEP203/client/src/actions/profile.js",
+  "/Users/gauravsj/Documents/My Web Applications/SEP203/client/src/actions/profile.js": {
+    "path": "/Users/gauravsj/Documents/My Web Applications/SEP203/client/src/actions/profile.js",
     "statementMap": {
       "0": {
         "start": {
@@ -1343,10 +1343,10 @@
       ]
     },
     "_coverageSchema": "43e27e138ebf9cfc5966b082cf9a028302ed4184",
-    "hash": "3dc13c93edd66116cd729a8299c2866e19056865"
+    "hash": "472eda55db9562c145c9c1507331108b16eae78f"
   },
-  "/Users/hemalatharamachandran/Documents/Univ_documents/SEP/SEP203/client/src/views/Dashboard/DashboardProfile.js": {
-    "path": "/Users/hemalatharamachandran/Documents/Univ_documents/SEP/SEP203/client/src/views/Dashboard/DashboardProfile.js",
+  "/Users/gauravsj/Documents/My Web Applications/SEP203/client/src/views/Dashboard/DashboardProfile.js": {
+    "path": "/Users/gauravsj/Documents/My Web Applications/SEP203/client/src/views/Dashboard/DashboardProfile.js",
     "statementMap": {
       "0": {
         "start": {
@@ -1766,10 +1766,10 @@
       ]
     },
     "_coverageSchema": "43e27e138ebf9cfc5966b082cf9a028302ed4184",
-    "hash": "829b857167952aca1b145ffa051c4a29b2e2c6a1"
+    "hash": "f8a7f39e7c9d9cf44cabbe55b065c0648a57d542"
   },
-  "/Users/hemalatharamachandran/Documents/Univ_documents/SEP/SEP203/client/src/assets/jss/material-kit-react/components/footerStyle.js": {
-    "path": "/Users/hemalatharamachandran/Documents/Univ_documents/SEP/SEP203/client/src/assets/jss/material-kit-react/components/footerStyle.js",
+  "/Users/gauravsj/Documents/My Web Applications/SEP203/client/src/assets/jss/material-kit-react/components/footerStyle.js": {
+    "path": "/Users/gauravsj/Documents/My Web Applications/SEP203/client/src/assets/jss/material-kit-react/components/footerStyle.js",
     "statementMap": {
       "0": {
         "start": {
@@ -1790,10 +1790,10 @@
     "f": {},
     "b": {},
     "_coverageSchema": "43e27e138ebf9cfc5966b082cf9a028302ed4184",
-    "hash": "ac7b2038234fe4942e95f7c4744c751f65a801e3"
+    "hash": "63e29c1885268fdeb74d808080f5741fd8b12e25"
   },
-  "/Users/hemalatharamachandran/Documents/Univ_documents/SEP/SEP203/client/src/components/Footer/Footer.js": {
-    "path": "/Users/hemalatharamachandran/Documents/Univ_documents/SEP/SEP203/client/src/components/Footer/Footer.js",
+  "/Users/gauravsj/Documents/My Web Applications/SEP203/client/src/components/Footer/Footer.js": {
+    "path": "/Users/gauravsj/Documents/My Web Applications/SEP203/client/src/components/Footer/Footer.js",
     "statementMap": {
       "0": {
         "start": {
@@ -1895,22 +1895,22 @@
     "branchMap": {},
     "s": {
       "0": 10,
-      "1": 124,
-      "2": 124,
-      "3": 124,
-      "4": 124,
-      "5": 124,
+      "1": 169,
+      "2": 169,
+      "3": 169,
+      "4": 169,
+      "5": 169,
       "6": 10
     },
     "f": {
-      "0": 124
+      "0": 169
     },
     "b": {},
     "_coverageSchema": "43e27e138ebf9cfc5966b082cf9a028302ed4184",
-    "hash": "bf1771c90307e38ec866f017a3b16ec0d3da9c20"
+    "hash": "e818d020bbbaf972c21f5acdeb028fba05c60f3b"
   },
-  "/Users/hemalatharamachandran/Documents/Univ_documents/SEP/SEP203/client/src/components/Grid/GridContainer.js": {
-    "path": "/Users/hemalatharamachandran/Documents/Univ_documents/SEP/SEP203/client/src/components/Grid/GridContainer.js",
+  "/Users/gauravsj/Documents/My Web Applications/SEP203/client/src/components/Grid/GridContainer.js": {
+    "path": "/Users/gauravsj/Documents/My Web Applications/SEP203/client/src/components/Grid/GridContainer.js",
     "statementMap": {
       "0": {
         "start": {
@@ -2013,21 +2013,21 @@
     "s": {
       "0": 10,
       "1": 10,
-      "2": 130,
-      "3": 130,
-      "4": 130,
+      "2": 169,
+      "3": 169,
+      "4": 169,
       "5": 10,
       "6": 10
     },
     "f": {
-      "0": 130
+      "0": 169
     },
     "b": {},
     "_coverageSchema": "43e27e138ebf9cfc5966b082cf9a028302ed4184",
-    "hash": "98b93c4fff92e4b5b0599277450a30f5b67ea7ff"
+    "hash": "757449efb4fdd4e903152ab204e51855a845da2d"
   },
-  "/Users/hemalatharamachandran/Documents/Univ_documents/SEP/SEP203/client/src/components/Grid/GridItem.js": {
-    "path": "/Users/hemalatharamachandran/Documents/Univ_documents/SEP/SEP203/client/src/components/Grid/GridItem.js",
+  "/Users/gauravsj/Documents/My Web Applications/SEP203/client/src/components/Grid/GridItem.js": {
+    "path": "/Users/gauravsj/Documents/My Web Applications/SEP203/client/src/components/Grid/GridItem.js",
     "statementMap": {
       "0": {
         "start": {
@@ -2130,21 +2130,21 @@
     "s": {
       "0": 10,
       "1": 10,
-      "2": 136,
-      "3": 136,
-      "4": 136,
+      "2": 169,
+      "3": 169,
+      "4": 169,
       "5": 10,
       "6": 10
     },
     "f": {
-      "0": 136
+      "0": 169
     },
     "b": {},
     "_coverageSchema": "43e27e138ebf9cfc5966b082cf9a028302ed4184",
-    "hash": "89b8784cb54649115a8dc14f5fc815fd5c5bdfb7"
+    "hash": "e4b7245a6d5a5e94c344a20af649828ecdc1d494"
   },
-  "/Users/hemalatharamachandran/Documents/Univ_documents/SEP/SEP203/client/src/assets/jss/material-kit-react/components/cardStyle.js": {
-    "path": "/Users/hemalatharamachandran/Documents/Univ_documents/SEP/SEP203/client/src/assets/jss/material-kit-react/components/cardStyle.js",
+  "/Users/gauravsj/Documents/My Web Applications/SEP203/client/src/assets/jss/material-kit-react/components/cardStyle.js": {
+    "path": "/Users/gauravsj/Documents/My Web Applications/SEP203/client/src/assets/jss/material-kit-react/components/cardStyle.js",
     "statementMap": {
       "0": {
         "start": {
@@ -2165,10 +2165,10 @@
     "f": {},
     "b": {},
     "_coverageSchema": "43e27e138ebf9cfc5966b082cf9a028302ed4184",
-    "hash": "ac4964f5ffe8b5020a0fc53dda3ac6d7eef50533"
+    "hash": "a6f38662ba334a76a654bc339a6ddb465c40c5b0"
   },
-  "/Users/hemalatharamachandran/Documents/Univ_documents/SEP/SEP203/client/src/components/Card/Card.js": {
-    "path": "/Users/hemalatharamachandran/Documents/Univ_documents/SEP/SEP203/client/src/components/Card/Card.js",
+  "/Users/gauravsj/Documents/My Web Applications/SEP203/client/src/components/Card/Card.js": {
+    "path": "/Users/gauravsj/Documents/My Web Applications/SEP203/client/src/components/Card/Card.js",
     "statementMap": {
       "0": {
         "start": {
@@ -2260,21 +2260,21 @@
     "branchMap": {},
     "s": {
       "0": 10,
-      "1": 124,
-      "2": 124,
-      "3": 124,
-      "4": 124,
+      "1": 169,
+      "2": 169,
+      "3": 169,
+      "4": 169,
       "5": 10
     },
     "f": {
-      "0": 124
+      "0": 169
     },
     "b": {},
     "_coverageSchema": "43e27e138ebf9cfc5966b082cf9a028302ed4184",
-    "hash": "c8fbd7c1214dc8ec25811a44ce8bdf393e60f63e"
+    "hash": "bb7852b8d430c5f4b36d9c3068debe6e2a083cbf"
   },
-  "/Users/hemalatharamachandran/Documents/Univ_documents/SEP/SEP203/client/src/assets/jss/material-kit-react/components/cardBodyStyle.js": {
-    "path": "/Users/hemalatharamachandran/Documents/Univ_documents/SEP/SEP203/client/src/assets/jss/material-kit-react/components/cardBodyStyle.js",
+  "/Users/gauravsj/Documents/My Web Applications/SEP203/client/src/assets/jss/material-kit-react/components/cardBodyStyle.js": {
+    "path": "/Users/gauravsj/Documents/My Web Applications/SEP203/client/src/assets/jss/material-kit-react/components/cardBodyStyle.js",
     "statementMap": {
       "0": {
         "start": {
@@ -2295,10 +2295,10 @@
     "f": {},
     "b": {},
     "_coverageSchema": "43e27e138ebf9cfc5966b082cf9a028302ed4184",
-    "hash": "ab6d754a32d44bb0bae0fc43690bcf3c36979f10"
+    "hash": "9d9b91597bd7cb8b32cac0152165ee13b7cd98bd"
   },
-  "/Users/hemalatharamachandran/Documents/Univ_documents/SEP/SEP203/client/src/components/Card/CardBody.js": {
-    "path": "/Users/hemalatharamachandran/Documents/Univ_documents/SEP/SEP203/client/src/components/Card/CardBody.js",
+  "/Users/gauravsj/Documents/My Web Applications/SEP203/client/src/components/Card/CardBody.js": {
+    "path": "/Users/gauravsj/Documents/My Web Applications/SEP203/client/src/components/Card/CardBody.js",
     "statementMap": {
       "0": {
         "start": {
@@ -2390,21 +2390,21 @@
     "branchMap": {},
     "s": {
       "0": 10,
-      "1": 118,
-      "2": 118,
-      "3": 118,
-      "4": 118,
+      "1": 169,
+      "2": 169,
+      "3": 169,
+      "4": 169,
       "5": 10
     },
     "f": {
-      "0": 118
+      "0": 169
     },
     "b": {},
     "_coverageSchema": "43e27e138ebf9cfc5966b082cf9a028302ed4184",
-    "hash": "9926538f122ab1886f59912ff41e4d71918d02e2"
+    "hash": "968c655d4904e25f9c012ba00cbd1f4132812557"
   },
-  "/Users/hemalatharamachandran/Documents/Univ_documents/SEP/SEP203/client/src/assets/jss/material-kit-react/components/cardHeaderStyle.js": {
-    "path": "/Users/hemalatharamachandran/Documents/Univ_documents/SEP/SEP203/client/src/assets/jss/material-kit-react/components/cardHeaderStyle.js",
+  "/Users/gauravsj/Documents/My Web Applications/SEP203/client/src/assets/jss/material-kit-react/components/cardHeaderStyle.js": {
+    "path": "/Users/gauravsj/Documents/My Web Applications/SEP203/client/src/assets/jss/material-kit-react/components/cardHeaderStyle.js",
     "statementMap": {
       "0": {
         "start": {
@@ -2425,10 +2425,10 @@
     "f": {},
     "b": {},
     "_coverageSchema": "43e27e138ebf9cfc5966b082cf9a028302ed4184",
-    "hash": "65e4b1ce6aac008b4f215472dc1f1b39d34b30db"
+    "hash": "12ce3eb466f0d25b592032a46a86810c0fec981f"
   },
-  "/Users/hemalatharamachandran/Documents/Univ_documents/SEP/SEP203/client/src/components/Card/CardHeader.js": {
-    "path": "/Users/hemalatharamachandran/Documents/Univ_documents/SEP/SEP203/client/src/components/Card/CardHeader.js",
+  "/Users/gauravsj/Documents/My Web Applications/SEP203/client/src/components/Card/CardHeader.js": {
+    "path": "/Users/gauravsj/Documents/My Web Applications/SEP203/client/src/components/Card/CardHeader.js",
     "statementMap": {
       "0": {
         "start": {
@@ -2520,21 +2520,21 @@
     "branchMap": {},
     "s": {
       "0": 10,
-      "1": 118,
-      "2": 118,
-      "3": 118,
-      "4": 118,
+      "1": 169,
+      "2": 169,
+      "3": 169,
+      "4": 169,
       "5": 10
     },
     "f": {
-      "0": 118
+      "0": 169
     },
     "b": {},
     "_coverageSchema": "43e27e138ebf9cfc5966b082cf9a028302ed4184",
-    "hash": "d7c340d7772038210c1e675dd029b4f2aba90983"
+    "hash": "7b58f4b95cc4cebc77c72f31fd357e7489315e6a"
   },
-  "/Users/hemalatharamachandran/Documents/Univ_documents/SEP/SEP203/client/src/assets/jss/material-kit-react/components/cardFooterStyle.js": {
-    "path": "/Users/hemalatharamachandran/Documents/Univ_documents/SEP/SEP203/client/src/assets/jss/material-kit-react/components/cardFooterStyle.js",
+  "/Users/gauravsj/Documents/My Web Applications/SEP203/client/src/assets/jss/material-kit-react/components/cardFooterStyle.js": {
+    "path": "/Users/gauravsj/Documents/My Web Applications/SEP203/client/src/assets/jss/material-kit-react/components/cardFooterStyle.js",
     "statementMap": {
       "0": {
         "start": {
@@ -2555,10 +2555,10 @@
     "f": {},
     "b": {},
     "_coverageSchema": "43e27e138ebf9cfc5966b082cf9a028302ed4184",
-    "hash": "e38f66d9f3e3e67dbd3d5b19203eeb6f3903516d"
+    "hash": "7aa11350603d2613266bdded0642a711dde1474e"
   },
-  "/Users/hemalatharamachandran/Documents/Univ_documents/SEP/SEP203/client/src/components/Card/CardFooter.js": {
-    "path": "/Users/hemalatharamachandran/Documents/Univ_documents/SEP/SEP203/client/src/components/Card/CardFooter.js",
+  "/Users/gauravsj/Documents/My Web Applications/SEP203/client/src/components/Card/CardFooter.js": {
+    "path": "/Users/gauravsj/Documents/My Web Applications/SEP203/client/src/components/Card/CardFooter.js",
     "statementMap": {
       "0": {
         "start": {
@@ -2650,21 +2650,21 @@
     "branchMap": {},
     "s": {
       "0": 10,
-      "1": 118,
-      "2": 118,
-      "3": 118,
-      "4": 118,
+      "1": 169,
+      "2": 169,
+      "3": 169,
+      "4": 169,
       "5": 10
     },
     "f": {
-      "0": 118
+      "0": 169
     },
     "b": {},
     "_coverageSchema": "43e27e138ebf9cfc5966b082cf9a028302ed4184",
-    "hash": "45711ccaab9e9407c086ea14f0a8f3a12e21f4d1"
+    "hash": "098249bc39a78d04d87c1360859659568e660c9c"
   },
-  "/Users/hemalatharamachandran/Documents/Univ_documents/SEP/SEP203/client/src/assets/jss/material-kit-react/components/customInputStyle.js": {
-    "path": "/Users/hemalatharamachandran/Documents/Univ_documents/SEP/SEP203/client/src/assets/jss/material-kit-react/components/customInputStyle.js",
+  "/Users/gauravsj/Documents/My Web Applications/SEP203/client/src/assets/jss/material-kit-react/components/customInputStyle.js": {
+    "path": "/Users/gauravsj/Documents/My Web Applications/SEP203/client/src/assets/jss/material-kit-react/components/customInputStyle.js",
     "statementMap": {
       "0": {
         "start": {
@@ -2685,10 +2685,10 @@
     "f": {},
     "b": {},
     "_coverageSchema": "43e27e138ebf9cfc5966b082cf9a028302ed4184",
-    "hash": "f0f356d4dda0dad4518b13d7bf857308a0892be1"
+    "hash": "07b55b5bda5a8d4fd027228e435f657333a4e94e"
   },
-  "/Users/hemalatharamachandran/Documents/Univ_documents/SEP/SEP203/client/src/components/CustomInput/CustomInput.js": {
-    "path": "/Users/hemalatharamachandran/Documents/Univ_documents/SEP/SEP203/client/src/components/CustomInput/CustomInput.js",
+  "/Users/gauravsj/Documents/My Web Applications/SEP203/client/src/components/CustomInput/CustomInput.js": {
+    "path": "/Users/gauravsj/Documents/My Web Applications/SEP203/client/src/components/CustomInput/CustomInput.js",
     "statementMap": {
       "0": {
         "start": {
@@ -2985,44 +2985,44 @@
     },
     "s": {
       "0": 10,
-      "1": 236,
-      "2": 236,
-      "3": 236,
-      "4": 236,
-      "5": 236,
-      "6": 236,
-      "7": 236,
-      "8": 236,
+      "1": 338,
+      "2": 338,
+      "3": 338,
+      "4": 338,
+      "5": 338,
+      "6": 338,
+      "7": 338,
+      "8": 338,
       "9": 0,
-      "10": 236,
+      "10": 338,
       "11": 10
     },
     "f": {
-      "0": 236
+      "0": 338
     },
     "b": {
       "0": [
-        236,
+        338,
         0
       ],
       "1": [
-        236,
+        338,
         0
       ],
       "2": [
-        236,
+        338,
         0
       ],
       "3": [
-        236,
+        338,
         0
       ]
     },
     "_coverageSchema": "43e27e138ebf9cfc5966b082cf9a028302ed4184",
-    "hash": "c5c9de417228eb56543d1b0174424f77267d2763"
+    "hash": "f75b957d93b2ee597320de709a739fac22c8c71d"
   },
-  "/Users/hemalatharamachandran/Documents/Univ_documents/SEP/SEP203/client/src/assets/jss/material-kit-react/views/loginPage.js": {
-    "path": "/Users/hemalatharamachandran/Documents/Univ_documents/SEP/SEP203/client/src/assets/jss/material-kit-react/views/loginPage.js",
+  "/Users/gauravsj/Documents/My Web Applications/SEP203/client/src/assets/jss/material-kit-react/views/loginPage.js": {
+    "path": "/Users/gauravsj/Documents/My Web Applications/SEP203/client/src/assets/jss/material-kit-react/views/loginPage.js",
     "statementMap": {
       "0": {
         "start": {
@@ -3043,10 +3043,10 @@
     "f": {},
     "b": {},
     "_coverageSchema": "43e27e138ebf9cfc5966b082cf9a028302ed4184",
-    "hash": "32f85878de74a6bc3bc3de72ab8f7021ff544e34"
+    "hash": "1c2de089741641e6c5486b95776e47a08a5e7816"
   },
-  "/Users/hemalatharamachandran/Documents/Univ_documents/SEP/SEP203/client/src/views/CategoryPage/CategoryPage.js": {
-    "path": "/Users/hemalatharamachandran/Documents/Univ_documents/SEP/SEP203/client/src/views/CategoryPage/CategoryPage.js",
+  "/Users/gauravsj/Documents/My Web Applications/SEP203/client/src/views/CategoryPage/CategoryPage.js": {
+    "path": "/Users/gauravsj/Documents/My Web Applications/SEP203/client/src/views/CategoryPage/CategoryPage.js",
     "statementMap": {
       "0": {
         "start": {
@@ -3116,10 +3116,10 @@
     },
     "b": {},
     "_coverageSchema": "43e27e138ebf9cfc5966b082cf9a028302ed4184",
-    "hash": "571b0347c5e16ff57556dd7dd24c06fa9060d54f"
+    "hash": "21e39db25235f5942bf2b14e4312454039b8142a"
   },
-  "/Users/hemalatharamachandran/Documents/Univ_documents/SEP/SEP203/client/src/assets/jss/material-kit-react/components/customDropdownStyle.js": {
-    "path": "/Users/hemalatharamachandran/Documents/Univ_documents/SEP/SEP203/client/src/assets/jss/material-kit-react/components/customDropdownStyle.js",
+  "/Users/gauravsj/Documents/My Web Applications/SEP203/client/src/assets/jss/material-kit-react/components/customDropdownStyle.js": {
+    "path": "/Users/gauravsj/Documents/My Web Applications/SEP203/client/src/assets/jss/material-kit-react/components/customDropdownStyle.js",
     "statementMap": {
       "0": {
         "start": {
@@ -3171,17 +3171,17 @@
     "branchMap": {},
     "s": {
       "0": 10,
-      "1": 3
+      "1": 1
     },
     "f": {
-      "0": 3
+      "0": 1
     },
     "b": {},
     "_coverageSchema": "43e27e138ebf9cfc5966b082cf9a028302ed4184",
-    "hash": "9f535e3dc729f381fdd2adcf214b31c5a63b3b6c"
+    "hash": "4246d63a5497e281dbe67b0a108c622bf265e22c"
   },
-  "/Users/hemalatharamachandran/Documents/Univ_documents/SEP/SEP203/client/src/components/CustomDropdown/CustomDropdown.js": {
-    "path": "/Users/hemalatharamachandran/Documents/Univ_documents/SEP/SEP203/client/src/components/CustomDropdown/CustomDropdown.js",
+  "/Users/gauravsj/Documents/My Web Applications/SEP203/client/src/components/CustomDropdown/CustomDropdown.js": {
+    "path": "/Users/gauravsj/Documents/My Web Applications/SEP203/client/src/components/CustomDropdown/CustomDropdown.js",
     "statementMap": {
       "0": {
         "start": {
@@ -4316,69 +4316,69 @@
     },
     "s": {
       "0": 10,
-      "1": 10,
-      "2": 10,
-      "3": 2,
+      "1": 2,
+      "2": 2,
+      "3": 0,
       "4": 0,
-      "5": 2,
-      "6": 10,
-      "7": 2,
-      "8": 2,
+      "5": 0,
+      "6": 2,
+      "7": 0,
+      "8": 0,
       "9": 0,
-      "10": 10,
+      "10": 2,
       "11": 0,
       "12": 0,
       "13": 0,
-      "14": 10,
-      "15": 10,
-      "16": 10,
-      "17": 10,
-      "18": 10,
-      "19": 10,
+      "14": 2,
+      "15": 2,
+      "16": 2,
+      "17": 2,
+      "18": 2,
+      "19": 2,
       "20": 0,
       "21": 0,
       "22": 0,
       "23": 0,
-      "24": 10,
-      "25": 10,
-      "26": 10,
-      "27": 6,
+      "24": 2,
+      "25": 2,
+      "26": 2,
+      "27": 0,
       "28": 0,
-      "29": 18,
-      "30": 6,
+      "29": 0,
+      "30": 0,
       "31": 0,
-      "32": 12,
-      "33": 2,
+      "32": 0,
+      "33": 0,
       "34": 10,
       "35": 10
     },
     "f": {
-      "0": 10,
-      "1": 2,
-      "2": 2,
+      "0": 2,
+      "1": 0,
+      "2": 0,
       "3": 0,
-      "4": 6,
+      "4": 0,
       "5": 0,
-      "6": 18,
+      "6": 0,
       "7": 0,
-      "8": 2
+      "8": 0
     },
     "b": {
       "0": [
         0,
-        2
+        0
       ],
       "1": [
-        2,
+        0,
         0
       ],
       "2": [
         0,
-        2
+        0
       ],
       "3": [
-        2,
-        2
+        0,
+        0
       ],
       "4": [
         0,
@@ -4387,23 +4387,23 @@
       "5": [
         0,
         0,
-        10
+        2
       ],
       "6": [
-        6,
-        4
+        0,
+        2
       ],
       "7": [
-        10,
+        2,
         0
       ],
       "8": [
-        10,
+        2,
         0
       ],
       "9": [
         0,
-        10
+        2
       ],
       "10": [
         0,
@@ -4411,26 +4411,26 @@
       ],
       "11": [
         0,
-        10
+        2
       ],
       "12": [
         0,
-        6
+        0
       ],
       "13": [
-        6,
+        0,
         0
       ],
       "14": [
-        6,
-        12
+        0,
+        0
       ]
     },
     "_coverageSchema": "43e27e138ebf9cfc5966b082cf9a028302ed4184",
-    "hash": "da3b5ed338c3a29c96aa0358471f94a15041f3ad"
+    "hash": "a2ad4e1e9e873d44446cb8267512355ce7bb2196"
   },
-  "/Users/hemalatharamachandran/Documents/Univ_documents/SEP/SEP203/client/src/actions/product.js": {
-    "path": "/Users/hemalatharamachandran/Documents/Univ_documents/SEP/SEP203/client/src/actions/product.js",
+  "/Users/gauravsj/Documents/My Web Applications/SEP203/client/src/actions/product.js": {
+    "path": "/Users/gauravsj/Documents/My Web Applications/SEP203/client/src/actions/product.js",
     "statementMap": {
       "0": {
         "start": {
@@ -4651,10 +4651,10 @@
       ]
     },
     "_coverageSchema": "43e27e138ebf9cfc5966b082cf9a028302ed4184",
-    "hash": "7b0d64c7710e735c4cd417c6f0d86f0a1915383b"
+    "hash": "50afe724e55f70090746aa743ca34d70899c5be6"
   },
-  "/Users/hemalatharamachandran/Documents/Univ_documents/SEP/SEP203/client/src/views/ProductPage/Product.js": {
-    "path": "/Users/hemalatharamachandran/Documents/Univ_documents/SEP/SEP203/client/src/views/ProductPage/Product.js",
+  "/Users/gauravsj/Documents/My Web Applications/SEP203/client/src/views/ProductPage/Product.js": {
+    "path": "/Users/gauravsj/Documents/My Web Applications/SEP203/client/src/views/ProductPage/Product.js",
     "statementMap": {
       "0": {
         "start": {
@@ -5208,10 +5208,10 @@
     },
     "b": {},
     "_coverageSchema": "43e27e138ebf9cfc5966b082cf9a028302ed4184",
-    "hash": "5cd281a1c9d135fecba97380a1cf52096036b122"
+    "hash": "c6c0f4aff57612b763d832ebfe9927c68ec22e63"
   },
-  "/Users/hemalatharamachandran/Documents/Univ_documents/SEP/SEP203/client/src/dashboardRoutes.js": {
-    "path": "/Users/hemalatharamachandran/Documents/Univ_documents/SEP/SEP203/client/src/dashboardRoutes.js",
+  "/Users/gauravsj/Documents/My Web Applications/SEP203/client/src/dashboardRoutes.js": {
+    "path": "/Users/gauravsj/Documents/My Web Applications/SEP203/client/src/dashboardRoutes.js",
     "statementMap": {
       "0": {
         "start": {
@@ -5232,10 +5232,10 @@
     "f": {},
     "b": {},
     "_coverageSchema": "43e27e138ebf9cfc5966b082cf9a028302ed4184",
-    "hash": "435e88d535b361f526a5711e0ffc50feb1991dc0"
+    "hash": "df5c87104d40d75981c176207abb0719f8f3f8c5"
   },
-  "/Users/hemalatharamachandran/Documents/Univ_documents/SEP/SEP203/client/src/assets/jss/material-kit-react/components/headerStyle.js": {
-    "path": "/Users/hemalatharamachandran/Documents/Univ_documents/SEP/SEP203/client/src/assets/jss/material-kit-react/components/headerStyle.js",
+  "/Users/gauravsj/Documents/My Web Applications/SEP203/client/src/assets/jss/material-kit-react/components/headerStyle.js": {
+    "path": "/Users/gauravsj/Documents/My Web Applications/SEP203/client/src/assets/jss/material-kit-react/components/headerStyle.js",
     "statementMap": {
       "0": {
         "start": {
@@ -5256,10 +5256,10 @@
     "f": {},
     "b": {},
     "_coverageSchema": "43e27e138ebf9cfc5966b082cf9a028302ed4184",
-    "hash": "f4fef364c6f7317747de3d180585f4aee5c18baa"
+    "hash": "dc3a4e692cbac70c3a2728944b0b0da66a1ada60"
   },
-  "/Users/hemalatharamachandran/Documents/Univ_documents/SEP/SEP203/client/src/components/Header/Header.js": {
-    "path": "/Users/hemalatharamachandran/Documents/Univ_documents/SEP/SEP203/client/src/components/Header/Header.js",
+  "/Users/gauravsj/Documents/My Web Applications/SEP203/client/src/components/Header/Header.js": {
+    "path": "/Users/gauravsj/Documents/My Web Applications/SEP203/client/src/components/Header/Header.js",
     "statementMap": {
       "0": {
         "start": {
@@ -5873,10 +5873,10 @@
       ]
     },
     "_coverageSchema": "43e27e138ebf9cfc5966b082cf9a028302ed4184",
-    "hash": "d3376025f808f40efca891ab7066a1a79be97586"
+    "hash": "0d14f7c7a60a83ce80c059b2183cf40f1e415844"
   },
-  "/Users/hemalatharamachandran/Documents/Univ_documents/SEP/SEP203/client/src/utils/setAuthToken.js": {
-    "path": "/Users/hemalatharamachandran/Documents/Univ_documents/SEP/SEP203/client/src/utils/setAuthToken.js",
+  "/Users/gauravsj/Documents/My Web Applications/SEP203/client/src/utils/setAuthToken.js": {
+    "path": "/Users/gauravsj/Documents/My Web Applications/SEP203/client/src/utils/setAuthToken.js",
     "statementMap": {
       "0": {
         "start": {
@@ -5985,48 +5985,48 @@
     },
     "s": {
       "0": 10,
-      "1": 9,
-      "2": 9,
+      "1": 4,
+      "2": 4,
       "3": 0
     },
     "f": {
-      "0": 9
+      "0": 4
     },
     "b": {
       "0": [
-        9,
+        4,
         0
       ]
     },
     "_coverageSchema": "43e27e138ebf9cfc5966b082cf9a028302ed4184",
-    "hash": "02b75dd245e29d85a5c15e2ba28b5dc5f5454693"
+    "hash": "0c3d47ca60aea807e70facd69791b55985d6b779"
   },
-  "/Users/hemalatharamachandran/Documents/Univ_documents/SEP/SEP203/client/src/actions/auth.js": {
-    "path": "/Users/hemalatharamachandran/Documents/Univ_documents/SEP/SEP203/client/src/actions/auth.js",
+  "/Users/gauravsj/Documents/My Web Applications/SEP203/client/src/actions/auth.js": {
+    "path": "/Users/gauravsj/Documents/My Web Applications/SEP203/client/src/actions/auth.js",
     "statementMap": {
       "0": {
         "start": {
-          "line": 15,
+          "line": 16,
           "column": 24
         },
         "end": {
-          "line": 31,
+          "line": 35,
           "column": 1
         }
       },
       "1": {
         "start": {
-          "line": 15,
+          "line": 16,
           "column": 30
         },
         "end": {
-          "line": 31,
+          "line": 35,
           "column": 1
         }
       },
       "2": {
         "start": {
-          "line": 16,
+          "line": 17,
           "column": 2
         },
         "end": {
@@ -6050,7 +6050,7 @@
           "column": 2
         },
         "end": {
-          "line": 30,
+          "line": 34,
           "column": 3
         }
       },
@@ -6077,300 +6077,360 @@
       "7": {
         "start": {
           "line": 27,
-          "column": 4
+          "column": 19
         },
         "end": {
-          "line": 29,
-          "column": 7
+          "line": 27,
+          "column": 43
         }
       },
       "8": {
         "start": {
-          "line": 34,
-          "column": 24
+          "line": 28,
+          "column": 4
         },
         "end": {
-          "line": 63,
-          "column": 1
+          "line": 30,
+          "column": 5
         }
       },
       "9": {
         "start": {
-          "line": 39,
+          "line": 29,
           "column": 6
         },
         "end": {
-          "line": 63,
-          "column": 1
+          "line": 29,
+          "column": 46
         }
       },
       "10": {
         "start": {
-          "line": 40,
-          "column": 17
+          "line": 29,
+          "column": 28
         },
         "end": {
-          "line": 44,
-          "column": 3
+          "line": 29,
+          "column": 44
         }
       },
       "11": {
         "start": {
-          "line": 45,
-          "column": 15
+          "line": 31,
+          "column": 4
         },
         "end": {
-          "line": 45,
-          "column": 66
+          "line": 33,
+          "column": 7
         }
       },
       "12": {
         "start": {
-          "line": 46,
-          "column": 2
+          "line": 38,
+          "column": 24
         },
         "end": {
-          "line": 62,
-          "column": 3
+          "line": 73,
+          "column": 1
         }
       },
       "13": {
         "start": {
-          "line": 47,
-          "column": 16
+          "line": 43,
+          "column": 6
         },
         "end": {
-          "line": 47,
-          "column": 60
+          "line": 73,
+          "column": 1
         }
       },
       "14": {
         "start": {
-          "line": 48,
-          "column": 4
+          "line": 44,
+          "column": 17
         },
         "end": {
-          "line": 51,
-          "column": 7
+          "line": 48,
+          "column": 3
         }
       },
       "15": {
         "start": {
-          "line": 55,
-          "column": 19
+          "line": 49,
+          "column": 15
         },
         "end": {
-          "line": 55,
-          "column": 43
+          "line": 49,
+          "column": 66
         }
       },
       "16": {
         "start": {
-          "line": 56,
-          "column": 4
+          "line": 50,
+          "column": 2
         },
         "end": {
-          "line": 58,
-          "column": 5
+          "line": 72,
+          "column": 3
         }
       },
       "17": {
         "start": {
-          "line": 57,
-          "column": 6
+          "line": 51,
+          "column": 16
         },
         "end": {
-          "line": 57,
-          "column": 46
+          "line": 51,
+          "column": 60
         }
       },
       "18": {
         "start": {
-          "line": 57,
-          "column": 28
+          "line": 52,
+          "column": 4
         },
         "end": {
-          "line": 57,
-          "column": 44
+          "line": 55,
+          "column": 7
         }
       },
       "19": {
         "start": {
           "line": 59,
-          "column": 4
+          "column": 19
         },
         "end": {
-          "line": 61,
-          "column": 7
+          "line": 59,
+          "column": 42
         }
       },
       "20": {
         "start": {
-          "line": 66,
-          "column": 21
+          "line": 60,
+          "column": 4
         },
         "end": {
-          "line": 93,
-          "column": 1
+          "line": 64,
+          "column": 5
         }
       },
       "21": {
         "start": {
-          "line": 66,
-          "column": 45
+          "line": 61,
+          "column": 6
         },
         "end": {
-          "line": 93,
-          "column": 1
+          "line": 63,
+          "column": 9
         }
       },
       "22": {
         "start": {
-          "line": 67,
-          "column": 17
+          "line": 62,
+          "column": 8
         },
         "end": {
-          "line": 71,
-          "column": 3
+          "line": 62,
+          "column": 24
         }
       },
       "23": {
         "start": {
-          "line": 72,
-          "column": 15
+          "line": 65,
+          "column": 4
         },
         "end": {
-          "line": 72,
-          "column": 53
+          "line": 68,
+          "column": 7
         }
       },
       "24": {
         "start": {
-          "line": 73,
-          "column": 2
+          "line": 69,
+          "column": 4
         },
         "end": {
-          "line": 92,
-          "column": 3
+          "line": 71,
+          "column": 7
         }
       },
       "25": {
         "start": {
-          "line": 74,
-          "column": 16
+          "line": 76,
+          "column": 21
         },
         "end": {
-          "line": 74,
-          "column": 59
+          "line": 109,
+          "column": 1
         }
       },
       "26": {
         "start": {
-          "line": 75,
-          "column": 4
+          "line": 76,
+          "column": 45
         },
         "end": {
-          "line": 75,
-          "column": 26
+          "line": 109,
+          "column": 1
         }
       },
       "27": {
         "start": {
           "line": 77,
-          "column": 4
+          "column": 17
         },
         "end": {
-          "line": 80,
-          "column": 7
+          "line": 81,
+          "column": 3
         }
       },
       "28": {
         "start": {
-          "line": 85,
-          "column": 19
+          "line": 82,
+          "column": 15
         },
         "end": {
-          "line": 85,
-          "column": 43
+          "line": 82,
+          "column": 53
         }
       },
       "29": {
+        "start": {
+          "line": 83,
+          "column": 2
+        },
+        "end": {
+          "line": 108,
+          "column": 3
+        }
+      },
+      "30": {
+        "start": {
+          "line": 84,
+          "column": 16
+        },
+        "end": {
+          "line": 84,
+          "column": 59
+        }
+      },
+      "31": {
         "start": {
           "line": 86,
           "column": 4
         },
         "end": {
-          "line": 88,
-          "column": 5
-        }
-      },
-      "30": {
-        "start": {
-          "line": 87,
-          "column": 6
-        },
-        "end": {
-          "line": 87,
-          "column": 50
-        }
-      },
-      "31": {
-        "start": {
-          "line": 87,
-          "column": 30
-        },
-        "end": {
-          "line": 87,
-          "column": 48
+          "line": 89,
+          "column": 7
         }
       },
       "32": {
         "start": {
-          "line": 89,
+          "line": 91,
           "column": 4
         },
         "end": {
           "line": 91,
-          "column": 7
+          "column": 25
         }
       },
       "33": {
         "start": {
-          "line": 96,
-          "column": 22
+          "line": 95,
+          "column": 19
         },
         "end": {
-          "line": 99,
-          "column": 1
+          "line": 95,
+          "column": 43
         }
       },
       "34": {
         "start": {
           "line": 96,
-          "column": 28
+          "column": 4
         },
         "end": {
-          "line": 99,
-          "column": 1
+          "line": 100,
+          "column": 5
         }
       },
       "35": {
         "start": {
           "line": 97,
-          "column": 2
+          "column": 6
         },
         "end": {
-          "line": 97,
-          "column": 36
+          "line": 99,
+          "column": 9
         }
       },
       "36": {
         "start": {
           "line": 98,
-          "column": 2
+          "column": 8
         },
         "end": {
           "line": 98,
+          "column": 24
+        }
+      },
+      "37": {
+        "start": {
+          "line": 101,
+          "column": 4
+        },
+        "end": {
+          "line": 104,
+          "column": 7
+        }
+      },
+      "38": {
+        "start": {
+          "line": 105,
+          "column": 4
+        },
+        "end": {
+          "line": 107,
+          "column": 7
+        }
+      },
+      "39": {
+        "start": {
+          "line": 112,
+          "column": 22
+        },
+        "end": {
+          "line": 115,
+          "column": 1
+        }
+      },
+      "40": {
+        "start": {
+          "line": 112,
+          "column": 28
+        },
+        "end": {
+          "line": 115,
+          "column": 1
+        }
+      },
+      "41": {
+        "start": {
+          "line": 113,
+          "column": 2
+        },
+        "end": {
+          "line": 113,
+          "column": 36
+        }
+      },
+      "42": {
+        "start": {
+          "line": 114,
+          "column": 2
+        },
+        "end": {
+          "line": 114,
           "column": 29
         }
       }
@@ -6380,248 +6440,272 @@
         "name": "(anonymous_0)",
         "decl": {
           "start": {
-            "line": 15,
+            "line": 16,
             "column": 24
           },
           "end": {
-            "line": 15,
+            "line": 16,
             "column": 25
           }
         },
         "loc": {
           "start": {
-            "line": 15,
+            "line": 16,
             "column": 30
           },
           "end": {
-            "line": 31,
+            "line": 35,
             "column": 1
           }
         },
-        "line": 15
+        "line": 16
       },
       "1": {
         "name": "(anonymous_1)",
         "decl": {
           "start": {
-            "line": 15,
+            "line": 16,
             "column": 30
           },
           "end": {
-            "line": 15,
+            "line": 16,
             "column": 31
           }
         },
         "loc": {
           "start": {
-            "line": 15,
+            "line": 16,
             "column": 48
           },
           "end": {
-            "line": 31,
+            "line": 35,
             "column": 1
           }
         },
-        "line": 15
+        "line": 16
       },
       "2": {
         "name": "(anonymous_2)",
         "decl": {
           "start": {
-            "line": 34,
-            "column": 24
+            "line": 29,
+            "column": 21
           },
           "end": {
-            "line": 34,
-            "column": 25
+            "line": 29,
+            "column": 22
           }
         },
         "loc": {
           "start": {
-            "line": 39,
-            "column": 6
+            "line": 29,
+            "column": 28
           },
           "end": {
-            "line": 63,
-            "column": 1
+            "line": 29,
+            "column": 44
           }
         },
-        "line": 39
+        "line": 29
       },
       "3": {
         "name": "(anonymous_3)",
         "decl": {
           "start": {
-            "line": 39,
-            "column": 6
+            "line": 38,
+            "column": 24
           },
           "end": {
-            "line": 39,
-            "column": 7
+            "line": 38,
+            "column": 25
           }
         },
         "loc": {
           "start": {
-            "line": 39,
-            "column": 24
+            "line": 43,
+            "column": 6
           },
           "end": {
-            "line": 63,
+            "line": 73,
             "column": 1
           }
         },
-        "line": 39
+        "line": 43
       },
       "4": {
         "name": "(anonymous_4)",
         "decl": {
           "start": {
-            "line": 57,
-            "column": 21
+            "line": 43,
+            "column": 6
           },
           "end": {
-            "line": 57,
-            "column": 22
+            "line": 43,
+            "column": 7
           }
         },
         "loc": {
           "start": {
-            "line": 57,
-            "column": 28
+            "line": 43,
+            "column": 24
           },
           "end": {
-            "line": 57,
-            "column": 44
+            "line": 73,
+            "column": 1
           }
         },
-        "line": 57
+        "line": 43
       },
       "5": {
         "name": "(anonymous_5)",
         "decl": {
           "start": {
-            "line": 66,
+            "line": 61,
             "column": 21
           },
           "end": {
-            "line": 66,
+            "line": 61,
             "column": 22
           }
         },
         "loc": {
           "start": {
-            "line": 66,
-            "column": 45
+            "line": 61,
+            "column": 28
           },
           "end": {
-            "line": 93,
-            "column": 1
+            "line": 63,
+            "column": 7
           }
         },
-        "line": 66
+        "line": 61
       },
       "6": {
         "name": "(anonymous_6)",
         "decl": {
           "start": {
-            "line": 66,
-            "column": 45
+            "line": 76,
+            "column": 21
           },
           "end": {
-            "line": 66,
-            "column": 46
+            "line": 76,
+            "column": 22
           }
         },
         "loc": {
           "start": {
-            "line": 66,
-            "column": 63
+            "line": 76,
+            "column": 45
           },
           "end": {
-            "line": 93,
+            "line": 109,
             "column": 1
           }
         },
-        "line": 66
+        "line": 76
       },
       "7": {
         "name": "(anonymous_7)",
         "decl": {
           "start": {
-            "line": 87,
-            "column": 21
+            "line": 76,
+            "column": 45
           },
           "end": {
-            "line": 87,
-            "column": 22
+            "line": 76,
+            "column": 46
           }
         },
         "loc": {
           "start": {
-            "line": 87,
-            "column": 30
+            "line": 76,
+            "column": 63
           },
           "end": {
-            "line": 87,
-            "column": 48
+            "line": 109,
+            "column": 1
           }
         },
-        "line": 87
+        "line": 76
       },
       "8": {
         "name": "(anonymous_8)",
         "decl": {
           "start": {
-            "line": 96,
-            "column": 22
+            "line": 97,
+            "column": 21
           },
           "end": {
-            "line": 96,
-            "column": 23
+            "line": 97,
+            "column": 22
           }
         },
         "loc": {
           "start": {
-            "line": 96,
+            "line": 97,
             "column": 28
           },
           "end": {
             "line": 99,
-            "column": 1
+            "column": 7
           }
         },
-        "line": 96
+        "line": 97
       },
       "9": {
         "name": "(anonymous_9)",
         "decl": {
           "start": {
-            "line": 96,
+            "line": 112,
+            "column": 22
+          },
+          "end": {
+            "line": 112,
+            "column": 23
+          }
+        },
+        "loc": {
+          "start": {
+            "line": 112,
             "column": 28
           },
           "end": {
-            "line": 96,
+            "line": 115,
+            "column": 1
+          }
+        },
+        "line": 112
+      },
+      "10": {
+        "name": "(anonymous_10)",
+        "decl": {
+          "start": {
+            "line": 112,
+            "column": 28
+          },
+          "end": {
+            "line": 112,
             "column": 29
           }
         },
         "loc": {
           "start": {
-            "line": 96,
+            "line": 112,
             "column": 40
           },
           "end": {
-            "line": 99,
+            "line": 115,
             "column": 1
           }
         },
-        "line": 96
+        "line": 112
       }
     },
     "branchMap": {
       "0": {
         "loc": {
           "start": {
-            "line": 16,
+            "line": 17,
             "column": 2
           },
           "end": {
@@ -6633,7 +6717,7 @@
         "locations": [
           {
             "start": {
-              "line": 16,
+              "line": 17,
               "column": 2
             },
             "end": {
@@ -6643,7 +6727,7 @@
           },
           {
             "start": {
-              "line": 16,
+              "line": 17,
               "column": 2
             },
             "end": {
@@ -6652,16 +6736,16 @@
             }
           }
         ],
-        "line": 16
+        "line": 17
       },
       "1": {
         "loc": {
           "start": {
-            "line": 56,
+            "line": 28,
             "column": 4
           },
           "end": {
-            "line": 58,
+            "line": 30,
             "column": 5
           }
         },
@@ -6669,35 +6753,35 @@
         "locations": [
           {
             "start": {
-              "line": 56,
+              "line": 28,
               "column": 4
             },
             "end": {
-              "line": 58,
+              "line": 30,
               "column": 5
             }
           },
           {
             "start": {
-              "line": 56,
+              "line": 28,
               "column": 4
             },
             "end": {
-              "line": 58,
+              "line": 30,
               "column": 5
             }
           }
         ],
-        "line": 56
+        "line": 28
       },
       "2": {
         "loc": {
           "start": {
-            "line": 86,
+            "line": 60,
             "column": 4
           },
           "end": {
-            "line": 88,
+            "line": 64,
             "column": 5
           }
         },
@@ -6705,42 +6789,78 @@
         "locations": [
           {
             "start": {
-              "line": 86,
+              "line": 60,
               "column": 4
             },
             "end": {
-              "line": 88,
+              "line": 64,
               "column": 5
             }
           },
           {
             "start": {
-              "line": 86,
+              "line": 60,
               "column": 4
             },
             "end": {
-              "line": 88,
+              "line": 64,
               "column": 5
             }
           }
         ],
-        "line": 86
+        "line": 60
+      },
+      "3": {
+        "loc": {
+          "start": {
+            "line": 96,
+            "column": 4
+          },
+          "end": {
+            "line": 100,
+            "column": 5
+          }
+        },
+        "type": "if",
+        "locations": [
+          {
+            "start": {
+              "line": 96,
+              "column": 4
+            },
+            "end": {
+              "line": 100,
+              "column": 5
+            }
+          },
+          {
+            "start": {
+              "line": 96,
+              "column": 4
+            },
+            "end": {
+              "line": 100,
+              "column": 5
+            }
+          }
+        ],
+        "line": 96
       }
     },
     "s": {
       "0": 10,
-      "1": 16,
-      "2": 16,
-      "3": 6,
-      "4": 16,
-      "5": 16,
-      "6": 5,
+      "1": 13,
+      "2": 13,
+      "3": 3,
+      "4": 13,
+      "5": 13,
+      "6": 1,
       "7": 10,
       "8": 10,
       "9": 0,
       "10": 0,
-      "11": 0,
-      "12": 0,
+      "11": 10,
+      "12": 10,
       "13": 0,
       "14": 0,
       "15": 0,
@@ -6748,55 +6868,66 @@
       "17": 0,
       "18": 0,
       "19": 0,
-      "20": 10,
-      "21": 6,
-      "22": 6,
-      "23": 6,
-      "24": 6,
-      "25": 6,
-      "26": 3,
-      "27": 3,
-      "28": 0,
-      "29": 0,
-      "30": 0,
-      "31": 0,
-      "32": 0,
-      "33": 10,
-      "34": 2,
-      "35": 2,
-      "36": 2
+      "20": 0,
+      "21": 0,
+      "22": 0,
+      "23": 0,
+      "24": 0,
+      "25": 10,
+      "26": 6,
+      "27": 6,
+      "28": 6,
+      "29": 6,
+      "30": 6,
+      "31": 1,
+      "32": 1,
+      "33": 5,
+      "34": 5,
+      "35": 5,
+      "36": 5,
+      "37": 5,
+      "38": 5,
+      "39": 10,
+      "40": 0,
+      "41": 0,
+      "42": 0
     },
     "f": {
-      "0": 16,
-      "1": 16,
+      "0": 13,
+      "1": 13,
       "2": 0,
       "3": 0,
       "4": 0,
-      "5": 6,
+      "5": 0,
       "6": 6,
-      "7": 0,
-      "8": 2,
-      "9": 2
+      "7": 6,
+      "8": 5,
+      "9": 0,
+      "10": 0
     },
     "b": {
       "0": [
-        6,
+        3,
         10
       ],
       "1": [
         0,
-        0
+        10
       ],
       "2": [
         0,
         0
+      ],
+      "3": [
+        5,
+        0
       ]
     },
     "_coverageSchema": "43e27e138ebf9cfc5966b082cf9a028302ed4184",
-    "hash": "f2511fcce1ba2f815be524a5253ac146bba7c9a6"
+    "hash": "c1e6a8f65287da2520dc2008202b6c8a6df49604"
   },
-  "/Users/hemalatharamachandran/Documents/Univ_documents/SEP/SEP203/client/src/assets/jss/material-kit-react/tooltipsStyle.js": {
-    "path": "/Users/hemalatharamachandran/Documents/Univ_documents/SEP/SEP203/client/src/assets/jss/material-kit-react/tooltipsStyle.js",
+  "/Users/gauravsj/Documents/My Web Applications/SEP203/client/src/assets/jss/material-kit-react/tooltipsStyle.js": {
+    "path": "/Users/gauravsj/Documents/My Web Applications/SEP203/client/src/assets/jss/material-kit-react/tooltipsStyle.js",
     "statementMap": {
       "0": {
         "start": {
@@ -6817,10 +6948,10 @@
     "f": {},
     "b": {},
     "_coverageSchema": "43e27e138ebf9cfc5966b082cf9a028302ed4184",
-    "hash": "21fe836b436515051d575f286c2f86846fbfc0b5"
+    "hash": "5ad516b4fa649198ebaef56c246c6e24190631cc"
   },
-  "/Users/hemalatharamachandran/Documents/Univ_documents/SEP/SEP203/client/src/assets/jss/material-kit-react/components/headerLinksStyle.js": {
-    "path": "/Users/hemalatharamachandran/Documents/Univ_documents/SEP/SEP203/client/src/assets/jss/material-kit-react/components/headerLinksStyle.js",
+  "/Users/gauravsj/Documents/My Web Applications/SEP203/client/src/assets/jss/material-kit-react/components/headerLinksStyle.js": {
+    "path": "/Users/gauravsj/Documents/My Web Applications/SEP203/client/src/assets/jss/material-kit-react/components/headerLinksStyle.js",
     "statementMap": {
       "0": {
         "start": {
@@ -6879,10 +7010,10 @@
     },
     "b": {},
     "_coverageSchema": "43e27e138ebf9cfc5966b082cf9a028302ed4184",
-    "hash": "47e9ceb2492fddc97b7a1e285bf7174736ef543f"
+    "hash": "2f2c52fdd59e219481f857bedc13ac54cb5d009c"
   },
-  "/Users/hemalatharamachandran/Documents/Univ_documents/SEP/SEP203/client/src/components/Header/HeaderLinks.js": {
-    "path": "/Users/hemalatharamachandran/Documents/Univ_documents/SEP/SEP203/client/src/components/Header/HeaderLinks.js",
+  "/Users/gauravsj/Documents/My Web Applications/SEP203/client/src/components/Header/HeaderLinks.js": {
+    "path": "/Users/gauravsj/Documents/My Web Applications/SEP203/client/src/components/Header/HeaderLinks.js",
     "statementMap": {
       "0": {
         "start": {
@@ -7102,33 +7233,33 @@
     "s": {
       "0": 10,
       "1": 10,
-      "2": 30,
-      "3": 30,
-      "4": 30,
-      "5": 30,
+      "2": 32,
+      "3": 32,
+      "4": 32,
+      "5": 32,
       "6": 10,
       "7": 10,
-      "8": 32
+      "8": 39
     },
     "f": {
-      "0": 30,
-      "1": 32
+      "0": 32,
+      "1": 39
     },
     "b": {
       "0": [
-        30,
-        20
+        32,
+        22
       ],
       "1": [
-        8,
-        12
+        2,
+        20
       ]
     },
     "_coverageSchema": "43e27e138ebf9cfc5966b082cf9a028302ed4184",
-    "hash": "5dc644f6fa11f756b25198aa962a69836119baff"
+    "hash": "06c2a91700eab97b8c294b07ab4d6982887132b0"
   },
-  "/Users/hemalatharamachandran/Documents/Univ_documents/SEP/SEP203/client/src/components/Routing/PrivateRoute.js": {
-    "path": "/Users/hemalatharamachandran/Documents/Univ_documents/SEP/SEP203/client/src/components/Routing/PrivateRoute.js",
+  "/Users/gauravsj/Documents/My Web Applications/SEP203/client/src/components/Routing/PrivateRoute.js": {
+    "path": "/Users/gauravsj/Documents/My Web Applications/SEP203/client/src/components/Routing/PrivateRoute.js",
     "statementMap": {
       "0": {
         "start": {
@@ -7363,14 +7494,14 @@
       ]
     },
     "_coverageSchema": "43e27e138ebf9cfc5966b082cf9a028302ed4184",
-    "hash": "7e606497f9120f1e06ee61cb78fed2ca5f41544f"
+    "hash": "9abb4e5b3b8894e18eb4cde6ce0617b05077830e"
   },
-  "/Users/hemalatharamachandran/Documents/Univ_documents/SEP/SEP203/client/src/reducers/auth.js": {
-    "path": "/Users/hemalatharamachandran/Documents/Univ_documents/SEP/SEP203/client/src/reducers/auth.js",
+  "/Users/gauravsj/Documents/My Web Applications/SEP203/client/src/reducers/auth.js": {
+    "path": "/Users/gauravsj/Documents/My Web Applications/SEP203/client/src/reducers/auth.js",
     "statementMap": {
       "0": {
         "start": {
-          "line": 14,
+          "line": 13,
           "column": 21
         },
         "end": {
@@ -7394,7 +7525,7 @@
           "column": 2
         },
         "end": {
-          "line": 65,
+          "line": 93,
           "column": 3
         }
       },
@@ -7470,31 +7601,91 @@
       },
       "10": {
         "start": {
-          "line": 55,
+          "line": 52,
           "column": 6
         },
         "end": {
-          "line": 55,
+          "line": 52,
           "column": 39
         }
       },
       "11": {
         "start": {
-          "line": 56,
+          "line": 53,
           "column": 6
         },
         "end": {
-          "line": 62,
+          "line": 60,
           "column": 8
         }
       },
       "12": {
         "start": {
-          "line": 64,
+          "line": 62,
           "column": 6
         },
         "end": {
-          "line": 64,
+          "line": 62,
+          "column": 39
+        }
+      },
+      "13": {
+        "start": {
+          "line": 63,
+          "column": 6
+        },
+        "end": {
+          "line": 70,
+          "column": 8
+        }
+      },
+      "14": {
+        "start": {
+          "line": 72,
+          "column": 6
+        },
+        "end": {
+          "line": 72,
+          "column": 39
+        }
+      },
+      "15": {
+        "start": {
+          "line": 73,
+          "column": 6
+        },
+        "end": {
+          "line": 80,
+          "column": 8
+        }
+      },
+      "16": {
+        "start": {
+          "line": 83,
+          "column": 6
+        },
+        "end": {
+          "line": 83,
+          "column": 39
+        }
+      },
+      "17": {
+        "start": {
+          "line": 84,
+          "column": 6
+        },
+        "end": {
+          "line": 90,
+          "column": 8
+        }
+      },
+      "18": {
+        "start": {
+          "line": 92,
+          "column": 6
+        },
+        "end": {
+          "line": 92,
           "column": 19
         }
       }
@@ -7518,7 +7709,7 @@
             "column": 54
           },
           "end": {
-            "line": 66,
+            "line": 94,
             "column": 1
           }
         },
@@ -7559,7 +7750,7 @@
             "column": 2
           },
           "end": {
-            "line": 65,
+            "line": 93,
             "column": 3
           }
         },
@@ -7597,61 +7788,61 @@
           },
           {
             "start": {
-              "line": 50,
-              "column": 4
-            },
-            "end": {
-              "line": 50,
-              "column": 23
-            }
-          },
-          {
-            "start": {
               "line": 51,
               "column": 4
             },
             "end": {
-              "line": 51,
-              "column": 20
-            }
-          },
-          {
-            "start": {
-              "line": 52,
-              "column": 4
-            },
-            "end": {
-              "line": 52,
-              "column": 20
-            }
-          },
-          {
-            "start": {
-              "line": 53,
-              "column": 4
-            },
-            "end": {
-              "line": 53,
-              "column": 16
-            }
-          },
-          {
-            "start": {
-              "line": 54,
-              "column": 4
-            },
-            "end": {
-              "line": 62,
+              "line": 60,
               "column": 8
             }
           },
           {
             "start": {
-              "line": 63,
+              "line": 61,
               "column": 4
             },
             "end": {
-              "line": 64,
+              "line": 70,
+              "column": 8
+            }
+          },
+          {
+            "start": {
+              "line": 71,
+              "column": 4
+            },
+            "end": {
+              "line": 80,
+              "column": 8
+            }
+          },
+          {
+            "start": {
+              "line": 81,
+              "column": 4
+            },
+            "end": {
+              "line": 81,
+              "column": 16
+            }
+          },
+          {
+            "start": {
+              "line": 82,
+              "column": 4
+            },
+            "end": {
+              "line": 90,
+              "column": 8
+            }
+          },
+          {
+            "start": {
+              "line": 91,
+              "column": 4
+            },
+            "end": {
+              "line": 92,
               "column": 19
             }
           }
@@ -7697,47 +7888,53 @@
     },
     "s": {
       "0": 10,
-      "1": 52,
-      "2": 52,
-      "3": 5,
+      "1": 59,
+      "2": 59,
+      "3": 1,
       "4": 0,
       "5": 0,
-      "6": 3,
-      "7": 3,
-      "8": 3,
-      "9": 3,
-      "10": 12,
-      "11": 12,
-      "12": 32
+      "6": 1,
+      "7": 1,
+      "8": 1,
+      "9": 1,
+      "10": 5,
+      "11": 5,
+      "12": 15,
+      "13": 15,
+      "14": 0,
+      "15": 0,
+      "16": 0,
+      "17": 0,
+      "18": 37
     },
     "f": {
-      "0": 52
+      "0": 59
     },
     "b": {
       "0": [
         30
       ],
       "1": [
+        1,
+        0,
+        1,
         5,
+        15,
         0,
-        3,
         0,
         0,
-        10,
-        12,
-        12,
-        32
+        37
       ],
       "2": [
-        3,
+        1,
         0
       ]
     },
     "_coverageSchema": "43e27e138ebf9cfc5966b082cf9a028302ed4184",
-    "hash": "6f52d61f463d732d914e261229b2689a80fabdc5"
+    "hash": "7da634929b2ac823094d50cd11943ceaa79ac0d6"
   },
-  "/Users/hemalatharamachandran/Documents/Univ_documents/SEP/SEP203/client/src/reducers/profile.js": {
-    "path": "/Users/hemalatharamachandran/Documents/Univ_documents/SEP/SEP203/client/src/reducers/profile.js",
+  "/Users/gauravsj/Documents/My Web Applications/SEP203/client/src/reducers/profile.js": {
+    "path": "/Users/gauravsj/Documents/My Web Applications/SEP203/client/src/reducers/profile.js",
     "statementMap": {
       "0": {
         "start": {
@@ -7912,14 +8109,14 @@
     },
     "s": {
       "0": 10,
-      "1": 52,
-      "2": 52,
+      "1": 59,
+      "2": 59,
       "3": 0,
-      "4": 2,
-      "5": 50
+      "4": 0,
+      "5": 59
     },
     "f": {
-      "0": 52
+      "0": 59
     },
     "b": {
       "0": [
@@ -7928,15 +8125,15 @@
       "1": [
         0,
         0,
-        2,
-        50
+        0,
+        59
       ]
     },
     "_coverageSchema": "43e27e138ebf9cfc5966b082cf9a028302ed4184",
-    "hash": "f445cbaf84758e50be0ad1bb4f9bd7f74ff0618b"
+    "hash": "c46e9d15f211f7295d4510041c602a2c8f459e34"
   },
-  "/Users/hemalatharamachandran/Documents/Univ_documents/SEP/SEP203/client/src/reducers/alert.js": {
-    "path": "/Users/hemalatharamachandran/Documents/Univ_documents/SEP/SEP203/client/src/reducers/alert.js",
+  "/Users/gauravsj/Documents/My Web Applications/SEP203/client/src/reducers/alert.js": {
+    "path": "/Users/gauravsj/Documents/My Web Applications/SEP203/client/src/reducers/alert.js",
     "statementMap": {
       "0": {
         "start": {
@@ -8135,32 +8332,32 @@
     },
     "s": {
       "0": 10,
-      "1": 52,
-      "2": 52,
-      "3": 0,
-      "4": 0,
-      "5": 0,
+      "1": 59,
+      "2": 59,
+      "3": 5,
+      "4": 2,
+      "5": 2,
       "6": 52
     },
     "f": {
-      "0": 52,
-      "1": 0
+      "0": 59,
+      "1": 2
     },
     "b": {
       "0": [
         30
       ],
       "1": [
-        0,
-        0,
+        5,
+        2,
         52
       ]
     },
     "_coverageSchema": "43e27e138ebf9cfc5966b082cf9a028302ed4184",
-    "hash": "efcba5ac71a216b2249a009ce17c85b657a60679"
+    "hash": "2918eaf7efbcaba7ef584a9c84c21a2e385d4f0e"
   },
-  "/Users/hemalatharamachandran/Documents/Univ_documents/SEP/SEP203/client/src/reducers/index.js": {
-    "path": "/Users/hemalatharamachandran/Documents/Univ_documents/SEP/SEP203/client/src/reducers/index.js",
+  "/Users/gauravsj/Documents/My Web Applications/SEP203/client/src/reducers/index.js": {
+    "path": "/Users/gauravsj/Documents/My Web Applications/SEP203/client/src/reducers/index.js",
     "statementMap": {},
     "fnMap": {},
     "branchMap": {},
@@ -8168,10 +8365,10 @@
     "f": {},
     "b": {},
     "_coverageSchema": "43e27e138ebf9cfc5966b082cf9a028302ed4184",
-    "hash": "a16bd8ccd1bf3c23a03b1954fd6f5ea920ca24bb"
+    "hash": "51d841a2a6b8f561eb1a52a0c0bcaa385fa7f275"
   },
-  "/Users/hemalatharamachandran/Documents/Univ_documents/SEP/SEP203/client/src/store.js": {
-    "path": "/Users/hemalatharamachandran/Documents/Univ_documents/SEP/SEP203/client/src/store.js",
+  "/Users/gauravsj/Documents/My Web Applications/SEP203/client/src/store.js": {
+    "path": "/Users/gauravsj/Documents/My Web Applications/SEP203/client/src/store.js",
     "statementMap": {
       "0": {
         "start": {
@@ -8214,10 +8411,10 @@
     "f": {},
     "b": {},
     "_coverageSchema": "43e27e138ebf9cfc5966b082cf9a028302ed4184",
-    "hash": "dd6cc4b45f024c714aaebfc4151847441ad013bc"
+    "hash": "04de3c95217ea8a529bd1c4ecbe649290cee55c8"
   },
-  "/Users/hemalatharamachandran/Documents/Univ_documents/SEP/SEP203/client/src/assets/jss/material-kit-react/components/parallaxStyle.js": {
-    "path": "/Users/hemalatharamachandran/Documents/Univ_documents/SEP/SEP203/client/src/assets/jss/material-kit-react/components/parallaxStyle.js",
+  "/Users/gauravsj/Documents/My Web Applications/SEP203/client/src/assets/jss/material-kit-react/components/parallaxStyle.js": {
+    "path": "/Users/gauravsj/Documents/My Web Applications/SEP203/client/src/assets/jss/material-kit-react/components/parallaxStyle.js",
     "statementMap": {
       "0": {
         "start": {
@@ -8238,10 +8435,10 @@
     "f": {},
     "b": {},
     "_coverageSchema": "43e27e138ebf9cfc5966b082cf9a028302ed4184",
-    "hash": "34ebda2f6021ea3b26fa12530ede9a184f254ec9"
+    "hash": "2852a983c392c48a9ee1c7f8e3407d31f2ac265d"
   },
-  "/Users/hemalatharamachandran/Documents/Univ_documents/SEP/SEP203/client/src/components/Parallax/Parallax.js": {
-    "path": "/Users/hemalatharamachandran/Documents/Univ_documents/SEP/SEP203/client/src/components/Parallax/Parallax.js",
+  "/Users/gauravsj/Documents/My Web Applications/SEP203/client/src/components/Parallax/Parallax.js": {
+    "path": "/Users/gauravsj/Documents/My Web Applications/SEP203/client/src/components/Parallax/Parallax.js",
     "statementMap": {
       "0": {
         "start": {
@@ -8644,50 +8841,50 @@
     },
     "s": {
       "0": 10,
-      "1": 10,
-      "2": 10,
+      "1": 0,
+      "2": 0,
       "3": 0,
-      "4": 10,
-      "5": 10,
-      "6": 10,
-      "7": 10,
-      "8": 10,
-      "9": 8,
-      "10": 8,
-      "11": 10,
-      "12": 6,
-      "13": 6,
-      "14": 10,
-      "15": 10,
-      "16": 10,
-      "17": 10,
+      "4": 0,
+      "5": 0,
+      "6": 0,
+      "7": 0,
+      "8": 0,
+      "9": 0,
+      "10": 0,
+      "11": 0,
+      "12": 0,
+      "13": 0,
+      "14": 0,
+      "15": 0,
+      "16": 0,
+      "17": 0,
       "18": 10
     },
     "f": {
-      "0": 10,
-      "1": 10,
-      "2": 8,
-      "3": 6
+      "0": 0,
+      "1": 0,
+      "2": 0,
+      "3": 0
     },
     "b": {
       "0": [
-        10,
+        0,
         0
       ],
       "1": [
-        10,
+        0,
         0
       ],
       "2": [
-        8,
+        0,
         0
       ]
     },
     "_coverageSchema": "43e27e138ebf9cfc5966b082cf9a028302ed4184",
-    "hash": "47105015d278d9c557661ac3a2d922e112d34abb"
+    "hash": "a50a5be54fa9a78a3847b1ebfbef7f8ecc6a7a23"
   },
-  "/Users/hemalatharamachandran/Documents/Univ_documents/SEP/SEP203/client/src/components/ProductGallary/ProductGallary.js": {
-    "path": "/Users/hemalatharamachandran/Documents/Univ_documents/SEP/SEP203/client/src/components/ProductGallary/ProductGallary.js",
+  "/Users/gauravsj/Documents/My Web Applications/SEP203/client/src/components/ProductGallary/ProductGallary.js": {
+    "path": "/Users/gauravsj/Documents/My Web Applications/SEP203/client/src/components/ProductGallary/ProductGallary.js",
     "statementMap": {
       "0": {
         "start": {
@@ -8782,21 +8979,21 @@
     },
     "branchMap": {},
     "s": {
-      "0": 12,
-      "1": 12,
-      "2": 12,
-      "3": 120
+      "0": 0,
+      "1": 0,
+      "2": 0,
+      "3": 0
     },
     "f": {
-      "0": 12,
-      "1": 120
+      "0": 0,
+      "1": 0
     },
     "b": {},
     "_coverageSchema": "43e27e138ebf9cfc5966b082cf9a028302ed4184",
-    "hash": "c9b02faa6da73d2288cd154bcc7bd87d6aa5a978"
+    "hash": "5042c4802d2ad274087d7f9fe324abb87a07f70a"
   },
-  "/Users/hemalatharamachandran/Documents/Univ_documents/SEP/SEP203/client/src/assets/jss/material-kit-react/views/componentsSections/carouselStyle.js": {
-    "path": "/Users/hemalatharamachandran/Documents/Univ_documents/SEP/SEP203/client/src/assets/jss/material-kit-react/views/componentsSections/carouselStyle.js",
+  "/Users/gauravsj/Documents/My Web Applications/SEP203/client/src/assets/jss/material-kit-react/views/componentsSections/carouselStyle.js": {
+    "path": "/Users/gauravsj/Documents/My Web Applications/SEP203/client/src/assets/jss/material-kit-react/views/componentsSections/carouselStyle.js",
     "statementMap": {
       "0": {
         "start": {
@@ -8817,10 +9014,10 @@
     "f": {},
     "b": {},
     "_coverageSchema": "43e27e138ebf9cfc5966b082cf9a028302ed4184",
-    "hash": "ad025a75ede6d84b52319706b48dd94647b430f0"
+    "hash": "d042b70f3f6ec29113a50e26c1652dbdaf3247f5"
   },
-  "/Users/hemalatharamachandran/Documents/Univ_documents/SEP/SEP203/client/src/views/Components/Sections/SectionCarousel.js": {
-    "path": "/Users/hemalatharamachandran/Documents/Univ_documents/SEP/SEP203/client/src/views/Components/Sections/SectionCarousel.js",
+  "/Users/gauravsj/Documents/My Web Applications/SEP203/client/src/views/Components/Sections/SectionCarousel.js": {
+    "path": "/Users/gauravsj/Documents/My Web Applications/SEP203/client/src/views/Components/Sections/SectionCarousel.js",
     "statementMap": {
       "0": {
         "start": {
@@ -8892,19 +9089,19 @@
     "branchMap": {},
     "s": {
       "0": 10,
-      "1": 6,
-      "2": 6,
-      "3": 6
+      "1": 0,
+      "2": 0,
+      "3": 0
     },
     "f": {
-      "0": 6
+      "0": 0
     },
     "b": {},
     "_coverageSchema": "43e27e138ebf9cfc5966b082cf9a028302ed4184",
-    "hash": "87a7d027ae5834ce06d5a85f164f05f16968ebcb"
+    "hash": "85ac4ef24ede4c1b9f2668d201e70acee2f78927"
   },
-  "/Users/hemalatharamachandran/Documents/Univ_documents/SEP/SEP203/client/src/views/LandingPage/LandingPage.js": {
-    "path": "/Users/hemalatharamachandran/Documents/Univ_documents/SEP/SEP203/client/src/views/LandingPage/LandingPage.js",
+  "/Users/gauravsj/Documents/My Web Applications/SEP203/client/src/views/LandingPage/LandingPage.js": {
+    "path": "/Users/gauravsj/Documents/My Web Applications/SEP203/client/src/views/LandingPage/LandingPage.js",
     "statementMap": {
       "0": {
         "start": {
@@ -9160,707 +9357,37 @@
     "s": {
       "0": 10,
       "1": 10,
-      "2": 6,
-      "3": 6,
-      "4": 6,
+      "2": 0,
+      "3": 0,
+      "4": 0,
       "5": 10,
       "6": 10,
-      "7": 8
+      "7": 0
     },
     "f": {
-      "0": 6,
-      "1": 8
+      "0": 0,
+      "1": 0
     },
     "b": {
       "0": [
         0,
-        6
+        0
       ],
       "1": [
-        6,
-        6,
-        4
+        0,
+        0,
+        0
       ],
       "2": [
-        4,
-        2
+        0,
+        0
       ]
     },
     "_coverageSchema": "43e27e138ebf9cfc5966b082cf9a028302ed4184",
-    "hash": "fc82a7aca6298f05e31aaed61d92eb4fb4222dce"
+    "hash": "f00f5669abcb5f150983c18709595a42703e6386"
   },
-  "/Users/hemalatharamachandran/Documents/Univ_documents/SEP/SEP203/client/src/views/LoginPage/LoginPage.js": {
-    "path": "/Users/hemalatharamachandran/Documents/Univ_documents/SEP/SEP203/client/src/views/LoginPage/LoginPage.js",
-    "statementMap": {
-      "0": {
-        "start": {
-          "line": 28,
-          "column": 18
-        },
-        "end": {
-          "line": 28,
-          "column": 36
-        }
-      },
-      "1": {
-        "start": {
-          "line": 29,
-          "column": 18
-        },
-        "end": {
-          "line": 155,
-          "column": 1
-        }
-      },
-      "2": {
-        "start": {
-          "line": 30,
-          "column": 43
-        },
-        "end": {
-          "line": 30,
-          "column": 71
-        }
-      },
-      "3": {
-        "start": {
-          "line": 31,
-          "column": 2
-        },
-        "end": {
-          "line": 33,
-          "column": 10
-        }
-      },
-      "4": {
-        "start": {
-          "line": 32,
-          "column": 4
-        },
-        "end": {
-          "line": 32,
-          "column": 25
-        }
-      },
-      "5": {
-        "start": {
-          "line": 34,
-          "column": 18
-        },
-        "end": {
-          "line": 34,
-          "column": 29
-        }
-      },
-      "6": {
-        "start": {
-          "line": 36,
-          "column": 34
-        },
-        "end": {
-          "line": 39,
-          "column": 4
-        }
-      },
-      "7": {
-        "start": {
-          "line": 41,
-          "column": 33
-        },
-        "end": {
-          "line": 41,
-          "column": 41
-        }
-      },
-      "8": {
-        "start": {
-          "line": 43,
-          "column": 19
-        },
-        "end": {
-          "line": 47,
-          "column": 6
-        }
-      },
-      "9": {
-        "start": {
-          "line": 44,
-          "column": 4
-        },
-        "end": {
-          "line": 47,
-          "column": 6
-        }
-      },
-      "10": {
-        "start": {
-          "line": 49,
-          "column": 19
-        },
-        "end": {
-          "line": 52,
-          "column": 3
-        }
-      },
-      "11": {
-        "start": {
-          "line": 50,
-          "column": 4
-        },
-        "end": {
-          "line": 50,
-          "column": 23
-        }
-      },
-      "12": {
-        "start": {
-          "line": 51,
-          "column": 4
-        },
-        "end": {
-          "line": 51,
-          "column": 30
-        }
-      },
-      "13": {
-        "start": {
-          "line": 55,
-          "column": 2
-        },
-        "end": {
-          "line": 58,
-          "column": 3
-        }
-      },
-      "14": {
-        "start": {
-          "line": 56,
-          "column": 4
-        },
-        "end": {
-          "line": 56,
-          "column": 43
-        }
-      },
-      "15": {
-        "start": {
-          "line": 57,
-          "column": 4
-        },
-        "end": {
-          "line": 57,
-          "column": 15
-        }
-      },
-      "16": {
-        "start": {
-          "line": 60,
-          "column": 2
-        },
-        "end": {
-          "line": 65,
-          "column": 3
-        }
-      },
-      "17": {
-        "start": {
-          "line": 61,
-          "column": 4
-        },
-        "end": {
-          "line": 63,
-          "column": 5
-        }
-      },
-      "18": {
-        "start": {
-          "line": 62,
-          "column": 6
-        },
-        "end": {
-          "line": 62,
-          "column": 47
-        }
-      },
-      "19": {
-        "start": {
-          "line": 64,
-          "column": 4
-        },
-        "end": {
-          "line": 64,
-          "column": 31
-        }
-      },
-      "20": {
-        "start": {
-          "line": 68,
-          "column": 2
-        },
-        "end": {
-          "line": 154,
-          "column": 4
-        }
-      },
-      "21": {
-        "start": {
-          "line": 82,
-          "column": 62
-        },
-        "end": {
-          "line": 82,
-          "column": 73
-        }
-      },
-      "22": {
-        "start": {
-          "line": 91,
-          "column": 38
-        },
-        "end": {
-          "line": 91,
-          "column": 56
-        }
-      },
-      "23": {
-        "start": {
-          "line": 110,
-          "column": 39
-        },
-        "end": {
-          "line": 110,
-          "column": 50
-        }
-      },
-      "24": {
-        "start": {
-          "line": 129,
-          "column": 39
-        },
-        "end": {
-          "line": 129,
-          "column": 50
-        }
-      },
-      "25": {
-        "start": {
-          "line": 157,
-          "column": 0
-        },
-        "end": {
-          "line": 161,
-          "column": 2
-        }
-      },
-      "26": {
-        "start": {
-          "line": 163,
-          "column": 24
-        },
-        "end": {
-          "line": 165,
-          "column": 2
-        }
-      },
-      "27": {
-        "start": {
-          "line": 163,
-          "column": 34
-        },
-        "end": {
-          "line": 165,
-          "column": 1
-        }
-      }
-    },
-    "fnMap": {
-      "0": {
-        "name": "(anonymous_0)",
-        "decl": {
-          "start": {
-            "line": 29,
-            "column": 18
-          },
-          "end": {
-            "line": 29,
-            "column": 19
-          }
-        },
-        "loc": {
-          "start": {
-            "line": 29,
-            "column": 73
-          },
-          "end": {
-            "line": 155,
-            "column": 1
-          }
-        },
-        "line": 29
-      },
-      "1": {
-        "name": "(anonymous_1)",
-        "decl": {
-          "start": {
-            "line": 31,
-            "column": 13
-          },
-          "end": {
-            "line": 31,
-            "column": 14
-          }
-        },
-        "loc": {
-          "start": {
-            "line": 31,
-            "column": 24
-          },
-          "end": {
-            "line": 33,
-            "column": 3
-          }
-        },
-        "line": 31
-      },
-      "2": {
-        "name": "(anonymous_2)",
-        "decl": {
-          "start": {
-            "line": 43,
-            "column": 19
-          },
-          "end": {
-            "line": 43,
-            "column": 20
-          }
-        },
-        "loc": {
-          "start": {
-            "line": 44,
-            "column": 4
-          },
-          "end": {
-            "line": 47,
-            "column": 6
-          }
-        },
-        "line": 44
-      },
-      "3": {
-        "name": "(anonymous_3)",
-        "decl": {
-          "start": {
-            "line": 49,
-            "column": 19
-          },
-          "end": {
-            "line": 49,
-            "column": 20
-          }
-        },
-        "loc": {
-          "start": {
-            "line": 49,
-            "column": 24
-          },
-          "end": {
-            "line": 52,
-            "column": 3
-          }
-        },
-        "line": 49
-      },
-      "4": {
-        "name": "(anonymous_4)",
-        "decl": {
-          "start": {
-            "line": 82,
-            "column": 57
-          },
-          "end": {
-            "line": 82,
-            "column": 58
-          }
-        },
-        "loc": {
-          "start": {
-            "line": 82,
-            "column": 62
-          },
-          "end": {
-            "line": 82,
-            "column": 73
-          }
-        },
-        "line": 82
-      },
-      "5": {
-        "name": "(anonymous_5)",
-        "decl": {
-          "start": {
-            "line": 91,
-            "column": 33
-          },
-          "end": {
-            "line": 91,
-            "column": 34
-          }
-        },
-        "loc": {
-          "start": {
-            "line": 91,
-            "column": 38
-          },
-          "end": {
-            "line": 91,
-            "column": 56
-          }
-        },
-        "line": 91
-      },
-      "6": {
-        "name": "(anonymous_6)",
-        "decl": {
-          "start": {
-            "line": 110,
-            "column": 34
-          },
-          "end": {
-            "line": 110,
-            "column": 35
-          }
-        },
-        "loc": {
-          "start": {
-            "line": 110,
-            "column": 39
-          },
-          "end": {
-            "line": 110,
-            "column": 50
-          }
-        },
-        "line": 110
-      },
-      "7": {
-        "name": "(anonymous_7)",
-        "decl": {
-          "start": {
-            "line": 129,
-            "column": 34
-          },
-          "end": {
-            "line": 129,
-            "column": 35
-          }
-        },
-        "loc": {
-          "start": {
-            "line": 129,
-            "column": 39
-          },
-          "end": {
-            "line": 129,
-            "column": 50
-          }
-        },
-        "line": 129
-      },
-      "8": {
-        "name": "(anonymous_8)",
-        "decl": {
-          "start": {
-            "line": 163,
-            "column": 24
-          },
-          "end": {
-            "line": 163,
-            "column": 25
-          }
-        },
-        "loc": {
-          "start": {
-            "line": 163,
-            "column": 34
-          },
-          "end": {
-            "line": 165,
-            "column": 1
-          }
-        },
-        "line": 163
-      }
-    },
-    "branchMap": {
-      "0": {
-        "loc": {
-          "start": {
-            "line": 55,
-            "column": 2
-          },
-          "end": {
-            "line": 58,
-            "column": 3
-          }
-        },
-        "type": "if",
-        "locations": [
-          {
-            "start": {
-              "line": 55,
-              "column": 2
-            },
-            "end": {
-              "line": 58,
-              "column": 3
-            }
-          },
-          {
-            "start": {
-              "line": 55,
-              "column": 2
-            },
-            "end": {
-              "line": 58,
-              "column": 3
-            }
-          }
-        ],
-        "line": 55
-      },
-      "1": {
-        "loc": {
-          "start": {
-            "line": 60,
-            "column": 2
-          },
-          "end": {
-            "line": 65,
-            "column": 3
-          }
-        },
-        "type": "if",
-        "locations": [
-          {
-            "start": {
-              "line": 60,
-              "column": 2
-            },
-            "end": {
-              "line": 65,
-              "column": 3
-            }
-          },
-          {
-            "start": {
-              "line": 60,
-              "column": 2
-            },
-            "end": {
-              "line": 65,
-              "column": 3
-            }
-          }
-        ],
-        "line": 60
-      },
-      "2": {
-        "loc": {
-          "start": {
-            "line": 61,
-            "column": 4
-          },
-          "end": {
-            "line": 63,
-            "column": 5
-          }
-        },
-        "type": "if",
-        "locations": [
-          {
-            "start": {
-              "line": 61,
-              "column": 4
-            },
-            "end": {
-              "line": 63,
-              "column": 5
-            }
-          },
-          {
-            "start": {
-              "line": 61,
-              "column": 4
-            },
-            "end": {
-              "line": 63,
-              "column": 5
-            }
-          }
-        ],
-        "line": 61
-      }
-    },
-    "s": {
-      "0": 10,
-      "1": 10,
-      "2": 129,
-      "3": 129,
-      "4": 61,
-      "5": 129,
-      "6": 129,
-      "7": 129,
-      "8": 129,
-      "9": 85,
-      "10": 129,
-      "11": 6,
-      "12": 6,
-      "13": 129,
-      "14": 6,
-      "15": 6,
-      "16": 129,
-      "17": 3,
-      "18": 1,
-      "19": 2,
-      "20": 126,
-      "21": 6,
-      "22": 0,
-      "23": 40,
-      "24": 45,
-      "25": 10,
-      "26": 10,
-      "27": 26
-    },
-    "f": {
-      "0": 129,
-      "1": 61,
-      "2": 85,
-      "3": 6,
-      "4": 6,
-      "5": 0,
-      "6": 40,
-      "7": 45,
-      "8": 26
-    },
-    "b": {
-      "0": [
-        6,
-        123
-      ],
-      "1": [
-        3,
-        126
-      ],
-      "2": [
-        1,
-        2
-      ]
-    },
-    "_coverageSchema": "43e27e138ebf9cfc5966b082cf9a028302ed4184",
-    "hash": "00d1f605eb7a8f65d06ef542b4d414853dbf1c91"
-  },
-  "/Users/hemalatharamachandran/Documents/Univ_documents/SEP/SEP203/client/src/actions/alert.js": {
-    "path": "/Users/hemalatharamachandran/Documents/Univ_documents/SEP/SEP203/client/src/actions/alert.js",
+  "/Users/gauravsj/Documents/My Web Applications/SEP203/client/src/actions/alert.js": {
+    "path": "/Users/gauravsj/Documents/My Web Applications/SEP203/client/src/actions/alert.js",
     "statementMap": {
       "0": {
         "start": {
@@ -10027,71 +9554,91 @@
     },
     "s": {
       "0": 10,
-      "1": 0,
-      "2": 0,
-      "3": 0,
-      "4": 0,
-      "5": 0
+      "1": 5,
+      "2": 5,
+      "3": 5,
+      "4": 5,
+      "5": 2
     },
     "f": {
-      "0": 0,
-      "1": 0,
-      "2": 0
+      "0": 5,
+      "1": 5,
+      "2": 2
     },
     "b": {
       "0": [
-        0
+        5
       ]
     },
     "_coverageSchema": "43e27e138ebf9cfc5966b082cf9a028302ed4184",
-    "hash": "1abc3e47e1586577d12c250688e969f753ea2300"
+    "hash": "125e84254b7b4e7bfdb39148b466b04b0e9688e2"
   },
-  "/Users/hemalatharamachandran/Documents/Univ_documents/SEP/SEP203/client/src/views/RegisterPage/RegisterPage.js": {
-    "path": "/Users/hemalatharamachandran/Documents/Univ_documents/SEP/SEP203/client/src/views/RegisterPage/RegisterPage.js",
+  "/Users/gauravsj/Documents/My Web Applications/SEP203/client/src/views/LoginPage/LoginPage.js": {
+    "path": "/Users/gauravsj/Documents/My Web Applications/SEP203/client/src/views/LoginPage/LoginPage.js",
     "statementMap": {
       "0": {
         "start": {
-          "line": 32,
+          "line": 30,
           "column": 18
         },
         "end": {
-          "line": 32,
+          "line": 30,
           "column": 36
         }
       },
       "1": {
         "start": {
-          "line": 35,
-          "column": 43
+          "line": 31,
+          "column": 18
         },
         "end": {
-          "line": 35,
-          "column": 71
+          "line": 168,
+          "column": 1
         }
       },
       "2": {
         "start": {
-          "line": 36,
-          "column": 2
+          "line": 37,
+          "column": 43
         },
         "end": {
-          "line": 38,
-          "column": 10
+          "line": 37,
+          "column": 71
         }
       },
       "3": {
         "start": {
-          "line": 37,
-          "column": 4
+          "line": 38,
+          "column": 2
         },
         "end": {
-          "line": 37,
-          "column": 25
+          "line": 40,
+          "column": 10
         }
       },
       "4": {
         "start": {
-          "line": 40,
+          "line": 39,
+          "column": 4
+        },
+        "end": {
+          "line": 39,
+          "column": 25
+        }
+      },
+      "5": {
+        "start": {
+          "line": 41,
+          "column": 18
+        },
+        "end": {
+          "line": 41,
+          "column": 29
+        }
+      },
+      "6": {
+        "start": {
+          "line": 43,
           "column": 34
         },
         "end": {
@@ -10099,17 +9646,17 @@
           "column": 4
         }
       },
-      "5": {
+      "7": {
         "start": {
-          "line": 47,
-          "column": 18
+          "line": 48,
+          "column": 33
         },
         "end": {
-          "line": 47,
-          "column": 29
+          "line": 48,
+          "column": 41
         }
       },
-      "6": {
+      "8": {
         "start": {
           "line": 50,
           "column": 19
@@ -10119,7 +9666,7 @@
           "column": 6
         }
       },
-      "7": {
+      "9": {
         "start": {
           "line": 51,
           "column": 4
@@ -10129,245 +9676,275 @@
           "column": 6
         }
       },
-      "8": {
+      "10": {
         "start": {
           "line": 56,
-          "column": 57
-        },
-        "end": {
-          "line": 56,
-          "column": 65
-        }
-      },
-      "9": {
-        "start": {
-          "line": 59,
           "column": 19
         },
         "end": {
-          "line": 67,
+          "line": 59,
           "column": 3
-        }
-      },
-      "10": {
-        "start": {
-          "line": 60,
-          "column": 4
-        },
-        "end": {
-          "line": 60,
-          "column": 23
         }
       },
       "11": {
         "start": {
-          "line": 61,
+          "line": 57,
           "column": 4
         },
         "end": {
-          "line": 61,
-          "column": 39
+          "line": 57,
+          "column": 23
         }
       },
       "12": {
+        "start": {
+          "line": 58,
+          "column": 4
+        },
+        "end": {
+          "line": 58,
+          "column": 30
+        }
+      },
+      "13": {
+        "start": {
+          "line": 61,
+          "column": 2
+        },
+        "end": {
+          "line": 63,
+          "column": 3
+        }
+      },
+      "14": {
         "start": {
           "line": 62,
           "column": 4
         },
         "end": {
-          "line": 66,
-          "column": 5
-        }
-      },
-      "13": {
-        "start": {
-          "line": 63,
-          "column": 6
-        },
-        "end": {
-          "line": 63,
-          "column": 51
-        }
-      },
-      "14": {
-        "start": {
-          "line": 65,
-          "column": 6
-        },
-        "end": {
-          "line": 65,
-          "column": 52
+          "line": 62,
+          "column": 49
         }
       },
       "15": {
         "start": {
-          "line": 69,
+          "line": 64,
           "column": 2
         },
         "end": {
-          "line": 71,
+          "line": 66,
           "column": 3
         }
       },
       "16": {
         "start": {
-          "line": 70,
+          "line": 65,
           "column": 4
         },
         "end": {
-          "line": 70,
-          "column": 46
+          "line": 65,
+          "column": 49
         }
       },
       "17": {
         "start": {
-          "line": 72,
+          "line": 69,
           "column": 2
         },
         "end": {
-          "line": 213,
-          "column": 4
+          "line": 72,
+          "column": 3
         }
       },
       "18": {
         "start": {
-          "line": 86,
-          "column": 62
+          "line": 70,
+          "column": 4
         },
         "end": {
-          "line": 86,
-          "column": 73
+          "line": 70,
+          "column": 43
         }
       },
       "19": {
         "start": {
-          "line": 113,
-          "column": 39
+          "line": 71,
+          "column": 4
         },
         "end": {
-          "line": 113,
-          "column": 50
+          "line": 71,
+          "column": 15
         }
       },
       "20": {
         "start": {
-          "line": 131,
-          "column": 39
+          "line": 74,
+          "column": 2
         },
         "end": {
-          "line": 131,
-          "column": 50
+          "line": 79,
+          "column": 3
         }
       },
       "21": {
         "start": {
-          "line": 149,
-          "column": 39
+          "line": 75,
+          "column": 4
         },
         "end": {
-          "line": 149,
-          "column": 50
+          "line": 77,
+          "column": 5
         }
       },
       "22": {
         "start": {
-          "line": 167,
-          "column": 39
+          "line": 76,
+          "column": 6
         },
         "end": {
-          "line": 167,
-          "column": 50
+          "line": 76,
+          "column": 48
         }
       },
       "23": {
         "start": {
-          "line": 188,
-          "column": 39
+          "line": 78,
+          "column": 4
         },
         "end": {
-          "line": 188,
-          "column": 50
+          "line": 78,
+          "column": 31
         }
       },
       "24": {
         "start": {
-          "line": 216,
-          "column": 0
+          "line": 81,
+          "column": 2
         },
         "end": {
-          "line": 219,
-          "column": 2
+          "line": 167,
+          "column": 4
         }
       },
       "25": {
         "start": {
-          "line": 221,
-          "column": 24
+          "line": 95,
+          "column": 62
         },
         "end": {
-          "line": 223,
-          "column": 2
+          "line": 95,
+          "column": 73
         }
       },
       "26": {
         "start": {
-          "line": 221,
-          "column": 34
+          "line": 104,
+          "column": 38
         },
         "end": {
-          "line": 223,
+          "line": 104,
+          "column": 56
+        }
+      },
+      "27": {
+        "start": {
+          "line": 123,
+          "column": 39
+        },
+        "end": {
+          "line": 123,
+          "column": 50
+        }
+      },
+      "28": {
+        "start": {
+          "line": 142,
+          "column": 39
+        },
+        "end": {
+          "line": 142,
+          "column": 50
+        }
+      },
+      "29": {
+        "start": {
+          "line": 170,
+          "column": 0
+        },
+        "end": {
+          "line": 177,
+          "column": 2
+        }
+      },
+      "30": {
+        "start": {
+          "line": 179,
+          "column": 24
+        },
+        "end": {
+          "line": 185,
           "column": 1
+        }
+      },
+      "31": {
+        "start": {
+          "line": 180,
+          "column": 2
+        },
+        "end": {
+          "line": 184,
+          "column": 4
         }
       }
     },
     "fnMap": {
       "0": {
-        "name": "RegisterPage",
+        "name": "(anonymous_0)",
         "decl": {
           "start": {
-            "line": 34,
-            "column": 9
+            "line": 31,
+            "column": 18
           },
           "end": {
-            "line": 34,
-            "column": 21
+            "line": 31,
+            "column": 19
           }
         },
         "loc": {
           "start": {
-            "line": 34,
-            "column": 63
+            "line": 36,
+            "column": 6
           },
           "end": {
-            "line": 214,
+            "line": 168,
             "column": 1
           }
         },
-        "line": 34
+        "line": 36
       },
       "1": {
         "name": "(anonymous_1)",
         "decl": {
           "start": {
-            "line": 36,
+            "line": 38,
             "column": 13
           },
           "end": {
-            "line": 36,
+            "line": 38,
             "column": 14
           }
         },
         "loc": {
           "start": {
-            "line": 36,
+            "line": 38,
             "column": 24
           },
           "end": {
-            "line": 38,
+            "line": 40,
             "column": 3
           }
         },
-        "line": 36
+        "line": 38
       },
       "2": {
         "name": "(anonymous_2)",
@@ -10397,204 +9974,300 @@
         "name": "(anonymous_3)",
         "decl": {
           "start": {
-            "line": 59,
+            "line": 56,
             "column": 19
           },
           "end": {
-            "line": 59,
+            "line": 56,
             "column": 20
           }
         },
         "loc": {
           "start": {
-            "line": 59,
+            "line": 56,
             "column": 24
           },
           "end": {
-            "line": 67,
+            "line": 59,
             "column": 3
           }
         },
-        "line": 59
+        "line": 56
       },
       "4": {
         "name": "(anonymous_4)",
         "decl": {
           "start": {
-            "line": 86,
+            "line": 95,
             "column": 57
           },
           "end": {
-            "line": 86,
+            "line": 95,
             "column": 58
           }
         },
         "loc": {
           "start": {
-            "line": 86,
+            "line": 95,
             "column": 62
           },
           "end": {
-            "line": 86,
+            "line": 95,
             "column": 73
           }
         },
-        "line": 86
+        "line": 95
       },
       "5": {
         "name": "(anonymous_5)",
         "decl": {
           "start": {
-            "line": 113,
-            "column": 34
+            "line": 104,
+            "column": 33
           },
           "end": {
-            "line": 113,
-            "column": 35
+            "line": 104,
+            "column": 34
           }
         },
         "loc": {
           "start": {
-            "line": 113,
-            "column": 39
+            "line": 104,
+            "column": 38
           },
           "end": {
-            "line": 113,
-            "column": 50
+            "line": 104,
+            "column": 56
           }
         },
-        "line": 113
+        "line": 104
       },
       "6": {
         "name": "(anonymous_6)",
         "decl": {
           "start": {
-            "line": 131,
+            "line": 123,
             "column": 34
           },
           "end": {
-            "line": 131,
+            "line": 123,
             "column": 35
           }
         },
         "loc": {
           "start": {
-            "line": 131,
+            "line": 123,
             "column": 39
           },
           "end": {
-            "line": 131,
+            "line": 123,
             "column": 50
           }
         },
-        "line": 131
+        "line": 123
       },
       "7": {
         "name": "(anonymous_7)",
         "decl": {
           "start": {
-            "line": 149,
+            "line": 142,
             "column": 34
           },
           "end": {
-            "line": 149,
+            "line": 142,
             "column": 35
           }
         },
         "loc": {
           "start": {
-            "line": 149,
+            "line": 142,
             "column": 39
           },
           "end": {
-            "line": 149,
+            "line": 142,
             "column": 50
           }
         },
-        "line": 149
+        "line": 142
       },
       "8": {
         "name": "(anonymous_8)",
         "decl": {
           "start": {
-            "line": 167,
-            "column": 34
-          },
-          "end": {
-            "line": 167,
-            "column": 35
-          }
-        },
-        "loc": {
-          "start": {
-            "line": 167,
-            "column": 39
-          },
-          "end": {
-            "line": 167,
-            "column": 50
-          }
-        },
-        "line": 167
-      },
-      "9": {
-        "name": "(anonymous_9)",
-        "decl": {
-          "start": {
-            "line": 188,
-            "column": 34
-          },
-          "end": {
-            "line": 188,
-            "column": 35
-          }
-        },
-        "loc": {
-          "start": {
-            "line": 188,
-            "column": 39
-          },
-          "end": {
-            "line": 188,
-            "column": 50
-          }
-        },
-        "line": 188
-      },
-      "10": {
-        "name": "(anonymous_10)",
-        "decl": {
-          "start": {
-            "line": 221,
+            "line": 179,
             "column": 24
           },
           "end": {
-            "line": 221,
+            "line": 179,
             "column": 25
           }
         },
         "loc": {
           "start": {
-            "line": 221,
-            "column": 34
+            "line": 179,
+            "column": 33
           },
           "end": {
-            "line": 223,
+            "line": 185,
             "column": 1
           }
         },
-        "line": 221
+        "line": 179
       }
     },
     "branchMap": {
       "0": {
         "loc": {
           "start": {
-            "line": 62,
-            "column": 4
+            "line": 61,
+            "column": 2
+          },
+          "end": {
+            "line": 63,
+            "column": 3
+          }
+        },
+        "type": "if",
+        "locations": [
+          {
+            "start": {
+              "line": 61,
+              "column": 2
+            },
+            "end": {
+              "line": 63,
+              "column": 3
+            }
+          },
+          {
+            "start": {
+              "line": 61,
+              "column": 2
+            },
+            "end": {
+              "line": 63,
+              "column": 3
+            }
+          }
+        ],
+        "line": 61
+      },
+      "1": {
+        "loc": {
+          "start": {
+            "line": 64,
+            "column": 2
           },
           "end": {
             "line": 66,
+            "column": 3
+          }
+        },
+        "type": "if",
+        "locations": [
+          {
+            "start": {
+              "line": 64,
+              "column": 2
+            },
+            "end": {
+              "line": 66,
+              "column": 3
+            }
+          },
+          {
+            "start": {
+              "line": 64,
+              "column": 2
+            },
+            "end": {
+              "line": 66,
+              "column": 3
+            }
+          }
+        ],
+        "line": 64
+      },
+      "2": {
+        "loc": {
+          "start": {
+            "line": 69,
+            "column": 2
+          },
+          "end": {
+            "line": 72,
+            "column": 3
+          }
+        },
+        "type": "if",
+        "locations": [
+          {
+            "start": {
+              "line": 69,
+              "column": 2
+            },
+            "end": {
+              "line": 72,
+              "column": 3
+            }
+          },
+          {
+            "start": {
+              "line": 69,
+              "column": 2
+            },
+            "end": {
+              "line": 72,
+              "column": 3
+            }
+          }
+        ],
+        "line": 69
+      },
+      "3": {
+        "loc": {
+          "start": {
+            "line": 74,
+            "column": 2
+          },
+          "end": {
+            "line": 79,
+            "column": 3
+          }
+        },
+        "type": "if",
+        "locations": [
+          {
+            "start": {
+              "line": 74,
+              "column": 2
+            },
+            "end": {
+              "line": 79,
+              "column": 3
+            }
+          },
+          {
+            "start": {
+              "line": 74,
+              "column": 2
+            },
+            "end": {
+              "line": 79,
+              "column": 3
+            }
+          }
+        ],
+        "line": 74
+      },
+      "4": {
+        "loc": {
+          "start": {
+            "line": 75,
+            "column": 4
+          },
+          "end": {
+            "line": 77,
             "column": 5
           }
         },
@@ -10602,35 +10275,713 @@
         "locations": [
           {
             "start": {
-              "line": 62,
+              "line": 75,
               "column": 4
             },
             "end": {
-              "line": 66,
+              "line": 77,
               "column": 5
             }
           },
           {
             "start": {
-              "line": 62,
+              "line": 75,
               "column": 4
             },
             "end": {
-              "line": 66,
+              "line": 77,
               "column": 5
             }
           }
         ],
-        "line": 62
+        "line": 75
+      }
+    },
+    "s": {
+      "0": 10,
+      "1": 10,
+      "2": 179,
+      "3": 179,
+      "4": 94,
+      "5": 179,
+      "6": 179,
+      "7": 179,
+      "8": 179,
+      "9": 130,
+      "10": 179,
+      "11": 6,
+      "12": 6,
+      "13": 179,
+      "14": 3,
+      "15": 179,
+      "16": 2,
+      "17": 179,
+      "18": 2,
+      "19": 2,
+      "20": 179,
+      "21": 1,
+      "22": 1,
+      "23": 0,
+      "24": 178,
+      "25": 6,
+      "26": 0,
+      "27": 64,
+      "28": 66,
+      "29": 10,
+      "30": 10,
+      "31": 39
+    },
+    "f": {
+      "0": 179,
+      "1": 94,
+      "2": 130,
+      "3": 6,
+      "4": 6,
+      "5": 0,
+      "6": 64,
+      "7": 66,
+      "8": 39
+    },
+    "b": {
+      "0": [
+        3,
+        176
+      ],
+      "1": [
+        2,
+        177
+      ],
+      "2": [
+        2,
+        177
+      ],
+      "3": [
+        1,
+        178
+      ],
+      "4": [
+        1,
+        0
+      ]
+    },
+    "_coverageSchema": "43e27e138ebf9cfc5966b082cf9a028302ed4184",
+    "hash": "a2ffd854d176be467e645e97cf767418c6698955"
+  },
+  "/Users/gauravsj/Documents/My Web Applications/SEP203/client/src/views/RegisterPage/RegisterPage.js": {
+    "path": "/Users/gauravsj/Documents/My Web Applications/SEP203/client/src/views/RegisterPage/RegisterPage.js",
+    "statementMap": {
+      "0": {
+        "start": {
+          "line": 32,
+          "column": 18
+        },
+        "end": {
+          "line": 32,
+          "column": 36
+        }
+      },
+      "1": {
+        "start": {
+          "line": 40,
+          "column": 43
+        },
+        "end": {
+          "line": 40,
+          "column": 71
+        }
+      },
+      "2": {
+        "start": {
+          "line": 41,
+          "column": 2
+        },
+        "end": {
+          "line": 43,
+          "column": 10
+        }
+      },
+      "3": {
+        "start": {
+          "line": 42,
+          "column": 4
+        },
+        "end": {
+          "line": 42,
+          "column": 25
+        }
+      },
+      "4": {
+        "start": {
+          "line": 45,
+          "column": 34
+        },
+        "end": {
+          "line": 51,
+          "column": 4
+        }
+      },
+      "5": {
+        "start": {
+          "line": 52,
+          "column": 18
+        },
+        "end": {
+          "line": 52,
+          "column": 29
+        }
+      },
+      "6": {
+        "start": {
+          "line": 55,
+          "column": 19
+        },
+        "end": {
+          "line": 59,
+          "column": 6
+        }
+      },
+      "7": {
+        "start": {
+          "line": 56,
+          "column": 4
+        },
+        "end": {
+          "line": 59,
+          "column": 6
+        }
+      },
+      "8": {
+        "start": {
+          "line": 61,
+          "column": 57
+        },
+        "end": {
+          "line": 61,
+          "column": 65
+        }
+      },
+      "9": {
+        "start": {
+          "line": 64,
+          "column": 19
+        },
+        "end": {
+          "line": 71,
+          "column": 3
+        }
+      },
+      "10": {
+        "start": {
+          "line": 65,
+          "column": 4
+        },
+        "end": {
+          "line": 65,
+          "column": 23
+        }
+      },
+      "11": {
+        "start": {
+          "line": 66,
+          "column": 4
+        },
+        "end": {
+          "line": 70,
+          "column": 5
+        }
+      },
+      "12": {
+        "start": {
+          "line": 67,
+          "column": 6
+        },
+        "end": {
+          "line": 67,
+          "column": 51
+        }
+      },
+      "13": {
+        "start": {
+          "line": 69,
+          "column": 6
+        },
+        "end": {
+          "line": 69,
+          "column": 52
+        }
+      },
+      "14": {
+        "start": {
+          "line": 74,
+          "column": 2
+        },
+        "end": {
+          "line": 76,
+          "column": 3
+        }
+      },
+      "15": {
+        "start": {
+          "line": 75,
+          "column": 4
+        },
+        "end": {
+          "line": 75,
+          "column": 48
+        }
+      },
+      "16": {
+        "start": {
+          "line": 77,
+          "column": 2
+        },
+        "end": {
+          "line": 79,
+          "column": 3
+        }
+      },
+      "17": {
+        "start": {
+          "line": 78,
+          "column": 4
+        },
+        "end": {
+          "line": 78,
+          "column": 51
+        }
+      },
+      "18": {
+        "start": {
+          "line": 81,
+          "column": 2
+        },
+        "end": {
+          "line": 83,
+          "column": 3
+        }
+      },
+      "19": {
+        "start": {
+          "line": 82,
+          "column": 4
+        },
+        "end": {
+          "line": 82,
+          "column": 46
+        }
+      },
+      "20": {
+        "start": {
+          "line": 84,
+          "column": 2
+        },
+        "end": {
+          "line": 225,
+          "column": 4
+        }
+      },
+      "21": {
+        "start": {
+          "line": 98,
+          "column": 62
+        },
+        "end": {
+          "line": 98,
+          "column": 73
+        }
+      },
+      "22": {
+        "start": {
+          "line": 125,
+          "column": 39
+        },
+        "end": {
+          "line": 125,
+          "column": 50
+        }
+      },
+      "23": {
+        "start": {
+          "line": 143,
+          "column": 39
+        },
+        "end": {
+          "line": 143,
+          "column": 50
+        }
+      },
+      "24": {
+        "start": {
+          "line": 161,
+          "column": 39
+        },
+        "end": {
+          "line": 161,
+          "column": 50
+        }
+      },
+      "25": {
+        "start": {
+          "line": 179,
+          "column": 39
+        },
+        "end": {
+          "line": 179,
+          "column": 50
+        }
+      },
+      "26": {
+        "start": {
+          "line": 200,
+          "column": 39
+        },
+        "end": {
+          "line": 200,
+          "column": 50
+        }
+      },
+      "27": {
+        "start": {
+          "line": 228,
+          "column": 0
+        },
+        "end": {
+          "line": 234,
+          "column": 2
+        }
+      },
+      "28": {
+        "start": {
+          "line": 236,
+          "column": 24
+        },
+        "end": {
+          "line": 240,
+          "column": 2
+        }
+      },
+      "29": {
+        "start": {
+          "line": 236,
+          "column": 34
+        },
+        "end": {
+          "line": 240,
+          "column": 1
+        }
+      }
+    },
+    "fnMap": {
+      "0": {
+        "name": "RegisterPage",
+        "decl": {
+          "start": {
+            "line": 34,
+            "column": 9
+          },
+          "end": {
+            "line": 34,
+            "column": 21
+          }
+        },
+        "loc": {
+          "start": {
+            "line": 39,
+            "column": 3
+          },
+          "end": {
+            "line": 226,
+            "column": 1
+          }
+        },
+        "line": 39
+      },
+      "1": {
+        "name": "(anonymous_1)",
+        "decl": {
+          "start": {
+            "line": 41,
+            "column": 13
+          },
+          "end": {
+            "line": 41,
+            "column": 14
+          }
+        },
+        "loc": {
+          "start": {
+            "line": 41,
+            "column": 24
+          },
+          "end": {
+            "line": 43,
+            "column": 3
+          }
+        },
+        "line": 41
+      },
+      "2": {
+        "name": "(anonymous_2)",
+        "decl": {
+          "start": {
+            "line": 55,
+            "column": 19
+          },
+          "end": {
+            "line": 55,
+            "column": 20
+          }
+        },
+        "loc": {
+          "start": {
+            "line": 56,
+            "column": 4
+          },
+          "end": {
+            "line": 59,
+            "column": 6
+          }
+        },
+        "line": 56
+      },
+      "3": {
+        "name": "(anonymous_3)",
+        "decl": {
+          "start": {
+            "line": 64,
+            "column": 19
+          },
+          "end": {
+            "line": 64,
+            "column": 20
+          }
+        },
+        "loc": {
+          "start": {
+            "line": 64,
+            "column": 24
+          },
+          "end": {
+            "line": 71,
+            "column": 3
+          }
+        },
+        "line": 64
+      },
+      "4": {
+        "name": "(anonymous_4)",
+        "decl": {
+          "start": {
+            "line": 98,
+            "column": 57
+          },
+          "end": {
+            "line": 98,
+            "column": 58
+          }
+        },
+        "loc": {
+          "start": {
+            "line": 98,
+            "column": 62
+          },
+          "end": {
+            "line": 98,
+            "column": 73
+          }
+        },
+        "line": 98
+      },
+      "5": {
+        "name": "(anonymous_5)",
+        "decl": {
+          "start": {
+            "line": 125,
+            "column": 34
+          },
+          "end": {
+            "line": 125,
+            "column": 35
+          }
+        },
+        "loc": {
+          "start": {
+            "line": 125,
+            "column": 39
+          },
+          "end": {
+            "line": 125,
+            "column": 50
+          }
+        },
+        "line": 125
+      },
+      "6": {
+        "name": "(anonymous_6)",
+        "decl": {
+          "start": {
+            "line": 143,
+            "column": 34
+          },
+          "end": {
+            "line": 143,
+            "column": 35
+          }
+        },
+        "loc": {
+          "start": {
+            "line": 143,
+            "column": 39
+          },
+          "end": {
+            "line": 143,
+            "column": 50
+          }
+        },
+        "line": 143
+      },
+      "7": {
+        "name": "(anonymous_7)",
+        "decl": {
+          "start": {
+            "line": 161,
+            "column": 34
+          },
+          "end": {
+            "line": 161,
+            "column": 35
+          }
+        },
+        "loc": {
+          "start": {
+            "line": 161,
+            "column": 39
+          },
+          "end": {
+            "line": 161,
+            "column": 50
+          }
+        },
+        "line": 161
+      },
+      "8": {
+        "name": "(anonymous_8)",
+        "decl": {
+          "start": {
+            "line": 179,
+            "column": 34
+          },
+          "end": {
+            "line": 179,
+            "column": 35
+          }
+        },
+        "loc": {
+          "start": {
+            "line": 179,
+            "column": 39
+          },
+          "end": {
+            "line": 179,
+            "column": 50
+          }
+        },
+        "line": 179
+      },
+      "9": {
+        "name": "(anonymous_9)",
+        "decl": {
+          "start": {
+            "line": 200,
+            "column": 34
+          },
+          "end": {
+            "line": 200,
+            "column": 35
+          }
+        },
+        "loc": {
+          "start": {
+            "line": 200,
+            "column": 39
+          },
+          "end": {
+            "line": 200,
+            "column": 50
+          }
+        },
+        "line": 200
+      },
+      "10": {
+        "name": "(anonymous_10)",
+        "decl": {
+          "start": {
+            "line": 236,
+            "column": 24
+          },
+          "end": {
+            "line": 236,
+            "column": 25
+          }
+        },
+        "loc": {
+          "start": {
+            "line": 236,
+            "column": 34
+          },
+          "end": {
+            "line": 240,
+            "column": 1
+          }
+        },
+        "line": 236
+      }
+    },
+    "branchMap": {
+      "0": {
+        "loc": {
+          "start": {
+            "line": 66,
+            "column": 4
+          },
+          "end": {
+            "line": 70,
+            "column": 5
+          }
+        },
+        "type": "if",
+        "locations": [
+          {
+            "start": {
+              "line": 66,
+              "column": 4
+            },
+            "end": {
+              "line": 70,
+              "column": 5
+            }
+          },
+          {
+            "start": {
+              "line": 66,
+              "column": 4
+            },
+            "end": {
+              "line": 70,
+              "column": 5
+            }
+          }
+        ],
+        "line": 66
       },
       "1": {
         "loc": {
           "start": {
-            "line": 69,
+            "line": 74,
             "column": 2
           },
           "end": {
-            "line": 71,
+            "line": 76,
             "column": 3
           }
         },
@@ -10638,26 +10989,98 @@
         "locations": [
           {
             "start": {
-              "line": 69,
+              "line": 74,
               "column": 2
             },
             "end": {
-              "line": 71,
+              "line": 76,
               "column": 3
             }
           },
           {
             "start": {
-              "line": 69,
+              "line": 74,
               "column": 2
             },
             "end": {
-              "line": 71,
+              "line": 76,
               "column": 3
             }
           }
         ],
-        "line": 69
+        "line": 74
+      },
+      "2": {
+        "loc": {
+          "start": {
+            "line": 77,
+            "column": 2
+          },
+          "end": {
+            "line": 79,
+            "column": 3
+          }
+        },
+        "type": "if",
+        "locations": [
+          {
+            "start": {
+              "line": 77,
+              "column": 2
+            },
+            "end": {
+              "line": 79,
+              "column": 3
+            }
+          },
+          {
+            "start": {
+              "line": 77,
+              "column": 2
+            },
+            "end": {
+              "line": 79,
+              "column": 3
+            }
+          }
+        ],
+        "line": 77
+      },
+      "3": {
+        "loc": {
+          "start": {
+            "line": 81,
+            "column": 2
+          },
+          "end": {
+            "line": 83,
+            "column": 3
+          }
+        },
+        "type": "if",
+        "locations": [
+          {
+            "start": {
+              "line": 81,
+              "column": 2
+            },
+            "end": {
+              "line": 83,
+              "column": 3
+            }
+          },
+          {
+            "start": {
+              "line": 81,
+              "column": 2
+            },
+            "end": {
+              "line": 83,
+              "column": 3
+            }
+          }
+        ],
+        "line": 81
       }
     },
     "s": {
@@ -10685,9 +11108,12 @@
       "21": 0,
       "22": 0,
       "23": 0,
-      "24": 10,
-      "25": 10,
-      "26": 0
+      "24": 0,
+      "25": 0,
+      "26": 0,
+      "27": 10,
+      "28": 10,
+      "29": 0
     },
     "f": {
       "0": 0,
@@ -10710,13 +11136,21 @@
       "1": [
         0,
         0
+      ],
+      "2": [
+        0,
+        0
+      ],
+      "3": [
+        0,
+        0
       ]
     },
     "_coverageSchema": "43e27e138ebf9cfc5966b082cf9a028302ed4184",
-    "hash": "8294a174d67e9c500b45c8da1c0e16f80bb17de7"
+    "hash": "4af2f78c348b7fe8ba171a4e736ebacfe3ecc260"
   },
-  "/Users/hemalatharamachandran/Documents/Univ_documents/SEP/SEP203/client/src/assets/jss/material-dashboard-react.js": {
-    "path": "/Users/hemalatharamachandran/Documents/Univ_documents/SEP/SEP203/client/src/assets/jss/material-dashboard-react.js",
+  "/Users/gauravsj/Documents/My Web Applications/SEP203/client/src/assets/jss/material-dashboard-react.js": {
+    "path": "/Users/gauravsj/Documents/My Web Applications/SEP203/client/src/assets/jss/material-dashboard-react.js",
     "statementMap": {
       "0": {
         "start": {
@@ -11436,10 +11870,10 @@
       ]
     },
     "_coverageSchema": "43e27e138ebf9cfc5966b082cf9a028302ed4184",
-    "hash": "b454afb427294b806eb48c438873e918b94ff895"
+    "hash": "ab533faf80354a4c520194ad58a894faa655f945"
   },
-  "/Users/hemalatharamachandran/Documents/Univ_documents/SEP/SEP203/client/src/assets/jss/material-kit-react/views/dashboardPage.js": {
-    "path": "/Users/hemalatharamachandran/Documents/Univ_documents/SEP/SEP203/client/src/assets/jss/material-kit-react/views/dashboardPage.js",
+  "/Users/gauravsj/Documents/My Web Applications/SEP203/client/src/assets/jss/material-kit-react/views/dashboardPage.js": {
+    "path": "/Users/gauravsj/Documents/My Web Applications/SEP203/client/src/assets/jss/material-kit-react/views/dashboardPage.js",
     "statementMap": {
       "0": {
         "start": {
@@ -11498,10 +11932,10 @@
     },
     "b": {},
     "_coverageSchema": "43e27e138ebf9cfc5966b082cf9a028302ed4184",
-    "hash": "c51a73cb1b5150e500e0812f964f1208a7611918"
+    "hash": "4df50c20fd868c9f9cb38698a04f0b495aa49177"
   },
-  "/Users/hemalatharamachandran/Documents/Univ_documents/SEP/SEP203/client/src/assets/jss/material-kit-react/components/sidebarStyle.js": {
-    "path": "/Users/hemalatharamachandran/Documents/Univ_documents/SEP/SEP203/client/src/assets/jss/material-kit-react/components/sidebarStyle.js",
+  "/Users/gauravsj/Documents/My Web Applications/SEP203/client/src/assets/jss/material-kit-react/components/sidebarStyle.js": {
+    "path": "/Users/gauravsj/Documents/My Web Applications/SEP203/client/src/assets/jss/material-kit-react/components/sidebarStyle.js",
     "statementMap": {
       "0": {
         "start": {
@@ -11560,10 +11994,10 @@
     },
     "b": {},
     "_coverageSchema": "43e27e138ebf9cfc5966b082cf9a028302ed4184",
-    "hash": "a59b319de250cd82c031769aacb0a10aa45857f4"
+    "hash": "41dc1761db31e3b034b76ddae5a84a3e3de29735"
   },
-  "/Users/hemalatharamachandran/Documents/Univ_documents/SEP/SEP203/client/src/components/Sidebar/Sidebar.js": {
-    "path": "/Users/hemalatharamachandran/Documents/Univ_documents/SEP/SEP203/client/src/components/Sidebar/Sidebar.js",
+  "/Users/gauravsj/Documents/My Web Applications/SEP203/client/src/components/Sidebar/Sidebar.js": {
+    "path": "/Users/gauravsj/Documents/My Web Applications/SEP203/client/src/components/Sidebar/Sidebar.js",
     "statementMap": {
       "0": {
         "start": {
@@ -11926,10 +12360,10 @@
       ]
     },
     "_coverageSchema": "43e27e138ebf9cfc5966b082cf9a028302ed4184",
-    "hash": "38f9e232c3d51c5cb0fd225f6b577de487d215c7"
+    "hash": "00b4c3ceeba7d69391f5064089cfa30cbad7198c"
   },
-  "/Users/hemalatharamachandran/Documents/Univ_documents/SEP/SEP203/client/src/views/Dashboard/Dashboard.js": {
-    "path": "/Users/hemalatharamachandran/Documents/Univ_documents/SEP/SEP203/client/src/views/Dashboard/Dashboard.js",
+  "/Users/gauravsj/Documents/My Web Applications/SEP203/client/src/views/Dashboard/Dashboard.js": {
+    "path": "/Users/gauravsj/Documents/My Web Applications/SEP203/client/src/views/Dashboard/Dashboard.js",
     "statementMap": {
       "0": {
         "start": {
@@ -12021,10 +12455,10 @@
     },
     "b": {},
     "_coverageSchema": "43e27e138ebf9cfc5966b082cf9a028302ed4184",
-    "hash": "20e3d0f472dce81c21243ec672457d21cfa9d0c0"
+    "hash": "11581f3a24f0809d72784ec14f02f0e4cfadffd0"
   },
-  "/Users/hemalatharamachandran/Documents/Univ_documents/SEP/SEP203/client/src/views/EmailVerifyPage/EmailVerifyPage.js": {
-    "path": "/Users/hemalatharamachandran/Documents/Univ_documents/SEP/SEP203/client/src/views/EmailVerifyPage/EmailVerifyPage.js",
+  "/Users/gauravsj/Documents/My Web Applications/SEP203/client/src/views/EmailVerifyPage/EmailVerifyPage.js": {
+    "path": "/Users/gauravsj/Documents/My Web Applications/SEP203/client/src/views/EmailVerifyPage/EmailVerifyPage.js",
     "statementMap": {
       "0": {
         "start": {
@@ -12083,10 +12517,10 @@
     },
     "b": {},
     "_coverageSchema": "43e27e138ebf9cfc5966b082cf9a028302ed4184",
-    "hash": "5bcfe21dc3648d6f5d72e8576d955249c4d18004"
+    "hash": "a5c0d2b9c1969c23acd5e319f7488466d041952e"
   },
-  "/Users/hemalatharamachandran/Documents/Univ_documents/SEP/SEP203/client/src/assets/jss/material-kit-react/views/dashboardInnerPage.js": {
-    "path": "/Users/hemalatharamachandran/Documents/Univ_documents/SEP/SEP203/client/src/assets/jss/material-kit-react/views/dashboardInnerPage.js",
+  "/Users/gauravsj/Documents/My Web Applications/SEP203/client/src/assets/jss/material-kit-react/views/dashboardInnerPage.js": {
+    "path": "/Users/gauravsj/Documents/My Web Applications/SEP203/client/src/assets/jss/material-kit-react/views/dashboardInnerPage.js",
     "statementMap": {
       "0": {
         "start": {
@@ -12145,10 +12579,10 @@
     },
     "b": {},
     "_coverageSchema": "43e27e138ebf9cfc5966b082cf9a028302ed4184",
-    "hash": "bd06d0bcc44f2abe032bf570364c4a7cffe9b39f"
+    "hash": "598c078262bd840eab35fa9c42ce43adc43004ad"
   },
-  "/Users/hemalatharamachandran/Documents/Univ_documents/SEP/SEP203/client/src/views/ProfilePage/CreateProfile.js": {
-    "path": "/Users/hemalatharamachandran/Documents/Univ_documents/SEP/SEP203/client/src/views/ProfilePage/CreateProfile.js",
+  "/Users/gauravsj/Documents/My Web Applications/SEP203/client/src/views/ProfilePage/CreateProfile.js": {
+    "path": "/Users/gauravsj/Documents/My Web Applications/SEP203/client/src/views/ProfilePage/CreateProfile.js",
     "statementMap": {
       "0": {
         "start": {
@@ -12774,10 +13208,10 @@
     },
     "b": {},
     "_coverageSchema": "43e27e138ebf9cfc5966b082cf9a028302ed4184",
-    "hash": "f651d5815c004effcc5268516a867f3846dcf2ba"
+    "hash": "b11da9b975bbf911406a2c0c1a437feb6b2c1ba7"
   },
-  "/Users/hemalatharamachandran/Documents/Univ_documents/SEP/SEP203/client/src/views/ProfilePage/EditProfile.js": {
-    "path": "/Users/hemalatharamachandran/Documents/Univ_documents/SEP/SEP203/client/src/views/ProfilePage/EditProfile.js",
+  "/Users/gauravsj/Documents/My Web Applications/SEP203/client/src/views/ProfilePage/EditProfile.js": {
+    "path": "/Users/gauravsj/Documents/My Web Applications/SEP203/client/src/views/ProfilePage/EditProfile.js",
     "statementMap": {
       "0": {
         "start": {
@@ -14230,10 +14664,10 @@
       ]
     },
     "_coverageSchema": "43e27e138ebf9cfc5966b082cf9a028302ed4184",
-    "hash": "a78a602d40025257c3b116e845828931cb453852"
+    "hash": "d21f33e239eee9eead8acef834301c509e1c2a6d"
   },
-  "/Users/hemalatharamachandran/Documents/Univ_documents/SEP/SEP203/client/src/views/Dashboard/AdminDashboard.js": {
-    "path": "/Users/hemalatharamachandran/Documents/Univ_documents/SEP/SEP203/client/src/views/Dashboard/AdminDashboard.js",
+  "/Users/gauravsj/Documents/My Web Applications/SEP203/client/src/views/Dashboard/AdminDashboard.js": {
+    "path": "/Users/gauravsj/Documents/My Web Applications/SEP203/client/src/views/Dashboard/AdminDashboard.js",
     "statementMap": {
       "0": {
         "start": {
@@ -14292,10 +14726,10 @@
     },
     "b": {},
     "_coverageSchema": "43e27e138ebf9cfc5966b082cf9a028302ed4184",
-    "hash": "60c188fe901aa1f4415316fd3b1d737ab1a5cc6b"
+    "hash": "9d338ebe46be051c6b76fea8f8f92cebf99776d1"
   },
-  "/Users/hemalatharamachandran/Documents/Univ_documents/SEP/SEP203/client/src/assets/jss/material-kit-react/components/snackbarContentStyle.js": {
-    "path": "/Users/hemalatharamachandran/Documents/Univ_documents/SEP/SEP203/client/src/assets/jss/material-kit-react/components/snackbarContentStyle.js",
+  "/Users/gauravsj/Documents/My Web Applications/SEP203/client/src/assets/jss/material-kit-react/components/snackbarContentStyle.js": {
+    "path": "/Users/gauravsj/Documents/My Web Applications/SEP203/client/src/assets/jss/material-kit-react/components/snackbarContentStyle.js",
     "statementMap": {
       "0": {
         "start": {
@@ -14316,10 +14750,10 @@
     "f": {},
     "b": {},
     "_coverageSchema": "43e27e138ebf9cfc5966b082cf9a028302ed4184",
-    "hash": "8b3b1a55ec30edf7a96a6251f1653a38c02d479e"
+    "hash": "b9b0125228fecd350c7484d18b0dc7ff73debb2e"
   },
-  "/Users/hemalatharamachandran/Documents/Univ_documents/SEP/SEP203/client/src/components/Snackbar/SnackbarContent.js": {
-    "path": "/Users/hemalatharamachandran/Documents/Univ_documents/SEP/SEP203/client/src/components/Snackbar/SnackbarContent.js",
+  "/Users/gauravsj/Documents/My Web Applications/SEP203/client/src/components/Snackbar/SnackbarContent.js": {
+    "path": "/Users/gauravsj/Documents/My Web Applications/SEP203/client/src/components/Snackbar/SnackbarContent.js",
     "statementMap": {
       "0": {
         "start": {
@@ -14684,49 +15118,49 @@
     },
     "s": {
       "0": 10,
-      "1": 0,
-      "2": 0,
-      "3": 0,
-      "4": 0,
+      "1": 5,
+      "2": 5,
+      "3": 5,
+      "4": 5,
       "5": 0,
-      "6": 0,
-      "7": 0,
-      "8": 0,
-      "9": 0,
+      "6": 5,
+      "7": 5,
+      "8": 5,
+      "9": 5,
       "10": 0,
       "11": 0,
-      "12": 0,
-      "13": 0,
+      "12": 5,
+      "13": 5,
       "14": 0,
       "15": 0,
-      "16": 0,
-      "17": 0,
+      "16": 5,
+      "17": 5,
       "18": 10
     },
     "f": {
-      "0": 0,
+      "0": 5,
       "1": 0
     },
     "b": {
       "0": [
-        0,
+        5,
         0
       ],
       "1": [
         0,
-        0,
+        5,
         0
       ],
       "2": [
-        0,
+        5,
         0
       ]
     },
     "_coverageSchema": "43e27e138ebf9cfc5966b082cf9a028302ed4184",
-    "hash": "857d9ee85803e4e22c4afafae5494893c89a1b41"
+    "hash": "883dfcbc4260b612745648b245322bb95e623113"
   },
-  "/Users/hemalatharamachandran/Documents/Univ_documents/SEP/SEP203/client/src/components/Clearfix/Clearfix.js": {
-    "path": "/Users/hemalatharamachandran/Documents/Univ_documents/SEP/SEP203/client/src/components/Clearfix/Clearfix.js",
+  "/Users/gauravsj/Documents/My Web Applications/SEP203/client/src/components/Clearfix/Clearfix.js": {
+    "path": "/Users/gauravsj/Documents/My Web Applications/SEP203/client/src/components/Clearfix/Clearfix.js",
     "statementMap": {
       "0": {
         "start": {
@@ -14809,19 +15243,19 @@
     "s": {
       "0": 10,
       "1": 10,
-      "2": 0,
-      "3": 0,
+      "2": 5,
+      "3": 5,
       "4": 10
     },
     "f": {
-      "0": 0
+      "0": 5
     },
     "b": {},
     "_coverageSchema": "43e27e138ebf9cfc5966b082cf9a028302ed4184",
-    "hash": "4248167b07f2cd87a4976d7a790efe7709b2320f"
+    "hash": "c01ba3a4d30efceca3148dc03fe2f24b4062f6ee"
   },
-  "/Users/hemalatharamachandran/Documents/Univ_documents/SEP/SEP203/client/src/components/Layout/Alert.js": {
-    "path": "/Users/hemalatharamachandran/Documents/Univ_documents/SEP/SEP203/client/src/components/Layout/Alert.js",
+  "/Users/gauravsj/Documents/My Web Applications/SEP203/client/src/components/Layout/Alert.js": {
+    "path": "/Users/gauravsj/Documents/My Web Applications/SEP203/client/src/components/Layout/Alert.js",
     "statementMap": {
       "0": {
         "start": {
@@ -15008,29 +15442,29 @@
     },
     "s": {
       "0": 10,
-      "1": 10,
-      "2": 0,
+      "1": 17,
+      "2": 5,
       "3": 10,
       "4": 10,
-      "5": 32
+      "5": 39
     },
     "f": {
-      "0": 10,
-      "1": 0,
-      "2": 32
+      "0": 17,
+      "1": 5,
+      "2": 39
     },
     "b": {
       "0": [
-        10,
-        10,
-        0
+        17,
+        17,
+        5
       ]
     },
     "_coverageSchema": "43e27e138ebf9cfc5966b082cf9a028302ed4184",
-    "hash": "ca07add14125e044f4d05c2646d50f58c74e2506"
+    "hash": "f99b937fa9cf8b569b9699d78c8ff2f4bf42b769"
   },
-  "/Users/hemalatharamachandran/Documents/Univ_documents/SEP/SEP203/client/src/App.js": {
-    "path": "/Users/hemalatharamachandran/Documents/Univ_documents/SEP/SEP203/client/src/App.js",
+  "/Users/gauravsj/Documents/My Web Applications/SEP203/client/src/App.js": {
+    "path": "/Users/gauravsj/Documents/My Web Applications/SEP203/client/src/App.js",
     "statementMap": {
       "0": {
         "start": {
@@ -15345,10 +15779,10 @@
       ]
     },
     "_coverageSchema": "43e27e138ebf9cfc5966b082cf9a028302ed4184",
-    "hash": "e4be9d9bc2395f35c3f822b4fbc765b1aef52964"
+    "hash": "cbc112bec4f0c3a12aea1cb93018f3e8929c4632"
   },
-  "/Users/hemalatharamachandran/Documents/Univ_documents/SEP/SEP203/client/src/index.js": {
-    "path": "/Users/hemalatharamachandran/Documents/Univ_documents/SEP/SEP203/client/src/index.js",
+  "/Users/gauravsj/Documents/My Web Applications/SEP203/client/src/index.js": {
+    "path": "/Users/gauravsj/Documents/My Web Applications/SEP203/client/src/index.js",
     "statementMap": {
       "0": {
         "start": {
@@ -15369,6 +15803,6 @@
     "f": {},
     "b": {},
     "_coverageSchema": "43e27e138ebf9cfc5966b082cf9a028302ed4184",
-    "hash": "78ec0a283f20b0bde3b4c68a3fe4da3cf3712d72"
+    "hash": "e4bb810b7358102fef25f057d0e959206eda5f98"
   }
 }
