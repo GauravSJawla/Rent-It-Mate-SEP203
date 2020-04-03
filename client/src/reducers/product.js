@@ -2,7 +2,8 @@ import{
     ADD_PRODUCT,
     PRODUCT_ERROR,
     GET_PRODUCTS,
-    GET_PRODUCT
+    GET_PRODUCT,
+    PRODUCT_DELETED
 } from '../actions/types';
 
 const initalState = {
@@ -26,6 +27,12 @@ export default function (state = initalState, action){
             return {
                 ...state,
                 product: payload,
+                loading: false
+            };
+        case PRODUCT_DELETED:
+            return {
+                ...state,
+                products: state.products.filter(product => product._id !== payload),
                 loading: false
             };
         case PRODUCT_ERROR:

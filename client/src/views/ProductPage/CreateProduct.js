@@ -15,10 +15,13 @@ import CardBody from 'components/Card/CardBody.js';
 import CardHeader from 'components/Card/CardHeader.js';
 import CardFooter from 'components/Card/CardFooter.js';
 import CustomInput from 'components/CustomInput/CustomInput.js';
+import Radio from "@material-ui/core/Radio";
+import RadioGroup from "@material-ui/core/RadioGroup";
+import FormControlLabel from "@material-ui/core/FormControlLabel";
+
+import FormLabel from "@material-ui/core/FormLabel";
 import styles from 'assets/jss/material-kit-react/views/loginPage.js';
 import CustomDropdown from 'components/CustomDropdown/CustomDropdown.js';
-import Radio from "@material-ui/core/Radio";
-import FormControlLabel from "@material-ui/core/FormControlLabel";
 //icons
 import FiberManualRecord from "@material-ui/icons/FiberManualRecord";
 
@@ -174,78 +177,29 @@ function CreateProduct({ createProduct, history }) {
                         autoComplete: 'off'
                       }}
                     />
-                    <div>
-                    <GridItem xs={12} sm={6} md={4} lg={3}>
-                      <div
-                        className={
-                          classes.checkboxAndRadio +
-                          " " +
-                          classes.checkboxAndRadioHorizontal
-                        }
-                      >
-                    <FormControlLabel
-                      control={
-                      <Radio
-                        checked={selectedEnabled === "a"}
-                        onChange={() => setSelectedEnabled("a")}
-                        value="a"
-                        name="radio button enabled"
-                        aria-label="A"
-                        icon={
-                          <FiberManualRecord className={classes.radioUnchecked} />
-                        }
-                        checkedIcon={
-                          <FiberManualRecord className={classes.radioChecked} />
-                        }
-                        classes={{
-                          checked: classes.radio,
-                          root: classes.radioRoot
-                        }}
-                    />
-                        }
-                  classes={{
-                    label: classes.label,
-                    root: classes.labelRoot
-                  }}
-                  label="I will ship the product"
-                />
-              </div>
-              <div
-                className={
-                  classes.checkboxAndRadio +
-                  " " +
-                  classes.checkboxAndRadioHorizontal
-                }
-              >
-                <FormControlLabel
-                  control={
-                    <Radio
-                      checked={selectedEnabled === "b"}
-                      onChange={() => setSelectedEnabled("b")}
-                      value="b"
-                      name="radio button enabled"
-                      aria-label="B"
-                      icon={
-                        <FiberManualRecord className={classes.radioUnchecked} />
-                      }
-                      checkedIcon={
-                        <FiberManualRecord className={classes.radioChecked} />
-                      }
-                      classes={{
-                        checked: classes.radio,
-                        root: classes.radioRoot
-                      }}
-                    />
-                  }
-                  classes={{
-                    label: classes.label,
-                    root: classes.labelRoot
-                  }}
-                  label="Umm no i won't ship this product"
-                />
-                </div>
-                </GridItem>
-                </div>
+                    <FormLabel component="legend">Shipping</FormLabel>
+      <RadioGroup
+        aria-label="shipping"
+        name="shipping"
+        inputProps={{
+          type: 'boolean',
+          value: {shipping},
+          required: true,
+          onChange: e => onChange(e),
+          autoComplete: 'off'
+        }}
+      >
+        <FormControlLabel
+          value="true"
+          control={<Radio />}
+          label="I will ship the product"
+        />
+        <FormControlLabel
+          value="false"
+          control={<Radio />}
+          label="I won't ship this product"
+        />
+      </RadioGroup>
                     <CustomDropdown
                       buttonText="Category"
                       dropdownHeader="Categories"
@@ -293,8 +247,7 @@ function CreateProduct({ createProduct, history }) {
                       inputProps={{
                         type: 'file',
                         required: true,
-                        onChange: e => onChange(e),
-                        accept: '.jpg'
+                        onChange: e => onChange(e)
                       }}
                     />
                   </CardBody>

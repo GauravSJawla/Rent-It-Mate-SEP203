@@ -2,7 +2,8 @@ import axios from 'axios';
 import{
     ADD_PRODUCT,
     PRODUCT_ERROR,
-    GET_PRODUCTS
+    GET_PRODUCTS,
+    PRODUCT_DELETED
 } from './types';
 
 export const createProduct = (formData, history, edit = false) => async dispatch => {
@@ -49,3 +50,19 @@ export const getUserProducts = () => async dispatch => {
     }
   };
 
+  export const deleteProduct = productId => async dispatch => {
+    console.log(productId+'  djnscksn')
+    try {
+      const res = await axios.delete('/api/product/'+productId);
+      dispatch({
+        type: PRODUCT_DELETED,
+        payload: productId
+      });
+    } catch (err) {
+      
+      dispatch({
+        type: PRODUCT_ERROR,
+        payload: { msg: err.response.statusText, status: err.response.status}
+      });
+    }
+  };
