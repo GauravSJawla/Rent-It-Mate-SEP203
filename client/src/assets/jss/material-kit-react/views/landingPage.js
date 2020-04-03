@@ -53,7 +53,7 @@ const landingPageStyle = {
     position: 'relative',
     marginTop: '30px',
     minHeight: '32px',
-    color: 'black',
+    color: 'purple',
     textDecoration: 'none'
   },
   carouselTitle: {
@@ -64,7 +64,7 @@ const landingPageStyle = {
     textDecoration: 'none'
   },
   dashboardSubtitle: {
-    color: 'black',
+    color: 'purple',
     fontSize: '1.313rem',
     maxWidth: '500px',
     margin: '10px auto 0'

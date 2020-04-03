@@ -38,7 +38,7 @@ router.get('/me', auth, async (req, res) => {
 
 router.get('/', async (req, res) => {
   try {
-    const profiles = await Profile.find().populate('user', ['name', 'email']);
+    const profiles = await Profile.find().populate('users', ['name', 'email']);
     res.json(profiles);
   } catch (err) {
     console.error(err.message);

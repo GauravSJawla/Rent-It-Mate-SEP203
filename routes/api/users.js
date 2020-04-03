@@ -19,9 +19,17 @@ const transporter = nodemailer.createTransport(
 );
 
 // @route   GET api/users
-// @desc    Test route
-// @access  Public
-router.get('/', (req, res) => res.send('Users route'));
+// @desc    retrieve all users
+// @access  admin
+router.get('/', async (req, res) => {
+  try {
+    const users = await Users.find().populate('profile',['address'])
+    res.json(users);
+  } catch (err) {
+    console.error(err.message);
+    res.status(500).send('Server Error');
+  }
+});
 
 //@route Post api/users
 //@desc Register User
