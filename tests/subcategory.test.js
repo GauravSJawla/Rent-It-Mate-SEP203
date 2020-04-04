@@ -62,7 +62,8 @@ describe('create/read/update/delete sub-category', () => {
       .post('/api/subcategory')
       .set('x-auth-token', token)
       .send({
-        name: 'test subcategory2'
+        name: 'test subcategory2',
+        categoryId: '5e85f16ed9b2304e2884144a'
       })
       .expect(200);
 
@@ -74,7 +75,8 @@ describe('create/read/update/delete sub-category', () => {
       .post('/api/subcategory')
       .set('x-auth-token', token)
       .send({
-        name: 'test subcategory2'
+        name: 'test subcategory2',
+        categoryId: '5e85f16ed9b2304e2884144a'
       })
       .expect(400);
 
@@ -93,9 +95,9 @@ describe('create/read/update/delete sub-category', () => {
   });
 
   it('can get a sub-category by the sub-category ID', async () => {
-    const category = await SubCategory.findOne({ name: 'test sub-category2' });
+    const subcategory = await SubCategory.findOne({ name: 'test sub-category2' });
     const response = await request
-      .get('/api/subcategory/' + category._id)
+      .get('/api/subcategory/' + subcategory._id)
       .set('x-auth-token', token)
       .expect(200);
 
@@ -103,9 +105,9 @@ describe('create/read/update/delete sub-category', () => {
   });
 
   it('should give the sub-category not found error if no specified sub-category present', async () => {
-    const category_id = 'dummy';
+    const subcategory_id = 'dummy';
     const response = await request
-      .get('/api/subcategory/' + category_id)
+      .get('/api/subcategory/' + subcategory_id)
       .set('x-auth-token', token)
       .expect(400);
 
@@ -113,12 +115,13 @@ describe('create/read/update/delete sub-category', () => {
   });
 
   it('should update a category by category ID', async () => {
-    const category = await SubCategory.findOne({ name: 'test sub-category2' });
+    const subcategory = await SubCategory.findOne({ name: 'test sub-category2' });
     const response = await request
-      .post('/api/subcategory/' + category._id)
+      .post('/api/subcategory/' + subcategory._id)
       .set('x-auth-token', token)
       .send({
-        name: 'test subcategory3'
+        name: 'test subcategory3',
+        categoryId: subcategory.categoryId
       })
       .expect(200);
 
@@ -126,9 +129,9 @@ describe('create/read/update/delete sub-category', () => {
   });
 
   it('should delete a sub-category by the sub-category ID', async () => {
-    const category = await SubCategory.findOne({ name: 'test sub-category3' });
+    const subcategory = await SubCategory.findOne({ name: 'test sub-category3' });
     const response = await request
-      .delete('/api/subcategory/' + category._id)
+      .delete('/api/subcategory/' + subcategory._id)
       .set('x-auth-token', token)
       .expect(200);
 
