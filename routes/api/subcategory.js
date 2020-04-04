@@ -8,7 +8,7 @@ const SubCategory = require("../../models/SubCategory");
 // @route   POST api/subcategory525
 // @access  Private
 
-router.post("/", async (req, res) => {
+router.post("/", auth, async (req, res) => {
   const errors = validationResult(req);
   if (!errors.isEmpty()) {
     /* istanbul ignore next */
@@ -38,7 +38,7 @@ router.post("/", async (req, res) => {
         .status(400)
         .json({ errors: [{ msg: "Sub-Category already exists! Update it!" }] });
     }
-    
+
     //create
     subcategory = new SubCategory(subCategoryFields);
 
