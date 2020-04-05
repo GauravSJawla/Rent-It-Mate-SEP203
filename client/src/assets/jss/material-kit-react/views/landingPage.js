@@ -53,7 +53,7 @@ const landingPageStyle = {
     position: 'relative',
     marginTop: '30px',
     minHeight: '32px',
-    color: 'purple',
+    color: 'black',
     textDecoration: 'none'
   },
   carouselTitle: {
@@ -63,8 +63,34 @@ const landingPageStyle = {
     minHeight: '32px',
     textDecoration: 'none'
   },
+  table:{
+    borderWidth: '0 px',
+    backgroundColor: 'white',
+    borderStyle:'thin',
+    align:'left'
+  },
+  td: {
+    fontWeight: '400',
+    padding: '0 20px',
+    borderStyle: 'solid',
+    borderColor:'purple'
+  },
+  tr: {
+    borderBottom: '1px solid #e7e7e7',
+    fontSize: '14px',
+    borderStyle:'solid',
+    borderColor:'purple'
+  },
+th:{
+    fontWeight: '500',
+    padding: '0 20px',
+    borderStyle: 'solid',
+    borderColor:'purple',
+    fontSize:'bold'
+  },
+
   dashboardSubtitle: {
-    color: 'purple',
+    color: 'black',
     fontSize: '1.313rem',
     maxWidth: '500px',
     margin: '10px auto 0'
