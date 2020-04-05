@@ -8,14 +8,15 @@ import { makeStyles } from '@material-ui/core/styles';
 import styles from 'assets/jss/material-kit-react/views/dashboardPage.js';
 // core components
 import Sidebar from 'components/Sidebar/Sidebar.js';
-import Person from '@material-ui/icons/Person';
+import People from '@material-ui/icons/People';
 import AddIcon from '@material-ui/icons/Add';
-
+import List from '@material-ui/icons/List';
 
 //import bgImage from 'assets/img/sidebar-2.jpg';
 import logo from 'assets/img/reactlogo.png';
 import ListUsers from 'views/ProfilePage/ListUsers';
-import CategoryPage from 'views/CategoryPage/CategoryPage';
+import ViewCategories from 'views/CategoryPage/ViewCategories';
+import CategoryPage from  'views/CategoryPage/CategoryPage';
 //import adminDashboardRoutes from '../../components/Routing/adminDashboardRoutes';
 import { whiteColor } from 'assets/jss/material-dashboard-react';
 
@@ -25,17 +26,17 @@ const adminDashboardRoutes = [
   {
       path: '/all-users',
       name: 'All users',
-      icon: Person,
+      icon: People,
       component: ListUsers,
       layout: '/admin-dashboard'
   },
-  {
-      path: '/category',
-      name: 'Add Category',
-      icon: AddIcon,
-      component: CategoryPage,
+    {
+      path: '/all-categories',
+      name: 'Available Categories',
+      icon: List,
+      component: ViewCategories,
       layout: '/admin-dashboard'
-    }
+      }
 ];
 
 const AdminDashboard = (rest) => {
