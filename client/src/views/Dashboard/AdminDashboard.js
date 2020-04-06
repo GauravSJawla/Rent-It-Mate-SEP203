@@ -38,14 +38,14 @@ const adminDashboardRoutes = [
       layout: '/admin-dashboard'
       },
     {
-      path:'all-subcategories',
+      path:'/all-subcategories',
       name: 'Subcategories',
       icon: List,
       component: ViewCategories,
       layout: '/admin-dashboard'
     },
     {
-      path:'all-products',
+      path:'/all-products',
       name: 'Products',
       icon: List,
       component: ViewCategories,

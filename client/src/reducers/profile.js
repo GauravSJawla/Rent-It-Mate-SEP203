@@ -3,7 +3,8 @@ import {
     GET_PROFILES,
     UPDATE_PROFILE,
     CLEAR_PROFILE,
-    PROFILE_ERROR
+    PROFILE_ERROR,
+    CLEAR_PROFILES
 } from '../actions/types';
 
 const initalState = {
@@ -44,6 +45,13 @@ export default function (state = initalState, action){
                 profiles: payload,
                 loading: false
             };
+        case CLEAR_PROFILES:
+            return{
+                ...state,
+                profiles:[],
+                profile:null,
+                loading:false
+            }
         default:
             return state;
     }

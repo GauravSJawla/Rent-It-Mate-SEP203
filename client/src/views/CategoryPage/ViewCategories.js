@@ -7,6 +7,8 @@ import { Link } from 'react-router-dom';
 import Button from 'components/CustomButtons/Button.js';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
+import Edit from '@material-ui/icons/Edit'
+import Delete from '@material-ui/icons/Delete';
 
 const useStyles = makeStyles(styles);
 const ViewCategories = ({getAllCategories, category:{categories, loading}}) => {
@@ -35,7 +37,7 @@ const ViewCategories = ({getAllCategories, category:{categories, loading}}) => {
                                         color='primary'
                                         size='lg'
                                     >
-                                    Delete Category
+                                    <Delete/>
                                     </Button>
                                     <Button
                                         simple
@@ -44,7 +46,7 @@ const ViewCategories = ({getAllCategories, category:{categories, loading}}) => {
                                         color='primary'
                                         size='lg'
                                     >
-                                    Update Category
+                                    <Edit/>
                                     </Button>
                                   </td>
                               </tbody>

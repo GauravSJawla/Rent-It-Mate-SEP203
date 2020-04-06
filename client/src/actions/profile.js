@@ -74,6 +74,26 @@ export const getProfiles = () => async dispatch => {
   }
 };
 
+//Get profile by id from url parameter
+export const getProfileById = userId => async dispatch => {
+  try{
+
+    const res = await axios.get(`/api/profile/admin/${userId}`);
+    console.log('inside action get profile by id ', res)
+    dispatch({
+      type: GET_PROFILE,
+      payload: res.data
+    })
+
+  }
+  catch(err){
+    dispatch({
+      type:PROFILE_ERROR,
+      payload:{ msg: err.response.statusText, status: err.response.status }
+    })
+  }
+}
+
 // Delete Account
 
 export const deleteProfile = () => async dispatch => {

@@ -30,6 +30,7 @@ import EditProfile from 'views/ProfilePage/EditProfile';
 import AdminDashboard from 'views/Dashboard/AdminDashboard';
 import Alert from './components/Layout/Alert';
 import CategoryPage from './views/CategoryPage/CategoryPage';
+import AdminProfileView from './views/ProfilePage/AdminProfileView';
 
 const switchRoutes = (
   <Switch>
@@ -84,6 +85,15 @@ const App = () => {
             <PrivateRoute
                 path='/admin-dashboard'
                 component={AdminDashboard}
+              />
+               <PrivateRoute
+              exact
+              path='/add-category'
+              component={CategoryPage}
+            />
+            <PrivateRoute
+                path='/admin-view-profile/:id'
+                component={AdminProfileView}
               />
                <PrivateRoute
               exact

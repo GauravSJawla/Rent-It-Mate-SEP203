@@ -66,7 +66,6 @@ const landingPageStyle = {
   table:{
     borderWidth: '0 px',
     backgroundColor: 'white',
-    borderStyle:'groove',
     align:'left'
   },
   td: {

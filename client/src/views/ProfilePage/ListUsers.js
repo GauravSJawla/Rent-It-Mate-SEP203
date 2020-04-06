@@ -6,7 +6,10 @@ import PropTypes from 'prop-types';
 import {getProfiles} from '../../actions/profile';
 import {getAllUsers} from '../../actions/auth';
 import Spinner from '../Dashboard/Spinner';
-
+import Delete from '@material-ui/icons/Delete';
+import { Link } from 'react-router-dom';
+import Button from 'components/CustomButtons/Button.js';
+import Explore from '@material-ui/icons/Explore';
 
 const useStyles = makeStyles(styles);
 
@@ -30,7 +33,6 @@ const ListUsers = ({getAllUsers,getProfiles,auth:{users,loading}, profile: {prof
                   <thead>
                     <th className={classes.th}>USER NAME</th>
                     <th className={classes.th}>EMAIL</th>
-                    <th className={classes.th}>PROFILE</th>
                   </thead>
                   {users.map(user => (
                     <tbody>
@@ -38,12 +40,28 @@ const ListUsers = ({getAllUsers,getProfiles,auth:{users,loading}, profile: {prof
                       <td className={classes.td}>{user.email}</td>
                       <td className = {classes.td}>{profiles.length > 0 ? (profiles.map(profile => (
                         profile.user === user._id ? (
-                          <a href = {`/admin-view-profile/${user._id}`}>View profile</a>
+                          <Button
+                              simple
+                              component={Link}
+                              to={`/admin-view-profile/${user._id}`}
+                              color='primary'
+                              size='lg'
+                            >
+                            <Explore/>
+                        </Button>
                         ) :(<p></p>)
                       ))):(<p>Users are yet to create a profile</p>)}
                       </td>
                       <td className={classes.td}>
-                        <a href = {`/admin-delete-profile/${user._id}`}>Delete User</a>
+                        <Button
+                              simple
+                              component={Link}
+                              to={`/admin-delete-profile/${user._id}`}
+                              color='primary'
+                              size='lg'
+                            >
+                            <Delete/>
+                        </Button>
                       </td>
                     </tbody>
                   ))}

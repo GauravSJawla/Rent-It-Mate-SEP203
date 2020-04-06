@@ -8,6 +8,7 @@ import {
   LOGIN_SUCCESS,
   LOGIN_FAIL,
   LOGOUT,
+  CLEAR_USERS,
   ACCOUNT_DELETED
 } from '../actions/types';
 import setAuthToken from '../utils/setAuthToken';
@@ -76,6 +77,13 @@ export default function(state = initialState, action) {
           users:[],
           loading:false
         }
+    case CLEAR_USERS:
+      return{
+        ...state,
+        error:{},
+        users:[],
+        loading: false
+      }
     default:
       return state;
   }

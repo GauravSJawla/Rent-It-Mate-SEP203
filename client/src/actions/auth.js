@@ -9,7 +9,9 @@ import {
   AUTH_ERROR,
   LOGOUT,
   CLEAR_PROFILE,
-  GET_USERS
+  GET_USERS,
+  CLEAR_PROFILES,
+  CLEAR_USERS
 } from './types';
 import setAuthToken from '../utils/setAuthToken';
 
@@ -115,5 +117,7 @@ export const getAllUsers = () => async dispatch => {
 // Logout / Clear Profile
 export const logout = () => dispatch => {
   dispatch({ type : CLEAR_PROFILE});
+  dispatch({type: CLEAR_PROFILES});
+  dispatch({type:CLEAR_USERS});
   dispatch({ type: LOGOUT });
 };
