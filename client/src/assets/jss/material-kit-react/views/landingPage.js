@@ -66,26 +66,28 @@ const landingPageStyle = {
   table:{
     borderWidth: '0 px',
     backgroundColor: 'white',
-    borderStyle:'thin',
+    borderStyle:'groove',
     align:'left'
   },
   td: {
-    fontWeight: '400',
+    fontWeight: '500',
+    color: 'purple',
     padding: '0 20px',
-    borderStyle: 'solid',
-    borderColor:'purple'
+    borderStyle: 'dotted',
+    borderColor:'black',
+    fontSize:'normal'
   },
   tr: {
     borderBottom: '1px solid #e7e7e7',
     fontSize: '14px',
-    borderStyle:'solid',
-    borderColor:'purple'
+    borderStyle:'dotted',
+    borderColor:'black'
   },
 th:{
-    fontWeight: '500',
+    fontWeight: '700',
     padding: '0 20px',
-    borderStyle: 'solid',
-    borderColor:'purple',
+    borderStyle: 'dotted',
+    borderColor:'black',
     fontSize:'bold'
   },
 

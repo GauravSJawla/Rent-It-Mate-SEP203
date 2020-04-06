@@ -29,6 +29,7 @@ import CreateProfile from 'views/ProfilePage/CreateProfile';
 import EditProfile from 'views/ProfilePage/EditProfile';
 import AdminDashboard from 'views/Dashboard/AdminDashboard';
 import Alert from './components/Layout/Alert';
+import CategoryPage from './views/CategoryPage/CategoryPage';
 
 const switchRoutes = (
   <Switch>
@@ -84,6 +85,11 @@ const App = () => {
                 path='/admin-dashboard'
                 component={AdminDashboard}
               />
+               <PrivateRoute
+              exact
+              path='/add-category'
+              component={CategoryPage}
+            />
             <Route
               path='/dashboard'
               render={() => (

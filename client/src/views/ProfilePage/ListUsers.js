@@ -31,7 +31,6 @@ const ListUsers = ({getAllUsers,getProfiles,auth:{users,loading}, profile: {prof
                     <th className={classes.th}>USER NAME</th>
                     <th className={classes.th}>EMAIL</th>
                     <th className={classes.th}>PROFILE</th>
-                    <th className={classes.th}>DELETE/NOT</th>
                   </thead>
                   {users.map(user => (
                     <tbody>

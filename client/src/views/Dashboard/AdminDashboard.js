@@ -25,18 +25,32 @@ const useStyles = makeStyles(styles);
 const adminDashboardRoutes = [
   {
       path: '/all-users',
-      name: 'All users',
+      name: 'Users',
       icon: People,
       component: ListUsers,
       layout: '/admin-dashboard'
   },
     {
       path: '/all-categories',
-      name: 'Available Categories',
+      name: 'Categories',
       icon: List,
       component: ViewCategories,
       layout: '/admin-dashboard'
-      }
+      },
+    {
+      path:'all-subcategories',
+      name: 'Subcategories',
+      icon: List,
+      component: ViewCategories,
+      layout: '/admin-dashboard'
+    },
+    {
+      path:'all-products',
+      name: 'Products',
+      icon: List,
+      component: ViewCategories,
+      layout: '/admin-dashboard'
+    }
 ];
 
 const AdminDashboard = (rest) => {
