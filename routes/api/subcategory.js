@@ -71,11 +71,8 @@ router.get("/", auth, async (req, res) => {
 router.get("/:subcategory_id", auth, async (req, res) => {
   try {
     const subcategory = await SubCategory.findOne({
-      _id: req.params.category_id
+      _id: req.params.subcategory_id
     });
-
-    if (!subcategory)
-      return res.status(400).json({ msg: "Sub-Category not found!" });
 
     res.json(subcategory);
   } catch (err) {
@@ -133,7 +130,7 @@ router.delete("/:subcategory_id", auth, async (req, res) => {
     await SubCategory.findOneAndRemove({
       _id: req.params.subcategory_id
     });
-    res.json({ msg: "Sub-Category " + req.params.name + " has been deleted" });
+    res.json({ msg: "Sub-Category has been deleted" });
   } catch (err) {
     /* istanbul ignore next */
     res.status(500).send("Server Error");
