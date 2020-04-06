@@ -15,7 +15,7 @@ describe('test user login', () => {
   beforeAll(async () => {
     connection = await MongoClient.connect(mongoURI, {
       useNewUrlParser: true,
-      useUnifiedTopology: true
+      useUnifiedTopology: true,
     });
   });
   afterAll(() => {
@@ -29,7 +29,7 @@ describe('test user login', () => {
       .post('/api/auth')
       .send({
         username: 'mercy',
-        password: 'gentle'
+        password: 'gentle',
       })
       .expect(200);
     token = response.body.token;
@@ -38,6 +38,7 @@ describe('test user login', () => {
     }
     return expect(token).toBeTruthy();
   });
+
   it('should get the user with token', async () => {
     response = await request
       .get('/api/auth')
@@ -45,14 +46,42 @@ describe('test user login', () => {
       .expect(200);
     return expect(response.body).toBeTruthy();
   });
-  it('should return an error if it is an invalid credentials', async () => {
+
+  it('should return an error if username is incorrect', async () => {
+    response = await request
+      .post('/api/auth')
+      .send({
+        username: 'mercy1',
+        password: 'gentle',
+      })
+      .expect(400);
+    return expect(JSON.stringify(response.body)).toMatch('Invalid Username!');
+  });
+
+  it('should return an error if password is incorrect', async () => {
     response = await request
       .post('/api/auth')
       .send({
         username: 'mercy',
-        password: 'mercy'
+        password: 'gentle123',
       })
       .expect(400);
-    return expect(JSON.stringify(response.body)).toMatch('Invalid Credentials');
+    return expect(JSON.stringify(response.body)).toMatch('Invalid Password!');
+  });
+
+  it('should return admin user based on the token received', async () => {
+    response = await request
+      .post('/api/auth')
+      .send({
+        username: 'admin',
+        password: 'admin',
+      })
+      .expect(200);
+    token = response.body.token;
+    response = await request
+      .get('/api/auth')
+      .set('x-auth-token', token)
+      .expect(200);
+    return expect(response.body.role).toMatch('admin');
   });
 });

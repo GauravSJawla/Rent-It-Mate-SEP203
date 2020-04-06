@@ -42,11 +42,6 @@ const ProfileSchema = new mongoose.Schema({
     alternateEmail:{
         type: String
     },
-    role:{
-        type: String,
-        required: true,
-        default: 'user'
-    },
     history:{
         type: Array,
         default: []

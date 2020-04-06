@@ -23,9 +23,9 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">100% </span>
+                <span class="strong">33.33% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>3/3</span>
+                <span class='fraction'>1/3</span>
             </div>
         
             
@@ -37,16 +37,16 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">100% </span>
+                <span class="strong">0% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>1/1</span>
+                <span class='fraction'>0/1</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">100% </span>
+                <span class="strong">33.33% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>3/3</span>
+                <span class='fraction'>1/3</span>
             </div>
         
             
@@ -55,7 +55,7 @@
             Press <em>n</em> or <em>j</em> to go to the next uncovered block, <em>b</em>, <em>p</em> or <em>k</em> for the previous block.
         </p>
     </div>
-    <div class='status-line high'></div>
+    <div class='status-line low'></div>
     <pre><table class="coverage">
 <tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
 <a name='L2'></a><a href='#L2'>2</a>
@@ -125,7 +125,9 @@
 <a name='L66'></a><a href='#L66'>66</a>
 <a name='L67'></a><a href='#L67'>67</a>
 <a name='L68'></a><a href='#L68'>68</a>
-<a name='L69'></a><a href='#L69'>69</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L69'></a><a href='#L69'>69</a>
+<a name='L70'></a><a href='#L70'>70</a>
+<a name='L71'></a><a href='#L71'>71</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -144,12 +146,12 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">45x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">10x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">16x</span>
-<span class="cline-any cline-yes">16x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -193,62 +195,65 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import React, { useState } from "react";
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">// eslint-disable-next-line
+import React, { useState } from 'react';
 // @material-ui/core components
-import { makeStyles } from "@material-ui/core/styles";
-import Icon from "@material-ui/core/Icon";
+import { makeStyles } from '@material-ui/core/styles';
+import Icon from '@material-ui/core/Icon';
 // @material-ui/icons
 // core components
-import Footer from "components/Footer/Footer.js";
-import GridContainer from "components/Grid/GridContainer.js";
-import GridItem from "components/Grid/GridItem.js";
-import Button from "components/CustomButtons/Button.js";
-import Card from "components/Card/Card.js";
-import CardBody from "components/Card/CardBody.js";
-import CardHeader from "components/Card/CardHeader.js";
-import CardFooter from "components/Card/CardFooter.js";
-import CustomInput from "components/CustomInput/CustomInput.js";
-import styles from "assets/jss/material-kit-react/views/loginPage.js";
+import Footer from 'components/Footer/Footer.js';
+import GridContainer from 'components/Grid/GridContainer.js';
+import GridItem from 'components/Grid/GridItem.js';
+import Button from 'components/CustomButtons/Button.js';
+import Card from 'components/Card/Card.js';
+import CardBody from 'components/Card/CardBody.js';
+import CardHeader from 'components/Card/CardHeader.js';
+import CardFooter from 'components/Card/CardFooter.js';
+import CustomInput from 'components/CustomInput/CustomInput.js';
+import styles from 'assets/jss/material-kit-react/views/loginPage.js';
 &nbsp;
-import image from "assets/img/bg7.jpg";
+import image from 'assets/img/bg7.jpg';
 &nbsp;
 const useStyles = makeStyles(styles);
 &nbsp;
-export default function CategoryPage() {
-  const classes = useStyles();
-  return (
+export default function <span class="fstat-no" title="function not covered" >CategoryPage(</span>) {
+  const classes = <span class="cstat-no" title="statement not covered" >useStyles();</span>
+<span class="cstat-no" title="statement not covered" >  return (</span>
     &lt;div&gt;
       &lt;div
         className={classes.pageHeader}
         style={{
-          backgroundImage: "url(" + image + ")",
-          backgroundSize: "cover",
-          backgroundPosition: "top center"
+          backgroundImage: 'url(' + image + ')',
+          backgroundSize: 'cover',
+          backgroundPosition: 'top center'
         }}
       &gt;
         &lt;div className={classes.container}&gt;
-          &lt;GridContainer justify="center"&gt;
+          &lt;GridContainer justify='center'&gt;
             &lt;GridItem xs={12} sm={12} md={4}&gt;
               &lt;Card className={classes.cardAnimaton}&gt;
                 &lt;form className={classes.form}&gt;
-                  &lt;CardHeader color="primary" className={classes.cardHeader}&gt;
+                  &lt;CardHeader color='primary' className={classes.cardHeader}&gt;
                     &lt;h4&gt;Create a Category&lt;/h4&gt;
                   &lt;/CardHeader&gt;
                   &lt;CardBody&gt;
                     &lt;CustomInput
-                      labelText="Create a category"
-                      id="catagory"
+                      labelText='Create a category'
+                      id='catagory'
                       formControlProps={{
                         fullWidth: true
                       }}
                       inputProps={{
-                        type: "text",
+                        type: 'text',
                         required: true
                       }}
                     /&gt;
                   &lt;/CardBody&gt;
                   &lt;CardFooter className={classes.cardFooter}&gt;
-                    &lt;Button simple type="submit" color="primary" size="lg"&gt;
+                    &lt;Button simple type='submit' color='primary' size='lg'&gt;
                       Add Category
                     &lt;/Button&gt;
                   &lt;/CardFooter&gt;
@@ -261,14 +266,15 @@ export default function CategoryPage() {
       &lt;/div&gt;
     &lt;/div&gt;
   );
-}</pre></td></tr></table></pre>
+}
+&nbsp;</pre></td></tr></table></pre>
 
                 <div class='push'></div><!-- for sticky footer -->
             </div><!-- /wrapper -->
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank">istanbul</a>
-                at Fri Mar 27 2020 17:54:28 GMT-0500 (Central Daylight Time)
+                at Thu Apr 02 2020 23:16:09 GMT-0500 (Central Daylight Time)
             </div>
         </div>
         <script src="../../../prettify.js"></script>
