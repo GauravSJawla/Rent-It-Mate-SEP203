@@ -18,7 +18,7 @@ describe('test user sign up', () => {
             useUnifiedTopology: true});
         //server = app.listen(done);
         inbox = await mailslurp.createInbox();
-        emailAddress = inbox.emailAddress;
+        //emailAddress = inbox.emailAddress;
         const duplicateUser = await User.findOne({username: 'TestUser'})
         if (duplicateUser){
             await User.deleteOne(duplicateUser);
@@ -86,5 +86,32 @@ describe('test user sign up', () => {
         return expect(JSON.stringify(response.body)).toMatch("User already exists");
              
      })
+
+     it('should not let normal users to access the list of all users', async() => {
+         const response = await request.post('/api/auth')
+                         .send({
+                             username:'mercy',
+                             password:'gentle'
+                         }).expect(200);
+        const token = response.body.token;
+        const res = await request.get('/api/users').
+                    set('x-auth-token', token).expect(400);
+        return expect(JSON.stringify(res.body)).toMatch('Access is allowed only to admin');
+
+     } )
+
+     it('should let admin to access the list of all users', async() => {
+        const response = await request.post('/api/auth')
+                        .send({
+                            username:'admin',
+                            password:'admin'
+                        }).expect(200);
+       const token = response.body.token;
+       const res = await request.get('/api/users').
+                   set('x-auth-token', token).expect(200);
+       return expect(JSON.stringify(res.body)).toMatch('username');
+
+    } )
+
 
 });

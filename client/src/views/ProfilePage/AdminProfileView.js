@@ -8,13 +8,16 @@ import {getProfileById} from '../../actions/profile';
 import { makeStyles } from '@material-ui/core/styles';
 import styles from 'assets/jss/material-kit-react/views/landingPage.js';
 import Delete from '@material-ui/icons/Delete';
+import GridContainer from 'components/Grid/GridContainer.js';
 
 const useStyles = makeStyles(styles);
 const AdminProfileView = (
     {getProfileById,
       profile : {profile,loading}, 
+      auth:{users},
       match}) =>{
     const classes = useStyles();
+    console.log('inside admin profile view')
     useEffect(() => {
         console.log('inside profileview use effect', match.params.id)
         getProfileById(match.params.id);
@@ -23,19 +26,26 @@ const AdminProfileView = (
         <Spinner/>
     ) : (
         <Fragment>
-            <div className={classes.landingcontainer}>
-                <div className = {classes.dashboardTitle}>
-                    <h4>First Name: </h4>
-                    <p> Email Id: </p>
-                    <h4>User's current Address:</h4>
-                    <div>
-                        <p> {profile.address.address1}, </p>
-                        <p> {profile.address.city},</p>
-                        <p> {profile.address.state},</p>
-                        <p> {profile.address.country}, </p>
-                        <p> {profile.address.zipcode} </p>
-                    </div>
-                </div>
+            <div className={classes.landingContainer}>
+                <div className={classes.dashboardTitle}>
+                    {users.length > 0 && users !== null? (users.map(user => (profile.user === user._id ? (
+                        <div>
+                        <p>First Name: {user.name}</p>
+                        <p> Email Id: {user.email}</p>
+                        </div>
+                    ) : (<p></p>)))) : (<p></p>)}
+                    
+                    
+                    <p>User's current Address:</p>
+                    {profile !== null ? (<div>
+                        <p> {profile.address.address1}, {profile.address.address2}, {profile.address.city} </p>
+                        {/* <p> {profile.address.address2}, </p>
+                        <p> {profile.address.city} </p> */}
+                        <p> {profile.address.state}, {profile.address.country}, {profile.address.zipcode}</p>
+                        {/* <p> {profile.address.country}, </p>
+                        <p> {profile.address.zipcode} </p> */}
+                    </div>) : (<p> User is yet to create a profile</p>)}
+                    
                 <Button
                     simple
                     component={Link}
@@ -45,6 +55,7 @@ const AdminProfileView = (
                 >
                     <Delete/>
                 </Button>
+               </div> 
             </div>
         </Fragment>
     )
@@ -54,11 +65,13 @@ const AdminProfileView = (
 AdminProfileView.propTypes = {
     getProfileById:PropTypes.func.isRequired,
     profile:PropTypes.object.isRequired,
+    auth:PropTypes.object.isRequired
    
 }
 
 const mapStateToProps = state => ({
     profile:state.profile,
+    auth:state.auth
    
 })
 

@@ -2,7 +2,7 @@ const express = require('express');
 const router = express.Router();
 const auth = require('../../middleware/auth');
 const profile = require('../../models/Profile');
-const user = require('../../models/Users');
+const users = require('../../models/Users');
 const { check, validationResult } = require('express-validator');
 
 // @route GET api/profile/me
@@ -36,10 +36,19 @@ router.get('/me', auth, async (req, res) => {
 // @desc get all profiles
 // @access admin
 
-router.get('/', async (req, res) => {
+router.get('/', auth, async (req, res) => {
   try {
-    const profiles = await Profile.find().populate('users', ['name', 'email']);
-    res.json(profiles);
+    const user = await users.findOne({_id:req.user.id})
+    if(user.username == 'admin'){
+      const profiles = await Profile.find().populate('users', ['name', 'email']);
+      res.json(profiles);
+    }
+    else
+    {
+      return res
+      .status(400)
+      .json({ msg: 'Access is allowed only to admin' });    }
+   
   } catch (err) {
     console.error(err.message);
     res.status(500).send('Server Error');

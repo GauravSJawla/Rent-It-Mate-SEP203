@@ -7,6 +7,7 @@ import {
   CLEAR_PROFILE,
   ACCOUNT_DELETED
 } from './types';
+import {getAllUsers} from './auth';
 
 export const createProfile = (
   formData,
@@ -84,6 +85,7 @@ export const getProfileById = userId => async dispatch => {
       type: GET_PROFILE,
       payload: res.data
     })
+    dispatch(getAllUsers());
 
   }
   catch(err){
