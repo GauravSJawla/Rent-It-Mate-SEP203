@@ -9,7 +9,7 @@ const request = supertest(app);
 
 describe('user create/update/delete profile', () => {
     const mongoURI = config.get('mongoURI');
-    let connection,token, id;
+    let connection,token, id, userId;
     beforeAll( async() => {
         connection = await MongoClient.connect(mongoURI, {useNewUrlParser: true,
             useUnifiedTopology: true});
@@ -78,6 +78,7 @@ describe('user create/update/delete profile', () => {
 	                                "alternateEmail":"yyy@xxx.com",
 	                                "role" : "user"
                                 }).expect(200);
+        userId = response.body.user;
         return expect(JSON.stringify(response.body)).toMatch("pinehurst drive"); 
     })
 
@@ -117,6 +118,16 @@ describe('user create/update/delete profile', () => {
       return expect(JSON.stringify(response.error));
     })
 
+    it('should retrieve the particular profile by corresponding user id', async() => {
+      const response = await request.get('/api/profile/admin/' + userId).expect(200);
+      return expect(JSON.stringify(response.body)).toMatch('\"address1\":\"Quail Hollow\"');
+    })
+
+    it('should  not retrieve the particular profile by corresponding user id', async() => {
+      const response = await request.get('/api/profile/admin/555566667777').expect(400);
+      return expect(JSON.stringify(response.body)).toMatch('Profile not found');
+    })
+
     it('should delete the profile', async() => {
       const response = await request.delete('/api/profile').
                                   set('x-auth-token',token).
@@ -124,7 +135,7 @@ describe('user create/update/delete profile', () => {
       return expect(JSON.stringify(response.body)).toMatch('User removed');
     })
 
-    it('should not let normal users to access the list of all users', async() => {
+    it('should not let normal users to access the list of all profiles', async() => {
       const response = await request.post('/api/auth')
                       .send({
                           username:'mercy',
@@ -137,7 +148,7 @@ describe('user create/update/delete profile', () => {
 
   } )
 
-  it('should let admin to access the list of all users', async() => {
+  it('should let admin to access the list of all profiles', async() => {
     const response = await request.post('/api/auth')
                     .send({
                         username:'admin',

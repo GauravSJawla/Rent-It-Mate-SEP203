@@ -18,7 +18,7 @@ describe('test user sign up', () => {
             useUnifiedTopology: true});
         //server = app.listen(done);
         inbox = await mailslurp.createInbox();
-        //emailAddress = inbox.emailAddress;
+        emailAddress = inbox.emailAddress;
         const duplicateUser = await User.findOne({username: 'TestUser'})
         if (duplicateUser){
             await User.deleteOne(duplicateUser);
