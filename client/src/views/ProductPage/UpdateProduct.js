@@ -99,7 +99,7 @@ function UpdateProduct({
   // OnSubmit Event Handler
   const onSubmit = e => {
     e.preventDefault();
-    updateProduct( formData, history)
+    updateProduct(formData, history , match.params.id)
   };
   return (
     <div>

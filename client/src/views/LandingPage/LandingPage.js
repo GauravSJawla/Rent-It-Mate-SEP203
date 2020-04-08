@@ -61,7 +61,7 @@ const LandingPage = ({ isAuthenticated }) => {
           </GridContainer>
         </div>
       </Parallax>
-      <div className={classNames(classes.main, classes.mainRaised)}>
+      {/* <div className={classNames(classes.main, classes.mainRaised)}>
         <div className={classes.gallaryContainer}>
           <h2 className={classes.carouselTitle}>New Arrivals</h2>
           <ProductGallary />
@@ -71,7 +71,9 @@ const LandingPage = ({ isAuthenticated }) => {
           <ProductGallary />
         </div>
       </div>
-      <Footer />
+      <Footer /> */}
+
+      
     </div>
   );
 };

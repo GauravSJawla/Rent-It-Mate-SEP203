@@ -113,14 +113,14 @@ export const getSingleProduct = id => async dispatch => {
  *              for it. We need all variables and details for creating a product. 
  *      
  */
-export const updateProduct = (formData, history ,  edit = false) => async dispatch => {
+export const updateProduct = (formData, history ,id, edit = false) => async dispatch => {
   try{
       const config = {
           headers: {
             'Content-Type': 'application/json'
           }
         };
-      const res = await axios.put('/api/product/', formData , config);
+      const res = await axios.put('/api/product/'+id, formData , config);
           dispatch(
               {
                   type:UPDATE_PRODUCT,
