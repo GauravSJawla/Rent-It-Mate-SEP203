@@ -70,9 +70,8 @@ const landingPageStyle = {
   },
   td: {
     fontWeight: '500',
-    color: 'purple',
+    color: 'black',
     padding: '0 20px',
-    borderStyle: 'dotted',
     borderColor:'black',
     fontSize:'normal'
   },

@@ -9,6 +9,8 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import Edit from '@material-ui/icons/Edit'
 import Delete from '@material-ui/icons/Delete';
+import { TableHead, Table, TableRow, TableBody, TableCell } from '@material-ui/core';
+import { isFunctionDeclaration } from 'typescript';
 
 const useStyles = makeStyles(styles);
 const ViewCategories = ({getAllCategories, category:{categories, loading}}) => {
@@ -21,25 +23,35 @@ const ViewCategories = ({getAllCategories, category:{categories, loading}}) => {
           <div className={classes.dashboardTitle}>
             <h3 align="center">Available Categories</h3>
           </div>
-          {loading? (<Spinner />) : (
-              <div className= {classes.dashboardSubTitle}>
-                  {categories.length > 0 ? (
-                      <table className={classes.table}>
-                          <tr className={classes.tr}>
-                          {categories.map(category => (
-                              <tbody>
-                                  <td className={classes.td}>{category.name}</td>
-                                  <td className={classes.td}>
-                                    <Button
-                                        simple
-                                        component={Link}
-                                        to={`/delete-category/${category._id}`}
-                                        color='primary'
-                                        size='lg'
-                                    >
-                                    <Delete/>
-                                    </Button>
-                                    <Button
+          {loading ? (<Spinner/>) : (
+               <div className= {classes.dashboardSubTitle}>
+              {categories.length > 0 ? (
+                  <Table className={classes.table} aria-label='simple-table'>
+                    <TableHead>
+                        <TableRow>
+                             <TableCell align="left" className={classes.td}>CATEGORY NAME</TableCell>
+                             <TableCell align="left" className={classes.td}>UPDATE CATEGORY</TableCell>
+                             <TableCell align="left" className={classes.td}>DELETE CATEGORY</TableCell>
+                        </TableRow>
+                    </TableHead>
+                      {categories.map(category => (
+                          <TableBody>
+                          <TableCell align="left" className={classes.td} component="th" scope="row">
+                              {category.name}
+                          </TableCell>
+                          <TableCell align="left" className={classes.td}>
+                              <Button
+                                    simple
+                                    component={Link}
+                                    to={`/delete-category/${category._id}`}
+                                    color='primary'
+                                    size='lg'
+                                >
+                                <Delete/>
+                                </Button>
+                          </TableCell>
+                          <TableCell align="left" className={classes.td}>
+                                <Button
                                         simple
                                         component={Link}
                                         to={`/update-category/${category._id}`}
@@ -47,14 +59,12 @@ const ViewCategories = ({getAllCategories, category:{categories, loading}}) => {
                                         size='lg'
                                     >
                                     <Edit/>
-                                    </Button>
-                                  </td>
-                              </tbody>
-                          ))}
-                          </tr>
-                      </table>
-                  ) : <p>No categories found.... Please add some</p>}
-              </div>
+                                </Button>
+                          </TableCell>
+                          </TableBody>
+                      ))}
+          </Table>) : (<p>No categories found....</p>)}
+          </div>
           )}
           <Button
                 simple
