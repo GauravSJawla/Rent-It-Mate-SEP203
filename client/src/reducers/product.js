@@ -3,10 +3,13 @@ import{
     PRODUCT_ERROR,
     GET_PRODUCTS,
     GET_PRODUCT,
-    PRODUCT_DELETED
+    PRODUCT_DELETED,
+    UPDATE_PRODUCT,
+    GET_CURRENT_PRODUCT_ID
 } from '../actions/types';
 
 const initalState = {
+    productId: null,
     products: [],
     product: null,
     loading: true,
@@ -17,12 +20,25 @@ export default function (state = initalState, action){
     const {type, payload} = action;
 
     switch(type) {
+        case GET_CURRENT_PRODUCT_ID:
+            return{
+                ...state,
+                productId: payload,
+                loading:false
+            }
         case GET_PRODUCTS:
             return{
                 ...state,
                 products: payload,
                 loading: false
             };
+        case GET_PRODUCT:
+            return{
+                ...state,
+                product: payload,
+                loading: false
+            };    
+        case UPDATE_PRODUCT:
         case ADD_PRODUCT:
             return {
                 ...state,

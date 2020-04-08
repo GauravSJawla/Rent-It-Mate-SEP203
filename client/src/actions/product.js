@@ -3,9 +3,19 @@ import{
     ADD_PRODUCT,
     PRODUCT_ERROR,
     GET_PRODUCTS,
-    PRODUCT_DELETED
+    PRODUCT_DELETED,
+    UPDATE_PRODUCT,
+    GET_PRODUCT
 } from './types';
-
+/**
+ * 
+ * @param {*} formData 
+ * @param {*} history 
+ * @param {*} edit 
+ * @description This method is used for creating a product. It accepts form data and calls the backend API 
+ *              for it. We need all variables and details for creating a product. 
+ *      
+ */
 export const createProduct = (formData, history, edit = false) => async dispatch => {
     try{
         const config = {
@@ -34,6 +44,10 @@ export const createProduct = (formData, history, edit = false) => async dispatch
     }
 };
 
+/**
+ * @description : This method brings user related products from the backend and stores them in
+ *                products in action and then in the state.
+ */
 export const getUserProducts = () => async dispatch => {
     try {
       const res = await axios.get('/api/product/getMyProducts');
@@ -44,15 +58,20 @@ export const getUserProducts = () => async dispatch => {
     } catch (err) {
       
       dispatch({
+        
         type: PRODUCT_ERROR,
         payload: { msg: err.response.statusText, status: err.response.status}
       });
     }
   };
-
+/**
+ * 
+ * @param {*} productId 
+ * @description : This method is used to delete a product using its product id.
+ */
   export const deleteProduct = productId => async dispatch => {
     try {
-      const res = await axios.delete('/api/product/'+productId);
+      await axios.delete('/api/product/'+productId);
       dispatch({
         type: PRODUCT_DELETED,
         payload: productId
@@ -65,3 +84,59 @@ export const getUserProducts = () => async dispatch => {
       });
     }
   };
+/**
+ * @description This function is used to get a single product from the backend by using its
+ *              product id.
+ * @param {*} id 
+ */
+export const getSingleProduct = id => async dispatch => {
+  try {
+    const res = await axios.get('/api/product/'+id);
+    dispatch({
+      type: GET_PRODUCT,
+      payload: res.data
+    });
+  } catch (err) {
+    dispatch({
+      type: PRODUCT_ERROR,
+      payload: { msg: err.response.statusText, status: err.response.status}
+    });
+  }
+}
+/**
+ * 
+ * @param {*} formData 
+ * @param {*} history 
+ * @param {*} edit 
+ * @description This method is used for updating a created product.
+ *              It accepts form data and calls the backend API 
+ *              for it. We need all variables and details for creating a product. 
+ *      
+ */
+export const updateProduct = (formData, history ,  edit = false) => async dispatch => {
+  try{
+      const config = {
+          headers: {
+            'Content-Type': 'application/json'
+          }
+        };
+      const res = await axios.put('/api/product/', formData , config);
+          dispatch(
+              {
+                  type:UPDATE_PRODUCT,
+                  payload: res.data
+              }
+          );
+      if(!edit){
+          history.push('/dashboard');
+      }
+  
+      
+  }
+  catch(err){
+      dispatch({
+          type: PRODUCT_ERROR,
+          payload:{status : err}
+      })
+  }
+};

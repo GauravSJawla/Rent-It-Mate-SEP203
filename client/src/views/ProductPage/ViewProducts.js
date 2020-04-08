@@ -4,7 +4,6 @@ import PropTypes from 'prop-types';
 // material-ui components
 import { makeStyles } from "@material-ui/core/styles";
 import GridContainer from 'components/Grid/GridContainer.js';
-import GridItem from 'components/Grid/GridItem.js';
 import imagesStyles from "assets/jss/material-kit-react/imagesStyles.js";
 import Spinner from './Spinner';
 import { cardTitle } from "assets/jss/material-kit-react.js";

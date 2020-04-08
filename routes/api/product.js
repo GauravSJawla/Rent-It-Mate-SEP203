@@ -250,20 +250,19 @@ router.put('/:productId', auth, (req, res)=>{
           error: 'Image could not be uploaded'
         })
       }
-      let userId = req.user.id
-      const user = User.findById(userId)
-       /* istanbul ignore next */
-      if(!user){
-        return res.status(400).json({
-          error :  'user not found try with different credentials'
-        })
-      }
+      // let userId = req.user.id
+      // const user = User.findById(userId)
+      //  /* istanbul ignore next */
+      // if(!user){
+      //   return res.status(400).json({
+      //     error :  'user not found try with different credentials'
+      //   })
+      //}
       
       /**
        * check for all fields
        */
       const { name, description, price, category, quantity, shipping } = fields;
-     // console.log(name + ' '+ description+ ' '+ price+' '+ category+ ' '+ quantity+ ' '+ shipping )
       if (!name || !description || !price || !category || !quantity || !shipping ) {
           return res.status(400).json({
               error: 'All fields are required'

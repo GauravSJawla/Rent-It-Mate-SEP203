@@ -18,6 +18,7 @@ import LandingPage from 'views/LandingPage/LandingPage';
 import LoginPage from 'views/LoginPage/LoginPage';
 import RegisterPage from 'views/RegisterPage/RegisterPage';
 import ProductPage from 'views/ProductPage/CreateProduct';
+import UpdateProduct from 'views/ProductPage/UpdateProduct';
 //import ProfilePage from 'views/ProfilePage/ProfilePage';
 import { Provider } from 'react-redux';
 import store from './store';
@@ -79,6 +80,7 @@ const App = () => {
               path='/create-product'
               component={ProductPage}
             />
+            <PrivateRoute exact path='/product/:id' component={UpdateProduct} />
             <Route
               path='/dashboard'
               render={() => (

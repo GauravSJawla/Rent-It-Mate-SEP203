@@ -1,6 +1,7 @@
-import React ,{Fragment }from "react";
+import React ,{Fragment, useState }from "react";
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
+import { Link } from 'react-router-dom';
 // material-ui components
 import { makeStyles } from "@material-ui/core/styles";
 // core components
@@ -27,19 +28,12 @@ const SingleProduct = ({
     auth,
     deleteProduct,
     product : { _id , name , description , price , quantity, shipping ,sold , category, photo } }) =>{
-    console.log('name '+_id+name+' '+description)
       const classes = useStyles();
       
       return(
         <GridItem xs={12} sm={12} md={4}>
         <div className={classes.landingContainer}>
         <Card style={{width: "20rem"}}>
-          {/* <img
-            style={{height: "180px", width: "100%", display: "block"}}
-            className={classes.imgCardTop}
-            src={`http://localhost:5000/api/product/photo`+_id}
-            alt="Card-img-cap"
-          /> */}
           <ShowImage productId={_id}/>
       <CardBody>
       <h4 className={classes.cardTitle}>{name}</h4>
@@ -52,7 +46,13 @@ const SingleProduct = ({
       </div>
        <span style={{padding: "40px"}}>
        <Button color="danger" onClick={e => deleteProduct(_id)}><DeleteIcon/></Button>
-       <Button color="primary"><EditIcon/></Button>
+       <Link to={`/product/${_id}`}> 
+       <Button  color="primary">
+        
+         <EditIcon/>
+       
+       </Button>
+       </Link>
        </span>
         
       </CardBody>
