@@ -7,7 +7,7 @@ import Spinner from '../Dashboard/Spinner';
 import {getProfileById} from '../../actions/profile';
 import { makeStyles } from '@material-ui/core/styles';
 import styles from 'assets/jss/material-kit-react/views/landingPage.js';
-import Delete from '@material-ui/icons/Delete';
+import ExitToApp from '@material-ui/icons/ExitToApp';
 import GridContainer from 'components/Grid/GridContainer.js';
 
 const useStyles = makeStyles(styles);
@@ -28,7 +28,7 @@ const AdminProfileView = (
         <Fragment>
             <div className={classes.landingContainer}>
                 <div className={classes.dashboardTitle}>
-                    {users.length > 0 && users !== null? (users.map(user => (profile.user === user._id ? (
+                    {users.length > 0 && profile != null && users !== null? (users.map(user => (profile.user === user._id ? (
                         <div>
                         <p>First Name: {user.name}</p>
                         <p> Email Id: {user.email}</p>
@@ -50,10 +50,11 @@ const AdminProfileView = (
                     simple
                     component={Link}
                     // to={`/admin-delete-profile/${user._id}`}
+                    to = '/admin-dashboard/all-users'
                     color='primary'
                     size='lg'
                 >
-                    <Delete/>
+                    <ExitToApp/>
                 </Button>
                </div> 
             </div>

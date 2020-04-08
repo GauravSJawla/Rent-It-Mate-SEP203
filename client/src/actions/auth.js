@@ -11,9 +11,11 @@ import {
   CLEAR_PROFILE,
   GET_USERS,
   CLEAR_PROFILES,
-  CLEAR_USERS
+  CLEAR_USERS,
+  PROFILE_ERROR
 } from './types';
 import setAuthToken from '../utils/setAuthToken';
+import { getProfiles } from './profile';
 
 // Load User
 export const loadUser = () => async dispatch => {
@@ -113,6 +115,24 @@ export const getAllUsers = () => async dispatch => {
   
 
 }
+
+// export const adminDeleteUser = userId => async dispatch => {
+//   console.log('inside adminDeleteUser', userId)
+//   if (window.confirm('Are you sure to delete the account of this user?')){
+//     try{
+//       const res = await axios.delete(`/api/users/admin/${userId}`);
+//       dispatch(getAllUsers());
+//       dispatch(getProfiles());
+//     }
+//     catch(err){
+//       dispatch({
+//         type: PROFILE_ERROR,
+//         payload: { status: err }
+//       })
+//     }
+//   }
+  
+// };
 
 // Logout / Clear Profile
 export const logout = () => dispatch => {

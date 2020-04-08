@@ -18,7 +18,7 @@ const ListUsers = ({getAllUsers,getProfiles,auth:{users,loading}, profile: {prof
     useEffect(() => {
       getAllUsers();
       getProfiles();
-    },[getAllUsers]);
+    },[getAllUsers,getProfiles]);
     return(
       // <style>{"table{border:1px solid black;}"}</style>
         <div className={classes.landingContainer}>
@@ -52,17 +52,17 @@ const ListUsers = ({getAllUsers,getProfiles,auth:{users,loading}, profile: {prof
                         ) :(<p></p>)
                       ))):(<p>Users are yet to create a profile</p>)}
                       </td>
-                      <td className={classes.td}>
-                        <Button
+                      {/* <td className={classes.td}> */}
+                         {/* <Button
                               simple
-                              component={Link}
-                              to={`/admin-delete-profile/${user._id}`}
+                              type='submit'
+                              onClick={() => adminDeleteUser(user._id)}
                               color='primary'
                               size='lg'
                             >
                             <Delete/>
-                        </Button>
-                      </td>
+                        </Button>  */}
+                      {/* </td> */}
                     </tbody>
                   ))}
                   </tr>
@@ -81,6 +81,7 @@ const ListUsers = ({getAllUsers,getProfiles,auth:{users,loading}, profile: {prof
 
 ListUsers.propTypes = {
   getAllUsers:PropTypes.func.isRequired,
+  //adminDeleteUser:PropTypes.func.isRequired,
   getProfiles:PropTypes.func.isRequired,
   auth: PropTypes.object.isRequired
 }

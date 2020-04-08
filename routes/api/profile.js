@@ -50,6 +50,7 @@ router.get('/', auth, async (req, res) => {
       .json({ msg: 'Access is allowed only to admin' });    }
    
   } catch (err) {
+    /* istanbul ignore next */
     console.error(err.message);
     res.status(500).send('Server Error');
   }
@@ -61,15 +62,15 @@ router.get('/', auth, async (req, res) => {
 
 router.get('/admin/:user_id', async(req,res) => {
   try{
-    console.log('inside get profile by id ',req.params.user_id )
     const profile = await Profile.findOne({user:req.params.user_id}).populate('users', ['name', 'email']);
-  if(!profile){
-    return res.status(400).json({ msg: 'Profile not found' });
-  }
-  return res.json(profile);
+    if(!profile){
+      return res.status(400).json({ msg: 'Profile not found' });
+    }
+    return res.json(profile);
 
   }
   catch(err){
+    /* istanbul ignore next */
     console.error(err.message);
     res.status(500).send('Server Error');
   }
