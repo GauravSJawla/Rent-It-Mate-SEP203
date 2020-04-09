@@ -43,7 +43,7 @@ export default function CategoryPage() {
                   <CardBody>
                     <CustomInput
                       labelText='Create a category'
-                      id='catagory'
+                      id='category'
                       formControlProps={{
                         fullWidth: true
                       }}
