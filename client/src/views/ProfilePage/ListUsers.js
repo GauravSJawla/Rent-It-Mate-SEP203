@@ -56,7 +56,7 @@ const ListUsers = ({getAllUsers,getProfiles,
                   </Button>
                   <div style={{ display: showProfile ? "block" : "none" }}>
                     <p >User's current Address:
-                        {profiles.map(profile=> (profileId===profile.user ? (
+                        {profiles.map(profile => (profileId === profile.user ? (
                         <div>
                           <p> {profile.address.address1}, {profile.address.address2}, {profile.address.city} </p>
                           <p> {profile.address.state}, {profile.address.country}, {profile.address.zipcode}</p>
@@ -91,7 +91,7 @@ const ListUsers = ({getAllUsers,getProfiles,
                 <TableBody>
                   {users.length > 0 ? (users.map(user => (
                     <TableRow>
-                      <TableCell align="left" className={classes.td} component="th" scope="row">{user.name}</TableCell>
+                      <TableCell align="left" className={classes.td} scope="row">{user.name}</TableCell>
                       <TableCell align="left" className={classes.td}>{user.email}</TableCell>
                     
                   {profiles.length > 0 ? (

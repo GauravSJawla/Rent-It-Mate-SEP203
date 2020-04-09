@@ -31,8 +31,6 @@ describe('create-profile page', () => {
                     cy.url({timeout:5000}).should('includes','/dashboard')
                 })
         })
-        cy.get('a[href="/dashboard/category"]').click()
-        cy.get('h4').contains('Create a Category')
         cy.get('a[href="/dashboard/user"]').click()
         cy.contains('Create Profile').click()
         cy.url({timeout:5000}).should('includes','/create-profile')

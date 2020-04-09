@@ -15,14 +15,29 @@ describe('admin dashboard', () => {
 
     it('should display list of users on selecting users from the page', () =>{
         cy.contains('Users').click()
-        cy.contains('List Of Users')
-        cy.get('table').contains('td','Mercy')
-        cy.get('table').contains('td','jayaramachandran20@gmail.com')
+        cy.get('h3').contains('List of Users')
+        cy.get('tbody tr').should('have.length.greaterThan', 0)
+        cy.get('tbody tr').should('not.have.text','No users found.....')
     })
 
     it('should display the particular user profile when selected', () => {
-        
-        
+        cy.get('tbody tr').eq(4).as('userRow')
+        cy.get('@userRow').get('td').eq(8).get('button[type="submit"]').first().click()
+        cy.contains("User's current Address:") 
+        cy.get('@userRow').get('td').eq(8).get('button[type="submit"]').first().click()
+        cy.get('tbody tr').should('not.have.text',"User's current Address:")      
+    })
+
+    it('should display list of categories on selecting categories from the page', () => {
+        cy.contains('Categories').click()
+        cy.get('h3').contains('Available Categories')
+        cy.get('tbody th').should('have.length.greaterThan', 0)
+        cy.get('tbody tr').should('not.have.text', 'No categories found....')
+    })
+
+    it('should redirect to add category page on selecting create category', () => {
+        cy.contains('Create Category').click()
+        cy.url({timeout : 5000}).should('includes', '/add-category')
     })
 
 })

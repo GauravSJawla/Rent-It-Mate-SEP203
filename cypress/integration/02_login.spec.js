@@ -42,6 +42,7 @@ describe('login page', () => {
                     token:null,
                     isAuthenticated:false,
                     loading:false,
+                    users:[],
                     user:null
                 },
                 profile:{
@@ -50,7 +51,13 @@ describe('login page', () => {
                     loading:false,
                     error:null
                 },
-                alert:[]
+                alert:[],
+                category:{
+                    category:null,
+                    categories:[],
+                    loading:true,
+                    error:{}
+                }
             })
             cy.url({timeout:5000}).should('includes','http://localhost:3000')
             cy.get('a').contains('Login')

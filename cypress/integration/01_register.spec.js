@@ -58,6 +58,7 @@ describe('sign up user', () => {
                 token:null,
                 isAuthenticated:false,
                 loading:false,
+                users:[],
                 user:null
             },
             profile:{
@@ -66,7 +67,13 @@ describe('sign up user', () => {
                 loading:true,
                 error:{}
             },
-            alert:[]
+            alert:[],
+            category:{
+                category:null,
+                categories:[],
+                loading:true,
+                error:{}
+            }
         })
         // cy.window().its('store').invoke('getState').its('alert.msg').
         //             should('equal','Passwords do not match')
