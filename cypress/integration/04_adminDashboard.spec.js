@@ -20,7 +20,8 @@ describe('admin dashboard', () => {
         cy.get('table').contains('td','jayaramachandran20@gmail.com')
     })
 
-    it('should display the particular user profile when selected', () =>{
+    it('should display the particular user profile when selected', () => {
+        
         
     })
 

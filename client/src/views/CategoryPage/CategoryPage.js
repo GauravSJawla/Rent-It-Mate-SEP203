@@ -2,7 +2,7 @@
 import React, { useState } from 'react';
 // @material-ui/core components
 import { makeStyles } from '@material-ui/core/styles';
-import Icon from '@material-ui/core/Icon';
+
 // @material-ui/icons
 // core components
 import Footer from 'components/Footer/Footer.js';

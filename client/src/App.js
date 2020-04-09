@@ -17,7 +17,7 @@ import PrivateRoute from 'components/Routing/PrivateRoute';
 import LandingPage from 'views/LandingPage/LandingPage';
 import LoginPage from 'views/LoginPage/LoginPage';
 import RegisterPage from 'views/RegisterPage/RegisterPage';
-import ProductPage from 'views/ProductPage/Product';
+//import ProductPage from 'views/ProductPage/Product';
 //import ProfilePage from 'views/ProfilePage/ProfilePage';
 import { Provider } from 'react-redux';
 import store from './store';

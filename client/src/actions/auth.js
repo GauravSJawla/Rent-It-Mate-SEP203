@@ -11,11 +11,11 @@ import {
   CLEAR_PROFILE,
   GET_USERS,
   CLEAR_PROFILES,
-  CLEAR_USERS,
-  PROFILE_ERROR
+  CLEAR_USERS
+  //PROFILE_ERROR
 } from './types';
 import setAuthToken from '../utils/setAuthToken';
-import { getProfiles } from './profile';
+//import { getProfiles } from './profile';
 
 // Load User
 export const loadUser = () => async dispatch => {

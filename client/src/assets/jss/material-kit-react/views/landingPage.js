@@ -64,6 +64,7 @@ const landingPageStyle = {
     textDecoration: 'none'
   },
   table:{
+    minWidth: 400,
     borderWidth: '0 px',
     backgroundColor: 'white',
     align:'left'
@@ -75,16 +76,9 @@ const landingPageStyle = {
     borderColor:'black',
     fontSize:'normal'
   },
-  tr: {
-    borderBottom: '1px solid #e7e7e7',
-    fontSize: '14px',
-    borderStyle:'dotted',
-    borderColor:'black'
-  },
 th:{
     fontWeight: '700',
     padding: '0 20px',
-    borderStyle: 'dotted',
     borderColor:'black',
     fontSize:'bold'
   },

@@ -10,7 +10,7 @@ import { connect } from 'react-redux';
 import Edit from '@material-ui/icons/Edit'
 import Delete from '@material-ui/icons/Delete';
 import { TableHead, Table, TableRow, TableBody, TableCell } from '@material-ui/core';
-import { isFunctionDeclaration } from 'typescript';
+import Paper from '@material-ui/core/Paper';
 
 const useStyles = makeStyles(styles);
 const ViewCategories = ({getAllCategories, category:{categories, loading}}) => {
@@ -26,12 +26,12 @@ const ViewCategories = ({getAllCategories, category:{categories, loading}}) => {
           {loading ? (<Spinner/>) : (
                <div className= {classes.dashboardSubTitle}>
               {categories.length > 0 ? (
-                  <Table className={classes.table} aria-label='simple-table'>
+                  <Table className={classes.table} aria-label='simple-table' component={Paper}>
                     <TableHead>
                         <TableRow>
                              <TableCell align="left" className={classes.td}>CATEGORY NAME</TableCell>
-                             <TableCell align="left" className={classes.td}>UPDATE CATEGORY</TableCell>
                              <TableCell align="left" className={classes.td}>DELETE CATEGORY</TableCell>
+                             <TableCell align="left" className={classes.td}>UPDATE CATEGORY</TableCell>
                         </TableRow>
                     </TableHead>
                       {categories.map(category => (

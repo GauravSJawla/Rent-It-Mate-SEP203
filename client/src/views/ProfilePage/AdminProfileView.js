@@ -8,7 +8,7 @@ import {getProfileById} from '../../actions/profile';
 import { makeStyles } from '@material-ui/core/styles';
 import styles from 'assets/jss/material-kit-react/views/landingPage.js';
 import ExitToApp from '@material-ui/icons/ExitToApp';
-import GridContainer from 'components/Grid/GridContainer.js';
+import AdminDashboard from 'views/Dashboard/AdminDashboard';
 
 const useStyles = makeStyles(styles);
 const AdminProfileView = (
@@ -26,9 +26,11 @@ const AdminProfileView = (
         <Spinner/>
     ) : (
         <Fragment>
-            <div className={classes.landingContainer}>
-                <div className={classes.dashboardTitle}>
-                    {users.length > 0 && profile != null && users !== null? (users.map(user => (profile.user === user._id ? (
+            <AdminDashboard>
+            <div style={{ flex: 1 }}>
+              <div className={classes.content}>
+                <div className={classes.innerContainer}>
+                 {users.length > 0 && profile != null && users !== null? (users.map(user => (profile.user === user._id ? (
                         <div>
                         <p>First Name: {user.name}</p>
                         <p> Email Id: {user.email}</p>
@@ -55,9 +57,12 @@ const AdminProfileView = (
                     size='lg'
                 >
                     <ExitToApp/>
-                </Button>
-               </div> 
-            </div>
+                </Button> 
+                </div>
+                </div>
+                </div>
+            </AdminDashboard>
+           
         </Fragment>
     )
     

@@ -9,16 +9,13 @@ import styles from 'assets/jss/material-kit-react/views/dashboardPage.js';
 // core components
 import Sidebar from 'components/Sidebar/Sidebar.js';
 import People from '@material-ui/icons/People';
-import AddIcon from '@material-ui/icons/Add';
 import List from '@material-ui/icons/List';
 
 //import bgImage from 'assets/img/sidebar-2.jpg';
 import logo from 'assets/img/reactlogo.png';
 import ListUsers from 'views/ProfilePage/ListUsers';
 import ViewCategories from 'views/CategoryPage/ViewCategories';
-import CategoryPage from  'views/CategoryPage/CategoryPage';
 //import adminDashboardRoutes from '../../components/Routing/adminDashboardRoutes';
-import { whiteColor } from 'assets/jss/material-dashboard-react';
 
 const useStyles = makeStyles(styles);
 

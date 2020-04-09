@@ -10,14 +10,12 @@ import TableCell from '@material-ui/core/TableCell';
 import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
 import Paper from '@material-ui/core/Paper';
-import TablePagination from '@material-ui/core/TablePagination';
 import {getProfiles} from '../../actions/profile';
 import {getAllUsers} from '../../actions/auth';
 import Spinner from '../Dashboard/Spinner';
-import Delete from '@material-ui/icons/Delete';
 import { Link } from 'react-router-dom';
 import Button from 'components/CustomButtons/Button.js';
-import Explore from '@material-ui/icons/Explore';
+import Info from '@material-ui/icons/Info';
 
 const useStyles = makeStyles(styles);
 
@@ -28,19 +26,38 @@ const ListUsers = ({getAllUsers,getProfiles,auth:{users,loading}, profile: {prof
       getProfiles();
     },[getAllUsers,getProfiles]);
 
-    const rows = [
-
-    ]
+    const profileIds = [
+      profiles.map(profile => profile.user)
+    ];
+    const getProfileData = (profileId) => {
+      if(profileIds[0].includes(profileId)){
+        return (
+                <Button
+                      simple
+                      component={Link}
+                      to={`/admin-view-profile/${profileId}`}
+                      color='primary'
+                      size='lg'
+                  >
+                    <Info/>
+                  </Button>
+              )
+      }
+      else{
+        return(
+          <p>User is yet to create a profile</p>
+        )
+      }
+    }
     return(
-      // <style>{"table{border:1px solid black;}"}</style>
         <div className={classes.landingContainer}>
           <div className={classes.dashboardTitle}>
             <h3 align="center">List of Users</h3>
         </div>
           {loading ? (<Spinner/>) :(
             
-              <Table className={classes.table} aria-label="simple table">
-                <TableHead>
+              <Table className={classes.table} aria-label="a dense table" component = {Paper}>
+                <TableHead className={classes.th}>
                   <TableRow>
                     <TableCell align="left" className={classes.td}>USER NAME</TableCell>
                     <TableCell align="left" className={classes.td}>EMAIL</TableCell>
@@ -54,24 +71,14 @@ const ListUsers = ({getAllUsers,getProfiles,auth:{users,loading}, profile: {prof
                       <TableCell align="left" className={classes.td} component="th" scope="row">{user.name}</TableCell>
                       <TableCell align="left" className={classes.td}>{user.email}</TableCell>
                     
-                  {profiles.length > 0 && profiles.map(profile => (
-                    profile.user === user._id ? (
-                      <TableCell align="left" className={classes.td}><Button
-                              simple
-                              component={Link}
-                              to={`/admin-view-profile/${user._id}`}
-                              color='primary'
-                              size='lg'
-                            >
-                            <Explore/>
-                        </Button></TableCell>
-                    ) : (
-                      <br/>
-                    ))
+                  {profiles.length > 0 ? (
+                    <TableCell align="left" className={classes.td}>{getProfileData(user._id)}</TableCell>
+                  ) : (<p> No profiles found..</p>)}
+                    </TableRow>
+                  ))
+                  
+                  ) : (<p>No users found.....</p>)}
                     
-                  )}
-                  </TableRow>
-                  ))) : (<p>No users found.....</p>)}
                 </TableBody>
               </Table>
             
