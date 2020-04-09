@@ -1,12 +1,12 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React, { useEffect } from 'react';
+import { Link, Redirect } from 'react-router-dom';
 import propTypes from 'prop-types';
 import { connect } from 'react-redux';
 // nodejs library that concatenates classes
 import classNames from 'classnames';
 // @material-ui/core components
 import { makeStyles } from '@material-ui/core/styles';
-
+import store from '../../store';
 // enhancement packages
 
 // core components
@@ -21,11 +21,17 @@ import styles from 'assets/jss/material-kit-react/views/landingPage.js';
 
 // Sections for this page
 import Carousel from 'views/Components/Sections/SectionCarousel';
+//import { loadUser } from 'actions/auth';
 
 const useStyles = makeStyles(styles);
 
-const LandingPage = ({ isAuthenticated }) => {
+const LandingPage = ({ auth:{user,isAuthenticated,loading} }) => {
   const classes = useStyles();
+  // useEffect(() =>{
+  //   console.log('inside useeffect')
+  //   store.dispatch(loadUser());
+  //   console.log('user role',user)
+  // },[]);
   const guestRender = (
     <Button
       color='danger'
@@ -39,7 +45,8 @@ const LandingPage = ({ isAuthenticated }) => {
       Register
     </Button>
   );
-  return (
+  return !loading && user && user.role==="admin" ? (<Redirect to='/admin-Dashboard'/>) : (
+    //return(
     <div>
       <Parallax filter image={require('assets/img/landing-bg.jpg')}>
         <div className={classes.landingContainer}>
@@ -75,15 +82,17 @@ const LandingPage = ({ isAuthenticated }) => {
 
       
     </div>
+    
   );
 };
 
 LandingPage.propTypes = {
-  isAuthenticated: propTypes.bool
+  //isAuthenticated: propTypes.bool
+  auth:propTypes.object.isRequired
 };
 
 const mapStateToProps = state => ({
-  isAuthenticated: state.auth.isAuthenticated
+  auth:state.auth
 });
 
 export default connect(mapStateToProps)(LandingPage);
