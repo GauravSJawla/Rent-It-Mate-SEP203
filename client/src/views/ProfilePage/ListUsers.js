@@ -1,4 +1,4 @@
-import React,{useEffect} from 'react';
+import React,{Fragment,useEffect} from 'react';
 import styles from 'assets/jss/material-kit-react/views/landingPage.js';
 import { makeStyles } from '@material-ui/core/styles';
 import { connect } from 'react-redux';
@@ -13,34 +13,58 @@ import Paper from '@material-ui/core/Paper';
 import {getProfiles} from '../../actions/profile';
 import {getAllUsers} from '../../actions/auth';
 import Spinner from '../Dashboard/Spinner';
-import { Link } from 'react-router-dom';
 import Button from 'components/CustomButtons/Button.js';
 import Info from '@material-ui/icons/Info';
 
 const useStyles = makeStyles(styles);
 
-const ListUsers = ({getAllUsers,getProfiles,auth:{users,loading}, profile: {profiles}}) => {
+const ListUsers = ({getAllUsers,getProfiles,
+            auth:{users,loading}, 
+            profile: {profiles}}) => {
+
+    const [showProfile,setShowProfile] = React.useState(false);
     const classes = useStyles();
+    //Retrieve all users and profiles to display
     useEffect(() => {
       getAllUsers();
       getProfiles();
     },[getAllUsers,getProfiles]);
 
+    //ProfileIds array to compare the users and their profiles
     const profileIds = [
       profiles.map(profile => profile.user)
     ];
+
+    // Toggle state on onclick to show profile of the users
+    const toggleVisibility = ()=>{
+      !showProfile ? setShowProfile(true) : setShowProfile(false)
+    }
+
+    //To display info button if there is a profile for corresponding user
     const getProfileData = (profileId) => {
       if(profileIds[0].includes(profileId)){
         return (
+            <Fragment>
                 <Button
                       simple
-                      component={Link}
-                      to={`/admin-view-profile/${profileId}`}
+                      type="submit"
                       color='primary'
                       size='lg'
-                  >
+                      onClick={()=> toggleVisibility()}
+                      >
                     <Info/>
                   </Button>
+                  <div style={{ display: showProfile ? "block" : "none" }}>
+                    <p >User's current Address:
+                        {profiles.map(profile=> (profileId===profile.user ? (
+                        <div>
+                          <p> {profile.address.address1}, {profile.address.address2}, {profile.address.city} </p>
+                          <p> {profile.address.state}, {profile.address.country}, {profile.address.zipcode}</p>
+                        </div>) : (<p></p>)))}
+                    </p>
+                  </div>
+                </Fragment>
+                   
               )
       }
       else{
@@ -49,13 +73,13 @@ const ListUsers = ({getAllUsers,getProfiles,auth:{users,loading}, profile: {prof
         )
       }
     }
+
+    //Render the component
     return(
         <div className={classes.landingContainer}>
-          <div className={classes.dashboardTitle}>
-            <h3 align="center">List of Users</h3>
-        </div>
-          {loading ? (<Spinner/>) :(
-            
+            <div className={classes.dashboardTitle}>
+              <h3 align="center">List of Users</h3>
+            {loading ? (<Spinner/>) :( 
               <Table className={classes.table} aria-label="a dense table" component = {Paper}>
                 <TableHead className={classes.th}>
                   <TableRow>
@@ -65,7 +89,6 @@ const ListUsers = ({getAllUsers,getProfiles,auth:{users,loading}, profile: {prof
                   </TableRow>
                 </TableHead>
                 <TableBody>
-                  
                   {users.length > 0 ? (users.map(user => (
                     <TableRow>
                       <TableCell align="left" className={classes.td} component="th" scope="row">{user.name}</TableCell>
@@ -75,24 +98,17 @@ const ListUsers = ({getAllUsers,getProfiles,auth:{users,loading}, profile: {prof
                     <TableCell align="left" className={classes.td}>{getProfileData(user._id)}</TableCell>
                   ) : (<p> No profiles found..</p>)}
                     </TableRow>
-                  ))
-                  
-                  ) : (<p>No users found.....</p>)}
-                    
+                  ))) : (<p>No users found.....</p>)}  
                 </TableBody>
-              </Table>
-            
+              </Table>  
           )}
-
-
-        </div>
-        
+              </div>
+        </div>   
     )
 }
 
 ListUsers.propTypes = {
   getAllUsers:PropTypes.func.isRequired,
-  //adminDeleteUser:PropTypes.func.isRequired,
   getProfiles:PropTypes.func.isRequired,
   auth: PropTypes.object.isRequired
 }
@@ -102,4 +118,5 @@ const mapStateToProps = state => ({
   profile:state.profile
 })
 
-export default connect(mapStateToProps,{getAllUsers,getProfiles})(ListUsers);
+export default connect(mapStateToProps,{getAllUsers,
+                      getProfiles})(ListUsers);
