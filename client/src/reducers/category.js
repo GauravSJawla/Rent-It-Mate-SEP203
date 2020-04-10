@@ -1,4 +1,5 @@
 import {
+    GET_CATEGORY,
     GET_CATEGORIES,
     CATEGORY_ERROR
 } from '../actions/types';
@@ -13,6 +14,13 @@ const initialstate = {
 export default function (state = initialstate,action) {
     const {type,payload} = action;
     switch(type){
+        case GET_CATEGORY:
+            return{
+                ...state,
+                category: payload,
+                loading : false,
+                error:{}
+            }
         case GET_CATEGORIES:
             return{
                 ...state,
