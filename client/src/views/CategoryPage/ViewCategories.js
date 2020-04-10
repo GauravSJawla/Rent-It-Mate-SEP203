@@ -11,13 +11,19 @@ import Edit from '@material-ui/icons/Edit'
 import Delete from '@material-ui/icons/Delete';
 import { TableHead, Table, TableRow, TableBody, TableCell } from '@material-ui/core';
 import Paper from '@material-ui/core/Paper';
+import { deleteCategory } from '../../actions/category';
 
 const useStyles = makeStyles(styles);
-const ViewCategories = ({getAllCategories, category:{categories, loading}}) => {
+const ViewCategories = ({getAllCategories, deleteCategory,
+                 category:{categories, loading},
+                    }) => {
+
     const classes = useStyles();
     useEffect(() => {
+        console.log('insid view categories useeffect')
         getAllCategories();
     },[getAllCategories]);
+
     return(
         <div className={classes.landingContainer}>
           <div className={classes.dashboardTitle}>
@@ -42,10 +48,10 @@ const ViewCategories = ({getAllCategories, category:{categories, loading}}) => {
                           <TableCell align="left" className={classes.td}>
                               <Button
                                     simple
-                                    component={Link}
-                                    to={`/delete-category/${category._id}`}
+                                    type='submit'
                                     color='primary'
                                     size='lg'
+                                    onClick={() => deleteCategory(category._id)}
                                 >
                                 <Delete/>
                                 </Button>
@@ -81,11 +87,15 @@ const ViewCategories = ({getAllCategories, category:{categories, loading}}) => {
 
 ViewCategories.propTypes = {
     getAllCategories:PropTypes.func.isRequired,
+    deleteCategory:PropTypes.func.isRequired,
     category: PropTypes.object.isRequired
 }
+    
 
 const mapStateToProps = state => ({
     category:state.category
 })
 
-export default connect(mapStateToProps,{getAllCategories})(ViewCategories);
+export default connect(mapStateToProps,
+    { getAllCategories, deleteCategory})
+    (ViewCategories);
