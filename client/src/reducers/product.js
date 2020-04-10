@@ -5,7 +5,8 @@ import{
     GET_PRODUCT,
     PRODUCT_DELETED,
     UPDATE_PRODUCT,
-    GET_CURRENT_PRODUCT_ID
+    GET_CURRENT_PRODUCT_ID,
+    GET_ALL_PRODUCTS
 } from '../actions/types';
 
 const initalState = {
@@ -26,6 +27,7 @@ export default function (state = initalState, action){
                 productId: payload,
                 loading:false
             }
+        case GET_ALL_PRODUCTS:
         case GET_PRODUCTS:
             return{
                 ...state,

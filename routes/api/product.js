@@ -27,10 +27,11 @@ router.get('/getMyProducts',auth ,  async (req, res) => {
 });
 
 /**
- * sell / arrival
- * by sell = /products?sortBy=sold&order=desc&limit=4
- * by arrival = /products?sortBy=createdAt&order=desc&limit=4
- * if no params are sent, then all products are returned
+ * @route api/product/products
+ *  sell / arrival
+ * @description :by sell = /products?sortBy=sold&order=desc&limit=4
+ *    by arrival = /products?sortBy=createdAt&order=desc&limit=4
+ *    if no params are sent, then all products are returned
  */
 router.get("/products", async (req, res) => {
   let order = req.query.order ? req.query.order : 'asc';
@@ -53,8 +54,9 @@ router.get("/products", async (req, res) => {
       });
 });
 /**
- * it will find the products based on the req product category
+ * @description : it will find the products based on the req product category
  * other products that has the same category, will be returned
+ * @access public
  */
 
 router.get ( "/products/related/:productId",(req, res) => {
@@ -250,7 +252,7 @@ router.put('/:productId', auth, (req, res)=>{
           error: 'Image could not be uploaded'
         })
       }
-      // let userId = req.user.id
+       let userId = req.user.id
       // const user = User.findById(userId)
       //  /* istanbul ignore next */
       // if(!user){

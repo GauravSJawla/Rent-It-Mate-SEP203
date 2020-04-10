@@ -5,7 +5,8 @@ import{
     GET_PRODUCTS,
     PRODUCT_DELETED,
     UPDATE_PRODUCT,
-    GET_PRODUCT
+    GET_PRODUCT,
+    GET_ALL_PRODUCTS
 } from './types';
 /**
  * 
@@ -43,6 +44,43 @@ export const createProduct = (formData, history, edit = false) => async dispatch
         })
     }
 };
+/**
+ * @description This function is used to get a single product from the backend by using its
+ *              product id.
+ * @param {*} id 
+ */
+export const getSingleProduct = id => async dispatch => {
+  try {
+    const res = await axios.get('/api/product/'+id);
+    dispatch({
+      type: GET_PRODUCT,
+      payload: res.data
+    });
+  } catch (err) {
+    dispatch({
+      type: PRODUCT_ERROR,
+      payload: { msg: err.response.statusText, status: err.response.status}
+    });
+  }
+}
+/**
+ * @description This function is used to get all products from the backend.
+ *  
+ */
+export const getAllProducts = () => async dispatch => {
+  try {
+    const res = await axios.get('/api/product/products');
+    dispatch({
+      type: GET_ALL_PRODUCTS,
+      payload: res.data
+    });
+  } catch (err) {
+    dispatch({
+      type: PRODUCT_ERROR,
+      payload: { msg: err.response.statusText, status: err.response.status}
+    });
+  }
+}
 
 /**
  * @description : This method brings user related products from the backend and stores them in
@@ -84,25 +122,7 @@ export const getUserProducts = () => async dispatch => {
       });
     }
   };
-/**
- * @description This function is used to get a single product from the backend by using its
- *              product id.
- * @param {*} id 
- */
-export const getSingleProduct = id => async dispatch => {
-  try {
-    const res = await axios.get('/api/product/'+id);
-    dispatch({
-      type: GET_PRODUCT,
-      payload: res.data
-    });
-  } catch (err) {
-    dispatch({
-      type: PRODUCT_ERROR,
-      payload: { msg: err.response.statusText, status: err.response.status}
-    });
-  }
-}
+
 /**
  * 
  * @param {*} formData 
