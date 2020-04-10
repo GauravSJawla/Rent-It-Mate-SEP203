@@ -63,6 +63,26 @@ const landingPageStyle = {
     minHeight: '32px',
     textDecoration: 'none'
   },
+  table:{
+    minWidth: 400,
+    borderWidth: '0 px',
+    backgroundColor: 'white',
+    align:'left'
+  },
+  td: {
+    fontWeight: '500',
+    color: 'black',
+    padding: '0 20px',
+    borderColor:'black',
+    fontSize:'normal'
+  },
+th:{
+    fontWeight: '700',
+    padding: '0 20px',
+    borderColor:'black',
+    fontSize:'bold'
+  },
+
   dashboardSubtitle: {
     color: 'black',
     fontSize: '1.313rem',

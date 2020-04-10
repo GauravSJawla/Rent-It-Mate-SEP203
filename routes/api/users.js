@@ -9,6 +9,8 @@ const nodemailer = require('nodemailer');
 const sendgridTransport = require('nodemailer-sendgrid-transport');
 //Import user model
 const Users = require('../../models/Users');
+const auth = require('../../middleware/auth');
+const Profile = require('../../models/Profile');
 const frontend = process.env.PORT || 3000;
 const transporter = nodemailer.createTransport(
   sendgridTransport({
@@ -19,9 +21,60 @@ const transporter = nodemailer.createTransport(
 );
 
 // @route   GET api/users
-// @desc    Test route
-// @access  Public
-router.get('/', (req, res) => res.send('Users route'));
+// @desc    retrieve all users
+// @access  admin
+router.get('/', auth, async (req, res) => {
+  try {
+    const user = await Users.findOne({_id:req.user.id})
+    if(user.username == 'admin'){
+      const users = await Users.find({role:'user'}).populate('profile',['address'])
+      res.json(users);
+    }
+    else
+    {
+      return res
+      .status(400)
+      .json({ msg: 'Access is allowed only to admin' });    }
+    
+  } catch (err) {
+    console.error(err.message);
+    res.status(500).send('Server Error');
+  }
+});
+
+//@route delete /api/users/admin/:userId
+//@desc Delete user by admin
+//@access admin
+
+// router.delete('/admin/:user_id', auth, async(req,res) => {
+//   try{
+//     const admin = await Users.findOne({_id:req.user.id});
+//     if(admin.username === 'admin'){
+//       const userProfile = await Profile.findOne({user:req.params.user_id});
+//     if(userProfile){
+//       console.log('inside profile retrieved')
+//         await Profile.deleteOne(userProfile);
+//     }
+//     const user = await Users.findOne({_id: req.params.user_id});
+//     if(user){
+//       console.log('inside admin delete user retrieved')
+//         await Users.deleteOne(user);
+//     }
+//     res.json({msg: 'User removed'});
+
+//     }
+//     else{
+//       return res.json('Only admin is allowed to access this route');
+//     }
+    
+// }
+// catch(err){
+//   //  console.log(err.message);
+
+// /* istanbul ignore next */
+//     res.status(500).send('server error');  
+// }  
+// });
 
 //@route Post api/users
 //@desc Register User

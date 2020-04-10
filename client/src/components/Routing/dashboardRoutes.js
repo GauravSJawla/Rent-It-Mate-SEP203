@@ -2,7 +2,7 @@
 import Person from '@material-ui/icons/Person';
 import AddIcon from '@material-ui/icons/Add';
 
-// core components/views for Admin layout
+// core components/views for layout
 import DashboardProfile from 'views/Dashboard/DashboardProfile';
 //import CreateProfile from 'views/ProfilePage/CreateProfile';
 //import EditProfile from 'views/ProfilePage/EditProfile';
@@ -40,5 +40,4 @@ const dashboardRoutes = [
     layout: '/dashboard'
   }
 ];
-
 export default dashboardRoutes;

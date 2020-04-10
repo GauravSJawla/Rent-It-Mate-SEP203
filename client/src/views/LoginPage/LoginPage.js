@@ -75,6 +75,7 @@ const LoginPage = ({
     if (user.role === 'admin') {
       return <Redirect to='/admin-Dashboard' />;
     }
+    //else redirect to landing page
     return <Redirect to='/' />;
   }
 
