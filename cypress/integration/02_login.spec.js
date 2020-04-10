@@ -44,35 +44,36 @@ describe('login page', () => {
       });
   });
 
-  it('redirects to landing page on log out', () => {
-    cy.contains('Profile')
-      .click()
-      .then(() => {
-        cy.get('a')
-          .contains('Logout')
-          .click();
-        cy.window()
-          .its('store')
-          .invoke('getState')
-          .should('deep.equal', {
-            auth: {
-              token: null,
-              isAuthenticated: false,
-              loading: false,
-              user: null
-            },
-            profile: {
-              profile: null,
-              profiles: [],
-              loading: false,
-              error: null
-            },
-            alert: []
-          });
-        cy.url({ timeout: 5000 }).should('includes', 'http://localhost:3000');
-        cy.get('a').contains('Login');
-      });
-  });
+    it('redirects to landing page on log out', () => {
+        cy.contains('Profile').click().then(() => {
+            cy.get('a').contains('Logout').click()
+            cy.window().its('store').invoke('getState').should('deep.equal',{
+                auth:{
+                    token:null,
+                    isAuthenticated:false,
+                    loading:false,
+                    users:[],
+                    user:null
+                },
+                profile:{
+                    profile:null,
+                    profiles:[],
+                    loading:false,
+                    error:null
+                },
+                alert:[],
+                category:{
+                    category:null,
+                    categories:[],
+                    loading:true,
+                    error:{}
+                }
+            })
+            cy.url({timeout:5000}).should('includes','http://localhost:3000')
+            cy.get('a').contains('Login')
+        })
+        
+    })
 
   it('redirects to admin dashboard on admin login', () => {
     cy.visit('http://localhost:3000/login');

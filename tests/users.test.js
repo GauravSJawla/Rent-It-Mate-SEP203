@@ -92,6 +92,33 @@ describe('test user sign up', () => {
     );
   });
 
+     it('should not let normal users to access the list of all users', async() => {
+         const response = await request.post('/api/auth')
+                         .send({
+                             username:'mercy',
+                             password:'gentle'
+                         }).expect(200);
+        const token = response.body.token;
+        const res = await request.get('/api/users').
+                    set('x-auth-token', token).expect(400);
+        return expect(JSON.stringify(res.body)).toMatch('Access is allowed only to admin');
+
+     } )
+
+     it('should let admin to access the list of all users', async() => {
+        const response = await request.post('/api/auth')
+                        .send({
+                            username:'admin',
+                            password:'admin'
+                        }).expect(200);
+       const token = response.body.token;
+       const res = await request.get('/api/users').
+                   set('x-auth-token', token).expect(200);
+       return expect(JSON.stringify(res.body)).toMatch('username');
+
+    } )
+
+
   it('should give an error if email already exists', async () => {
     const response = await request
       .post('/api/users')

@@ -8,7 +8,7 @@ import {
 } from 'react-router-dom';
 import 'assets/scss/material-kit-react.scss?v=1.8.0';
 
-import dashboardRoutes from './dashboardRoutes';
+import dashboardRoutes from './components/Routing/dashboardRoutes';
 
 // pages for this product
 import Header from 'components/Header/Header';
@@ -17,7 +17,7 @@ import PrivateRoute from 'components/Routing/PrivateRoute';
 import LandingPage from 'views/LandingPage/LandingPage';
 import LoginPage from 'views/LoginPage/LoginPage';
 import RegisterPage from 'views/RegisterPage/RegisterPage';
-import ProductPage from 'views/ProductPage/Product';
+//import ProductPage from 'views/ProductPage/Product';
 //import ProfilePage from 'views/ProfilePage/ProfilePage';
 import { Provider } from 'react-redux';
 import store from './store';
@@ -27,8 +27,10 @@ import Dashboard from 'views/Dashboard/Dashboard';
 import EmailVerifyPage from 'views/EmailVerifyPage/EmailVerifyPage';
 import CreateProfile from 'views/ProfilePage/CreateProfile';
 import EditProfile from 'views/ProfilePage/EditProfile';
-import adminDashboard from 'views/Dashboard/AdminDashboard'
+import AdminDashboard from 'views/Dashboard/AdminDashboard';
 import Alert from './components/Layout/Alert';
+import CategoryPage from './views/CategoryPage/CategoryPage';
+import UpdateCategoryPage from './views/CategoryPage/UpdateCategoryPage';
 
 const switchRoutes = (
   <Switch>
@@ -75,15 +77,24 @@ const App = () => {
               component={CreateProfile}
             />
             <PrivateRoute exact path='/edit-profile' component={EditProfile} />
-            <PrivateRoute
+            {/* <PrivateRoute
               exact
               path='/create-product'
               component={ProductPage}
-            />
+            /> */}
             <PrivateRoute
-            exact
-            path='/admin-dashboard'
-            component={adminDashboard}
+                path='/admin-dashboard'
+                component={AdminDashboard}
+              />
+            <PrivateRoute
+              exact
+              path='/add-category'
+              component={CategoryPage}
+            />
+          <PrivateRoute
+              exact
+              path='/update-category/:id'
+              component={UpdateCategoryPage}
             />
             <Route
               path='/dashboard'

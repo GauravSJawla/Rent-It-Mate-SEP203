@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { Link, Redirect } from 'react-router-dom';
 import propTypes from 'prop-types';
 import { connect } from 'react-redux';
@@ -6,7 +6,7 @@ import { connect } from 'react-redux';
 import classNames from 'classnames';
 // @material-ui/core components
 import { makeStyles } from '@material-ui/core/styles';
-import store from '../../store';
+
 // enhancement packages
 
 // core components
@@ -27,11 +27,6 @@ const useStyles = makeStyles(styles);
 
 const LandingPage = ({ auth:{user,isAuthenticated,loading} }) => {
   const classes = useStyles();
-  // useEffect(() =>{
-  //   console.log('inside useeffect')
-  //   store.dispatch(loadUser());
-  //   console.log('user role',user)
-  // },[]);
   const guestRender = (
     <Button
       color='danger'
