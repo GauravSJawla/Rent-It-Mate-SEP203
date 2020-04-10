@@ -20,17 +20,22 @@ const styles = {
 const useStyles = makeStyles(styles);
 
 const SingleProductLandingPage = ({
-    auth,
+    auth: { isAuthenticated , loading},
     product : { _id , name , description , price , quantity, shipping ,sold , category, photo } }) =>{
       const classes = useStyles();
       
+      const onClickHandle = () =>{
+        if(!isAuthenticated){
+          
+        }
+      }
       return(
         <GridItem xs={12} sm={12} md={4}>
         <div className={classes.landingContainer}>
         <Card style={{width: "20rem"}}>
           <ShowImage productId={_id}/>
       <CardBody>
-      <h4 className={classes.cardTitle}>{name}</h4>
+      <h3 className={classes.cardTitle}>{name}</h3>
       <p>{description}</p>
       <div>
       <p>Price : {price}</p>
@@ -39,7 +44,7 @@ const SingleProductLandingPage = ({
       {/* <p>Sold: {sold}</p> */}
       </div>
        <span style={{padding: "40px"}}>
-       <Button color="danger"><AddShoppingCartIcon/> Add to cart</Button>
+       <Button color="danger" onClick = {e => onClickHandle()}><AddShoppingCartIcon/> Add to cart</Button>
        </span>
         
       </CardBody>
@@ -52,7 +57,8 @@ const SingleProductLandingPage = ({
 
 
 SingleProductLandingPage.propTypes = {
-    product: PropTypes.object.isRequired
+    product: PropTypes.object.isRequired,
+    auth: PropTypes.object.isRequired
   };
   const mapStateToProps = state => ({
     auth: state.auth
