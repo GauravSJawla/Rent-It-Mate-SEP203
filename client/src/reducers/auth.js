@@ -13,13 +13,13 @@ import {
 } from '../actions/types';
 import setAuthToken from '../utils/setAuthToken';
 
-
 const initialState = {
   token: localStorage.getItem('token'),
   isAuthenticated: null,
   loading: true,
   users:[],
-  user: null
+  user: null,
+  error: {}
 };
 
 export default function(state = initialState, action) {
@@ -58,8 +58,37 @@ export default function(state = initialState, action) {
             loading: false
         };
     case REGISTER_FAIL:
+
     case LOGIN_FAIL:
+      localStorage.removeItem('token');
+      return {
+        ...state,
+        token: null,
+        isAuthenticated: false,
+        loading: false,
+        user: null,
+        error: payload
+      };
     case AUTH_ERROR:
+      localStorage.removeItem('token');
+      return {
+        ...state,
+        token: null,
+        isAuthenticated: false,
+        loading: false,
+        user: null,
+        error: {}
+      };
+    case REGISTER_FAIL:
+      localStorage.removeItem('token');
+      return {
+        ...state,
+        token: null,
+        isAuthenticated: false,
+        loading: false,
+        user: null,
+        error: payload
+      };
     case LOGOUT:
     case ACCOUNT_DELETED:
       localStorage.removeItem('token');
@@ -68,7 +97,7 @@ export default function(state = initialState, action) {
         token: null,
         isAuthenticated: false,
         loading: false,
-        user:null
+        user: null
       };
     case USER_ERROR:
       return{

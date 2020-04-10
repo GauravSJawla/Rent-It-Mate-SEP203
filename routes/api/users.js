@@ -95,13 +95,23 @@ router.post(
   async (req, res) => {
     let user, host, link;
     const { name, username, email, password } = req.body;
+
     try {
       user = await Users.findOne({ email });
       if (user) {
         return res
           .status(400)
-          .json({ error: [{ msg: 'User already exists' }] });
+          .json({ error: [{ msg: 'Email already exists!' }] });
+      } else {
+        user = await Users.findOne({ username });
       }
+
+      if (user) {
+        return res
+          .status(400)
+          .json({ error: [{ msg: 'Username already exists!' }] });
+      }
+
       const payload = {
         user: {
           id: name
@@ -137,7 +147,7 @@ router.post(
           '>Click here to verify</a>'
       };
 
-    /* istanbul ignore next */
+      /* istanbul ignore next */
       const sentEmail = transporter.sendMail(emailObject, function(err, info) {
         if (err) {
           console.log(err);
@@ -151,8 +161,7 @@ router.post(
       });
       //res.json(result);
     } catch (err) {
-
-    /* istanbul ignore next */
+      /* istanbul ignore next */
       console.error(err.message);
     }
   }
@@ -168,8 +177,7 @@ router.get('/verify', (req, res) => {
       } else if (!user) {
         res.json({ success: false, message: 'Activation Link is expired' });
       } else {
-
-    /* istanbul ignore next */
+        /* istanbul ignore next */
         user.temporarytoken = false;
         user.verifiedStatus = true;
         user.save(err => {

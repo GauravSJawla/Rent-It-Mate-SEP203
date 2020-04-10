@@ -16,11 +16,11 @@ import {
 } from './types';
 import setAuthToken from '../utils/setAuthToken';
 //import { getProfiles } from './profile';
+import { convertTypeAcquisitionFromJson } from 'typescript';
 
 // Load User
 export const loadUser = () => async dispatch => {
   if (localStorage.token) {
-    //console.log('inside local storage token');
     setAuthToken(localStorage.token);
   }
   try {
@@ -30,6 +30,10 @@ export const loadUser = () => async dispatch => {
       payload: res.data
     });
   } catch (err) {
+    const errors = err.response.data.errors;
+    if (errors) {
+      errors.forEach(err => console.log(err));
+    }
     dispatch({
       type: AUTH_ERROR
     });
@@ -55,15 +59,21 @@ export const register = ({
       type: REGISTER_SUCCESS,
       payload: res.data
     });
-  }
-  /* istanbul ignore next */
-   catch (err) {
-    const errors = err.response.data.errors;
+  } catch (err) {
+    /* istanbul ignore next */
+    var error;
+    const errors = err.response.data.error;
     if (errors) {
-      errors.forEach(err => console.log(err));
+      errors.forEach(err => {
+        error = err.msg;
+      });
     }
     dispatch({
-      type: REGISTER_FAIL
+      type: REGISTER_FAIL,
+      payload: error
+    });
+    dispatch({
+      type: AUTH_ERROR
     });
   }
 };
@@ -78,22 +88,28 @@ export const login = (username, password) => async dispatch => {
   const body = JSON.stringify({ username, password });
   try {
     const res = await axios.post('/api/auth', body, config);
-    console.log(res.data);
-    
+
     dispatch({
       type: LOGIN_SUCCESS,
       payload: res.data
     });
-   // dispatch(loadUser()); 
-  } 
-   /* istanbul ignore next */
-  catch (err) {
+
+    dispatch(loadUser());
+  } catch (err) {
+    /* istanbul ignore next */
+    var error;
     const errors = err.response.data.errors;
     if (errors) {
-      errors.forEach(error => console.log(error));
+      errors.forEach(err => {
+        error = err.msg;
+      });
     }
     dispatch({
-      type: LOGIN_FAIL
+      type: LOGIN_FAIL,
+      payload: error
+    });
+    dispatch({
+      type: AUTH_ERROR
     });
   }
 };
