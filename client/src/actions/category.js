@@ -89,7 +89,6 @@ export const updateCategory = (categoryId,formData) => async dispatch => {
             type:UPDATE_CATEGORY,
             payload: res.data
         })
-        dispatch(getAllCategories());
     }
     catch(err){
         dispatch({

@@ -20,7 +20,7 @@ import Button from 'components/CustomButtons/Button.js';
 const useStyles = makeStyles(styles);
 
 const UpdateCategoryPage = ({getCategoryById,
-                category:{category,categories,updated},
+                category:{category,categories,loading,updated},
                 updateCategory,
                    match }) => {
     console.log('update category params id', match.params.id)
@@ -30,24 +30,27 @@ const UpdateCategoryPage = ({getCategoryById,
         setCardAnimation('');
     }, 700);
 
+    //const [loading, setLoading] = useState(true);
+    console.log('loading in update category page', loading);
     const [formData,setFormData] = useState({
         name:''
     });
-
+    // loading = useState(true);
     const {name} = formData;
-
+    var categoryName;
     useEffect(() => {
         console.log('inside update category use effect')
-        //getCategoryById(match.params.id);
-        categories.map(category => (
-            category._id === match.params.id ? (
-                setFormData({
-                name: !updated && !category.name ? '' : category.name
-            })) : (setFormData({
-                name: ''
-            }))
-        ))     
-    },[updated,categories]);
+         categories.map(category => {
+            if(category._id === match.params.id){
+                categoryName = category.name
+            }  
+        }
+            
+        )
+        setFormData({
+            name : categoryName
+        })    
+    },[loading,getCategoryById,match.params.id]);
 
     //OnChange event Handler
     const onChange = e =>
