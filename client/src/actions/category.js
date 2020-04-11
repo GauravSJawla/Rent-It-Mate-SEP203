@@ -4,7 +4,8 @@ import { Redirect } from 'react-router-dom';
 import{
     GET_CATEGORY,
     GET_CATEGORIES,
-    CATEGORY_ERROR
+    CATEGORY_ERROR,
+    UPDATE_CATEGORY,
 } from './types';
 
 export const getAllCategories = () => async dispatch => {
@@ -62,6 +63,9 @@ export const getCategoryById = categoryId => async dispatch => {
             type: GET_CATEGORY,
             payload : res.data
         });
+        // dispatch({
+        //     type:CLEAR_CATEGORY
+        // })
     }
     catch(err){
         dispatch({
@@ -70,6 +74,29 @@ export const getCategoryById = categoryId => async dispatch => {
           })
     }
 
+}
+
+export const updateCategory = (categoryId,formData) => async dispatch => {
+    try{
+        const config = {
+            headers: {
+              'Content-Type': 'application/json'
+            }
+          };
+        const res = await axios.post(`/api/category/${categoryId}`,formData,config);
+        console.log(res);
+        dispatch({
+            type:UPDATE_CATEGORY,
+            payload: res.data
+        })
+        dispatch(getAllCategories());
+    }
+    catch(err){
+        dispatch({
+            type:CATEGORY_ERROR,
+            payload:{ msg: err.response.statusText, status: err.response.status }
+        })
+    }
 }
 
 export const deleteCategory = (categoryId) => async dispatch => {

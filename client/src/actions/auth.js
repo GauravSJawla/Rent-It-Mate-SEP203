@@ -11,7 +11,8 @@ import {
   CLEAR_PROFILE,
   GET_USERS,
   CLEAR_PROFILES,
-  CLEAR_USERS
+  CLEAR_USERS,
+  CLEAR_CATEGORY
   //PROFILE_ERROR
 } from './types';
 import setAuthToken from '../utils/setAuthToken';
@@ -155,5 +156,6 @@ export const logout = () => dispatch => {
   dispatch({ type : CLEAR_PROFILE});
   dispatch({type: CLEAR_PROFILES});
   dispatch({type:CLEAR_USERS});
+  dispatch({type:CLEAR_CATEGORY});
   dispatch({ type: LOGOUT });
 };
