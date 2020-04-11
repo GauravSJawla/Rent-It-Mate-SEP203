@@ -52,7 +52,7 @@ describe('category create/read/update/delete category', () => {
   //     .post('/api/users')
   //     .send({
   //       name: 'Admin',
-  //       username: 'AdminUser',
+  //       username: 'admin',
   //       email: 'adminuser@gmail.com',
   //       password: 'admin'
   //     })

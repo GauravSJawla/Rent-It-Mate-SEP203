@@ -2,26 +2,20 @@ import React from 'react';
 import { Link, Redirect } from 'react-router-dom';
 import propTypes from 'prop-types';
 import { connect } from 'react-redux';
-// nodejs library that concatenates classes
 import classNames from 'classnames';
 // @material-ui/core components
 import { makeStyles } from '@material-ui/core/styles';
 
 // enhancement packages
-
 // core components
-import Footer from 'components/Footer/Footer.js';
 import GridContainer from 'components/Grid/GridContainer.js';
 import GridItem from 'components/Grid/GridItem.js';
 import Button from 'components/CustomButtons/Button.js';
-import Parallax from 'components/Parallax/Parallax.js';
-import ProductGallary from 'components/ProductGallary/ProductGallary.js';
-
 import styles from 'assets/jss/material-kit-react/views/landingPage.js';
-
 // Sections for this page
 import Carousel from 'views/Components/Sections/SectionCarousel';
 //import { loadUser } from 'actions/auth';
+import ProductDisplayLandingPage from './ProductDisplayLandingPage'
 
 const useStyles = makeStyles(styles);
 
@@ -42,39 +36,26 @@ const LandingPage = ({ auth:{user,isAuthenticated,loading} }) => {
   );
   return !loading && user && user.role==="admin" ? (<Redirect to='/admin-Dashboard'/>) : (
     //return(
-    <div>
-      <Parallax filter image={require('assets/img/landing-bg.jpg')}>
         <div className={classes.landingContainer}>
           <GridContainer>
-            <GridItem xs={8} sm={8} md={4}>
-              <div>
+            <GridItem xs={12} sm={12} md={6}>
                 <h1 className={classes.title}>Your Story Starts With Us.</h1>
                 <h4 className={classes.subtitle}>
                   Rent It Mate is a platform for you to rent out your rarely
-                  used stuff and earn some money on it. So why wait? Sign Up!
+                  used stuff and earn some money on it.
                 </h4>
-                <br />
                 <div>{isAuthenticated ? <div /> : guestRender}</div>
-              </div>
-            </GridItem>
-            <GridItem xs={16} sm={16} md={8}>
-              <Carousel />
             </GridItem>
           </GridContainer>
-        </div>
-      </Parallax>
-      <div className={classNames(classes.main, classes.mainRaised)}>
-        <div className={classes.gallaryContainer}>
-          <h2 className={classes.carouselTitle}>New Arrivals</h2>
-          <ProductGallary />
-        </div>
-        <div className={classes.gallaryContainer}>
-          <h2 className={classes.carouselTitle}>Headphones</h2>
-          <ProductGallary />
-        </div>
-      </div>
-      <Footer />
-    </div>
+          <GridContainer>
+            <GridItem xs={12}>
+              <Carousel/>
+            </GridItem>
+              <GridItem xs={32} sm={32} md={16}>
+              <ProductDisplayLandingPage/>
+              </GridItem>
+            </GridContainer>
+          </div>
     
   );
 };

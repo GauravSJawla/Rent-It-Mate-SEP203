@@ -15,8 +15,16 @@ import CardBody from 'components/Card/CardBody.js';
 import CardHeader from 'components/Card/CardHeader.js';
 import CardFooter from 'components/Card/CardFooter.js';
 import CustomInput from 'components/CustomInput/CustomInput.js';
+import Radio from "@material-ui/core/Radio";
+import RadioGroup from "@material-ui/core/RadioGroup";
+import FormControlLabel from "@material-ui/core/FormControlLabel";
+
+import FormLabel from "@material-ui/core/FormLabel";
 import styles from 'assets/jss/material-kit-react/views/loginPage.js';
 import CustomDropdown from 'components/CustomDropdown/CustomDropdown.js';
+//icons
+import FiberManualRecord from "@material-ui/icons/FiberManualRecord";
+
 
 import image from 'assets/img/bg7.jpg';
 
@@ -26,19 +34,23 @@ import { createProduct } from '../../actions/product';
 const useStyles = makeStyles(styles);
 
 function CreateProduct({ createProduct, history }) {
+
+  const [selectedEnabled, setSelectedEnabled] = React.useState("b");
   const [cardAnimaton, setCardAnimation] = React.useState('cardHidden');
   setTimeout(function() {
     setCardAnimation('');
   }, 700);
 
-  const [formData, setFormData] = useState({
+  const [values, setValues] = useState({
     name: '',
     description: '',
     price: '',
     quantity: '',
     shipping: '',
+    categories: [],
     category: '',
-    photo: ''
+    photo: '',
+    formData: ''
   });
   const classes = useStyles();
 
@@ -48,21 +60,49 @@ function CreateProduct({ createProduct, history }) {
     price,
     quantity,
     shipping,
+    categories,
     category,
-    photo
-  } = formData;
+    photo,
+    createdProduct,
+    formData
+  } = values;
+
+  const init = () => {
+    // getCategories().then(data => {
+    //   if (data.error) {
+    //       setValues({ ...values, error: data.error });
+    //   } else {
+            
+          setValues({
+              ...values,
+              //categories: data,
+              formData: new FormData()
+          });
+    //   }
+
+  //});
+  }
+
+  useEffect(() => {
+    console.log('use effect')
+    init();
+  },[]);
 
   //OnChange event Handler
-  const onChange = e =>
-    setFormData({
-      ...formData,
-      [e.target.id]: e.target.value
-    });
+  const onChange = e => {
+      const name = e.target.id
+      const value = name ==='photo' ? e.target.files[0] : e.target.value;
+      console.log(name+' id and val '+value)
+      formData.set(name, value);
+      setValues({ ...values, [name]: value});
+     
+  };
 
   // OnSubmit Event Handler
   const onSubmit = e => {
     e.preventDefault();
-    createProduct(formData, history);
+    console.log("formdata: "+JSON.stringify(formData));
+    createProduct(formData, history)
   };
   return (
     <div>
@@ -137,21 +177,55 @@ function CreateProduct({ createProduct, history }) {
                         autoComplete: 'off'
                       }}
                     />
-                    <CustomInput
-                      labelText='Shipping...'
-                      id='shipping'
-                      formControlProps={{
-                        fullWidth: true
+                    <FormLabel component="legend">Shipping</FormLabel>
+      <RadioGroup
+        aria-label="shipping"
+        name="shipping"
+        inputProps={{
+          type: 'boolean',
+          value: {shipping},
+          required: true,
+          onChange: e => onChange(e),
+          autoComplete: 'off'
+        }}
+      >
+        <FormControlLabel
+          value="true"
+          control={<Radio />}
+          label="I will ship the product"
+        />
+        <FormControlLabel
+          value="false"
+          control={<Radio />}
+          label="I won't ship this product"
+        />
+      </RadioGroup>
+                    <CustomDropdown
+                      buttonText="Category"
+                      dropdownHeader="Categories"
+                      buttonProps={{
+                        className: classes.navLink,
+                        color: "transparent"
                       }}
                       inputProps={{
                         type: 'text',
-                        value: shipping,
+                        value: category,
                         required: true,
                         onChange: e => onChange(e),
                         autoComplete: 'off'
                       }}
+                      dropdownList={[
+                        "Action",
+                        "Another action",
+                        "Something else here",
+                        { divider: true },
+                        "Separated link",
+                        { divider: true },
+                        "One more separated link"
+                      ]}
                     />
-                    <CustomDropdown
+                    {/* <CustomInput
+                      labelText='Category...'
                       id='category'
                       formControlProps={{
                         fullWidth: true
@@ -163,15 +237,7 @@ function CreateProduct({ createProduct, history }) {
                         onChange: e => onChange(e),
                         autoComplete: 'off'
                       }}
-                      buttonText='Category'
-                      dropdownList={[
-                        'Furniture',
-                        'Electronics',
-                        'Garden',
-                        'Kitchen',
-                        'Home'
-                      ]}
-                    />
+                    /> */}
                     <CustomInput
                       labelText='Photo...'
                       id='photo'
@@ -180,7 +246,6 @@ function CreateProduct({ createProduct, history }) {
                       }}
                       inputProps={{
                         type: 'file',
-                        value: photo,
                         required: true,
                         onChange: e => onChange(e)
                       }}
