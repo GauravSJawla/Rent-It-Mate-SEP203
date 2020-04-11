@@ -8,10 +8,11 @@ import Grid from "@material-ui/core/Grid";
 const styles = {
   grid: {
     position: "relative",
+    marginLeft: "15px",
     width: "100%",
     minHeight: "1px",
-    paddingRight: "15px",
-    paddingLeft: "15px",
+    paddingRight: "5px",
+    paddingLeft: "5px",
     flexBasis: "auto"
   }
 };

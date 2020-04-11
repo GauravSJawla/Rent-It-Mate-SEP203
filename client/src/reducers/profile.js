@@ -8,14 +8,14 @@ import {
 } from '../actions/types';
 
 const initalState = {
-    profile : null,
+    profile: null,
     profiles: [],
     loading: true,
-    error :{}
+    error: {}
 }
 
 export default function (state = initalState, action){
-    const {type,payload} = action;
+    const {type, payload} = action;
 
     switch(type){
         case GET_PROFILE:
