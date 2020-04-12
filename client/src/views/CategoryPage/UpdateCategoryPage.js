@@ -1,7 +1,8 @@
-import React, { useEffect,useState } from 'react';
+import React, { useEffect,useState} from 'react';
 import PropTypes from 'prop-types';
 import {connect} from 'react-redux';
-import {getCategoryById} from '../../actions/category';
+import { Redirect } from 'react-router-dom';
+import { updateCategory} from '../../actions/category';
 import styles from 'assets/jss/material-kit-react/views/loginPage.js';
 import image from 'assets/img/bg7.jpg';
 import { makeStyles } from '@material-ui/core/styles';
@@ -13,32 +14,43 @@ import CustomInput from 'components/CustomInput/CustomInput';
 import { InputAdornment } from '@material-ui/core';
 import CardHeader from 'components/Card/CardHeader.js';
 import Category from '@material-ui/icons/Category';
+import CardFooter from 'components/Card/CardFooter';
+import Button from 'components/CustomButtons/Button.js';
 
 const useStyles = makeStyles(styles);
 
-const UpdateCategoryPage = ({getCategoryById,
-                category:{category,error,loading},
+const UpdateCategoryPage = ({
+                category:{category,categories,loading,updated},
+                updateCategory,
                    match }) => {
+    console.log('update category params id', match.params.id)
     const classes = useStyles();
-    const [cardAnimaton, setCardAnimation] = React.useState('cardHidden');
+    const [cardAnimation, setCardAnimation] = React.useState('cardHidden');
     setTimeout(function() {
         setCardAnimation('');
     }, 700);
 
+    //const [loading, setLoading] = useState(true);
+    console.log('loading in update category page', loading);
     const [formData,setFormData] = useState({
         name:''
     });
-
-    useEffect(() => {
-        console.log('inside edit category useeffect')
-        getCategoryById(match.params.id);
-        console.log('category retrieves',category)
-        setFormData({
-                name: loading || !category.name ? '' : category.name
-        });    
-    },[loading,getCategoryById,category,match.params.id]);
-
+    // loading = useState(true);
     const {name} = formData;
+    var categoryName;
+    useEffect(() => {
+        console.log('inside update category use effect')
+         categories.map(category => {
+            if(category._id === match.params.id){
+                categoryName = category.name
+            }  
+        }
+            
+        )
+        setFormData({
+            name : categoryName
+        })    
+    },[loading,match.params.id]);
 
     //OnChange event Handler
     const onChange = e =>
@@ -50,10 +62,16 @@ const UpdateCategoryPage = ({getCategoryById,
     // OnSubmit Event Handler
   const onSubmit = e => {
     e.preventDefault();
-   // createProfile(formData,history,true);
-    
+    updateCategory(match.params.id,formData);  
   };
 
+  
+//   if(category === null && categories !== null) {
+//       return <Redirect to = '/admin-dashboard/all-categories'/>
+//   }
+    if(updated){
+        return <Redirect to= '/admin-dashboard/all-categories'/>
+    }
 
     return(
         <div>
@@ -68,7 +86,7 @@ const UpdateCategoryPage = ({getCategoryById,
             <div className={classes.container}>
                 <GridContainer justify='center'>
                     <GridItem xs={12} sm={12} md={4}>
-                        <Card className = {classes[cardAnimaton]}>
+                        <Card className = {classes[cardAnimation]}>
                             <form className = {classes.form} onSubmit = {e => onSubmit(e)}>
                                 <CardHeader color='primary' className={classes.cardHeader}>
                                     <h4>Update category</h4>
@@ -95,6 +113,11 @@ const UpdateCategoryPage = ({getCategoryById,
                                     }}
                                  />
                                 </CardBody>
+                                <CardFooter className={classes.cardFooter}>
+                                    <Button simple type='submit' color='primary' size='lg'>
+                                        Update category
+                                    </Button>
+                                </CardFooter>
                             </form>
                         </Card>
                     </GridItem>
@@ -107,7 +130,7 @@ const UpdateCategoryPage = ({getCategoryById,
 }
 
 UpdateCategoryPage.propTypes = {
-    getCategoryById:PropTypes.func.isRequired,
+    updateCategory:PropTypes.func.isRequired,
     category:PropTypes.object.isRequired
 }
 
@@ -115,4 +138,4 @@ const mapStateToProps = state => ({
     category : state.category
 })
 
-export default connect(mapStateToProps, {getCategoryById})(UpdateCategoryPage);
+export default connect(mapStateToProps, { updateCategory})(UpdateCategoryPage);

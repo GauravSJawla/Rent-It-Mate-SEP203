@@ -1,5 +1,10 @@
 import axios from "axios";
-import { ADD_SUBCATEGORY, GET_SUBCATEGORY, SUBCATEGORY_DELETED, SUBCATEGORY_ERROR } from "./types";
+import { ADD_SUBCATEGORY, 
+      GET_SUBCATEGORY, 
+      SUBCATEGORY_DELETED, 
+      SUBCATEGORY_ERROR,
+      GET_SUBCATEGORIES
+    } from "./types";
 
 //Create a Sub-Category
 
@@ -17,6 +22,7 @@ export const createSubcategory = ({ name, categoryId }) => async (dispatch) => {
       payload: res.data,
     });
   } catch (err) {
+    /* istanbul ignore next */
     dispatch({
       type: SUBCATEGORY_ERROR,
       payload: { status: err },
@@ -24,16 +30,17 @@ export const createSubcategory = ({ name, categoryId }) => async (dispatch) => {
   }
 };
 
-//Get the Sub-Category
+//Get all Sub-Categories
 
-export const getSubcategory = () => async (dispatch) => {
+export const getAllSubcategories = () => async (dispatch) => {
   try {
     const res = await axios.get("/api/subcategory");
     dispatch({
-      type: GET_SUBCATEGORY,
+      type: GET_SUBCATEGORIES,
       payload: res.data,
     });
   } catch (err) {
+    /* istanbul ignore next */
     dispatch({
       type: SUBCATEGORY_ERROR,
       payload: { status: err },
@@ -43,18 +50,18 @@ export const getSubcategory = () => async (dispatch) => {
 
 // Delete a Sub-Category
 
-export const deleteSubcategory = () => async (dispatch) => {
-  if (window.confirm("Are you sure to delete this sub-category?")) {
-    try {
-      const res = await axios.delete("/api/subcategory");
-      dispatch({
-        type: SUBCATEGORY_DELETED,
-      });
-    } catch (err) {
-      dispatch({
-        type: SUBCATEGORY_ERROR,
-        payload: { status: err },
-      });
-    }
-  }
-};
+// export const deleteSubcategory = () => async (dispatch) => {
+//   if (window.confirm("Are you sure to delete this sub-category?")) {
+//     try {
+//       const res = await axios.delete("/api/subcategory");
+//       dispatch({
+//         type: SUBCATEGORY_DELETED,
+//       });
+//     } catch (err) {
+//       dispatch({
+//         type: SUBCATEGORY_ERROR,
+//         payload: { status: err },
+//       });
+//     }
+//   }
+// };
