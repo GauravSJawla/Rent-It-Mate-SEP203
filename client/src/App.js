@@ -33,6 +33,7 @@ import AdminDashboard from 'views/Dashboard/AdminDashboard';
 import Alert from './components/Layout/Alert';
 import CategoryPage from './views/CategoryPage/CategoryPage';
 import UpdateCategoryPage from './views/CategoryPage/UpdateCategoryPage';
+import SubCategoryPage from './views/SubCategoryPage/SubCategoryPage';
 
 const switchRoutes = (
   <Switch>
@@ -92,6 +93,11 @@ const App = () => {
               exact
               path='/add-category'
               component={CategoryPage}
+            />
+            <PrivateRoute
+              exact
+              path='/add-sub-category'
+              component={SubCategoryPage}
             />
           <PrivateRoute
               exact

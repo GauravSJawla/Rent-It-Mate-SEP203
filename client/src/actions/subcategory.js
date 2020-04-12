@@ -1,5 +1,10 @@
 import axios from "axios";
-import { ADD_SUBCATEGORY, GET_SUBCATEGORY, SUBCATEGORY_DELETED, SUBCATEGORY_ERROR } from "./types";
+import { ADD_SUBCATEGORY, 
+      GET_SUBCATEGORY, 
+      SUBCATEGORY_DELETED, 
+      SUBCATEGORY_ERROR,
+      GET_SUBCATEGORIES
+    } from "./types";
 
 //Create a Sub-Category
 
@@ -24,13 +29,13 @@ export const createSubcategory = ({ name, categoryId }) => async (dispatch) => {
   }
 };
 
-//Get the Sub-Category
+//Get all Sub-Categories
 
-export const getSubcategory = () => async (dispatch) => {
+export const getAllSubcategories = () => async (dispatch) => {
   try {
     const res = await axios.get("/api/subcategory");
     dispatch({
-      type: GET_SUBCATEGORY,
+      type: GET_SUBCATEGORIES,
       payload: res.data,
     });
   } catch (err) {
