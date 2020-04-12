@@ -15,6 +15,7 @@ import List from '@material-ui/icons/List';
 import logo from 'assets/img/reactlogo.png';
 import ListUsers from 'views/ProfilePage/ListUsers';
 import ViewCategories from 'views/CategoryPage/ViewCategories';
+import SubCategoryPage from 'views/SubCategoryPage/SubCategoryPage';
 //import adminDashboardRoutes from '../../components/Routing/adminDashboardRoutes';
 
 const useStyles = makeStyles(styles);
@@ -38,7 +39,7 @@ const adminDashboardRoutes = [
       path:'/all-subcategories',
       name: 'Subcategories',
       icon: List,
-      component: ViewCategories,
+      component: SubCategoryPage,
       layout: '/admin-dashboard'
     },
     {
