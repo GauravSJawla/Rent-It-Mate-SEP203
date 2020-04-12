@@ -37,6 +37,7 @@ describe('category pages', () => {
         cy.url({timeout:5000}).should('include', '/update-category')
         cy.get('input[id="name"]').clear().type('TestCategory1')
         cy.get('button[type="submit"]').click()
+        cy.url({timeout:5000}).should('include','/all-categories')
     })
 
     it('should delete the category', () => {

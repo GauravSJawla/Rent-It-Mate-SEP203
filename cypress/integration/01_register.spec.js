@@ -63,7 +63,7 @@ describe('sign up user', () => {
 
   it('should alert if username already exists', () => {
     cy.get('input[id="name"]').type('TestUser');
-    cy.get('input[id="username"]').type('TestUser1');
+    cy.get('input[id="username"]').type('mercy');
     cy.get('input[id = "email"]').type('testuser1@gmail.com');
     cy.get('input[id="password"]').type('testuser123');
     cy.get('input[id="password2"]').type('testuser123');
@@ -79,7 +79,7 @@ describe('sign up user', () => {
   it('should alert if email already exists', () => {
     cy.get('input[id="name"]').type('TestUser');
     cy.get('input[id="username"]').type('TestUser2');
-    cy.get('input[id = "email"]').type('testuser@gmail.com');
+    cy.get('input[id = "email"]').type('adminuser@gmail.com');
     cy.get('input[id="password"]').type('testuser123');
     cy.get('input[id="password2"]').type('testuser123');
     cy.get('button[type="submit"]').click();

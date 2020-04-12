@@ -20,7 +20,7 @@ describe('login page', () => {
 
   it('should alert if username invalid', () => {
     cy.visit('http://localhost:3000/login');
-    cy.get('input[id="username"]').type('TestUser123');
+    cy.get('input[id="username"]').type('minnie');
     cy.get('input[id="password"]').type('testuser123');
     cy.get('button[type="submit"]').click();
     cy.get('div [id="notifications"]')
@@ -33,8 +33,8 @@ describe('login page', () => {
 
   it('should alert if password invalid', () => {
     cy.visit('http://localhost:3000/login');
-    cy.get('input[id="username"]').type('TestUser1');
-    cy.get('input[id="password"]').type('testuser1');
+    cy.get('input[id="username"]').type('Minnie');
+    cy.get('input[id="password"]').type('Minnie');
     cy.get('button[type="submit"]').click();
     cy.get('div [id="notifications"]')
       .invoke('text')
@@ -43,6 +43,13 @@ describe('login page', () => {
         expect(divTxt).to.contain('Password is incorrect!');
       });
   });
+
+    it('should login with valid credentials', () => {
+      cy.visit('http://localhost:3000/login');
+      cy.get('input[id="username"]').type('Minnie');
+      cy.get('input[id="password"]').type('minnie');
+      cy.get('button[type="submit"]').click();
+    })
 
     it('redirects to landing page on log out', () => {
         cy.contains('Profile').click().then(() => {
@@ -53,7 +60,8 @@ describe('login page', () => {
                     isAuthenticated:false,
                     loading:false,
                     users:[],
-                    user:null
+                    user:null,
+                    error:{}
                 },
                 profile:{
                     profile:null,
@@ -62,10 +70,18 @@ describe('login page', () => {
                     error:null
                 },
                 alert:[],
+                product:{
+                  productId: null,
+                  products: [],
+                  product: null,
+                  loading: false,
+                  error: {}
+                },
                 category:{
                     category:null,
                     categories:[],
-                    loading:true,
+                    loading:false,
+                    updated:false,
                     error:{}
                 }
             })

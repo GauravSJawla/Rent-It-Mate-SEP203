@@ -42,12 +42,12 @@ export const createCategory = (formData) => async dispatch => {
         console.log('inside category catch',err)
         var error;
         const errors = err.response.data.error;
-        if (errors) {
-            errors.forEach(err => {
-                console.log('inside category action', error);
-                error = err.msg;
-            });
-        }
+        // if (errors) {
+        //     errors.forEach(err => {
+        //         console.log('inside category action', error);
+        //         error = err.msg;
+        //     });
+        // }
         dispatch({
             type: CATEGORY_ERROR,
             payload: error
@@ -55,26 +55,26 @@ export const createCategory = (formData) => async dispatch => {
     }
 }
 
-export const getCategoryById = categoryId => async dispatch => {
-    try{
-        const res = await axios.get(`/api/category/${categoryId}`);
-        console.log('inside category by id:', res);
-        dispatch({
-            type: GET_CATEGORY,
-            payload : res.data
-        });
-        // dispatch({
-        //     type:CLEAR_CATEGORY
-        // })
-    }
-    catch(err){
-        dispatch({
-            type:CATEGORY_ERROR,
-            payload:{ msg: err.response.statusText, status: err.response.status }
-          })
-    }
+// export const getCategoryById = categoryId => async dispatch => {
+//     try{
+//         const res = await axios.get(`/api/category/${categoryId}`);
+//         console.log('inside category by id:', res);
+//         dispatch({
+//             type: GET_CATEGORY,
+//             payload : res.data
+//         });
+//         // dispatch({
+//         //     type:CLEAR_CATEGORY
+//         // })
+//     }
+//     catch(err){
+//         dispatch({
+//             type:CATEGORY_ERROR,
+//             payload:{ msg: err.response.statusText, status: err.response.status }
+//           })
+//     }
 
-}
+// }
 
 export const updateCategory = (categoryId,formData) => async dispatch => {
     try{

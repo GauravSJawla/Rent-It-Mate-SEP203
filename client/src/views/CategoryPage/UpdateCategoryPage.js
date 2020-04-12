@@ -2,7 +2,7 @@ import React, { useEffect,useState} from 'react';
 import PropTypes from 'prop-types';
 import {connect} from 'react-redux';
 import { Redirect } from 'react-router-dom';
-import {getCategoryById, updateCategory} from '../../actions/category';
+import { updateCategory} from '../../actions/category';
 import styles from 'assets/jss/material-kit-react/views/loginPage.js';
 import image from 'assets/img/bg7.jpg';
 import { makeStyles } from '@material-ui/core/styles';
@@ -19,7 +19,7 @@ import Button from 'components/CustomButtons/Button.js';
 
 const useStyles = makeStyles(styles);
 
-const UpdateCategoryPage = ({getCategoryById,
+const UpdateCategoryPage = ({
                 category:{category,categories,loading,updated},
                 updateCategory,
                    match }) => {
@@ -50,7 +50,7 @@ const UpdateCategoryPage = ({getCategoryById,
         setFormData({
             name : categoryName
         })    
-    },[loading,getCategoryById,match.params.id]);
+    },[loading,match.params.id]);
 
     //OnChange event Handler
     const onChange = e =>
@@ -130,7 +130,6 @@ const UpdateCategoryPage = ({getCategoryById,
 }
 
 UpdateCategoryPage.propTypes = {
-    getCategoryById:PropTypes.func.isRequired,
     updateCategory:PropTypes.func.isRequired,
     category:PropTypes.object.isRequired
 }
@@ -139,4 +138,4 @@ const mapStateToProps = state => ({
     category : state.category
 })
 
-export default connect(mapStateToProps, {getCategoryById, updateCategory})(UpdateCategoryPage);
+export default connect(mapStateToProps, { updateCategory})(UpdateCategoryPage);
