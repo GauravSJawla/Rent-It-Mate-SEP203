@@ -37,7 +37,7 @@ function UpdateProduct({
   updateProduct,
   history,
   match,
-  product: { product , loading },
+  product: { product , loading , products},
   getSingleProduct }) {
 
   const [selectedEnabled, setSelectedEnabled] = React.useState("b");
@@ -71,20 +71,36 @@ function UpdateProduct({
     formData
   } = values;
   
+  var productName
+  var productDescription
+  var productPrice
+  var productQuantity
+  var productShipping
+  var productCategory
+  
+  
   useEffect(() => {
-    getSingleProduct(match.params.id)
-    //console.log(product + ' '+ loading)
-          // populate the state
+    //getSingleProduct(match.params.id)
+    products.map(product =>{
+      if(product._id === match.params.id){
+        productName = product.name;
+        productDescription = product.description;
+        productPrice = product.price;
+        productQuantity = product.quantity;
+        productShipping = product.shipping;
+        productCategory = product.category;
+      } 
+    })
           setValues({
-              name: loading || !product.name ? '' : product.name,
-              description: loading || !product.description ? '' : product.description,
-              price: loading || !product.price ? '' : product.price,
-              category: loading || !product.category ? '' : product.category,
-              quantity: loading || !product.quantity ? '' : product.quantity,
-              shipping: loading || !product.shipping ? '' : product.shipping,
-               formData: new FormData()
+              name: productName,
+              description: productDescription,
+              price: productPrice,
+              category: productCategory,
+              quantity: productQuantity,
+              shipping: productShipping,
+              formData: new FormData()
           });
-  },[getSingleProduct, match.params.id]);
+  },[match.params.id]);
 
   //OnChange event Handler
   const onChange = e => {

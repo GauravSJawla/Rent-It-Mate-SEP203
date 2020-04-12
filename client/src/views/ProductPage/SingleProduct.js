@@ -31,7 +31,7 @@ const SingleProduct = ({
       const classes = useStyles();
       
       return(
-        <GridItem xs={12} sm={12} md={4}>
+        <GridItem xs={16} sm={16} md={4} lg={3}>
         <div className={classes.landingContainer}>
         <Card style={{width: "20rem"}}>
           <ShowImage productId={_id}/>

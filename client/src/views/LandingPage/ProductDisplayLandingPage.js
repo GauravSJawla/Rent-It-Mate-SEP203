@@ -48,7 +48,7 @@ const ProductDisplayLandingPage = ({
       ) : (
       <Fragment responsive={responsive}>
            <div className={classes.landingContainer}>
-              <GridContainer>
+              <GridContainer style={{marginLeft: "10px"}}>
                         { 
                         products.map(p =>(
                           <SingleProductLandingPage key={p._id} product={p}/>

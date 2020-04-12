@@ -177,19 +177,33 @@ function CreateProduct({ createProduct, history }) {
                         autoComplete: 'off'
                       }}
                     />
-                    <FormLabel component="legend">Shipping</FormLabel>
-      <RadioGroup
+                    <CustomInput
+                      labelText='Shipping...'
+                      id='shipping'
+                      formControlProps={{
+                        fullWidth: true
+                      }}
+                      inputProps={{
+                        type: 'text',
+                        value: quantity,
+                        required: true,
+                        onChange: e => onChange(e),
+                        autoComplete: 'off'
+                      }}
+                    />
+                    {/* <FormLabel component="legend">Shipping</FormLabel> */}
+      {/* <RadioGroup
         aria-label="shipping"
         name="shipping"
         inputProps={{
           type: 'boolean',
-          value: {shipping},
+          value: 'true',
           required: true,
           onChange: e => onChange(e),
           autoComplete: 'off'
         }}
-      >
-        <FormControlLabel
+      > */}
+        {/* <FormControlLabel
           value="true"
           control={<Radio />}
           label="I will ship the product"
@@ -198,9 +212,9 @@ function CreateProduct({ createProduct, history }) {
           value="false"
           control={<Radio />}
           label="I won't ship this product"
-        />
-      </RadioGroup>
-                    <CustomDropdown
+        /> */}
+      {/* </RadioGroup> */}
+                    {/* <CustomDropdown
                       buttonText="Category"
                       dropdownHeader="Categories"
                       buttonProps={{
@@ -209,22 +223,22 @@ function CreateProduct({ createProduct, history }) {
                       }}
                       inputProps={{
                         type: 'text',
-                        value: category,
+                        value: '5e6a7a324ed00f15930538e7',
                         required: true,
                         onChange: e => onChange(e),
                         autoComplete: 'off'
                       }}
                       dropdownList={[
-                        "Action",
-                        "Another action",
-                        "Something else here",
-                        { divider: true },
-                        "Separated link",
-                        { divider: true },
-                        "One more separated link"
+                        "Furniture"
+                        // "Another action",
+                        // "Something else here",
+                        // { divider: true },
+                        // "Separated link",
+                        // { divider: true },
+                        // "One more separated link"
                       ]}
-                    />
-                    {/* <CustomInput
+                    /> */}
+                    <CustomInput
                       labelText='Category...'
                       id='category'
                       formControlProps={{
@@ -232,12 +246,12 @@ function CreateProduct({ createProduct, history }) {
                       }}
                       inputProps={{
                         type: 'text',
-                        value: category,
+                        value: '5e6a7a324ed00f15930538e7',
                         required: true,
                         onChange: e => onChange(e),
                         autoComplete: 'off'
                       }}
-                    /> */}
+                    />
                     <CustomInput
                       labelText='Photo...'
                       id='photo'
