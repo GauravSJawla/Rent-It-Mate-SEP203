@@ -4,7 +4,9 @@ import { Redirect } from 'react-router-dom';
 import{
     GET_CATEGORY,
     GET_CATEGORIES,
-    CATEGORY_ERROR
+    CATEGORY_ERROR,
+    GET_CATEGORYLIST,
+    CATEGORYLIST_ERROR
 } from './types';
 
 export const getAllCategories = () => async dispatch => {
@@ -71,6 +73,21 @@ export const getCategoryById = categoryId => async dispatch => {
     }
 
 }
+
+export const getCategoryList = () => async (dispatch) => {
+    try {
+      const res = await axios.get("/api/category");
+      dispatch({
+        type: GET_CATEGORYLIST,
+        payload: res.data,
+      });
+    } catch (err) {
+      dispatch({
+        type: CATEGORYLIST_ERROR,
+        payload: { status: err },
+      });
+    }
+  };
 
 export const deleteCategory = (categoryId) => async dispatch => {
     if(window.confirm('Are you sure to delete this category?')){
