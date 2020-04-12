@@ -1,7 +1,8 @@
 import { 
   ADD_SUBCATEGORY, 
   SUBCATEGORY_ERROR,
-  GET_SUBCATEGORIES } from "../actions/types";
+  GET_SUBCATEGORIES,
+  CLEAR_SUBCATEGORY } from "../actions/types";
 
 const initalState = {
   subcategory: null,
@@ -32,6 +33,14 @@ export default function(state = initalState, action) {
         subcategory:null,
         subcategories:payload,
         loading:false
+      }
+    case CLEAR_SUBCATEGORY:
+      return{
+        ...state,
+        subcategory: null,
+        subcategories:[],
+        loading:false,
+        error: {}
       }
     default:
       return state;

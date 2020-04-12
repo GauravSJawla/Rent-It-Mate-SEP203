@@ -13,7 +13,7 @@ import {
   CLEAR_PROFILES,
   CLEAR_USERS,
   CLEAR_CATEGORY,
-  CLEAR_PRODUCTS
+  CLEAR_PRODUCTS,CLEAR_CATEGORYLIST,CLEAR_SUBCATEGORY
   //PROFILE_ERROR
 } from './types';
 import setAuthToken from '../utils/setAuthToken';
@@ -159,5 +159,7 @@ export const logout = () => dispatch => {
   dispatch({type:CLEAR_USERS});
   dispatch({type:CLEAR_CATEGORY});
   dispatch({type:CLEAR_PRODUCTS});
+  dispatch({type:CLEAR_SUBCATEGORY});
+  dispatch({type:CLEAR_CATEGORYLIST});
   dispatch({ type: LOGOUT });
 };

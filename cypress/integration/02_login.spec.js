@@ -83,6 +83,17 @@ describe('login page', () => {
                     loading:false,
                     updated:false,
                     error:{}
+                },
+                categorylist:{
+                  categorylist:[],
+                  loading:false,
+                  error:{}
+                },
+                subcategory:{
+                  subcategory:null,
+                  suncategories:{},
+                  loading:false,
+                  error:{}
                 }
             })
             cy.url({timeout:5000}).should('includes','http://localhost:3000')

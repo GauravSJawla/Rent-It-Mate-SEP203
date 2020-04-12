@@ -1,8 +1,12 @@
-import { GET_CATEGORYLIST, CATEGORYLIST_ERROR } from "../actions/types";
+import { GET_CATEGORYLIST, 
+        CATEGORYLIST_ERROR,
+        CLEAR_CATEGORYLIST
+       } from "../actions/types";
 
 const initalState = {
   categoryList: [],
-  error: {},
+  loading:false,
+  error: {}
 };
 
 export default function(state = initalState, action) {
@@ -25,6 +29,13 @@ export default function(state = initalState, action) {
         error: payload,
         loading: false,
       };
+    case CLEAR_CATEGORYLIST:
+      return{
+        ...state,
+        categoryList: [],
+        loading:false,
+        error: {}
+      }
     default:
       return state;
   }
