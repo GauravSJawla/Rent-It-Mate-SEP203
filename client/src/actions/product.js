@@ -34,7 +34,7 @@ export const createProduct = (
       payload: res.data
     });
     if (!edit) {
-      history.push('/dashboard');
+      history.push('/dashboard/user');
     }
   } catch (err) {
     dispatch({
