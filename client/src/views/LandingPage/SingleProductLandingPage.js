@@ -20,13 +20,18 @@ const styles = {
 const useStyles = makeStyles(styles);
 
 const SingleProductLandingPage = ({
-    auth: { isAuthenticated , loading},
+    auth: { isAuthenticated },
     product : { _id , name , description , price , quantity, shipping ,sold , category, photo } }) =>{
       const classes = useStyles();
-      
+      const guestRender = (
+        <div>
+          <h1>you need to login</h1>
+        </div>
+       
+      );
       const onClickHandle = () =>{
-        if(!isAuthenticated){
-          
+        if(!isAuthenticated){ 
+          window.alert('You need to login to shop!')
         }
       }
       return(

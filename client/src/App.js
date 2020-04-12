@@ -17,10 +17,7 @@ import PrivateRoute from 'components/Routing/PrivateRoute';
 import LandingPage from 'views/LandingPage/LandingPage';
 import LoginPage from 'views/LoginPage/LoginPage';
 import RegisterPage from 'views/RegisterPage/RegisterPage';
-import ProductPage from 'views/ProductPage/CreateProduct';
-import UpdateProduct from 'views/ProductPage/UpdateProduct';
-//import ProductPage from 'views/ProductPage/Product';
-//import ProfilePage from 'views/ProfilePage/ProfilePage';
+//simport UpdateProduct from 'views/ProductPage/UpdateProduct';
 import { Provider } from 'react-redux';
 import store from './store';
 import { loadUser } from './actions/auth';
@@ -85,21 +82,16 @@ const App = () => {
               path='/create-product'
               component={ProductPage}
             /> */}
-            <PrivateRoute
-                path='/admin-dashboard'
-                component={AdminDashboard}
-              />
-            <PrivateRoute
-              exact
-              path='/add-category'
-              component={CategoryPage}
-            />
+            <PrivateRoute path='/admin-dashboard' component={AdminDashboard} />
+            <PrivateRoute exact path='/add-category' component={CategoryPage} />
+            <PrivateRoute path='/admin-dashboard' component={AdminDashboard} />
+            <PrivateRoute exact path='/add-category' component={CategoryPage} />
             <PrivateRoute
               exact
               path='/add-sub-category'
               component={SubCategoryPage}
             />
-          <PrivateRoute
+            <PrivateRoute
               exact
               path='/update-category/:id'
               component={UpdateCategoryPage}
@@ -113,7 +105,7 @@ const App = () => {
                 </Dashboard>
               )}
             />
-             <PrivateRoute exact path='/product/:id' component={UpdateProduct} />
+            {/* <PrivateRoute exact path='/product/:id' component={UpdateProduct} /> */}
             <Route exact path='/emailVerifyPage' component={EmailVerifyPage} />
           </Switch>
         </Fragment>
