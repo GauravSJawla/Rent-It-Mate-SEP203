@@ -68,6 +68,7 @@ export const getProfiles = () => async dispatch => {
       payload: res.data
     });
   } catch (err) {
+    /* istanbul ignore next */
     dispatch({
       type: PROFILE_ERROR,
       payload: { msg: err.response.statusText, status: err.response.status }

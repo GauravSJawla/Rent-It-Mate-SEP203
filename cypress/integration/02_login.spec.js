@@ -85,13 +85,13 @@ describe('login page', () => {
                     error:{}
                 },
                 categorylist:{
-                  categorylist:[],
+                  categoryList:[],
                   loading:false,
                   error:{}
                 },
                 subcategory:{
                   subcategory:null,
-                  suncategories:{},
+                  subcategories:[],
                   loading:false,
                   error:{}
                 }

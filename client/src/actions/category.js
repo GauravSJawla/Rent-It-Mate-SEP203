@@ -19,6 +19,7 @@ export const getAllCategories = () => async dispatch => {
         })
     }
     catch(err){
+        /* istanbul ignore next */
         dispatch({
             type: CATEGORY_ERROR,
             payload: { msg: err.response.statusText, status: err.response.status }
@@ -93,6 +94,7 @@ export const updateCategory = (categoryId,formData) => async dispatch => {
         })
     }
     catch(err){
+        /* istanbul ignore next */
         dispatch({
             type:CATEGORY_ERROR,
             payload:{ msg: err.response.statusText, status: err.response.status }
@@ -108,6 +110,7 @@ export const getCategoryList = () => async (dispatch) => {
         payload: res.data,
       });
     } catch (err) {
+        /* istanbul ignore next */
       dispatch({
         type: CATEGORYLIST_ERROR,
         payload: { status: err },
@@ -117,12 +120,14 @@ export const getCategoryList = () => async (dispatch) => {
 
 export const deleteCategory = (categoryId) => async dispatch => {
     if(window.confirm('Are you sure to delete this category?')){
+        /* istanbul ignore next */
         try{
             const res = await axios.delete(`/api/category/${categoryId}`);
             dispatch(getAllCategories());
             return (<Redirect to='/admin-dashboard/all-categories'/>)
         }
         catch(err){
+            /* istanbul ignore next */
             dispatch({
                 type:CATEGORY_ERROR,
                 payload:{ msg: err.response.statusText, status: err.response.status }
