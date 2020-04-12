@@ -17,7 +17,7 @@ import PrivateRoute from 'components/Routing/PrivateRoute';
 import LandingPage from 'views/LandingPage/LandingPage';
 import LoginPage from 'views/LoginPage/LoginPage';
 import RegisterPage from 'views/RegisterPage/RegisterPage';
-import UpdateProduct from 'views/ProductPage/UpdateProduct';
+//simport UpdateProduct from 'views/ProductPage/UpdateProduct';
 import { Provider } from 'react-redux';
 import store from './store';
 import { loadUser } from './actions/auth';
@@ -81,16 +81,9 @@ const App = () => {
               path='/create-product'
               component={ProductPage}
             /> */}
+            <PrivateRoute path='/admin-dashboard' component={AdminDashboard} />
+            <PrivateRoute exact path='/add-category' component={CategoryPage} />
             <PrivateRoute
-                path='/admin-dashboard'
-                component={AdminDashboard}
-              />
-            <PrivateRoute
-              exact
-              path='/add-category'
-              component={CategoryPage}
-            />
-          <PrivateRoute
               exact
               path='/update-category/:id'
               component={UpdateCategoryPage}
@@ -104,7 +97,7 @@ const App = () => {
                 </Dashboard>
               )}
             />
-             <PrivateRoute exact path='/product/:id' component={UpdateProduct} />
+            {/* <PrivateRoute exact path='/product/:id' component={UpdateProduct} /> */}
             <Route exact path='/emailVerifyPage' component={EmailVerifyPage} />
           </Switch>
         </Fragment>

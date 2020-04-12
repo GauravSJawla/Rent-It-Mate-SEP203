@@ -73,6 +73,7 @@
     "@cypress/code-coverage": "^1.14.0",
     "concurrently": "^5.1.0",
     "cypress": "^4.2.0",
+    "cypress-file-upload": "^4.0.6",
     "istanbul-lib-coverage": "^3.0.0",
     "nodemon": "^2.0.2",
     "nyc": "^15.0.0"

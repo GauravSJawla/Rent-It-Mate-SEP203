@@ -60,36 +60,35 @@ function CreateProduct({ createProduct, history }) {
     //   if (data.error) {
     //       setValues({ ...values, error: data.error });
     //   } else {
-          setValues({
-              ...values,
-              //categories: data,
-              formData: new FormData()
-          });
+    setValues({
+      ...values,
+      //categories: data,
+      formData: new FormData()
+    });
     //   }
 
-  //});
-  }
+    //});
+  };
 
   useEffect(() => {
-    console.log('use effect')
+    console.log('use effect');
     init();
   }, []);
 
   //OnChange event Handler
   const onChange = e => {
-      const name = e.target.id
-      const value = name =='photo' ? e.target.files[0] : e.target.value;
-      console.log(name+' id and val '+value)
-      formData.set(name, value);
-      setValues({ ...values, [name]: value});
-     
+    const name = e.target.id;
+    const value = name == 'photo' ? e.target.files[0] : e.target.value;
+    console.log(name + ' id and val ' + value);
+    formData.set(name, value);
+    setValues({ ...values, [name]: value });
   };
 
   // OnSubmit Event Handler
   const onSubmit = e => {
     e.preventDefault();
-    console.log("formdata: "+JSON.stringify(formData));
-    createProduct(formData, history)
+    console.log('formdata: ' + JSON.stringify(formData));
+    createProduct(formData, history);
   };
   return (
     <div>
@@ -179,7 +178,7 @@ function CreateProduct({ createProduct, history }) {
                       }}
                     />
                     <CustomInput
-                     labelText='Category id...'
+                      labelText='Category id...'
                       id='category'
                       formControlProps={{
                         fullWidth: true
@@ -191,7 +190,7 @@ function CreateProduct({ createProduct, history }) {
                         onChange: e => onChange(e),
                         autoComplete: 'off'
                       }}
-                     // buttonText='Category'
+                      // buttonText='Category'
                       // dropdownList={[
                       //   'Furniture',
                       //   'Electronics',
@@ -208,7 +207,6 @@ function CreateProduct({ createProduct, history }) {
                       }}
                       inputProps={{
                         type: 'file',
-                        required: true,
                         onChange: e => onChange(e)
                       }}
                     />
