@@ -9,6 +9,8 @@ const nodemailer = require('nodemailer');
 const sendgridTransport = require('nodemailer-sendgrid-transport');
 //Import user model
 const Users = require('../../models/Users');
+const auth = require('../../middleware/auth');
+const Profile = require('../../models/Profile');
 const frontend = process.env.PORT || 3000;
 const transporter = nodemailer.createTransport(
   sendgridTransport({
@@ -19,9 +21,60 @@ const transporter = nodemailer.createTransport(
 );
 
 // @route   GET api/users
-// @desc    Test route
-// @access  Public
-router.get('/', (req, res) => res.send('Users route'));
+// @desc    retrieve all users
+// @access  admin
+router.get('/', auth, async (req, res) => {
+  try {
+    const user = await Users.findOne({_id:req.user.id})
+    if(user.username == 'admin'){
+      const users = await Users.find({role:'user'}).populate('profile',['address'])
+      res.json(users);
+    }
+    else
+    {
+      return res
+      .status(400)
+      .json({ msg: 'Access is allowed only to admin' });    }
+    
+  } catch (err) {
+    console.error(err.message);
+    res.status(500).send('Server Error');
+  }
+});
+
+//@route delete /api/users/admin/:userId
+//@desc Delete user by admin
+//@access admin
+
+// router.delete('/admin/:user_id', auth, async(req,res) => {
+//   try{
+//     const admin = await Users.findOne({_id:req.user.id});
+//     if(admin.username === 'admin'){
+//       const userProfile = await Profile.findOne({user:req.params.user_id});
+//     if(userProfile){
+//       console.log('inside profile retrieved')
+//         await Profile.deleteOne(userProfile);
+//     }
+//     const user = await Users.findOne({_id: req.params.user_id});
+//     if(user){
+//       console.log('inside admin delete user retrieved')
+//         await Users.deleteOne(user);
+//     }
+//     res.json({msg: 'User removed'});
+
+//     }
+//     else{
+//       return res.json('Only admin is allowed to access this route');
+//     }
+    
+// }
+// catch(err){
+//   //  console.log(err.message);
+
+// /* istanbul ignore next */
+//     res.status(500).send('server error');  
+// }  
+// });
 
 //@route Post api/users
 //@desc Register User
@@ -42,13 +95,23 @@ router.post(
   async (req, res) => {
     let user, host, link;
     const { name, username, email, password } = req.body;
+
     try {
       user = await Users.findOne({ email });
       if (user) {
         return res
           .status(400)
-          .json({ error: [{ msg: 'User already exists' }] });
+          .json({ error: [{ msg: 'Email already exists!' }] });
+      } else {
+        user = await Users.findOne({ username });
       }
+
+      if (user) {
+        return res
+          .status(400)
+          .json({ error: [{ msg: 'Username already exists!' }] });
+      }
+
       const payload = {
         user: {
           id: name
@@ -84,7 +147,7 @@ router.post(
           '>Click here to verify</a>'
       };
 
-    /* istanbul ignore next */
+      /* istanbul ignore next */
       const sentEmail = transporter.sendMail(emailObject, function(err, info) {
         if (err) {
           console.log(err);
@@ -98,8 +161,7 @@ router.post(
       });
       //res.json(result);
     } catch (err) {
-
-    /* istanbul ignore next */
+      /* istanbul ignore next */
       console.error(err.message);
     }
   }
@@ -115,8 +177,7 @@ router.get('/verify', (req, res) => {
       } else if (!user) {
         res.json({ success: false, message: 'Activation Link is expired' });
       } else {
-
-    /* istanbul ignore next */
+        /* istanbul ignore next */
         user.temporarytoken = false;
         user.verifiedStatus = true;
         user.save(err => {

@@ -21,7 +21,7 @@ import styles from 'assets/jss/material-kit-react/components/headerLinksStyle.js
 
 const useStyles = makeStyles(styles);
 
-const HeaderLinks = ({ auth: { isAuthenticated, loading }, logout }) => {
+const HeaderLinks = ({ auth: { isAuthenticated, loading, user }, logout }) => {
   const classes = useStyles();
 
   const guestRender = (
@@ -90,10 +90,24 @@ const HeaderLinks = ({ auth: { isAuthenticated, loading }, logout }) => {
     </List>
   );
 
+  const adminRender = (
+    <Link
+              onClick={logout}
+              component={Link}
+              to='/'
+              className={classes.listLink}
+            >
+              Logout
+            </Link>
+    
+
+  )
+
   return (
     <div>
       {!loading && (
-        <Fragment>{isAuthenticated ? authRender : guestRender}</Fragment>
+        <Fragment>{isAuthenticated ? (user && user.role === 'admin' ?
+                             adminRender: authRender) : guestRender}</Fragment>
       )}
     </div>
   );

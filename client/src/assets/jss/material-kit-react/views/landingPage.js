@@ -2,26 +2,23 @@ import { container, title } from 'assets/jss/material-kit-react.js';
 
 const conatinerFluid = {
   paddingRight: '10px',
-  paddingLeft: '10px',
-  marginRight: 'auto',
-  marginLeft: 'auto',
-  width: '100%'
+  paddingLeft: '10px'
 };
 
 const landingContainer = {
-  ...conatinerFluid,
-  '@media (min-width: 576px)': {
-    maxWidth: '606px'
-  },
-  '@media (min-width: 768px)': {
-    maxWidth: '808px'
-  },
-  '@media (min-width: 992px)': {
-    maxWidth: '1044px'
-  },
-  '@media (min-width: 1200px)': {
-    maxWidth: '1264px'
-  }
+  ...conatinerFluid
+  // '@media (min-width: 576px)': {
+  //   maxWidth: '606px'
+  // },
+  // '@media (min-width: 768px)': {
+  //   maxWidth: '808px'
+  // },
+  // '@media (min-width: 992px)': {
+  //   maxWidth: '1044px'
+  // },
+  // '@media (min-width: 1200px)': {
+  //   maxWidth: '1264px'
+  // }
 };
 
 const landingPageStyle = {
@@ -33,10 +30,13 @@ const landingPageStyle = {
   landingContainer: {
     zIndex: '12',
     color: '#FFFFFF',
+    background: "#FFFFFF",
     ...landingContainer
   },
   gallaryContainer: {
-    zIndex: '12'
+    zIndex: '12',
+    paddingLeft: '20px'
+
   },
   title: {
     ...title,
@@ -44,7 +44,7 @@ const landingPageStyle = {
     position: 'relative',
     marginTop: '30px',
     minHeight: '32px',
-    color: '#FFFFFF',
+    color: '#000000',
     textDecoration: 'none'
   },
   dashboardTitle: {
@@ -63,6 +63,26 @@ const landingPageStyle = {
     minHeight: '32px',
     textDecoration: 'none'
   },
+  table:{
+    minWidth: 400,
+    borderWidth: '0 px',
+    backgroundColor: 'white',
+    align:'left'
+  },
+  td: {
+    fontWeight: '500',
+    color: 'black',
+    padding: '0 20px',
+    borderColor:'black',
+    fontSize:'normal'
+  },
+th:{
+    fontWeight: '700',
+    padding: '0 20px',
+    borderColor:'black',
+    fontSize:'bold'
+  },
+
   dashboardSubtitle: {
     color: 'black',
     fontSize: '1.313rem',
@@ -71,7 +91,8 @@ const landingPageStyle = {
   },
   subtitle: {
     fontSize: '1.313rem',
-    maxWidth: '500px',
+    maxWidth: '500px', 
+    color: 'black',
     margin: '10px auto 0'
   },
   main: {

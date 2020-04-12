@@ -99,7 +99,7 @@ const customCheckboxRadioSwitch = {
     color: dangerColor
   },
   radio: {
-    color: primaryColor + "!important"
+    color:'rgba(0, 0, 0, 0.26)'
   },
   radioChecked: {
     width: "16px",

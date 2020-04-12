@@ -2,10 +2,12 @@
 import axios from 'axios';
 import {
   GET_PROFILE,
+  GET_PROFILES,
   PROFILE_ERROR,
   CLEAR_PROFILE,
   ACCOUNT_DELETED
 } from './types';
+import {getAllUsers} from './auth';
 
 export const createProfile = (
   formData,
@@ -55,6 +57,45 @@ export const getUserProfile = () => async dispatch => {
     });
   }
 };
+
+//Get all profiles
+export const getProfiles = () => async dispatch => {
+  try {
+    const res = await axios.get('/api/profile');
+
+    dispatch({
+      type: GET_PROFILES,
+      payload: res.data
+    });
+  } catch (err) {
+    /* istanbul ignore next */
+    dispatch({
+      type: PROFILE_ERROR,
+      payload: { msg: err.response.statusText, status: err.response.status }
+    });
+  }
+};
+
+//Get profile by id from url parameter
+// export const getProfileById = userId => async dispatch => {
+//   try{
+
+//     const res = await axios.get(`/api/profile/admin/${userId}`);
+//     console.log('inside action get profile by id ', res)
+//     dispatch({
+//       type: GET_PROFILE,
+//       payload: res.data
+//     })
+//     dispatch(getAllUsers());
+
+//   }
+//   catch(err){
+//     dispatch({
+//       type:PROFILE_ERROR,
+//       payload:{ msg: err.response.statusText, status: err.response.status }
+//     })
+//   }
+// }
 
 // Delete Account
 

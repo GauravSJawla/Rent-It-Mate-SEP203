@@ -8,7 +8,72 @@ const formidable = require('formidable')
 const _ = require('lodash');
 const fs = require('fs');
 const { errorHandler } = require('../../helpers/dbErrorHandler');
+/**
+ * @route GET api/product/getMyProducts
+ * @desc  This method is used to get all the products present on the site for the user.
+ * @access public  
+ */
+router.get('/getMyProducts',auth ,  async (req, res) => {
+  try {
+    const products = await Product.find({
+      userId : req.user.id
+    })
+    .select('-photo');
+    res.json(products);
+  } catch (err) {
+    /* istanbul ignore next */
+    res.status(500).send('Server Error');
+  }
+});
 
+/**
+ * @route api/product/products
+ *  sell / arrival
+ * @description :by sell = /products?sortBy=sold&order=desc&limit=4
+ *    by arrival = /products?sortBy=createdAt&order=desc&limit=4
+ *    if no params are sent, then all products are returned
+ */
+router.get("/products", async (req, res) => {
+  let order = req.query.order ? req.query.order : 'asc';
+  let sortBy = req.query.sortBy ? req.query.sortBy : '_id';
+  let limit = req.query.limit ? parseInt(req.query.limit) : 6;
+
+  Product.find()
+      .select('-photo')
+      .populate('Category')
+      .sort([[sortBy, order]])
+      .limit(limit)
+      .exec((err, products) => {
+          if (err) {
+            console.log(err);
+              return res.status(400).json({
+                  error: 'Products not found'
+              });
+          }
+          res.json(products);
+      });
+});
+/**
+ * @description : it will find the products based on the req product category
+ * other products that has the same category, will be returned
+ * @access public
+ */
+
+router.get ( "/products/related/:productId",(req, res) => {
+  let limit = req.query.limit ? parseInt(req.query.limit) : 6;
+  //products $ne = not including the req.product
+  Product.find({ _id: { $ne: req.product }, category: req.product.category })
+      .limit(limit)
+      .populate('category', '_id name')
+      .exec((err, products) => {
+          if (err) {
+              return res.status(400).json({
+                  error: 'Products not found'
+              });
+          }
+          res.json(products);
+      });
+});
 /**
  * @route   GET api/product/:id
  * @desc    This method gets hit everytime there is productId in the url.
@@ -16,8 +81,8 @@ const { errorHandler } = require('../../helpers/dbErrorHandler');
  *          the application process.
  * @access  public
  */
-router.param('productId' , (req, res, next, id) => {
-  Product.findById(id)
+router.param('productId' , async (req, res, next, id) => {
+  await Product.findById(id)
   .exec( (err , product) =>{
     if( err || !product){
       /* istanbul ignore next */
@@ -82,6 +147,7 @@ router.post('/create',[
           error: 'Image could not be uploaded'
         })
       }
+      
       const userId = req.user.id 
       const user = User.findById(userId)
       if(!user){
@@ -153,6 +219,21 @@ router.delete('/:productId' , auth , async (req , res) =>{
     })
   })
 })
+/**
+ * @route   GET api/product/photo/:id
+ * @desc    get a photo
+ * any get request with product id comes to this method
+ * and it then follows to the router.param which checks for the parameter 
+ * and then returns the product and moves on to next() application flow.
+ * @access  public 
+ */
+router.get('/photo/:productId',(req , res, next) =>{
+  if (req.product.photo.data) {
+    res.set('Content-Type', req.product.photo.contentType);
+    return res.send(req.product.photo.data);
+}
+next();
+ })
 
 /**
  * @route PUT/UPDATE api/product/:productId
@@ -170,20 +251,19 @@ router.put('/:productId', auth, (req, res)=>{
           error: 'Image could not be uploaded'
         })
       }
-      let userId = req.user.id
-      const user = User.findById(userId)
-       /* istanbul ignore next */
-      if(!user){
-        return res.status(400).json({
-          error :  'user not found try with different credentials'
-        })
-      }
+       let userId = req.user.id
+      // const user = User.findById(userId)
+      //  /* istanbul ignore next */
+      // if(!user){
+      //   return res.status(400).json({
+      //     error :  'user not found try with different credentials'
+      //   })
+      //}
       
       /**
        * check for all fields
        */
       const { name, description, price, category, quantity, shipping } = fields;
-     // console.log(name + ' '+ description+ ' '+ price+' '+ category+ ' '+ quantity+ ' '+ shipping )
       if (!name || !description || !price || !category || !quantity || !shipping ) {
           return res.status(400).json({
               error: 'All fields are required'
@@ -193,7 +273,7 @@ router.put('/:productId', auth, (req, res)=>{
         product.userId = userId
         product = _.extend(product , fields)
       
-     
+     console.log( name + description + price + category + quantity +shipping);
 
       /**  1kb = 1000
        *   1mb = 1000000
@@ -223,4 +303,7 @@ router.put('/:productId', auth, (req, res)=>{
       });
   });
 });
+
+
+
 module.exports = router;

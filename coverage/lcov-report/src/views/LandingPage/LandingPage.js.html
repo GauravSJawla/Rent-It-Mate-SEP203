@@ -25,28 +25,28 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>3/3</span>
+                <span class='fraction'>8/8</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">100% </span>
+                <span class="strong">71.43% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>0/0</span>
+                <span class='fraction'>5/7</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>1/1</span>
+                <span class='fraction'>2/2</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>3/3</span>
+                <span class='fraction'>7/7</span>
             </div>
         
             
@@ -125,11 +125,7 @@
 <a name='L66'></a><a href='#L66'>66</a>
 <a name='L67'></a><a href='#L67'>67</a>
 <a name='L68'></a><a href='#L68'>68</a>
-<a name='L69'></a><a href='#L69'>69</a>
-<a name='L70'></a><a href='#L70'>70</a>
-<a name='L71'></a><a href='#L71'>71</a>
-<a name='L72'></a><a href='#L72'>72</a>
-<a name='L73'></a><a href='#L73'>73</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L69'></a><a href='#L69'>69</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -148,14 +144,15 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">12x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">12x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">45x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">20x</span>
-<span class="cline-any cline-yes">20x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -164,6 +161,7 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">12x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -185,94 +183,84 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">16x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import React from 'react';
-import { Link } from 'react-router-dom';
-// nodejs library that concatenates classes
+import { Link, Redirect } from 'react-router-dom';
+import propTypes from 'prop-types';
+import { connect } from 'react-redux';
 import classNames from 'classnames';
 // @material-ui/core components
 import { makeStyles } from '@material-ui/core/styles';
 &nbsp;
 // enhancement packages
-&nbsp;
 // core components
-import Footer from 'components/Footer/Footer.js';
 import GridContainer from 'components/Grid/GridContainer.js';
 import GridItem from 'components/Grid/GridItem.js';
 import Button from 'components/CustomButtons/Button.js';
-import Parallax from 'components/Parallax/Parallax.js';
-import ProductGallary from 'components/ProductGallary/ProductGallary.js';
-&nbsp;
 import styles from 'assets/jss/material-kit-react/views/landingPage.js';
-&nbsp;
 // Sections for this page
 import Carousel from 'views/Components/Sections/SectionCarousel';
+//import { loadUser } from 'actions/auth';
+import ProductDisplayLandingPage from './ProductDisplayLandingPage'
 &nbsp;
 const useStyles = makeStyles(styles);
 &nbsp;
-export default function LandingPage() {
+const LandingPage = ({ auth:{user,isAuthenticated,loading} }) =&gt; {
   const classes = useStyles();
-  return (
-    &lt;div&gt;
-      &lt;Parallax filter image={require('assets/img/landing-bg.jpg')}&gt;
+  const guestRender = (
+    &lt;Button
+      color='danger'
+      size='lg'
+      component={Link}
+      to='/register'
+      target='_blank'
+      rel='noopener noreferrer'
+    &gt;
+      &lt;i className='fas fa-play' /&gt;
+      Register
+    &lt;/Button&gt;
+  );
+  return !loading &amp;&amp; user &amp;&amp; user.role==="admin" ? (<span class="branch-0 cbranch-no" title="branch not covered" >&lt;Redirect to='/admin-Dashboard'/&gt;)</span> : (
+    //return(
         &lt;div className={classes.landingContainer}&gt;
           &lt;GridContainer&gt;
-            &lt;GridItem xs={8} sm={8} md={4}&gt;
-              &lt;div&gt;
+            &lt;GridItem xs={12} sm={12} md={6}&gt;
                 &lt;h1 className={classes.title}&gt;Your Story Starts With Us.&lt;/h1&gt;
                 &lt;h4 className={classes.subtitle}&gt;
                   Rent It Mate is a platform for you to rent out your rarely
-                  used stuff and earn some money on it. So why wait? Sign Up!
+                  used stuff and earn some money on it.
+                  &lt;div&gt;{isAuthenticated ? &lt;div /&gt; : <span class="branch-1 cbranch-no" title="branch not covered" >guestRender}</span>&lt;/div&gt;
                 &lt;/h4&gt;
-                &lt;br /&gt;
-                &lt;Button
-                  color='danger'
-                  size='lg'
-                  component={Link}
-                  to='/register'
-                  target='_blank'
-                  rel='noopener noreferrer'
-                &gt;
-                  &lt;i className='fas fa-play' /&gt;
-                  Register
-                &lt;/Button&gt;
-              &lt;/div&gt;
             &lt;/GridItem&gt;
-            &lt;GridItem xs={16} sm={16} md={8}&gt;
-              &lt;Carousel /&gt;
-            &lt;/GridItem&gt;
+            &lt;Carousel/&gt;
           &lt;/GridContainer&gt;
-        &lt;/div&gt;
-      &lt;/Parallax&gt;
-      &lt;div className={classNames(classes.main, classes.mainRaised)}&gt;
-        &lt;div className={classes.gallaryContainer}&gt;
-          &lt;h2 className={classes.carouselTitle}&gt;New Arrivals&lt;/h2&gt;
-          &lt;ProductGallary /&gt;
-        &lt;/div&gt;
-        &lt;div className={classes.gallaryContainer}&gt;
-          &lt;h2 className={classes.carouselTitle}&gt;Headphones&lt;/h2&gt;
-          &lt;ProductGallary /&gt;
-        &lt;/div&gt;
-      &lt;/div&gt;
-      &lt;Footer /&gt;
-    &lt;/div&gt;
+          &lt;GridContainer&gt;
+              &lt;ProductDisplayLandingPage/&gt;
+          &lt;/GridContainer&gt;
+          &lt;/div&gt;
+    
   );
-}
+};
+&nbsp;
+LandingPage.propTypes = {
+  //isAuthenticated: propTypes.bool
+  auth:propTypes.object.isRequired
+};
+&nbsp;
+const mapStateToProps = state =&gt; ({
+  auth:state.auth
+});
+&nbsp;
+export default connect(mapStateToProps)(LandingPage);
 &nbsp;</pre></td></tr></table></pre>
 
                 <div class='push'></div><!-- for sticky footer -->
@@ -280,7 +268,7 @@ export default function LandingPage() {
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank">istanbul</a>
-                at Fri Mar 27 2020 17:54:28 GMT-0500 (Central Daylight Time)
+                at Sun Apr 12 2020 18:13:58 GMT-0500 (Central Daylight Time)
             </div>
         </div>
         <script src="../../../prettify.js"></script>

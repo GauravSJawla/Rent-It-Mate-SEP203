@@ -31,14 +31,15 @@ function CreateProduct({ createProduct, history }) {
     setCardAnimation('');
   }, 700);
 
-  const [formData, setFormData] = useState({
+  const [values, setValues] = useState({
     name: '',
     description: '',
     price: '',
     quantity: '',
     shipping: '',
     category: '',
-    photo: ''
+    photo: '',
+    formData: ''
   });
   const classes = useStyles();
 
@@ -49,19 +50,44 @@ function CreateProduct({ createProduct, history }) {
     quantity,
     shipping,
     category,
-    photo
-  } = formData;
+    photo,
+    createdProduct,
+    formData
+  } = values;
+
+  const init = () => {
+    // getCategories().then(data => {
+    //   if (data.error) {
+    //       setValues({ ...values, error: data.error });
+    //   } else {
+    setValues({
+      ...values,
+      //categories: data,
+      formData: new FormData()
+    });
+    //   }
+
+    //});
+  };
+
+  useEffect(() => {
+    console.log('use effect');
+    init();
+  }, []);
 
   //OnChange event Handler
-  const onChange = e =>
-    setFormData({
-      ...formData,
-      [e.target.id]: e.target.value
-    });
+  const onChange = e => {
+    const name = e.target.id;
+    const value = name == 'photo' ? e.target.files[0] : e.target.value;
+    console.log(name + ' id and val ' + value);
+    formData.set(name, value);
+    setValues({ ...values, [name]: value });
+  };
 
   // OnSubmit Event Handler
   const onSubmit = e => {
     e.preventDefault();
+    console.log('formdata: ' + JSON.stringify(formData));
     createProduct(formData, history);
   };
   return (
@@ -151,7 +177,8 @@ function CreateProduct({ createProduct, history }) {
                         autoComplete: 'off'
                       }}
                     />
-                    <CustomDropdown
+                    <CustomInput
+                      labelText='Category id...'
                       id='category'
                       formControlProps={{
                         fullWidth: true
@@ -163,14 +190,14 @@ function CreateProduct({ createProduct, history }) {
                         onChange: e => onChange(e),
                         autoComplete: 'off'
                       }}
-                      buttonText='Category'
-                      dropdownList={[
-                        'Furniture',
-                        'Electronics',
-                        'Garden',
-                        'Kitchen',
-                        'Home'
-                      ]}
+                      // buttonText='Category'
+                      // dropdownList={[
+                      //   'Furniture',
+                      //   'Electronics',
+                      //   'Garden',
+                      //   'Kitchen',
+                      //   'Home'
+                      // ]}
                     />
                     <CustomInput
                       labelText='Photo...'
@@ -180,8 +207,6 @@ function CreateProduct({ createProduct, history }) {
                       }}
                       inputProps={{
                         type: 'file',
-                        value: photo,
-                        required: true,
                         onChange: e => onChange(e)
                       }}
                     />
