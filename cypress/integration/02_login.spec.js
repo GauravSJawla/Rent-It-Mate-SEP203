@@ -40,7 +40,7 @@ describe('login page', () => {
       .invoke('text')
       .then(text => {
         const divTxt = text;
-        expect(divTxt).to.contain('Password in incorrect!');
+        expect(divTxt).to.contain('Password is incorrect!');
       });
   });
 

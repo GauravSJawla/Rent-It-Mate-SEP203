@@ -27,7 +27,7 @@ const ViewCategories = ({getAllCategories, deleteCategory,
     return(
         <div className={classes.landingContainer}>
           <div className={classes.dashboardTitle}>
-            <h3 align="center">Available Categories</h3>
+            <h3 align="center"><strong>Available Categories</strong></h3>
           </div>
           {loading ? (<Spinner/>) : (
                <div className= {classes.dashboardSubTitle}>
@@ -41,7 +41,7 @@ const ViewCategories = ({getAllCategories, deleteCategory,
                         </TableRow>
                     </TableHead>
                       {categories.map(category => (
-                          <TableBody>
+                          <TableBody id={category.name}>
                           <TableCell align="left" className={classes.td} component="th" scope="row">
                               {category.name}
                           </TableCell>

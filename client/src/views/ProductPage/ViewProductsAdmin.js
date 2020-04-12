@@ -32,6 +32,7 @@ const ViewProductsAdmin = ({
       <Spinner />
       ) : (
            <div className={classes.landingContainer}>
+               <h3 align="left"><strong>Available Products</strong></h3>
               <GridContainer>
                         { 
                         products.map(p =>(

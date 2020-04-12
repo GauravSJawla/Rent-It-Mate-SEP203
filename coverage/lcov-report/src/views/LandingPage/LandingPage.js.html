@@ -129,26 +129,7 @@
 <a name='L70'></a><a href='#L70'>70</a>
 <a name='L71'></a><a href='#L71'>71</a>
 <a name='L72'></a><a href='#L72'>72</a>
-<a name='L73'></a><a href='#L73'>73</a>
-<a name='L74'></a><a href='#L74'>74</a>
-<a name='L75'></a><a href='#L75'>75</a>
-<a name='L76'></a><a href='#L76'>76</a>
-<a name='L77'></a><a href='#L77'>77</a>
-<a name='L78'></a><a href='#L78'>78</a>
-<a name='L79'></a><a href='#L79'>79</a>
-<a name='L80'></a><a href='#L80'>80</a>
-<a name='L81'></a><a href='#L81'>81</a>
-<a name='L82'></a><a href='#L82'>82</a>
-<a name='L83'></a><a href='#L83'>83</a>
-<a name='L84'></a><a href='#L84'>84</a>
-<a name='L85'></a><a href='#L85'>85</a>
-<a name='L86'></a><a href='#L86'>86</a>
-<a name='L87'></a><a href='#L87'>87</a>
-<a name='L88'></a><a href='#L88'>88</a>
-<a name='L89'></a><a href='#L89'>89</a>
-<a name='L90'></a><a href='#L90'>90</a>
-<a name='L91'></a><a href='#L91'>91</a>
-<a name='L92'></a><a href='#L92'>92</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L73'></a><a href='#L73'>73</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -167,15 +148,9 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">65x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">57x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">57x</span>
+<span class="cline-any cline-yes">65x</span>
 <span class="cline-any cline-yes">80x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">80x</span>
@@ -216,25 +191,12 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">65x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">57x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">80x</span>
+<span class="cline-any cline-yes">96x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -243,26 +205,20 @@
 import { Link, Redirect } from 'react-router-dom';
 import propTypes from 'prop-types';
 import { connect } from 'react-redux';
-// nodejs library that concatenates classes
 import classNames from 'classnames';
 // @material-ui/core components
 import { makeStyles } from '@material-ui/core/styles';
 &nbsp;
 // enhancement packages
-&nbsp;
 // core components
-import Footer from 'components/Footer/Footer.js';
 import GridContainer from 'components/Grid/GridContainer.js';
 import GridItem from 'components/Grid/GridItem.js';
 import Button from 'components/CustomButtons/Button.js';
-import Parallax from 'components/Parallax/Parallax.js';
-import ProductGallary from 'components/ProductGallary/ProductGallary.js';
-&nbsp;
 import styles from 'assets/jss/material-kit-react/views/landingPage.js';
-&nbsp;
 // Sections for this page
 import Carousel from 'views/Components/Sections/SectionCarousel';
 //import { loadUser } from 'actions/auth';
+import ProductDisplayLandingPage from './ProductDisplayLandingPage'
 &nbsp;
 const useStyles = makeStyles(styles);
 &nbsp;
@@ -283,39 +239,26 @@ const LandingPage = ({ auth:{user,isAuthenticated,loading} }) =&gt; {
   );
   return !loading &amp;&amp; user &amp;&amp; user.role==="admin" ? (<span class="branch-0 cbranch-no" title="branch not covered" >&lt;Redirect to='/admin-Dashboard'/&gt;)</span> : (
     //return(
-    &lt;div&gt;
-      &lt;Parallax filter image={require('assets/img/landing-bg.jpg')}&gt;
         &lt;div className={classes.landingContainer}&gt;
           &lt;GridContainer&gt;
-            &lt;GridItem xs={8} sm={8} md={4}&gt;
-              &lt;div&gt;
+            &lt;GridItem xs={12} sm={12} md={6}&gt;
                 &lt;h1 className={classes.title}&gt;Your Story Starts With Us.&lt;/h1&gt;
                 &lt;h4 className={classes.subtitle}&gt;
                   Rent It Mate is a platform for you to rent out your rarely
-                  used stuff and earn some money on it. So why wait? Sign Up!
+                  used stuff and earn some money on it.
                 &lt;/h4&gt;
-                &lt;br /&gt;
                 &lt;div&gt;{isAuthenticated ? &lt;div /&gt; : <span class="branch-1 cbranch-no" title="branch not covered" >guestRender}</span>&lt;/div&gt;
-              &lt;/div&gt;
-            &lt;/GridItem&gt;
-            &lt;GridItem xs={16} sm={16} md={8}&gt;
-              &lt;Carousel /&gt;
             &lt;/GridItem&gt;
           &lt;/GridContainer&gt;
-        &lt;/div&gt;
-      &lt;/Parallax&gt;
-      &lt;div className={classNames(classes.main, classes.mainRaised)}&gt;
-        &lt;div className={classes.gallaryContainer}&gt;
-          &lt;h2 className={classes.carouselTitle}&gt;New Arrivals&lt;/h2&gt;
-          &lt;ProductGallary /&gt;
-        &lt;/div&gt;
-        &lt;div className={classes.gallaryContainer}&gt;
-          &lt;h2 className={classes.carouselTitle}&gt;Headphones&lt;/h2&gt;
-          &lt;ProductGallary /&gt;
-        &lt;/div&gt;
-      &lt;/div&gt;
-      &lt;Footer /&gt;
-    &lt;/div&gt;
+          &lt;GridContainer&gt;
+            &lt;GridItem xs={12}&gt;
+              &lt;Carousel/&gt;
+            &lt;/GridItem&gt;
+              &lt;GridItem xs={32} sm={32} md={16}&gt;
+              &lt;ProductDisplayLandingPage/&gt;
+              &lt;/GridItem&gt;
+            &lt;/GridContainer&gt;
+          &lt;/div&gt;
     
   );
 };
@@ -337,7 +280,7 @@ export default connect(mapStateToProps)(LandingPage);
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank">istanbul</a>
-                at Thu Apr 09 2020 19:13:04 GMT-0500 (Central Daylight Time)
+                at Sun Apr 12 2020 11:19:29 GMT-0500 (Central Daylight Time)
             </div>
         </div>
         <script src="../../../prettify.js"></script>

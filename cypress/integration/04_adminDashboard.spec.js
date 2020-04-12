@@ -35,7 +35,15 @@ describe('admin dashboard', () => {
         cy.get('tbody tr').should('not.have.text', 'No categories found....')
     })
 
+    it('should display all the available products on selecting products from the page', () => {
+        cy.contains('Products').click()
+        cy.get('h3').contains('Available Products')
+        cy.get('div[class="product-img"]').should('have.length.greaterThan', 0).should('be.visible');
+        //cy.get('div[class="product-img"]').first().get('a').second().click()
+    })
+
     it('should redirect to add category page on selecting create category', () => {
+        cy.contains('Categories').click()
         cy.contains('Create Category').click()
         cy.url({timeout : 5000}).should('includes', '/add-category')
     })
