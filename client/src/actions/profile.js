@@ -68,6 +68,7 @@ export const getProfiles = () => async dispatch => {
       payload: res.data
     });
   } catch (err) {
+    /* istanbul ignore next */
     dispatch({
       type: PROFILE_ERROR,
       payload: { msg: err.response.statusText, status: err.response.status }
@@ -76,25 +77,25 @@ export const getProfiles = () => async dispatch => {
 };
 
 //Get profile by id from url parameter
-export const getProfileById = userId => async dispatch => {
-  try{
+// export const getProfileById = userId => async dispatch => {
+//   try{
 
-    const res = await axios.get(`/api/profile/admin/${userId}`);
-    console.log('inside action get profile by id ', res)
-    dispatch({
-      type: GET_PROFILE,
-      payload: res.data
-    })
-    dispatch(getAllUsers());
+//     const res = await axios.get(`/api/profile/admin/${userId}`);
+//     console.log('inside action get profile by id ', res)
+//     dispatch({
+//       type: GET_PROFILE,
+//       payload: res.data
+//     })
+//     dispatch(getAllUsers());
 
-  }
-  catch(err){
-    dispatch({
-      type:PROFILE_ERROR,
-      payload:{ msg: err.response.statusText, status: err.response.status }
-    })
-  }
-}
+//   }
+//   catch(err){
+//     dispatch({
+//       type:PROFILE_ERROR,
+//       payload:{ msg: err.response.statusText, status: err.response.status }
+//     })
+//   }
+// }
 
 // Delete Account
 

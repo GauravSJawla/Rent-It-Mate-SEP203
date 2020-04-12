@@ -62,7 +62,7 @@ const CategoryPage = ({createCategory,
 
   if(error === 'Category already exists! Update it!'){
     console.log('inside category error');
-    setAlert('Category already exists, Update it!','danger');
+   // setAlert('Category already exists, Update it!','danger');
   }
 
   return (

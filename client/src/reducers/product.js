@@ -6,7 +6,8 @@ import{
     PRODUCT_DELETED,
     UPDATE_PRODUCT,
     GET_CURRENT_PRODUCT_ID,
-    GET_ALL_PRODUCTS
+    GET_ALL_PRODUCTS,
+    CLEAR_PRODUCTS
 } from '../actions/types';
 
 const initalState = {
@@ -59,6 +60,15 @@ export default function (state = initalState, action){
                 error: payload,
                 loading: false
             };
+        case CLEAR_PRODUCTS:
+            return{
+                ...state,
+                productId: null,
+                products: [],
+                product: null,
+                loading: false,
+                error: {}
+            }
         default:
             return state;
     }

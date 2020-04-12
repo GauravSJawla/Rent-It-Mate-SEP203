@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { connect } from "react-redux";
 import PropTypes from "prop-types";
+import { Redirect } from 'react-router-dom';
 import { withRouter } from "react-router-dom";
 // @material-ui/core components
 import { makeStyles } from "@material-ui/core/styles";
@@ -25,7 +26,11 @@ import { getCategoryList } from "../../actions/category";
 
 const useStyles = makeStyles(styles);
 
-function SubcategoryPage({ createSubcategory, getCategoryList, categoryList, history }) {
+function SubcategoryPage({ createSubcategory, 
+          getCategoryList, 
+          categoryList,
+          subcategory:{subcategory}, 
+          history }) {
   const [cardAnimaton, setCardAnimation] = React.useState("cardHidden");
   setTimeout(function () {
     setCardAnimation("");
@@ -58,6 +63,11 @@ function SubcategoryPage({ createSubcategory, getCategoryList, categoryList, his
   useEffect(() => {
     getCategoryList();
   }, []);
+
+  if(subcategory !== null){
+    return <Redirect to='/admin-dashboard/all-subcategories'/>
+  }
+
 
   return (
     <div>
@@ -111,7 +121,8 @@ function SubcategoryPage({ createSubcategory, getCategoryList, categoryList, his
 
 SubcategoryPage.propTypes = {
   createSubcategory: PropTypes.func.isRequired,
-  getCategoryList: PropTypes.func.isRequired
+  getCategoryList: PropTypes.func.isRequired,
+  subcategory:PropTypes.object.isRequired
 };
 
 const mapStateToProps = (state) => {
@@ -119,6 +130,7 @@ const mapStateToProps = (state) => {
     categoryList: state.categorylist.categoryList,
     auth: state.auth,
     error: state.auth.error,
+    subcategory:state.subcategory
   };
 };
 

@@ -78,7 +78,7 @@ const ListUsers = ({getAllUsers,getProfiles,
     return(
         <div className={classes.landingContainer}>
             <div className={classes.dashboardTitle}>
-              <h3 align="center">List of Users</h3>
+              <h3 align="left"><strong>List of Users</strong></h3>
             {loading ? (<Spinner/>) :( 
               <Table className={classes.table} aria-label="a dense table" component = {Paper}>
                 <TableHead className={classes.th}>
