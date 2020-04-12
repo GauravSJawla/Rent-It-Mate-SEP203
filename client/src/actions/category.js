@@ -6,6 +6,8 @@ import{
     GET_CATEGORIES,
     CATEGORY_ERROR,
     UPDATE_CATEGORY,
+    GET_CATEGORYLIST,
+    CATEGORYLIST_ERROR
 } from './types';
 
 export const getAllCategories = () => async dispatch => {
@@ -97,6 +99,21 @@ export const updateCategory = (categoryId,formData) => async dispatch => {
         })
     }
 }
+
+export const getCategoryList = () => async (dispatch) => {
+    try {
+      const res = await axios.get("/api/category");
+      dispatch({
+        type: GET_CATEGORYLIST,
+        payload: res.data,
+      });
+    } catch (err) {
+      dispatch({
+        type: CATEGORYLIST_ERROR,
+        payload: { status: err },
+      });
+    }
+  };
 
 export const deleteCategory = (categoryId) => async dispatch => {
     if(window.confirm('Are you sure to delete this category?')){
