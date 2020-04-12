@@ -35,7 +35,7 @@ const SingleProductLandingPage = ({
         }
       }
       return(
-        <GridItem xs={12} sm={12} md={6}>
+        <GridItem xs={12} sm={12} md={4}>
         <div className={classes.landingContainer}>
         <Card style={{width: "20rem"}}>
           <ShowImage productId={_id}/>

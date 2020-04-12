@@ -134,6 +134,7 @@ export const getUserProducts = () => async dispatch => {
  *      
  */
 export const updateProduct = (formData, history ,id, edit = false) => async dispatch => {
+  console.log(id+' inside update id ')
   try{
       const config = {
           headers: {
