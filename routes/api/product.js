@@ -228,7 +228,6 @@ router.delete('/:productId' , auth , async (req , res) =>{
  * @access  public 
  */
 router.get('/photo/:productId',(req , res, next) =>{
-  // console.log(req.product+' inside get');
   if (req.product.photo.data) {
     res.set('Content-Type', req.product.photo.contentType);
     return res.send(req.product.photo.data);
@@ -274,7 +273,7 @@ router.put('/:productId', auth, (req, res)=>{
         product.userId = userId
         product = _.extend(product , fields)
       
-     
+     console.log( name + description + price + category + quantity +shipping);
 
       /**  1kb = 1000
        *   1mb = 1000000

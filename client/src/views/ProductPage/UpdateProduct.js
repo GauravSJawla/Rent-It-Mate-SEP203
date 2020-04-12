@@ -15,17 +15,7 @@ import CardBody from 'components/Card/CardBody.js';
 import CardHeader from 'components/Card/CardHeader.js';
 import CardFooter from 'components/Card/CardFooter.js';
 import CustomInput from 'components/CustomInput/CustomInput.js';
-import Radio from "@material-ui/core/Radio";
-import RadioGroup from "@material-ui/core/RadioGroup";
-import FormControlLabel from "@material-ui/core/FormControlLabel";
-
-import FormLabel from "@material-ui/core/FormLabel";
 import styles from 'assets/jss/material-kit-react/views/loginPage.js';
-import CustomDropdown from 'components/CustomDropdown/CustomDropdown.js';
-//icons
-import FiberManualRecord from "@material-ui/icons/FiberManualRecord";
-
-
 import image from 'assets/img/bg7.jpg';
 
 //Import register from other component
@@ -37,7 +27,7 @@ function UpdateProduct({
   updateProduct,
   history,
   match,
-  product: { product , loading },
+  product: { product , loading , products},
   getSingleProduct }) {
 
   const [selectedEnabled, setSelectedEnabled] = React.useState("b");
@@ -71,35 +61,52 @@ function UpdateProduct({
     formData
   } = values;
   
+  var productName
+  var productDescription
+  var productPrice
+  var productQuantity
+  var productShipping
+  var productCategory
+  
+  
   useEffect(() => {
-    getSingleProduct(match.params.id)
-    //console.log(product + ' '+ loading)
-          // populate the state
+    products.map(product =>{
+      if(product._id === match.params.id){
+        productName = product.name;
+        productDescription = product.description;
+        productPrice = product.price;
+        productQuantity = product.quantity;
+        productShipping = product.shipping;
+        productCategory = product.category;
+      } 
+    })
           setValues({
-              name: loading || !product.name ? '' : product.name,
-              description: loading || !product.description ? '' : product.description,
-              price: loading || !product.price ? '' : product.price,
-              category: loading || !product.category ? '' : product.category,
-              quantity: loading || !product.quantity ? '' : product.quantity,
-              shipping: loading || !product.shipping ? '' : product.shipping,
-               formData: new FormData()
+              name: productName,
+              description: productDescription,
+              price: productPrice,
+              category: productCategory,
+              quantity: productQuantity,
+              shipping: productShipping,
+              formData: new FormData()
           });
-  },[getSingleProduct, match.params.id]);
+  },[match.params.id]);
 
   //OnChange event Handler
   const onChange = e => {
       const name = e.target.id
-      const value = name ==='photo' ? e.target.files[0] : e.target.value;
+      const value = name == 'photo' ? e.target.files[0] : e.target.value;
+      console.log(name+' id and val '+value)
       formData.set(name, value);
-      setValues({ ...values,
-               [name]: value});
-     
+      setValues({ ...values, [name]: value});
   };
 
   // OnSubmit Event Handler
   const onSubmit = e => {
     e.preventDefault();
-    updateProduct(formData, history , match.params.id)
+    console.log( match.params.id+ ' id ');
+    console.log( name+ ' name ');
+    console.log("formdata: "+formData);
+    updateProduct(formData, history , match.params.id);
   };
   return (
     <div>
@@ -174,55 +181,22 @@ function UpdateProduct({
                         autoComplete: 'off'
                       }}
                     />
-                    <FormLabel component="legend">Shipping</FormLabel>
-      <RadioGroup
-        aria-label="shipping"
-        name="shipping"
-        inputProps={{
-          type: 'boolean',
-          value: {shipping},
-          required: true,
-          onChange: e => onChange(e),
-          autoComplete: 'off'
-        }}
-      >
-        <FormControlLabel
-          value="true"
-          control={<Radio />}
-          label="I will ship the product"
-        />
-        <FormControlLabel
-          value="false"
-          control={<Radio />}
-          label="I won't ship this product"
-        />
-      </RadioGroup>
-                    <CustomDropdown
-                      buttonText="Category"
-                      dropdownHeader="Categories"
-                      buttonProps={{
-                        className: classes.navLink,
-                        color: "transparent"
+                    <CustomInput
+                      labelText='Shipping...'
+                      id='shipping'
+                      formControlProps={{
+                        fullWidth: true
                       }}
                       inputProps={{
                         type: 'text',
-                        value: category,
+                        value: shipping,
                         required: true,
                         onChange: e => onChange(e),
                         autoComplete: 'off'
                       }}
-                      dropdownList={[
-                        "Action",
-                        "Another action",
-                        "Something else here",
-                        { divider: true },
-                        "Separated link",
-                        { divider: true },
-                        "One more separated link"
-                      ]}
                     />
-                    {/* <CustomInput
-                      labelText='Category...'
+                    <CustomInput
+                     labelText='Category id...'
                       id='category'
                       formControlProps={{
                         fullWidth: true
@@ -234,7 +208,7 @@ function UpdateProduct({
                         onChange: e => onChange(e),
                         autoComplete: 'off'
                       }}
-                    /> */}
+                    />
                     <CustomInput
                       labelText='Photo...'
                       id='photo'
@@ -269,7 +243,6 @@ function UpdateProduct({
 
 UpdateProduct.propTypes = {
     updateProduct: PropTypes.func.isRequired,
-    getSingleProduct: PropTypes.func.isRequired,
     product: PropTypes.object.isRequired
 };
 
@@ -279,5 +252,5 @@ const mapStateToProps = state => ({
 
 export default connect(
   mapStateToProps,
-  { updateProduct, getSingleProduct }
+  { updateProduct}
 )(withRouter(UpdateProduct));

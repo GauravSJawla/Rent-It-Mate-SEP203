@@ -15,16 +15,8 @@ import CardBody from 'components/Card/CardBody.js';
 import CardHeader from 'components/Card/CardHeader.js';
 import CardFooter from 'components/Card/CardFooter.js';
 import CustomInput from 'components/CustomInput/CustomInput.js';
-import Radio from "@material-ui/core/Radio";
-import RadioGroup from "@material-ui/core/RadioGroup";
-import FormControlLabel from "@material-ui/core/FormControlLabel";
-
-import FormLabel from "@material-ui/core/FormLabel";
 import styles from 'assets/jss/material-kit-react/views/loginPage.js';
 import CustomDropdown from 'components/CustomDropdown/CustomDropdown.js';
-//icons
-import FiberManualRecord from "@material-ui/icons/FiberManualRecord";
-
 
 import image from 'assets/img/bg7.jpg';
 
@@ -34,8 +26,6 @@ import { createProduct } from '../../actions/product';
 const useStyles = makeStyles(styles);
 
 function CreateProduct({ createProduct, history }) {
-
-  const [selectedEnabled, setSelectedEnabled] = React.useState("b");
   const [cardAnimaton, setCardAnimation] = React.useState('cardHidden');
   setTimeout(function() {
     setCardAnimation('');
@@ -47,7 +37,6 @@ function CreateProduct({ createProduct, history }) {
     price: '',
     quantity: '',
     shipping: '',
-    categories: [],
     category: '',
     photo: '',
     formData: ''
@@ -60,7 +49,6 @@ function CreateProduct({ createProduct, history }) {
     price,
     quantity,
     shipping,
-    categories,
     category,
     photo,
     createdProduct,
@@ -72,7 +60,6 @@ function CreateProduct({ createProduct, history }) {
     //   if (data.error) {
     //       setValues({ ...values, error: data.error });
     //   } else {
-            
           setValues({
               ...values,
               //categories: data,
@@ -86,12 +73,12 @@ function CreateProduct({ createProduct, history }) {
   useEffect(() => {
     console.log('use effect')
     init();
-  },[]);
+  }, []);
 
   //OnChange event Handler
   const onChange = e => {
       const name = e.target.id
-      const value = name ==='photo' ? e.target.files[0] : e.target.value;
+      const value = name =='photo' ? e.target.files[0] : e.target.value;
       console.log(name+' id and val '+value)
       formData.set(name, value);
       setValues({ ...values, [name]: value});
@@ -177,55 +164,22 @@ function CreateProduct({ createProduct, history }) {
                         autoComplete: 'off'
                       }}
                     />
-                    <FormLabel component="legend">Shipping</FormLabel>
-      <RadioGroup
-        aria-label="shipping"
-        name="shipping"
-        inputProps={{
-          type: 'boolean',
-          value: {shipping},
-          required: true,
-          onChange: e => onChange(e),
-          autoComplete: 'off'
-        }}
-      >
-        <FormControlLabel
-          value="true"
-          control={<Radio />}
-          label="I will ship the product"
-        />
-        <FormControlLabel
-          value="false"
-          control={<Radio />}
-          label="I won't ship this product"
-        />
-      </RadioGroup>
-                    <CustomDropdown
-                      buttonText="Category"
-                      dropdownHeader="Categories"
-                      buttonProps={{
-                        className: classes.navLink,
-                        color: "transparent"
+                    <CustomInput
+                      labelText='Shipping...'
+                      id='shipping'
+                      formControlProps={{
+                        fullWidth: true
                       }}
                       inputProps={{
                         type: 'text',
-                        value: category,
+                        value: shipping,
                         required: true,
                         onChange: e => onChange(e),
                         autoComplete: 'off'
                       }}
-                      dropdownList={[
-                        "Action",
-                        "Another action",
-                        "Something else here",
-                        { divider: true },
-                        "Separated link",
-                        { divider: true },
-                        "One more separated link"
-                      ]}
                     />
-                    {/* <CustomInput
-                      labelText='Category...'
+                    <CustomInput
+                     labelText='Category id...'
                       id='category'
                       formControlProps={{
                         fullWidth: true
@@ -237,7 +191,15 @@ function CreateProduct({ createProduct, history }) {
                         onChange: e => onChange(e),
                         autoComplete: 'off'
                       }}
-                    /> */}
+                     // buttonText='Category'
+                      // dropdownList={[
+                      //   'Furniture',
+                      //   'Electronics',
+                      //   'Garden',
+                      //   'Kitchen',
+                      //   'Home'
+                      // ]}
+                    />
                     <CustomInput
                       labelText='Photo...'
                       id='photo'

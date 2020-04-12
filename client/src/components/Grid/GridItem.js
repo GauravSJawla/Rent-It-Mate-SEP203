@@ -8,11 +8,10 @@ import Grid from "@material-ui/core/Grid";
 const styles = {
   grid: {
     position: "relative",
-    marginLeft: "15px",
     width: "100%",
     minHeight: "1px",
-    paddingRight: "5px",
-    paddingLeft: "5px",
+    paddingRight: "15px",
+    paddingLeft: "15px",
     flexBasis: "auto"
   }
 };
@@ -23,7 +22,7 @@ export default function GridItem(props) {
   const classes = useStyles();
   const { children, className, ...rest } = props;
   return (
-    <Grid item {...rest} className={classes.grid + " " + className}>
+    <Grid item {...rest} className={classes.grid +" " + className}>
       {children}
     </Grid>
   );

@@ -43,18 +43,14 @@ const LandingPage = ({ auth:{user,isAuthenticated,loading} }) => {
                 <h4 className={classes.subtitle}>
                   Rent It Mate is a platform for you to rent out your rarely
                   used stuff and earn some money on it.
+                  <div>{isAuthenticated ? <div /> : guestRender}</div>
                 </h4>
-                <div>{isAuthenticated ? <div /> : guestRender}</div>
             </GridItem>
+            <Carousel/>
           </GridContainer>
           <GridContainer>
-            <GridItem xs={12}>
-              <Carousel/>
-            </GridItem>
-              <GridItem xs={32} sm={32} md={16}>
               <ProductDisplayLandingPage/>
-              </GridItem>
-            </GridContainer>
+          </GridContainer>
           </div>
     
   );
