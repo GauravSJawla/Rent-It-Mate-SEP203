@@ -21,8 +21,6 @@ router.post("/", auth, async (req, res) => {
   const subCategoryFields = { name, categoryId };
   if (name) subCategoryFields.name = name;
   if (categoryId) subCategoryFields.categoryId = categoryId;
-  console.log(subCategoryFields);
-
   try {
     try {
       let category = await Category.findOne({ _id: categoryId });
@@ -128,8 +126,8 @@ router.post("/:subcategory_id", auth, async (req, res) => {
 
 router.delete("/:subcategory_id", auth, async (req, res) => {
   try {
-    const product = await Product.find({subcategory:req.params.subcategory_id})
-    if(product){
+    const productCount = await Product.find({subcategory:req.params.subcategory_id}).countDocuments();
+    if(productCount){
       return res.json({msg:'There are products associated with this subcategory and hence cannot be deleted..'})
     }
     await SubCategory.findOneAndRemove({

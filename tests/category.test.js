@@ -1,5 +1,5 @@
 const Category = require('../models/Category');
-const Users = require('../models/Users');
+const Subcategory = require('../models/SubCategory');
 const config = require('config');
 const expect = require('expect');
 const MongoClient = require('mongodb');
@@ -21,7 +21,6 @@ describe('category create/read/update/delete category', () => {
     });
 
     if (duplicateCategory) {
-      console.log('inside delete');
       await Category.deleteOne(duplicateCategory);
     }
 
@@ -30,35 +29,15 @@ describe('category create/read/update/delete category', () => {
     });
 
     if (duplicateCategory2) {
-      console.log('inside delete2');
       await Category.deleteOne(duplicateCategory2);
     }
-
-    // const user = Users.findOne({ username: 'AdminUser' });
-    // if (user) {
-    //   await Users.deleteOne({ username: 'AdminUser' });
-    // }
   });
 
   afterAll(() => {
-    //Users.deleteOne({ username: 'AdminUser' });
     connection.close();
     request.close();
     app.destroy();
   });
-
-  // it('can create an user in the database', async () => {
-  //   const response = await request
-  //     .post('/api/users')
-  //     .send({
-  //       name: 'Admin',
-  //       username: 'admin',
-  //       email: 'adminuser@gmail.com',
-  //       password: 'admin'
-  //     })
-  //     .expect(200);
-  //   return expect(JSON.stringify(response.body));
-  // });
 
   it('can get token', async () => {
     response = await request
@@ -144,7 +123,24 @@ describe('category create/read/update/delete category', () => {
     return expect(JSON.stringify(response.body)).toMatch('test category3');
   });
 
+  it('should not delete a category if there are subcategories to it', async() => {
+    const category = await Category.findOne({ name: 'test category3' });
+    const subCategoryRes = await request.post('/api/subcategory/')
+                            .set('x-auth-token',token)
+                            .send({
+                              name:'subcategory1',
+                              categoryId:category._id
+                            }).expect(200);
+    const res = await request.delete('/api/category/' + category._id)
+                            .set('x-auth-token',token)
+    return expect(JSON.stringify(res.body))
+                    .toMatch('Category has sub categories available and hence cannot be deleted!');
+  
+  })
+
   it('should delete a category by category ID', async () => {
+    const subcategory = await Subcategory.findOne({name : 'subcategory1'});
+    await Subcategory.findByIdAndRemove({_id:subcategory._id})
     const category = await Category.findOne({ name: 'test category3' });
     const response = await request
       .delete('/api/category/' + category._id)

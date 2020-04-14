@@ -117,18 +117,20 @@ router.post('/:category_id', auth, async (req, res) => {
 
 router.delete('/:category_id', auth, async (req, res) => {
   try {
-    const subcategory = await SubCategory.find({categoryId:req.params.category_id})
-    if(subcategory){
+    const subCategoryCount = await SubCategory.find({categoryId:req.params.category_id}).countDocuments();
+    if(subCategoryCount > 0){
       return res.json({msg:'Category has sub categories available and hence cannot be deleted!'})
     }
-    await Category.findOneAndRemove({
-      _id: req.params.category_id
-    });
-    res.json({ msg: 'Category deleted' });
+    else {
+      await Category.findOneAndRemove({
+        _id: req.params.category_id
+      });
+      res.json({ msg: 'Category deleted' });
+    }
+    
   } catch (err) {
-    console.log('delete error',err);
     /* istanbul ignore next */
-    res.status(500).send('Server Error');
+    res.status(500).send('Server Error'); 
   }
 });
 
