@@ -4,6 +4,7 @@ const auth = require("../../middleware/auth");
 const { validationResult } = require("express-validator");
 const Category = require("../../models/Category");
 const SubCategory = require("../../models/SubCategory");
+const Product = require('../../models/Product');
 
 // @route   POST api/subcategory525
 // @access  Private
@@ -127,6 +128,10 @@ router.post("/:subcategory_id", auth, async (req, res) => {
 
 router.delete("/:subcategory_id", auth, async (req, res) => {
   try {
+    const product = await Product.find({subcategory:req.params.subcategory_id})
+    if(product){
+      return res.json({msg:'There are products associated with this subcategory and hence cannot be deleted..'})
+    }
     await SubCategory.findOneAndRemove({
       _id: req.params.subcategory_id
     });

@@ -128,7 +128,7 @@ router.post('/create',[
     check('price','please include a price')
     .not()
     .isEmpty(),
-    check('category','please include a category')
+    check('subcategory','please include a category')
     .not()
     .isEmpty(),
     check('quantity','please include quantity')
@@ -158,9 +158,9 @@ router.post('/create',[
       }
       
       //check for all fields
-      const { name, description, price, category, quantity, shipping  } = fields;
+      const { name, description, price, subcategory, quantity, shipping  } = fields;
       /* istanbul ignore next */
-      if (!name || !description || !price || !category || !quantity || !shipping ) {
+      if (!name || !description || !price || !subcategory || !quantity || !shipping ) {
           return res.status(400).json({
               error: 'All fields are required'
           });
