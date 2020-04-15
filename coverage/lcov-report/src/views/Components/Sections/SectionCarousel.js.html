@@ -23,9 +23,9 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">100% </span>
+                <span class="strong">25% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>4/4</span>
+                <span class='fraction'>1/4</span>
             </div>
         
             
@@ -37,16 +37,16 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">100% </span>
+                <span class="strong">0% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>1/1</span>
+                <span class='fraction'>0/1</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">100% </span>
+                <span class="strong">25% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>4/4</span>
+                <span class='fraction'>1/4</span>
             </div>
         
             
@@ -55,7 +55,7 @@
             Press <em>n</em> or <em>j</em> to go to the next uncovered block, <em>b</em>, <em>p</em> or <em>k</em> for the previous block.
         </p>
     </div>
-    <div class='status-line high'></div>
+    <div class='status-line low'></div>
     <pre><table class="coverage">
 <tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
 <a name='L2'></a><a href='#L2'>2</a>
@@ -107,11 +107,7 @@
 <a name='L48'></a><a href='#L48'>48</a>
 <a name='L49'></a><a href='#L49'>49</a>
 <a name='L50'></a><a href='#L50'>50</a>
-<a name='L51'></a><a href='#L51'>51</a>
-<a name='L52'></a><a href='#L52'>52</a>
-<a name='L53'></a><a href='#L53'>53</a>
-<a name='L54'></a><a href='#L54'>54</a>
-<a name='L55'></a><a href='#L55'>55</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L51'></a><a href='#L51'>51</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -126,24 +122,20 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">7x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">12x</span>
-<span class="cline-any cline-yes">12x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">12x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -165,27 +157,27 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import React from "react";
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import React from 'react';
 // react component for creating beautiful carousel
-import Carousel from "react-slick";
+import Carousel from 'react-slick';
 // @material-ui/core components
-import { makeStyles } from "@material-ui/core/styles";
+import { makeStyles } from '@material-ui/core/styles';
 // core components
-import GridContainer from "components/Grid/GridContainer.js";
-import GridItem from "components/Grid/GridItem.js";
+import GridContainer from 'components/Grid/GridContainer.js';
+import GridItem from 'components/Grid/GridItem.js';
 &nbsp;
-import image1 from "assets/img/Furniture.jpg";
-import image2 from "assets/img/electronics.jpg";
-import image3 from "assets/img/tvshow.jpg";
+import image1 from 'assets/img/Furniture.jpg';
+import image2 from 'assets/img/electronics.jpg';
+import image3 from 'assets/img/tvshow.jpg';
 &nbsp;
-import styles from "assets/jss/material-kit-react/views/componentsSections/carouselStyle.js";
+import styles from 'assets/jss/material-kit-react/views/componentsSections/carouselStyle.js';
 &nbsp;
 const useStyles = makeStyles(styles);
 &nbsp;
-export default function SectionCarousel() {
-  const classes = useStyles();
-  const settings = {
-    width: "100%",
+export default function <span class="fstat-no" title="function not covered" >SectionCarousel(</span>) {
+  const classes = <span class="cstat-no" title="statement not covered" >useStyles();</span>
+  const settings = <span class="cstat-no" title="statement not covered" >{</span>
+    width: '100%',
     dots: true,
     infinite: true,
     speed: 500,
@@ -193,26 +185,22 @@ export default function SectionCarousel() {
     slidesToScroll: 1,
     autoplay: true
   };
-  return (
+<span class="cstat-no" title="statement not covered" >  return (</span>
     &lt;div className={classes.section}&gt;
       &lt;div className={classes.container}&gt;
         &lt;GridContainer&gt;
           &lt;GridItem xs={12}&gt;
-              &lt;Carousel {...settings}&gt;
-                &lt;div&gt;
-                  &lt;img src={image1} alt="First slide" className="slick-image" /&gt;
-                &lt;/div&gt;
-                &lt;div&gt;
-                  &lt;img
-                    src={image2}
-                    alt="Second slide"
-                    className="slick-image"
-                  /&gt;
-                &lt;/div&gt;
-                &lt;div&gt;
+            &lt;Carousel {...settings}&gt;
+              &lt;div&gt;
+                &lt;img src={image1} alt='First slide' className='slick-image' /&gt;
+              &lt;/div&gt;
+              &lt;div&gt;
+                &lt;img src={image2} alt='Second slide' className='slick-image' /&gt;
+              &lt;/div&gt;
+              {/* &lt;div&gt;
                   &lt;img src={image3} alt="Third slide" className="slick-image" /&gt;
-                &lt;/div&gt;
-              &lt;/Carousel&gt;
+                &lt;/div&gt; */}
+            &lt;/Carousel&gt;
           &lt;/GridItem&gt;
         &lt;/GridContainer&gt;
       &lt;/div&gt;
@@ -226,7 +214,7 @@ export default function SectionCarousel() {
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank">istanbul</a>
-                at Sun Apr 12 2020 18:13:58 GMT-0500 (Central Daylight Time)
+                at Wed Apr 15 2020 16:15:05 GMT-0500 (Central Daylight Time)
             </div>
         </div>
         <script src="../../../../prettify.js"></script>

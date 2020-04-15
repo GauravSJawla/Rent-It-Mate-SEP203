@@ -14,16 +14,23 @@ describe('category pages', () => {
     })
 
     it('should stay on same page if tried to add already existing category', () => {
-        cy.get('input[id="name"]').clear().type('Furnitures')
+        cy.get('input[id="name"]').clear().type('Furniture')
         cy.get('button[type="submit"]').click();
+        cy.get('div [id="notifications"]')
+          .invoke('text')
+          .then(text => {
+                    const divTxt = text;
+                    expect(divTxt).to.contain('Category already exists, Update it!');
+        });
         cy.url({timeout:5000}).should('include', '/add-category')
     })
+    
 
     it('should add a new category', () => {
         cy.get('input[id="name"]').clear().type('TestCategory')
         cy.get('button[type="submit"]').click()
     })
-    
+
     it('should have newly added category in the table along with update and delete icons', () => {
         cy.get('tbody[id="TestCategory"] > td').eq(1).as('testrow')
         cy.get('@testrow').find('a').should('have.attr','href')
@@ -39,6 +46,24 @@ describe('category pages', () => {
         cy.get('button[type="submit"]').click()
     })
 
+    it('should not delete the category', () => {
+        cy.url({timeout:5000}).should('include','/all-categories')
+        cy.get('tbody[id="Furniture"] > td').eq(0).as('testdelete')
+        cy.get('@testdelete').find('button[type="submit"]').click()
+        const stub = cy.stub()
+        cy.on('window:confirm',(str,stub)=> {
+            expect(str).to.equal('Are you sure to delete this category?')
+            cy.get('button').contains('ok').click().
+                then(() => {
+                    cy.get('div [id="notifications"]')
+                      .invoke('text')
+                      .then(text => {
+                            const divTxt = text;
+                            expect(divTxt).to.contain('Category has one or more sub categories available and hence cannot be deleted!');
+                        });
+                })
+        })
+    })
     it('should delete the category', () => {
         cy.url({timeout:5000}).should('include','/all-categories')
         cy.get('tbody').its('length').as('count1')
