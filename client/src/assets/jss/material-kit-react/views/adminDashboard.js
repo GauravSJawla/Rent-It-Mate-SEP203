@@ -1,41 +1,59 @@
 import { container, title } from "assets/jss/material-kit-react.js";
 
-const conatinerFluid = {
-  paddingRight: "10px",
-  paddingLeft: "10px",
-};
-
-const landingContainer = {
-  ...conatinerFluid,
-  // '@media (min-width: 576px)': {
-  //   maxWidth: '606px'
-  // },
-  // '@media (min-width: 768px)': {
-  //   maxWidth: '808px'
-  // },
-  // '@media (min-width: 992px)': {
-  //   maxWidth: '1044px'
-  // },
-  // '@media (min-width: 1200px)': {
-  //   maxWidth: '1264px'
-  // }
-};
-
-const landingPageStyle = {
+const adminDashboardStyle = {
   container: {
-    zIndex: "12",
-    color: "#FFFFFF",
     ...container,
-  },
-  landingContainer: {
-    zIndex: "12",
+    marginTop: "20px",
+    zIndex: "2",
+    position: "relative",
     color: "#FFFFFF",
-    background: "#FFFFFF",
-    ...landingContainer,
+    minWidth: "40vh"
   },
-  gallaryContainer: {
-    zIndex: "12",
-    paddingLeft: "20px",
+  cardHidden: {
+    opacity: "0",
+    transform: "translate3d(0, -60px, 0)",
+  },
+  form: {
+    margin: "0",
+  },
+  cardHeader: {
+    width: "auto",
+    textAlign: "center",
+    marginLeft: "20px",
+    marginRight: "20px",
+    marginTop: "-40px",
+    padding: "20px 0",
+    marginBottom: "15px",
+  },
+  socialIcons: {
+    maxWidth: "24px",
+    marginTop: "0",
+    width: "100%",
+    transform: "none",
+    left: "0",
+    top: "0",
+    height: "100%",
+    lineHeight: "41px",
+    fontSize: "20px",
+  },
+  divider: {
+    marginTop: "30px",
+    marginBottom: "0px",
+    textAlign: "center",
+  },
+  cardFooter: {
+    paddingTop: "0rem",
+    border: "0",
+    borderRadius: "6px",
+    justifyContent: "center !important",
+  },
+  socialLine: {
+    marginTop: "1rem",
+    textAlign: "center",
+    padding: "0",
+  },
+  inputIconsColor: {
+    color: "#495057",
   },
   title: {
     ...title,
@@ -81,7 +99,6 @@ const landingPageStyle = {
     borderColor: "black",
     fontSize: "bold",
   },
-
   dashboardSubtitle: {
     color: "black",
     fontSize: "1.313rem",
@@ -108,4 +125,4 @@ const landingPageStyle = {
   }
 };
 
-export default landingPageStyle;
+export default adminDashboardStyle;
