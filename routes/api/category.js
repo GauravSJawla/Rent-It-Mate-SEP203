@@ -26,7 +26,7 @@ router.post('/', auth, async (req, res) => {
     if (category) {
       return res
         .status(400)
-        .json({ errors: [{ msg: 'Category already exists! Update it!' }] });
+        .json({ error: [{ msg: 'Category already exists! Update it!' }] });
     }
 
     //create

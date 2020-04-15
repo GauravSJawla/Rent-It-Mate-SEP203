@@ -42,9 +42,9 @@ export default function (state = initialstate,action) {
         case CATEGORY_ERROR:
             return{
                 ...state,
-                error: payload,
                 updated:false,
-                loading:false
+                loading:false,
+                error: payload
             };
         case CLEAR_CATEGORY:
             return{
