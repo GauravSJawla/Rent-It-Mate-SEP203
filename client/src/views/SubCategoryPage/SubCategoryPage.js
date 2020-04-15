@@ -18,7 +18,7 @@ import {
   TableCell,
 } from "@material-ui/core";
 import Paper from "@material-ui/core/Paper";
-import Dialog from '@material-ui/core/Dialog';
+import Dialog from "@material-ui/core/Dialog";
 
 import GridContainer from "components/Grid/GridContainer.js";
 import GridItem from "components/Grid/GridItem.js";
@@ -72,14 +72,22 @@ const ViewSubcategories = ({
     createSubcategory(formData, history);
   };
 
-  const [open, setOpen] = React.useState(false);
-
-  const handleClickOpen = () => {
-    setOpen(true);
+  // Create Dialog Paper useState
+  const [createOpen, setCreateOpen] = React.useState(false);
+  const createClickOpen = () => {
+    setCreateOpen(true);
+  };
+  const createClose = () => {
+    setCreateOpen(false);
   };
 
-  const handleClose = () => {
-    setOpen(false);
+  // Update Dialog Paper useState
+  const [updateOpen, setUpdateOpen] = React.useState(false);
+  const updateClickOpen = () => {
+    setUpdateOpen(true);
+  };
+  const updateClose = () => {
+    setUpdateOpen(false);
   };
 
   useEffect(() => {
@@ -137,9 +145,86 @@ const ViewSubcategories = ({
                         {subcategory.name}
                       </TableCell>
                       <TableCell align="center" className={classes.td}>
-                        <Button simple color="primary" size="lg">
+                        <Button
+                          simple
+                          onClick={updateClickOpen}
+                          color="primary"
+                          size="lg"
+                        >
                           Update
                         </Button>
+                        <Dialog
+                          open={updateOpen}
+                          onClose={updateClose}
+                          className={classes.dialogPaper}
+                        >
+                          <div className={classes.pageHeader}>
+                            <div className={classes.container}>
+                              <GridContainer justify="center">
+                                <GridItem>
+                                  <Card>
+                                    <form
+                                      className={classes.form}
+                                      onSubmit={(e) => onSubmit(e)}
+                                    >
+                                      <CardHeader
+                                        color="primary"
+                                        className={classes.cardHeader}
+                                      >
+                                        <h4>Update the Sub-Category</h4>
+                                      </CardHeader>
+                                      <CardBody>
+                                        <h4>
+                                          Update the Sub-Category
+                                        </h4>
+                                        <h4>
+                                          <strong>{subcategory.name}</strong>
+                                        </h4>
+                                        <h4>
+                                          To:
+                                        </h4>
+                                        <CustomInput
+                                          labelText="New Sub-Category Name"
+                                          id="name"
+                                          formControlProps={{
+                                            fullWidth: true,
+                                          }}
+                                          inputProps={{
+                                            type: "text",
+                                            value: name,
+                                            required: true,
+                                            onChange: (e) => onChange(e),
+                                          }}
+                                        />
+                                      </CardBody>
+                                      <CardFooter
+                                        className={classes.cardFooter}
+                                      >
+                                        <Button
+                                          simple
+                                          type="submit"
+                                          onClick={updateClose}
+                                          color="primary"
+                                          size="lg"
+                                        >
+                                          Add Sub-Category
+                                        </Button>
+                                        <Button
+                                          simple
+                                          onClick={updateClose}
+                                          color="primary"
+                                          size="lg"
+                                        >
+                                          Cancel
+                                        </Button>
+                                      </CardFooter>
+                                    </form>
+                                  </Card>
+                                </GridItem>
+                              </GridContainer>
+                            </div>
+                          </div>
+                        </Dialog>
                       </TableCell>
                       <TableCell align="center" className={classes.td}>
                         <Button
@@ -163,10 +248,14 @@ const ViewSubcategories = ({
           )}
         </div>
       )}
-      <Button simple onClick={handleClickOpen} color="primary" size="lg">
+      <Button simple onClick={createClickOpen} color="primary" size="lg">
         Create a new Sub-Category
       </Button>
-      <Dialog open={open} onClose={handleClose} className={classes.dialogPaper}>
+      <Dialog
+        open={createOpen}
+        onClose={createClose}
+        className={classes.dialogPaper}
+      >
         <div className={classes.pageHeader}>
           <div className={classes.container}>
             <GridContainer justify="center">
@@ -183,7 +272,7 @@ const ViewSubcategories = ({
                         onChange={(e) => onSelectChange(e)}
                       />
                       <CustomInput
-                        labelText="Create a sub-category"
+                        labelText="Create a Sub-Category"
                         id="name"
                         formControlProps={{
                           fullWidth: true,
@@ -200,7 +289,7 @@ const ViewSubcategories = ({
                       <Button
                         simple
                         type="submit"
-                        onClick={handleClose}
+                        onClick={createClose}
                         color="primary"
                         size="lg"
                       >
@@ -208,7 +297,7 @@ const ViewSubcategories = ({
                       </Button>
                       <Button
                         simple
-                        onClick={handleClose}
+                        onClick={createClose}
                         color="primary"
                         size="lg"
                       >

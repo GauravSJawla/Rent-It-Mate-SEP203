@@ -37,7 +37,7 @@ export default function(state = initalState, action) {
         ...state,
         error: payload,
         loading: false,
-        updated:false
+        updated: false,
       };
     case GET_SUBCATEGORIES:
       return {
@@ -45,7 +45,7 @@ export default function(state = initalState, action) {
         subcategory: null,
         subcategories: payload,
         loading: false,
-        updated:false
+        updated: false,
       };
     case CLEAR_SUBCATEGORY:
       return {
@@ -53,7 +53,7 @@ export default function(state = initalState, action) {
         subcategory: null,
         subcategories: [],
         loading: false,
-        updated:false,
+        updated: false,
         error: {},
       };
     default:

@@ -54,7 +54,7 @@ export const getAllSubcategories = () => async (dispatch) => {
 
 // Update a Sub-Category
 
-export const updateCategory = (categoryId, formData) => async (dispatch) => {
+export const updateCategory = (subcategoryId, formData) => async (dispatch) => {
   try {
     const config = {
       headers: {
@@ -62,7 +62,7 @@ export const updateCategory = (categoryId, formData) => async (dispatch) => {
       },
     };
     const res = await axios.post(
-      `/api/category/${categoryId}`,
+      `/api/subcategory/${subcategoryId}`,
       formData,
       config
     );
