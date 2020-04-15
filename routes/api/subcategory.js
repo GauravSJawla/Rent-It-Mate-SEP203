@@ -128,7 +128,7 @@ router.delete("/:subcategory_id", auth, async (req, res) => {
   try {
     const productCount = await Product.find({subcategory:req.params.subcategory_id}).countDocuments();
     if(productCount){
-      return res.json({msg:'There are products associated with this subcategory and hence cannot be deleted..'})
+      return res.json({msg:'Subcategory cannot be deleted'})
     }
     await SubCategory.findOneAndRemove({
       _id: req.params.subcategory_id

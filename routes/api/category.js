@@ -119,7 +119,7 @@ router.delete('/:category_id', auth, async (req, res) => {
   try {
     const subCategoryCount = await SubCategory.find({categoryId:req.params.category_id}).countDocuments();
     if(subCategoryCount > 0){
-      return res.json({msg:'Category has sub categories available and hence cannot be deleted!'})
+      return res.json({msg:'Category cannot be deleted!'})
     }
     else {
       await Category.findOneAndRemove({

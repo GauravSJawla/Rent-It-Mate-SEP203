@@ -16,7 +16,7 @@ import logo from 'assets/img/reactlogo.png';
 import ListUsers from 'views/ProfilePage/ListUsers';
 import ViewCategories from 'views/CategoryPage/ViewCategories';
 import ViewProductsAdmin from 'views/ProductPage/ViewProductsAdmin';
-import ViewSubcategories from 'views/SubCategoryPage/ViewSubcategories';
+import SubCategoryPage from 'views/SubCategoryPage/SubCategoryPage';
 
 const useStyles = makeStyles(styles);
 
@@ -39,7 +39,7 @@ const adminDashboardRoutes = [
       path:'/all-subcategories',
       name: 'Subcategories',
       icon: List,
-      component: ViewSubcategories,
+      component: SubCategoryPage,
       layout: '/admin-dashboard'
     },
     {

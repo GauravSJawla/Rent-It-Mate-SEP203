@@ -43,13 +43,10 @@ export const createCategory = (formData) => async dispatch => {
         });
     }
     catch(err){
-        console.log('inside category catch',err)
         var error;
         const errors = err.response.data.error;
-        console.log('inside category error',errors);
         if (errors) {
             errors.forEach(err => {
-                console.log('inside category action', error);
                 error = err.msg;
             });
         }
@@ -125,7 +122,7 @@ export const deleteCategory = (categoryId) => async dispatch => {
         /* istanbul ignore next */
         try{
             const res = await axios.delete(`/api/category/${categoryId}`);
-            if(res.data.msg === 'Category has sub categories available and hence cannot be deleted!'){
+            if(res.data.msg === 'Category cannot be deleted!'){
                 dispatch(setAlert('Category has one or more sub categories available and hence cannot be deleted!', 'danger'));
             }
             if(res.data.msg === 'Category deleted'){
