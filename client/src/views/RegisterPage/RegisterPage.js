@@ -22,7 +22,7 @@ import CardFooter from 'components/Card/CardFooter.js';
 import CustomInput from 'components/CustomInput/CustomInput.js';
 import styles from 'assets/jss/material-kit-react/views/loginPage.js';
 
-import image from 'assets/img/bg7.jpg';
+import image from 'assets/img/bg8.jpg';
 
 //Import register from other component
 import { register } from '../../actions/auth';
@@ -35,7 +35,7 @@ function RegisterPage({
   register,
   isAuthenticated,
   setAlert,
-  auth: { error }
+  auth: { error },
 }) {
   const [cardAnimaton, setCardAnimation] = React.useState('cardHidden');
   setTimeout(function() {
@@ -47,21 +47,21 @@ function RegisterPage({
     username: '',
     email: '',
     password: '',
-    password2: ''
+    password2: '',
   });
   const classes = useStyles();
 
   //OnChange event Handler
-  const onChange = e =>
+  const onChange = (e) =>
     setFormData({
       ...formData,
-      [e.target.id]: e.target.value
+      [e.target.id]: e.target.value,
     });
 
   const { name, username, email, password, password2 } = formData;
 
   // OnSubmit Event Handler
-  const onSubmit = e => {
+  const onSubmit = (e) => {
     e.preventDefault();
     if (password !== password2) {
       setAlert('Passwords do not match', 'danger');
@@ -88,14 +88,14 @@ function RegisterPage({
         style={{
           backgroundImage: 'url(' + image + ')',
           backgroundSize: 'cover',
-          backgroundPosition: 'top center'
+          backgroundPosition: 'top center',
         }}
       >
         <div className={classes.container}>
           <GridContainer justify='center'>
             <GridItem xs={12} sm={12} md={4}>
               <Card className={classes[cardAnimaton]}>
-                <form className={classes.form} onSubmit={e => onSubmit(e)}>
+                <form className={classes.form} onSubmit={(e) => onSubmit(e)}>
                   <CardHeader color='primary' className={classes.cardHeader}>
                     <h4>Register</h4>
                     <div className={classes.socialLine}>
@@ -116,67 +116,67 @@ function RegisterPage({
                       labelText='Full Name...'
                       id='name'
                       formControlProps={{
-                        fullWidth: true
+                        fullWidth: true,
                       }}
                       inputProps={{
                         type: 'text',
                         value: name,
                         required: true,
-                        onChange: e => onChange(e),
+                        onChange: (e) => onChange(e),
                         endAdornment: (
                           <InputAdornment position='end'>
                             <PeopleIcon className={classes.inputIconsColor} />
                           </InputAdornment>
-                        )
+                        ),
                       }}
                     />
                     <CustomInput
                       labelText='User Name...'
                       id='username'
                       formControlProps={{
-                        fullWidth: true
+                        fullWidth: true,
                       }}
                       inputProps={{
                         type: 'username',
                         value: username,
                         required: true,
-                        onChange: e => onChange(e),
+                        onChange: (e) => onChange(e),
                         endAdornment: (
                           <InputAdornment position='end'>
                             <PersonIcon className={classes.inputIconsColor} />
                           </InputAdornment>
-                        )
+                        ),
                       }}
                     />
                     <CustomInput
                       labelText='Email...'
                       id='email'
                       formControlProps={{
-                        fullWidth: true
+                        fullWidth: true,
                       }}
                       inputProps={{
                         type: 'email',
                         value: email,
                         required: true,
-                        onChange: e => onChange(e),
+                        onChange: (e) => onChange(e),
                         endAdornment: (
                           <InputAdornment position='end'>
                             <Email className={classes.inputIconsColor} />
                           </InputAdornment>
-                        )
+                        ),
                       }}
                     />
                     <CustomInput
                       labelText='Password'
                       id='password'
                       formControlProps={{
-                        fullWidth: true
+                        fullWidth: true,
                       }}
                       inputProps={{
                         type: 'password',
                         value: password,
                         required: true,
-                        onChange: e => onChange(e),
+                        onChange: (e) => onChange(e),
                         endAdornment: (
                           <InputAdornment position='end'>
                             <Icon className={classes.inputIconsColor}>
@@ -184,20 +184,20 @@ function RegisterPage({
                             </Icon>
                           </InputAdornment>
                         ),
-                        autoComplete: 'off'
+                        autoComplete: 'off',
                       }}
                     />
                     <CustomInput
                       labelText='Confirm Password'
                       id='password2'
                       formControlProps={{
-                        fullWidth: true
+                        fullWidth: true,
                       }}
                       inputProps={{
                         type: 'password',
                         value: password2,
                         required: true,
-                        onChange: e => onChange(e),
+                        onChange: (e) => onChange(e),
                         endAdornment: (
                           <InputAdornment position='end'>
                             <Icon className={classes.inputIconsColor}>
@@ -205,7 +205,7 @@ function RegisterPage({
                             </Icon>
                           </InputAdornment>
                         ),
-                        autoComplete: 'off'
+                        autoComplete: 'off',
                       }}
                     />
                   </CardBody>
@@ -219,7 +219,7 @@ function RegisterPage({
             </GridItem>
           </GridContainer>
         </div>
-        <Footer whiteFont />
+        <Footer />
       </div>
     </div>
   );
@@ -230,13 +230,13 @@ RegisterPage.propTypes = {
   register: PropTypes.func.isRequired,
   isAuthenticated: PropTypes.bool,
   auth: PropTypes.object,
-  error: PropTypes.object
+  error: PropTypes.object,
 };
 
-const mapStateToProps = state => ({
+const mapStateToProps = (state) => ({
   isAuthenticated: state.auth.isAuthenticated,
   auth: state.auth,
-  error: state.auth.error
+  error: state.auth.error,
 });
 
 export default connect(

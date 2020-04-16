@@ -18,7 +18,7 @@ import CustomInput from 'components/CustomInput/CustomInput.js';
 import styles from 'assets/jss/material-kit-react/views/loginPage.js';
 import CustomDropdown from 'components/CustomDropdown/CustomDropdown.js';
 
-import image from 'assets/img/bg7.jpg';
+import image from 'assets/img/bg8.jpg';
 
 //Import register from other component
 import { createProduct } from '../../actions/product';
@@ -39,7 +39,7 @@ function CreateProduct({ createProduct, history }) {
     shipping: '',
     category: '',
     photo: '',
-    formData: ''
+    formData: '',
   });
   const classes = useStyles();
 
@@ -52,7 +52,7 @@ function CreateProduct({ createProduct, history }) {
     category,
     photo,
     createdProduct,
-    formData
+    formData,
   } = values;
 
   const init = () => {
@@ -63,7 +63,7 @@ function CreateProduct({ createProduct, history }) {
     setValues({
       ...values,
       //categories: data,
-      formData: new FormData()
+      formData: new FormData(),
     });
     //   }
 
@@ -76,7 +76,7 @@ function CreateProduct({ createProduct, history }) {
   }, []);
 
   //OnChange event Handler
-  const onChange = e => {
+  const onChange = (e) => {
     const name = e.target.id;
     const value = name == 'photo' ? e.target.files[0] : e.target.value;
     console.log(name + ' id and val ' + value);
@@ -85,7 +85,7 @@ function CreateProduct({ createProduct, history }) {
   };
 
   // OnSubmit Event Handler
-  const onSubmit = e => {
+  const onSubmit = (e) => {
     e.preventDefault();
     console.log('formdata: ' + JSON.stringify(formData));
     createProduct(formData, history);
@@ -97,14 +97,14 @@ function CreateProduct({ createProduct, history }) {
         style={{
           backgroundImage: 'url(' + image + ')',
           backgroundSize: 'cover',
-          backgroundPosition: 'top center'
+          backgroundPosition: 'top center',
         }}
       >
         <div className={classes.container}>
           <GridContainer justify='center'>
             <GridItem xs={12} sm={12} md={4}>
               <Card className={classes[cardAnimaton]}>
-                <form className={classes.form} onSubmit={e => onSubmit(e)}>
+                <form className={classes.form} onSubmit={(e) => onSubmit(e)}>
                   <CardHeader color='primary' className={classes.cardHeader}>
                     <h4>Create Your Product</h4>
                     <p></p>
@@ -115,80 +115,80 @@ function CreateProduct({ createProduct, history }) {
                       labelText='Name...'
                       id='name'
                       formControlProps={{
-                        fullWidth: true
+                        fullWidth: true,
                       }}
                       inputProps={{
                         type: 'text',
                         value: name,
                         required: true,
-                        onChange: e => onChange(e)
+                        onChange: (e) => onChange(e),
                       }}
                     />
                     <CustomInput
                       labelText='Description...'
                       id='description'
                       formControlProps={{
-                        fullWidth: true
+                        fullWidth: true,
                       }}
                       inputProps={{
                         type: 'text',
                         value: description,
-                        onChange: e => onChange(e)
+                        onChange: (e) => onChange(e),
                       }}
                     />
                     <CustomInput
                       labelText='Price...'
                       id='price'
                       formControlProps={{
-                        fullWidth: true
+                        fullWidth: true,
                       }}
                       inputProps={{
                         type: 'number',
                         value: price,
                         required: true,
-                        onChange: e => onChange(e)
+                        onChange: (e) => onChange(e),
                       }}
                     />
                     <CustomInput
                       labelText='Quantity...'
                       id='quantity'
                       formControlProps={{
-                        fullWidth: true
+                        fullWidth: true,
                       }}
                       inputProps={{
                         type: 'number',
                         value: quantity,
                         required: true,
-                        onChange: e => onChange(e),
-                        autoComplete: 'off'
+                        onChange: (e) => onChange(e),
+                        autoComplete: 'off',
                       }}
                     />
                     <CustomInput
                       labelText='Shipping...'
                       id='shipping'
                       formControlProps={{
-                        fullWidth: true
+                        fullWidth: true,
                       }}
                       inputProps={{
                         type: 'text',
                         value: shipping,
                         required: true,
-                        onChange: e => onChange(e),
-                        autoComplete: 'off'
+                        onChange: (e) => onChange(e),
+                        autoComplete: 'off',
                       }}
                     />
                     <CustomInput
                       labelText='Category id...'
                       id='category'
                       formControlProps={{
-                        fullWidth: true
+                        fullWidth: true,
                       }}
                       inputProps={{
                         type: 'text',
                         value: category,
                         required: true,
-                        onChange: e => onChange(e),
-                        autoComplete: 'off'
+                        onChange: (e) => onChange(e),
+                        autoComplete: 'off',
                       }}
                       // buttonText='Category'
                       // dropdownList={[
@@ -203,11 +203,11 @@ function CreateProduct({ createProduct, history }) {
                       labelText='Photo...'
                       id='photo'
                       formControlProps={{
-                        fullWidth: true
+                        fullWidth: true,
                       }}
                       inputProps={{
                         type: 'file',
-                        onChange: e => onChange(e)
+                        onChange: (e) => onChange(e),
                       }}
                     />
                   </CardBody>
@@ -228,7 +228,7 @@ function CreateProduct({ createProduct, history }) {
 }
 
 CreateProduct.propTypes = {
-  createProduct: PropTypes.func.isRequired
+  createProduct: PropTypes.func.isRequired,
 };
 
 export default connect(
