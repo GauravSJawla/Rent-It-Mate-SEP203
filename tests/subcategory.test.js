@@ -177,7 +177,7 @@ describe("create/read/update/delete sub-category", () => {
     const res = await request.delete('/api/subcategory/' + subCategory._id)
                             .set('x-auth-token',token)
     return expect(JSON.stringify(res.body))
-                    .toMatch('There are products associated with this subcategory and hence cannot be deleted..');
+                    .toMatch('Subcategory cannot be deleted');
   
   })
 

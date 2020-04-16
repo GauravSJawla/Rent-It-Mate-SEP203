@@ -96,6 +96,14 @@ const SubCategoryPage = ({
     getAllSubcategories();
   }, [getCategoryList, getAllCategories, getAllSubcategories]);
 
+  const subCategoryList = [];
+  subcategories.map(subcat => 
+    {
+      if(subcat.categoryId === categoryIdToDisplay){
+        subCategoryList.push(subcat._id)
+      }
+    });
+  console.log('count of subcatgeories', subCategoryList.length)
   return (
     <div className={classes.landingContainer}>
       {loading ? (
@@ -103,7 +111,7 @@ const SubCategoryPage = ({
       ) : (
         <div className={classes.dashboardSubTitle}>
           <Fragment>
-          { categoryIdToDisplay !== undefined && subcategories.length > 0 ? (
+          { subCategoryList.length > 0 ? (
             <div className={classes.dashboardTitle}>
               <h3 align="center">
               <strong>Available Sub-Categories</strong>
@@ -132,8 +140,8 @@ const SubCategoryPage = ({
               {subcategories.map((subcategory) =>
                 categories.map((category) => (
                  category._id === categoryIdToDisplay ? (
-                    subcategory.categoryId === category._id ? (
-                      <TableBody id={subcategory.name}>
+                    subcategory.categoryId === category._id ?(
+                      <TableBody className= {classes.tableBody} id={subcategory.name}>
                         <TableCell
                           align="left"
                           className={classes.td}
@@ -238,9 +246,9 @@ const SubCategoryPage = ({
                         </TableCell>
                       </TableBody>
                     ) : (
-                      <p></p>
+                      <></>
                     )
-                  ) : (<p></p>)
+                  ) : (<></>)
                     
                 )
                   )
@@ -252,7 +260,7 @@ const SubCategoryPage = ({
             </Table>
             </div>
           ) : (
-            <p></p>
+            <h4><strong>No subcategories found.. Please add</strong></h4>
           )}
           </Fragment>
         </div>

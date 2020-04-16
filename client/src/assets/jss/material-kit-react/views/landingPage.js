@@ -68,6 +68,13 @@ const landingPageStyle = {
     backgroundColor: "white",
     align: "left",
   },
+  tableBody: {
+    display:'inline-block',
+    padding: '10 px',
+    top: '0 %',
+    marginTop : '0 auto',
+    width: '100%'
+  },
   td: {
     fontWeight: "500",
     color: "black",

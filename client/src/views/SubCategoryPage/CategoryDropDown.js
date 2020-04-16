@@ -40,9 +40,9 @@ const CategoryDropDown = ({getCategoryList,
     return(
         <div className={classes.dropDownCenter}>
             <form>
-                <label><strong>
+                <h4><strong>
                     Please select a category to view list of Sub categories
-                    </strong></label>
+                    </strong></h4>
                  <Select
                     options={categoryList}
                     id="categoryId"
