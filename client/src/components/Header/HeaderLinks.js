@@ -49,7 +49,7 @@ const HeaderLinks = ({ auth: { isAuthenticated, loading, user }, logout }) => {
           to='/login'
           className={classes.navLink}
         >
-          Login In
+          Login
         </Button>
       </ListItem>
       <ListItem className={classes.listItem}>
