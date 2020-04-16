@@ -88,6 +88,13 @@ const landingPageStyle = {
     maxWidth: "500px",
     margin: "10px auto 0",
   },
+
+  dropDownCenter : {
+    top : "47px",
+    width:"222px",
+    position : "absolute"
+  },
+
   subtitle: {
     fontSize: "1.313rem",
     maxWidth: "500px",
