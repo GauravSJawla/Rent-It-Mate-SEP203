@@ -31,7 +31,14 @@ describe('category pages', () => {
         cy.get('button[type="submit"]').click()
     })
 
+    it('should not have subcategories listed under newly created one', () => {
+        cy.contains('Subcategories').click()
+        cy.get('div[id="categoryId"]').click().contains('TestCategory').click()
+    })
+
     it('should have newly added category in the table along with update and delete icons', () => {
+        cy.get('h4').contains('No subcategories found.. Please add')
+        cy.contains('Categories').click()
         cy.get('tbody[id="TestCategory"] > td').eq(1).as('testrow')
         cy.get('@testrow').find('a').should('have.attr','href')
         cy.get('tbody[id="TestCategory"] > td').eq(0).as('testrow2')
