@@ -49,11 +49,13 @@ const ProductDisplayLandingPage = ({
       <Fragment responsive={responsive}>
            <div className={classes.landingContainer}>
               <GridContainer style={{marginLeft: "10px"}}>
+                  <a href='/single-product-details'>
                         { 
                         products.map(p =>(
                           <SingleProductLandingPage key={p._id} product={p}/>
                         )
                         )}
+                  </a>
               </GridContainer>
           </div>
     </Fragment>
