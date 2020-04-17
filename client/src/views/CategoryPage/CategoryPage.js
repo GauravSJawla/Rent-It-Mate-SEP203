@@ -22,13 +22,14 @@ import styles from 'assets/jss/material-kit-react/views/loginPage.js';
 import {createCategory} from '../../actions/category';
 
 import image from 'assets/img/bg7.jpg';
-import { setAlert } from 'actions/alert';
+import { setAlert } from '../../actions/alert';
 
 
 const useStyles = makeStyles(styles);
 
 const CategoryPage = ({createCategory,
-                    category:{category, error}}) => {
+                    category:{category, error},
+                  setAlert}) => {
   const classes = useStyles();
   const [cardAnimaton, setCardAnimation] = React.useState('cardHidden');
   setTimeout(function() {
@@ -56,13 +57,12 @@ const CategoryPage = ({createCategory,
   }
 
   if(category !== null){
-    console.log('inside success add');
     return <Redirect to = '/admin-dashboard/all-categories'/>
   }
 
   if(error === 'Category already exists! Update it!'){
     console.log('inside category error');
-   // setAlert('Category already exists, Update it!','danger');
+    setAlert('Category already exists, Update it!','danger');
   }
 
   return (
@@ -121,7 +121,8 @@ const CategoryPage = ({createCategory,
 
 CategoryPage.propTypes = {
   createCategory:PropTypes.func.isRequired,
-  category:PropTypes.object.isRequired
+  category:PropTypes.object.isRequired,
+  setAlert:PropTypes.func.isRequired
 }
 
 const mapStateToProps = state => ({
@@ -130,5 +131,5 @@ const mapStateToProps = state => ({
 
 export default connect(
   mapStateToProps,
-  {createCategory}
+  {createCategory,setAlert}
 )(CategoryPage);

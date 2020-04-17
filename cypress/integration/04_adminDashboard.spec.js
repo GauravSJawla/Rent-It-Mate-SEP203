@@ -42,10 +42,12 @@ describe('admin dashboard', () => {
         //cy.get('div[class="product-img"]').first().get('a').second().click()
     })
 
-    it('should display all available subcategories on selecting subcategories', () => {
+    it('should display all available subcategories on selecting categories', () => {
         cy.contains('Subcategories').click()
+        cy.get('h4').contains('Please select a category to view list of Sub categories')
+        cy.get('div[id="categoryId"]').click().contains('Books').click()
         cy.get('h3').contains('Available Sub-Categories')
-        cy.get('tbody td').should('have.length.greaterThan', 0)
+        cy.get('tbody').should('have.length.greaterThan', 0)
     })
 
     it('should redirect to add category page on selecting create category', () => {

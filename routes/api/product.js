@@ -128,7 +128,7 @@ router.post('/create',[
     check('price','please include a price')
     .not()
     .isEmpty(),
-    check('category','please include a category')
+    check('subcategory','please include a sub category')
     .not()
     .isEmpty(),
     check('quantity','please include quantity')
@@ -147,6 +147,7 @@ router.post('/create',[
           error: 'Image could not be uploaded'
         })
       }
+
       
       const userId = req.user.id 
       const user = User.findById(userId)
@@ -158,9 +159,10 @@ router.post('/create',[
       }
       
       //check for all fields
-      const { name, description, price, category, quantity, shipping  } = fields;
+      const { name, description, price, subcategory, quantity, shipping  } = fields;
+      console.log( name + description + price + subcategory + quantity + shipping + " the details");
       /* istanbul ignore next */
-      if (!name || !description || !price || !category || !quantity || !shipping ) {
+      if (!name || !description || !price || !subcategory || !quantity || !shipping ) {
           return res.status(400).json({
               error: 'All fields are required'
           });
@@ -251,20 +253,21 @@ router.put('/:productId', auth, (req, res)=>{
           error: 'Image could not be uploaded'
         })
       }
-       let userId = req.user.id
-      // const user = User.findById(userId)
-      //  /* istanbul ignore next */
-      // if(!user){
-      //   return res.status(400).json({
-      //     error :  'user not found try with different credentials'
-      //   })
-      //}
+      let userId = req.user.id
+      const user = User.findById(userId)
+       /* istanbul ignore next */
+      if(!user){
+        return res.status(400).json({
+          error :  'user not found try with different credentials'
+        })
+      }
       
       /**
        * check for all fields
        */
-      const { name, description, price, category, quantity, shipping } = fields;
-      if (!name || !description || !price || !category || !quantity || !shipping ) {
+      const { name, description, price, subcategory, quantity, shipping } = fields;
+      console.log( name + description + price + subcategory + quantity + shipping + " the details");
+      if (!name || !description || !price || !subcategory || !quantity || !shipping ) {
           return res.status(400).json({
               error: 'All fields are required'
           });
@@ -272,8 +275,6 @@ router.put('/:productId', auth, (req, res)=>{
         let product = req.product;
         product.userId = userId
         product = _.extend(product , fields)
-      
-     console.log( name + description + price + category + quantity +shipping);
 
       /**  1kb = 1000
        *   1mb = 1000000

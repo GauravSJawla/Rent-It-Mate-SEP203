@@ -79,7 +79,7 @@ describe('product create/update/delete product', () => {
                                           .field('name','test product')
                                           .field('description' , 'test')
                                           .field('price',10)
-                                          .field('category', '5e6a7a324ed00f15930538e7')
+                                          .field('subcategory', '5e9373352727762704f5486b')
                                           .field('quantity', 1)
                                           .field('shipping','true')
                                           .attach('photo','./buffer/table.jpeg')
@@ -96,7 +96,7 @@ describe('product create/update/delete product', () => {
                                           .field('name','test product')
                                           .field('description' , '')
                                           .field('price',10)
-                                          .field('category', '')
+                                          .field('subcategory', '')
                                           .field('quantity', 1)
                                           .field('shipping','true')
                                           .attach('photo','./buffer/table.jpeg')
@@ -113,7 +113,7 @@ describe('product create/update/delete product', () => {
         name : 'test product',
         description :'test',
         price : 10,
-        category : '5e6a7a324ed00f15930538e7',
+        subcategory : '5e9373352727762704f5486b',
         quantity : 1,
         shipping : true
       })
@@ -123,7 +123,7 @@ describe('product create/update/delete product', () => {
                                           .field('name','test product updated')
                                           .field('description' , '')
                                           .field('price',10)
-                                          .field('category', '')
+                                          .field('subcategory', '')
                                           .field('quantity', 1)
                                           .field('shipping','true')
                                           .attach('photo','./buffer/table_01.jpeg')
@@ -140,7 +140,7 @@ describe('product create/update/delete product', () => {
         name : 'test product',
         description :'test',
         price : 10,
-        category : '5e6a7a324ed00f15930538e7',
+        subcategory : '5e9373352727762704f5486b',
         quantity : 1,
         shipping : true
       })
@@ -148,9 +148,9 @@ describe('product create/update/delete product', () => {
                                           .set('x-auth-token' , token)
                                           .set('form-data' , form)
                                           .field('name','test product updated')
-                                          .field('description' , '')
+                                          .field('description' , 'description')
                                           .field('price',10)
-                                          .field('category', '')
+                                          .field('subcategory', '5e9373352727762704f5486b')
                                           .field('quantity', 1)
                                           .field('shipping','true')
                                           .attach('photo','./buffer/over_size.jpg')
@@ -167,17 +167,17 @@ describe('product create/update/delete product', () => {
         name : 'test product',
         description :'test',
         price : 10,
-        category : '5e6a7a324ed00f15930538e7',
+        subcategory : '5e9373352727762704f5486b',
         quantity : 1,
         shipping : true
       })
-       const response = await request.put('/api/product/'+duplicateProduct._id)
+      await request.put('/api/product/'+duplicateProduct._id)
                                           .set('x-auth-token' , token)
                                           .set('form-data' , form)
                                           .field('name','test product updated')
                                           .field('description' , 'test')
                                           .field('price',10)
-                                          .field('category', '5e6a7a324ed00f15930538e7')
+                                          .field('subcategory', '5e8e2e4744570046a4bc05bf')
                                           .field('quantity', 1)
                                           .field('shipping','true')
                                           .attach('photo','./buffer/table_01.jpeg')

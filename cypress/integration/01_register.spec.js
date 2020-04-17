@@ -55,7 +55,7 @@ describe('sign up user', () => {
     cy.get('button[type="submit"]').click();
     cy.get('div [id="notifications"]')
       .invoke('text')
-      .then(text => {
+      .then((text) => {
         const divTxt = text;
         expect(divTxt).to.contain('Passwords do not match');
       });
@@ -70,7 +70,7 @@ describe('sign up user', () => {
     cy.get('button[type="submit"]').click();
     cy.get('div [id="notifications"]')
       .invoke('text')
-      .then(text => {
+      .then((text) => {
         const divTxt = text;
         expect(divTxt).to.contain('Username already exists!');
       });
@@ -85,7 +85,7 @@ describe('sign up user', () => {
     cy.get('button[type="submit"]').click();
     cy.get('div [id="notifications"]')
       .invoke('text')
-      .then(text => {
+      .then((text) => {
         const divTxt = text;
         expect(divTxt).to.contain('Email already exists!');
       });

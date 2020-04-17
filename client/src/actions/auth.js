@@ -65,6 +65,7 @@ export const register = ({
     /* istanbul ignore next */
     var error;
     const errors = err.response.data.error;
+    console.log('inside register fail',errors);
     if (errors) {
       errors.forEach(err => {
         error = err.msg;

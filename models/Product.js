@@ -20,9 +20,9 @@ const productSchema = new mongoose.Schema(
       required: true,
       maxlength: 32
     },
-    category: {
+    subcategory: {
       type: ObjectId,
-      ref: 'Category',
+      ref: 'SubCategory',
       required: true
     },
     userId: {
