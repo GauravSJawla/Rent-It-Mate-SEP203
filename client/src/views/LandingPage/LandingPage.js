@@ -25,7 +25,6 @@ import Carousel from 'views/Components/Sections/SectionCarousel';
 import ProductDisplayLandingPage from './ProductDisplayLandingPage';
 import navStyles from 'assets/jss/material-kit-react/components/headerLinksStyle.js';
 
-import { getAllCategories } from '../../actions/category';
 import { getAllSubcategories } from '../../actions/subcategory';
 import { getCategoryList } from '../../actions/category';
 
@@ -35,16 +34,24 @@ const useNavStyles = makeStyles(navStyles);
 const LandingPage = ({
   auth: { user, isAuthenticated, loading },
   getCategoryList,
-  getAllCategories,
+  categorylist: { categoryList },
   getAllSubcategories,
 }) => {
   const classes = useStyles();
   const navClasses = useNavStyles();
   useEffect(() => {
     getCategoryList();
-    getAllCategories();
     getAllSubcategories();
-  }, [getCategoryList, getAllCategories, getAllSubcategories]);
+  }, [getCategoryList, getAllSubcategories]);
+
+  const subCategoryList = [];
+  const category = [];
+
+  console.log(categoryList);
+  categoryList.map((cat) => {
+    category.push(cat._id);
+  });
+
   const guestRender = (
     <Button color='danger' size='lg' component={Link} to='/register'>
       Get started now
@@ -227,14 +234,13 @@ LandingPage.propTypes = {
   //isAuthenticated: propTypes.bool
   auth: propTypes.object.isRequired,
   getCategoryList: propTypes.func.isRequired,
-  getAllCategories: propTypes.func.isRequired,
   getAllSubcategories: propTypes.func.isRequired,
+  categorylist: propTypes.object,
 };
 
 const mapStateToProps = (state) => ({
   auth: state.auth,
-  categoryList: state.categorylist.categoryList,
-  category: state.category,
+  categorylist: state.categorylist.categoryList,
   subcategory: state.subcategory,
 });
 
@@ -242,7 +248,6 @@ export default connect(
   mapStateToProps,
   {
     getCategoryList,
-    getAllCategories,
     getAllSubcategories,
   }
 )(LandingPage);
