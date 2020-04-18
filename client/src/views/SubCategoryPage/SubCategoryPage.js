@@ -3,10 +3,13 @@ import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { Redirect } from 'react-router-dom';
 import { withRouter } from 'react-router-dom';
+
 // @material-ui/core components
 import { makeStyles } from '@material-ui/core/styles';
+
 // dropdown selects
 import Select from 'react-select';
+
 // core components
 import Footer from 'components/Footer/Footer.js';
 import GridContainer from 'components/Grid/GridContainer.js';
@@ -18,8 +21,6 @@ import CardHeader from 'components/Card/CardHeader.js';
 import CardFooter from 'components/Card/CardFooter.js';
 import CustomInput from 'components/CustomInput/CustomInput.js';
 import styles from 'assets/jss/material-kit-react/views/loginPage.js';
-
-import image from 'assets/img/bg8.jpg';
 
 import { createSubcategory } from '../../actions/subcategory';
 import { getCategoryList } from '../../actions/category';
@@ -72,14 +73,7 @@ function SubcategoryPage({
 
   return (
     <div>
-      <div
-        className={classes.pageHeader}
-        style={{
-          backgroundImage: 'url(' + image + ')',
-          backgroundSize: 'cover',
-          backgroundPosition: 'top center',
-        }}
-      >
+      <div className={classes.pageHeader}>
         <div className={classes.container}>
           <GridContainer justify='center'>
             <GridItem xs={12} sm={12} md={4}>

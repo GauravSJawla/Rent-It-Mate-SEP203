@@ -22,8 +22,6 @@ import CardFooter from 'components/Card/CardFooter.js';
 import CustomInput from 'components/CustomInput/CustomInput.js';
 import styles from 'assets/jss/material-kit-react/views/loginPage.js';
 
-import image from 'assets/img/bg8.jpg';
-
 //Import register from other component
 import { register } from '../../actions/auth';
 
@@ -83,14 +81,7 @@ function RegisterPage({
   }
   return (
     <div>
-      <div
-        className={classes.pageHeader}
-        style={{
-          backgroundImage: 'url(' + image + ')',
-          backgroundSize: 'cover',
-          backgroundPosition: 'top center',
-        }}
-      >
+      <div className={classes.pageHeader}>
         <div className={classes.container}>
           <GridContainer justify='center'>
             <GridItem xs={12} sm={12} md={4}>

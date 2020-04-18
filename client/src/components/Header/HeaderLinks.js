@@ -33,6 +33,24 @@ const HeaderLinks = ({ auth: { isAuthenticated, loading, user }, logout }) => {
   const guestRender = (
     <List className={classes.list}>
       <ListItem className={classes.listItem}>
+        <CustomInput
+          white
+          formControlProps={{
+            className: navbarClasses.formControl,
+          }}
+          inputProps={{
+            placeholder: 'Search',
+            inputProps: {
+              'aria-label': 'Search',
+              className: navbarClasses.searchInput,
+            },
+          }}
+        />
+        <Button justIcon round color='white'>
+          <Search />
+        </Button>
+      </ListItem>
+      <ListItem className={classes.listItem}>
         <Button
           color='transparent'
           component={Link}
@@ -52,6 +70,30 @@ const HeaderLinks = ({ auth: { isAuthenticated, loading, user }, logout }) => {
           Login
         </Button>
       </ListItem>
+    </List>
+  );
+
+  const authRender = (
+    <List className={classes.list}>
+      <ListItem className={classes.listItem}>
+        <CustomDropdown
+          buttonText='Categories'
+          dropdownHeader='Dropdown Header'
+          buttonProps={{
+            className: classes.navLink,
+            color: 'transparent',
+          }}
+          dropdownList={[
+            'Action',
+            'Another action',
+            'Something else here',
+            { divider: true },
+            'Separated link',
+            { divider: true },
+            'One more separated link',
+          ]}
+        />
+      </ListItem>
       <ListItem className={classes.listItem}>
         <CustomInput
           white
@@ -70,11 +112,6 @@ const HeaderLinks = ({ auth: { isAuthenticated, loading, user }, logout }) => {
           <Search />
         </Button>
       </ListItem>
-    </List>
-  );
-
-  const authRender = (
-    <List className={classes.list}>
       <ListItem className={classes.listItem}>
         <CustomDropdown
           buttonText='Profile'
@@ -100,24 +137,6 @@ const HeaderLinks = ({ auth: { isAuthenticated, loading, user }, logout }) => {
             </Link>,
           ]}
         />
-      </ListItem>
-      <ListItem className={classes.listItem}>
-        <CustomInput
-          white
-          formControlProps={{
-            className: navbarClasses.formControl,
-          }}
-          inputProps={{
-            placeholder: 'Search',
-            inputProps: {
-              'aria-label': 'Search',
-              className: navbarClasses.searchInput,
-            },
-          }}
-        />
-        <Button justIcon round color='white'>
-          <Search />
-        </Button>
       </ListItem>
     </List>
   );

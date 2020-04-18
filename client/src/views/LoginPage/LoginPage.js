@@ -1,11 +1,14 @@
 import React, { useState, useEffect } from 'react';
 import { Redirect } from 'react-router-dom';
+
 // @material-ui/core components
 import { makeStyles } from '@material-ui/core/styles';
 import InputAdornment from '@material-ui/core/InputAdornment';
 import Icon from '@material-ui/core/Icon';
+
 // @material-ui/icons
 import PersonIcon from '@material-ui/icons/Person';
+
 // core components
 import Footer from 'components/Footer/Footer.js';
 import GridContainer from 'components/Grid/GridContainer.js';
@@ -16,6 +19,7 @@ import CardBody from 'components/Card/CardBody.js';
 import CardHeader from 'components/Card/CardHeader.js';
 import CardFooter from 'components/Card/CardFooter.js';
 import CustomInput from 'components/CustomInput/CustomInput.js';
+
 //importing login for login
 import { login, loadUser } from '../../actions/auth';
 import PropTypes from 'prop-types';
@@ -23,9 +27,6 @@ import { connect } from 'react-redux';
 import { setAlert } from '../../actions/alert';
 
 import styles from 'assets/jss/material-kit-react/views/loginPage.js';
-
-import image from 'assets/img/bg8.jpg';
-//import store from '../../store';
 
 const useStyles = makeStyles(styles);
 const LoginPage = ({
@@ -81,14 +82,7 @@ const LoginPage = ({
 
   return (
     <div>
-      <div
-        className={classes.pageHeader}
-        style={{
-          backgroundImage: 'url(' + image + ')',
-          backgroundSize: 'cover',
-          backgroundPosition: 'top center',
-        }}
-      >
+      <div className={classes.pageHeader}>
         <div className={classes.container}>
           <GridContainer justify='center'>
             <GridItem xs={12} sm={12} md={4}>

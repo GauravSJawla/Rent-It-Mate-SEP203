@@ -2,14 +2,16 @@ import React, { useState } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { withRouter } from 'react-router-dom';
+
 // @material-ui/core components
 import { makeStyles } from '@material-ui/core/styles';
 import InputAdornment from '@material-ui/core/InputAdornment';
-//import Icon from '@material-ui/core/Icon';
+
 // @material-ui/icons
 import Email from '@material-ui/icons/Email';
 import AddLocationIcon from '@material-ui/icons/AddLocation';
 import PhoneIcon from '@material-ui/icons/Phone';
+
 // core components
 import Footer from 'components/Footer/Footer.js';
 import GridContainer from 'components/Grid/GridContainer.js';
@@ -21,8 +23,6 @@ import CardHeader from 'components/Card/CardHeader.js';
 import CardFooter from 'components/Card/CardFooter.js';
 import CustomInput from 'components/CustomInput/CustomInput.js';
 import styles from 'assets/jss/material-kit-react/views/dashboardInnerPage.js';
-
-import image from 'assets/img/bg8.jpg';
 
 //Import register from other component
 import { createProfile } from '../../actions/profile';
@@ -79,14 +79,7 @@ function CreateProfile({ createProfile, history }) {
   // }
   return (
     <div>
-      <div
-        className={classes.pageHeader}
-        style={{
-          backgroundImage: 'url(' + image + ')',
-          backgroundSize: 'cover',
-          backgroundPosition: 'top center',
-        }}
-      >
+      <div className={classes.pageHeader}>
         <div className={classes.container}>
           <GridContainer justify='center'>
             <GridItem xs={12} sm={12} md={4}>

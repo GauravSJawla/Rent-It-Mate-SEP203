@@ -16,9 +16,6 @@ import CardHeader from 'components/Card/CardHeader.js';
 import CardFooter from 'components/Card/CardFooter.js';
 import CustomInput from 'components/CustomInput/CustomInput.js';
 import styles from 'assets/jss/material-kit-react/views/loginPage.js';
-import CustomDropdown from 'components/CustomDropdown/CustomDropdown.js';
-
-import image from 'assets/img/bg8.jpg';
 
 //Import register from other component
 import { createProduct } from '../../actions/product';
@@ -92,14 +89,7 @@ function CreateProduct({ createProduct, history }) {
   };
   return (
     <div>
-      <div
-        className={classes.pageHeader}
-        style={{
-          backgroundImage: 'url(' + image + ')',
-          backgroundSize: 'cover',
-          backgroundPosition: 'top center',
-        }}
-      >
+      <div className={classes.pageHeader}>
         <div className={classes.container}>
           <GridContainer justify='center'>
             <GridItem xs={12} sm={12} md={4}>

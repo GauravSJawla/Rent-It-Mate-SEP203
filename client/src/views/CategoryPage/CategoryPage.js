@@ -1,11 +1,12 @@
 // eslint-disable-next-line
 import React, { useState } from 'react';
+
 // @material-ui/core components
 import { makeStyles } from '@material-ui/core/styles';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { Redirect } from 'react-router-dom';
-// @material-ui/icons
+
 // core components
 import Footer from 'components/Footer/Footer.js';
 import GridContainer from 'components/Grid/GridContainer.js';
@@ -20,9 +21,6 @@ import CardFooter from 'components/Card/CardFooter.js';
 import CustomInput from 'components/CustomInput/CustomInput.js';
 import styles from 'assets/jss/material-kit-react/views/loginPage.js';
 import { createCategory } from '../../actions/category';
-
-import image from 'assets/img/bg8.jpg';
-import { setAlert } from 'actions/alert';
 
 const useStyles = makeStyles(styles);
 
@@ -63,14 +61,7 @@ const CategoryPage = ({ createCategory, category: { category, error } }) => {
 
   return (
     <div>
-      <div
-        className={classes.pageHeader}
-        style={{
-          backgroundImage: 'url(' + image + ')',
-          backgroundSize: 'cover',
-          backgroundPosition: 'top center',
-        }}
-      >
+      <div className={classes.pageHeader}>
         <div className={classes.container}>
           <GridContainer justify='center'>
             <GridItem xs={12} sm={12} md={4}>

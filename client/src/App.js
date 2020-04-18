@@ -84,8 +84,6 @@ const App = () => {
             /> */}
             <PrivateRoute path='/admin-dashboard' component={AdminDashboard} />
             <PrivateRoute exact path='/add-category' component={CategoryPage} />
-            <PrivateRoute path='/admin-dashboard' component={AdminDashboard} />
-            <PrivateRoute exact path='/add-category' component={CategoryPage} />
             <PrivateRoute
               exact
               path='/add-sub-category'
