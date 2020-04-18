@@ -55,7 +55,7 @@ export const getAllSubcategories = () => async (dispatch) => {
 
 // Update a Sub-Category
 
-export const updateCategory = (subcategoryId, formData) => async (dispatch) => {
+export const updateSubcategory = (subcategoryId, formData) => async (dispatch) => {
   try {
     const config = {
       headers: {
@@ -72,6 +72,8 @@ export const updateCategory = (subcategoryId, formData) => async (dispatch) => {
       type: UPDATE_SUBCATEGORY,
       payload: res.data,
     });
+    dispatch(getAllSubcategories());
+    return <Redirect to="/admin-dashboard/all-subcategories" />;
   } catch (err) {
     /* istanbul ignore next */
     dispatch({

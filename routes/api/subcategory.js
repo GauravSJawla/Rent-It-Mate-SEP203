@@ -6,7 +6,7 @@ const Category = require("../../models/Category");
 const SubCategory = require("../../models/SubCategory");
 const Product = require('../../models/Product');
 
-// @route   POST api/subcategory525
+// @route   POST api/subcategory
 // @access  Private
 
 router.post("/", auth, async (req, res) => {
@@ -120,8 +120,8 @@ router.post("/:subcategory_id", auth, async (req, res) => {
   }
 });
 
-// @route   DELETE api/category/:category_id
-// @desc    Delete category by category ID
+// @route   DELETE api/subcategory/:subcategory_id
+// @desc    Delete a subcategory by subcategory ID
 // @access  Private
 
 router.delete("/:subcategory_id", auth, async (req, res) => {
