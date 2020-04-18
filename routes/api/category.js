@@ -3,6 +3,7 @@ const router = express.Router();
 const auth = require('../../middleware/auth');
 const { validationResult } = require('express-validator');
 const Category = require('../../models/Category');
+const SubCategory = require('../../models/SubCategory');
 
 // @route   POST api/category
 // @desc    Create a category
@@ -25,7 +26,7 @@ router.post('/', auth, async (req, res) => {
     if (category) {
       return res
         .status(400)
-        .json({ errors: [{ msg: 'Category already exists! Update it!' }] });
+        .json({ error: [{ msg: 'Category already exists! Update it!' }] });
     }
 
     //create
@@ -116,13 +117,20 @@ router.post('/:category_id', auth, async (req, res) => {
 
 router.delete('/:category_id', auth, async (req, res) => {
   try {
-    await Category.findOneAndRemove({
-      _id: req.params.category_id
-    });
-    res.json({ msg: 'Category deleted' });
+    const subCategoryCount = await SubCategory.find({categoryId:req.params.category_id}).countDocuments();
+    if(subCategoryCount > 0){
+      return res.json({msg:'Category cannot be deleted!'})
+    }
+    else {
+      await Category.findOneAndRemove({
+        _id: req.params.category_id
+      });
+      res.json({ msg: 'Category deleted' });
+    }
+    
   } catch (err) {
     /* istanbul ignore next */
-    res.status(500).send('Server Error');
+    res.status(500).send('Server Error'); 
   }
 });
 

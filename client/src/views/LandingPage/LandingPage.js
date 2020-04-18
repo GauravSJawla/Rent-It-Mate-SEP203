@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Link, Redirect } from 'react-router-dom';
 import propTypes from 'prop-types';
 import { connect } from 'react-redux';
@@ -25,12 +25,26 @@ import Carousel from 'views/Components/Sections/SectionCarousel';
 import ProductDisplayLandingPage from './ProductDisplayLandingPage';
 import navStyles from 'assets/jss/material-kit-react/components/headerLinksStyle.js';
 
+import { getAllCategories } from '../../actions/category';
+import { getAllSubcategories } from '../../actions/subcategory';
+import { getCategoryList } from '../../actions/category';
+
 const useStyles = makeStyles(styles);
 const useNavStyles = makeStyles(navStyles);
 
-const LandingPage = ({ auth: { user, isAuthenticated, loading } }) => {
+const LandingPage = ({
+  auth: { user, isAuthenticated, loading },
+  getCategoryList,
+  getAllCategories,
+  getAllSubcategories,
+}) => {
   const classes = useStyles();
   const navClasses = useNavStyles();
+  useEffect(() => {
+    getCategoryList();
+    getAllCategories();
+    getAllSubcategories();
+  }, [getCategoryList, getAllCategories, getAllSubcategories]);
   const guestRender = (
     <Button color='danger' size='lg' component={Link} to='/register'>
       Get started now
@@ -212,10 +226,23 @@ const LandingPage = ({ auth: { user, isAuthenticated, loading } }) => {
 LandingPage.propTypes = {
   //isAuthenticated: propTypes.bool
   auth: propTypes.object.isRequired,
+  getCategoryList: propTypes.func.isRequired,
+  getAllCategories: propTypes.func.isRequired,
+  getAllSubcategories: propTypes.func.isRequired,
 };
 
 const mapStateToProps = (state) => ({
   auth: state.auth,
+  categoryList: state.categorylist.categoryList,
+  category: state.category,
+  subcategory: state.subcategory,
 });
 
-export default connect(mapStateToProps)(LandingPage);
+export default connect(
+  mapStateToProps,
+  {
+    getCategoryList,
+    getAllCategories,
+    getAllSubcategories,
+  }
+)(LandingPage);

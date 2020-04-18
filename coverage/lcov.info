@@ -5,6 +5,7 @@ FN:52,(anonymous_1)
 FN:57,(anonymous_2)
 FN:101,(anonymous_3)
 FNF:4
+<<<<<<< HEAD
 FNH:4
 FNDA:316,(anonymous_0)
 FNDA:79,(anonymous_1)
@@ -21,11 +22,34 @@ DA:57,79
 DA:58,79
 DA:60,79
 DA:102,98
+=======
+FNH:3
+FNDA:32,(anonymous_0)
+FNDA:8,(anonymous_1)
+FNDA:8,(anonymous_2)
+FNDA:0,(anonymous_3)
+DA:36,8
+DA:38,32
+DA:48,8
+DA:49,0
+DA:52,8
+DA:54,8
+DA:55,8
+DA:57,8
+DA:58,8
+DA:60,8
+DA:102,0
+>>>>>>> 6b57bfda0d62e38c8b8d173cef4b75b1e2c605c6
 LF:11
-LH:10
+LH:9
 BRDA:48,0,0,0
+<<<<<<< HEAD
 BRDA:48,0,1,79
 BRDA:54,1,0,79
+=======
+BRDA:48,0,1,8
+BRDA:54,1,0,8
+>>>>>>> 6b57bfda0d62e38c8b8d173cef4b75b1e2c605c6
 BRDA:54,1,1,0
 BRF:4
 BRH:2
@@ -34,7 +58,11 @@ TN:
 SF:client/src/index.js
 FNF:0
 FNH:0
+<<<<<<< HEAD
 DA:6,79
+=======
+DA:6,8
+>>>>>>> 6b57bfda0d62e38c8b8d173cef4b75b1e2c605c6
 LF:1
 LH:1
 BRF:0
@@ -44,9 +72,15 @@ TN:
 SF:client/src/store.js
 FNF:0
 FNH:0
+<<<<<<< HEAD
 DA:6,79
 DA:8,79
 DA:10,79
+=======
+DA:6,8
+DA:8,8
+DA:10,8
+>>>>>>> 6b57bfda0d62e38c8b8d173cef4b75b1e2c605c6
 LF:3
 LH:3
 BRF:0
@@ -58,6 +92,7 @@ FN:4,(anonymous_0)
 FN:4,(anonymous_1)
 FNF:2
 FNH:2
+<<<<<<< HEAD
 FNDA:13,(anonymous_0)
 FNDA:13,(anonymous_1)
 DA:4,79
@@ -66,6 +101,17 @@ DA:6,13
 LF:3
 LH:3
 BRDA:4,0,0,13
+=======
+FNDA:97,(anonymous_0)
+FNDA:97,(anonymous_1)
+DA:4,97
+DA:5,97
+DA:6,97
+DA:7,97
+LF:4
+LH:4
+BRDA:4,0,0,97
+>>>>>>> 6b57bfda0d62e38c8b8d173cef4b75b1e2c605c6
 BRF:1
 BRH:1
 end_of_record
@@ -76,15 +122,16 @@ FN:24,(anonymous_1)
 FN:37,(anonymous_2)
 FN:46,(anonymous_3)
 FN:51,(anonymous_4)
-FN:69,(anonymous_5)
-FN:84,(anonymous_6)
-FN:84,(anonymous_7)
-FN:105,(anonymous_8)
-FN:119,(anonymous_9)
-FN:119,(anonymous_10)
-FN:156,(anonymous_11)
-FN:156,(anonymous_12)
+FN:70,(anonymous_5)
+FN:85,(anonymous_6)
+FN:85,(anonymous_7)
+FN:106,(anonymous_8)
+FN:120,(anonymous_9)
+FN:120,(anonymous_10)
+FN:157,(anonymous_11)
+FN:157,(anonymous_12)
 FNF:13
+<<<<<<< HEAD
 FNH:12
 FNDA:243,(anonymous_0)
 FNDA:243,(anonymous_1)
@@ -159,11 +206,89 @@ BRDA:68,2,0,5
 BRDA:68,2,1,0
 BRDA:104,3,0,6
 BRDA:104,3,1,0
+=======
+FNH:4
+FNDA:32,(anonymous_0)
+FNDA:32,(anonymous_1)
+FNDA:0,(anonymous_2)
+FNDA:0,(anonymous_3)
+FNDA:0,(anonymous_4)
+FNDA:0,(anonymous_5)
+FNDA:8,(anonymous_6)
+FNDA:8,(anonymous_7)
+FNDA:0,(anonymous_8)
+FNDA:0,(anonymous_9)
+FNDA:0,(anonymous_10)
+FNDA:0,(anonymous_11)
+FNDA:0,(anonymous_12)
+DA:24,32
+DA:25,32
+DA:26,24
+DA:28,32
+DA:29,32
+DA:30,24
+DA:35,8
+DA:36,8
+DA:37,0
+DA:39,8
+DA:46,8
+DA:51,0
+DA:52,0
+DA:57,0
+DA:58,0
+DA:59,0
+DA:60,0
+DA:67,0
+DA:68,0
+DA:69,0
+DA:70,0
+DA:71,0
+DA:74,0
+DA:78,0
+DA:85,8
+DA:86,8
+DA:91,8
+DA:92,8
+DA:93,8
+DA:95,8
+DA:100,8
+DA:104,0
+DA:105,0
+DA:106,0
+DA:107,0
+DA:110,0
+DA:114,0
+DA:120,8
+DA:121,0
+DA:122,0
+DA:123,0
+DA:129,0
+DA:157,8
+DA:158,0
+DA:159,0
+DA:160,0
+DA:161,0
+DA:162,0
+DA:163,0
+DA:164,0
+DA:165,0
+LF:51
+LH:19
+BRDA:25,0,0,24
+BRDA:25,0,1,8
+BRDA:36,1,0,0
+BRDA:36,1,1,8
+BRDA:69,2,0,0
+BRDA:69,2,1,0
+BRDA:105,3,0,0
+BRDA:105,3,1,0
+>>>>>>> 6b57bfda0d62e38c8b8d173cef4b75b1e2c605c6
 BRF:8
 BRH:5
 end_of_record
 TN:
 SF:client/src/actions/category.js
+<<<<<<< HEAD
 FN:13,(anonymous_0)
 FN:13,(anonymous_1)
 FN:31,(anonymous_2)
@@ -216,6 +341,66 @@ BRDA:122,0,0,2
 BRDA:122,0,1,0
 BRF:2
 BRH:1
+=======
+FN:14,(anonymous_0)
+FN:14,(anonymous_1)
+FN:32,(anonymous_2)
+FN:32,(anonymous_3)
+FN:49,(anonymous_4)
+FN:81,(anonymous_5)
+FN:81,(anonymous_6)
+FN:104,(anonymous_7)
+FN:104,(anonymous_8)
+FN:120,(anonymous_9)
+FN:120,(anonymous_10)
+FNF:11
+FNH:11
+FNDA:24,(anonymous_0)
+FNDA:24,(anonymous_1)
+FNDA:13,(anonymous_2)
+FNDA:13,(anonymous_3)
+FNDA:7,(anonymous_4)
+FNDA:3,(anonymous_5)
+FNDA:3,(anonymous_6)
+FNDA:10,(anonymous_7)
+FNDA:10,(anonymous_8)
+FNDA:3,(anonymous_9)
+FNDA:3,(anonymous_10)
+DA:14,24
+DA:15,24
+DA:16,24
+DA:17,23
+DA:32,13
+DA:33,13
+DA:34,13
+DA:39,13
+DA:40,5
+DA:47,7
+DA:48,7
+DA:49,7
+DA:50,7
+DA:53,7
+DA:81,8
+DA:82,3
+DA:83,3
+DA:88,3
+DA:89,2
+DA:90,2
+DA:104,10
+DA:105,10
+DA:106,10
+DA:107,10
+DA:120,8
+DA:121,3
+LF:26
+LH:26
+BRDA:48,0,0,7
+BRDA:48,0,1,0
+BRDA:121,1,0,1
+BRDA:121,1,1,0
+BRF:4
+BRH:2
+>>>>>>> 6b57bfda0d62e38c8b8d173cef4b75b1e2c605c6
 end_of_record
 TN:
 SF:client/src/actions/product.js
@@ -230,6 +415,7 @@ FN:88,(anonymous_7)
 FN:107,(anonymous_8)
 FN:107,(anonymous_9)
 FNF:10
+<<<<<<< HEAD
 FNH:8
 FNDA:4,(anonymous_0)
 FNDA:4,(anonymous_1)
@@ -251,10 +437,34 @@ DA:36,3
 DA:37,3
 DA:40,0
 DA:51,79
+=======
+FNH:0
+FNDA:0,(anonymous_0)
+FNDA:0,(anonymous_1)
+FNDA:0,(anonymous_2)
+FNDA:0,(anonymous_3)
+FNDA:0,(anonymous_4)
+FNDA:0,(anonymous_5)
+FNDA:0,(anonymous_6)
+FNDA:0,(anonymous_7)
+FNDA:0,(anonymous_8)
+FNDA:0,(anonymous_9)
+DA:20,8
+DA:24,0
+DA:25,0
+DA:26,0
+DA:31,0
+DA:32,0
+DA:36,0
+DA:37,0
+DA:40,0
+DA:51,8
+>>>>>>> 6b57bfda0d62e38c8b8d173cef4b75b1e2c605c6
 DA:52,0
 DA:53,0
 DA:54,0
 DA:59,0
+<<<<<<< HEAD
 DA:69,79
 DA:70,27
 DA:71,27
@@ -274,9 +484,30 @@ LF:29
 LH:20
 BRDA:23,0,0,4
 BRDA:36,1,0,3
+=======
+DA:69,8
+DA:70,0
+DA:71,0
+DA:72,0
+DA:77,0
+DA:88,8
+DA:89,0
+DA:90,0
+DA:91,0
+DA:96,0
+DA:107,8
+DA:108,0
+DA:109,0
+DA:110,0
+DA:115,0
+LF:29
+LH:5
+BRDA:23,0,0,0
+BRDA:36,1,0,0
+>>>>>>> 6b57bfda0d62e38c8b8d173cef4b75b1e2c605c6
 BRDA:36,1,1,0
 BRF:3
-BRH:2
+BRH:0
 end_of_record
 TN:
 SF:client/src/actions/profile.js
@@ -289,6 +520,7 @@ FN:62,(anonymous_5)
 FN:102,(anonymous_6)
 FN:102,(anonymous_7)
 FNF:8
+<<<<<<< HEAD
 FNH:8
 FNDA:15,(anonymous_0)
 FNDA:15,(anonymous_1)
@@ -327,12 +559,53 @@ BRDA:15,0,0,9
 BRDA:28,1,0,9
 BRDA:28,1,1,5
 BRDA:103,2,0,4
+=======
+FNH:0
+FNDA:0,(anonymous_0)
+FNDA:0,(anonymous_1)
+FNDA:0,(anonymous_2)
+FNDA:0,(anonymous_3)
+FNDA:0,(anonymous_4)
+FNDA:0,(anonymous_5)
+FNDA:0,(anonymous_6)
+FNDA:0,(anonymous_7)
+DA:12,8
+DA:16,0
+DA:17,0
+DA:18,0
+DA:23,0
+DA:24,0
+DA:28,0
+DA:29,0
+DA:46,8
+DA:47,0
+DA:48,0
+DA:49,0
+DA:54,0
+DA:62,8
+DA:63,0
+DA:64,0
+DA:66,0
+DA:102,8
+DA:103,0
+DA:104,0
+DA:105,0
+DA:106,0
+DA:109,0
+LF:23
+LH:4
+BRDA:15,0,0,0
+BRDA:28,1,0,0
+BRDA:28,1,1,0
+BRDA:103,2,0,0
+>>>>>>> 6b57bfda0d62e38c8b8d173cef4b75b1e2c605c6
 BRDA:103,2,1,0
 BRF:5
 BRH:4
 end_of_record
 TN:
 SF:client/src/actions/subcategory.js
+<<<<<<< HEAD
 FN:11,(anonymous_0)
 FN:11,(anonymous_1)
 FN:35,(anonymous_2)
@@ -356,12 +629,58 @@ DA:38,7
 LF:10
 LH:9
 BRF:0
+=======
+FN:14,(anonymous_0)
+FN:14,(anonymous_1)
+FN:40,(anonymous_2)
+FN:40,(anonymous_3)
+FN:58,(anonymous_4)
+FN:58,(anonymous_5)
+FN:86,(anonymous_6)
+FN:86,(anonymous_7)
+FNF:8
+FNH:2
+FNDA:0,(anonymous_0)
+FNDA:0,(anonymous_1)
+FNDA:5,(anonymous_2)
+FNDA:5,(anonymous_3)
+FNDA:0,(anonymous_4)
+FNDA:0,(anonymous_5)
+FNDA:0,(anonymous_6)
+FNDA:0,(anonymous_7)
+DA:14,8
+DA:15,0
+DA:20,0
+DA:21,0
+DA:22,0
+DA:23,0
+DA:27,0
+DA:28,0
+DA:40,8
+DA:41,5
+DA:42,5
+DA:43,5
+DA:58,8
+DA:59,0
+DA:60,0
+DA:65,0
+DA:70,0
+DA:71,0
+DA:86,8
+DA:87,0
+LF:20
+LH:7
+BRDA:87,0,0,0
+BRDA:87,0,1,0
+BRF:2
+>>>>>>> 6b57bfda0d62e38c8b8d173cef4b75b1e2c605c6
 BRH:0
 end_of_record
 TN:
 SF:client/src/actions/types.js
 FNF:0
 FNH:0
+<<<<<<< HEAD
 DA:1,79
 DA:2,79
 DA:3,79
@@ -406,6 +725,53 @@ DA:41,79
 DA:42,79
 LF:42
 LH:42
+=======
+DA:1,8
+DA:2,8
+DA:3,8
+DA:4,8
+DA:5,8
+DA:6,8
+DA:7,8
+DA:8,8
+DA:9,8
+DA:10,8
+DA:11,8
+DA:12,8
+DA:13,8
+DA:14,8
+DA:15,8
+DA:16,8
+DA:17,8
+DA:18,8
+DA:19,8
+DA:20,8
+DA:21,8
+DA:22,8
+DA:23,8
+DA:24,8
+DA:25,8
+DA:26,8
+DA:27,8
+DA:28,8
+DA:29,8
+DA:30,8
+DA:31,8
+DA:32,8
+DA:33,8
+DA:34,8
+DA:35,8
+DA:36,8
+DA:37,8
+DA:38,8
+DA:39,8
+DA:40,8
+DA:41,8
+DA:42,8
+DA:43,8
+LF:43
+LH:43
+>>>>>>> 6b57bfda0d62e38c8b8d173cef4b75b1e2c605c6
 BRF:0
 BRH:0
 end_of_record
@@ -414,6 +780,7 @@ SF:client/src/assets/jss/material-dashboard-react.js
 FN:24,(anonymous_0)
 FNF:1
 FNH:1
+<<<<<<< HEAD
 FNDA:3192,(anonymous_0)
 DA:24,79
 DA:25,3192
@@ -474,6 +841,68 @@ BRDA:28,1,1,3192
 BRDA:28,1,2,1528
 BRDA:31,2,0,1664
 BRDA:31,2,1,1528
+=======
+FNDA:550,(anonymous_0)
+DA:24,8
+DA:25,550
+DA:26,550
+DA:27,550
+DA:28,550
+DA:29,0
+DA:31,550
+DA:32,247
+DA:33,247
+DA:34,247
+DA:35,247
+DA:37,550
+DA:38,550
+DA:39,550
+DA:40,550
+DA:41,550
+DA:54,8
+DA:56,8
+DA:60,8
+DA:67,8
+DA:73,8
+DA:74,8
+DA:75,8
+DA:76,8
+DA:77,8
+DA:78,8
+DA:79,8
+DA:93,8
+DA:94,8
+DA:96,8
+DA:107,8
+DA:115,8
+DA:123,8
+DA:131,8
+DA:139,8
+DA:147,8
+DA:156,8
+DA:161,8
+DA:166,8
+DA:171,8
+DA:176,8
+DA:181,8
+DA:187,8
+DA:195,8
+DA:201,8
+DA:212,8
+DA:227,8
+DA:242,8
+DA:255,8
+DA:259,8
+LF:50
+LH:49
+BRDA:28,0,0,0
+BRDA:28,0,1,550
+BRDA:28,1,0,550
+BRDA:28,1,1,550
+BRDA:28,1,2,303
+BRDA:31,2,0,247
+BRDA:31,2,1,303
+>>>>>>> 6b57bfda0d62e38c8b8d173cef4b75b1e2c605c6
 BRF:7
 BRH:6
 end_of_record
@@ -481,6 +910,7 @@ TN:
 SF:client/src/assets/jss/material-kit-react.js
 FNF:0
 FNH:0
+<<<<<<< HEAD
 DA:21,79
 DA:23,79
 DA:27,79
@@ -514,6 +944,41 @@ DA:158,79
 DA:166,79
 DA:171,79
 DA:177,79
+=======
+DA:21,8
+DA:23,8
+DA:27,8
+DA:34,8
+DA:50,8
+DA:55,8
+DA:66,8
+DA:72,8
+DA:73,8
+DA:74,8
+DA:75,8
+DA:76,8
+DA:77,8
+DA:78,8
+DA:80,8
+DA:84,8
+DA:88,8
+DA:92,8
+DA:96,8
+DA:100,8
+DA:105,8
+DA:110,8
+DA:115,8
+DA:120,8
+DA:125,8
+DA:130,8
+DA:135,8
+DA:143,8
+DA:149,8
+DA:158,8
+DA:166,8
+DA:171,8
+DA:177,8
+>>>>>>> 6b57bfda0d62e38c8b8d173cef4b75b1e2c605c6
 LF:33
 LH:33
 BRF:0
@@ -523,7 +988,11 @@ TN:
 SF:client/src/assets/jss/material-kit-react/imagesStyles.js
 FNF:0
 FNH:0
+<<<<<<< HEAD
 DA:1,79
+=======
+DA:1,8
+>>>>>>> 6b57bfda0d62e38c8b8d173cef4b75b1e2c605c6
 LF:1
 LH:1
 BRF:0
@@ -533,7 +1002,11 @@ TN:
 SF:client/src/assets/jss/material-kit-react/tooltipsStyle.js
 FNF:0
 FNH:0
+<<<<<<< HEAD
 DA:1,79
+=======
+DA:1,8
+>>>>>>> 6b57bfda0d62e38c8b8d173cef4b75b1e2c605c6
 LF:1
 LH:1
 BRF:0
@@ -543,7 +1016,11 @@ TN:
 SF:client/src/assets/jss/material-kit-react/components/buttonStyle.js
 FNF:0
 FNH:0
+<<<<<<< HEAD
 DA:11,79
+=======
+DA:11,8
+>>>>>>> 6b57bfda0d62e38c8b8d173cef4b75b1e2c605c6
 LF:1
 LH:1
 BRF:0
@@ -553,7 +1030,11 @@ TN:
 SF:client/src/assets/jss/material-kit-react/components/cardBodyStyle.js
 FNF:0
 FNH:0
+<<<<<<< HEAD
 DA:1,79
+=======
+DA:1,8
+>>>>>>> 6b57bfda0d62e38c8b8d173cef4b75b1e2c605c6
 LF:1
 LH:1
 BRF:0
@@ -563,7 +1044,11 @@ TN:
 SF:client/src/assets/jss/material-kit-react/components/cardFooterStyle.js
 FNF:0
 FNH:0
+<<<<<<< HEAD
 DA:1,79
+=======
+DA:1,8
+>>>>>>> 6b57bfda0d62e38c8b8d173cef4b75b1e2c605c6
 LF:1
 LH:1
 BRF:0
@@ -573,7 +1058,11 @@ TN:
 SF:client/src/assets/jss/material-kit-react/components/cardHeaderStyle.js
 FNF:0
 FNH:0
+<<<<<<< HEAD
 DA:8,79
+=======
+DA:8,8
+>>>>>>> 6b57bfda0d62e38c8b8d173cef4b75b1e2c605c6
 LF:1
 LH:1
 BRF:0
@@ -583,7 +1072,11 @@ TN:
 SF:client/src/assets/jss/material-kit-react/components/cardStyle.js
 FNF:0
 FNH:0
+<<<<<<< HEAD
 DA:1,79
+=======
+DA:1,8
+>>>>>>> 6b57bfda0d62e38c8b8d173cef4b75b1e2c605c6
 LF:1
 LH:1
 BRF:0
@@ -594,8 +1087,13 @@ SF:client/src/assets/jss/material-kit-react/components/customDropdownStyle.js
 FN:17,(anonymous_0)
 FNF:1
 FNH:1
+<<<<<<< HEAD
 FNDA:46,(anonymous_0)
 DA:17,79
+=======
+FNDA:8,(anonymous_0)
+DA:17,8
+>>>>>>> 6b57bfda0d62e38c8b8d173cef4b75b1e2c605c6
 LF:1
 LH:1
 BRF:0
@@ -605,7 +1103,11 @@ TN:
 SF:client/src/assets/jss/material-kit-react/components/customInputStyle.js
 FNF:0
 FNH:0
+<<<<<<< HEAD
 DA:8,79
+=======
+DA:8,8
+>>>>>>> 6b57bfda0d62e38c8b8d173cef4b75b1e2c605c6
 LF:1
 LH:1
 BRF:0
@@ -615,7 +1117,11 @@ TN:
 SF:client/src/assets/jss/material-kit-react/components/footerStyle.js
 FNF:0
 FNH:0
+<<<<<<< HEAD
 DA:3,79
+=======
+DA:3,8
+>>>>>>> 6b57bfda0d62e38c8b8d173cef4b75b1e2c605c6
 LF:1
 LH:1
 BRF:0
@@ -626,8 +1132,13 @@ SF:client/src/assets/jss/material-kit-react/components/headerLinksStyle.js
 FN:5,(anonymous_0)
 FNF:1
 FNH:1
+<<<<<<< HEAD
 FNDA:79,(anonymous_0)
 DA:5,79
+=======
+FNDA:8,(anonymous_0)
+DA:5,8
+>>>>>>> 6b57bfda0d62e38c8b8d173cef4b75b1e2c605c6
 LF:1
 LH:1
 BRF:0
@@ -637,7 +1148,11 @@ TN:
 SF:client/src/assets/jss/material-kit-react/components/headerStyle.js
 FNF:0
 FNH:0
+<<<<<<< HEAD
 DA:15,79
+=======
+DA:15,8
+>>>>>>> 6b57bfda0d62e38c8b8d173cef4b75b1e2c605c6
 LF:1
 LH:1
 BRF:0
@@ -648,8 +1163,13 @@ SF:client/src/assets/jss/material-kit-react/components/sidebarStyle.js
 FN:19,(anonymous_0)
 FNF:1
 FNH:1
+<<<<<<< HEAD
 FNDA:62,(anonymous_0)
 DA:19,79
+=======
+FNDA:15,(anonymous_0)
+DA:19,15
+>>>>>>> 6b57bfda0d62e38c8b8d173cef4b75b1e2c605c6
 LF:1
 LH:1
 BRF:0
@@ -659,7 +1179,21 @@ TN:
 SF:client/src/assets/jss/material-kit-react/components/snackbarContentStyle.js
 FNF:0
 FNH:0
+<<<<<<< HEAD
 DA:11,79
+=======
+DA:11,8
+LF:1
+LH:1
+BRF:0
+BRH:0
+end_of_record
+TN:
+SF:client/src/assets/jss/material-kit-react/views/adminDashboard.js
+FNF:0
+FNH:0
+DA:3,8
+>>>>>>> 6b57bfda0d62e38c8b8d173cef4b75b1e2c605c6
 LF:1
 LH:1
 BRF:0
@@ -669,9 +1203,15 @@ TN:
 SF:client/src/assets/jss/material-kit-react/views/dashboardInnerPage.js
 FN:7,(anonymous_0)
 FNF:1
+<<<<<<< HEAD
 FNH:1
 FNDA:16,(anonymous_0)
 DA:7,79
+=======
+FNH:0
+FNDA:0,(anonymous_0)
+DA:7,8
+>>>>>>> 6b57bfda0d62e38c8b8d173cef4b75b1e2c605c6
 LF:1
 LH:1
 BRF:0
@@ -682,8 +1222,13 @@ SF:client/src/assets/jss/material-kit-react/views/dashboardPage.js
 FN:7,(anonymous_0)
 FNF:1
 FNH:1
+<<<<<<< HEAD
 FNDA:62,(anonymous_0)
 DA:7,79
+=======
+FNDA:15,(anonymous_0)
+DA:7,15
+>>>>>>> 6b57bfda0d62e38c8b8d173cef4b75b1e2c605c6
 LF:1
 LH:1
 BRF:0
@@ -693,9 +1238,15 @@ TN:
 SF:client/src/assets/jss/material-kit-react/views/landingPage.js
 FNF:0
 FNH:0
+<<<<<<< HEAD
 DA:3,79
 DA:8,79
 DA:24,79
+=======
+DA:3,8
+DA:8,8
+DA:24,8
+>>>>>>> 6b57bfda0d62e38c8b8d173cef4b75b1e2c605c6
 LF:3
 LH:3
 BRF:0
@@ -705,7 +1256,11 @@ TN:
 SF:client/src/assets/jss/material-kit-react/views/loginPage.js
 FNF:0
 FNH:0
+<<<<<<< HEAD
 DA:3,79
+=======
+DA:3,8
+>>>>>>> 6b57bfda0d62e38c8b8d173cef4b75b1e2c605c6
 LF:1
 LH:1
 BRF:0
@@ -715,7 +1270,11 @@ TN:
 SF:client/src/assets/jss/material-kit-react/views/componentsSections/carouselStyle.js
 FNF:0
 FNH:0
+<<<<<<< HEAD
 DA:3,79
+=======
+DA:3,8
+>>>>>>> 6b57bfda0d62e38c8b8d173cef4b75b1e2c605c6
 LF:1
 LH:1
 BRF:0
@@ -726,6 +1285,7 @@ SF:client/src/components/Card/Card.js
 FN:15,Card
 FNF:1
 FNH:1
+<<<<<<< HEAD
 FNDA:7325,Card
 DA:13,79
 DA:16,7325
@@ -733,6 +1293,15 @@ DA:17,7325
 DA:18,7325
 DA:24,7325
 DA:31,79
+=======
+FNDA:326,Card
+DA:13,8
+DA:16,326
+DA:17,326
+DA:18,326
+DA:24,326
+DA:31,8
+>>>>>>> 6b57bfda0d62e38c8b8d173cef4b75b1e2c605c6
 LF:6
 LH:6
 BRF:0
@@ -743,6 +1312,7 @@ SF:client/src/components/Card/CardBody.js
 FN:15,CardBody
 FNF:1
 FNH:1
+<<<<<<< HEAD
 FNDA:7325,CardBody
 DA:13,79
 DA:16,7325
@@ -750,6 +1320,15 @@ DA:17,7325
 DA:18,7325
 DA:22,7325
 DA:29,79
+=======
+FNDA:326,CardBody
+DA:13,8
+DA:16,326
+DA:17,326
+DA:18,326
+DA:22,326
+DA:29,8
+>>>>>>> 6b57bfda0d62e38c8b8d173cef4b75b1e2c605c6
 LF:6
 LH:6
 BRF:0
@@ -760,6 +1339,7 @@ SF:client/src/components/Card/CardFooter.js
 FN:15,CardFooter
 FNF:1
 FNH:1
+<<<<<<< HEAD
 FNDA:7271,CardFooter
 DA:13,79
 DA:16,7271
@@ -767,6 +1347,15 @@ DA:17,7271
 DA:18,7271
 DA:22,7271
 DA:29,79
+=======
+FNDA:326,CardFooter
+DA:13,8
+DA:16,326
+DA:17,326
+DA:18,326
+DA:22,326
+DA:29,8
+>>>>>>> 6b57bfda0d62e38c8b8d173cef4b75b1e2c605c6
 LF:6
 LH:6
 BRF:0
@@ -777,6 +1366,7 @@ SF:client/src/components/Card/CardHeader.js
 FN:15,CardHeader
 FNF:1
 FNH:1
+<<<<<<< HEAD
 FNDA:7271,CardHeader
 DA:13,79
 DA:16,7271
@@ -784,6 +1374,15 @@ DA:17,7271
 DA:18,7271
 DA:24,7271
 DA:31,79
+=======
+FNDA:326,CardHeader
+DA:13,8
+DA:16,326
+DA:17,326
+DA:18,326
+DA:24,326
+DA:31,8
+>>>>>>> 6b57bfda0d62e38c8b8d173cef4b75b1e2c605c6
 LF:6
 LH:6
 BRF:0
@@ -794,12 +1393,21 @@ SF:client/src/components/Clearfix/Clearfix.js
 FN:20,Clearfix
 FNF:1
 FNH:1
+<<<<<<< HEAD
 FNDA:13,Clearfix
 DA:6,79
 DA:18,79
 DA:21,13
 DA:22,13
 DA:25,79
+=======
+FNDA:1086,Clearfix
+DA:6,8
+DA:18,8
+DA:21,1086
+DA:22,1086
+DA:25,8
+>>>>>>> 6b57bfda0d62e38c8b8d173cef4b75b1e2c605c6
 LF:5
 LH:5
 BRF:0
@@ -811,6 +1419,7 @@ FN:15,(anonymous_0)
 FN:19,(anonymous_1)
 FNF:2
 FNH:2
+<<<<<<< HEAD
 FNDA:107,(anonymous_0)
 FNDA:11206,(anonymous_1)
 DA:15,107
@@ -820,6 +1429,17 @@ DA:35,11206
 DA:37,11206
 DA:50,11206
 DA:57,79
+=======
+FNDA:28,(anonymous_0)
+FNDA:954,(anonymous_1)
+DA:15,28
+DA:19,8
+DA:33,954
+DA:35,954
+DA:37,954
+DA:50,954
+DA:57,8
+>>>>>>> 6b57bfda0d62e38c8b8d173cef4b75b1e2c605c6
 LF:7
 LH:7
 BRF:0
@@ -837,6 +1457,7 @@ FN:138,(anonymous_6)
 FN:143,(anonymous_7)
 FN:151,(anonymous_8)
 FNF:9
+<<<<<<< HEAD
 FNH:6
 FNDA:207,CustomDropdown
 FNDA:23,(anonymous_1)
@@ -867,10 +1488,43 @@ DA:60,207
 DA:65,207
 DA:71,207
 DA:72,207
+=======
+FNH:1
+FNDA:8,CustomDropdown
+FNDA:0,(anonymous_1)
+FNDA:0,(anonymous_2)
+FNDA:0,(anonymous_3)
+FNDA:0,(anonymous_4)
+FNDA:0,(anonymous_5)
+FNDA:0,(anonymous_6)
+FNDA:0,(anonymous_7)
+FNDA:0,(anonymous_8)
+DA:23,8
+DA:26,8
+DA:27,8
+DA:28,0
+DA:29,0
+DA:31,0
+DA:34,8
+DA:35,0
+DA:36,0
+DA:37,0
+DA:40,8
+DA:41,0
+DA:42,0
+DA:44,0
+DA:46,8
+DA:59,8
+DA:60,8
+DA:65,8
+DA:71,8
+DA:72,8
+>>>>>>> 6b57bfda0d62e38c8b8d173cef4b75b1e2c605c6
 DA:74,0
 DA:75,0
 DA:77,0
 DA:78,0
+<<<<<<< HEAD
 DA:80,207
 DA:81,207
 DA:83,207
@@ -883,9 +1537,24 @@ DA:148,206
 DA:151,23
 DA:168,79
 DA:173,79
+=======
+DA:80,8
+DA:81,8
+DA:83,8
+DA:118,0
+DA:132,0
+DA:139,0
+DA:140,0
+DA:143,0
+DA:148,0
+DA:151,0
+DA:168,8
+DA:173,8
+>>>>>>> 6b57bfda0d62e38c8b8d173cef4b75b1e2c605c6
 LF:36
-LH:25
+LH:16
 BRDA:28,0,0,0
+<<<<<<< HEAD
 BRDA:28,0,1,23
 BRDA:28,1,0,23
 BRDA:28,1,1,0
@@ -893,10 +1562,20 @@ BRDA:36,2,0,0
 BRDA:36,2,1,23
 BRDA:36,3,0,23
 BRDA:36,3,1,23
+=======
+BRDA:28,0,1,0
+BRDA:28,1,0,0
+BRDA:28,1,1,0
+BRDA:36,2,0,0
+BRDA:36,2,1,0
+BRDA:36,3,0,0
+BRDA:36,3,1,0
+>>>>>>> 6b57bfda0d62e38c8b8d173cef4b75b1e2c605c6
 BRDA:41,4,0,0
 BRDA:41,4,1,0
 BRDA:72,5,0,0
 BRDA:72,5,1,0
+<<<<<<< HEAD
 BRDA:72,5,2,207
 BRDA:88,6,0,103
 BRDA:88,6,1,104
@@ -916,14 +1595,36 @@ BRDA:130,13,0,103
 BRDA:130,13,1,0
 BRDA:139,14,0,103
 BRDA:139,14,1,206
+=======
+BRDA:72,5,2,8
+BRDA:88,6,0,0
+BRDA:88,6,1,8
+BRDA:94,7,0,8
+BRDA:94,7,1,0
+BRDA:95,8,0,8
+BRDA:95,8,1,0
+BRDA:104,9,0,0
+BRDA:104,9,1,8
+BRDA:105,10,0,0
+BRDA:105,10,1,0
+BRDA:108,11,0,0
+BRDA:108,11,1,8
+BRDA:122,12,0,0
+BRDA:122,12,1,0
+BRDA:130,13,0,0
+BRDA:130,13,1,0
+BRDA:139,14,0,0
+BRDA:139,14,1,0
+>>>>>>> 6b57bfda0d62e38c8b8d173cef4b75b1e2c605c6
 BRF:31
-BRH:16
+BRH:6
 end_of_record
 TN:
 SF:client/src/components/CustomInput/CustomInput.js
 FN:16,CustomInput
 FNF:1
 FNH:1
+<<<<<<< HEAD
 FNDA:53407,CustomInput
 DA:14,79
 DA:17,53407
@@ -946,6 +1647,30 @@ BRDA:36,1,1,0
 BRDA:48,2,0,53407
 BRDA:48,2,1,0
 BRDA:58,3,0,53407
+=======
+FNDA:438,CustomInput
+DA:14,8
+DA:17,438
+DA:28,438
+DA:30,438
+DA:34,438
+DA:40,438
+DA:43,438
+DA:48,438
+DA:49,438
+DA:54,0
+DA:56,438
+DA:81,8
+LF:12
+LH:11
+BRDA:32,0,0,438
+BRDA:32,0,1,0
+BRDA:36,1,0,438
+BRDA:36,1,1,0
+BRDA:48,2,0,438
+BRDA:48,2,1,0
+BRDA:58,3,0,438
+>>>>>>> 6b57bfda0d62e38c8b8d173cef4b75b1e2c605c6
 BRDA:58,3,1,0
 BRF:8
 BRH:4
@@ -955,6 +1680,7 @@ SF:client/src/components/Footer/Footer.js
 FN:18,Footer
 FNF:1
 FNH:1
+<<<<<<< HEAD
 FNDA:7221,Footer
 DA:16,79
 DA:19,7221
@@ -963,6 +1689,16 @@ DA:21,7221
 DA:25,7221
 DA:29,7221
 DA:89,79
+=======
+FNDA:275,Footer
+DA:16,8
+DA:19,275
+DA:20,275
+DA:21,275
+DA:25,275
+DA:29,275
+DA:89,8
+>>>>>>> 6b57bfda0d62e38c8b8d173cef4b75b1e2c605c6
 LF:7
 LH:7
 BRF:0
@@ -973,6 +1709,7 @@ SF:client/src/components/Grid/GridContainer.js
 FN:19,GridContainer
 FNF:1
 FNH:1
+<<<<<<< HEAD
 FNDA:7490,GridContainer
 DA:9,79
 DA:17,79
@@ -981,6 +1718,16 @@ DA:21,7490
 DA:22,7490
 DA:29,79
 DA:33,79
+=======
+FNDA:326,GridContainer
+DA:9,8
+DA:17,8
+DA:20,326
+DA:21,326
+DA:22,326
+DA:29,8
+DA:33,8
+>>>>>>> 6b57bfda0d62e38c8b8d173cef4b75b1e2c605c6
 LF:7
 LH:7
 BRF:0
@@ -991,6 +1738,7 @@ SF:client/src/components/Grid/GridItem.js
 FN:21,GridItem
 FNF:1
 FNH:1
+<<<<<<< HEAD
 FNDA:7457,GridItem
 DA:8,79
 DA:19,79
@@ -999,6 +1747,16 @@ DA:23,7457
 DA:24,7457
 DA:31,79
 DA:35,79
+=======
+FNDA:326,GridItem
+DA:8,8
+DA:19,8
+DA:22,326
+DA:23,326
+DA:24,326
+DA:31,8
+DA:35,8
+>>>>>>> 6b57bfda0d62e38c8b8d173cef4b75b1e2c605c6
 LF:7
 LH:7
 BRF:0
@@ -1012,6 +1770,7 @@ FN:29,cleanup
 FN:35,(anonymous_3)
 FNF:4
 FNH:2
+<<<<<<< HEAD
 FNDA:79,Header
 FNDA:79,(anonymous_1)
 FNDA:0,cleanup
@@ -1043,6 +1802,39 @@ BRDA:73,2,0,0
 BRDA:73,2,1,79
 BRDA:75,3,0,0
 BRDA:75,3,1,79
+=======
+FNDA:8,Header
+FNDA:8,(anonymous_1)
+FNDA:0,cleanup
+FNDA:0,(anonymous_3)
+DA:20,8
+DA:23,8
+DA:24,8
+DA:25,8
+DA:26,8
+DA:27,0
+DA:29,8
+DA:30,0
+DA:31,0
+DA:35,8
+DA:36,0
+DA:58,8
+DA:59,8
+DA:66,8
+DA:70,8
+DA:116,8
+DA:120,8
+LF:17
+LH:13
+BRDA:26,0,0,0
+BRDA:26,0,1,8
+BRDA:30,1,0,0
+BRDA:30,1,1,0
+BRDA:73,2,0,0
+BRDA:73,2,1,8
+BRDA:75,3,0,0
+BRDA:75,3,1,8
+>>>>>>> 6b57bfda0d62e38c8b8d173cef4b75b1e2c605c6
 BRF:8
 BRH:3
 end_of_record
@@ -1052,6 +1844,7 @@ FN:24,(anonymous_0)
 FN:121,(anonymous_1)
 FNF:2
 FNH:2
+<<<<<<< HEAD
 FNDA:414,(anonymous_0)
 FNDA:865,(anonymous_1)
 DA:22,79
@@ -1073,6 +1866,29 @@ BRDA:109,2,0,67
 BRDA:109,2,1,163
 BRDA:109,3,0,230
 BRDA:109,3,1,168
+=======
+FNDA:48,(anonymous_0)
+FNDA:231,(anonymous_1)
+DA:22,8
+DA:24,8
+DA:25,48
+DA:28,48
+DA:53,48
+DA:94,48
+DA:106,48
+DA:116,8
+DA:121,231
+LF:9
+LH:9
+BRDA:108,0,0,48
+BRDA:108,0,1,40
+BRDA:109,1,0,32
+BRDA:109,1,1,8
+BRDA:109,2,0,24
+BRDA:109,2,1,8
+BRDA:109,3,0,32
+BRDA:109,3,1,24
+>>>>>>> 6b57bfda0d62e38c8b8d173cef4b75b1e2c605c6
 BRF:8
 BRH:8
 end_of_record
@@ -1083,6 +1899,7 @@ FN:14,(anonymous_1)
 FN:37,(anonymous_2)
 FNF:3
 FNH:3
+<<<<<<< HEAD
 FNDA:92,(anonymous_0)
 FNDA:13,(anonymous_1)
 FNDA:865,(anonymous_2)
@@ -1096,6 +1913,21 @@ LH:5
 BRDA:12,0,0,92
 BRDA:12,0,1,92
 BRDA:12,0,2,13
+=======
+FNDA:139,(anonymous_0)
+FNDA:1086,(anonymous_1)
+FNDA:231,(anonymous_2)
+DA:10,8
+DA:11,139
+DA:15,1086
+DA:33,8
+DA:37,231
+LF:5
+LH:5
+BRDA:12,0,0,139
+BRDA:12,0,1,139
+BRDA:12,0,2,129
+>>>>>>> 6b57bfda0d62e38c8b8d173cef4b75b1e2c605c6
 BRF:3
 BRH:3
 end_of_record
@@ -1106,6 +1938,7 @@ FN:8,(anonymous_1)
 FN:17,(anonymous_2)
 FNF:3
 FNH:3
+<<<<<<< HEAD
 FNDA:145,(anonymous_0)
 FNDA:145,(anonymous_1)
 FNDA:438,(anonymous_2)
@@ -1118,6 +1951,20 @@ LH:4
 BRDA:8,0,0,0
 BRDA:8,0,1,145
 BRDA:8,1,0,145
+=======
+FNDA:59,(anonymous_0)
+FNDA:59,(anonymous_1)
+FNDA:207,(anonymous_2)
+DA:7,8
+DA:8,59
+DA:13,8
+DA:17,207
+LF:4
+LH:4
+BRDA:8,0,0,0
+BRDA:8,0,1,59
+BRDA:8,1,0,59
+>>>>>>> 6b57bfda0d62e38c8b8d173cef4b75b1e2c605c6
 BRDA:8,1,1,0
 BRF:4
 BRH:2
@@ -1126,7 +1973,11 @@ TN:
 SF:client/src/components/Routing/dashboardRoutes.js
 FNF:0
 FNH:0
+<<<<<<< HEAD
 DA:13,79
+=======
+DA:13,8
+>>>>>>> 6b57bfda0d62e38c8b8d173cef4b75b1e2c605c6
 LF:1
 LH:1
 BRF:0
@@ -1139,6 +1990,7 @@ FN:20,activeRoute
 FN:26,(anonymous_2)
 FNF:3
 FNH:3
+<<<<<<< HEAD
 FNDA:203,Sidebar
 FNDA:1624,activeRoute
 FNDA:812,(anonymous_2)
@@ -1164,6 +2016,33 @@ BRDA:29,1,0,0
 BRDA:29,1,1,812
 BRDA:50,2,0,0
 BRDA:50,2,1,812
+=======
+FNDA:48,Sidebar
+FNDA:384,activeRoute
+FNDA:192,(anonymous_2)
+DA:15,8
+DA:18,48
+DA:21,384
+DA:23,48
+DA:25,48
+DA:27,192
+DA:29,192
+DA:30,0
+DA:31,0
+DA:35,192
+DA:39,192
+DA:42,192
+DA:72,48
+DA:83,8
+LF:14
+LH:12
+BRDA:21,0,0,64
+BRDA:21,0,1,320
+BRDA:29,1,0,0
+BRDA:29,1,1,192
+BRDA:50,2,0,0
+BRDA:50,2,1,192
+>>>>>>> 6b57bfda0d62e38c8b8d173cef4b75b1e2c605c6
 BRF:6
 BRH:4
 end_of_record
@@ -1173,6 +2052,7 @@ FN:17,SnackbarContent
 FN:21,(anonymous_1)
 FNF:2
 FNH:1
+<<<<<<< HEAD
 FNDA:13,SnackbarContent
 FNDA:0,(anonymous_1)
 DA:15,79
@@ -1202,6 +2082,37 @@ BRDA:38,1,0,0
 BRDA:38,1,1,13
 BRDA:38,1,2,0
 BRDA:55,2,0,13
+=======
+FNDA:1086,SnackbarContent
+FNDA:0,(anonymous_1)
+DA:15,8
+DA:18,1086
+DA:19,1086
+DA:20,1086
+DA:21,1086
+DA:22,0
+DA:24,1086
+DA:25,1086
+DA:37,1086
+DA:38,1086
+DA:40,0
+DA:41,0
+DA:43,1086
+DA:44,1086
+DA:46,0
+DA:47,0
+DA:49,1086
+DA:64,1086
+DA:67,8
+LF:19
+LH:14
+BRDA:24,0,0,1086
+BRDA:24,0,1,0
+BRDA:38,1,0,0
+BRDA:38,1,1,1086
+BRDA:38,1,2,0
+BRDA:55,2,0,1086
+>>>>>>> 6b57bfda0d62e38c8b8d173cef4b75b1e2c605c6
 BRDA:55,2,1,0
 BRF:7
 BRH:3
@@ -1211,6 +2122,7 @@ SF:client/src/reducers/alert.js
 FN:5,(anonymous_0)
 FN:11,(anonymous_1)
 FNF:2
+<<<<<<< HEAD
 FNH:1
 FNDA:1023,(anonymous_0)
 FNDA:0,(anonymous_1)
@@ -1228,12 +2140,32 @@ BRDA:7,1,1,0
 BRDA:7,1,2,1010
 BRF:4
 BRH:3
+=======
+FNH:2
+FNDA:247,(anonymous_0)
+FNDA:303,(anonymous_1)
+DA:3,8
+DA:6,247
+DA:7,247
+DA:9,97
+DA:11,303
+DA:13,116
+LF:6
+LH:6
+BRDA:5,0,0,24
+BRDA:7,1,0,97
+BRDA:7,1,1,34
+BRDA:7,1,2,116
+BRF:4
+BRH:4
+>>>>>>> 6b57bfda0d62e38c8b8d173cef4b75b1e2c605c6
 end_of_record
 TN:
 SF:client/src/reducers/auth.js
 FN:25,(anonymous_0)
 FNF:1
 FNH:1
+<<<<<<< HEAD
 FNDA:1023,(anonymous_0)
 DA:16,79
 DA:26,1023
@@ -1250,11 +2182,30 @@ DA:63,11
 DA:64,11
 DA:73,90
 DA:74,90
+=======
+FNDA:247,(anonymous_0)
+DA:16,8
+DA:26,247
+DA:27,247
+DA:29,24
+DA:36,0
+DA:37,0
+DA:44,8
+DA:45,8
+DA:46,8
+DA:48,8
+DA:55,0
+DA:63,0
+DA:64,0
+DA:73,8
+DA:74,8
+>>>>>>> 6b57bfda0d62e38c8b8d173cef4b75b1e2c605c6
 DA:83,0
 DA:84,0
 DA:94,4
 DA:95,4
 DA:103,0
+<<<<<<< HEAD
 DA:110,2
 DA:117,686
 LF:22
@@ -1267,13 +2218,33 @@ BRDA:27,1,3,7
 BRDA:27,1,4,5
 BRDA:27,1,5,11
 BRDA:27,1,6,90
+=======
+DA:110,0
+DA:117,207
+LF:22
+LH:11
+BRDA:25,0,0,24
+BRDA:27,1,0,24
+BRDA:27,1,1,0
+BRDA:27,1,2,8
+BRDA:27,1,3,0
+BRDA:27,1,4,0
+BRDA:27,1,5,0
+BRDA:27,1,6,8
+>>>>>>> 6b57bfda0d62e38c8b8d173cef4b75b1e2c605c6
 BRDA:27,1,7,0
 BRDA:27,1,8,2
 BRDA:27,1,9,4
 BRDA:27,1,10,0
+<<<<<<< HEAD
 BRDA:27,1,11,2
 BRDA:27,1,12,686
 BRDA:45,2,0,60
+=======
+BRDA:27,1,11,0
+BRDA:27,1,12,207
+BRDA:45,2,0,8
+>>>>>>> 6b57bfda0d62e38c8b8d173cef4b75b1e2c605c6
 BRDA:45,2,1,0
 BRF:16
 BRH:13
@@ -1283,6 +2254,7 @@ SF:client/src/reducers/category.js
 FN:17,(anonymous_0)
 FNF:1
 FNH:1
+<<<<<<< HEAD
 FNDA:1023,(anonymous_0)
 DA:9,79
 DA:18,1023
@@ -1304,6 +2276,29 @@ BRDA:19,1,4,2
 BRDA:19,1,5,983
 BRF:7
 BRH:7
+=======
+FNDA:247,(anonymous_0)
+DA:9,8
+DA:18,247
+DA:19,247
+DA:21,5
+DA:29,2
+DA:35,23
+DA:43,7
+DA:50,0
+DA:59,210
+LF:9
+LH:8
+BRDA:17,0,0,24
+BRDA:19,1,0,5
+BRDA:19,1,1,2
+BRDA:19,1,2,23
+BRDA:19,1,3,7
+BRDA:19,1,4,0
+BRDA:19,1,5,210
+BRF:7
+BRH:6
+>>>>>>> 6b57bfda0d62e38c8b8d173cef4b75b1e2c605c6
 end_of_record
 TN:
 SF:client/src/reducers/categorylist.js
@@ -1311,6 +2306,7 @@ FN:12,(anonymous_0)
 FN:18,(anonymous_1)
 FNF:2
 FNH:2
+<<<<<<< HEAD
 FNDA:1023,(anonymous_0)
 FNDA:12,(anonymous_1)
 DA:6,79
@@ -1332,6 +2328,29 @@ BRDA:15,1,2,2
 BRDA:15,1,3,1017
 BRF:5
 BRH:4
+=======
+FNDA:247,(anonymous_0)
+FNDA:90,(anonymous_1)
+DA:6,8
+DA:13,247
+DA:15,247
+DA:17,10
+DA:18,10
+DA:19,90
+DA:21,10
+DA:27,0
+DA:33,0
+DA:40,237
+LF:10
+LH:8
+BRDA:12,0,0,24
+BRDA:15,1,0,10
+BRDA:15,1,1,0
+BRDA:15,1,2,0
+BRDA:15,1,3,237
+BRF:5
+BRH:3
+>>>>>>> 6b57bfda0d62e38c8b8d173cef4b75b1e2c605c6
 end_of_record
 TN:
 SF:client/src/reducers/index.js
@@ -1348,6 +2367,7 @@ FN:21,(anonymous_0)
 FN:54,(anonymous_1)
 FNF:2
 FNH:1
+<<<<<<< HEAD
 FNDA:1023,(anonymous_0)
 FNDA:0,(anonymous_1)
 DA:13,79
@@ -1377,12 +2397,44 @@ BRDA:24,1,8,2
 BRDA:24,1,9,988
 BRF:11
 BRH:6
+=======
+FNDA:247,(anonymous_0)
+FNDA:0,(anonymous_1)
+DA:13,8
+DA:22,247
+DA:24,247
+DA:26,0
+DA:33,0
+DA:39,0
+DA:46,0
+DA:52,0
+DA:54,0
+DA:58,0
+DA:64,0
+DA:73,247
+LF:12
+LH:4
+BRDA:21,0,0,24
+BRDA:24,1,0,0
+BRDA:24,1,1,0
+BRDA:24,1,2,0
+BRDA:24,1,3,0
+BRDA:24,1,4,0
+BRDA:24,1,5,0
+BRDA:24,1,6,0
+BRDA:24,1,7,0
+BRDA:24,1,8,0
+BRDA:24,1,9,247
+BRF:11
+BRH:2
+>>>>>>> 6b57bfda0d62e38c8b8d173cef4b75b1e2c605c6
 end_of_record
 TN:
 SF:client/src/reducers/profile.js
 FN:17,(anonymous_0)
 FNF:1
 FNH:1
+<<<<<<< HEAD
 FNDA:1023,(anonymous_0)
 DA:10,79
 DA:18,1023
@@ -1401,14 +2453,35 @@ BRDA:20,1,2,4
 BRDA:20,1,3,7
 BRDA:20,1,4,2
 BRDA:20,1,5,680
+=======
+FNDA:247,(anonymous_0)
+DA:10,8
+DA:18,247
+DA:20,247
+DA:23,0
+DA:29,0
+DA:43,0
+DA:49,0
+DA:56,247
+LF:8
+LH:4
+BRDA:17,0,0,24
+BRDA:20,1,0,0
+BRDA:20,1,1,0
+BRDA:20,1,2,0
+BRDA:20,1,3,0
+BRDA:20,1,4,0
+BRDA:20,1,5,247
+>>>>>>> 6b57bfda0d62e38c8b8d173cef4b75b1e2c605c6
 BRF:7
 BRH:7
 end_of_record
 TN:
 SF:client/src/reducers/subcategory.js
-FN:14,(anonymous_0)
+FN:17,(anonymous_0)
 FNF:1
 FNH:1
+<<<<<<< HEAD
 FNDA:1023,(anonymous_0)
 DA:7,79
 DA:15,1023
@@ -1428,12 +2501,36 @@ BRDA:17,1,3,2
 BRDA:17,1,4,1011
 BRF:6
 BRH:5
+=======
+FNDA:247,(anonymous_0)
+DA:9,8
+DA:18,247
+DA:20,247
+DA:22,0
+DA:30,0
+DA:36,0
+DA:43,5
+DA:51,0
+DA:60,242
+LF:9
+LH:5
+BRDA:17,0,0,24
+BRDA:20,1,0,0
+BRDA:20,1,1,0
+BRDA:20,1,2,0
+BRDA:20,1,3,5
+BRDA:20,1,4,0
+BRDA:20,1,5,242
+BRF:7
+BRH:3
+>>>>>>> 6b57bfda0d62e38c8b8d173cef4b75b1e2c605c6
 end_of_record
 TN:
 SF:client/src/utils/setAuthToken.js
 FN:3,(anonymous_0)
 FNF:1
 FNH:1
+<<<<<<< HEAD
 FNDA:224,(anonymous_0)
 DA:3,79
 DA:4,224
@@ -1441,6 +2538,15 @@ DA:5,224
 LF:3
 LH:3
 BRDA:4,0,0,224
+=======
+FNDA:32,(anonymous_0)
+DA:3,8
+DA:4,32
+DA:5,32
+LF:3
+LH:3
+BRDA:4,0,0,32
+>>>>>>> 6b57bfda0d62e38c8b8d173cef4b75b1e2c605c6
 BRDA:4,0,1,0
 BRF:2
 BRH:1
@@ -1448,14 +2554,15 @@ end_of_record
 TN:
 SF:client/src/views/CategoryPage/CategoryPage.js
 FN:30,(anonymous_0)
-FN:34,(anonymous_1)
-FN:46,(anonymous_2)
-FN:53,(anonymous_3)
+FN:35,(anonymous_1)
+FN:47,(anonymous_2)
+FN:54,(anonymous_3)
 FN:82,(anonymous_4)
 FN:97,(anonymous_5)
-FN:127,(anonymous_6)
+FN:128,(anonymous_6)
 FNF:7
 FNH:7
+<<<<<<< HEAD
 FNDA:175,(anonymous_0)
 FNDA:122,(anonymous_1)
 FNDA:125,(anonymous_2)
@@ -1494,6 +2601,46 @@ BRDA:63,1,0,0
 BRDA:63,1,1,171
 BRF:4
 BRH:3
+=======
+FNDA:180,(anonymous_0)
+FNDA:154,(anonymous_1)
+FNDA:141,(anonymous_2)
+FNDA:13,(anonymous_3)
+FNDA:13,(anonymous_4)
+FNDA:141,(anonymous_5)
+FNDA:117,(anonymous_6)
+DA:28,8
+DA:30,8
+DA:33,180
+DA:34,180
+DA:35,180
+DA:36,154
+DA:38,180
+DA:44,180
+DA:47,180
+DA:48,141
+DA:54,180
+DA:55,13
+DA:56,13
+DA:59,180
+DA:60,5
+DA:63,175
+DA:64,97
+DA:65,97
+DA:68,175
+DA:82,13
+DA:97,141
+DA:122,8
+DA:128,117
+LF:23
+LH:23
+BRDA:59,0,0,5
+BRDA:59,0,1,175
+BRDA:63,1,0,97
+BRDA:63,1,1,78
+BRF:4
+BRH:4
+>>>>>>> 6b57bfda0d62e38c8b8d173cef4b75b1e2c605c6
 end_of_record
 TN:
 SF:client/src/views/CategoryPage/UpdateCategoryPage.js
@@ -1508,14 +2655,22 @@ FN:107,(anonymous_7)
 FN:137,(anonymous_8)
 FNF:9
 FNH:9
+<<<<<<< HEAD
 FNDA:54,(anonymous_0)
 FNDA:16,(anonymous_1)
 FNDA:3,(anonymous_2)
 FNDA:12,(anonymous_3)
+=======
+FNDA:53,(anonymous_0)
+FNDA:38,(anonymous_1)
+FNDA:3,(anonymous_2)
+FNDA:27,(anonymous_3)
+>>>>>>> 6b57bfda0d62e38c8b8d173cef4b75b1e2c605c6
 FNDA:42,(anonymous_4)
 FNDA:3,(anonymous_5)
 FNDA:3,(anonymous_6)
 FNDA:42,(anonymous_7)
+<<<<<<< HEAD
 FNDA:5,(anonymous_8)
 DA:20,79
 DA:22,79
@@ -1551,6 +2706,43 @@ BRDA:44,0,0,3
 BRDA:44,0,1,9
 BRDA:72,1,0,2
 BRDA:72,1,1,52
+=======
+FNDA:17,(anonymous_8)
+DA:20,8
+DA:22,8
+DA:26,53
+DA:27,53
+DA:28,53
+DA:29,53
+DA:30,38
+DA:34,53
+DA:35,53
+DA:39,53
+DA:41,53
+DA:42,3
+DA:43,3
+DA:44,27
+DA:45,3
+DA:50,3
+DA:56,53
+DA:57,42
+DA:63,53
+DA:64,3
+DA:65,3
+DA:72,53
+DA:73,2
+DA:76,51
+DA:90,3
+DA:107,42
+DA:132,8
+DA:137,17
+LF:28
+LH:28
+BRDA:44,0,0,3
+BRDA:44,0,1,24
+BRDA:72,1,0,2
+BRDA:72,1,1,51
+>>>>>>> 6b57bfda0d62e38c8b8d173cef4b75b1e2c605c6
 BRF:4
 BRH:4
 end_of_record
@@ -1563,6 +2755,7 @@ FN:54,(anonymous_3)
 FN:95,(anonymous_4)
 FNF:5
 FNH:5
+<<<<<<< HEAD
 FNDA:45,(anonymous_0)
 FNDA:20,(anonymous_1)
 FNDA:86,(anonymous_2)
@@ -1584,6 +2777,29 @@ LH:11
 BRDA:32,0,0,19
 BRDA:32,0,1,26
 BRDA:34,1,0,26
+=======
+FNDA:41,(anonymous_0)
+FNDA:19,(anonymous_1)
+FNDA:212,(anonymous_2)
+FNDA:3,(anonymous_3)
+FNDA:63,(anonymous_4)
+DA:16,8
+DA:17,8
+DA:21,41
+DA:22,41
+DA:23,19
+DA:24,19
+DA:27,41
+DA:44,212
+DA:54,3
+DA:88,8
+DA:95,63
+LF:11
+LH:11
+BRDA:32,0,0,16
+BRDA:32,0,1,25
+BRDA:34,1,0,25
+>>>>>>> 6b57bfda0d62e38c8b8d173cef4b75b1e2c605c6
 BRDA:34,1,1,0
 BRF:4
 BRH:3
@@ -1592,23 +2808,33 @@ TN:
 SF:client/src/views/Components/Sections/SectionCarousel.js
 FN:18,SectionCarousel
 FNF:1
+<<<<<<< HEAD
 FNH:1
 FNDA:66,SectionCarousel
 DA:16,79
 DA:19,66
 DA:20,66
 DA:29,66
+=======
+FNH:0
+FNDA:0,SectionCarousel
+DA:16,8
+DA:19,0
+DA:20,0
+DA:29,0
+>>>>>>> 6b57bfda0d62e38c8b8d173cef4b75b1e2c605c6
 LF:4
-LH:4
+LH:1
 BRF:0
 BRH:0
 end_of_record
 TN:
 SF:client/src/views/Dashboard/AdminDashboard.js
-FN:54,(anonymous_0)
-FN:78,(anonymous_1)
+FN:55,(anonymous_0)
+FN:79,(anonymous_1)
 FNF:2
 FNH:2
+<<<<<<< HEAD
 FNDA:105,(anonymous_0)
 FNDA:420,(anonymous_1)
 DA:21,79
@@ -1617,6 +2843,16 @@ DA:54,79
 DA:56,105
 DA:57,105
 DA:79,420
+=======
+FNDA:48,(anonymous_0)
+FNDA:192,(anonymous_1)
+DA:22,8
+DA:24,8
+DA:55,8
+DA:57,48
+DA:58,48
+DA:80,192
+>>>>>>> 6b57bfda0d62e38c8b8d173cef4b75b1e2c605c6
 LF:6
 LH:6
 BRF:0
@@ -1626,14 +2862,23 @@ TN:
 SF:client/src/views/Dashboard/Dashboard.js
 FN:18,(anonymous_0)
 FNF:1
+<<<<<<< HEAD
 FNH:1
 FNDA:98,(anonymous_0)
 DA:16,79
 DA:18,79
 DA:19,98
 DA:20,98
+=======
+FNH:0
+FNDA:0,(anonymous_0)
+DA:16,8
+DA:18,8
+DA:19,0
+DA:20,0
+>>>>>>> 6b57bfda0d62e38c8b8d173cef4b75b1e2c605c6
 LF:4
-LH:4
+LH:2
 BRF:0
 BRH:0
 end_of_record
@@ -1645,6 +2890,7 @@ FN:54,(anonymous_2)
 FN:76,(anonymous_3)
 FN:95,(anonymous_4)
 FNF:5
+<<<<<<< HEAD
 FNH:4
 FNDA:152,(anonymous_0)
 FNDA:38,(anonymous_1)
@@ -1673,14 +2919,49 @@ BRDA:32,3,0,51
 BRDA:32,3,1,43
 BRF:8
 BRH:8
+=======
+FNH:0
+FNDA:0,(anonymous_0)
+FNDA:0,(anonymous_1)
+FNDA:0,(anonymous_2)
+FNDA:0,(anonymous_3)
+FNDA:0,(anonymous_4)
+DA:12,8
+DA:13,8
+DA:19,0
+DA:20,0
+DA:21,0
+DA:23,0
+DA:54,0
+DA:76,0
+DA:88,8
+DA:95,8
+LF:10
+LH:4
+BRDA:23,0,0,0
+BRDA:23,0,1,0
+BRDA:23,1,0,0
+BRDA:23,1,1,0
+BRDA:29,2,0,0
+BRDA:29,2,1,0
+BRDA:32,3,0,0
+BRDA:32,3,1,0
+BRF:8
+BRH:0
+>>>>>>> 6b57bfda0d62e38c8b8d173cef4b75b1e2c605c6
 end_of_record
 TN:
 SF:client/src/views/Dashboard/Spinner.js
 FN:5,(anonymous_0)
 FNF:1
 FNH:1
+<<<<<<< HEAD
 FNDA:77,(anonymous_0)
 DA:6,77
+=======
+FNDA:26,(anonymous_0)
+DA:6,26
+>>>>>>> 6b57bfda0d62e38c8b8d173cef4b75b1e2c605c6
 LF:1
 LH:1
 BRF:0
@@ -1690,10 +2971,17 @@ TN:
 SF:client/src/views/EmailVerifyPage/EmailVerifyPage.js
 FN:3,(anonymous_0)
 FNF:1
+<<<<<<< HEAD
 FNH:1
 FNDA:2,(anonymous_0)
 DA:3,79
 DA:4,2
+=======
+FNH:0
+FNDA:0,(anonymous_0)
+DA:3,8
+DA:4,0
+>>>>>>> 6b57bfda0d62e38c8b8d173cef4b75b1e2c605c6
 LF:2
 LH:2
 BRF:0
@@ -1704,6 +2992,7 @@ SF:client/src/views/LandingPage/LandingPage.js
 FN:22,(anonymous_0)
 FN:64,(anonymous_1)
 FNF:2
+<<<<<<< HEAD
 FNH:2
 FNDA:66,(anonymous_0)
 FNDA:87,(anonymous_1)
@@ -1714,9 +3003,22 @@ DA:25,66
 DA:37,66
 DA:59,79
 DA:64,87
+=======
+FNH:0
+FNDA:0,(anonymous_0)
+FNDA:0,(anonymous_1)
+DA:20,8
+DA:22,8
+DA:23,0
+DA:25,0
+DA:37,0
+DA:59,8
+DA:64,8
+>>>>>>> 6b57bfda0d62e38c8b8d173cef4b75b1e2c605c6
 LF:7
-LH:7
+LH:4
 BRDA:37,0,0,0
+<<<<<<< HEAD
 BRDA:37,0,1,66
 BRDA:37,1,0,66
 BRDA:37,1,1,66
@@ -1725,6 +3027,16 @@ BRDA:46,2,0,64
 BRDA:46,2,1,2
 BRF:7
 BRH:6
+=======
+BRDA:37,0,1,0
+BRDA:37,1,0,0
+BRDA:37,1,1,0
+BRDA:37,1,2,0
+BRDA:46,2,0,0
+BRDA:46,2,1,0
+BRF:7
+BRH:0
+>>>>>>> 6b57bfda0d62e38c8b8d173cef4b75b1e2c605c6
 end_of_record
 TN:
 SF:client/src/views/LandingPage/ProductDisplayLandingPage.js
@@ -1733,6 +3045,7 @@ FN:41,(anonymous_1)
 FN:53,(anonymous_2)
 FN:68,(anonymous_3)
 FNF:4
+<<<<<<< HEAD
 FNH:4
 FNDA:32,(anonymous_0)
 FNDA:23,(anonymous_1)
@@ -1753,8 +3066,30 @@ LF:11
 LH:11
 BRDA:46,0,0,23
 BRDA:46,0,1,9
+=======
+FNH:0
+FNDA:0,(anonymous_0)
+FNDA:0,(anonymous_1)
+FNDA:0,(anonymous_2)
+FNDA:0,(anonymous_3)
+DA:13,8
+DA:18,8
+DA:20,8
+DA:23,0
+DA:41,0
+DA:42,0
+DA:45,0
+DA:46,0
+DA:54,0
+DA:63,8
+DA:68,8
+LF:11
+LH:5
+BRDA:46,0,0,0
+BRDA:46,0,1,0
+>>>>>>> 6b57bfda0d62e38c8b8d173cef4b75b1e2c605c6
 BRF:2
-BRH:2
+BRH:0
 end_of_record
 TN:
 SF:client/src/views/LandingPage/SingleProductLandingPage.js
@@ -1763,6 +3098,7 @@ FN:32,(anonymous_1)
 FN:52,(anonymous_2)
 FN:68,(anonymous_3)
 FNF:4
+<<<<<<< HEAD
 FNH:2
 FNDA:21,(anonymous_0)
 FNDA:0,(anonymous_1)
@@ -1780,8 +3116,27 @@ DA:37,21
 DA:52,0
 DA:64,79
 DA:68,79
+=======
+FNH:0
+FNDA:0,(anonymous_0)
+FNDA:0,(anonymous_1)
+FNDA:0,(anonymous_2)
+FNDA:0,(anonymous_3)
+DA:15,8
+DA:20,8
+DA:22,8
+DA:25,0
+DA:27,0
+DA:32,0
+DA:33,0
+DA:34,0
+DA:37,0
+DA:52,0
+DA:64,8
+DA:68,8
+>>>>>>> 6b57bfda0d62e38c8b8d173cef4b75b1e2c605c6
 LF:12
-LH:9
+LH:5
 BRDA:33,0,0,0
 BRDA:33,0,1,0
 BRF:2
@@ -1791,11 +3146,17 @@ TN:
 SF:client/src/views/LandingPage/Spinner.js
 FN:5,(anonymous_0)
 FNF:1
+<<<<<<< HEAD
 FNH:1
 FNDA:23,(anonymous_0)
 DA:6,23
+=======
+FNH:0
+FNDA:0,(anonymous_0)
+DA:6,0
+>>>>>>> 6b57bfda0d62e38c8b8d173cef4b75b1e2c605c6
 LF:1
-LH:1
+LH:0
 BRF:0
 BRH:0
 end_of_record
@@ -1812,6 +3173,7 @@ FN:143,(anonymous_7)
 FN:180,(anonymous_8)
 FNF:9
 FNH:8
+<<<<<<< HEAD
 FNDA:942,(anonymous_0)
 FNDA:741,(anonymous_1)
 FNDA:621,(anonymous_2)
@@ -1865,6 +3227,61 @@ BRDA:74,3,0,44
 BRDA:74,3,1,898
 BRDA:75,4,0,21
 BRDA:75,4,1,23
+=======
+FNDA:128,(anonymous_0)
+FNDA:127,(anonymous_1)
+FNDA:80,(anonymous_2)
+FNDA:8,(anonymous_3)
+FNDA:8,(anonymous_4)
+FNDA:0,(anonymous_5)
+FNDA:40,(anonymous_6)
+FNDA:40,(anonymous_7)
+FNDA:32,(anonymous_8)
+DA:30,8
+DA:31,8
+DA:37,128
+DA:38,128
+DA:39,127
+DA:41,128
+DA:43,128
+DA:48,128
+DA:50,128
+DA:51,80
+DA:56,128
+DA:57,8
+DA:58,8
+DA:61,128
+DA:62,0
+DA:64,128
+DA:65,0
+DA:69,128
+DA:70,16
+DA:71,16
+DA:74,128
+DA:75,8
+DA:76,8
+DA:79,0
+DA:82,120
+DA:96,8
+DA:105,0
+DA:124,40
+DA:143,40
+DA:171,8
+DA:180,8
+DA:181,32
+LF:32
+LH:28
+BRDA:61,0,0,0
+BRDA:61,0,1,128
+BRDA:64,1,0,0
+BRDA:64,1,1,128
+BRDA:69,2,0,16
+BRDA:69,2,1,112
+BRDA:74,3,0,8
+BRDA:74,3,1,120
+BRDA:75,4,0,8
+BRDA:75,4,1,0
+>>>>>>> 6b57bfda0d62e38c8b8d173cef4b75b1e2c605c6
 BRF:10
 BRH:10
 end_of_record
@@ -1885,6 +3302,7 @@ FN:176,(anonymous_11)
 FN:190,(anonymous_12)
 FN:210,(anonymous_13)
 FNF:14
+<<<<<<< HEAD
 FNH:13
 FNDA:348,CreateProduct
 FNDA:304,(anonymous_1)
@@ -1932,17 +3350,71 @@ DA:176,16
 DA:190,96
 DA:210,0
 DA:230,79
+=======
+FNH:0
+FNDA:0,CreateProduct
+FNDA:0,(anonymous_1)
+FNDA:0,(anonymous_2)
+FNDA:0,(anonymous_3)
+FNDA:0,(anonymous_4)
+FNDA:0,(anonymous_5)
+FNDA:0,(anonymous_6)
+FNDA:0,(anonymous_7)
+FNDA:0,(anonymous_8)
+FNDA:0,(anonymous_9)
+FNDA:0,(anonymous_10)
+FNDA:0,(anonymous_11)
+FNDA:0,(anonymous_12)
+FNDA:0,(anonymous_13)
+DA:26,8
+DA:29,0
+DA:30,0
+DA:31,0
+DA:34,0
+DA:44,0
+DA:56,0
+DA:58,0
+DA:63,0
+DA:73,0
+DA:74,0
+DA:75,0
+DA:79,0
+DA:80,0
+DA:81,0
+DA:82,0
+DA:83,0
+DA:84,0
+DA:88,0
+DA:89,0
+DA:90,0
+DA:91,0
+DA:93,0
+DA:107,0
+DA:124,0
+DA:136,0
+DA:149,0
+DA:162,0
+DA:176,0
+DA:190,0
+DA:210,0
+DA:230,8
+>>>>>>> 6b57bfda0d62e38c8b8d173cef4b75b1e2c605c6
 LF:32
-LH:31
+LH:2
 BRDA:81,0,0,0
+<<<<<<< HEAD
 BRDA:81,0,1,264
+=======
+BRDA:81,0,1,0
+>>>>>>> 6b57bfda0d62e38c8b8d173cef4b75b1e2c605c6
 BRF:2
-BRH:1
+BRH:0
 end_of_record
 TN:
 SF:client/src/views/ProductPage/ShowImage.js
 FN:10,(anonymous_0)
 FNF:1
+<<<<<<< HEAD
 FNH:1
 FNDA:54,(anonymous_0)
 DA:5,79
@@ -1951,8 +3423,18 @@ DA:11,54
 DA:12,54
 DA:13,54
 DA:14,54
+=======
+FNH:0
+FNDA:0,(anonymous_0)
+DA:5,8
+DA:10,8
+DA:11,0
+DA:12,0
+DA:13,0
+DA:14,0
+>>>>>>> 6b57bfda0d62e38c8b8d173cef4b75b1e2c605c6
 LF:6
-LH:6
+LH:2
 BRF:0
 BRH:0
 end_of_record
@@ -1962,6 +3444,7 @@ FN:27,(anonymous_0)
 FN:62,(anonymous_1)
 FN:83,(anonymous_2)
 FNF:3
+<<<<<<< HEAD
 FNH:3
 FNDA:33,(anonymous_0)
 FNDA:2,(anonymous_1)
@@ -1974,8 +3457,22 @@ DA:44,33
 DA:62,2
 DA:79,79
 DA:83,79
+=======
+FNH:0
+FNDA:0,(anonymous_0)
+FNDA:0,(anonymous_1)
+FNDA:0,(anonymous_2)
+DA:20,8
+DA:25,8
+DA:27,8
+DA:42,0
+DA:44,0
+DA:62,0
+DA:79,8
+DA:83,8
+>>>>>>> 6b57bfda0d62e38c8b8d173cef4b75b1e2c605c6
 LF:8
-LH:8
+LH:5
 BRF:0
 BRH:0
 end_of_record
@@ -1998,6 +3495,7 @@ FN:41,(anonymous_1)
 FN:52,(anonymous_2)
 FN:66,(anonymous_3)
 FNF:4
+<<<<<<< HEAD
 FNH:4
 FNDA:8,(anonymous_0)
 FNDA:3,(anonymous_1)
@@ -2014,12 +3512,34 @@ DA:46,8
 DA:53,29
 DA:61,79
 DA:66,79
+=======
+FNH:0
+FNDA:0,(anonymous_0)
+FNDA:0,(anonymous_1)
+FNDA:0,(anonymous_2)
+FNDA:0,(anonymous_3)
+DA:13,8
+DA:18,8
+DA:20,8
+DA:23,0
+DA:41,0
+DA:42,0
+DA:45,0
+DA:46,0
+DA:53,0
+DA:61,8
+DA:66,8
+>>>>>>> 6b57bfda0d62e38c8b8d173cef4b75b1e2c605c6
 LF:11
-LH:11
+LH:5
 BRDA:46,0,0,0
+<<<<<<< HEAD
 BRDA:46,0,1,8
+=======
+BRDA:46,0,1,0
+>>>>>>> 6b57bfda0d62e38c8b8d173cef4b75b1e2c605c6
 BRF:2
-BRH:1
+BRH:0
 end_of_record
 TN:
 SF:client/src/views/ProductPage/ViewProductsAdmin.js
@@ -2028,6 +3548,7 @@ FN:26,(anonymous_1)
 FN:38,(anonymous_2)
 FN:52,(anonymous_3)
 FNF:4
+<<<<<<< HEAD
 FNH:4
 FNDA:8,(anonymous_0)
 FNDA:4,(anonymous_1)
@@ -2044,6 +3565,24 @@ DA:31,8
 DA:39,12
 DA:47,79
 DA:52,79
+=======
+FNH:0
+FNDA:0,(anonymous_0)
+FNDA:0,(anonymous_1)
+FNDA:0,(anonymous_2)
+FNDA:0,(anonymous_3)
+DA:13,8
+DA:18,8
+DA:20,8
+DA:24,0
+DA:26,0
+DA:27,0
+DA:30,0
+DA:31,0
+DA:39,0
+DA:47,8
+DA:52,8
+>>>>>>> 6b57bfda0d62e38c8b8d173cef4b75b1e2c605c6
 LF:11
 LH:11
 BRDA:31,0,0,4
@@ -2068,6 +3607,7 @@ FN:218,(anonymous_11)
 FN:236,(anonymous_12)
 FN:254,(anonymous_13)
 FNF:14
+<<<<<<< HEAD
 FNH:14
 FNDA:5455,CreateProfile
 FNDA:5347,(anonymous_1)
@@ -2107,6 +3647,47 @@ DA:218,800
 DA:236,81
 DA:254,117
 DA:280,79
+=======
+FNH:0
+FNDA:0,CreateProfile
+FNDA:0,(anonymous_1)
+FNDA:0,(anonymous_2)
+FNDA:0,(anonymous_3)
+FNDA:0,(anonymous_4)
+FNDA:0,(anonymous_5)
+FNDA:0,(anonymous_6)
+FNDA:0,(anonymous_7)
+FNDA:0,(anonymous_8)
+FNDA:0,(anonymous_9)
+FNDA:0,(anonymous_10)
+FNDA:0,(anonymous_11)
+FNDA:0,(anonymous_12)
+FNDA:0,(anonymous_13)
+DA:31,8
+DA:35,0
+DA:36,0
+DA:37,0
+DA:40,0
+DA:51,0
+DA:54,0
+DA:57,0
+DA:58,0
+DA:66,0
+DA:67,0
+DA:68,0
+DA:76,0
+DA:90,0
+DA:108,0
+DA:125,0
+DA:143,0
+DA:161,0
+DA:180,0
+DA:199,0
+DA:218,0
+DA:236,0
+DA:254,0
+DA:280,8
+>>>>>>> 6b57bfda0d62e38c8b8d173cef4b75b1e2c605c6
 LF:24
 LH:24
 BRF:0
@@ -2131,6 +3712,7 @@ FN:254,(anonymous_13)
 FN:272,(anonymous_14)
 FN:308,(anonymous_15)
 FNF:16
+<<<<<<< HEAD
 FNH:16
 FNDA:1374,EditProfile
 FNDA:1299,(anonymous_1)
@@ -2176,6 +3758,53 @@ DA:254,66
 DA:272,84
 DA:302,79
 DA:308,283
+=======
+FNH:0
+FNDA:0,EditProfile
+FNDA:0,(anonymous_1)
+FNDA:0,(anonymous_2)
+FNDA:0,(anonymous_3)
+FNDA:0,(anonymous_4)
+FNDA:0,(anonymous_5)
+FNDA:0,(anonymous_6)
+FNDA:0,(anonymous_7)
+FNDA:0,(anonymous_8)
+FNDA:0,(anonymous_9)
+FNDA:0,(anonymous_10)
+FNDA:0,(anonymous_11)
+FNDA:0,(anonymous_12)
+FNDA:0,(anonymous_13)
+FNDA:0,(anonymous_14)
+FNDA:0,(anonymous_15)
+DA:31,8
+DA:37,0
+DA:38,0
+DA:39,0
+DA:42,0
+DA:53,0
+DA:55,0
+DA:56,0
+DA:57,0
+DA:71,0
+DA:74,0
+DA:75,0
+DA:83,0
+DA:84,0
+DA:85,0
+DA:94,0
+DA:108,0
+DA:126,0
+DA:143,0
+DA:161,0
+DA:179,0
+DA:198,0
+DA:217,0
+DA:236,0
+DA:254,0
+DA:272,0
+DA:302,8
+DA:308,8
+>>>>>>> 6b57bfda0d62e38c8b8d173cef4b75b1e2c605c6
 LF:28
 LH:28
 BRDA:58,0,0,0
@@ -2229,6 +3858,7 @@ FN:59,(anonymous_6)
 FN:92,(anonymous_7)
 FN:116,(anonymous_8)
 FNF:9
+<<<<<<< HEAD
 FNH:9
 FNDA:33,(anonymous_0)
 FNDA:7,(anonymous_1)
@@ -2260,6 +3890,39 @@ DA:78,33
 DA:93,286
 DA:110,79
 DA:116,79
+=======
+FNH:0
+FNDA:0,(anonymous_0)
+FNDA:0,(anonymous_1)
+FNDA:0,(anonymous_2)
+FNDA:0,(anonymous_3)
+FNDA:0,(anonymous_4)
+FNDA:0,(anonymous_5)
+FNDA:0,(anonymous_6)
+FNDA:0,(anonymous_7)
+FNDA:0,(anonymous_8)
+DA:19,8
+DA:21,8
+DA:25,0
+DA:26,0
+DA:28,0
+DA:29,0
+DA:30,0
+DA:34,0
+DA:35,0
+DA:39,0
+DA:40,0
+DA:44,0
+DA:45,0
+DA:46,0
+DA:53,0
+DA:59,0
+DA:71,0
+DA:78,0
+DA:93,0
+DA:110,8
+DA:116,8
+>>>>>>> 6b57bfda0d62e38c8b8d173cef4b75b1e2c605c6
 LF:21
 LH:21
 BRDA:40,0,0,6
@@ -2293,6 +3956,7 @@ FN:179,(anonymous_8)
 FN:200,(anonymous_9)
 FN:236,(anonymous_10)
 FNF:11
+<<<<<<< HEAD
 FNH:11
 FNDA:1098,RegisterPage
 FNDA:775,(anonymous_1)
@@ -2334,6 +3998,49 @@ DA:179,102
 DA:200,104
 DA:228,79
 DA:236,79
+=======
+FNH:0
+FNDA:0,RegisterPage
+FNDA:0,(anonymous_1)
+FNDA:0,(anonymous_2)
+FNDA:0,(anonymous_3)
+FNDA:0,(anonymous_4)
+FNDA:0,(anonymous_5)
+FNDA:0,(anonymous_6)
+FNDA:0,(anonymous_7)
+FNDA:0,(anonymous_8)
+FNDA:0,(anonymous_9)
+FNDA:0,(anonymous_10)
+DA:32,8
+DA:40,0
+DA:41,0
+DA:42,0
+DA:45,0
+DA:52,0
+DA:55,0
+DA:56,0
+DA:61,0
+DA:64,0
+DA:65,0
+DA:66,0
+DA:67,0
+DA:69,0
+DA:74,0
+DA:75,0
+DA:77,0
+DA:78,0
+DA:81,0
+DA:82,0
+DA:84,0
+DA:98,0
+DA:125,0
+DA:143,0
+DA:161,0
+DA:179,0
+DA:200,0
+DA:228,8
+DA:236,8
+>>>>>>> 6b57bfda0d62e38c8b8d173cef4b75b1e2c605c6
 LF:29
 LH:29
 BRDA:66,0,0,2
@@ -2348,7 +4055,43 @@ BRF:8
 BRH:8
 end_of_record
 TN:
+SF:client/src/views/SubCategoryPage/CategoryDropDown.js
+FN:11,(anonymous_0)
+FN:29,(anonymous_1)
+FN:35,(anonymous_2)
+FN:49,(anonymous_3)
+FN:66,(anonymous_4)
+FNF:5
+FNH:5
+FNDA:20,(anonymous_0)
+FNDA:5,(anonymous_1)
+FNDA:5,(anonymous_2)
+FNDA:5,(anonymous_3)
+FNDA:29,(anonymous_4)
+DA:10,8
+DA:11,8
+DA:14,20
+DA:24,20
+DA:27,20
+DA:29,20
+DA:30,5
+DA:35,20
+DA:36,5
+DA:37,5
+DA:40,20
+DA:49,5
+DA:61,8
+DA:66,29
+LF:14
+LH:14
+BRDA:52,0,0,10
+BRDA:52,0,1,10
+BRF:2
+BRH:2
+end_of_record
+TN:
 SF:client/src/views/SubCategoryPage/SubCategoryPage.js
+<<<<<<< HEAD
 FN:29,SubcategoryPage
 FN:35,(anonymous_1)
 FN:46,(anonymous_2)
@@ -2439,4 +4182,103 @@ BRDA:46,2,0,28
 BRDA:46,2,1,56
 BRF:6
 BRH:5
+=======
+FN:38,(anonymous_0)
+FN:58,(anonymous_1)
+FN:64,(anonymous_2)
+FN:70,(anonymous_3)
+FN:77,(anonymous_4)
+FN:80,(anonymous_5)
+FN:85,(anonymous_6)
+FN:88,(anonymous_7)
+FN:92,(anonymous_8)
+FN:100,(anonymous_9)
+FN:140,(anonymous_10)
+FN:141,(anonymous_11)
+FN:176,(anonymous_12)
+FN:204,(anonymous_13)
+FN:240,(anonymous_14)
+FN:281,(anonymous_15)
+FN:289,(anonymous_16)
+FN:301,(anonymous_17)
+FN:345,(anonymous_18)
+FNF:19
+FNH:4
+FNDA:19,(anonymous_0)
+FNDA:0,(anonymous_1)
+FNDA:0,(anonymous_2)
+FNDA:0,(anonymous_3)
+FNDA:0,(anonymous_4)
+FNDA:0,(anonymous_5)
+FNDA:0,(anonymous_6)
+FNDA:0,(anonymous_7)
+FNDA:5,(anonymous_8)
+FNDA:351,(anonymous_9)
+FNDA:0,(anonymous_10)
+FNDA:0,(anonymous_11)
+FNDA:0,(anonymous_12)
+FNDA:0,(anonymous_13)
+FNDA:0,(anonymous_14)
+FNDA:0,(anonymous_15)
+FNDA:0,(anonymous_16)
+FNDA:0,(anonymous_17)
+FNDA:19,(anonymous_18)
+DA:37,8
+DA:38,8
+DA:49,19
+DA:51,19
+DA:55,19
+DA:58,19
+DA:59,0
+DA:64,19
+DA:65,0
+DA:70,19
+DA:71,0
+DA:72,0
+DA:76,19
+DA:77,19
+DA:78,0
+DA:80,19
+DA:81,0
+DA:84,19
+DA:85,19
+DA:86,0
+DA:88,19
+DA:89,0
+DA:92,19
+DA:93,5
+DA:94,5
+DA:95,5
+DA:96,5
+DA:99,19
+DA:100,19
+DA:102,351
+DA:103,0
+DA:106,19
+DA:107,19
+DA:141,0
+DA:142,0
+DA:176,0
+DA:204,0
+DA:240,0
+DA:281,0
+DA:289,0
+DA:301,0
+DA:335,8
+DA:345,19
+LF:43
+LH:26
+BRDA:102,0,0,0
+BRDA:102,0,1,351
+BRDA:109,1,0,10
+BRDA:109,1,1,9
+BRDA:114,2,0,0
+BRDA:114,2,1,9
+BRDA:142,3,0,0
+BRDA:142,3,1,0
+BRDA:143,4,0,0
+BRDA:143,4,1,0
+BRF:10
+BRH:4
+>>>>>>> 6b57bfda0d62e38c8b8d173cef4b75b1e2c605c6
 end_of_record
