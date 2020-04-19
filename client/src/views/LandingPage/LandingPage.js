@@ -47,10 +47,10 @@ const LandingPage = ({
   const subCategoryList = [];
   const category = [];
 
-  console.log(categoryList);
-  categoryList.map((cat) => {
-    category.push(cat._id);
-  });
+  //console.log(categoryList);
+  //categoryList.map((cat) => {
+  //  category.push(cat._id);
+  //});
 
   const guestRender = (
     <Button color='danger' size='lg' component={Link} to='/register'>

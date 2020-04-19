@@ -76,25 +76,6 @@ const HeaderLinks = ({ auth: { isAuthenticated, loading, user }, logout }) => {
   const authRender = (
     <List className={classes.list}>
       <ListItem className={classes.listItem}>
-        <CustomDropdown
-          buttonText='Categories'
-          dropdownHeader='Dropdown Header'
-          buttonProps={{
-            className: classes.navLink,
-            color: 'transparent',
-          }}
-          dropdownList={[
-            'Action',
-            'Another action',
-            'Something else here',
-            { divider: true },
-            'Separated link',
-            { divider: true },
-            'One more separated link',
-          ]}
-        />
-      </ListItem>
-      <ListItem className={classes.listItem}>
         <CustomInput
           white
           formControlProps={{
