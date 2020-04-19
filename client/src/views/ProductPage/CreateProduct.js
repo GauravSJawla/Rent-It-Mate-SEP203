@@ -16,7 +16,10 @@ import CardHeader from 'components/Card/CardHeader.js';
 import CardFooter from 'components/Card/CardFooter.js';
 import CustomInput from 'components/CustomInput/CustomInput.js';
 import styles from 'assets/jss/material-kit-react/views/loginPage.js';
+import Select from "react-select";
 import CustomDropdown from 'components/CustomDropdown/CustomDropdown.js';
+import {getCategoryList} from '../../actions/category';
+import {getAllSubcategories} from '../../actions/subcategory';
 
 import image from 'assets/img/bg7.jpg';
 
@@ -25,7 +28,13 @@ import { createProduct } from '../../actions/product';
 
 const useStyles = makeStyles(styles);
 
-function CreateProduct({ createProduct, history }) {
+function CreateProduct({ createProduct, 
+                            history,
+                            getCategoryList,
+                            getAllSubcategories,
+                            categorylist : {categoryList},
+                            subcategory : {subcategories}
+                           }) {
   const [cardAnimaton, setCardAnimation] = React.useState('cardHidden');
   setTimeout(function() {
     setCardAnimation('');
@@ -37,8 +46,10 @@ function CreateProduct({ createProduct, history }) {
     price: '',
     quantity: '',
     shipping: '',
-    category: '',
+    subcategory: '',
     photo: '',
+    fromDate: '',
+    toDate: '',
     formData: ''
   });
   const classes = useStyles();
@@ -49,9 +60,10 @@ function CreateProduct({ createProduct, history }) {
     price,
     quantity,
     shipping,
-    category,
+    subcategory,
     photo,
-    createdProduct,
+    fromDate,
+    toDate,
     formData
   } = values;
 
@@ -72,8 +84,24 @@ function CreateProduct({ createProduct, history }) {
 
   useEffect(() => {
     console.log('use effect');
+    getCategoryList();
+    getAllSubcategories();
     init();
   }, []);
+
+   const subCategoryList = [];
+
+   //onCategorySelectChange Event handler
+
+   const onCategorySelectChange = e => {
+     const categoryId = e.value;
+     subcategories.map(subcategory => {
+       if(subcategory.categoryId === categoryId){
+         subCategoryList.push(subcategory.name);
+       }
+     })
+     console.log('subcategoryList', subCategoryList);
+   };
 
   //OnChange event Handler
   const onChange = e => {
@@ -177,7 +205,7 @@ function CreateProduct({ createProduct, history }) {
                         autoComplete: 'off'
                       }}
                     />
-                    <CustomInput
+                    {/* <CustomInput
                       labelText='Category id...'
                       id='category'
                       formControlProps={{
@@ -198,7 +226,18 @@ function CreateProduct({ createProduct, history }) {
                       //   'Kitchen',
                       //   'Home'
                       // ]}
+                    /> */}
+                    <label>Category</label>
+                    <Select
+                    options={categoryList}
+                    id="categoryId"
+                    onChange={(e) => onCategorySelectChange(e)}
                     />
+                      <Select
+                      options={subCategoryList}
+                      id="subcategory"
+                      onChange={(e) => onChange(e)}
+                      />
                     <CustomInput
                       labelText='Photo...'
                       id='photo'
@@ -228,10 +267,19 @@ function CreateProduct({ createProduct, history }) {
 }
 
 CreateProduct.propTypes = {
-  createProduct: PropTypes.func.isRequired
+  createProduct: PropTypes.func.isRequired,
+  getCategoryList : PropTypes.func.isRequired,
+  getAllSubcategories: PropTypes.func.isRequired,
+  categorylist: PropTypes.object.isRequired,
+  subcategory: PropTypes.object.isRequired
 };
 
+const mapStateToProps = state => ({
+  categorylist:state.categorylist,
+  subcategory:state.subcategory
+});
+
 export default connect(
-  null,
-  { createProduct }
+  mapStateToProps,
+  { createProduct,getAllSubcategories, getCategoryList }
 )(withRouter(CreateProduct));
