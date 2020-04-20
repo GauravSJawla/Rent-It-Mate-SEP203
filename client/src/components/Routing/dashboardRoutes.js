@@ -18,13 +18,13 @@ const dashboardRoutes = [
     component: DashboardProfile,
     layout: '/dashboard'
   },
-  {
-    path: '/category',
-    name: 'Add Category',
-    icon: AddIcon,
-    component: CategoryPage,
-    layout: '/dashboard'
-  },
+  // {
+  //   path: '/category',
+  //   name: 'Add Category',
+  //   icon: AddIcon,
+  //   component: CategoryPage,
+  //   layout: '/dashboard'
+  // },
   {
     path: '/create-product',
     name: 'Add Product',
