@@ -159,8 +159,8 @@ router.post('/create',[
       }
       
       //check for all fields
-      const { name, description, price, subcategory, quantity, shipping  } = fields;
-      console.log( name + description + price + subcategory + quantity + shipping + " the details");
+      const { name, description, price, subcategory, quantity, shipping, fromDate, toDate } = fields;
+      console.log( name + description + price + subcategory + quantity + shipping + fromDate + toDate + " the details");
       /* istanbul ignore next */
       if (!name || !description || !price || !subcategory || !quantity || !shipping ) {
           return res.status(400).json({

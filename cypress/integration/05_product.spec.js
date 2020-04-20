@@ -1,5 +1,7 @@
 /// <reference types="cypress" />
 describe('product pages', () => {
+  const todaysDate = new Date().getDate();
+
   it('should be able to redirect to dashboard after login', () => {
     cy.visit('http://localhost:3000/login');
     cy.get('input[id="username"]').type('mercy');
@@ -20,8 +22,12 @@ describe('product pages', () => {
     cy.get('input[id="description"]').clear().type('Test product description');
     cy.get('input[id="price"]').clear().type(2);
     cy.get('input[id="quantity"]').clear().type(2);
-    cy.get('input[id="shipping"]').clear().type('true');
-    cy.get('input[id="category"]').clear().type('5e6a7a324ed00f15930538e7');
+    cy.get('label[id="Shipping"]').click();
+    cy.get('div[id="subCategory"]').click().contains('Bed').click();
+    // cy.get('input[id="fromDate"]').click();
+    // cy.contains(todaysDate).click();
+    // cy.get('input[id="toDate"]').click()
+    // cy.contains(todaysDate).click();
     cy.get('button[type="submit"]').click();
     cy.url({ timeout: 5000 }).should('includes', '/dashboard');
   });

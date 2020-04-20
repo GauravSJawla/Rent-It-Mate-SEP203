@@ -20,6 +20,7 @@ import ProductDisplayLandingPage from './ProductDisplayLandingPage'
 const useStyles = makeStyles(styles);
 
 const LandingPage = ({ auth:{user,isAuthenticated,loading} }) => {
+  console.log('user in landing page', user)
   const classes = useStyles();
   const guestRender = (
     <Button

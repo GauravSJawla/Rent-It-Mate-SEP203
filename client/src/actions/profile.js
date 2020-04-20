@@ -7,7 +7,6 @@ import {
   CLEAR_PROFILE,
   ACCOUNT_DELETED
 } from './types';
-import {getAllUsers} from './auth';
 
 export const createProfile = (
   formData,

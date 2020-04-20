@@ -173,6 +173,8 @@ describe("create/read/update/delete sub-category", () => {
                             .field('subcategory',`${subCategory._id}`)
                             .field('quantity',1)
                             .field('shipping',false)
+                            .field('fromDate', '2020-04-20')
+                            .field('toDate','2020-05-20')
                             .expect(200);
     const res = await request.delete('/api/subcategory/' + subCategory._id)
                             .set('x-auth-token',token)

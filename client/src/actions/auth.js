@@ -18,7 +18,6 @@ import {
 } from './types';
 import setAuthToken from '../utils/setAuthToken';
 //import { getProfiles } from './profile';
-import { convertTypeAcquisitionFromJson } from 'typescript';
 
 // Load User
 export const loadUser = () => async dispatch => {
