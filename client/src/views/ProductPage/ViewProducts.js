@@ -42,7 +42,7 @@ const ViewProducts = ({
         getUserProducts();
       }, [getUserProducts]);
 
-      const classes = useStyles();
+      //const classes = useStyles();
       return loading ? (
       <Spinner />
       ) : (

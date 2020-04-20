@@ -1,4 +1,4 @@
-import React, { useEffect, useState, Fragment } from 'react';
+import React, { useEffect, useState} from 'react';
 import Select from "react-select";
 import { getCategoryList } from "../../actions/category";
 import PropTypes from 'prop-types';
@@ -34,7 +34,6 @@ const CategoryDropDown = ({getCategoryList,
 
     useEffect(() => {
         getCategoryList();
-        console.log('get categorylist', categoryList)
     },[getCategoryList]);
 
     return(

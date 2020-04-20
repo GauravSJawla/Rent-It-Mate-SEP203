@@ -5,7 +5,7 @@ import PropTypes from 'prop-types';
 import { withRouter } from 'react-router-dom';
 import DatePicker from "react-datepicker";
 // @material-ui/core components
-import { makeStyles, withStyles } from '@material-ui/core/styles';
+import { makeStyles } from '@material-ui/core/styles';
 // core components
 import Footer from 'components/Footer/Footer.js';
 import GridContainer from 'components/Grid/GridContainer.js';
@@ -18,7 +18,6 @@ import CardFooter from 'components/Card/CardFooter.js';
 import CustomInput from 'components/CustomInput/CustomInput.js';
 import styles from 'assets/jss/material-kit-react/views/loginPage.js';
 import Select from "react-select";
-import TextField from '@material-ui/core/TextField';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
 import Switch from '@material-ui/core/Switch';
 import {getCategoryList} from '../../actions/category';
@@ -96,11 +95,6 @@ function CreateProduct({ createProduct,
     description,
     price,
     quantity,
-    shipping = switchShipping,
-    subcategory,
-    photo,
-    fromDate,
-    toDate,
     formData
   } = values;
 
@@ -124,7 +118,7 @@ function CreateProduct({ createProduct,
     getCategoryList();
     getAllSubcategories();
     init();
-  }, []);
+  }, [getCategoryList,getAllSubcategories]);
 
   const subCategoryList = [];
   subcategories.map(subcategory => {
@@ -133,7 +127,7 @@ function CreateProduct({ createProduct,
   //OnChange event Handler
   const onChange = e => {
     const name = e.target.id 
-    const value = name == 'photo' ? e.target.files[0] : e.target.value;
+    const value = name === 'photo' ? e.target.files[0] : e.target.value;
     formData.set(name, value);
     setValues({ ...values, [name]: value });
   };
@@ -264,7 +258,7 @@ function CreateProduct({ createProduct,
                      <label><strong>Please select an end date</strong></label>
                      <DatePicker
                         selected = {selectToDate}
-                        minDate = {date}
+                        minDate = {new Date()}
                         defaultValue = {date}
                         onChange={toDateChange}
                         required

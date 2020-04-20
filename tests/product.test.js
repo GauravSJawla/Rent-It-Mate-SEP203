@@ -26,7 +26,7 @@ describe('product create/update/delete product', () => {
               name : 'test product',
               description :'test',
               price : 10,
-              category : '5e6a7a324ed00f15930538e7',
+              subcategory : '5e9611dbb95a645f9804c3f1',
               quantity : 1,
               shipping : true
             })
@@ -79,14 +79,17 @@ describe('product create/update/delete product', () => {
                                           .field('name','test product')
                                           .field('description' , 'test')
                                           .field('price',10)
-                                          .field('subcategory', '5e9373352727762704f5486b')
+                                          .field('subcategory', '5e9611dbb95a645f9804c3f1')
                                           .field('quantity', 1)
                                           .field('shipping','true')
                                           .attach('photo','./buffer/table.jpeg')
+                                          .field('fromDate', '2020-04-20')
+                                          .field('toDate','2020-05-20')
                                           .expect(response => {
                                           expect(response.status).toBe(200)})
     return expect(JSON.stringify(response.body)).toMatch('test product')
     });
+
     it('can create a product - fail when fields are missing', async() => {
       //creating a product in form
       var form = new FormData();
@@ -113,7 +116,7 @@ describe('product create/update/delete product', () => {
         name : 'test product',
         description :'test',
         price : 10,
-        subcategory : '5e9373352727762704f5486b',
+        subcategory : '5e9611dbb95a645f9804c3f1',
         quantity : 1,
         shipping : true
       })
@@ -140,7 +143,7 @@ describe('product create/update/delete product', () => {
         name : 'test product',
         description :'test',
         price : 10,
-        subcategory : '5e9373352727762704f5486b',
+        subcategory : '5e9611dbb95a645f9804c3f1',
         quantity : 1,
         shipping : true
       })
@@ -150,10 +153,12 @@ describe('product create/update/delete product', () => {
                                           .field('name','test product updated')
                                           .field('description' , 'description')
                                           .field('price',10)
-                                          .field('subcategory', '5e9373352727762704f5486b')
+                                          .field('subcategory', '5e9611dbb95a645f9804c3f1')
                                           .field('quantity', 1)
                                           .field('shipping','true')
                                           .attach('photo','./buffer/over_size.jpg')
+                                          .field('fromDate', '2020-04-20')
+                                          .field('toDate','2020-05-20')
                                           .expect(response => {
                                           expect(response.status).toBe(400)})
     });
@@ -167,7 +172,7 @@ describe('product create/update/delete product', () => {
         name : 'test product',
         description :'test',
         price : 10,
-        subcategory : '5e9373352727762704f5486b',
+        subcategory : '5e9611dbb95a645f9804c3f1',
         quantity : 1,
         shipping : true
       })
@@ -177,10 +182,12 @@ describe('product create/update/delete product', () => {
                                           .field('name','test product updated')
                                           .field('description' , 'test')
                                           .field('price',10)
-                                          .field('subcategory', '5e8e2e4744570046a4bc05bf')
+                                          .field('subcategory', '5e9611dbb95a645f9804c3f1')
                                           .field('quantity', 1)
                                           .field('shipping','true')
                                           .attach('photo','./buffer/table_01.jpeg')
+                                          .field('fromDate', '2020-04-20')
+                                          .field('toDate','2020-05-20')
                                           .expect(response => {
                                           expect(response.status).toBe(200)})
     });
