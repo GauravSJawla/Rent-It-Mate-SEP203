@@ -225,7 +225,7 @@ function CreateProduct({ createProduct,
                     />
                     <FormControlLabel
                         control = {<Switch checked = {switchShipping} onChange = {toggleShipping}/>}
-                        label = "Product can be shipped"
+                        id = "Shipping" label = "Product can be shipped"
                       />
                       <br/>
                       <br/>
@@ -248,6 +248,7 @@ function CreateProduct({ createProduct,
                     />
                      <label><strong>Please select a start date</strong></label>
                      <DatePicker
+                        id = 'fromDate'
                         selected = {selectFromDate}
                         minDate = {new Date()}
                         onChange={fromDateChange}
@@ -257,6 +258,7 @@ function CreateProduct({ createProduct,
                      <br/>
                      <label><strong>Please select an end date</strong></label>
                      <DatePicker
+                        id = "toDate"
                         selected = {selectToDate}
                         minDate = {new Date()}
                         defaultValue = {date}
