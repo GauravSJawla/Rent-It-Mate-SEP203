@@ -40,7 +40,7 @@ router.get("/products", async (req, res) => {
 
   Product.find()
       .select('-photo')
-      .populate('Category')
+      .populate('subcategory')
       .sort([[sortBy, order]])
       .limit(limit)
       .exec((err, products) => {
@@ -60,12 +60,14 @@ router.get("/products", async (req, res) => {
  */
 
 router.get ( "/products/related/:productId",(req, res) => {
+  console.log('inside product search',req.product.subcategory);
   let limit = req.query.limit ? parseInt(req.query.limit) : 6;
   //products $ne = not including the req.product
-  Product.find({ _id: { $ne: req.product }, category: req.product.category })
-      .limit(limit)
-      .populate('category', '_id name')
+  Product.find({ _id: {$ne : req.product} , subcategory: req.product.subcategory })
+        .limit(limit)
+        .populate('subcategory', ['_id','name'])
       .exec((err, products) => {
+        console.log('product after query',products)
           if (err) {
               return res.status(400).json({
                   error: 'Products not found'
@@ -92,7 +94,6 @@ router.param('productId' , async (req, res, next, id) => {
     }
     req.product = product;
     next();
- 
 });
 });
 
@@ -106,7 +107,7 @@ router.param('productId' , async (req, res, next, id) => {
  * @access  public 
  */
 router.get('/:productId',(req , res) =>{
- // console.log(req.product+' inside get');
+  console.log(req.product+' inside get');
   req.product.photo = undefined
   return res.json(req.product);
 })
