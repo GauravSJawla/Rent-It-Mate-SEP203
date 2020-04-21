@@ -6,6 +6,10 @@ const product = require('../../models/Product');
 const user = require('../../models/Users');
 const purchase = require('../../models/Purchase');
 
+// @route Post api/product with productId as query parameter
+// @desc Adds the purchase of the corresponding user 
+//        into the purchase collection for the mentioned start and end dates
+// @access Private
 
 router.post('/',[
     auth,[
@@ -43,5 +47,14 @@ router.post('/',[
 });
 
 
+// @route get api/purchase along with productId as query parameter
+// @desc Returns all the corresponding purchases for the provided productId
+// @access Private
+
+router.get('/', auth, async(req,res) => {
+    const productId = req.query.productId;
+    const purchaseResult = await purchase.find({productId: productId});
+    return res.json(purchaseResult);
+})
 
 module.exports = router;

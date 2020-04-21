@@ -4,6 +4,7 @@ const auth = require('../../middleware/auth');
 const { check } = require('express-validator');
 const Product = require('../../models/Product');
 const User = require('../../models/Users');
+const Purchase = require('../../models/Purchase');
 const formidable = require('formidable')
 const _ = require('lodash');
 const fs = require('fs');
@@ -40,7 +41,7 @@ router.get("/products", async (req, res) => {
 
   Product.find()
       .select('-photo')
-      .populate('subcategory')
+      .populate('SubCategory')
       .sort([[sortBy, order]])
       .limit(limit)
       .exec((err, products) => {
@@ -208,19 +209,25 @@ router.post('/create',[
 router.delete('/:productId' , auth , async (req , res) =>{
   let product = req.product
   let userId = req.user.id
+  console.log('product delete', userId);
+  console.log('product user Id', req.product.userId);
   const user = User.findById(userId)
-  
-  await product.remove( (err) =>{
-    /* istanbul ignore next */
-    if(err){
-      return res.status(400).json({
-        error: errorHandler(err)
+  const purchaseForProductCount = await Purchase.find({productId: req.product._id}).countDocuments();
+  if(purchaseForProductCount > 0){
+    return res.json({msg:'Product cannot be deleted'});
+  }
+    await product.remove( (err) =>{
+      /* istanbul ignore next */
+      if(err){
+        return res.status(400).json({
+          error: errorHandler(err)
+        })
+      }
+      res.json({
+        message:'product deleted successfully'
       })
-    }
-    res.json({
-      message:'product deleted successfully'
     })
-  })
+    
 })
 /**
  * @route   GET api/product/photo/:id
