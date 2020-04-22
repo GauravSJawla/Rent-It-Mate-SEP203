@@ -44,6 +44,14 @@ const productSchema = new mongoose.Schema(
     shipping: {
       required: false,
       type: Boolean
+    },
+    fromDate: {
+      type : Date,
+      required : true
+    },
+    toDate: {
+      type : Date,
+      required : true
     }
   },
   { timestamps: true }

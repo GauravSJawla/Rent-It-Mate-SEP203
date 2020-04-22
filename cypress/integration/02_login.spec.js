@@ -54,48 +54,6 @@ describe('login page', () => {
     it('redirects to landing page on log out', () => {
         cy.contains('Profile').click().then(() => {
             cy.get('a').contains('Logout').click()
-            cy.window().its('store').invoke('getState').should('deep.equal',{
-                auth:{
-                    token:null,
-                    isAuthenticated:false,
-                    loading:false,
-                    users:[],
-                    user:null,
-                    error:{}
-                },
-                profile:{
-                    profile:null,
-                    profiles:[],
-                    loading:false,
-                    error:null
-                },
-                alert:[],
-                product:{
-                  productId: null,
-                  products: [],
-                  product: null,
-                  loading: false,
-                  error: {}
-                },
-                category:{
-                    category:null,
-                    categories:[],
-                    loading:false,
-                    updated:false,
-                    error:{}
-                },
-                categorylist:{
-                  categoryList:[],
-                  loading:false,
-                  error:{}
-                },
-                subcategory:{
-                  subcategory:null,
-                  subcategories:[],
-                  loading:false,
-                  error:{}
-                }
-            })
             cy.url({timeout:5000}).should('includes','http://localhost:3000')
             cy.get('a').contains('Login')
         })

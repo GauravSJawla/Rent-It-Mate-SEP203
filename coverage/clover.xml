@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <<<<<<< HEAD
+<<<<<<< HEAD
 <coverage generated="1586787509015" clover="3.2.0">
   <project timestamp="1586787509016" name="All files">
     <metrics statements="912" coveredstatements="856" conditionals="276" coveredconditionals="204" methods="249" coveredmethods="233" elements="1437" coveredelements="1293" complexity="0" loc="912" ncloc="912" packages="31" files="84" classes="84"/>
@@ -26,24 +27,30 @@
 <coverage generated="1587069777593" clover="3.2.0">
   <project timestamp="1587069777594" name="All files">
     <metrics statements="949" coveredstatements="606" conditionals="285" coveredconditionals="98" methods="263" coveredmethods="104" elements="1497" coveredelements="808" complexity="0" loc="949" ncloc="949" packages="31" files="85" classes="85"/>
+=======
+<coverage generated="1587411829144" clover="3.2.0">
+  <project timestamp="1587411829144" name="All files">
+    <metrics statements="986" coveredstatements="596" conditionals="286" coveredconditionals="98" methods="273" coveredmethods="109" elements="1545" coveredelements="803" complexity="0" loc="986" ncloc="986" packages="31" files="86" classes="86"/>
+>>>>>>> 9b35dee95d89df008f1e70ecd9e345d5524b4de4
     <package name="src">
-      <metrics statements="15" coveredstatements="13" conditionals="4" coveredconditionals="2" methods="4" coveredmethods="3"/>
+      <metrics statements="15" coveredstatements="14" conditionals="4" coveredconditionals="2" methods="4" coveredmethods="4"/>
       <file name="App.js" path="/Users/hemalatharamachandran/Documents/Univ_documents/SEP/SEP203/client/src/App.js">
-        <metrics statements="11" coveredstatements="9" conditionals="4" coveredconditionals="2" methods="4" coveredmethods="3"/>
-        <line num="36" count="8" type="stmt"/>
-        <line num="38" count="32" type="stmt"/>
-        <line num="48" count="8" type="cond" truecount="1" falsecount="1"/>
-        <line num="49" count="0" type="stmt"/>
-        <line num="52" count="8" type="stmt"/>
-        <line num="54" count="8" type="cond" truecount="1" falsecount="1"/>
-        <line num="55" count="8" type="stmt"/>
-        <line num="57" count="8" type="stmt"/>
-        <line num="58" count="8" type="stmt"/>
-        <line num="60" count="8" type="stmt"/>
-        <line num="102" count="0" type="stmt"/>
+        <metrics statements="11" coveredstatements="10" conditionals="4" coveredconditionals="2" methods="4" coveredmethods="4"/>
+        <line num="37" count="4" type="stmt"/>
+        <line num="39" count="12" type="stmt"/>
+        <line num="49" count="4" type="cond" truecount="1" falsecount="1"/>
+        <line num="50" count="0" type="stmt"/>
+        <line num="53" count="4" type="stmt"/>
+        <line num="55" count="4" type="cond" truecount="1" falsecount="1"/>
+        <line num="56" count="4" type="stmt"/>
+        <line num="58" count="4" type="stmt"/>
+        <line num="59" count="4" type="stmt"/>
+        <line num="61" count="4" type="stmt"/>
+        <line num="104" count="16" type="stmt"/>
       </file>
       <file name="index.js" path="/Users/hemalatharamachandran/Documents/Univ_documents/SEP/SEP203/client/src/index.js">
         <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+<<<<<<< HEAD
         <line num="6" count="8" type="stmt"/>
 >>>>>>> 6b57bfda0d62e38c8b8d173cef4b75b1e2c605c6
       </file>
@@ -159,62 +166,72 @@
         <line num="6" count="8" type="stmt"/>
         <line num="8" count="8" type="stmt"/>
         <line num="10" count="8" type="stmt"/>
+=======
+        <line num="6" count="4" type="stmt"/>
+      </file>
+      <file name="store.js" path="/Users/hemalatharamachandran/Documents/Univ_documents/SEP/SEP203/client/src/store.js">
+        <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <line num="6" count="4" type="stmt"/>
+        <line num="8" count="4" type="stmt"/>
+        <line num="10" count="4" type="stmt"/>
+>>>>>>> 9b35dee95d89df008f1e70ecd9e345d5524b4de4
       </file>
     </package>
     <package name="src.actions">
-      <metrics statements="196" coveredstatements="108" conditionals="23" coveredconditionals="6" methods="52" coveredmethods="19"/>
+      <metrics statements="198" coveredstatements="105" conditionals="23" coveredconditionals="5" methods="52" coveredmethods="18"/>
       <file name="alert.js" path="/Users/hemalatharamachandran/Documents/Univ_documents/SEP/SEP203/client/src/actions/alert.js">
-        <metrics statements="4" coveredstatements="4" conditionals="1" coveredconditionals="1" methods="2" coveredmethods="2"/>
-        <line num="4" count="97" type="cond" truecount="1" falsecount="0"/>
-        <line num="5" count="97" type="stmt"/>
-        <line num="6" count="97" type="stmt"/>
-        <line num="7" count="97" type="stmt"/>
+        <metrics statements="4" coveredstatements="1" conditionals="1" coveredconditionals="0" methods="2" coveredmethods="0"/>
+        <line num="4" count="4" type="cond" truecount="0" falsecount="1"/>
+        <line num="5" count="0" type="stmt"/>
+        <line num="6" count="0" type="stmt"/>
+        <line num="7" count="0" type="stmt"/>
       </file>
       <file name="auth.js" path="/Users/hemalatharamachandran/Documents/Univ_documents/SEP/SEP203/client/src/actions/auth.js">
         <metrics statements="51" coveredstatements="19" conditionals="8" coveredconditionals="3" methods="13" coveredmethods="4"/>
-        <line num="24" count="32" type="stmt"/>
-        <line num="25" count="32" type="cond" truecount="2" falsecount="0"/>
-        <line num="26" count="24" type="stmt"/>
-        <line num="28" count="32" type="stmt"/>
-        <line num="29" count="32" type="stmt"/>
-        <line num="30" count="24" type="stmt"/>
-        <line num="35" count="8" type="stmt"/>
-        <line num="36" count="8" type="cond" truecount="1" falsecount="1"/>
-        <line num="37" count="0" type="stmt"/>
-        <line num="39" count="8" type="stmt"/>
-        <line num="46" count="8" type="stmt"/>
+        <line num="23" count="16" type="stmt"/>
+        <line num="24" count="16" type="cond" truecount="2" falsecount="0"/>
+        <line num="25" count="12" type="stmt"/>
+        <line num="27" count="16" type="stmt"/>
+        <line num="28" count="16" type="stmt"/>
+        <line num="29" count="12" type="stmt"/>
+        <line num="34" count="4" type="stmt"/>
+        <line num="35" count="4" type="cond" truecount="1" falsecount="1"/>
+        <line num="36" count="0" type="stmt"/>
+        <line num="38" count="4" type="stmt"/>
+        <line num="45" count="4" type="stmt"/>
+        <line num="50" count="0" type="stmt"/>
         <line num="51" count="0" type="stmt"/>
-        <line num="52" count="0" type="stmt"/>
+        <line num="56" count="0" type="stmt"/>
         <line num="57" count="0" type="stmt"/>
         <line num="58" count="0" type="stmt"/>
         <line num="59" count="0" type="stmt"/>
-        <line num="60" count="0" type="stmt"/>
+        <line num="66" count="0" type="stmt"/>
         <line num="67" count="0" type="stmt"/>
-        <line num="68" count="0" type="stmt"/>
-        <line num="69" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="68" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="69" count="0" type="stmt"/>
         <line num="70" count="0" type="stmt"/>
-        <line num="71" count="0" type="stmt"/>
-        <line num="74" count="0" type="stmt"/>
-        <line num="78" count="0" type="stmt"/>
-        <line num="85" count="8" type="stmt"/>
-        <line num="86" count="8" type="stmt"/>
-        <line num="91" count="8" type="stmt"/>
-        <line num="92" count="8" type="stmt"/>
-        <line num="93" count="8" type="stmt"/>
-        <line num="95" count="8" type="stmt"/>
-        <line num="100" count="8" type="stmt"/>
-        <line num="104" count="0" type="stmt"/>
-        <line num="105" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="73" count="0" type="stmt"/>
+        <line num="77" count="0" type="stmt"/>
+        <line num="84" count="4" type="stmt"/>
+        <line num="85" count="4" type="stmt"/>
+        <line num="90" count="4" type="stmt"/>
+        <line num="91" count="4" type="stmt"/>
+        <line num="92" count="4" type="stmt"/>
+        <line num="94" count="4" type="stmt"/>
+        <line num="99" count="4" type="stmt"/>
+        <line num="103" count="0" type="stmt"/>
+        <line num="104" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="105" count="0" type="stmt"/>
         <line num="106" count="0" type="stmt"/>
-        <line num="107" count="0" type="stmt"/>
-        <line num="110" count="0" type="stmt"/>
-        <line num="114" count="0" type="stmt"/>
-        <line num="120" count="8" type="stmt"/>
+        <line num="109" count="0" type="stmt"/>
+        <line num="113" count="0" type="stmt"/>
+        <line num="119" count="4" type="stmt"/>
+        <line num="120" count="0" type="stmt"/>
         <line num="121" count="0" type="stmt"/>
         <line num="122" count="0" type="stmt"/>
-        <line num="123" count="0" type="stmt"/>
-        <line num="129" count="0" type="stmt"/>
-        <line num="157" count="8" type="stmt"/>
+        <line num="128" count="0" type="stmt"/>
+        <line num="156" count="4" type="stmt"/>
+        <line num="157" count="0" type="stmt"/>
         <line num="158" count="0" type="stmt"/>
         <line num="159" count="0" type="stmt"/>
         <line num="160" count="0" type="stmt"/>
@@ -222,54 +239,58 @@
         <line num="162" count="0" type="stmt"/>
         <line num="163" count="0" type="stmt"/>
         <line num="164" count="0" type="stmt"/>
-        <line num="165" count="0" type="stmt"/>
       </file>
       <file name="category.js" path="/Users/hemalatharamachandran/Documents/Univ_documents/SEP/SEP203/client/src/actions/category.js">
-        <metrics statements="26" coveredstatements="26" conditionals="4" coveredconditionals="2" methods="11" coveredmethods="11"/>
-        <line num="14" count="24" type="stmt"/>
-        <line num="15" count="24" type="stmt"/>
-        <line num="16" count="24" type="stmt"/>
-        <line num="17" count="23" type="stmt"/>
-        <line num="32" count="13" type="stmt"/>
-        <line num="33" count="13" type="stmt"/>
-        <line num="34" count="13" type="stmt"/>
-        <line num="39" count="13" type="stmt"/>
-        <line num="40" count="5" type="stmt"/>
-        <line num="47" count="7" type="stmt"/>
-        <line num="48" count="7" type="cond" truecount="1" falsecount="1"/>
-        <line num="49" count="7" type="stmt"/>
-        <line num="50" count="7" type="stmt"/>
-        <line num="53" count="7" type="stmt"/>
-        <line num="81" count="8" type="stmt"/>
-        <line num="82" count="3" type="stmt"/>
-        <line num="83" count="3" type="stmt"/>
-        <line num="88" count="3" type="stmt"/>
-        <line num="89" count="2" type="stmt"/>
-        <line num="90" count="2" type="stmt"/>
-        <line num="104" count="10" type="stmt"/>
-        <line num="105" count="10" type="stmt"/>
-        <line num="106" count="10" type="stmt"/>
-        <line num="107" count="10" type="stmt"/>
-        <line num="120" count="8" type="stmt"/>
-        <line num="121" count="3" type="cond" truecount="1" falsecount="1"/>
+        <metrics statements="26" coveredstatements="8" conditionals="4" coveredconditionals="0" methods="11" coveredmethods="2"/>
+        <line num="14" count="4" type="stmt"/>
+        <line num="15" count="0" type="stmt"/>
+        <line num="16" count="0" type="stmt"/>
+        <line num="17" count="0" type="stmt"/>
+        <line num="32" count="4" type="stmt"/>
+        <line num="33" count="0" type="stmt"/>
+        <line num="34" count="0" type="stmt"/>
+        <line num="39" count="0" type="stmt"/>
+        <line num="40" count="0" type="stmt"/>
+        <line num="47" count="0" type="stmt"/>
+        <line num="48" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="49" count="0" type="stmt"/>
+        <line num="50" count="0" type="stmt"/>
+        <line num="53" count="0" type="stmt"/>
+        <line num="81" count="4" type="stmt"/>
+        <line num="82" count="0" type="stmt"/>
+        <line num="83" count="0" type="stmt"/>
+        <line num="88" count="0" type="stmt"/>
+        <line num="89" count="0" type="stmt"/>
+        <line num="90" count="0" type="stmt"/>
+        <line num="104" count="4" type="stmt"/>
+        <line num="105" count="3" type="stmt"/>
+        <line num="106" count="3" type="stmt"/>
+        <line num="107" count="3" type="stmt"/>
+        <line num="120" count="4" type="stmt"/>
+        <line num="121" count="0" type="cond" truecount="0" falsecount="2"/>
       </file>
       <file name="product.js" path="/Users/hemalatharamachandran/Documents/Univ_documents/SEP/SEP203/client/src/actions/product.js">
-        <metrics statements="29" coveredstatements="5" conditionals="3" coveredconditionals="0" methods="10" coveredmethods="0"/>
-        <line num="20" count="8" type="stmt"/>
-        <line num="24" count="0" type="stmt"/>
-        <line num="25" count="0" type="stmt"/>
-        <line num="26" count="0" type="stmt"/>
-        <line num="31" count="0" type="stmt"/>
-        <line num="32" count="0" type="stmt"/>
-        <line num="36" count="0" type="cond" truecount="0" falsecount="2"/>
-        <line num="37" count="0" type="stmt"/>
+        <metrics statements="29" coveredstatements="20" conditionals="3" coveredconditionals="2" methods="10" coveredmethods="8"/>
+        <line num="20" count="4" type="stmt"/>
+        <line num="24" count="3" type="stmt"/>
+        <line num="25" count="3" type="stmt"/>
+        <line num="26" count="3" type="stmt"/>
+        <line num="31" count="3" type="stmt"/>
+        <line num="32" count="2" type="stmt"/>
+        <line num="36" count="2" type="cond" truecount="1" falsecount="1"/>
+        <line num="37" count="2" type="stmt"/>
         <line num="40" count="0" type="stmt"/>
+<<<<<<< HEAD
         <line num="51" count="8" type="stmt"/>
 >>>>>>> 6b57bfda0d62e38c8b8d173cef4b75b1e2c605c6
+=======
+        <line num="51" count="4" type="stmt"/>
+>>>>>>> 9b35dee95d89df008f1e70ecd9e345d5524b4de4
         <line num="52" count="0" type="stmt"/>
         <line num="53" count="0" type="stmt"/>
         <line num="54" count="0" type="stmt"/>
         <line num="59" count="0" type="stmt"/>
+<<<<<<< HEAD
 <<<<<<< HEAD
         <line num="69" count="79" type="stmt"/>
         <line num="70" count="27" type="stmt"/>
@@ -375,47 +396,53 @@
         <line num="70" count="0" type="stmt"/>
         <line num="71" count="0" type="stmt"/>
         <line num="72" count="0" type="stmt"/>
+=======
+        <line num="69" count="4" type="stmt"/>
+        <line num="70" count="4" type="stmt"/>
+        <line num="71" count="4" type="stmt"/>
+        <line num="72" count="4" type="stmt"/>
+>>>>>>> 9b35dee95d89df008f1e70ecd9e345d5524b4de4
         <line num="77" count="0" type="stmt"/>
-        <line num="88" count="8" type="stmt"/>
-        <line num="89" count="0" type="stmt"/>
-        <line num="90" count="0" type="stmt"/>
-        <line num="91" count="0" type="stmt"/>
+        <line num="88" count="4" type="stmt"/>
+        <line num="89" count="2" type="stmt"/>
+        <line num="90" count="2" type="stmt"/>
+        <line num="91" count="1" type="stmt"/>
         <line num="96" count="0" type="stmt"/>
-        <line num="107" count="8" type="stmt"/>
-        <line num="108" count="0" type="stmt"/>
-        <line num="109" count="0" type="stmt"/>
+        <line num="107" count="4" type="stmt"/>
+        <line num="108" count="1" type="stmt"/>
+        <line num="109" count="1" type="stmt"/>
         <line num="110" count="0" type="stmt"/>
         <line num="115" count="0" type="stmt"/>
       </file>
       <file name="profile.js" path="/Users/hemalatharamachandran/Documents/Univ_documents/SEP/SEP203/client/src/actions/profile.js">
-        <metrics statements="23" coveredstatements="4" conditionals="5" coveredconditionals="0" methods="8" coveredmethods="0"/>
-        <line num="12" count="8" type="stmt"/>
+        <metrics statements="23" coveredstatements="7" conditionals="5" coveredconditionals="0" methods="8" coveredmethods="2"/>
+        <line num="11" count="4" type="stmt"/>
+        <line num="15" count="0" type="stmt"/>
         <line num="16" count="0" type="stmt"/>
         <line num="17" count="0" type="stmt"/>
-        <line num="18" count="0" type="stmt"/>
+        <line num="22" count="0" type="stmt"/>
         <line num="23" count="0" type="stmt"/>
-        <line num="24" count="0" type="stmt"/>
-        <line num="28" count="0" type="cond" truecount="0" falsecount="2"/>
-        <line num="29" count="0" type="stmt"/>
-        <line num="46" count="8" type="stmt"/>
-        <line num="47" count="0" type="stmt"/>
-        <line num="48" count="0" type="stmt"/>
-        <line num="49" count="0" type="stmt"/>
-        <line num="54" count="0" type="stmt"/>
-        <line num="62" count="8" type="stmt"/>
+        <line num="27" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="28" count="0" type="stmt"/>
+        <line num="45" count="6" type="stmt"/>
+        <line num="46" count="6" type="stmt"/>
+        <line num="47" count="6" type="stmt"/>
+        <line num="48" count="6" type="stmt"/>
+        <line num="53" count="0" type="stmt"/>
+        <line num="61" count="4" type="stmt"/>
+        <line num="62" count="0" type="stmt"/>
         <line num="63" count="0" type="stmt"/>
-        <line num="64" count="0" type="stmt"/>
-        <line num="66" count="0" type="stmt"/>
-        <line num="102" count="8" type="stmt"/>
-        <line num="103" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="65" count="0" type="stmt"/>
+        <line num="101" count="4" type="stmt"/>
+        <line num="102" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="103" count="0" type="stmt"/>
         <line num="104" count="0" type="stmt"/>
         <line num="105" count="0" type="stmt"/>
-        <line num="106" count="0" type="stmt"/>
-        <line num="109" count="0" type="stmt"/>
+        <line num="108" count="0" type="stmt"/>
       </file>
       <file name="subcategory.js" path="/Users/hemalatharamachandran/Documents/Univ_documents/SEP/SEP203/client/src/actions/subcategory.js">
-        <metrics statements="20" coveredstatements="7" conditionals="2" coveredconditionals="0" methods="8" coveredmethods="2"/>
-        <line num="14" count="8" type="stmt"/>
+        <metrics statements="22" coveredstatements="7" conditionals="2" coveredconditionals="0" methods="8" coveredmethods="2"/>
+        <line num="14" count="4" type="stmt"/>
         <line num="15" count="0" type="stmt"/>
         <line num="20" count="0" type="stmt"/>
         <line num="21" count="0" type="stmt"/>
@@ -423,21 +450,24 @@
         <line num="23" count="0" type="stmt"/>
         <line num="27" count="0" type="stmt"/>
         <line num="28" count="0" type="stmt"/>
-        <line num="40" count="8" type="stmt"/>
-        <line num="41" count="5" type="stmt"/>
-        <line num="42" count="5" type="stmt"/>
-        <line num="43" count="5" type="stmt"/>
-        <line num="58" count="8" type="stmt"/>
+        <line num="40" count="4" type="stmt"/>
+        <line num="41" count="3" type="stmt"/>
+        <line num="42" count="3" type="stmt"/>
+        <line num="43" count="3" type="stmt"/>
+        <line num="58" count="4" type="stmt"/>
         <line num="59" count="0" type="stmt"/>
         <line num="60" count="0" type="stmt"/>
         <line num="65" count="0" type="stmt"/>
         <line num="70" count="0" type="stmt"/>
         <line num="71" count="0" type="stmt"/>
-        <line num="86" count="8" type="stmt"/>
-        <line num="87" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="75" count="0" type="stmt"/>
+        <line num="76" count="0" type="stmt"/>
+        <line num="88" count="4" type="stmt"/>
+        <line num="89" count="0" type="cond" truecount="0" falsecount="2"/>
       </file>
       <file name="types.js" path="/Users/hemalatharamachandran/Documents/Univ_documents/SEP/SEP203/client/src/actions/types.js">
         <metrics statements="43" coveredstatements="43" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+<<<<<<< HEAD
         <line num="1" count="8" type="stmt"/>
         <line num="2" count="8" type="stmt"/>
         <line num="3" count="8" type="stmt"/>
@@ -482,12 +512,58 @@
         <line num="42" count="8" type="stmt"/>
         <line num="43" count="8" type="stmt"/>
 >>>>>>> 6b57bfda0d62e38c8b8d173cef4b75b1e2c605c6
+=======
+        <line num="1" count="4" type="stmt"/>
+        <line num="2" count="4" type="stmt"/>
+        <line num="3" count="4" type="stmt"/>
+        <line num="4" count="4" type="stmt"/>
+        <line num="5" count="4" type="stmt"/>
+        <line num="6" count="4" type="stmt"/>
+        <line num="7" count="4" type="stmt"/>
+        <line num="8" count="4" type="stmt"/>
+        <line num="9" count="4" type="stmt"/>
+        <line num="10" count="4" type="stmt"/>
+        <line num="11" count="4" type="stmt"/>
+        <line num="12" count="4" type="stmt"/>
+        <line num="13" count="4" type="stmt"/>
+        <line num="14" count="4" type="stmt"/>
+        <line num="15" count="4" type="stmt"/>
+        <line num="16" count="4" type="stmt"/>
+        <line num="17" count="4" type="stmt"/>
+        <line num="18" count="4" type="stmt"/>
+        <line num="19" count="4" type="stmt"/>
+        <line num="20" count="4" type="stmt"/>
+        <line num="21" count="4" type="stmt"/>
+        <line num="22" count="4" type="stmt"/>
+        <line num="23" count="4" type="stmt"/>
+        <line num="24" count="4" type="stmt"/>
+        <line num="25" count="4" type="stmt"/>
+        <line num="26" count="4" type="stmt"/>
+        <line num="27" count="4" type="stmt"/>
+        <line num="28" count="4" type="stmt"/>
+        <line num="29" count="4" type="stmt"/>
+        <line num="30" count="4" type="stmt"/>
+        <line num="31" count="4" type="stmt"/>
+        <line num="32" count="4" type="stmt"/>
+        <line num="33" count="4" type="stmt"/>
+        <line num="34" count="4" type="stmt"/>
+        <line num="35" count="4" type="stmt"/>
+        <line num="36" count="4" type="stmt"/>
+        <line num="37" count="4" type="stmt"/>
+        <line num="38" count="4" type="stmt"/>
+        <line num="39" count="4" type="stmt"/>
+        <line num="40" count="4" type="stmt"/>
+        <line num="41" count="4" type="stmt"/>
+        <line num="42" count="4" type="stmt"/>
+        <line num="43" count="4" type="stmt"/>
+>>>>>>> 9b35dee95d89df008f1e70ecd9e345d5524b4de4
       </file>
     </package>
     <package name="src.assets.jss">
       <metrics statements="83" coveredstatements="82" conditionals="7" coveredconditionals="6" methods="1" coveredmethods="1"/>
       <file name="material-dashboard-react.js" path="/Users/hemalatharamachandran/Documents/Univ_documents/SEP/SEP203/client/src/assets/jss/material-dashboard-react.js">
         <metrics statements="50" coveredstatements="49" conditionals="7" coveredconditionals="6" methods="1" coveredmethods="1"/>
+<<<<<<< HEAD
 <<<<<<< HEAD
         <line num="24" count="79" type="stmt"/>
         <line num="25" count="3192" type="stmt"/>
@@ -581,54 +657,62 @@
         <line num="26" count="550" type="stmt"/>
         <line num="27" count="550" type="stmt"/>
         <line num="28" count="550" type="cond" truecount="4" falsecount="1"/>
+=======
+        <line num="24" count="4" type="stmt"/>
+        <line num="25" count="184" type="stmt"/>
+        <line num="26" count="184" type="stmt"/>
+        <line num="27" count="184" type="stmt"/>
+        <line num="28" count="184" type="cond" truecount="4" falsecount="1"/>
+>>>>>>> 9b35dee95d89df008f1e70ecd9e345d5524b4de4
         <line num="29" count="0" type="stmt"/>
-        <line num="31" count="550" type="cond" truecount="2" falsecount="0"/>
-        <line num="32" count="247" type="stmt"/>
-        <line num="33" count="247" type="stmt"/>
-        <line num="34" count="247" type="stmt"/>
-        <line num="35" count="247" type="stmt"/>
-        <line num="37" count="550" type="stmt"/>
-        <line num="38" count="550" type="stmt"/>
-        <line num="39" count="550" type="stmt"/>
-        <line num="40" count="550" type="stmt"/>
-        <line num="41" count="550" type="stmt"/>
-        <line num="54" count="8" type="stmt"/>
-        <line num="56" count="8" type="stmt"/>
-        <line num="60" count="8" type="stmt"/>
-        <line num="67" count="8" type="stmt"/>
-        <line num="73" count="8" type="stmt"/>
-        <line num="74" count="8" type="stmt"/>
-        <line num="75" count="8" type="stmt"/>
-        <line num="76" count="8" type="stmt"/>
-        <line num="77" count="8" type="stmt"/>
-        <line num="78" count="8" type="stmt"/>
-        <line num="79" count="8" type="stmt"/>
-        <line num="93" count="8" type="stmt"/>
-        <line num="94" count="8" type="stmt"/>
-        <line num="96" count="8" type="stmt"/>
-        <line num="107" count="8" type="stmt"/>
-        <line num="115" count="8" type="stmt"/>
-        <line num="123" count="8" type="stmt"/>
-        <line num="131" count="8" type="stmt"/>
-        <line num="139" count="8" type="stmt"/>
-        <line num="147" count="8" type="stmt"/>
-        <line num="156" count="8" type="stmt"/>
-        <line num="161" count="8" type="stmt"/>
-        <line num="166" count="8" type="stmt"/>
-        <line num="171" count="8" type="stmt"/>
-        <line num="176" count="8" type="stmt"/>
-        <line num="181" count="8" type="stmt"/>
-        <line num="187" count="8" type="stmt"/>
-        <line num="195" count="8" type="stmt"/>
-        <line num="201" count="8" type="stmt"/>
-        <line num="212" count="8" type="stmt"/>
-        <line num="227" count="8" type="stmt"/>
-        <line num="242" count="8" type="stmt"/>
-        <line num="255" count="8" type="stmt"/>
-        <line num="259" count="8" type="stmt"/>
+        <line num="31" count="184" type="cond" truecount="2" falsecount="0"/>
+        <line num="32" count="92" type="stmt"/>
+        <line num="33" count="92" type="stmt"/>
+        <line num="34" count="92" type="stmt"/>
+        <line num="35" count="92" type="stmt"/>
+        <line num="37" count="184" type="stmt"/>
+        <line num="38" count="184" type="stmt"/>
+        <line num="39" count="184" type="stmt"/>
+        <line num="40" count="184" type="stmt"/>
+        <line num="41" count="184" type="stmt"/>
+        <line num="54" count="4" type="stmt"/>
+        <line num="56" count="4" type="stmt"/>
+        <line num="60" count="4" type="stmt"/>
+        <line num="67" count="4" type="stmt"/>
+        <line num="73" count="4" type="stmt"/>
+        <line num="74" count="4" type="stmt"/>
+        <line num="75" count="4" type="stmt"/>
+        <line num="76" count="4" type="stmt"/>
+        <line num="77" count="4" type="stmt"/>
+        <line num="78" count="4" type="stmt"/>
+        <line num="79" count="4" type="stmt"/>
+        <line num="93" count="4" type="stmt"/>
+        <line num="94" count="4" type="stmt"/>
+        <line num="96" count="4" type="stmt"/>
+        <line num="107" count="4" type="stmt"/>
+        <line num="115" count="4" type="stmt"/>
+        <line num="123" count="4" type="stmt"/>
+        <line num="131" count="4" type="stmt"/>
+        <line num="139" count="4" type="stmt"/>
+        <line num="147" count="4" type="stmt"/>
+        <line num="156" count="4" type="stmt"/>
+        <line num="161" count="4" type="stmt"/>
+        <line num="166" count="4" type="stmt"/>
+        <line num="171" count="4" type="stmt"/>
+        <line num="176" count="4" type="stmt"/>
+        <line num="181" count="4" type="stmt"/>
+        <line num="187" count="4" type="stmt"/>
+        <line num="195" count="4" type="stmt"/>
+        <line num="201" count="4" type="stmt"/>
+        <line num="212" count="4" type="stmt"/>
+        <line num="227" count="4" type="stmt"/>
+        <line num="242" count="4" type="stmt"/>
+        <line num="255" count="4" type="stmt"/>
+        <line num="259" count="4" type="stmt"/>
       </file>
       <file name="material-kit-react.js" path="/Users/hemalatharamachandran/Documents/Univ_documents/SEP/SEP203/client/src/assets/jss/material-kit-react.js">
         <metrics statements="33" coveredstatements="33" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+<<<<<<< HEAD
         <line num="21" count="8" type="stmt"/>
         <line num="23" count="8" type="stmt"/>
         <line num="27" count="8" type="stmt"/>
@@ -663,12 +747,48 @@
         <line num="171" count="8" type="stmt"/>
         <line num="177" count="8" type="stmt"/>
 >>>>>>> 6b57bfda0d62e38c8b8d173cef4b75b1e2c605c6
+=======
+        <line num="21" count="4" type="stmt"/>
+        <line num="23" count="4" type="stmt"/>
+        <line num="27" count="4" type="stmt"/>
+        <line num="34" count="4" type="stmt"/>
+        <line num="50" count="4" type="stmt"/>
+        <line num="55" count="4" type="stmt"/>
+        <line num="66" count="4" type="stmt"/>
+        <line num="72" count="4" type="stmt"/>
+        <line num="73" count="4" type="stmt"/>
+        <line num="74" count="4" type="stmt"/>
+        <line num="75" count="4" type="stmt"/>
+        <line num="76" count="4" type="stmt"/>
+        <line num="77" count="4" type="stmt"/>
+        <line num="78" count="4" type="stmt"/>
+        <line num="80" count="4" type="stmt"/>
+        <line num="84" count="4" type="stmt"/>
+        <line num="88" count="4" type="stmt"/>
+        <line num="92" count="4" type="stmt"/>
+        <line num="96" count="4" type="stmt"/>
+        <line num="100" count="4" type="stmt"/>
+        <line num="105" count="4" type="stmt"/>
+        <line num="110" count="4" type="stmt"/>
+        <line num="115" count="4" type="stmt"/>
+        <line num="120" count="4" type="stmt"/>
+        <line num="125" count="4" type="stmt"/>
+        <line num="130" count="4" type="stmt"/>
+        <line num="135" count="4" type="stmt"/>
+        <line num="143" count="4" type="stmt"/>
+        <line num="149" count="4" type="stmt"/>
+        <line num="158" count="4" type="stmt"/>
+        <line num="166" count="4" type="stmt"/>
+        <line num="171" count="4" type="stmt"/>
+        <line num="177" count="4" type="stmt"/>
+>>>>>>> 9b35dee95d89df008f1e70ecd9e345d5524b4de4
       </file>
     </package>
     <package name="src.assets.jss.material-kit-react">
       <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
       <file name="imagesStyles.js" path="/Users/hemalatharamachandran/Documents/Univ_documents/SEP/SEP203/client/src/assets/jss/material-kit-react/imagesStyles.js">
         <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+<<<<<<< HEAD
 <<<<<<< HEAD
         <line num="1" count="79" type="stmt"/>
 =======
@@ -682,12 +802,20 @@
 =======
         <line num="1" count="8" type="stmt"/>
 >>>>>>> 6b57bfda0d62e38c8b8d173cef4b75b1e2c605c6
+=======
+        <line num="1" count="4" type="stmt"/>
+      </file>
+      <file name="tooltipsStyle.js" path="/Users/hemalatharamachandran/Documents/Univ_documents/SEP/SEP203/client/src/assets/jss/material-kit-react/tooltipsStyle.js">
+        <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <line num="1" count="4" type="stmt"/>
+>>>>>>> 9b35dee95d89df008f1e70ecd9e345d5524b4de4
       </file>
     </package>
     <package name="src.assets.jss.material-kit-react.components">
       <metrics statements="12" coveredstatements="12" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="3"/>
       <file name="buttonStyle.js" path="/Users/hemalatharamachandran/Documents/Univ_documents/SEP/SEP203/client/src/assets/jss/material-kit-react/components/buttonStyle.js">
         <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+<<<<<<< HEAD
 <<<<<<< HEAD
         <line num="11" count="79" type="stmt"/>
 =======
@@ -787,16 +915,64 @@
         <line num="7" count="79" type="stmt"/>
 =======
         <line num="11" count="8" type="stmt"/>
+=======
+        <line num="11" count="4" type="stmt"/>
+      </file>
+      <file name="cardBodyStyle.js" path="/Users/hemalatharamachandran/Documents/Univ_documents/SEP/SEP203/client/src/assets/jss/material-kit-react/components/cardBodyStyle.js">
+        <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <line num="1" count="4" type="stmt"/>
+      </file>
+      <file name="cardFooterStyle.js" path="/Users/hemalatharamachandran/Documents/Univ_documents/SEP/SEP203/client/src/assets/jss/material-kit-react/components/cardFooterStyle.js">
+        <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <line num="1" count="4" type="stmt"/>
+      </file>
+      <file name="cardHeaderStyle.js" path="/Users/hemalatharamachandran/Documents/Univ_documents/SEP/SEP203/client/src/assets/jss/material-kit-react/components/cardHeaderStyle.js">
+        <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <line num="8" count="4" type="stmt"/>
+      </file>
+      <file name="cardStyle.js" path="/Users/hemalatharamachandran/Documents/Univ_documents/SEP/SEP203/client/src/assets/jss/material-kit-react/components/cardStyle.js">
+        <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <line num="1" count="4" type="stmt"/>
+      </file>
+      <file name="customDropdownStyle.js" path="/Users/hemalatharamachandran/Documents/Univ_documents/SEP/SEP203/client/src/assets/jss/material-kit-react/components/customDropdownStyle.js">
+        <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+        <line num="17" count="4" type="stmt"/>
+      </file>
+      <file name="customInputStyle.js" path="/Users/hemalatharamachandran/Documents/Univ_documents/SEP/SEP203/client/src/assets/jss/material-kit-react/components/customInputStyle.js">
+        <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <line num="8" count="4" type="stmt"/>
+      </file>
+      <file name="footerStyle.js" path="/Users/hemalatharamachandran/Documents/Univ_documents/SEP/SEP203/client/src/assets/jss/material-kit-react/components/footerStyle.js">
+        <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <line num="3" count="4" type="stmt"/>
+      </file>
+      <file name="headerLinksStyle.js" path="/Users/hemalatharamachandran/Documents/Univ_documents/SEP/SEP203/client/src/assets/jss/material-kit-react/components/headerLinksStyle.js">
+        <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+        <line num="5" count="4" type="stmt"/>
+      </file>
+      <file name="headerStyle.js" path="/Users/hemalatharamachandran/Documents/Univ_documents/SEP/SEP203/client/src/assets/jss/material-kit-react/components/headerStyle.js">
+        <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <line num="15" count="4" type="stmt"/>
+      </file>
+      <file name="sidebarStyle.js" path="/Users/hemalatharamachandran/Documents/Univ_documents/SEP/SEP203/client/src/assets/jss/material-kit-react/components/sidebarStyle.js">
+        <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+        <line num="19" count="4" type="stmt"/>
+      </file>
+      <file name="snackbarContentStyle.js" path="/Users/hemalatharamachandran/Documents/Univ_documents/SEP/SEP203/client/src/assets/jss/material-kit-react/components/snackbarContentStyle.js">
+        <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <line num="11" count="4" type="stmt"/>
+>>>>>>> 9b35dee95d89df008f1e70ecd9e345d5524b4de4
       </file>
     </package>
     <package name="src.assets.jss.material-kit-react.views">
       <metrics statements="7" coveredstatements="7" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="1"/>
       <file name="adminDashboard.js" path="/Users/hemalatharamachandran/Documents/Univ_documents/SEP/SEP203/client/src/assets/jss/material-kit-react/views/adminDashboard.js">
         <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
-        <line num="3" count="8" type="stmt"/>
+        <line num="3" count="4" type="stmt"/>
       </file>
       <file name="dashboardInnerPage.js" path="/Users/hemalatharamachandran/Documents/Univ_documents/SEP/SEP203/client/src/assets/jss/material-kit-react/views/dashboardInnerPage.js">
         <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
+<<<<<<< HEAD
         <line num="7" count="8" type="stmt"/>
 >>>>>>> 6b57bfda0d62e38c8b8d173cef4b75b1e2c605c6
       </file>
@@ -827,6 +1003,23 @@
 =======
         <line num="3" count="8" type="stmt"/>
 >>>>>>> 6b57bfda0d62e38c8b8d173cef4b75b1e2c605c6
+=======
+        <line num="7" count="4" type="stmt"/>
+      </file>
+      <file name="dashboardPage.js" path="/Users/hemalatharamachandran/Documents/Univ_documents/SEP/SEP203/client/src/assets/jss/material-kit-react/views/dashboardPage.js">
+        <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+        <line num="7" count="4" type="stmt"/>
+      </file>
+      <file name="landingPage.js" path="/Users/hemalatharamachandran/Documents/Univ_documents/SEP/SEP203/client/src/assets/jss/material-kit-react/views/landingPage.js">
+        <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <line num="3" count="4" type="stmt"/>
+        <line num="8" count="4" type="stmt"/>
+        <line num="24" count="4" type="stmt"/>
+      </file>
+      <file name="loginPage.js" path="/Users/hemalatharamachandran/Documents/Univ_documents/SEP/SEP203/client/src/assets/jss/material-kit-react/views/loginPage.js">
+        <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <line num="3" count="4" type="stmt"/>
+>>>>>>> 9b35dee95d89df008f1e70ecd9e345d5524b4de4
       </file>
     </package>
     <package name="src.assets.jss.material-kit-react.views.componentsSections">
@@ -834,16 +1027,21 @@
       <file name="carouselStyle.js" path="/Users/hemalatharamachandran/Documents/Univ_documents/SEP/SEP203/client/src/assets/jss/material-kit-react/views/componentsSections/carouselStyle.js">
         <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
 <<<<<<< HEAD
+<<<<<<< HEAD
         <line num="3" count="79" type="stmt"/>
 =======
         <line num="3" count="8" type="stmt"/>
 >>>>>>> 6b57bfda0d62e38c8b8d173cef4b75b1e2c605c6
+=======
+        <line num="3" count="4" type="stmt"/>
+>>>>>>> 9b35dee95d89df008f1e70ecd9e345d5524b4de4
       </file>
     </package>
     <package name="src.components.Card">
       <metrics statements="24" coveredstatements="24" conditionals="0" coveredconditionals="0" methods="4" coveredmethods="4"/>
       <file name="Card.js" path="/Users/hemalatharamachandran/Documents/Univ_documents/SEP/SEP203/client/src/components/Card/Card.js">
         <metrics statements="6" coveredstatements="6" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+<<<<<<< HEAD
 <<<<<<< HEAD
         <line num="13" count="79" type="stmt"/>
         <line num="16" count="7325" type="stmt"/>
@@ -885,27 +1083,36 @@
         <line num="18" count="326" type="stmt"/>
         <line num="24" count="326" type="stmt"/>
         <line num="31" count="8" type="stmt"/>
+=======
+        <line num="13" count="4" type="stmt"/>
+        <line num="16" count="237" type="stmt"/>
+        <line num="17" count="237" type="stmt"/>
+        <line num="18" count="237" type="stmt"/>
+        <line num="24" count="237" type="stmt"/>
+        <line num="31" count="4" type="stmt"/>
+>>>>>>> 9b35dee95d89df008f1e70ecd9e345d5524b4de4
       </file>
       <file name="CardBody.js" path="/Users/hemalatharamachandran/Documents/Univ_documents/SEP/SEP203/client/src/components/Card/CardBody.js">
         <metrics statements="6" coveredstatements="6" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
-        <line num="13" count="8" type="stmt"/>
-        <line num="16" count="326" type="stmt"/>
-        <line num="17" count="326" type="stmt"/>
-        <line num="18" count="326" type="stmt"/>
-        <line num="22" count="326" type="stmt"/>
-        <line num="29" count="8" type="stmt"/>
+        <line num="13" count="4" type="stmt"/>
+        <line num="16" count="237" type="stmt"/>
+        <line num="17" count="237" type="stmt"/>
+        <line num="18" count="237" type="stmt"/>
+        <line num="22" count="237" type="stmt"/>
+        <line num="29" count="4" type="stmt"/>
       </file>
       <file name="CardFooter.js" path="/Users/hemalatharamachandran/Documents/Univ_documents/SEP/SEP203/client/src/components/Card/CardFooter.js">
         <metrics statements="6" coveredstatements="6" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
-        <line num="13" count="8" type="stmt"/>
-        <line num="16" count="326" type="stmt"/>
-        <line num="17" count="326" type="stmt"/>
-        <line num="18" count="326" type="stmt"/>
-        <line num="22" count="326" type="stmt"/>
-        <line num="29" count="8" type="stmt"/>
+        <line num="13" count="4" type="stmt"/>
+        <line num="16" count="195" type="stmt"/>
+        <line num="17" count="195" type="stmt"/>
+        <line num="18" count="195" type="stmt"/>
+        <line num="22" count="195" type="stmt"/>
+        <line num="29" count="4" type="stmt"/>
       </file>
       <file name="CardHeader.js" path="/Users/hemalatharamachandran/Documents/Univ_documents/SEP/SEP203/client/src/components/Card/CardHeader.js">
         <metrics statements="6" coveredstatements="6" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+<<<<<<< HEAD
         <line num="13" count="8" type="stmt"/>
         <line num="16" count="326" type="stmt"/>
         <line num="17" count="326" type="stmt"/>
@@ -934,12 +1141,32 @@
         <line num="22" count="1086" type="stmt"/>
         <line num="25" count="8" type="stmt"/>
 >>>>>>> 6b57bfda0d62e38c8b8d173cef4b75b1e2c605c6
+=======
+        <line num="13" count="4" type="stmt"/>
+        <line num="16" count="195" type="stmt"/>
+        <line num="17" count="195" type="stmt"/>
+        <line num="18" count="195" type="stmt"/>
+        <line num="24" count="195" type="stmt"/>
+        <line num="31" count="4" type="stmt"/>
+      </file>
+    </package>
+    <package name="src.components.Clearfix">
+      <metrics statements="5" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
+      <file name="Clearfix.js" path="/Users/hemalatharamachandran/Documents/Univ_documents/SEP/SEP203/client/src/components/Clearfix/Clearfix.js">
+        <metrics statements="5" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
+        <line num="6" count="4" type="stmt"/>
+        <line num="18" count="4" type="stmt"/>
+        <line num="21" count="0" type="stmt"/>
+        <line num="22" count="0" type="stmt"/>
+        <line num="25" count="4" type="stmt"/>
+>>>>>>> 9b35dee95d89df008f1e70ecd9e345d5524b4de4
       </file>
     </package>
     <package name="src.components.CustomButtons">
       <metrics statements="7" coveredstatements="7" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
       <file name="Button.js" path="/Users/hemalatharamachandran/Documents/Univ_documents/SEP/SEP203/client/src/components/CustomButtons/Button.js">
         <metrics statements="7" coveredstatements="7" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
+<<<<<<< HEAD
 <<<<<<< HEAD
         <line num="15" count="107" type="stmt"/>
         <line num="19" count="79" type="stmt"/>
@@ -982,26 +1209,36 @@
         <line num="37" count="954" type="stmt"/>
         <line num="50" count="954" type="stmt"/>
         <line num="57" count="8" type="stmt"/>
+=======
+        <line num="15" count="4" type="stmt"/>
+        <line num="19" count="4" type="stmt"/>
+        <line num="33" count="379" type="stmt"/>
+        <line num="35" count="379" type="stmt"/>
+        <line num="37" count="379" type="stmt"/>
+        <line num="50" count="379" type="stmt"/>
+        <line num="57" count="4" type="stmt"/>
+>>>>>>> 9b35dee95d89df008f1e70ecd9e345d5524b4de4
       </file>
     </package>
     <package name="src.components.CustomDropdown">
-      <metrics statements="36" coveredstatements="16" conditionals="31" coveredconditionals="6" methods="9" coveredmethods="1"/>
+      <metrics statements="36" coveredstatements="25" conditionals="31" coveredconditionals="16" methods="9" coveredmethods="6"/>
       <file name="CustomDropdown.js" path="/Users/hemalatharamachandran/Documents/Univ_documents/SEP/SEP203/client/src/components/CustomDropdown/CustomDropdown.js">
-        <metrics statements="36" coveredstatements="16" conditionals="31" coveredconditionals="6" methods="9" coveredmethods="1"/>
-        <line num="23" count="8" type="stmt"/>
-        <line num="26" count="8" type="stmt"/>
-        <line num="27" count="8" type="stmt"/>
-        <line num="28" count="0" type="cond" truecount="0" falsecount="4"/>
+        <metrics statements="36" coveredstatements="25" conditionals="31" coveredconditionals="16" methods="9" coveredmethods="6"/>
+        <line num="23" count="4" type="stmt"/>
+        <line num="26" count="24" type="stmt"/>
+        <line num="27" count="24" type="stmt"/>
+        <line num="28" count="4" type="cond" truecount="2" falsecount="2"/>
         <line num="29" count="0" type="stmt"/>
-        <line num="31" count="0" type="stmt"/>
-        <line num="34" count="8" type="stmt"/>
-        <line num="35" count="0" type="stmt"/>
-        <line num="36" count="0" type="cond" truecount="0" falsecount="4"/>
+        <line num="31" count="4" type="stmt"/>
+        <line num="34" count="24" type="stmt"/>
+        <line num="35" count="4" type="stmt"/>
+        <line num="36" count="4" type="cond" truecount="3" falsecount="1"/>
         <line num="37" count="0" type="stmt"/>
-        <line num="40" count="8" type="stmt"/>
+        <line num="40" count="24" type="stmt"/>
         <line num="41" count="0" type="cond" truecount="0" falsecount="2"/>
         <line num="42" count="0" type="stmt"/>
         <line num="44" count="0" type="stmt"/>
+<<<<<<< HEAD
         <line num="46" count="8" type="stmt"/>
         <line num="59" count="8" type="stmt"/>
         <line num="60" count="8" type="stmt"/>
@@ -1009,10 +1246,19 @@
         <line num="71" count="8" type="stmt"/>
         <line num="72" count="8" type="cond" truecount="1" falsecount="2"/>
 >>>>>>> 6b57bfda0d62e38c8b8d173cef4b75b1e2c605c6
+=======
+        <line num="46" count="24" type="stmt"/>
+        <line num="59" count="24" type="stmt"/>
+        <line num="60" count="24" type="stmt"/>
+        <line num="65" count="24" type="stmt"/>
+        <line num="71" count="24" type="stmt"/>
+        <line num="72" count="24" type="cond" truecount="1" falsecount="2"/>
+>>>>>>> 9b35dee95d89df008f1e70ecd9e345d5524b4de4
         <line num="74" count="0" type="stmt"/>
         <line num="75" count="0" type="stmt"/>
         <line num="77" count="0" type="stmt"/>
         <line num="78" count="0" type="stmt"/>
+<<<<<<< HEAD
 <<<<<<< HEAD
         <line num="80" count="207" type="stmt"/>
         <line num="81" count="207" type="stmt"/>
@@ -1031,21 +1277,35 @@
         <line num="81" count="8" type="stmt"/>
         <line num="83" count="8" type="stmt"/>
         <line num="118" count="0" type="stmt"/>
+=======
+        <line num="80" count="24" type="stmt"/>
+        <line num="81" count="24" type="stmt"/>
+        <line num="83" count="24" type="stmt"/>
+        <line num="118" count="16" type="stmt"/>
+>>>>>>> 9b35dee95d89df008f1e70ecd9e345d5524b4de4
         <line num="132" count="0" type="stmt"/>
-        <line num="139" count="0" type="cond" truecount="0" falsecount="2"/>
-        <line num="140" count="0" type="stmt"/>
+        <line num="139" count="48" type="cond" truecount="2" falsecount="0"/>
+        <line num="140" count="16" type="stmt"/>
         <line num="143" count="0" type="stmt"/>
+<<<<<<< HEAD
         <line num="148" count="0" type="stmt"/>
         <line num="151" count="0" type="stmt"/>
         <line num="168" count="8" type="stmt"/>
         <line num="173" count="8" type="stmt"/>
 >>>>>>> 6b57bfda0d62e38c8b8d173cef4b75b1e2c605c6
+=======
+        <line num="148" count="32" type="stmt"/>
+        <line num="151" count="4" type="stmt"/>
+        <line num="168" count="4" type="stmt"/>
+        <line num="173" count="4" type="stmt"/>
+>>>>>>> 9b35dee95d89df008f1e70ecd9e345d5524b4de4
       </file>
     </package>
     <package name="src.components.CustomInput">
       <metrics statements="12" coveredstatements="11" conditionals="8" coveredconditionals="4" methods="1" coveredmethods="1"/>
       <file name="CustomInput.js" path="/Users/hemalatharamachandran/Documents/Univ_documents/SEP/SEP203/client/src/components/CustomInput/CustomInput.js">
         <metrics statements="12" coveredstatements="11" conditionals="8" coveredconditionals="4" methods="1" coveredmethods="1"/>
+<<<<<<< HEAD
 <<<<<<< HEAD
         <line num="14" count="79" type="stmt"/>
         <line num="17" count="53407" type="stmt"/>
@@ -1073,12 +1333,27 @@
         <line num="56" count="438" type="stmt"/>
         <line num="81" count="8" type="stmt"/>
 >>>>>>> 6b57bfda0d62e38c8b8d173cef4b75b1e2c605c6
+=======
+        <line num="14" count="4" type="stmt"/>
+        <line num="17" count="795" type="stmt"/>
+        <line num="28" count="795" type="stmt"/>
+        <line num="30" count="795" type="stmt"/>
+        <line num="34" count="795" type="stmt"/>
+        <line num="40" count="795" type="stmt"/>
+        <line num="43" count="795" type="stmt"/>
+        <line num="48" count="795" type="cond" truecount="1" falsecount="1"/>
+        <line num="49" count="795" type="stmt"/>
+        <line num="54" count="0" type="stmt"/>
+        <line num="56" count="795" type="stmt"/>
+        <line num="81" count="4" type="stmt"/>
+>>>>>>> 9b35dee95d89df008f1e70ecd9e345d5524b4de4
       </file>
     </package>
     <package name="src.components.Footer">
       <metrics statements="7" coveredstatements="7" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
       <file name="Footer.js" path="/Users/hemalatharamachandran/Documents/Univ_documents/SEP/SEP203/client/src/components/Footer/Footer.js">
         <metrics statements="7" coveredstatements="7" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+<<<<<<< HEAD
 <<<<<<< HEAD
         <line num="16" count="79" type="stmt"/>
         <line num="19" count="7221" type="stmt"/>
@@ -1096,12 +1371,22 @@
         <line num="29" count="275" type="stmt"/>
         <line num="89" count="8" type="stmt"/>
 >>>>>>> 6b57bfda0d62e38c8b8d173cef4b75b1e2c605c6
+=======
+        <line num="16" count="4" type="stmt"/>
+        <line num="19" count="195" type="stmt"/>
+        <line num="20" count="195" type="stmt"/>
+        <line num="21" count="195" type="stmt"/>
+        <line num="25" count="195" type="stmt"/>
+        <line num="29" count="195" type="stmt"/>
+        <line num="89" count="4" type="stmt"/>
+>>>>>>> 9b35dee95d89df008f1e70ecd9e345d5524b4de4
       </file>
     </package>
     <package name="src.components.Grid">
       <metrics statements="14" coveredstatements="14" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
       <file name="GridContainer.js" path="/Users/hemalatharamachandran/Documents/Univ_documents/SEP/SEP203/client/src/components/Grid/GridContainer.js">
         <metrics statements="7" coveredstatements="7" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+<<<<<<< HEAD
 <<<<<<< HEAD
         <line num="9" count="79" type="stmt"/>
         <line num="17" count="79" type="stmt"/>
@@ -1176,27 +1461,51 @@
         <line num="116" count="79" type="stmt"/>
         <line num="121" count="865" type="stmt"/>
 =======
+=======
+        <line num="9" count="4" type="stmt"/>
+        <line num="17" count="4" type="stmt"/>
+        <line num="20" count="239" type="stmt"/>
+        <line num="21" count="239" type="stmt"/>
+        <line num="22" count="239" type="stmt"/>
+        <line num="29" count="4" type="stmt"/>
+        <line num="33" count="4" type="stmt"/>
+      </file>
+      <file name="GridItem.js" path="/Users/hemalatharamachandran/Documents/Univ_documents/SEP/SEP203/client/src/components/Grid/GridItem.js">
+        <metrics statements="7" coveredstatements="7" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+        <line num="8" count="4" type="stmt"/>
+        <line num="19" count="4" type="stmt"/>
+        <line num="22" count="261" type="stmt"/>
+        <line num="23" count="261" type="stmt"/>
+        <line num="24" count="261" type="stmt"/>
+        <line num="31" count="4" type="stmt"/>
+        <line num="35" count="4" type="stmt"/>
+      </file>
+    </package>
+    <package name="src.components.Header">
+      <metrics statements="26" coveredstatements="22" conditionals="16" coveredconditionals="10" methods="6" coveredmethods="4"/>
+>>>>>>> 9b35dee95d89df008f1e70ecd9e345d5524b4de4
       <file name="Header.js" path="/Users/hemalatharamachandran/Documents/Univ_documents/SEP/SEP203/client/src/components/Header/Header.js">
         <metrics statements="17" coveredstatements="13" conditionals="8" coveredconditionals="3" methods="4" coveredmethods="2"/>
-        <line num="20" count="8" type="stmt"/>
-        <line num="23" count="8" type="stmt"/>
-        <line num="24" count="8" type="stmt"/>
-        <line num="25" count="8" type="stmt"/>
-        <line num="26" count="8" type="cond" truecount="1" falsecount="1"/>
+        <line num="20" count="4" type="stmt"/>
+        <line num="23" count="4" type="stmt"/>
+        <line num="24" count="4" type="stmt"/>
+        <line num="25" count="4" type="stmt"/>
+        <line num="26" count="4" type="cond" truecount="1" falsecount="1"/>
         <line num="27" count="0" type="stmt"/>
-        <line num="29" count="8" type="stmt"/>
+        <line num="29" count="4" type="stmt"/>
         <line num="30" count="0" type="cond" truecount="0" falsecount="2"/>
         <line num="31" count="0" type="stmt"/>
-        <line num="35" count="8" type="stmt"/>
+        <line num="35" count="4" type="stmt"/>
         <line num="36" count="0" type="stmt"/>
-        <line num="58" count="8" type="stmt"/>
-        <line num="59" count="8" type="stmt"/>
-        <line num="66" count="8" type="stmt"/>
-        <line num="70" count="8" type="stmt"/>
-        <line num="116" count="8" type="stmt"/>
-        <line num="120" count="8" type="stmt"/>
+        <line num="58" count="4" type="stmt"/>
+        <line num="59" count="4" type="stmt"/>
+        <line num="66" count="4" type="stmt"/>
+        <line num="70" count="4" type="stmt"/>
+        <line num="116" count="4" type="stmt"/>
+        <line num="120" count="4" type="stmt"/>
       </file>
       <file name="HeaderLinks.js" path="/Users/hemalatharamachandran/Documents/Univ_documents/SEP/SEP203/client/src/components/Header/HeaderLinks.js">
+<<<<<<< HEAD
         <metrics statements="9" coveredstatements="9" conditionals="8" coveredconditionals="8" methods="2" coveredmethods="2"/>
         <line num="22" count="8" type="stmt"/>
         <line num="24" count="8" type="stmt"/>
@@ -1245,23 +1554,55 @@
         <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
         <line num="13" count="79" type="stmt"/>
 =======
+=======
+        <metrics statements="9" coveredstatements="9" conditionals="8" coveredconditionals="7" methods="2" coveredmethods="2"/>
+        <line num="22" count="4" type="stmt"/>
+        <line num="24" count="4" type="stmt"/>
+        <line num="25" count="24" type="stmt"/>
+        <line num="28" count="24" type="stmt"/>
+        <line num="53" count="24" type="stmt"/>
+        <line num="94" count="24" type="stmt"/>
+        <line num="106" count="24" type="stmt"/>
+        <line num="116" count="4" type="stmt"/>
+        <line num="121" count="43" type="stmt"/>
+      </file>
+    </package>
+    <package name="src.components.Layout">
+      <metrics statements="5" coveredstatements="4" conditionals="3" coveredconditionals="2" methods="3" coveredmethods="2"/>
+      <file name="Alert.js" path="/Users/hemalatharamachandran/Documents/Univ_documents/SEP/SEP203/client/src/components/Layout/Alert.js">
+        <metrics statements="5" coveredstatements="4" conditionals="3" coveredconditionals="2" methods="3" coveredmethods="2"/>
+        <line num="10" count="4" type="stmt"/>
+        <line num="11" count="4" type="stmt"/>
+        <line num="15" count="0" type="stmt"/>
+        <line num="33" count="4" type="stmt"/>
+        <line num="37" count="43" type="stmt"/>
+      </file>
+    </package>
+    <package name="src.components.Routing">
+      <metrics statements="5" coveredstatements="4" conditionals="4" coveredconditionals="0" methods="3" coveredmethods="0"/>
+>>>>>>> 9b35dee95d89df008f1e70ecd9e345d5524b4de4
       <file name="PrivateRoute.js" path="/Users/hemalatharamachandran/Documents/Univ_documents/SEP/SEP203/client/src/components/Routing/PrivateRoute.js">
-        <metrics statements="4" coveredstatements="4" conditionals="4" coveredconditionals="2" methods="3" coveredmethods="3"/>
-        <line num="7" count="8" type="stmt"/>
-        <line num="8" count="59" type="cond" truecount="2" falsecount="2"/>
-        <line num="13" count="8" type="stmt"/>
-        <line num="17" count="207" type="stmt"/>
+        <metrics statements="4" coveredstatements="3" conditionals="4" coveredconditionals="0" methods="3" coveredmethods="0"/>
+        <line num="7" count="4" type="stmt"/>
+        <line num="8" count="0" type="cond" truecount="0" falsecount="4"/>
+        <line num="13" count="4" type="stmt"/>
+        <line num="17" count="4" type="stmt"/>
       </file>
       <file name="dashboardRoutes.js" path="/Users/hemalatharamachandran/Documents/Univ_documents/SEP/SEP203/client/src/components/Routing/dashboardRoutes.js">
         <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+<<<<<<< HEAD
         <line num="13" count="8" type="stmt"/>
 >>>>>>> 6b57bfda0d62e38c8b8d173cef4b75b1e2c605c6
+=======
+        <line num="13" count="4" type="stmt"/>
+>>>>>>> 9b35dee95d89df008f1e70ecd9e345d5524b4de4
       </file>
     </package>
     <package name="src.components.Sidebar">
       <metrics statements="14" coveredstatements="12" conditionals="6" coveredconditionals="4" methods="3" coveredmethods="3"/>
       <file name="Sidebar.js" path="/Users/hemalatharamachandran/Documents/Univ_documents/SEP/SEP203/client/src/components/Sidebar/Sidebar.js">
         <metrics statements="14" coveredstatements="12" conditionals="6" coveredconditionals="4" methods="3" coveredmethods="3"/>
+<<<<<<< HEAD
 <<<<<<< HEAD
         <line num="15" count="79" type="stmt"/>
         <line num="18" count="203" type="stmt"/>
@@ -1350,53 +1691,74 @@
         <line num="73" count="90" type="stmt"/>
         <line num="74" count="90" type="stmt"/>
 =======
+=======
+        <line num="15" count="4" type="stmt"/>
+        <line num="18" count="16" type="stmt"/>
+        <line num="21" count="96" type="cond" truecount="2" falsecount="0"/>
+        <line num="23" count="16" type="stmt"/>
+        <line num="25" count="16" type="stmt"/>
+        <line num="27" count="48" type="stmt"/>
+        <line num="29" count="48" type="cond" truecount="1" falsecount="1"/>
+        <line num="30" count="0" type="stmt"/>
+        <line num="31" count="0" type="stmt"/>
+        <line num="35" count="48" type="stmt"/>
+        <line num="39" count="48" type="stmt"/>
+        <line num="42" count="48" type="stmt"/>
+        <line num="72" count="16" type="stmt"/>
+        <line num="83" count="4" type="stmt"/>
+      </file>
+    </package>
+    <package name="src.components.Snackbar">
+      <metrics statements="19" coveredstatements="2" conditionals="7" coveredconditionals="0" methods="2" coveredmethods="0"/>
+>>>>>>> 9b35dee95d89df008f1e70ecd9e345d5524b4de4
       <file name="SnackbarContent.js" path="/Users/hemalatharamachandran/Documents/Univ_documents/SEP/SEP203/client/src/components/Snackbar/SnackbarContent.js">
-        <metrics statements="19" coveredstatements="14" conditionals="7" coveredconditionals="3" methods="2" coveredmethods="1"/>
-        <line num="15" count="8" type="stmt"/>
-        <line num="18" count="1086" type="stmt"/>
-        <line num="19" count="1086" type="stmt"/>
-        <line num="20" count="1086" type="stmt"/>
-        <line num="21" count="1086" type="stmt"/>
+        <metrics statements="19" coveredstatements="2" conditionals="7" coveredconditionals="0" methods="2" coveredmethods="0"/>
+        <line num="15" count="4" type="stmt"/>
+        <line num="18" count="0" type="stmt"/>
+        <line num="19" count="0" type="stmt"/>
+        <line num="20" count="0" type="stmt"/>
+        <line num="21" count="0" type="stmt"/>
         <line num="22" count="0" type="stmt"/>
-        <line num="24" count="1086" type="cond" truecount="1" falsecount="1"/>
-        <line num="25" count="1086" type="stmt"/>
-        <line num="37" count="1086" type="stmt"/>
-        <line num="38" count="1086" type="cond" truecount="1" falsecount="2"/>
+        <line num="24" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="25" count="0" type="stmt"/>
+        <line num="37" count="0" type="stmt"/>
+        <line num="38" count="0" type="cond" truecount="0" falsecount="3"/>
         <line num="40" count="0" type="stmt"/>
         <line num="41" count="0" type="stmt"/>
-        <line num="43" count="1086" type="stmt"/>
-        <line num="44" count="1086" type="stmt"/>
+        <line num="43" count="0" type="stmt"/>
+        <line num="44" count="0" type="stmt"/>
         <line num="46" count="0" type="stmt"/>
         <line num="47" count="0" type="stmt"/>
-        <line num="49" count="1086" type="stmt"/>
-        <line num="64" count="1086" type="stmt"/>
-        <line num="67" count="8" type="stmt"/>
+        <line num="49" count="0" type="stmt"/>
+        <line num="64" count="0" type="stmt"/>
+        <line num="67" count="4" type="stmt"/>
       </file>
     </package>
     <package name="src.reducers">
-      <metrics statements="76" coveredstatements="46" conditionals="57" coveredconditionals="26" methods="10" coveredmethods="9"/>
+      <metrics statements="76" coveredstatements="43" conditionals="56" coveredconditionals="25" methods="10" coveredmethods="8"/>
       <file name="alert.js" path="/Users/hemalatharamachandran/Documents/Univ_documents/SEP/SEP203/client/src/reducers/alert.js">
-        <metrics statements="6" coveredstatements="6" conditionals="4" coveredconditionals="4" methods="2" coveredmethods="2"/>
-        <line num="3" count="8" type="stmt"/>
-        <line num="6" count="247" type="stmt"/>
-        <line num="7" count="247" type="cond" truecount="3" falsecount="0"/>
-        <line num="9" count="97" type="stmt"/>
-        <line num="11" count="303" type="stmt"/>
-        <line num="13" count="116" type="stmt"/>
+        <metrics statements="6" coveredstatements="4" conditionals="4" coveredconditionals="2" methods="2" coveredmethods="1"/>
+        <line num="3" count="4" type="stmt"/>
+        <line num="6" count="51" type="stmt"/>
+        <line num="7" count="51" type="cond" truecount="1" falsecount="2"/>
+        <line num="9" count="0" type="stmt"/>
+        <line num="11" count="0" type="stmt"/>
+        <line num="13" count="51" type="stmt"/>
       </file>
       <file name="auth.js" path="/Users/hemalatharamachandran/Documents/Univ_documents/SEP/SEP203/client/src/reducers/auth.js">
-        <metrics statements="22" coveredstatements="11" conditionals="16" coveredconditionals="6" methods="1" coveredmethods="1"/>
-        <line num="16" count="8" type="stmt"/>
-        <line num="26" count="247" type="stmt"/>
-        <line num="27" count="247" type="cond" truecount="4" falsecount="9"/>
-        <line num="29" count="24" type="stmt"/>
+        <metrics statements="22" coveredstatements="11" conditionals="15" coveredconditionals="6" methods="1" coveredmethods="1"/>
+        <line num="16" count="4" type="stmt"/>
+        <line num="26" count="51" type="stmt"/>
+        <line num="27" count="51" type="cond" truecount="4" falsecount="8"/>
+        <line num="29" count="12" type="stmt"/>
         <line num="36" count="0" type="stmt"/>
         <line num="37" count="0" type="stmt"/>
-        <line num="44" count="8" type="stmt"/>
-        <line num="45" count="8" type="cond" truecount="1" falsecount="1"/>
-        <line num="46" count="8" type="stmt"/>
-        <line num="48" count="8" type="stmt"/>
+        <line num="44" count="4" type="stmt"/>
+        <line num="45" count="4" type="cond" truecount="1" falsecount="1"/>
+        <line num="46" count="4" type="stmt"/>
+        <line num="48" count="4" type="stmt"/>
         <line num="55" count="0" type="stmt"/>
+<<<<<<< HEAD
         <line num="63" count="0" type="stmt"/>
         <line num="64" count="0" type="stmt"/>
         <line num="73" count="8" type="stmt"/>
@@ -1438,32 +1800,49 @@
 =======
         <line num="110" count="0" type="stmt"/>
         <line num="117" count="207" type="stmt"/>
+=======
+        <line num="61" count="0" type="stmt"/>
+        <line num="62" count="0" type="stmt"/>
+        <line num="71" count="4" type="stmt"/>
+        <line num="72" count="4" type="stmt"/>
+        <line num="81" count="0" type="stmt"/>
+        <line num="82" count="0" type="stmt"/>
+        <line num="92" count="0" type="stmt"/>
+        <line num="93" count="0" type="stmt"/>
+        <line num="101" count="0" type="stmt"/>
+        <line num="108" count="0" type="stmt"/>
+        <line num="115" count="31" type="stmt"/>
+>>>>>>> 9b35dee95d89df008f1e70ecd9e345d5524b4de4
       </file>
       <file name="category.js" path="/Users/hemalatharamachandran/Documents/Univ_documents/SEP/SEP203/client/src/reducers/category.js">
-        <metrics statements="9" coveredstatements="8" conditionals="7" coveredconditionals="6" methods="1" coveredmethods="1"/>
-        <line num="9" count="8" type="stmt"/>
-        <line num="18" count="247" type="stmt"/>
-        <line num="19" count="247" type="cond" truecount="5" falsecount="1"/>
-        <line num="21" count="5" type="stmt"/>
-        <line num="29" count="2" type="stmt"/>
-        <line num="35" count="23" type="stmt"/>
-        <line num="43" count="7" type="stmt"/>
+        <metrics statements="9" coveredstatements="4" conditionals="7" coveredconditionals="2" methods="1" coveredmethods="1"/>
+        <line num="9" count="4" type="stmt"/>
+        <line num="18" count="51" type="stmt"/>
+        <line num="19" count="51" type="cond" truecount="1" falsecount="5"/>
+        <line num="21" count="0" type="stmt"/>
+        <line num="29" count="0" type="stmt"/>
+        <line num="35" count="0" type="stmt"/>
+        <line num="43" count="0" type="stmt"/>
         <line num="50" count="0" type="stmt"/>
-        <line num="59" count="210" type="stmt"/>
+        <line num="59" count="51" type="stmt"/>
       </file>
       <file name="categorylist.js" path="/Users/hemalatharamachandran/Documents/Univ_documents/SEP/SEP203/client/src/reducers/categorylist.js">
         <metrics statements="10" coveredstatements="8" conditionals="5" coveredconditionals="3" methods="2" coveredmethods="2"/>
-        <line num="6" count="8" type="stmt"/>
-        <line num="13" count="247" type="stmt"/>
-        <line num="15" count="247" type="cond" truecount="2" falsecount="2"/>
-        <line num="17" count="10" type="stmt"/>
-        <line num="18" count="10" type="stmt"/>
-        <line num="19" count="90" type="stmt"/>
-        <line num="21" count="10" type="stmt"/>
+        <line num="6" count="4" type="stmt"/>
+        <line num="13" count="51" type="stmt"/>
+        <line num="15" count="51" type="cond" truecount="2" falsecount="2"/>
+        <line num="17" count="3" type="stmt"/>
+        <line num="18" count="3" type="stmt"/>
+        <line num="19" count="24" type="stmt"/>
+        <line num="21" count="3" type="stmt"/>
         <line num="27" count="0" type="stmt"/>
         <line num="33" count="0" type="stmt"/>
+<<<<<<< HEAD
         <line num="40" count="237" type="stmt"/>
 >>>>>>> 6b57bfda0d62e38c8b8d173cef4b75b1e2c605c6
+=======
+        <line num="40" count="48" type="stmt"/>
+>>>>>>> 9b35dee95d89df008f1e70ecd9e345d5524b4de4
       </file>
       <file name="index.js" path="/Users/hemalatharamachandran/Documents/Univ_documents/SEP/SEP203/client/src/reducers/index.js">
         <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
@@ -1507,49 +1886,54 @@
         <line num="46" count="1011" type="stmt"/>
 =======
       <file name="product.js" path="/Users/hemalatharamachandran/Documents/Univ_documents/SEP/SEP203/client/src/reducers/product.js">
-        <metrics statements="12" coveredstatements="4" conditionals="11" coveredconditionals="2" methods="2" coveredmethods="1"/>
-        <line num="13" count="8" type="stmt"/>
-        <line num="22" count="247" type="stmt"/>
-        <line num="24" count="247" type="cond" truecount="1" falsecount="9"/>
+        <metrics statements="12" coveredstatements="6" conditionals="11" coveredconditionals="5" methods="2" coveredmethods="1"/>
+        <line num="13" count="4" type="stmt"/>
+        <line num="22" count="51" type="stmt"/>
+        <line num="24" count="51" type="cond" truecount="4" falsecount="6"/>
         <line num="26" count="0" type="stmt"/>
-        <line num="33" count="0" type="stmt"/>
+        <line num="33" count="5" type="stmt"/>
         <line num="39" count="0" type="stmt"/>
-        <line num="46" count="0" type="stmt"/>
+        <line num="46" count="2" type="stmt"/>
         <line num="52" count="0" type="stmt"/>
         <line num="54" count="0" type="stmt"/>
         <line num="58" count="0" type="stmt"/>
         <line num="64" count="0" type="stmt"/>
-        <line num="73" count="247" type="stmt"/>
+        <line num="73" count="44" type="stmt"/>
       </file>
       <file name="profile.js" path="/Users/hemalatharamachandran/Documents/Univ_documents/SEP/SEP203/client/src/reducers/profile.js">
-        <metrics statements="8" coveredstatements="4" conditionals="7" coveredconditionals="2" methods="1" coveredmethods="1"/>
-        <line num="10" count="8" type="stmt"/>
-        <line num="18" count="247" type="stmt"/>
-        <line num="20" count="247" type="cond" truecount="1" falsecount="5"/>
-        <line num="23" count="0" type="stmt"/>
+        <metrics statements="8" coveredstatements="5" conditionals="7" coveredconditionals="4" methods="1" coveredmethods="1"/>
+        <line num="10" count="4" type="stmt"/>
+        <line num="18" count="51" type="stmt"/>
+        <line num="20" count="51" type="cond" truecount="3" falsecount="3"/>
+        <line num="23" count="6" type="stmt"/>
         <line num="29" count="0" type="stmt"/>
         <line num="43" count="0" type="stmt"/>
         <line num="49" count="0" type="stmt"/>
-        <line num="56" count="247" type="stmt"/>
+        <line num="56" count="45" type="stmt"/>
       </file>
       <file name="subcategory.js" path="/Users/hemalatharamachandran/Documents/Univ_documents/SEP/SEP203/client/src/reducers/subcategory.js">
         <metrics statements="9" coveredstatements="5" conditionals="7" coveredconditionals="3" methods="1" coveredmethods="1"/>
-        <line num="9" count="8" type="stmt"/>
-        <line num="18" count="247" type="stmt"/>
-        <line num="20" count="247" type="cond" truecount="2" falsecount="4"/>
+        <line num="9" count="4" type="stmt"/>
+        <line num="18" count="51" type="stmt"/>
+        <line num="20" count="51" type="cond" truecount="2" falsecount="4"/>
         <line num="22" count="0" type="stmt"/>
         <line num="30" count="0" type="stmt"/>
         <line num="36" count="0" type="stmt"/>
-        <line num="43" count="5" type="stmt"/>
+        <line num="43" count="3" type="stmt"/>
         <line num="51" count="0" type="stmt"/>
+<<<<<<< HEAD
         <line num="60" count="242" type="stmt"/>
 >>>>>>> 6b57bfda0d62e38c8b8d173cef4b75b1e2c605c6
+=======
+        <line num="60" count="48" type="stmt"/>
+>>>>>>> 9b35dee95d89df008f1e70ecd9e345d5524b4de4
       </file>
     </package>
     <package name="src.utils">
       <metrics statements="3" coveredstatements="3" conditionals="2" coveredconditionals="1" methods="1" coveredmethods="1"/>
       <file name="setAuthToken.js" path="/Users/hemalatharamachandran/Documents/Univ_documents/SEP/SEP203/client/src/utils/setAuthToken.js">
         <metrics statements="3" coveredstatements="3" conditionals="2" coveredconditionals="1" methods="1" coveredmethods="1"/>
+<<<<<<< HEAD
 <<<<<<< HEAD
         <line num="3" count="79" type="stmt"/>
         <line num="4" count="224" type="cond" truecount="1" falsecount="1"/>
@@ -1674,120 +2058,126 @@
         <line num="3" count="8" type="stmt"/>
         <line num="4" count="32" type="cond" truecount="1" falsecount="1"/>
         <line num="5" count="32" type="stmt"/>
+=======
+        <line num="3" count="4" type="stmt"/>
+        <line num="4" count="16" type="cond" truecount="1" falsecount="1"/>
+        <line num="5" count="16" type="stmt"/>
+>>>>>>> 9b35dee95d89df008f1e70ecd9e345d5524b4de4
       </file>
     </package>
     <package name="src.views.CategoryPage">
-      <metrics statements="62" coveredstatements="62" conditionals="12" coveredconditionals="11" methods="21" coveredmethods="21"/>
+      <metrics statements="62" coveredstatements="12" conditionals="12" coveredconditionals="0" methods="21" coveredmethods="0"/>
       <file name="CategoryPage.js" path="/Users/hemalatharamachandran/Documents/Univ_documents/SEP/SEP203/client/src/views/CategoryPage/CategoryPage.js">
-        <metrics statements="23" coveredstatements="23" conditionals="4" coveredconditionals="4" methods="7" coveredmethods="7"/>
-        <line num="28" count="8" type="stmt"/>
-        <line num="30" count="8" type="stmt"/>
-        <line num="33" count="180" type="stmt"/>
-        <line num="34" count="180" type="stmt"/>
-        <line num="35" count="180" type="stmt"/>
-        <line num="36" count="154" type="stmt"/>
-        <line num="38" count="180" type="stmt"/>
-        <line num="44" count="180" type="stmt"/>
-        <line num="47" count="180" type="stmt"/>
-        <line num="48" count="141" type="stmt"/>
-        <line num="54" count="180" type="stmt"/>
-        <line num="55" count="13" type="stmt"/>
-        <line num="56" count="13" type="stmt"/>
-        <line num="59" count="180" type="cond" truecount="2" falsecount="0"/>
-        <line num="60" count="5" type="stmt"/>
-        <line num="63" count="175" type="cond" truecount="2" falsecount="0"/>
-        <line num="64" count="97" type="stmt"/>
-        <line num="65" count="97" type="stmt"/>
-        <line num="68" count="175" type="stmt"/>
-        <line num="82" count="13" type="stmt"/>
-        <line num="97" count="141" type="stmt"/>
-        <line num="122" count="8" type="stmt"/>
-        <line num="128" count="117" type="stmt"/>
+        <metrics statements="23" coveredstatements="4" conditionals="4" coveredconditionals="0" methods="7" coveredmethods="0"/>
+        <line num="28" count="4" type="stmt"/>
+        <line num="30" count="4" type="stmt"/>
+        <line num="33" count="0" type="stmt"/>
+        <line num="34" count="0" type="stmt"/>
+        <line num="35" count="0" type="stmt"/>
+        <line num="36" count="0" type="stmt"/>
+        <line num="38" count="0" type="stmt"/>
+        <line num="44" count="0" type="stmt"/>
+        <line num="47" count="0" type="stmt"/>
+        <line num="48" count="0" type="stmt"/>
+        <line num="54" count="0" type="stmt"/>
+        <line num="55" count="0" type="stmt"/>
+        <line num="56" count="0" type="stmt"/>
+        <line num="59" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="60" count="0" type="stmt"/>
+        <line num="63" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="64" count="0" type="stmt"/>
+        <line num="65" count="0" type="stmt"/>
+        <line num="68" count="0" type="stmt"/>
+        <line num="82" count="0" type="stmt"/>
+        <line num="97" count="0" type="stmt"/>
+        <line num="122" count="4" type="stmt"/>
+        <line num="128" count="4" type="stmt"/>
       </file>
       <file name="UpdateCategoryPage.js" path="/Users/hemalatharamachandran/Documents/Univ_documents/SEP/SEP203/client/src/views/CategoryPage/UpdateCategoryPage.js">
-        <metrics statements="28" coveredstatements="28" conditionals="4" coveredconditionals="4" methods="9" coveredmethods="9"/>
-        <line num="20" count="8" type="stmt"/>
-        <line num="22" count="8" type="stmt"/>
-        <line num="26" count="53" type="stmt"/>
-        <line num="27" count="53" type="stmt"/>
-        <line num="28" count="53" type="stmt"/>
-        <line num="29" count="53" type="stmt"/>
-        <line num="30" count="38" type="stmt"/>
-        <line num="34" count="53" type="stmt"/>
-        <line num="35" count="53" type="stmt"/>
-        <line num="39" count="53" type="stmt"/>
-        <line num="41" count="53" type="stmt"/>
-        <line num="42" count="3" type="stmt"/>
-        <line num="43" count="3" type="stmt"/>
-        <line num="44" count="27" type="cond" truecount="2" falsecount="0"/>
-        <line num="45" count="3" type="stmt"/>
-        <line num="50" count="3" type="stmt"/>
-        <line num="56" count="53" type="stmt"/>
-        <line num="57" count="42" type="stmt"/>
-        <line num="63" count="53" type="stmt"/>
-        <line num="64" count="3" type="stmt"/>
-        <line num="65" count="3" type="stmt"/>
-        <line num="72" count="53" type="cond" truecount="2" falsecount="0"/>
-        <line num="73" count="2" type="stmt"/>
-        <line num="76" count="51" type="stmt"/>
-        <line num="90" count="3" type="stmt"/>
-        <line num="107" count="42" type="stmt"/>
-        <line num="132" count="8" type="stmt"/>
-        <line num="137" count="17" type="stmt"/>
+        <metrics statements="28" coveredstatements="4" conditionals="4" coveredconditionals="0" methods="9" coveredmethods="0"/>
+        <line num="20" count="4" type="stmt"/>
+        <line num="22" count="4" type="stmt"/>
+        <line num="26" count="0" type="stmt"/>
+        <line num="27" count="0" type="stmt"/>
+        <line num="28" count="0" type="stmt"/>
+        <line num="29" count="0" type="stmt"/>
+        <line num="30" count="0" type="stmt"/>
+        <line num="34" count="0" type="stmt"/>
+        <line num="35" count="0" type="stmt"/>
+        <line num="39" count="0" type="stmt"/>
+        <line num="41" count="0" type="stmt"/>
+        <line num="42" count="0" type="stmt"/>
+        <line num="43" count="0" type="stmt"/>
+        <line num="44" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="45" count="0" type="stmt"/>
+        <line num="50" count="0" type="stmt"/>
+        <line num="56" count="0" type="stmt"/>
+        <line num="57" count="0" type="stmt"/>
+        <line num="63" count="0" type="stmt"/>
+        <line num="64" count="0" type="stmt"/>
+        <line num="65" count="0" type="stmt"/>
+        <line num="72" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="73" count="0" type="stmt"/>
+        <line num="76" count="0" type="stmt"/>
+        <line num="90" count="0" type="stmt"/>
+        <line num="107" count="0" type="stmt"/>
+        <line num="132" count="4" type="stmt"/>
+        <line num="137" count="4" type="stmt"/>
       </file>
       <file name="ViewCategories.js" path="/Users/hemalatharamachandran/Documents/Univ_documents/SEP/SEP203/client/src/views/CategoryPage/ViewCategories.js">
-        <metrics statements="11" coveredstatements="11" conditionals="4" coveredconditionals="3" methods="5" coveredmethods="5"/>
-        <line num="16" count="8" type="stmt"/>
-        <line num="17" count="8" type="stmt"/>
-        <line num="21" count="41" type="stmt"/>
-        <line num="22" count="41" type="stmt"/>
-        <line num="23" count="19" type="stmt"/>
-        <line num="24" count="19" type="stmt"/>
-        <line num="27" count="41" type="stmt"/>
-        <line num="44" count="212" type="stmt"/>
-        <line num="54" count="3" type="stmt"/>
-        <line num="88" count="8" type="stmt"/>
-        <line num="95" count="63" type="stmt"/>
+        <metrics statements="11" coveredstatements="4" conditionals="4" coveredconditionals="0" methods="5" coveredmethods="0"/>
+        <line num="16" count="4" type="stmt"/>
+        <line num="17" count="4" type="stmt"/>
+        <line num="21" count="0" type="stmt"/>
+        <line num="22" count="0" type="stmt"/>
+        <line num="23" count="0" type="stmt"/>
+        <line num="24" count="0" type="stmt"/>
+        <line num="27" count="0" type="stmt"/>
+        <line num="44" count="0" type="stmt"/>
+        <line num="54" count="0" type="stmt"/>
+        <line num="88" count="4" type="stmt"/>
+        <line num="95" count="4" type="stmt"/>
       </file>
     </package>
     <package name="src.views.Components.Sections">
-      <metrics statements="4" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
+      <metrics statements="4" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
       <file name="SectionCarousel.js" path="/Users/hemalatharamachandran/Documents/Univ_documents/SEP/SEP203/client/src/views/Components/Sections/SectionCarousel.js">
-        <metrics statements="4" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
-        <line num="16" count="8" type="stmt"/>
-        <line num="19" count="0" type="stmt"/>
-        <line num="20" count="0" type="stmt"/>
-        <line num="29" count="0" type="stmt"/>
+        <metrics statements="4" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+        <line num="16" count="4" type="stmt"/>
+        <line num="19" count="12" type="stmt"/>
+        <line num="20" count="12" type="stmt"/>
+        <line num="29" count="12" type="stmt"/>
       </file>
     </package>
     <package name="src.views.Dashboard">
-      <metrics statements="21" coveredstatements="13" conditionals="8" coveredconditionals="0" methods="9" coveredmethods="3"/>
+      <metrics statements="21" coveredstatements="16" conditionals="8" coveredconditionals="7" methods="9" coveredmethods="5"/>
       <file name="AdminDashboard.js" path="/Users/hemalatharamachandran/Documents/Univ_documents/SEP/SEP203/client/src/views/Dashboard/AdminDashboard.js">
-        <metrics statements="6" coveredstatements="6" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
-        <line num="22" count="8" type="stmt"/>
-        <line num="24" count="8" type="stmt"/>
-        <line num="55" count="8" type="stmt"/>
-        <line num="57" count="48" type="stmt"/>
-        <line num="58" count="48" type="stmt"/>
-        <line num="80" count="192" type="stmt"/>
+        <metrics statements="6" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="0"/>
+        <line num="22" count="4" type="stmt"/>
+        <line num="24" count="4" type="stmt"/>
+        <line num="55" count="4" type="stmt"/>
+        <line num="57" count="0" type="stmt"/>
+        <line num="58" count="0" type="stmt"/>
+        <line num="80" count="0" type="stmt"/>
       </file>
       <file name="Dashboard.js" path="/Users/hemalatharamachandran/Documents/Univ_documents/SEP/SEP203/client/src/views/Dashboard/Dashboard.js">
-        <metrics statements="4" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
-        <line num="16" count="8" type="stmt"/>
-        <line num="18" count="8" type="stmt"/>
-        <line num="19" count="0" type="stmt"/>
-        <line num="20" count="0" type="stmt"/>
+        <metrics statements="4" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+        <line num="16" count="4" type="stmt"/>
+        <line num="18" count="4" type="stmt"/>
+        <line num="19" count="16" type="stmt"/>
+        <line num="20" count="16" type="stmt"/>
       </file>
       <file name="DashboardProfile.js" path="/Users/hemalatharamachandran/Documents/Univ_documents/SEP/SEP203/client/src/views/Dashboard/DashboardProfile.js">
-        <metrics statements="10" coveredstatements="4" conditionals="8" coveredconditionals="0" methods="5" coveredmethods="0"/>
-        <line num="12" count="8" type="stmt"/>
-        <line num="13" count="8" type="stmt"/>
-        <line num="19" count="0" type="stmt"/>
-        <line num="20" count="0" type="stmt"/>
-        <line num="21" count="0" type="stmt"/>
-        <line num="23" count="0" type="cond" truecount="0" falsecount="4"/>
+        <metrics statements="10" coveredstatements="8" conditionals="8" coveredconditionals="7" methods="5" coveredmethods="3"/>
+        <line num="12" count="4" type="stmt"/>
+        <line num="13" count="4" type="stmt"/>
+        <line num="19" count="12" type="stmt"/>
+        <line num="20" count="12" type="stmt"/>
+        <line num="21" count="6" type="stmt"/>
+        <line num="23" count="12" type="cond" truecount="4" falsecount="0"/>
         <line num="54" count="0" type="stmt"/>
         <line num="76" count="0" type="stmt"/>
+<<<<<<< HEAD
         <line num="88" count="8" type="stmt"/>
         <line num="95" count="8" type="stmt"/>
 >>>>>>> 6b57bfda0d62e38c8b8d173cef4b75b1e2c605c6
@@ -2146,195 +2536,232 @@
         <line num="82" count="79" type="stmt"/>
 =======
         <line num="6" count="26" type="stmt"/>
+=======
+        <line num="88" count="4" type="stmt"/>
+        <line num="95" count="12" type="stmt"/>
+      </file>
+      <file name="Spinner.js" path="/Users/hemalatharamachandran/Documents/Univ_documents/SEP/SEP203/client/src/views/Dashboard/Spinner.js">
+        <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+        <line num="6" count="4" type="stmt"/>
+>>>>>>> 9b35dee95d89df008f1e70ecd9e345d5524b4de4
       </file>
     </package>
     <package name="src.views.EmailVerifyPage">
       <metrics statements="2" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
       <file name="EmailVerifyPage.js" path="/Users/hemalatharamachandran/Documents/Univ_documents/SEP/SEP203/client/src/views/EmailVerifyPage/EmailVerifyPage.js">
         <metrics statements="2" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
-        <line num="3" count="8" type="stmt"/>
+        <line num="3" count="4" type="stmt"/>
         <line num="4" count="0" type="stmt"/>
       </file>
     </package>
     <package name="src.views.LandingPage">
-      <metrics statements="31" coveredstatements="14" conditionals="11" coveredconditionals="0" methods="11" coveredmethods="0"/>
+      <metrics statements="32" coveredstatements="29" conditionals="11" coveredconditionals="7" methods="11" coveredmethods="9"/>
       <file name="LandingPage.js" path="/Users/hemalatharamachandran/Documents/Univ_documents/SEP/SEP203/client/src/views/LandingPage/LandingPage.js">
-        <metrics statements="7" coveredstatements="4" conditionals="7" coveredconditionals="0" methods="2" coveredmethods="0"/>
-        <line num="20" count="8" type="stmt"/>
-        <line num="22" count="8" type="stmt"/>
-        <line num="23" count="0" type="stmt"/>
-        <line num="25" count="0" type="stmt"/>
-        <line num="37" count="0" type="cond" truecount="0" falsecount="5"/>
-        <line num="59" count="8" type="stmt"/>
-        <line num="64" count="8" type="stmt"/>
+        <metrics statements="8" coveredstatements="8" conditionals="7" coveredconditionals="5" methods="2" coveredmethods="2"/>
+        <line num="20" count="4" type="stmt"/>
+        <line num="22" count="4" type="stmt"/>
+        <line num="23" count="12" type="stmt"/>
+        <line num="24" count="12" type="stmt"/>
+        <line num="26" count="12" type="stmt"/>
+        <line num="38" count="12" type="cond" truecount="4" falsecount="1"/>
+        <line num="60" count="4" type="stmt"/>
+        <line num="65" count="16" type="stmt"/>
       </file>
       <file name="ProductDisplayLandingPage.js" path="/Users/hemalatharamachandran/Documents/Univ_documents/SEP/SEP203/client/src/views/LandingPage/ProductDisplayLandingPage.js">
-        <metrics statements="11" coveredstatements="5" conditionals="2" coveredconditionals="0" methods="4" coveredmethods="0"/>
-        <line num="13" count="8" type="stmt"/>
-        <line num="18" count="8" type="stmt"/>
-        <line num="20" count="8" type="stmt"/>
-        <line num="23" count="0" type="stmt"/>
-        <line num="41" count="0" type="stmt"/>
-        <line num="42" count="0" type="stmt"/>
-        <line num="45" count="0" type="stmt"/>
-        <line num="46" count="0" type="cond" truecount="0" falsecount="2"/>
-        <line num="54" count="0" type="stmt"/>
-        <line num="63" count="8" type="stmt"/>
-        <line num="68" count="8" type="stmt"/>
+        <metrics statements="11" coveredstatements="11" conditionals="2" coveredconditionals="2" methods="4" coveredmethods="4"/>
+        <line num="13" count="4" type="stmt"/>
+        <line num="18" count="4" type="stmt"/>
+        <line num="20" count="4" type="stmt"/>
+        <line num="23" count="8" type="stmt"/>
+        <line num="41" count="8" type="stmt"/>
+        <line num="42" count="4" type="stmt"/>
+        <line num="45" count="8" type="stmt"/>
+        <line num="46" count="8" type="cond" truecount="2" falsecount="0"/>
+        <line num="55" count="24" type="stmt"/>
+        <line num="65" count="4" type="stmt"/>
+        <line num="70" count="16" type="stmt"/>
       </file>
       <file name="SingleProductLandingPage.js" path="/Users/hemalatharamachandran/Documents/Univ_documents/SEP/SEP203/client/src/views/LandingPage/SingleProductLandingPage.js">
-        <metrics statements="12" coveredstatements="5" conditionals="2" coveredconditionals="0" methods="4" coveredmethods="0"/>
-        <line num="15" count="8" type="stmt"/>
-        <line num="20" count="8" type="stmt"/>
-        <line num="22" count="8" type="stmt"/>
-        <line num="25" count="0" type="stmt"/>
-        <line num="27" count="0" type="stmt"/>
-        <line num="32" count="0" type="stmt"/>
+        <metrics statements="12" coveredstatements="9" conditionals="2" coveredconditionals="0" methods="4" coveredmethods="2"/>
+        <line num="15" count="4" type="stmt"/>
+        <line num="20" count="4" type="stmt"/>
+        <line num="22" count="4" type="stmt"/>
+        <line num="25" count="24" type="stmt"/>
+        <line num="27" count="24" type="stmt"/>
+        <line num="32" count="24" type="stmt"/>
         <line num="33" count="0" type="cond" truecount="0" falsecount="2"/>
         <line num="34" count="0" type="stmt"/>
-        <line num="37" count="0" type="stmt"/>
+        <line num="37" count="24" type="stmt"/>
         <line num="52" count="0" type="stmt"/>
-        <line num="64" count="8" type="stmt"/>
-        <line num="68" count="8" type="stmt"/>
+        <line num="64" count="4" type="stmt"/>
+        <line num="68" count="24" type="stmt"/>
       </file>
       <file name="Spinner.js" path="/Users/hemalatharamachandran/Documents/Univ_documents/SEP/SEP203/client/src/views/LandingPage/Spinner.js">
-        <metrics statements="1" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
-        <line num="6" count="0" type="stmt"/>
+        <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+        <line num="6" count="4" type="stmt"/>
       </file>
     </package>
     <package name="src.views.LoginPage">
       <metrics statements="32" coveredstatements="28" conditionals="10" coveredconditionals="7" methods="9" coveredmethods="8"/>
       <file name="LoginPage.js" path="/Users/hemalatharamachandran/Documents/Univ_documents/SEP/SEP203/client/src/views/LoginPage/LoginPage.js">
         <metrics statements="32" coveredstatements="28" conditionals="10" coveredconditionals="7" methods="9" coveredmethods="8"/>
-        <line num="30" count="8" type="stmt"/>
-        <line num="31" count="8" type="stmt"/>
-        <line num="37" count="128" type="stmt"/>
-        <line num="38" count="128" type="stmt"/>
-        <line num="39" count="127" type="stmt"/>
-        <line num="41" count="128" type="stmt"/>
-        <line num="43" count="128" type="stmt"/>
-        <line num="48" count="128" type="stmt"/>
-        <line num="50" count="128" type="stmt"/>
-        <line num="51" count="80" type="stmt"/>
-        <line num="56" count="128" type="stmt"/>
-        <line num="57" count="8" type="stmt"/>
-        <line num="58" count="8" type="stmt"/>
-        <line num="61" count="128" type="cond" truecount="1" falsecount="1"/>
+        <line num="30" count="4" type="stmt"/>
+        <line num="31" count="4" type="stmt"/>
+        <line num="37" count="80" type="stmt"/>
+        <line num="38" count="80" type="stmt"/>
+        <line num="39" count="80" type="stmt"/>
+        <line num="41" count="80" type="stmt"/>
+        <line num="43" count="80" type="stmt"/>
+        <line num="48" count="80" type="stmt"/>
+        <line num="50" count="80" type="stmt"/>
+        <line num="51" count="44" type="stmt"/>
+        <line num="56" count="80" type="stmt"/>
+        <line num="57" count="4" type="stmt"/>
+        <line num="58" count="4" type="stmt"/>
+        <line num="61" count="80" type="cond" truecount="1" falsecount="1"/>
         <line num="62" count="0" type="stmt"/>
-        <line num="64" count="128" type="cond" truecount="1" falsecount="1"/>
+        <line num="64" count="80" type="cond" truecount="1" falsecount="1"/>
         <line num="65" count="0" type="stmt"/>
-        <line num="69" count="128" type="cond" truecount="2" falsecount="0"/>
-        <line num="70" count="16" type="stmt"/>
-        <line num="71" count="16" type="stmt"/>
-        <line num="74" count="128" type="cond" truecount="2" falsecount="0"/>
-        <line num="75" count="8" type="cond" truecount="1" falsecount="1"/>
-        <line num="76" count="8" type="stmt"/>
-        <line num="79" count="0" type="stmt"/>
-        <line num="82" count="120" type="stmt"/>
-        <line num="96" count="8" type="stmt"/>
+        <line num="69" count="80" type="cond" truecount="2" falsecount="0"/>
+        <line num="70" count="8" type="stmt"/>
+        <line num="71" count="8" type="stmt"/>
+        <line num="74" count="80" type="cond" truecount="2" falsecount="0"/>
+        <line num="75" count="4" type="cond" truecount="1" falsecount="1"/>
+        <line num="76" count="0" type="stmt"/>
+        <line num="79" count="4" type="stmt"/>
+        <line num="82" count="76" type="stmt"/>
+        <line num="96" count="4" type="stmt"/>
         <line num="105" count="0" type="stmt"/>
-        <line num="124" count="40" type="stmt"/>
-        <line num="143" count="40" type="stmt"/>
-        <line num="171" count="8" type="stmt"/>
-        <line num="180" count="8" type="stmt"/>
-        <line num="181" count="32" type="stmt"/>
+        <line num="124" count="20" type="stmt"/>
+        <line num="143" count="24" type="stmt"/>
+        <line num="171" count="4" type="stmt"/>
+        <line num="180" count="4" type="stmt"/>
+        <line num="181" count="16" type="stmt"/>
       </file>
     </package>
     <package name="src.views.ProductPage">
-      <metrics statements="69" coveredstatements="19" conditionals="6" coveredconditionals="0" methods="27" coveredmethods="0"/>
+      <metrics statements="94" coveredstatements="82" conditionals="6" coveredconditionals="2" methods="34" coveredmethods="25"/>
       <file name="CreateProduct.js" path="/Users/hemalatharamachandran/Documents/Univ_documents/SEP/SEP203/client/src/views/ProductPage/CreateProduct.js">
-        <metrics statements="32" coveredstatements="2" conditionals="2" coveredconditionals="0" methods="14" coveredmethods="0"/>
-        <line num="26" count="8" type="stmt"/>
-        <line num="29" count="0" type="stmt"/>
-        <line num="30" count="0" type="stmt"/>
-        <line num="31" count="0" type="stmt"/>
-        <line num="34" count="0" type="stmt"/>
-        <line num="44" count="0" type="stmt"/>
-        <line num="56" count="0" type="stmt"/>
-        <line num="58" count="0" type="stmt"/>
-        <line num="63" count="0" type="stmt"/>
-        <line num="73" count="0" type="stmt"/>
-        <line num="74" count="0" type="stmt"/>
-        <line num="75" count="0" type="stmt"/>
-        <line num="79" count="0" type="stmt"/>
-        <line num="80" count="0" type="stmt"/>
-        <line num="81" count="0" type="cond" truecount="0" falsecount="2"/>
-        <line num="82" count="0" type="stmt"/>
-        <line num="83" count="0" type="stmt"/>
-        <line num="84" count="0" type="stmt"/>
-        <line num="88" count="0" type="stmt"/>
-        <line num="89" count="0" type="stmt"/>
-        <line num="90" count="0" type="stmt"/>
-        <line num="91" count="0" type="stmt"/>
-        <line num="93" count="0" type="stmt"/>
-        <line num="107" count="0" type="stmt"/>
-        <line num="124" count="0" type="stmt"/>
-        <line num="136" count="0" type="stmt"/>
-        <line num="149" count="0" type="stmt"/>
-        <line num="162" count="0" type="stmt"/>
-        <line num="176" count="0" type="stmt"/>
-        <line num="190" count="0" type="stmt"/>
-        <line num="210" count="0" type="stmt"/>
-        <line num="230" count="8" type="stmt"/>
+        <metrics statements="55" coveredstatements="52" conditionals="2" coveredconditionals="1" methods="20" coveredmethods="17"/>
+        <line num="32" count="4" type="stmt"/>
+        <line num="41" count="198" type="stmt"/>
+        <line num="42" count="198" type="stmt"/>
+        <line num="43" count="194" type="stmt"/>
+        <line num="46" count="198" type="stmt"/>
+        <line num="58" count="198" type="stmt"/>
+        <line num="60" count="198" type="stmt"/>
+        <line num="61" count="198" type="stmt"/>
+        <line num="64" count="198" type="stmt"/>
+        <line num="65" count="198" type="stmt"/>
+        <line num="68" count="198" type="stmt"/>
+        <line num="69" count="3" type="stmt"/>
+        <line num="75" count="198" type="stmt"/>
+        <line num="76" count="3" type="stmt"/>
+        <line num="80" count="198" type="stmt"/>
+        <line num="81" count="0" type="stmt"/>
+        <line num="85" count="198" type="stmt"/>
+        <line num="86" count="0" type="stmt"/>
+        <line num="90" count="198" type="stmt"/>
+        <line num="91" count="198" type="stmt"/>
+        <line num="99" count="198" type="stmt"/>
+        <line num="101" count="198" type="stmt"/>
+        <line num="106" count="3" type="stmt"/>
+        <line num="116" count="198" type="stmt"/>
+        <line num="117" count="3" type="stmt"/>
+        <line num="118" count="3" type="stmt"/>
+        <line num="119" count="3" type="stmt"/>
+        <line num="120" count="3" type="stmt"/>
+        <line num="123" count="198" type="stmt"/>
+        <line num="124" count="198" type="stmt"/>
+        <line num="125" count="7560" type="stmt"/>
+        <line num="128" count="198" type="stmt"/>
+        <line num="129" count="114" type="stmt"/>
+        <line num="130" count="114" type="cond" truecount="1" falsecount="1"/>
+        <line num="131" count="114" type="stmt"/>
+        <line num="132" count="114" type="stmt"/>
+        <line num="136" count="198" type="stmt"/>
+        <line num="137" count="3" type="stmt"/>
+        <line num="138" count="3" type="stmt"/>
+        <line num="139" count="3" type="stmt"/>
+        <line num="140" count="3" type="stmt"/>
+        <line num="141" count="3" type="stmt"/>
+        <line num="142" count="3" type="stmt"/>
+        <line num="143" count="3" type="stmt"/>
+        <line num="144" count="3" type="stmt"/>
+        <line num="147" count="198" type="stmt"/>
+        <line num="161" count="3" type="stmt"/>
+        <line num="184" count="36" type="stmt"/>
+        <line num="196" count="72" type="stmt"/>
+        <line num="209" count="3" type="stmt"/>
+        <line num="222" count="3" type="stmt"/>
+        <line num="236" count="3" type="stmt"/>
+        <line num="246" count="0" type="stmt"/>
+        <line num="285" count="4" type="stmt"/>
+        <line num="293" count="11" type="stmt"/>
+      </file>
+      <file name="ProductDetail.js" path="/Users/hemalatharamachandran/Documents/Univ_documents/SEP/SEP203/client/src/views/ProductPage/ProductDetail.js">
+        <metrics statements="3" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
+        <line num="4" count="4" type="stmt"/>
+        <line num="5" count="0" type="stmt"/>
+        <line num="6" count="0" type="stmt"/>
       </file>
       <file name="ShowImage.js" path="/Users/hemalatharamachandran/Documents/Univ_documents/SEP/SEP203/client/src/views/ProductPage/ShowImage.js">
-        <metrics statements="6" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
-        <line num="5" count="8" type="stmt"/>
-        <line num="10" count="8" type="stmt"/>
-        <line num="11" count="0" type="stmt"/>
-        <line num="12" count="0" type="stmt"/>
-        <line num="13" count="0" type="stmt"/>
-        <line num="14" count="0" type="stmt"/>
+        <metrics statements="6" coveredstatements="6" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+        <line num="5" count="4" type="stmt"/>
+        <line num="10" count="4" type="stmt"/>
+        <line num="11" count="42" type="stmt"/>
+        <line num="12" count="42" type="stmt"/>
+        <line num="13" count="42" type="stmt"/>
+        <line num="14" count="42" type="stmt"/>
       </file>
       <file name="SingleProduct.js" path="/Users/hemalatharamachandran/Documents/Univ_documents/SEP/SEP203/client/src/views/ProductPage/SingleProduct.js">
-        <metrics statements="8" coveredstatements="5" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="0"/>
-        <line num="20" count="8" type="stmt"/>
-        <line num="25" count="8" type="stmt"/>
-        <line num="27" count="8" type="stmt"/>
-        <line num="42" count="0" type="stmt"/>
-        <line num="44" count="0" type="stmt"/>
-        <line num="62" count="0" type="stmt"/>
-        <line num="79" count="8" type="stmt"/>
-        <line num="83" count="8" type="stmt"/>
+        <metrics statements="8" coveredstatements="8" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="3"/>
+        <line num="20" count="4" type="stmt"/>
+        <line num="25" count="4" type="stmt"/>
+        <line num="27" count="4" type="stmt"/>
+        <line num="42" count="18" type="stmt"/>
+        <line num="44" count="18" type="stmt"/>
+        <line num="62" count="1" type="stmt"/>
+        <line num="79" count="4" type="stmt"/>
+        <line num="83" count="18" type="stmt"/>
       </file>
       <file name="Spinner.js" path="/Users/hemalatharamachandran/Documents/Univ_documents/SEP/SEP203/client/src/views/ProductPage/Spinner.js">
         <metrics statements="1" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
         <line num="6" count="0" type="stmt"/>
       </file>
       <file name="ViewProducts.js" path="/Users/hemalatharamachandran/Documents/Univ_documents/SEP/SEP203/client/src/views/ProductPage/ViewProducts.js">
-        <metrics statements="11" coveredstatements="5" conditionals="2" coveredconditionals="0" methods="4" coveredmethods="0"/>
-        <line num="13" count="8" type="stmt"/>
-        <line num="18" count="8" type="stmt"/>
-        <line num="20" count="8" type="stmt"/>
-        <line num="23" count="0" type="stmt"/>
-        <line num="41" count="0" type="stmt"/>
-        <line num="42" count="0" type="stmt"/>
-        <line num="45" count="0" type="stmt"/>
-        <line num="46" count="0" type="cond" truecount="0" falsecount="2"/>
-        <line num="53" count="0" type="stmt"/>
-        <line num="61" count="8" type="stmt"/>
-        <line num="66" count="8" type="stmt"/>
+        <metrics statements="10" coveredstatements="10" conditionals="2" coveredconditionals="1" methods="4" coveredmethods="4"/>
+        <line num="13" count="4" type="stmt"/>
+        <line num="18" count="4" type="stmt"/>
+        <line num="20" count="4" type="stmt"/>
+        <line num="23" count="4" type="stmt"/>
+        <line num="41" count="4" type="stmt"/>
+        <line num="42" count="2" type="stmt"/>
+        <line num="46" count="4" type="cond" truecount="1" falsecount="1"/>
+        <line num="53" count="24" type="stmt"/>
+        <line num="61" count="4" type="stmt"/>
+        <line num="66" count="4" type="stmt"/>
       </file>
       <file name="ViewProductsAdmin.js" path="/Users/hemalatharamachandran/Documents/Univ_documents/SEP/SEP203/client/src/views/ProductPage/ViewProductsAdmin.js">
         <metrics statements="11" coveredstatements="5" conditionals="2" coveredconditionals="0" methods="4" coveredmethods="0"/>
-        <line num="13" count="8" type="stmt"/>
-        <line num="18" count="8" type="stmt"/>
-        <line num="20" count="8" type="stmt"/>
+        <line num="13" count="4" type="stmt"/>
+        <line num="18" count="4" type="stmt"/>
+        <line num="20" count="4" type="stmt"/>
         <line num="24" count="0" type="stmt"/>
         <line num="26" count="0" type="stmt"/>
         <line num="27" count="0" type="stmt"/>
         <line num="30" count="0" type="stmt"/>
         <line num="31" count="0" type="cond" truecount="0" falsecount="2"/>
         <line num="39" count="0" type="stmt"/>
-        <line num="47" count="8" type="stmt"/>
-        <line num="52" count="8" type="stmt"/>
+        <line num="47" count="4" type="stmt"/>
+        <line num="52" count="4" type="stmt"/>
       </file>
     </package>
     <package name="src.views.ProfilePage">
       <metrics statements="73" coveredstatements="9" conditionals="50" coveredconditionals="0" methods="39" coveredmethods="0"/>
       <file name="CreateProfile.js" path="/Users/hemalatharamachandran/Documents/Univ_documents/SEP/SEP203/client/src/views/ProfilePage/CreateProfile.js">
         <metrics statements="24" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="14" coveredmethods="0"/>
-        <line num="31" count="8" type="stmt"/>
+        <line num="31" count="4" type="stmt"/>
         <line num="35" count="0" type="stmt"/>
         <line num="36" count="0" type="stmt"/>
         <line num="37" count="0" type="stmt"/>
@@ -2357,11 +2784,11 @@
         <line num="218" count="0" type="stmt"/>
         <line num="236" count="0" type="stmt"/>
         <line num="254" count="0" type="stmt"/>
-        <line num="280" count="8" type="stmt"/>
+        <line num="280" count="4" type="stmt"/>
       </file>
       <file name="EditProfile.js" path="/Users/hemalatharamachandran/Documents/Univ_documents/SEP/SEP203/client/src/views/ProfilePage/EditProfile.js">
         <metrics statements="28" coveredstatements="3" conditionals="36" coveredconditionals="0" methods="16" coveredmethods="0"/>
-        <line num="31" count="8" type="stmt"/>
+        <line num="31" count="4" type="stmt"/>
         <line num="37" count="0" type="stmt"/>
         <line num="38" count="0" type="stmt"/>
         <line num="39" count="0" type="stmt"/>
@@ -2387,13 +2814,13 @@
         <line num="236" count="0" type="stmt"/>
         <line num="254" count="0" type="stmt"/>
         <line num="272" count="0" type="stmt"/>
-        <line num="302" count="8" type="stmt"/>
-        <line num="308" count="8" type="stmt"/>
+        <line num="302" count="4" type="stmt"/>
+        <line num="308" count="4" type="stmt"/>
       </file>
       <file name="ListUsers.js" path="/Users/hemalatharamachandran/Documents/Univ_documents/SEP/SEP203/client/src/views/ProfilePage/ListUsers.js">
         <metrics statements="21" coveredstatements="4" conditionals="14" coveredconditionals="0" methods="9" coveredmethods="0"/>
-        <line num="19" count="8" type="stmt"/>
-        <line num="21" count="8" type="stmt"/>
+        <line num="19" count="4" type="stmt"/>
+        <line num="21" count="4" type="stmt"/>
         <line num="25" count="0" type="stmt"/>
         <line num="26" count="0" type="stmt"/>
         <line num="28" count="0" type="stmt"/>
@@ -2411,15 +2838,15 @@
         <line num="71" count="0" type="stmt"/>
         <line num="78" count="0" type="stmt"/>
         <line num="93" count="0" type="stmt"/>
-        <line num="110" count="8" type="stmt"/>
-        <line num="116" count="8" type="stmt"/>
+        <line num="110" count="4" type="stmt"/>
+        <line num="116" count="4" type="stmt"/>
       </file>
     </package>
     <package name="src.views.RegisterPage">
       <metrics statements="29" coveredstatements="3" conditionals="8" coveredconditionals="0" methods="11" coveredmethods="0"/>
       <file name="RegisterPage.js" path="/Users/hemalatharamachandran/Documents/Univ_documents/SEP/SEP203/client/src/views/RegisterPage/RegisterPage.js">
         <metrics statements="29" coveredstatements="3" conditionals="8" coveredconditionals="0" methods="11" coveredmethods="0"/>
-        <line num="32" count="8" type="stmt"/>
+        <line num="32" count="4" type="stmt"/>
         <line num="40" count="0" type="stmt"/>
         <line num="41" count="0" type="stmt"/>
         <line num="42" count="0" type="stmt"/>
@@ -2446,51 +2873,44 @@
         <line num="161" count="0" type="stmt"/>
         <line num="179" count="0" type="stmt"/>
         <line num="200" count="0" type="stmt"/>
-        <line num="228" count="8" type="stmt"/>
-        <line num="236" count="8" type="stmt"/>
+        <line num="228" count="4" type="stmt"/>
+        <line num="236" count="4" type="stmt"/>
       </file>
     </package>
     <package name="src.views.SubCategoryPage">
-      <metrics statements="57" coveredstatements="40" conditionals="12" coveredconditionals="6" methods="24" coveredmethods="9"/>
+      <metrics statements="66" coveredstatements="8" conditionals="14" coveredconditionals="0" methods="27" coveredmethods="0"/>
       <file name="CategoryDropDown.js" path="/Users/hemalatharamachandran/Documents/Univ_documents/SEP/SEP203/client/src/views/SubCategoryPage/CategoryDropDown.js">
-        <metrics statements="14" coveredstatements="14" conditionals="2" coveredconditionals="2" methods="5" coveredmethods="5"/>
-        <line num="10" count="8" type="stmt"/>
-        <line num="11" count="8" type="stmt"/>
-        <line num="14" count="20" type="stmt"/>
-        <line num="24" count="20" type="stmt"/>
-        <line num="27" count="20" type="stmt"/>
-        <line num="29" count="20" type="stmt"/>
-        <line num="30" count="5" type="stmt"/>
-        <line num="35" count="20" type="stmt"/>
-        <line num="36" count="5" type="stmt"/>
-        <line num="37" count="5" type="stmt"/>
-        <line num="40" count="20" type="stmt"/>
-        <line num="49" count="5" type="stmt"/>
-        <line num="61" count="8" type="stmt"/>
-        <line num="66" count="29" type="stmt"/>
+        <metrics statements="13" coveredstatements="4" conditionals="2" coveredconditionals="0" methods="5" coveredmethods="0"/>
+        <line num="10" count="4" type="stmt"/>
+        <line num="11" count="4" type="stmt"/>
+        <line num="14" count="0" type="stmt"/>
+        <line num="24" count="0" type="stmt"/>
+        <line num="27" count="0" type="stmt"/>
+        <line num="29" count="0" type="stmt"/>
+        <line num="30" count="0" type="stmt"/>
+        <line num="35" count="0" type="stmt"/>
+        <line num="36" count="0" type="stmt"/>
+        <line num="39" count="0" type="stmt"/>
+        <line num="48" count="0" type="stmt"/>
+        <line num="60" count="4" type="stmt"/>
+        <line num="65" count="4" type="stmt"/>
       </file>
       <file name="SubCategoryPage.js" path="/Users/hemalatharamachandran/Documents/Univ_documents/SEP/SEP203/client/src/views/SubCategoryPage/SubCategoryPage.js">
-        <metrics statements="43" coveredstatements="26" conditionals="10" coveredconditionals="4" methods="19" coveredmethods="4"/>
-        <line num="37" count="8" type="stmt"/>
-        <line num="38" count="8" type="stmt"/>
-        <line num="49" count="19" type="stmt"/>
-        <line num="51" count="19" type="stmt"/>
-        <line num="55" count="19" type="stmt"/>
-        <line num="58" count="19" type="stmt"/>
+        <metrics statements="53" coveredstatements="4" conditionals="12" coveredconditionals="0" methods="22" coveredmethods="0"/>
+        <line num="45" count="4" type="stmt"/>
+        <line num="46" count="4" type="stmt"/>
         <line num="59" count="0" type="stmt"/>
-        <line num="64" count="19" type="stmt"/>
+        <line num="61" count="0" type="stmt"/>
         <line num="65" count="0" type="stmt"/>
-        <line num="70" count="19" type="stmt"/>
-        <line num="71" count="0" type="stmt"/>
-        <line num="72" count="0" type="stmt"/>
-        <line num="76" count="19" type="stmt"/>
-        <line num="77" count="19" type="stmt"/>
-        <line num="78" count="0" type="stmt"/>
-        <line num="80" count="19" type="stmt"/>
+        <line num="68" count="0" type="stmt"/>
+        <line num="69" count="0" type="stmt"/>
+        <line num="74" count="0" type="stmt"/>
+        <line num="75" count="0" type="stmt"/>
+        <line num="80" count="0" type="stmt"/>
         <line num="81" count="0" type="stmt"/>
-        <line num="84" count="19" type="stmt"/>
-        <line num="85" count="19" type="stmt"/>
+        <line num="82" count="0" type="stmt"/>
         <line num="86" count="0" type="stmt"/>
+<<<<<<< HEAD
         <line num="88" count="19" type="stmt"/>
         <line num="89" count="0" type="stmt"/>
         <line num="92" count="19" type="stmt"/>
@@ -2515,6 +2935,48 @@
         <line num="335" count="8" type="stmt"/>
         <line num="345" count="19" type="stmt"/>
 >>>>>>> 6b57bfda0d62e38c8b8d173cef4b75b1e2c605c6
+=======
+        <line num="87" count="0" type="stmt"/>
+        <line num="88" count="0" type="stmt"/>
+        <line num="90" count="0" type="stmt"/>
+        <line num="91" count="0" type="stmt"/>
+        <line num="95" count="0" type="stmt"/>
+        <line num="97" count="0" type="stmt"/>
+        <line num="102" count="0" type="stmt"/>
+        <line num="103" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="104" count="0" type="stmt"/>
+        <line num="108" count="0" type="stmt"/>
+        <line num="113" count="0" type="stmt"/>
+        <line num="114" count="0" type="stmt"/>
+        <line num="117" count="0" type="stmt"/>
+        <line num="118" count="0" type="stmt"/>
+        <line num="119" count="0" type="stmt"/>
+        <line num="120" count="0" type="stmt"/>
+        <line num="121" count="0" type="stmt"/>
+        <line num="125" count="0" type="stmt"/>
+        <line num="130" count="0" type="stmt"/>
+        <line num="131" count="0" type="stmt"/>
+        <line num="137" count="0" type="stmt"/>
+        <line num="138" count="0" type="stmt"/>
+        <line num="139" count="0" type="stmt"/>
+        <line num="142" count="0" type="stmt"/>
+        <line num="143" count="0" type="stmt"/>
+        <line num="144" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="145" count="0" type="stmt"/>
+        <line num="148" count="0" type="stmt"/>
+        <line num="149" count="0" type="stmt"/>
+        <line num="184" count="0" type="stmt"/>
+        <line num="185" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="206" count="0" type="stmt"/>
+        <line num="225" count="0" type="stmt"/>
+        <line num="255" count="0" type="stmt"/>
+        <line num="292" count="0" type="stmt"/>
+        <line num="333" count="0" type="stmt"/>
+        <line num="341" count="0" type="stmt"/>
+        <line num="353" count="0" type="stmt"/>
+        <line num="387" count="4" type="stmt"/>
+        <line num="398" count="4" type="stmt"/>
+>>>>>>> 9b35dee95d89df008f1e70ecd9e345d5524b4de4
       </file>
     </package>
   </project>
