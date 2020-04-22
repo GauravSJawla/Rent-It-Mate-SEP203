@@ -6,6 +6,7 @@ const Product = require('../../models/Product');
 const User = require('../../models/Users');
 const Purchase = require('../../models/Purchase');
 const Profile = require('../../models/Profile');
+const profileRouter = require('./profile');
 const formidable = require('formidable')
 const _ = require('lodash');
 const fs = require('fs');
@@ -191,14 +192,9 @@ router.post('/create',[
        product.photo.data = fs.readFileSync(files.photo.path)
        product.photo.contentType = files.photo.type
      }
-     let addHistory = Profile.updateMany({user:req.user.id},
-        {$set : {'history.addedProducts' : [
-                              { name:name, 
-                                fromDate: fromDate,
-                                toDate: toDate}
-           ] }
-        })
-        console.log('inside add product', addHistory);
+
+     //var profileResult = profileRouter.post(`/update-profile/${name}/${fromDate}/${toDate}/${userId}`);
+    
     product.save((err , result) => {
       /* istanbul ignore next */
       if(err){
@@ -207,11 +203,42 @@ router.post('/create',[
           error: 'sorry try again later'
         });
       }
+    //  let profileResult = addHistoryToProfile(name,fromDate,toDate,userId);
+
      res.json(result);
     });
   });
  
 });
+
+// const addHistoryToProfile = (name,fromDate,toDate,userId)  => (async() => {
+//   console.log('inside addhistory function')
+//   let addHistory;
+//   let userProfile = await Profile.find({user:userId});
+//   if(userProfile.history.addedProducts.countDocuments > 0){
+//     console.log('inside no add history entry')
+//     addHistory = await Profile.updateMany({user:userId},
+//       {$push : {'history.addedProducts' : [
+//                             { name:name, 
+//                               fromDate: fromDate,
+//                               toDate: toDate}
+//          ] }
+//       });
+//   }
+//   else{
+//     console.log('inside history opresent for the user')
+//     addHistory = await Profile.updateMany({user:userId},
+//       {$set: {history: {addedProducts : {
+//         name:name,
+//         fromDate:fromDate,
+//         toDate:toDate
+//       }}}});
+//   }
+  
+//     console.log('inside add product', addHistory);
+// }) 
+
+
 /** 
  *  @route DELETE api/product
  *  @desc This method is responsible for deleting a product from

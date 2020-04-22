@@ -23,12 +23,14 @@ export const createProduct = (
   edit = false
 ) => async dispatch => {
   try {
+    console.log('formdata', formData);
     const config = {
       headers: {
         'Content-Type': 'application/json'
       }
     };
     const res = await axios.post('/api/product/create', formData, config);
+    const profileRes = await axios.post('/api/profile/update-profile',formData );
     dispatch({
       type: ADD_PRODUCT,
       payload: res.data
