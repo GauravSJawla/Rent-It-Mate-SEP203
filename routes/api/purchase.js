@@ -4,6 +4,7 @@ const auth = require('../../middleware/auth');
 const {check} = require('express-validator');
 const product = require('../../models/Product');
 const user = require('../../models/Users');
+const profile = require('../../models/Profile');
 const purchase = require('../../models/Purchase');
 
 // @route Post api/product with productId as query parameter
@@ -32,15 +33,24 @@ router.post('/',[
             const toDate = req.body.toDate;
             const purchaseFields = {};
             purchaseFields.productId = productId;
+            purchaseFields.productName = productRented.name;
             purchaseFields.userId = userRentedId;
             purchaseFields.fromDate = fromDate;
             purchaseFields.toDate = toDate;
             try{
                let purchase = new Purchase(purchaseFields);
                 await purchase.save();
+                let rentHistory = await profile.updateMany({user:req.user.id},
+                                         {$push : {'history.rentedProducts' : [
+                                             { name:productRented.name, 
+                                               fromDate: fromDate,
+                                                toDate: toDate}
+                                            ] }
+            })
                 return res.json(purchase);
             }
             catch(err){
+                console.log(err);
                 res.status(500).send('server error');
             }   
         }

@@ -43,8 +43,14 @@ const ProfileSchema = new mongoose.Schema({
         type: String
     },
     history:{
-        type: Array,
-        default: []
+       addedProducts:{
+           type: Array,
+           default:[]
+       },
+       rentedProducts:{
+           type:Array,
+           default:[]
+       }
     },
     updatedDate:{
         type: Date,

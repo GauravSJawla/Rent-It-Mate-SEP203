@@ -5,6 +5,7 @@ const { check } = require('express-validator');
 const Product = require('../../models/Product');
 const User = require('../../models/Users');
 const Purchase = require('../../models/Purchase');
+const Profile = require('../../models/Profile');
 const formidable = require('formidable')
 const _ = require('lodash');
 const fs = require('fs');
@@ -140,6 +141,7 @@ router.post('/create',[
     .not()
     .isEmpty()
 ], auth, async (req, res) => {
+  // let productResult, productName, productFromDate, productToDate;
     let form = new formidable.IncomingForm()
     form.keepExtensions = true
     form.parse(req , (err, fields , files) =>{
@@ -162,6 +164,9 @@ router.post('/create',[
       
       //check for all fields
       const { name, description, price, subcategory, quantity, shipping, fromDate, toDate } = fields;
+      // productName = name;
+      // productFromDate = fromDate;
+      // productToDate = toDate;
       console.log( name + description + price + subcategory + quantity + shipping + fromDate + toDate + " the details");
       /* istanbul ignore next */
       if (!name || !description || !price || !subcategory || !quantity || !shipping ) {
@@ -186,7 +191,14 @@ router.post('/create',[
        product.photo.data = fs.readFileSync(files.photo.path)
        product.photo.contentType = files.photo.type
      }
-   
+     let addHistory = Profile.updateMany({user:req.user.id},
+        {$set : {'history.addedProducts' : [
+                              { name:name, 
+                                fromDate: fromDate,
+                                toDate: toDate}
+           ] }
+        })
+        console.log('inside add product', addHistory);
     product.save((err , result) => {
       /* istanbul ignore next */
       if(err){
@@ -195,7 +207,7 @@ router.post('/create',[
           error: 'sorry try again later'
         });
       }
-      res.json(result);
+     res.json(result);
     });
   });
  
@@ -209,8 +221,6 @@ router.post('/create',[
 router.delete('/:productId' , auth , async (req , res) =>{
   let product = req.product
   let userId = req.user.id
-  console.log('product delete', userId);
-  console.log('product user Id', req.product.userId);
   const user = User.findById(userId)
   const purchaseForProductCount = await Purchase.find({productId: req.product._id}).countDocuments();
   if(purchaseForProductCount > 0){
