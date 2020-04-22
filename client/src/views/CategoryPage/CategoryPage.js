@@ -1,11 +1,12 @@
 // eslint-disable-next-line
 import React, { useState } from 'react';
+
 // @material-ui/core components
 import { makeStyles } from '@material-ui/core/styles';
 import PropTypes from 'prop-types';
-import {connect} from 'react-redux';
+import { connect } from 'react-redux';
 import { Redirect } from 'react-router-dom';
-// @material-ui/icons
+
 // core components
 import Footer from 'components/Footer/Footer.js';
 import GridContainer from 'components/Grid/GridContainer.js';
@@ -19,67 +20,59 @@ import CardHeader from 'components/Card/CardHeader.js';
 import CardFooter from 'components/Card/CardFooter.js';
 import CustomInput from 'components/CustomInput/CustomInput.js';
 import styles from 'assets/jss/material-kit-react/views/loginPage.js';
-import {createCategory} from '../../actions/category';
+import { createCategory } from '../../actions/category';
 
 import image from 'assets/img/bg7.jpg';
 import { setAlert } from '../../actions/alert';
 
-
 const useStyles = makeStyles(styles);
 
-const CategoryPage = ({createCategory,
-                    category:{category, error},
-                  setAlert}) => {
+const CategoryPage = ({
+  createCategory,
+  category: { category, error },
+  setAlert,
+}) => {
   const classes = useStyles();
   const [cardAnimaton, setCardAnimation] = React.useState('cardHidden');
   setTimeout(function() {
     setCardAnimation('');
   }, 700);
-  const [formData,setFormData] = React.useState(
-    {
-      name: ''
-    }
-  );
+  const [formData, setFormData] = React.useState({
+    name: '',
+  });
 
-  const {name} = formData;
-  
+  const { name } = formData;
+
   //onChange event handler
-  const onChange = e =>
+  const onChange = (e) =>
     setFormData({
       ...formData,
-      [e.target.id]: e.target.value
+      [e.target.id]: e.target.value,
     });
 
   //onSubmit event handler
-  const onSubmit = e => {
+  const onSubmit = (e) => {
     e.preventDefault();
     createCategory(formData);
+  };
+
+  if (category !== null) {
+    return <Redirect to='/admin-dashboard/all-categories' />;
   }
 
-  if(category !== null){
-    return <Redirect to = '/admin-dashboard/all-categories'/>
-  }
-
-  if(error === 'Category already exists! Update it!'){
+  if (error === 'Category already exists! Update it!') {
     console.log('inside category error');
-    setAlert('Category already exists, Update it!','danger');
+    setAlert('Category already exists, Update it!', 'danger');
   }
 
   return (
     <div>
-      <div
-        className={classes.pageHeader}
-        style={{
-          backgroundImage: 'url(' + image + ')',
-          backgroundSize: 'cover',
-          backgroundPosition: 'top center'
-        }}
-      >
+      <div className={classes.pageHeader}>
         <div className={classes.container}>
           <GridContainer justify='center'>
             <GridItem xs={12} sm={12} md={4}>
               <Card className={classes[cardAnimaton]}>
-                <form className={classes.form} onSubmit = {e => onSubmit(e)}>
+                <form className={classes.form} onSubmit={(e) => onSubmit(e)}>
                   <CardHeader color='primary' className={classes.cardHeader}>
                     <h4>Create a Category</h4>
                   </CardHeader>
@@ -88,18 +81,18 @@ const CategoryPage = ({createCategory,
                       labelText='Create a category *'
                       id='name'
                       formControlProps={{
-                        fullWidth: true
+                        fullWidth: true,
                       }}
                       inputProps={{
                         type: 'text',
-                        value:name,
+                        value: name,
                         required: true,
-                        onChange: e => onChange(e),
+                        onChange: (e) => onChange(e),
                         endAdornment: (
                           <InputAdornment position='end'>
                             <Category className={classes.inputIconsColor} />
                           </InputAdornment>
-                        )
+                        ),
                       }}
                     />
                   </CardBody>
@@ -117,19 +110,19 @@ const CategoryPage = ({createCategory,
       </div>
     </div>
   );
-}
+};
 
 CategoryPage.propTypes = {
-  createCategory:PropTypes.func.isRequired,
-  category:PropTypes.object.isRequired,
-  setAlert:PropTypes.func.isRequired
-}
+  createCategory: PropTypes.func.isRequired,
+  category: PropTypes.object.isRequired,
+  setAlert: PropTypes.func.isRequired,
+};
 
-const mapStateToProps = state => ({
-  category:state.category
-})
+const mapStateToProps = (state) => ({
+  category: state.category,
+});
 
 export default connect(
   mapStateToProps,
-  {createCategory,setAlert}
+  { createCategory, setAlert }
 )(CategoryPage);

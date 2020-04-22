@@ -1,34 +1,34 @@
-import React, { Fragment, useEffect, useState } from "react";
-import PropTypes from "prop-types";
-import { connect } from "react-redux";
+import React, { Fragment, useEffect, useState } from 'react';
+import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
 
 // import material-ui cores
-import { makeStyles } from "@material-ui/core/styles";
+import { makeStyles } from '@material-ui/core/styles';
 import {
   TableHead,
   Table,
   TableRow,
   TableBody,
   TableCell,
-} from "@material-ui/core";
-import Paper from "@material-ui/core/Paper";
-import Dialog from "@material-ui/core/Dialog";
+} from '@material-ui/core';
+import Paper from '@material-ui/core/Paper';
+import Dialog from '@material-ui/core/Dialog';
 
 // import packages
-import Select from "react-select";
+import Select from 'react-select';
 
 // import Spinner
-import Spinner from "../Dashboard/Spinner";
+import Spinner from '../Dashboard/Spinner';
 
 // import custom components
-import Button from "components/CustomButtons/Button.js";
-import Card from "components/Card/Card.js";
-import CardBody from "components/Card/CardBody.js";
-import CardHeader from "components/Card/CardHeader.js";
-import CardFooter from "components/Card/CardFooter.js";
-import CustomInput from "components/CustomInput/CustomInput.js";
-import GridContainer from "components/Grid/GridContainer.js";
-import GridItem from "components/Grid/GridItem.js";
+import Button from 'components/CustomButtons/Button.js';
+import Card from 'components/Card/Card.js';
+import CardBody from 'components/Card/CardBody.js';
+import CardHeader from 'components/Card/CardHeader.js';
+import CardFooter from 'components/Card/CardFooter.js';
+import CustomInput from 'components/CustomInput/CustomInput.js';
+import GridContainer from 'components/Grid/GridContainer.js';
+import GridItem from 'components/Grid/GridItem.js';
 
 // import actions
 import {
@@ -36,11 +36,11 @@ import {
   updateSubcategory,
   getAllSubcategories,
   deleteSubcategory,
-} from "actions/subcategory";
-import { getCategoryList, getAllCategories } from "actions/category";
+} from 'actions/subcategory';
+import { getCategoryList, getAllCategories } from 'actions/category';
 
 // import layout style
-import styles from "assets/jss/material-kit-react/views/adminDashboard.js";
+import styles from 'assets/jss/material-kit-react/views/adminDashboard.js';
 
 const useStyles = makeStyles(styles);
 const SubCategoryPage = ({
@@ -59,8 +59,8 @@ const SubCategoryPage = ({
   const classes = useStyles();
 
   const [formData, setFormData] = useState({
-    name: "",
-    categoryId: "",
+    name: '',
+    categoryId: '',
   });
   const { name, categoryId } = formData;
 
@@ -95,15 +95,15 @@ const SubCategoryPage = ({
   const [updateOpen, setUpdateOpen] = React.useState(false);
   // Declare Old Sub-Category Data
   const [oldFormData, setOldFormData] = useState({
-    name: "",
-    id: "",
+    name: '',
+    id: '',
   });
   // Update Dialog Paper Open
   const updateClickOpen = (e) => {
-    if (e.target.parentNode.getAttribute("value")) {
+    if (e.target.parentNode.getAttribute('value')) {
       setOldFormData({
-        name: e.target.parentNode.getAttribute("value"),
-        id: e.target.parentNode.getAttribute("id"),
+        name: e.target.parentNode.getAttribute('value'),
+        id: e.target.parentNode.getAttribute('id'),
       });
       setUpdateOpen(true);
     }
@@ -115,7 +115,7 @@ const SubCategoryPage = ({
   };
 
   useEffect(() => {
-    console.log("inside view categories useeffect");
+    console.log('inside view categories useeffect');
     getCategoryList();
     getAllCategories();
     getAllSubcategories();
@@ -123,7 +123,7 @@ const SubCategoryPage = ({
 
   // Declare Update Form Data
   const [updateFormData, setUpdateFormData] = useState({
-    name: "",
+    name: '',
   });
 
   // Update Input Textbox onChange
@@ -145,7 +145,7 @@ const SubCategoryPage = ({
       subCategoryList.push(subcat._id);
     }
   });
-  console.log("count of subcatgeories", subCategoryList.length);
+  console.log('count of subcatgeories', subCategoryList.length);
   return (
     <div className={classes.landingContainer}>
       {loading ? (
@@ -155,26 +155,26 @@ const SubCategoryPage = ({
           <Fragment>
             {subCategoryList.length > 0 ? (
               <div className={classes.dashboardTitle}>
-                <h3 align="center">
+                <h3 align='center'>
                   <strong>Available Sub-Categories</strong>
                 </h3>
                 <Table
                   className={classes.table}
-                  aria-label="simple-table"
+                  aria-label='simple-table'
                   component={Paper}
                 >
                   <TableHead>
                     <TableRow>
-                      <TableCell align="left" className={classes.td}>
+                      <TableCell align='left' className={classes.td}>
                         CATEGORY NAME
                       </TableCell>
-                      <TableCell align="left" className={classes.td}>
+                      <TableCell align='left' className={classes.td}>
                         SUB-CATEGORY NAME
                       </TableCell>
-                      <TableCell align="center" className={classes.td}>
+                      <TableCell align='center' className={classes.td}>
                         UPDATE SUB-CATEGORY NAME
                       </TableCell>
-                      <TableCell align="center" className={classes.td}>
+                      <TableCell align='center' className={classes.td}>
                         DELETE THE SUB-CATEGORY
                       </TableCell>
                     </TableRow>
@@ -189,23 +189,23 @@ const SubCategoryPage = ({
                               id={subcategory.name}
                             >
                               <TableCell
-                                align="left"
+                                align='left'
                                 className={classes.td}
-                                scope="row"
+                                scope='row'
                               >
                                 {category.name}
                               </TableCell>
-                              <TableCell align="left" className={classes.td}>
+                              <TableCell align='left' className={classes.td}>
                                 {subcategory.name}
                               </TableCell>
-                              <TableCell align="center" className={classes.td}>
+                              <TableCell align='center' className={classes.td}>
                                 <Button
                                   simple
                                   id={subcategory._id}
                                   value={subcategory.name}
                                   onClick={(e) => updateClickOpen(e)}
-                                  color="primary"
-                                  size="lg"
+                                  color='primary'
+                                  size='lg'
                                 >
                                   Update
                                 </Button>
@@ -216,7 +216,7 @@ const SubCategoryPage = ({
                                 >
                                   <div className={classes.pageHeader}>
                                     <div className={classes.container}>
-                                      <GridContainer justify="center">
+                                      <GridContainer justify='center'>
                                         <GridItem>
                                           <Card>
                                             <form
@@ -226,7 +226,7 @@ const SubCategoryPage = ({
                                               }
                                             >
                                               <CardHeader
-                                                color="primary"
+                                                color='primary'
                                                 className={classes.cardHeader}
                                               >
                                                 <h4>
@@ -237,19 +237,19 @@ const SubCategoryPage = ({
                                                 <h4>Update the Sub-Category</h4>
                                                 <h4>
                                                   <strong>
-                                                    {oldFormData.name}{" "}
+                                                    {oldFormData.name}{' '}
                                                     {oldFormData.id}
                                                   </strong>
                                                 </h4>
                                                 <h4>To:</h4>
                                                 <CustomInput
-                                                  labelText="New Sub-Category Name"
-                                                  id="name"
+                                                  labelText='New Sub-Category Name'
+                                                  id='name'
                                                   formControlProps={{
                                                     fullWidth: true,
                                                   }}
                                                   inputProps={{
-                                                    type: "text",
+                                                    type: 'text',
                                                     required: true,
                                                     onChange: (e) =>
                                                       onUpdateChange(e),
@@ -261,18 +261,18 @@ const SubCategoryPage = ({
                                               >
                                                 <Button
                                                   simple
-                                                  type="submit"
+                                                  type='submit'
                                                   onClick={updateClose}
-                                                  color="primary"
-                                                  size="lg"
+                                                  color='primary'
+                                                  size='lg'
                                                 >
                                                   Update Sub-Category
                                                 </Button>
                                                 <Button
                                                   simple
                                                   onClick={updateClose}
-                                                  color="primary"
-                                                  size="lg"
+                                                  color='primary'
+                                                  size='lg'
                                                 >
                                                   Cancel
                                                 </Button>
@@ -285,14 +285,14 @@ const SubCategoryPage = ({
                                   </div>
                                 </Dialog>
                               </TableCell>
-                              <TableCell align="center" className={classes.td}>
+                              <TableCell align='center' className={classes.td}>
                                 <Button
                                   simple
                                   onClick={() =>
                                     deleteSubcategory(subcategory._id)
                                   }
-                                  color="primary"
-                                  size="lg"
+                                  color='primary'
+                                  size='lg'
                                 >
                                   Delete
                                 </Button>
@@ -317,7 +317,7 @@ const SubCategoryPage = ({
           </Fragment>
         </div>
       )}
-      <Button simple onClick={createClickOpen} color="primary" size="lg">
+      <Button simple onClick={createClickOpen} color='primary' size='lg'>
         Create a new Sub-Category
       </Button>
       <Dialog
@@ -327,27 +327,27 @@ const SubCategoryPage = ({
       >
         <div className={classes.pageHeader}>
           <div className={classes.container}>
-            <GridContainer justify="center">
+            <GridContainer justify='center'>
               <GridItem>
                 <Card>
                   <form className={classes.form} onSubmit={(e) => onSubmit(e)}>
-                    <CardHeader color="primary" className={classes.cardHeader}>
+                    <CardHeader color='primary' className={classes.cardHeader}>
                       <h4>Create a Sub-Category</h4>
                     </CardHeader>
                     <CardBody>
                       <Select
                         options={categoryList}
-                        id="categoryId"
+                        id='categoryId'
                         onChange={(e) => onSelectChange(e)}
                       />
                       <CustomInput
-                        labelText="Create a Sub-Category"
-                        id="name"
+                        labelText='Create a Sub-Category'
+                        id='name'
                         formControlProps={{
                           fullWidth: true,
                         }}
                         inputProps={{
-                          type: "text",
+                          type: 'text',
                           value: name,
                           required: true,
                           onChange: (e) => onChange(e),
@@ -357,18 +357,18 @@ const SubCategoryPage = ({
                     <CardFooter className={classes.cardFooter}>
                       <Button
                         simple
-                        type="submit"
+                        type='submit'
                         onClick={createClose}
-                        color="primary"
-                        size="lg"
+                        color='primary'
+                        size='lg'
                       >
                         Add Sub-Category
                       </Button>
                       <Button
                         simple
                         onClick={createClose}
-                        color="primary"
-                        size="lg"
+                        color='primary'
+                        size='lg'
                       >
                         Cancel
                       </Button>
