@@ -56,7 +56,7 @@ const ProductDisplayLandingPage = ({
               key={p._id}
               product={p}
               component={Link}
-              to='/single-product-details'
+              to="/single-product-details"
             />
           ))}
         </GridContainer>
@@ -65,6 +65,7 @@ const ProductDisplayLandingPage = ({
   );
 };
 
+{/*to={`/single-product-details/${p._id}`}*/}
 ProductDisplayLandingPage.propTypes = {
   getAllProducts: PropTypes.func.isRequired,
   product: PropTypes.object.isRequired,
