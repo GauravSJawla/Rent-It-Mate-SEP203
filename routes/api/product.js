@@ -211,34 +211,6 @@ router.post('/create',[
  
 });
 
-// const addHistoryToProfile = (name,fromDate,toDate,userId)  => (async() => {
-//   console.log('inside addhistory function')
-//   let addHistory;
-//   let userProfile = await Profile.find({user:userId});
-//   if(userProfile.history.addedProducts.countDocuments > 0){
-//     console.log('inside no add history entry')
-//     addHistory = await Profile.updateMany({user:userId},
-//       {$push : {'history.addedProducts' : [
-//                             { name:name, 
-//                               fromDate: fromDate,
-//                               toDate: toDate}
-//          ] }
-//       });
-//   }
-//   else{
-//     console.log('inside history opresent for the user')
-//     addHistory = await Profile.updateMany({user:userId},
-//       {$set: {history: {addedProducts : {
-//         name:name,
-//         fromDate:fromDate,
-//         toDate:toDate
-//       }}}});
-//   }
-  
-//     console.log('inside add product', addHistory);
-// }) 
-
-
 /** 
  *  @route DELETE api/product
  *  @desc This method is responsible for deleting a product from
@@ -249,10 +221,10 @@ router.delete('/:productId' , auth , async (req , res) =>{
   let product = req.product
   let userId = req.user.id
   const user = User.findById(userId)
-  const purchaseForProductCount = await Purchase.find({productId: req.product._id}).countDocuments();
-  if(purchaseForProductCount > 0){
-    return res.json({msg:'Product cannot be deleted'});
-  }
+  // const purchaseForProductCount = await Purchase.find({productId: req.product._id}).countDocuments();
+  // if(purchaseForProductCount > 0){
+  //   return res.json({msg:'Product cannot be deleted'});
+  // }
     await product.remove( (err) =>{
       /* istanbul ignore next */
       if(err){

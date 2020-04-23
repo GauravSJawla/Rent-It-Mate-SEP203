@@ -12,7 +12,7 @@ const purchase = require('../../models/Purchase');
 //        into the purchase collection for the mentioned start and end dates
 // @access Private
 
-router.post('/',[
+router.post('/:productId',[
     auth,[
         check('fromDate','Please select a start date')
     .not()
@@ -27,7 +27,8 @@ router.post('/',[
         const userRented = await user.findById({_id:req.user.id});
         const userRentedId = userRented._id;
         let result = await Profile.find({user:req.user.id});
-        const productId = req.query.productId;
+        console.log('query product id', req.params.productId);
+        const productId = req.params.productId;
         const productRented = await product.findById({_id: productId});
         if(productRented){
             const fromDate = req.body.fromDate;
@@ -51,9 +52,9 @@ router.post('/',[
                         profileFields.history = {};
                         profileFields.history.rentedProducts= [];
                         profileFields.history.rentedProducts = [
-                                                {name: productName, 
-                                                 fromDate :startDate, 
-                                                 toDate : endDate}];
+                                                {name: productRented.name, 
+                                                 fromDate :fromDate, 
+                                                 toDate : toDate}];
                         console.log('added profile fields',profileFields);
                         const profile = new Profile(profileFields); 
                         addHistory = await profile.save();
@@ -72,30 +73,24 @@ router.post('/',[
                             });
                         console.log('add hostory in push', addHistory);
                     }
-                else{
-                    console.log('inside no history opresent for the user')
-                    addHistory =  await Profile.updateMany({user:req.user.id},
-                            {$set: {history: {rentedProducts : {
-                                            name:productRented.name,
-                                            fromDate:fromDate,
-                                            toDate:toDate
-                        }}}});
-                    }
+                // else{
+                //     console.log('inside no history opresent for the user')
+                //     addHistory =  await Profile.updateMany({user:req.user.id},
+                //             {$set: {history: {rentedProducts : {
+                //                             name:productRented.name,
+                //                             fromDate:fromDate,
+                //                             toDate:toDate
+                //         }}}});
+                //     }
              }
         
              }
-     
-            //     let rentHistory = await profile.updateMany({user:req.user.id},
-            //                              {$push : {'history.rentedProducts' : [
-            //                                  { name:productRented.name, 
-            //                                    fromDate: fromDate,
-            //                                     toDate: toDate}
-            //                                 ] }
-            // })
                 return res.json(purchase);
             }
+            
             catch(err){
-                console.log(err);
+                //console.log(err);
+                /* istanbul ignore next */
                 res.status(500).send('server error');
             }   
         }
@@ -106,9 +101,9 @@ router.post('/',[
 // @desc Returns all the corresponding purchases for the provided productId
 // @access Private
 
-router.get('/', auth, async(req,res) => {
-    const productId = req.query.productId;
-    const purchaseResult = await purchase.find({productId: productId});
+router.get('/:productId', auth, async(req,res) => {
+    const productId = req.params.productId;
+    const purchaseResult = await purchase.find({productId: productId,userId:req.user.id});
     return res.json(purchaseResult);
 })
 
