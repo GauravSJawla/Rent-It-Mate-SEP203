@@ -27,7 +27,6 @@ router.post('/:productId',[
         const userRented = await user.findById({_id:req.user.id});
         const userRentedId = userRented._id;
         let result = await Profile.find({user:req.user.id});
-        console.log('query product id', req.params.productId);
         const productId = req.params.productId;
         const productRented = await product.findById({_id: productId});
         if(productRented){
@@ -43,10 +42,8 @@ router.post('/:productId',[
                let purchase = new Purchase(purchaseFields);
                 await purchase.save();
                 const profileValue = Object.assign({},result);
-                console.log('prfoile value',profileValue)
                 if(productRented.name !== undefined && fromDate !== undefined && toDate !== undefined){
                     if(Object.keys(profileValue).length === 0){
-                        console.log('inside no profile')
                         const profileFields = {};
                         profileFields.user = req.user.id;
                         profileFields.history = {};
@@ -55,15 +52,12 @@ router.post('/:productId',[
                                                 {name: productRented.name, 
                                                  fromDate :fromDate, 
                                                  toDate : toDate}];
-                        console.log('added profile fields',profileFields);
+                        
                         const profile = new Profile(profileFields); 
                         addHistory = await profile.save();
-                        console.log('adding for no profile',addHistory);
                     }
                 else{
                 if(profileValue[Object.keys(profileValue)[0]].history.rentedProducts !== null){
-                        console.log('inisde add history entry', productRented.name,fromDate,toDate)
-                        console.log('inside add history entry')
                         addHistory = await Profile.updateMany({user:req.user.id},
                             {$push : {'history.rentedProducts' : [
                                                         {  name:productRented.name, 
@@ -71,7 +65,6 @@ router.post('/:productId',[
                                                            toDate: toDate}
                                 ] }
                             });
-                        console.log('add hostory in push', addHistory);
                     }
                 // else{
                 //     console.log('inside no history opresent for the user')

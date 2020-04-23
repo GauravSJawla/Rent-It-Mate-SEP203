@@ -80,10 +80,14 @@ router.get('/admin/:user_id', async(req,res) => {
   
 });
 
+// @route  POST api/profile/update-profile along with form data
+// @desc   This is called through axios after user adds a product for rent-- This route adds the product name, start date,
+//           end date to user's profile under addedProducts history for future reference
+// @access Private
+
 router.post('/update-profile',auth, async(req,res) => {
     let form = new formidable.IncomingForm();
     let result = await Profile.find({user:req.user.id});
-    console.log('before form data', result);
     let addHistory, productName,startDate,endDate;
     var formFields = await new Promise(function(resolve,reject) {
       form.parse(req,(err,fields) => {
@@ -92,34 +96,26 @@ router.post('/update-profile',auth, async(req,res) => {
         productName = name;
         startDate = fromDate;
         endDate = toDate;
-        console.log('from form data', productName, startDate,endDate)
         if(!name || !fromDate || !toDate){
           return res.status(400).json({error: 'All fields are required'});
         }
         resolve(fields);
       });
     })
-    
       //let profile = new Profile(fields);
      const profileValue = Object.assign({},result);
-     console.log('prfoile value',profileValue)
      if(productName !== undefined && startDate !== undefined && endDate !== undefined){
        if(Object.keys(profileValue).length === 0){
-         console.log('inside no profile')
          const profileFields = {};
          profileFields.user = req.user.id;
          profileFields.history = {};
          profileFields.history.addedProducts= [];
          profileFields.history.addedProducts = [{name: productName, fromDate :startDate, toDate : endDate}];
-         console.log('added profile fields',profileFields);
          const profile = new Profile(profileFields); 
          addHistory = await profile.save();
-         console.log('adding for no profile',addHistory);
        }
        else{
         if(profileValue[Object.keys(profileValue)[0]].history.addedProducts !== null){
-          console.log('inisde no add history entry', productName,startDate,endDate)
-          console.log('inside add history entry')
           addHistory = await Profile.updateMany({user:req.user.id},
               {$push : {'history.addedProducts' : [
                                 { name:productName, 
@@ -127,7 +123,6 @@ router.post('/update-profile',auth, async(req,res) => {
                                   toDate: endDate}
                 ] }
               });
-          console.log('add hostory in push', addHistory);
           }
       // else{
       //   console.log('inside no history opresent for the user')
@@ -141,9 +136,6 @@ router.post('/update-profile',auth, async(req,res) => {
        }
         
      }
-     
-     
-      console.log('inside add product', addHistory);
       res.json(addHistory);
   }) 
 

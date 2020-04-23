@@ -103,12 +103,10 @@ describe('user purchase products', () => {
     const profileUser = await User.findOne({username:'mercy'});
     const duplicateProfile = await Profile.findOne({user:profileUser._id});
     if(duplicateProfile){
-        console.log('inside delete profile');
         await Profile.remove(duplicateProfile);
     }
     const duplicateProduct = await Product.findOne({_id:productId});
     if(duplicateProduct){
-        console.log('inside delete product');
         await Product.remove(duplicateProduct);
     }
   })
