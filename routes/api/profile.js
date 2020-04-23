@@ -53,8 +53,8 @@ router.get('/', auth, async (req, res) => {
       .json({ msg: 'Access is allowed only to admin' });    }
    
   } catch (err) {
+   // console.error(err.message);
     /* istanbul ignore next */
-    console.error(err.message);
     res.status(500).send('Server Error');
   }
 });
@@ -73,8 +73,8 @@ router.get('/admin/:user_id', async(req,res) => {
 
   }
   catch(err){
+   // console.error(err.message);
     /* istanbul ignore next */
-    console.error(err.message);
     res.status(500).send('Server Error');
   }
   
@@ -129,15 +129,15 @@ router.post('/update-profile',auth, async(req,res) => {
               });
           console.log('add hostory in push', addHistory);
           }
-      else{
-        console.log('inside no history opresent for the user')
-        addHistory =  await Profile.updateMany({user:req.user.id},
-          {$set: {history: {addedProducts : {
-                                name:productName,
-                                fromDate:startDate,
-                                toDate:endDate
-          }}}});
-      }
+      // else{
+      //   console.log('inside no history opresent for the user')
+      //   addHistory =  await Profile.updateMany({user:req.user.id},
+      //     {$set: {history: {addedProducts : {
+      //                           name:productName,
+      //                           fromDate:startDate,
+      //                           toDate:endDate
+      //     }}}});
+      // }
        }
         
      }
