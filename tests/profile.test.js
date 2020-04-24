@@ -6,6 +6,7 @@ const MongoClient = require('mongodb');
 const supertest = require('supertest');
 const app = require('../server');
 const request = supertest(app);
+const FormData = require('formidable')
 
 describe('user create/update/delete profile', () => {
     const mongoURI = config.get('mongoURI');
@@ -37,6 +38,8 @@ describe('user create/update/delete profile', () => {
           .send({
             username: 'TestUser1',
             password: 'test'
+            // username: 'mercy',
+            // password: 'gentle'
           })
           .expect(200);
         token = response.body.token;
@@ -57,8 +60,31 @@ describe('user create/update/delete profile', () => {
           return expect(JSON.stringify(response.body)).toMatch('You are yet to create your profile');
     })
 
+    it('should throw error if formdata fields are missing', async() => {
+      var form = new FormData();
+      const response = await request.post('/api/profile/update-profile')
+                                    .set('x-auth-token', token)
+                                    .set('form-data',form)
+                                    .field('name','Test Product')
+                                    .field('fromDate','2020-04-20')
+                                    .expect(400);
+      return expect(JSON.stringify(response.body)).toMatch('All fields are required');
+    })
+
+    it('can update a profile with history even if no profile', async() => {
+      var form = new FormData();
+      const response = await request.post('/api/profile/update-profile')
+                                    .set('x-auth-token', token)
+                                    .set('form-data',form)
+                                    .field('name','Test Product')
+                                    .field('fromDate','2020-04-20')
+                                    .field('toDate','2020-05-21')
+                                    .expect(200);
+      return expect(JSON.stringify(response.body)).toMatch('Test Product');
+    })
+
     it('can create a profile', async() => {
-        const user = await User.findOne({username:'mercy'});
+        const user = await User.findOne({username:'TestUser1'}); //mercy
         id = user.id;
         const duplicateProfile = await Profile.findOne({user:id});
         if (duplicateProfile){
@@ -80,6 +106,18 @@ describe('user create/update/delete profile', () => {
                                 }).expect(200);
         userId = response.body.user;
         return expect(JSON.stringify(response.body)).toMatch("pinehurst drive"); 
+    })
+
+    it('can update the profile with history alone if profile already exists', async() => {
+      var form = new FormData();
+      const response = await request.post('/api/profile/update-profile')
+                                    .set('x-auth-token', token)
+                                    .set('form-data',form)
+                                    .field('name','Test Product')
+                                    .field('fromDate','2020-05-23')
+                                    .field('toDate','2020-05-27')
+                                    .expect(200);
+      return expect(JSON.stringify(response.body)).toMatch('nModified');
     })
 
     it('can update a profile', async() => {

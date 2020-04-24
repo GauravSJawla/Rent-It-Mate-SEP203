@@ -4,6 +4,9 @@ const auth = require('../../middleware/auth');
 const { check } = require('express-validator');
 const Product = require('../../models/Product');
 const User = require('../../models/Users');
+const Purchase = require('../../models/Purchase');
+const Profile = require('../../models/Profile');
+const profileRouter = require('./profile');
 const formidable = require('formidable')
 const _ = require('lodash');
 const fs = require('fs');
@@ -40,7 +43,7 @@ router.get("/products", async (req, res) => {
 
   Product.find()
       .select('-photo')
-      .populate('Category')
+      .populate('SubCategory')
       .sort([[sortBy, order]])
       .limit(limit)
       .exec((err, products) => {
@@ -60,12 +63,14 @@ router.get("/products", async (req, res) => {
  */
 
 router.get ( "/products/related/:productId",(req, res) => {
+  console.log('inside product search',req.product.subcategory);
   let limit = req.query.limit ? parseInt(req.query.limit) : 6;
   //products $ne = not including the req.product
-  Product.find({ _id: { $ne: req.product }, category: req.product.category })
-      .limit(limit)
-      .populate('category', '_id name')
+  Product.find({ _id: {$ne : req.product} , subcategory: req.product.subcategory })
+        .limit(limit)
+        .populate('subcategory', ['_id','name'])
       .exec((err, products) => {
+        console.log('product after query',products)
           if (err) {
               return res.status(400).json({
                   error: 'Products not found'
@@ -92,7 +97,6 @@ router.param('productId' , async (req, res, next, id) => {
     }
     req.product = product;
     next();
- 
 });
 });
 
@@ -106,7 +110,7 @@ router.param('productId' , async (req, res, next, id) => {
  * @access  public 
  */
 router.get('/:productId',(req , res) =>{
- // console.log(req.product+' inside get');
+  console.log(req.product+' inside get');
   req.product.photo = undefined
   return res.json(req.product);
 })
@@ -138,6 +142,7 @@ router.post('/create',[
     .not()
     .isEmpty()
 ], auth, async (req, res) => {
+  // let productResult, productName, productFromDate, productToDate;
     let form = new formidable.IncomingForm()
     form.keepExtensions = true
     form.parse(req , (err, fields , files) =>{
@@ -160,6 +165,9 @@ router.post('/create',[
       
       //check for all fields
       const { name, description, price, subcategory, quantity, shipping, fromDate, toDate } = fields;
+      // productName = name;
+      // productFromDate = fromDate;
+      // productToDate = toDate;
       console.log( name + description + price + subcategory + quantity + shipping + fromDate + toDate + " the details");
       /* istanbul ignore next */
       if (!name || !description || !price || !subcategory || !quantity || !shipping ) {
@@ -184,7 +192,9 @@ router.post('/create',[
        product.photo.data = fs.readFileSync(files.photo.path)
        product.photo.contentType = files.photo.type
      }
-   
+
+     //var profileResult = profileRouter.post(`/update-profile/${name}/${fromDate}/${toDate}/${userId}`);
+    
     product.save((err , result) => {
       /* istanbul ignore next */
       if(err){
@@ -193,11 +203,14 @@ router.post('/create',[
           error: 'sorry try again later'
         });
       }
-      res.json(result);
+    //  let profileResult = addHistoryToProfile(name,fromDate,toDate,userId);
+
+     res.json(result);
     });
   });
  
 });
+
 /** 
  *  @route DELETE api/product
  *  @desc This method is responsible for deleting a product from
@@ -208,18 +221,22 @@ router.delete('/:productId' , auth , async (req , res) =>{
   let product = req.product
   let userId = req.user.id
   const user = User.findById(userId)
-  
-  await product.remove( (err) =>{
-    /* istanbul ignore next */
-    if(err){
-      return res.status(400).json({
-        error: errorHandler(err)
+  // const purchaseForProductCount = await Purchase.find({productId: req.product._id}).countDocuments();
+  // if(purchaseForProductCount > 0){
+  //   return res.json({msg:'Product cannot be deleted'});
+  // }
+    await product.remove( (err) =>{
+      /* istanbul ignore next */
+      if(err){
+        return res.status(400).json({
+          error: errorHandler(err)
+        })
+      }
+      res.json({
+        message:'product deleted successfully'
       })
-    }
-    res.json({
-      message:'product deleted successfully'
     })
-  })
+    
 })
 /**
  * @route   GET api/product/photo/:id

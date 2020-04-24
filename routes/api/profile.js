@@ -4,6 +4,9 @@ const auth = require('../../middleware/auth');
 const profile = require('../../models/Profile');
 const users = require('../../models/Users');
 const { check, validationResult } = require('express-validator');
+const formidable = require('formidable');
+var FormData = require('form-data');
+var fs = require('fs');
 
 // @route GET api/profile/me
 // @desc get current user profile
@@ -50,8 +53,8 @@ router.get('/', auth, async (req, res) => {
       .json({ msg: 'Access is allowed only to admin' });    }
    
   } catch (err) {
+   // console.error(err.message);
     /* istanbul ignore next */
-    console.error(err.message);
     res.status(500).send('Server Error');
   }
 });
@@ -70,12 +73,71 @@ router.get('/admin/:user_id', async(req,res) => {
 
   }
   catch(err){
+   // console.error(err.message);
     /* istanbul ignore next */
-    console.error(err.message);
     res.status(500).send('Server Error');
   }
   
 });
+
+// @route  POST api/profile/update-profile along with form data
+// @desc   This is called through axios after user adds a product for rent-- This route adds the product name, start date,
+//           end date to user's profile under addedProducts history for future reference
+// @access Private
+
+router.post('/update-profile',auth, async(req,res) => {
+    let form = new formidable.IncomingForm();
+    let result = await Profile.find({user:req.user.id});
+    let addHistory, productName,startDate,endDate;
+    var formFields = await new Promise(function(resolve,reject) {
+      form.parse(req,(err,fields) => {
+        const userId = req.user.id;
+        const {name, fromDate,toDate} = fields;
+        productName = name;
+        startDate = fromDate;
+        endDate = toDate;
+        if(!name || !fromDate || !toDate){
+          return res.status(400).json({error: 'All fields are required'});
+        }
+        resolve(fields);
+      });
+    })
+      //let profile = new Profile(fields);
+     const profileValue = Object.assign({},result);
+     if(productName !== undefined && startDate !== undefined && endDate !== undefined){
+       if(Object.keys(profileValue).length === 0){
+         const profileFields = {};
+         profileFields.user = req.user.id;
+         profileFields.history = {};
+         profileFields.history.addedProducts= [];
+         profileFields.history.addedProducts = [{name: productName, fromDate :startDate, toDate : endDate}];
+         const profile = new Profile(profileFields); 
+         addHistory = await profile.save();
+       }
+       else{
+        if(profileValue[Object.keys(profileValue)[0]].history.addedProducts !== null){
+          addHistory = await Profile.updateMany({user:req.user.id},
+              {$push : {'history.addedProducts' : [
+                                { name:productName, 
+                                  fromDate: startDate,
+                                  toDate: endDate}
+                ] }
+              });
+          }
+      // else{
+      //   console.log('inside no history opresent for the user')
+      //   addHistory =  await Profile.updateMany({user:req.user.id},
+      //     {$set: {history: {addedProducts : {
+      //                           name:productName,
+      //                           fromDate:startDate,
+      //                           toDate:endDate
+      //     }}}});
+      // }
+       }
+        
+     }
+      res.json(addHistory);
+  }) 
 
 
 // @route Post api/profile

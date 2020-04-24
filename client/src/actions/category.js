@@ -12,6 +12,7 @@ import{
 import { setAlert } from './alert';
 
 export const getAllCategories = () => async dispatch => {
+    console.log('inside all categories action')
     try{
         const res = await axios.get('/api/category');
         dispatch({

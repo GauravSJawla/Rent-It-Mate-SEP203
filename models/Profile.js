@@ -9,32 +9,32 @@ const ProfileSchema = new mongoose.Schema({
         {
             address1:{
                 type: String,
-                required : true
+                //required : true
             },
             address2:{
                 type: String
             },
             city:{
                 type: String,
-                required: true
+                //required: true
             },
             state:{
                 type: String,
-                required:true
+                //required:true
             },
             country:{
                 type: String,
-                required : true
+               // required : true
             },
             zipcode:{
                 type: Number,
-                required: true
+                //required: true
             }
 
         },
     homePhone:{
         type: Number,
-        required:true
+       // required:true
     },
     mobilePhone:{
         type: Number
@@ -43,8 +43,14 @@ const ProfileSchema = new mongoose.Schema({
         type: String
     },
     history:{
-        type: Array,
-        default: []
+       addedProducts:{
+           type: Array,
+           default:[]
+       },
+       rentedProducts:{
+           type:Array,
+           default:[]
+       }
     },
     updatedDate:{
         type: Date,
