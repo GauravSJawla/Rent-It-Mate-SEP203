@@ -24,8 +24,6 @@ import { getCategoryList } from '../../actions/category';
 import { getAllSubcategories } from '../../actions/subcategory';
 import 'react-datepicker/dist/react-datepicker.css';
 
-import image from 'assets/img/bg7.jpg';
-
 //Import register from other component
 import { createProduct } from '../../actions/product';
 
@@ -194,6 +192,7 @@ function CreateProduct({
                         type: 'number',
                         value: price,
                         required: true,
+                        min: 0,
                         onChange: (e) => onChange(e),
                       }}
                     />

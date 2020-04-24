@@ -25,6 +25,7 @@ import CategoryPage from './views/CategoryPage/CategoryPage';
 import UpdateCategoryPage from './views/CategoryPage/UpdateCategoryPage';
 import SubCategoryPage from './views/SubCategoryPage/SubCategoryPage';
 import ProductDetail from './views/ProductPage/ProductDetail';
+import SearchAllProduct from './views/SearchingPage/SearchAllProduct';
 
 if (localStorage.token) {
   setAuthToken(localStorage.token);
@@ -52,7 +53,12 @@ const App = () => {
           <Switch>
             <Route exact path='/login' component={LoginPage} />
             <Route exact path='/register' component={RegisterPage} />
-            <Route exact path='/single-product-details' component={ProductDetail} />
+            <Route exact path='/search-all' component={SearchAllProduct} />
+            <Route
+              exact
+              path='/single-product-details'
+              component={ProductDetail}
+            />
             <PrivateRoute
               exact
               path='/create-profile'

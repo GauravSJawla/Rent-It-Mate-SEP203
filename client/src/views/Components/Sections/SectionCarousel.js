@@ -9,7 +9,6 @@ import GridItem from 'components/Grid/GridItem.js';
 
 import image1 from 'assets/img/Furniture.jpg';
 import image2 from 'assets/img/electronics.jpg';
-import image3 from 'assets/img/tvshow.jpg';
 
 import styles from 'assets/jss/material-kit-react/views/componentsSections/carouselStyle.js';
 
@@ -24,7 +23,7 @@ export default function SectionCarousel() {
     speed: 500,
     slidesToShow: 1,
     slidesToScroll: 1,
-    autoplay: true
+    autoplay: true,
   };
   return (
     <div className={classes.section}>

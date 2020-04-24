@@ -44,7 +44,10 @@ const LandingPage = ({
     getAllSubcategories();
   }, [getCategoryList, getAllSubcategories]);
 
+  // eslint-disable-next-line
   const subCategoryList = [];
+
+  // eslint-disable-next-line
   const category = [];
 
   //console.log(categoryList);
