@@ -1,5 +1,6 @@
 // To display details of the particular product along with calendar to request for rent
-import React from "react";
+import React, { Fragment, useEffect, useState } from "react";
+import { connect } from "react-redux";
 import PropTypes from "prop-types";
 import classNames from "classnames";
 import { makeStyles } from "@material-ui/core/styles";
@@ -31,6 +32,9 @@ import CustomInput from "components/CustomInput/CustomInput.js";
 import Parallax from "components/Parallax/Parallax.js";
 import styles from "assets/jss/material-kit-react/views/productDetailPage.js";
 import productImage from "assets/img/table-sample.jpg";
+import Spinner from "./Spinner";
+
+import { getSingleProduct } from "actions/product";
 
 import "@fullcalendar/core/main.css";
 import "@fullcalendar/daygrid/main.css";
@@ -60,90 +64,106 @@ TabPanel.propTypes = {
   value: PropTypes.any.isRequired,
 };
 
-const ProductDetail = () => {
+const ProductDetail = ({
+  product: { product, loading },
+  match,
+  getSingleProduct,
+}) => {
   const classes = useStyles();
+
+  useEffect(() => {
+    getSingleProduct(match.params.id);
+  }, [getSingleProduct]);
 
   const [value, setValue] = React.useState(0);
   const handleChange = (event, newValue) => {
     setValue(newValue);
   };
 
-  const [selectedDate, setSelectedDate] = React.useState(
-    new Date(Date.now())
-  );
+  const [selectedDate, setSelectedDate] = React.useState(new Date(Date.now()));
 
   const handleDateChange = (date) => {
     setSelectedDate(date);
   };
   console.log("user is in product detail page");
-  return (
-    <div>
-      <Parallax filter image={require("assets/img/electronics.jpg")}>
-        <div className={classes.container}>
-          <GridContainer
-            className={classes.gridContainer}
-            xs={12}
-            sm={12}
-            md={12}
-          >
-            <GridItem xs={4} sm={4} md={4}>
-              <Card>
-                <img src={productImage} alt="prpoduct" />
-              </Card>
-            </GridItem>
-            <GridItem xs={8} sm={8} md={8}>
-              <Card>
-                <form className={classes.form}>
-                  <CardBody>
-                    <h2>Table</h2>
-                    <span>
-                      <strong>Price: </strong>
-                    </span>
-                    <span>2</span>
-                    <MuiPickersUtilsProvider utils={DateFnsUtils}>
-                      <Grid container justify="space-around">
-                        <KeyboardDatePicker
-                          disableToolbar
-                          variant="inline"
-                          format="MM/dd/yyyy"
-                          margin="normal"
-                          id="date-picker-inline"
-                          label="Start Date"
-                          value={selectedDate}
-                          onChange={handleDateChange}
-                          KeyboardButtonProps={{
-                            "aria-label": "change date",
-                          }}
-                        />
-                        <span> To </span>
-                        <KeyboardDatePicker
-                          disableToolbar
-                          variant="inline"
-                          format="MM/dd/yyyy"
-                          margin="normal"
-                          id="date-picker-inline"
-                          label="Return Date"
-                          value={selectedDate}
-                          onChange={handleDateChange}
-                          KeyboardButtonProps={{
-                            "aria-label": "change date",
-                          }}
-                        />
-                      </Grid>
-                    </MuiPickersUtilsProvider>
-                  </CardBody>
-                  <CardFooter className={classes.cardFooter}>
-                    <Button type="submit" simple color="primary" size="lg">
-                      Request This
-                    </Button>
-                  </CardFooter>
-                </form>
-              </Card>
-            </GridItem>
-          </GridContainer>
-        </div>
-      </Parallax>
-      <div className={classNames(classes.main, classes.mainRaised)}>
+
+  return loading ? (
+    <Spinner />
+  ) : (
+    <div className={classes.root}>
+      <div className={classes.mainRaised}>
+        <GridContainer justify="center">
+          <GridItem xs={12} sm={12} md={3}>
+            <Card className={classes.cardPic}>
+              <img
+                src={`http://localhost:5000/api/product/photo/` + product._id}
+                alt="product"
+                className={classes.img}
+              />
+            </Card>
+          </GridItem>
+          <GridItem xs={12} sm={12} md={9}>
+            <Card className={classes.cardForm}>
+              <form className={classes.form}>
+                <CardBody>
+                  <div className={classes.typo}>
+                    <h1 className={classes.title}>{product.name}</h1>
+                  </div>
+                  <div className={classes.typo}>
+                    <h3 className={classes.title}>Price: $ {product.price}</h3>
+                  </div>
+                  {product.shipping == true ? (
+                    <div className={classes.typo}>
+                      <p className={classes.title}>Shipping is available</p>
+                    </div>
+                  ) : (
+                    <div className={classes.typo}>
+                      <p className={classes.title}>Shipping is NOT available</p>
+                    </div>
+                  )}
+                  <MuiPickersUtilsProvider utils={DateFnsUtils}>
+                    <Grid container justify="space-around">
+                      <KeyboardDatePicker
+                        disableToolbar
+                        variant="inline"
+                        format="MM/dd/yyyy"
+                        margin="normal"
+                        id="date-picker-inline"
+                        label="Start Date"
+                        value={selectedDate}
+                        onChange={handleDateChange}
+                        KeyboardButtonProps={{
+                          "aria-label": "change date",
+                        }}
+                      />
+                      <h4 className={classes.title}>TO</h4>
+                      <KeyboardDatePicker
+                        disableToolbar
+                        variant="inline"
+                        format="MM/dd/yyyy"
+                        margin="normal"
+                        id="date-picker-inline"
+                        label="Return Date"
+                        value={selectedDate}
+                        onChange={handleDateChange}
+                        KeyboardButtonProps={{
+                          "aria-label": "change date",
+                        }}
+                      />
+                    </Grid>
+                  </MuiPickersUtilsProvider>
+                </CardBody>
+                <CardFooter className={classes.cardFooter}>
+                  <Button type="submit" simple color="primary" size="lg">
+                    Request This
+                  </Button>
+                </CardFooter>
+              </form>
+            </Card>
+          </GridItem>
+        </GridContainer>
+      </div>
+      <div className={classes.main}>
         <Paper className={classes.root}>
           <Tabs
             value={value}
@@ -162,15 +182,19 @@ const ProductDetail = () => {
             <FullCalendar
               defaultView="dayGridMonth"
               plugins={[dayGridPlugin]}
+              header={[{ left: "title", center: "", right: "prev,next" }]}
               events={[
-                { title: 'Out of Storage', date: '2020-04-01' },
-                { title: 'Out of Storage', date: '2020-04-02' }
+                {
+                  title: "Available",
+                  start: product.fromDate,
+                  end: product.toDate,
+                },
               ]}
             />
           </div>
         </TabPanel>
         <TabPanel value={value} index={1}>
-          Round Table
+          {product.description}
         </TabPanel>
         <TabPanel value={value} index={2}>
           Reviews
@@ -180,4 +204,18 @@ const ProductDetail = () => {
   );
 };
 
-export default ProductDetail;
+ProductDetail.propTypes = {
+  product: PropTypes.object.isRequired,
+  getSingleProduct: PropTypes.func.isRequired,
+};
+
+const mapStateToProps = (state) => ({
+  product: state.product,
+});
+
+export default connect(
+  mapStateToProps,
+  {
+    getSingleProduct,
+  }
+)(ProductDetail);

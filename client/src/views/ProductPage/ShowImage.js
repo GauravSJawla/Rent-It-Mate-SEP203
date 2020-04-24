@@ -14,15 +14,14 @@ const ShowImage = ({ productId }) => {
   const classes = useStyles();
   return (
     <div className="product-img">
-      {/*<Link to="/single-product-details">*/}
-      <Link to={`/single-product-details/${productId}`}>
+      <Link to={`/single-product-details/${productId}`} productId={productId}>
         <img
           className={classes.imgCardTop}
           src={`http://localhost:5000/api/product/photo/` + productId}
           alt="Card-img-cap"
           style={{ height: "180px", width: "100%", display: "block" }}
         />
-      </Link>{/*to={`/single-product-details/${p._id}`}*/}
+      </Link>
     </div>
   );
 };
