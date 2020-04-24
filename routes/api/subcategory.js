@@ -53,7 +53,7 @@ router.post("/", auth, async (req, res) => {
 // @desc    Get all sub-categories
 // @access  Private
 
-router.get("/", auth, async (req, res) => {
+router.get("/", async (req, res) => {
   try {
     const subcategories = await SubCategory.find();
     res.json(subcategories);

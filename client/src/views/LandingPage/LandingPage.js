@@ -27,6 +27,7 @@ import navStyles from 'assets/jss/material-kit-react/components/headerLinksStyle
 
 import { getAllSubcategories } from '../../actions/subcategory';
 import { getCategoryList } from '../../actions/category';
+import RightHeaderLinks from './RightHeaderLinks';
 
 const useStyles = makeStyles(styles);
 const useNavStyles = makeStyles(navStyles);
@@ -64,144 +65,7 @@ const LandingPage = ({
       <Header
         brand='Categories'
         rightLinks={
-          <List className={navClasses.list}>
-            <ListItem className={navClasses.listItem}>
-              <CustomDropdown
-                buttonText='Category1'
-                dropdownHeader='Dropdown Header'
-                buttonProps={{
-                  className: navClasses.navLink,
-                  color: 'transparent',
-                }}
-                dropdownList={['Subcategory1', 'Subcategory2']}
-                PaperProps={{
-                  style: {
-                    maxHeight: 48 * 4.5,
-                    width: '20ch',
-                  },
-                }}
-              />
-            </ListItem>
-            <ListItem className={navClasses.listItem}>
-              <CustomDropdown
-                buttonText='Category2'
-                dropdownHeader='Dropdown Header'
-                buttonProps={{
-                  className: navClasses.navLink,
-                  color: 'transparent',
-                }}
-                dropdownList={['Subcategory2', 'Subcategory2']}
-                PaperProps={{
-                  style: {
-                    maxHeight: 48 * 4.5,
-                    width: '20ch',
-                  },
-                }}
-              />
-            </ListItem>
-            <ListItem className={navClasses.listItem}>
-              <CustomDropdown
-                buttonText='Category3'
-                dropdownHeader='Dropdown Header'
-                buttonProps={{
-                  className: navClasses.navLink,
-                  color: 'transparent',
-                }}
-                dropdownList={['Subcategory3', 'Subcategory3']}
-                PaperProps={{
-                  style: {
-                    maxHeight: 48 * 4.5,
-                    width: '20ch',
-                  },
-                }}
-              />
-            </ListItem>
-            <ListItem className={navClasses.listItem}>
-              <CustomDropdown
-                buttonText='Category4'
-                dropdownHeader='Dropdown Header'
-                buttonProps={{
-                  className: navClasses.navLink,
-                  color: 'transparent',
-                }}
-                dropdownList={['Subcategory4', 'Subcategory4']}
-                PaperProps={{
-                  style: {
-                    maxHeight: 48 * 4.5,
-                    width: '20ch',
-                  },
-                }}
-              />
-            </ListItem>
-            <ListItem className={navClasses.listItem}>
-              <CustomDropdown
-                buttonText='Category5'
-                dropdownHeader='Dropdown Header'
-                buttonProps={{
-                  className: navClasses.navLink,
-                  color: 'transparent',
-                }}
-                dropdownList={['Subcategory5', 'Subcategory5']}
-                PaperProps={{
-                  style: {
-                    maxHeight: 48 * 4.5,
-                    width: '20ch',
-                  },
-                }}
-              />
-            </ListItem>
-            <ListItem className={navClasses.listItem}>
-              <CustomDropdown
-                buttonText='Category6'
-                dropdownHeader='Dropdown Header'
-                buttonProps={{
-                  className: navClasses.navLink,
-                  color: 'transparent',
-                }}
-                dropdownList={['Subcategory6', 'Subcategory6']}
-                PaperProps={{
-                  style: {
-                    maxHeight: 48 * 4.5,
-                    width: '20ch',
-                  },
-                }}
-              />
-            </ListItem>
-            <ListItem className={navClasses.listItem}>
-              <CustomDropdown
-                buttonText='Category7'
-                dropdownHeader='Dropdown Header'
-                buttonProps={{
-                  className: navClasses.navLink,
-                  color: 'transparent',
-                }}
-                dropdownList={['Subcategory7', 'Subcategory7']}
-                PaperProps={{
-                  style: {
-                    maxHeight: 48 * 4.5,
-                    width: '20ch',
-                  },
-                }}
-              />
-            </ListItem>
-            <ListItem className={navClasses.listItem}>
-              <CustomDropdown
-                buttonText='Category8'
-                dropdownHeader='Dropdown Header'
-                buttonProps={{
-                  className: navClasses.navLink,
-                  color: 'transparent',
-                }}
-                dropdownList={['Subcategory8', 'Subcategory8']}
-                PaperProps={{
-                  style: {
-                    maxHeight: 48 * 4.5,
-                    width: '20ch',
-                  },
-                }}
-              />
-            </ListItem>
-          </List>
+          <RightHeaderLinks/>
         }
       />
       <Parallax filter image={require('assets/img/landing-bg2.jpg')}>
