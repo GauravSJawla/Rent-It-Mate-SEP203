@@ -39,9 +39,18 @@ export const createProduct = (
       history.push('/dashboard/user');
     }
   } catch (err) {
+    console.log('error in product', err);
+    var error;
+        const errors = err.response.data.error;
+        if (errors) {
+            errors.forEach(err => {
+                error = err.msg;
+            });
+        }
+      console.log('error message', error)
     dispatch({
       type: PRODUCT_ERROR,
-      payload: { status: err }
+      payload: error
     });
   }
 };

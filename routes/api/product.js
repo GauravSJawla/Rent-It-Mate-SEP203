@@ -164,16 +164,20 @@ router.post('/create',[
       }
       
       //check for all fields
-      const { name, description, price, subcategory, quantity, shipping, fromDate, toDate } = fields;
-      // productName = name;
-      // productFromDate = fromDate;
-      // productToDate = toDate;
-      console.log( name + description + price + subcategory + quantity + shipping + fromDate + toDate + " the details");
+      const { name, description, price, subcategory, quantity, shipping, fromDate, toDate, zipcode } = fields;
+      console.log( name + description + price + subcategory + quantity + shipping + fromDate + toDate + zipcode + " the details");
       /* istanbul ignore next */
       if (!name || !description || !price || !subcategory || !quantity || !shipping ) {
+        console.log('inside field check')
           return res.status(400).json({
-              error: 'All fields are required'
+              error: [{ msg: 'All fields are required' }]
           });
+      }
+      if(toDate <= fromDate){
+        console.log('inside date check')
+        return res.status(400).json({
+          error: [{ msg: 'End date less than from date' }]
+        });
       }
 
       let product = new Product(fields);
