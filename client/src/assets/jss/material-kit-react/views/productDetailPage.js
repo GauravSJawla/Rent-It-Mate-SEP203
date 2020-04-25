@@ -43,6 +43,9 @@ const productDetailPage = {
   cardForm: {
     height: "50vh",
   },
+  cardFooter: {
+    justifyContent: "center",
+  },
   typo: {
     marginBottom: "40px",
     position: "relative",

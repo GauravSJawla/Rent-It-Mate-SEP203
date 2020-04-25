@@ -18,7 +18,6 @@ import Grid from "@material-ui/core/Grid";
 import DateFnsUtils from "@date-io/date-fns";
 import {
   MuiPickersUtilsProvider,
-  KeyboardTimePicker,
   KeyboardDatePicker,
 } from "@material-ui/pickers";
 
@@ -80,15 +79,43 @@ const ProductDetail = ({
     setValue(newValue);
   };
 
-  const [selectedDate, setSelectedDate] = React.useState(new Date(Date.now()));
+  const [startDate, setStartDate] = React.useState(new Date(Date.now()));
+  const [endDate, setEndDate] = React.useState(new Date(Date.now() + 86400000));
 
-  const handleDateChange = (date) => {
-    setSelectedDate(date);
+  const handleStartDateChange = (date) => {
+    setStartDate(date);
   };
+
+  const handleEndDateChange = (date) => {
+    setEndDate(date);
+  };
+
+  let period;
+
+  period = (endDate - startDate) / (1000 * 3600 * 24);
+
   console.log("user is in product detail page");
 
+  function refreshPage() {
+    let time = 1;
+    if (time < 1) {
+      window.location.reload();
+      time++;
+    } else {
+    }
+  }
+
+  const loadingPage = () => {
+    return (
+      <div>
+        <Spinner />
+        {refreshPage()}
+      </div>
+    );
+  };
+
   return loading ? (
-    <Spinner />
+    loadingPage()
   ) : (
     <div className={classes.root}>
       <div className={classes.mainRaised}>
@@ -130,8 +157,8 @@ const ProductDetail = ({
                         margin="normal"
                         id="date-picker-inline"
                         label="Start Date"
-                        value={selectedDate}
-                        onChange={handleDateChange}
+                        value={startDate}
+                        onChange={handleStartDateChange}
                         KeyboardButtonProps={{
                           "aria-label": "change date",
                         }}
@@ -144,8 +171,8 @@ const ProductDetail = ({
                         margin="normal"
                         id="date-picker-inline"
                         label="Return Date"
-                        value={selectedDate}
-                        onChange={handleDateChange}
+                        value={endDate}
+                        onChange={handleEndDateChange}
                         KeyboardButtonProps={{
                           "aria-label": "change date",
                         }}
@@ -154,9 +181,15 @@ const ProductDetail = ({
                   </MuiPickersUtilsProvider>
                 </CardBody>
                 <CardFooter className={classes.cardFooter}>
-                  <Button type="submit" simple color="primary" size="lg">
-                    Request This
-                  </Button>
+                  {period > 0 ? (
+                    <Button type="submit" color="primary" size="lg">
+                      Request This
+                    </Button>
+                  ) : (
+                    <Button type="submit" disabled color="primary" size="lg">
+                      Request This
+                    </Button>
+                  )}
                 </CardFooter>
               </form>
             </Card>
@@ -174,7 +207,7 @@ const ProductDetail = ({
           >
             <Tab label="Reservations" />
             <Tab label="Specifications" />
-            <Tab label="Reviews" />
+            {/*<Tab label="Reviews" />*/}
           </Tabs>
         </Paper>
         <TabPanel value={value} index={0}>
