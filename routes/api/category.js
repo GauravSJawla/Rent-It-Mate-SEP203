@@ -44,7 +44,7 @@ router.post('/', auth, async (req, res) => {
 // @desc    Get all categories
 // @access  Private
 
-router.get('/', auth, async (req, res) => {
+router.get('/', async (req, res) => {
   try {
     const categories = await Category.find();
     res.json(categories);
