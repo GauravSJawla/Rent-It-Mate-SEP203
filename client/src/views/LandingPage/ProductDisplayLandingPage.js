@@ -55,8 +55,6 @@ const ProductDisplayLandingPage = ({
             <SingleProductLandingPage
               key={p._id}
               product={p}
-              component={Link}
-              to='/single-product-details'
             />
           ))}
         </GridContainer>
