@@ -6,7 +6,8 @@ import {
   PRODUCT_DELETED,
   UPDATE_PRODUCT,
   GET_PRODUCT,
-  GET_ALL_PRODUCTS
+  GET_ALL_PRODUCTS,
+  CLEAR_PRODUCTS
 } from './types';
 /**
  *

@@ -239,10 +239,9 @@ function CreateProduct({
                       options={subCategoryList}
                       id='subCategory'
                       onChange={(e) => onSelectChange(e)}
-                      required = {true}
                     />
                     {(error === 'All fields are required') ? (
-                          <p style = {{color:"red"}}><strong>Please select a category</strong></p>) :
+                          <p id="categoryError" style = {{color:"red"}}><strong>Please select a category</strong></p>) :
                         (<></>) }
                     <CustomInput
                       labelText='Photo...'
@@ -277,9 +276,11 @@ function CreateProduct({
                       required
                     />
                     {(error === 'End date less than from date') ? (
-                          <p style = {{color:"red"}}><strong>Please select an End date greater than start date</strong></p>) :
+                          <p id="toDateError" style = {{color:"red"}}><strong>Please select an End date greater than start date</strong></p>) :
                         (<></>) }
                   </CardBody>
+                  <br/>
+                  <br/>
                   <CardFooter className={classes.cardFooter}>
                     <Button simple type='submit' color='primary' size='lg'>
                       Create My Product

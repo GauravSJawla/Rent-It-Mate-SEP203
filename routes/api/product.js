@@ -171,10 +171,14 @@ router.post('/create',[
               error: [{ msg: 'All fields are required' }]
           });
       }
-      if(toDate <= fromDate){
-        return res.status(400).json({
-          error: [{ msg: 'End date less than from date' }]
-        });
+      var startDate = new Date(fromDate);
+      var endDate = new Date(toDate);
+      if(endDate.getMonth() <= startDate.getMonth()){
+        if(endDate.getDate() <= startDate.getDate()){
+          return res.status(400).json({
+            error: [{ msg: 'End date less than from date' }]
+          });
+        }
       }
 
       let product = new Product(fields);
