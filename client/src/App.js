@@ -56,7 +56,7 @@ const App = () => {
             <Route exact path='/search-all' component={SearchAllProduct} />
             <Route
               exact
-              path='/single-product-details'
+              path='/single-product-details/:id'
               component={ProductDetail}
             />
             <PrivateRoute
