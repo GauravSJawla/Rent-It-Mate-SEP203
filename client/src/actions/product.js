@@ -6,7 +6,8 @@ import {
   PRODUCT_DELETED,
   UPDATE_PRODUCT,
   GET_PRODUCT,
-  GET_ALL_PRODUCTS
+  GET_ALL_PRODUCTS,
+  CLEAR_PRODUCTS
 } from './types';
 /**
  *
@@ -39,9 +40,16 @@ export const createProduct = (
       history.push('/dashboard/user');
     }
   } catch (err) {
+    var error;
+        const errors = err.response.data.error;
+        if (errors) {
+            errors.forEach(err => {
+                error = err.msg;
+            });
+        }
     dispatch({
       type: PRODUCT_ERROR,
-      payload: { status: err }
+      payload: error
     });
   }
 };

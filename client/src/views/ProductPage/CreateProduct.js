@@ -24,10 +24,9 @@ import { getCategoryList } from '../../actions/category';
 import { getAllSubcategories } from '../../actions/subcategory';
 import 'react-datepicker/dist/react-datepicker.css';
 
-import image from 'assets/img/bg7.jpg';
-
 //Import register from other component
 import { createProduct } from '../../actions/product';
+
 
 const useStyles = makeStyles(styles);
 
@@ -38,6 +37,7 @@ function CreateProduct({
   getAllSubcategories,
   categorylist: { categoryList },
   subcategory: { subcategories },
+  product:{error}
 }) {
   const [cardAnimaton, setCardAnimation] = React.useState('cardHidden');
   setTimeout(function() {
@@ -50,6 +50,7 @@ function CreateProduct({
     price: '',
     quantity: '',
     shipping: '',
+    zipcode:'',
     subcategory: '',
     photo: '',
     fromDate: '',
@@ -84,14 +85,11 @@ function CreateProduct({
 
   // To select to date for the product
   const toDateChange = (date) => {
-    setSelectToDate(date);
+     setSelectToDate(date);
   };
 
-  //to set minimum future date of upto 30 days in end date of the product
-  var date = new Date();
-  date.setDate(date.getDate() + 30);
 
-  const { name, description, price, quantity, formData } = values;
+  const { name, description, price, quantity, zipcode, formData } = values;
 
   const init = () => {
     // getCategories().then(data => {
@@ -130,7 +128,6 @@ function CreateProduct({
   // OnSubmit Event Handler
   const onSubmit = (e) => {
     e.preventDefault();
-    console.log('select to date', selectToDate);
     formData.set('shipping', switchShipping);
     formData.set('subcategory', selectSubCategory.selectSubCategory);
     formData.set('fromDate', selectFromDate);
@@ -211,6 +208,19 @@ function CreateProduct({
                         autoComplete: 'off',
                       }}
                     />
+                     <CustomInput
+                      labelText='Zipcode *'
+                      id='zipcode'
+                      formControlProps={{
+                        fullWidth: true,
+                      }}
+                      inputProps={{
+                        type: 'text',
+                        value: zipcode,
+                        required:true,
+                        onChange: (e) => onChange(e),
+                      }}
+                    />
                     <FormControlLabel
                       control={
                         <Switch
@@ -222,15 +232,17 @@ function CreateProduct({
                       label='Product can be shipped'
                     />
                     <br />
-                    <br />
                     <label>
-                      <strong>Please select a category</strong>
+                      <strong>Please select a category *</strong>
                     </label>
                     <Select
                       options={subCategoryList}
                       id='subCategory'
                       onChange={(e) => onSelectChange(e)}
                     />
+                    {(error === 'All fields are required') ? (
+                          <p id="categoryError" style = {{color:"red"}}><strong>Please select a category</strong></p>) :
+                        (<></>) }
                     <CustomInput
                       labelText='Photo...'
                       id='photo'
@@ -251,9 +263,8 @@ function CreateProduct({
                       minDate={new Date()}
                       onChange={fromDateChange}
                       required
-                    />
-                    <br />
-                    <br />
+                    />  
+                    <br/>
                     <label>
                       <strong>Please select an end date</strong>
                     </label>
@@ -261,11 +272,15 @@ function CreateProduct({
                       id='toDate'
                       selected={selectToDate}
                       minDate={new Date()}
-                      defaultValue={date}
                       onChange={toDateChange}
                       required
                     />
+                    {(error === 'End date less than from date') ? (
+                          <p id="toDateError" style = {{color:"red"}}><strong>Please select an End date greater than start date</strong></p>) :
+                        (<></>) }
                   </CardBody>
+                  <br/>
+                  <br/>
                   <CardFooter className={classes.cardFooter}>
                     <Button simple type='submit' color='primary' size='lg'>
                       Create My Product
@@ -288,11 +303,13 @@ CreateProduct.propTypes = {
   getAllSubcategories: PropTypes.func.isRequired,
   categorylist: PropTypes.object.isRequired,
   subcategory: PropTypes.object.isRequired,
+  product:PropTypes.object.isRequired
 };
 
 const mapStateToProps = (state) => ({
   categorylist: state.categorylist,
   subcategory: state.subcategory,
+  product:state.product
 });
 
 export default connect(

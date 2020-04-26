@@ -20,38 +20,40 @@ const RightHeaderLinks = ({getAllCategories,
 
     const navClasses = useNavStyles();
     
-    //let categories =[];
-    //const [loading,setLoading] = React.useState(false);
-    //const [categories,setCategories] = React.useState([]);
-    const [error,setError] = React.useState('');
-    console.log('categories before useeffect', categories)
     useEffect(() => {
-        console.log('inisde use effect')
          getAllCategories();
-        console.log('categories after use effect', categories);
         getAllSubcategories();
-        // setLoading({
-        //     loading : true
-        // })
     },[getAllCategories,getAllSubcategories]);
 
-    console.log('categories in header links ', categories);
-
+    //To create an array of categories
     const categoryList = [];
     categories.map(category => 
         categoryList.push({id:category._id, name:category.name}));
     const categoryListLength = categoryList.length;
-    const subCategoryList = [];
+
+    //To create an array of subcategories
+    var subCategoryList = [];
+    var categorizedSubCategoryList = [];
     subcategories.map(subcategory => 
-      subCategoryList.push({id:subcategory._id,name:subcategory.name}));
-    console.log('subcategoryList:', subCategoryList);
+      subCategoryList.push({id:subcategory._id,name:subcategory.name,
+                                categoryId:subcategory.categoryId}));
+    
+    // To filter subcategories from subCategoryList based on category for drop down
+    const createSubCategoryList = (categoryId) => {
+      categorizedSubCategoryList = [];
+      categorizedSubCategoryList = subCategoryList.filter(function(subcategory)
+                      {return subcategory.categoryId === categoryId});
+    }
+    
+
     return(
         loading ? (<Spinner/>) : (
           <div>
           {categoryListLength > 0 ? (
             <List className={navClasses.list}>
               {categoryList.map(category => (
-                <ListItem className={navClasses.listItem}>
+                  <ListItem className={navClasses.listItem}>
+                  {createSubCategoryList(category.id)}
                 <CustomDropdown
                   buttonText={category.name}
                   //dropdownHeader='Dropdown Header'
@@ -59,7 +61,7 @@ const RightHeaderLinks = ({getAllCategories,
                     className: navClasses.navLink,
                     color: 'transparent',
                   }}
-                  dropdownList={['Subcategory1', 'Subcategory2']}
+                  dropdownList={categorizedSubCategoryList.map(subcategory => subcategory.name)}
                   PaperProps={{
                     style: {
                       maxHeight: 48 * 4.5,
@@ -67,128 +69,8 @@ const RightHeaderLinks = ({getAllCategories,
                     },
                   }}
                 />
-            </ListItem>
+            </ListItem>  
               ))}
-              
-            {/* <ListItem className={navClasses.listItem}>
-              <CustomDropdown
-                buttonText={categoryList[1].name}
-                dropdownHeader='Dropdown Header'
-                buttonProps={{
-                  className: navClasses.navLink,
-                  color: 'transparent',
-                }}
-                dropdownList={['Subcategory2', 'Subcategory2']}
-                PaperProps={{
-                  style: {
-                    maxHeight: 48 * 4.5,
-                    width: '20ch',
-                  },
-                }}
-              />
-            </ListItem>
-            <ListItem className={navClasses.listItem}>
-              <CustomDropdown
-                buttonText={categoryList[2].name}
-                dropdownHeader='Dropdown Header'
-                buttonProps={{
-                  className: navClasses.navLink,
-                  color: 'transparent',
-                }}
-                dropdownList={['Subcategory3', 'Subcategory3']}
-                PaperProps={{
-                  style: {
-                    maxHeight: 48 * 4.5,
-                    width: '20ch',
-                  },
-                }}
-              />
-            </ListItem>
-            <ListItem className={navClasses.listItem}>
-              <CustomDropdown
-                buttonText={categoryList[3].name}
-                dropdownHeader='Dropdown Header'
-                buttonProps={{
-                  className: navClasses.navLink,
-                  color: 'transparent',
-                }}
-                dropdownList={['Subcategory4', 'Subcategory4']}
-                PaperProps={{
-                  style: {
-                    maxHeight: 48 * 4.5,
-                    width: '20ch',
-                  },
-                }}
-              />
-            </ListItem>
-            <ListItem className={navClasses.listItem}>
-              <CustomDropdown
-                buttonText={categoryList[4].name}
-                dropdownHeader='Dropdown Header'
-                buttonProps={{
-                  className: navClasses.navLink,
-                  color: 'transparent',
-                }}
-                dropdownList={['Subcategory5', 'Subcategory5']}
-                PaperProps={{
-                  style: {
-                    maxHeight: 48 * 4.5,
-                    width: '20ch',
-                  },
-                }}
-              />
-            </ListItem>
-            <ListItem className={navClasses.listItem}>
-              <CustomDropdown
-                buttonText='Category6'
-                dropdownHeader='Dropdown Header'
-                buttonProps={{
-                  className: navClasses.navLink,
-                  color: 'transparent',
-                }}
-                dropdownList={['Subcategory6', 'Subcategory6']}
-                PaperProps={{
-                  style: {
-                    maxHeight: 48 * 4.5,
-                    width: '20ch',
-                  },
-                }}
-              />
-            </ListItem>
-            <ListItem className={navClasses.listItem}>
-              <CustomDropdown
-                buttonText='Category7'
-                dropdownHeader='Dropdown Header'
-                buttonProps={{
-                  className: navClasses.navLink,
-                  color: 'transparent',
-                }}
-                dropdownList={['Subcategory7', 'Subcategory7']}
-                PaperProps={{
-                  style: {
-                    maxHeight: 48 * 4.5,
-                    width: '20ch',
-                  },
-                }}
-              />
-            </ListItem>
-            <ListItem className={navClasses.listItem}>
-              <CustomDropdown
-                buttonText='Category8'
-                dropdownHeader='Dropdown Header'
-                buttonProps={{
-                  className: navClasses.navLink,
-                  color: 'transparent',
-                }}
-                dropdownList={['Subcategory8', 'Subcategory8']}
-                PaperProps={{
-                  style: {
-                    maxHeight: 48 * 4.5,
-                    width: '20ch',
-                  },
-                }}
-              />
-            </ListItem> */}
             </List> 
           ) : (<p>No categories found..</p>)}
            </div>
@@ -213,5 +95,4 @@ const mapStateToProps = (state) => ({
 export default connect(mapStateToProps,
             {getAllSubcategories,
              getAllCategories}
-
              )(RightHeaderLinks);

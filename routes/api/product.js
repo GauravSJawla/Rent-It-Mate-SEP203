@@ -142,7 +142,6 @@ router.post('/create',[
     .not()
     .isEmpty()
 ], auth, async (req, res) => {
-  // let productResult, productName, productFromDate, productToDate;
     let form = new formidable.IncomingForm()
     form.keepExtensions = true
     form.parse(req , (err, fields , files) =>{
@@ -164,16 +163,22 @@ router.post('/create',[
       }
       
       //check for all fields
-      const { name, description, price, subcategory, quantity, shipping, fromDate, toDate } = fields;
-      // productName = name;
-      // productFromDate = fromDate;
-      // productToDate = toDate;
-      console.log( name + description + price + subcategory + quantity + shipping + fromDate + toDate + " the details");
+      const { name, description, price, subcategory, quantity, shipping, fromDate, toDate, zipcode } = fields;
+      console.log( name + description + price + subcategory + quantity + shipping + fromDate + toDate + zipcode + " the details");
       /* istanbul ignore next */
       if (!name || !description || !price || !subcategory || !quantity || !shipping ) {
           return res.status(400).json({
-              error: 'All fields are required'
+              error: [{ msg: 'All fields are required' }]
           });
+      }
+      var startDate = new Date(fromDate);
+      var endDate = new Date(toDate);
+      if(endDate.getMonth() <= startDate.getMonth()){
+        if(endDate.getDate() <= startDate.getDate()){
+          return res.status(400).json({
+            error: [{ msg: 'End date less than from date' }]
+          });
+        }
       }
 
       let product = new Product(fields);
@@ -191,10 +196,7 @@ router.post('/create',[
        }
        product.photo.data = fs.readFileSync(files.photo.path)
        product.photo.contentType = files.photo.type
-     }
-
-     //var profileResult = profileRouter.post(`/update-profile/${name}/${fromDate}/${toDate}/${userId}`);
-    
+     } 
     product.save((err , result) => {
       /* istanbul ignore next */
       if(err){
@@ -203,8 +205,6 @@ router.post('/create',[
           error: 'sorry try again later'
         });
       }
-    //  let profileResult = addHistoryToProfile(name,fromDate,toDate,userId);
-
      res.json(result);
     });
   });
@@ -221,10 +221,6 @@ router.delete('/:productId' , auth , async (req , res) =>{
   let product = req.product
   let userId = req.user.id
   const user = User.findById(userId)
-  // const purchaseForProductCount = await Purchase.find({productId: req.product._id}).countDocuments();
-  // if(purchaseForProductCount > 0){
-  //   return res.json({msg:'Product cannot be deleted'});
-  // }
     await product.remove( (err) =>{
       /* istanbul ignore next */
       if(err){

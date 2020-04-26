@@ -52,6 +52,9 @@ const productSchema = new mongoose.Schema(
     toDate: {
       type : Date,
       required : true
+    },
+    zipcode: {
+      type:Number
     }
   },
   { timestamps: true }
