@@ -228,8 +228,17 @@ router.post(
         !shipping
       ) {
         return res.status(400).json({
-          error: 'All fields are required',
+          error: [{ msg: 'All fields are required' }],
         });
+      }
+      var startDate = new Date(fromDate);
+      var endDate = new Date(toDate);
+      if (endDate.getMonth() <= startDate.getMonth()) {
+        if (endDate.getDate() <= startDate.getDate()) {
+          return res.status(400).json({
+            error: [{ msg: 'End date less than from date' }],
+          });
+        }
       }
 
       let product = new Product(fields);

@@ -28,10 +28,7 @@ export const createProduct = (formData, history, edit = false) => async (
       },
     };
     const res = await axios.post('/api/product/create', formData, config);
-    const profileRes = await axios.post(
-      '/api/profile/update-profile',
-      formData
-    );
+    await axios.post('/api/profile/update-profile', formData);
     dispatch({
       type: ADD_PRODUCT,
       payload: res.data,

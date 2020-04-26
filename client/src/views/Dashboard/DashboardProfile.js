@@ -29,7 +29,7 @@ const DashboardProfile = ({
           <h3>Welcome {user && user.name}</h3>
         </div>
         <div className={classes.dashboardSubtitle}>
-          {profile !== null ? (
+          {profile !== null  && profile.address !== undefined ? (
             <Fragment>
               <h4>Your Address : </h4>
               <h4> {profile.address.address1}, </h4>

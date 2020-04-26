@@ -1,7 +1,6 @@
 import React, { useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import axios from 'axios';
 import CustomDropdown from 'components/CustomDropdown/CustomDropdown.js';
 import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';

@@ -23,30 +23,30 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">62.5% </span>
+                <span class="strong">16.67% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>15/24</span>
+                <span class='fraction'>4/24</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">50% </span>
+                <span class="strong">0% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>2/4</span>
+                <span class='fraction'>0/4</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">28.57% </span>
+                <span class="strong">0% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>2/7</span>
+                <span class='fraction'>0/7</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">60.87% </span>
+                <span class="strong">17.39% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>14/23</span>
+                <span class='fraction'>4/23</span>
             </div>
         
             
@@ -55,7 +55,7 @@
             Press <em>n</em> or <em>j</em> to go to the next uncovered block, <em>b</em>, <em>p</em> or <em>k</em> for the previous block.
         </p>
     </div>
-    <div class='status-line medium'></div>
+    <div class='status-line low'></div>
     <pre><table class="coverage">
 <tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
 <a name='L2'></a><a href='#L2'>2</a>
@@ -219,40 +219,40 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -342,45 +342,45 @@ import { setAlert } from '../../actions/alert';
 &nbsp;
 const useStyles = makeStyles(styles);
 &nbsp;
-const CategoryPage = ({
+const CategoryPage = <span class="fstat-no" title="function not covered" >({</span>
   createCategory,
   category: { category, error },
   setAlert,
 }) =&gt; {
-  const classes = useStyles();
-  const [cardAnimaton, setCardAnimation] = React.useState('cardHidden');
-  setTimeout(<span class="fstat-no" title="function not covered" >fu</span>nction() {
+  const classes = <span class="cstat-no" title="statement not covered" >useStyles();</span>
+  const [cardAnimaton, setCardAnimation] = <span class="cstat-no" title="statement not covered" >React.useState('cardHidden');</span>
+<span class="cstat-no" title="statement not covered" >  setTimeout(<span class="fstat-no" title="function not covered" >fu</span>nction() {</span>
 <span class="cstat-no" title="statement not covered" >    setCardAnimation('');</span>
   }, 700);
-  const [formData, setFormData] = React.useState({
+  const [formData, setFormData] = <span class="cstat-no" title="statement not covered" >React.useState({</span>
     name: '',
   });
 &nbsp;
-  const { name } = formData;
+  const { name } = <span class="cstat-no" title="statement not covered" >formData;</span>
 &nbsp;
   //onChange event handler
-  const onChange = <span class="fstat-no" title="function not covered" >(e</span>) =&gt;
+  const onChange = <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >(e</span>) =&gt;</span>
 <span class="cstat-no" title="statement not covered" >    setFormData({</span>
       ...formData,
       [e.target.id]: e.target.value,
     });
 &nbsp;
   //onSubmit event handler
-  const onSubmit = <span class="fstat-no" title="function not covered" >(e</span>) =&gt; {
+  const onSubmit = <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >(e</span>) =&gt; {</span>
 <span class="cstat-no" title="statement not covered" >    e.preventDefault();</span>
 <span class="cstat-no" title="statement not covered" >    createCategory(formData);</span>
   };
 &nbsp;
-  <span class="missing-if-branch" title="if path not taken" >I</span>if (category !== null) {
+<span class="cstat-no" title="statement not covered" >  if (category !== null) {</span>
 <span class="cstat-no" title="statement not covered" >    return &lt;Redirect to='/admin-dashboard/all-categories' /&gt;;</span>
   }
 &nbsp;
-  <span class="missing-if-branch" title="if path not taken" >I</span>if (error === 'Category already exists! Update it!') {
+<span class="cstat-no" title="statement not covered" >  if (error === 'Category already exists! Update it!') {</span>
 <span class="cstat-no" title="statement not covered" >    console.log('inside category error');</span>
 <span class="cstat-no" title="statement not covered" >    setAlert('Category already exists, Update it!', 'danger');</span>
   }
 &nbsp;
-  return (
+<span class="cstat-no" title="statement not covered" >  return (</span>
     &lt;div&gt;
       &lt;div className={classes.pageHeader}&gt;
         &lt;div className={classes.container}&gt;
@@ -433,7 +433,7 @@ CategoryPage.propTypes = {
   setAlert: PropTypes.func.isRequired,
 };
 &nbsp;
-const mapStateToProps = (state) =&gt; ({
+const mapStateToProps = <span class="fstat-no" title="function not covered" >(s</span>tate) =&gt; (<span class="cstat-no" title="statement not covered" >{</span>
   category: state.category,
 });
 &nbsp;
@@ -448,7 +448,7 @@ export default connect(
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank">istanbul</a>
-                at Thu Apr 23 2020 15:53:03 GMT-0500 (Central Daylight Time)
+                at Sun Apr 26 2020 13:53:39 GMT-0500 (Central Daylight Time)
             </div>
         </div>
         <script src="../../../prettify.js"></script>

@@ -1,6 +1,5 @@
 import React, { Fragment, useEffect } from 'react';
 import { connect } from 'react-redux';
-import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 // material-ui components
 import { makeStyles } from '@material-ui/core/styles';
@@ -52,12 +51,7 @@ const ProductDisplayLandingPage = ({
       <div className={classes.landingContainer}>
         <GridContainer style={{ marginLeft: '10px' }}>
           {products.map((p) => (
-            <SingleProductLandingPage
-              key={p._id}
-              product={p}
-              component={Link}
-              to='/single-product-details'
-            />
+            <SingleProductLandingPage key={p._id} product={p} />
           ))}
         </GridContainer>
       </div>

@@ -36,6 +36,7 @@ function CreateProduct({
   getAllSubcategories,
   categorylist: { categoryList },
   subcategory: { subcategories },
+  product: { error },
 }) {
   const [cardAnimaton, setCardAnimation] = React.useState('cardHidden');
   setTimeout(function() {
@@ -111,9 +112,11 @@ function CreateProduct({
     getCategoryList();
     getAllSubcategories();
     init();
+    // eslint-disable-next-line
   }, [getCategoryList, getAllSubcategories]);
 
   const subCategoryList = [];
+  // eslint-disable-next-line
   subcategories.map((subcategory) => {
     subCategoryList.push({ value: subcategory._id, label: subcategory.name });
   });
@@ -230,6 +233,13 @@ function CreateProduct({
                       id='subCategory'
                       onChange={(e) => onSelectChange(e)}
                     />
+                    {error === 'All fields are required' ? (
+                      <p id='categoryError' style={{ color: 'red' }}>
+                        <strong>Please select a category</strong>
+                      </p>
+                    ) : (
+                      <></>
+                    )}
                     <CustomInput
                       labelText='Photo...'
                       id='photo'
@@ -264,7 +274,18 @@ function CreateProduct({
                       onChange={toDateChange}
                       required
                     />
+                    {error === 'End date less than from date' ? (
+                      <p id='toDateError' style={{ color: 'red' }}>
+                        <strong>
+                          Please select an End date greater than start date
+                        </strong>
+                      </p>
+                    ) : (
+                      <></>
+                    )}
                   </CardBody>
+                  <br />
+                  <br />
                   <CardFooter className={classes.cardFooter}>
                     <Button simple type='submit' color='primary' size='lg'>
                       Create My Product
@@ -287,11 +308,13 @@ CreateProduct.propTypes = {
   getAllSubcategories: PropTypes.func.isRequired,
   categorylist: PropTypes.object.isRequired,
   subcategory: PropTypes.object.isRequired,
+  product: PropTypes.object.isRequired,
 };
 
 const mapStateToProps = (state) => ({
   categorylist: state.categorylist,
   subcategory: state.subcategory,
+  product: state.product,
 });
 
 export default connect(
