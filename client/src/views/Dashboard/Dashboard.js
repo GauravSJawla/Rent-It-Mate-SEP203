@@ -15,7 +15,6 @@ import Sidebar from 'components/Sidebar/Sidebar.js';
 import logo from 'assets/img/reactlogo.png';
 
 import DashboardProfile from 'views/Dashboard/DashboardProfile';
-import CategoryPage from 'views/CategoryPage/CategoryPage';
 import ProductPage from 'views/ProductPage/CreateProduct';
 import ViewProduct from 'views/ProductPage/ViewProducts';
 
@@ -26,13 +25,6 @@ const dashboardRoutes = [
     name: 'User Profile',
     icon: Person,
     component: DashboardProfile,
-    layout: '/dashboard',
-  },
-  {
-    path: '/category',
-    name: 'Add Category',
-    icon: AddIcon,
-    component: CategoryPage,
     layout: '/dashboard',
   },
   {

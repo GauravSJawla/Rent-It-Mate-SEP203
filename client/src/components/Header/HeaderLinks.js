@@ -1,5 +1,5 @@
 /*eslint-disable*/
-import React, { Fragment } from 'react';
+import React, { Fragment, useState } from 'react';
 import { connect } from 'react-redux';
 import { logout } from '../../actions/auth';
 
@@ -23,32 +23,94 @@ import CustomInput from 'components/CustomInput/CustomInput.js';
 import styles from 'assets/jss/material-kit-react/components/headerLinksStyle.js';
 import navStyles from 'assets/jss/material-kit-react/views/componentsSections/navbarsStyle.js';
 
+import { searchProductWithKeyword } from '../../actions/product';
+import { setAlert } from '../../actions/alert';
+
 const navUseStyles = makeStyles(navStyles);
 const useStyles = makeStyles(styles);
 
-const HeaderLinks = ({ auth: { isAuthenticated, loading, user }, logout }) => {
+const HeaderLinks = ({
+  auth: { isAuthenticated, loading, user },
+  logout,
+  setAlert,
+  searchProductWithKeyword,
+}) => {
   const classes = useStyles();
   const navbarClasses = navUseStyles();
+
+  const [searchData, setSearchData] = useState({
+    searchKeyword: '',
+    searchZipcode: '',
+  });
+
+  const { searchKeyword, searchZipcode } = searchData;
+
+  const onChange = (e) =>
+    setSearchData({
+      ...searchData,
+      [e.target.id]: e.target.value,
+    });
+
+  const onSubmit = (e) => {
+    e.preventDefault();
+    let searchDistance = 25;
+
+    // Alert for no search keyword
+    if (searchKeyword == '') {
+      setAlert('No input in search tab!', 'warning');
+    } else {
+      if (searchZipcode == '') {
+        setAlert('No Zipcode in search tab!', 'warning');
+      } else {
+        searchProductWithKeyword(searchKeyword, searchZipcode, searchDistance);
+      }
+    }
+  };
 
   const guestRender = (
     <List className={classes.list}>
       <ListItem className={classes.listItem}>
-        <CustomInput
-          white
-          formControlProps={{
-            className: navbarClasses.formControl,
-          }}
-          inputProps={{
-            placeholder: 'Search',
-            inputProps: {
-              'aria-label': 'Search',
-              className: navbarClasses.searchInput,
-            },
-          }}
-        />
-        <Button justIcon round color='white'>
-          <Search />
-        </Button>
+        <form className={classes.form} onSubmit={(e) => onSubmit(e)}>
+          <CustomInput
+            white
+            id='searchZipcode'
+            name='searchZipcode'
+            formControlProps={{
+              className: navbarClasses.formControl,
+            }}
+            inputProps={{
+              placeholder: 'Zipcode',
+              inputProps: {
+                value: searchZipcode,
+                type: 'text',
+                onChange: (e) => onChange(e),
+                'aria-label': 'Search',
+                className: navbarClasses.searchInput,
+              },
+            }}
+          />
+          <CustomInput
+            white
+            id='searchKeyword'
+            name='searchKeyword'
+            formControlProps={{
+              className: navbarClasses.formControl,
+            }}
+            inputProps={{
+              placeholder: 'Search',
+              inputProps: {
+                value: searchKeyword,
+                type: 'text',
+                onChange: (e) => onChange(e),
+                'aria-label': 'Search',
+                className: navbarClasses.searchInput,
+              },
+            }}
+          />
+          <Button type='submit' justIcon round color='white'>
+            <Search />
+          </Button>
+        </form>
       </ListItem>
       <ListItem className={classes.listItem}>
         <Button
@@ -76,27 +138,52 @@ const HeaderLinks = ({ auth: { isAuthenticated, loading, user }, logout }) => {
   const authRender = (
     <List className={classes.list}>
       <ListItem className={classes.listItem}>
-        <CustomInput
-          white
-          formControlProps={{
-            className: navbarClasses.formControl,
-          }}
-          inputProps={{
-            placeholder: 'Search',
-            inputProps: {
-              'aria-label': 'Search',
-              className: navbarClasses.searchInput,
-            },
-          }}
-        />
-        <Button justIcon round color='white'>
-          <Search />
-        </Button>
+        <form className={classes.form} onSubmit={(e) => onSubmit(e)}>
+          <CustomInput
+            white
+            id='searchZipcode'
+            name='searchZipcode'
+            formControlProps={{
+              className: navbarClasses.formControl,
+            }}
+            inputProps={{
+              placeholder: 'Zipcode',
+              inputProps: {
+                value: searchZipcode,
+                type: 'text',
+                onChange: (e) => onChange(e),
+                'aria-label': 'Search',
+                className: navbarClasses.searchInput,
+              },
+            }}
+          />
+          <CustomInput
+            white
+            id='searchKeyword'
+            name='searchKeyword'
+            formControlProps={{
+              className: navbarClasses.formControl,
+            }}
+            inputProps={{
+              placeholder: 'Search',
+              inputProps: {
+                value: searchKeyword,
+                type: 'text',
+                onChange: (e) => onChange(e),
+                'aria-label': 'Search',
+                className: navbarClasses.searchInput,
+              },
+            }}
+          />
+          <Button type='submit' justIcon round color='white'>
+            <Search />
+          </Button>
+        </form>
       </ListItem>
       <ListItem className={classes.listItem}>
         <CustomDropdown
           buttonText='Profile'
-          dropdownHeader='Username'
+          dropdownHeader={user && user.name}
           buttonProps={{
             className: classes.navLink,
             color: 'transparent',
@@ -156,6 +243,8 @@ const HeaderLinks = ({ auth: { isAuthenticated, loading, user }, logout }) => {
 HeaderLinks.propTypes = {
   logout: PropTypes.func.isRequired,
   auth: PropTypes.object.isRequired,
+  setAlert: PropTypes.func.isRequired,
+  searchProductWithKeyword: PropTypes.func.isRequired,
 };
 
 const mapStateToProps = (state) => ({
@@ -164,5 +253,5 @@ const mapStateToProps = (state) => ({
 
 export default connect(
   mapStateToProps,
-  { logout }
+  { logout, setAlert, searchProductWithKeyword }
 )(HeaderLinks);

@@ -1,18 +1,17 @@
-import React from "react";
-import { Link } from "react-router-dom";
-import { connect } from "react-redux";
-import PropTypes from "prop-types";
+import React from 'react';
+import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
 // material-ui components
-import { makeStyles } from "@material-ui/core/styles";
+import { makeStyles } from '@material-ui/core/styles';
 // core components
-import Card from "components/Card/Card.js";
-import CardBody from "components/Card/CardBody.js";
-import Button from "components/CustomButtons/Button.js";
-import GridItem from "components/Grid/GridItem.js";
-import imagesStyles from "assets/jss/material-kit-react/imagesStyles.js";
-import { cardTitle } from "assets/jss/material-kit-react.js";
-import AddShoppingCartIcon from "@material-ui/icons/AddShoppingCart";
-import ShowImage from "../ProductPage/ShowImage";
+import Card from 'components/Card/Card.js';
+import CardBody from 'components/Card/CardBody.js';
+import Button from 'components/CustomButtons/Button.js';
+import GridItem from 'components/Grid/GridItem.js';
+import imagesStyles from 'assets/jss/material-kit-react/imagesStyles.js';
+import { cardTitle } from 'assets/jss/material-kit-react.js';
+import AddShoppingCartIcon from '@material-ui/icons/AddShoppingCart';
+import ShowImage from '../ProductPage/ShowImage';
 const styles = {
   ...imagesStyles,
   cardTitle,
@@ -35,6 +34,7 @@ const SingleProductLandingPage = ({
   },
 }) => {
   const classes = useStyles();
+  // eslint-disable-next-line
   const guestRender = (
     <div>
       <h1>you need to login</h1>
@@ -42,13 +42,13 @@ const SingleProductLandingPage = ({
   );
   const onClickHandle = () => {
     if (!isAuthenticated) {
-      window.alert("You need to login to shop!");
+      window.alert('You need to login to shop!');
     }
   };
   return (
     <GridItem xs={12} sm={12} md={4}>
       <div className={classes.landingContainer}>
-        <Card style={{ width: "20rem" }}>
+        <Card style={{ width: '20rem' }}>
           <ShowImage productId={_id} />
           <CardBody>
             <h3 className={classes.cardTitle}>{name}</h3>
@@ -59,8 +59,8 @@ const SingleProductLandingPage = ({
               <p>Shipping: {shipping}</p>
               {/* <p>Sold: {sold}</p> */}
             </div>
-            <span style={{ padding: "40px" }}>
-              <Button color="danger" onClick={(e) => onClickHandle()}>
+            <span style={{ padding: '40px' }}>
+              <Button color='danger' onClick={(e) => onClickHandle()}>
                 <AddShoppingCartIcon /> Add to cart
               </Button>
             </span>

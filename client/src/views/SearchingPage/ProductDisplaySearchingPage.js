@@ -1,14 +1,15 @@
 import React, { Fragment, useEffect } from 'react';
 import { connect } from 'react-redux';
+import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 // material-ui components
 import { makeStyles } from '@material-ui/core/styles';
 import GridContainer from 'components/Grid/GridContainer.js';
 import imagesStyles from 'assets/jss/material-kit-react/imagesStyles.js';
-import Spinner from './Spinner';
+import Spinner from '../LandingPage/Spinner';
 import { cardTitle } from 'assets/jss/material-kit-react.js';
 import { getAllProducts } from '../../actions/product';
-import SingleProductLandingPage from './SingleProductLandingPage';
+import SingleProductLandingPage from '../LandingPage/SingleProductLandingPage';
 
 const styles = {
   ...imagesStyles,
@@ -51,7 +52,12 @@ const ProductDisplayLandingPage = ({
       <div className={classes.landingContainer}>
         <GridContainer style={{ marginLeft: '10px' }}>
           {products.map((p) => (
-            <SingleProductLandingPage key={p._id} product={p} />
+            <SingleProductLandingPage
+              key={p._id}
+              product={p}
+              component={Link}
+              to='/single-product-details'
+            />
           ))}
         </GridContainer>
       </div>

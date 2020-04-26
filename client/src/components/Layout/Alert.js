@@ -11,12 +11,12 @@ const Alert = ({ alerts }) => {
   return (
     alerts !== null &&
     alerts.length > 0 &&
-    alerts.map(alert => (
+    alerts.map((alert) => (
       <div id='notifications'>
         <SnackbarContent
           message={
             <span>
-              <b>DANGER ALERT:</b> {' ' + alert.msg}
+              <b>ALERT:</b> {' ' + alert.msg}
             </span>
           }
           close
@@ -31,11 +31,11 @@ const Alert = ({ alerts }) => {
 };
 
 Alert.propTypes = {
-  alerts: PropTypes.array.isRequired
+  alerts: PropTypes.array.isRequired,
 };
 
-const mapStateToProps = state => ({
-  alerts: state.alert
+const mapStateToProps = (state) => ({
+  alerts: state.alert,
 });
 
 export default connect(mapStateToProps)(Alert);

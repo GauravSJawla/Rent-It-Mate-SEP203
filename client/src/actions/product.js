@@ -7,7 +7,6 @@ import {
   UPDATE_PRODUCT,
   GET_PRODUCT,
   GET_ALL_PRODUCTS,
-  CLEAR_PRODUCTS
 } from './types';
 /**
  *
@@ -18,38 +17,29 @@ import {
  *              for it. We need all variables and details for creating a product.
  *
  */
-export const createProduct = (
-  formData,
-  history,
-  edit = false
-) => async dispatch => {
+export const createProduct = (formData, history, edit = false) => async (
+  dispatch
+) => {
   try {
     console.log('formdata', formData);
     const config = {
       headers: {
-        'Content-Type': 'application/json'
-      }
+        'Content-Type': 'application/json',
+      },
     };
     const res = await axios.post('/api/product/create', formData, config);
-    const profileRes = await axios.post('/api/profile/update-profile',formData );
+    await axios.post('/api/profile/update-profile', formData);
     dispatch({
       type: ADD_PRODUCT,
-      payload: res.data
+      payload: res.data,
     });
     if (!edit) {
       history.push('/dashboard/user');
     }
   } catch (err) {
-    var error;
-        const errors = err.response.data.error;
-        if (errors) {
-            errors.forEach(err => {
-                error = err.msg;
-            });
-        }
     dispatch({
       type: PRODUCT_ERROR,
-      payload: error
+      payload: { status: err },
     });
   }
 };
@@ -58,17 +48,17 @@ export const createProduct = (
  *              product id.
  * @param {*} id
  */
-export const getSingleProduct = id => async dispatch => {
+export const getSingleProduct = (id) => async (dispatch) => {
   try {
     const res = await axios.get('/api/product/' + id);
     dispatch({
       type: GET_PRODUCT,
-      payload: res.data
+      payload: res.data,
     });
   } catch (err) {
     dispatch({
       type: PRODUCT_ERROR,
-      payload: { msg: err.response.statusText, status: err.response.status }
+      payload: { msg: err.response.statusText, status: err.response.status },
     });
   }
 };
@@ -76,17 +66,17 @@ export const getSingleProduct = id => async dispatch => {
  * @description This function is used to get all products from the backend.
  *
  */
-export const getAllProducts = () => async dispatch => {
+export const getAllProducts = () => async (dispatch) => {
   try {
     const res = await axios.get('/api/product/products');
     dispatch({
       type: GET_ALL_PRODUCTS,
-      payload: res.data
+      payload: res.data,
     });
   } catch (err) {
     dispatch({
       type: PRODUCT_ERROR,
-      payload: { msg: err.response.statusText, status: err.response.status }
+      payload: { msg: err.response.statusText, status: err.response.status },
     });
   }
 };
@@ -95,17 +85,17 @@ export const getAllProducts = () => async dispatch => {
  * @description : This method brings user related products from the backend and stores them in
  *                products in action and then in the state.
  */
-export const getUserProducts = () => async dispatch => {
+export const getUserProducts = () => async (dispatch) => {
   try {
     const res = await axios.get('/api/product/getMyProducts');
     dispatch({
       type: GET_PRODUCTS,
-      payload: res.data
+      payload: res.data,
     });
   } catch (err) {
     dispatch({
       type: PRODUCT_ERROR,
-      payload: { msg: err.response.statusText, status: err.response.status }
+      payload: { msg: err.response.statusText, status: err.response.status },
     });
   }
 };
@@ -114,17 +104,17 @@ export const getUserProducts = () => async dispatch => {
  * @param {*} productId
  * @description : This method is used to delete a product using its product id.
  */
-export const deleteProduct = productId => async dispatch => {
+export const deleteProduct = (productId) => async (dispatch) => {
   try {
     await axios.delete('/api/product/' + productId);
     dispatch({
       type: PRODUCT_DELETED,
-      payload: productId
+      payload: productId,
     });
   } catch (err) {
     dispatch({
       type: PRODUCT_ERROR,
-      payload: { msg: err.response.statusText, status: err.response.status }
+      payload: { msg: err.response.statusText, status: err.response.status },
     });
   }
 };
@@ -140,24 +130,21 @@ export const deleteProduct = productId => async dispatch => {
  *
  */
 /* istanbul ignore next */
-export const updateProduct = (
-  formData,
-  history,
-  id,
-  edit = false
-) => async dispatch => {
+export const updateProduct = (formData, history, id, edit = false) => async (
+  dispatch
+) => {
   console.log(id + ' inside update id ');
   try {
     /* istanbul ignore next */
     const config = {
       headers: {
-        'Content-Type': 'application/json'
-      }
+        'Content-Type': 'application/json',
+      },
     };
     const res = await axios.put('/api/product/' + id, formData, config);
     dispatch({
       type: UPDATE_PRODUCT,
-      payload: res.data
+      payload: res.data,
     });
     if (!edit) {
       history.push('/dashboard');
@@ -166,7 +153,41 @@ export const updateProduct = (
     /* istanbul ignore next */
     dispatch({
       type: PRODUCT_ERROR,
-      payload: { status: err }
+      payload: { status: err },
     });
+  }
+};
+
+/**
+ *
+ * @param {*} searchKeyword
+ * @description This method is used for searching a product using keywowrd and *              zipcode a created product.
+ *
+ */
+/* istanbul ignore next */
+export const searchProductWithKeyword = (
+  searchKeyword,
+  searchZipcode,
+  searchDistance
+) => async (dispatch) => {
+  try {
+    const zipcodeList = await axios.get(
+      '/api/product/getzipcodes?searchZipcode=' +
+        searchZipcode +
+        '&searchDistance=' +
+        searchDistance
+    );
+
+    console.log(zipcodeList);
+    // dispatch({
+    //   type: SEARCH_PRODUCT,
+    //   payload: res.data,
+    // });
+  } catch (err) {
+    /* istanbul ignore next */
+    // dispatch({
+    //   type: PRODUCT_ERROR,
+    //   payload: { status: err },
+    // });
   }
 };

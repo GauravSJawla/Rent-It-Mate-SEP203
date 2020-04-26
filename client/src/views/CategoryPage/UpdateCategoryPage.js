@@ -40,8 +40,10 @@ const UpdateCategoryPage = ({
   var categoryName;
   useEffect(() => {
     console.log('inside update category use effect');
+    // eslint-disable-next-line
     categories.map((category) => {
       if (category._id === match.params.id) {
+        // eslint-disable-next-line
         categoryName = category.name;
       }
     });

@@ -23,9 +23,7 @@ import RightHeaderLinks from './RightHeaderLinks';
 
 const useStyles = makeStyles(styles);
 
-const LandingPage = ({
-  auth: { user, isAuthenticated, loading }
-}) => {
+const LandingPage = ({ auth: { user, isAuthenticated, loading } }) => {
   const classes = useStyles();
 
   const guestRender = (
@@ -37,12 +35,7 @@ const LandingPage = ({
     <Redirect to='/admin-Dashboard' />
   ) : (
     <div>
-      <Header
-        brand='Categories'
-        rightLinks={
-          <RightHeaderLinks/>
-        }
-      />
+      <Header brand='Categories' rightLinks={<RightHeaderLinks />} />
       <Parallax filter image={require('assets/img/landing-bg2.jpg')}>
         <div className={classes.container}>
           <GridContainer>
@@ -74,9 +67,7 @@ LandingPage.propTypes = {
 };
 
 const mapStateToProps = (state) => ({
-  auth: state.auth
+  auth: state.auth,
 });
 
-export default connect(
-  mapStateToProps
-)(LandingPage);
+export default connect(mapStateToProps)(LandingPage);

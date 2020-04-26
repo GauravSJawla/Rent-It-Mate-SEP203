@@ -62,7 +62,7 @@ const SubCategoryPage = ({
     name: '',
     categoryId: '',
   });
-  const { name, categoryId } = formData;
+  const { name } = formData;
 
   // input
   const onChange = (e) =>
@@ -140,6 +140,7 @@ const SubCategoryPage = ({
   };
 
   const subCategoryList = [];
+  // eslint-disable-next-line
   subcategories.map((subcat) => {
     if (subcat.categoryId === categoryIdToDisplay) {
       subCategoryList.push(subcat._id);
