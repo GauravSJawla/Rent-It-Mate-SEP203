@@ -39,7 +39,6 @@ export const createProduct = (
       history.push('/dashboard/user');
     }
   } catch (err) {
-    console.log('error in product', err);
     var error;
         const errors = err.response.data.error;
         if (errors) {
@@ -47,7 +46,6 @@ export const createProduct = (
                 error = err.msg;
             });
         }
-      console.log('error message', error)
     dispatch({
       type: PRODUCT_ERROR,
       payload: error

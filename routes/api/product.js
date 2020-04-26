@@ -142,7 +142,6 @@ router.post('/create',[
     .not()
     .isEmpty()
 ], auth, async (req, res) => {
-  // let productResult, productName, productFromDate, productToDate;
     let form = new formidable.IncomingForm()
     form.keepExtensions = true
     form.parse(req , (err, fields , files) =>{
@@ -168,13 +167,11 @@ router.post('/create',[
       console.log( name + description + price + subcategory + quantity + shipping + fromDate + toDate + zipcode + " the details");
       /* istanbul ignore next */
       if (!name || !description || !price || !subcategory || !quantity || !shipping ) {
-        console.log('inside field check')
           return res.status(400).json({
               error: [{ msg: 'All fields are required' }]
           });
       }
       if(toDate <= fromDate){
-        console.log('inside date check')
         return res.status(400).json({
           error: [{ msg: 'End date less than from date' }]
         });
@@ -195,10 +192,7 @@ router.post('/create',[
        }
        product.photo.data = fs.readFileSync(files.photo.path)
        product.photo.contentType = files.photo.type
-     }
-
-     //var profileResult = profileRouter.post(`/update-profile/${name}/${fromDate}/${toDate}/${userId}`);
-    
+     } 
     product.save((err , result) => {
       /* istanbul ignore next */
       if(err){
@@ -207,8 +201,6 @@ router.post('/create',[
           error: 'sorry try again later'
         });
       }
-    //  let profileResult = addHistoryToProfile(name,fromDate,toDate,userId);
-
      res.json(result);
     });
   });
@@ -225,10 +217,6 @@ router.delete('/:productId' , auth , async (req , res) =>{
   let product = req.product
   let userId = req.user.id
   const user = User.findById(userId)
-  // const purchaseForProductCount = await Purchase.find({productId: req.product._id}).countDocuments();
-  // if(purchaseForProductCount > 0){
-  //   return res.json({msg:'Product cannot be deleted'});
-  // }
     await product.remove( (err) =>{
       /* istanbul ignore next */
       if(err){

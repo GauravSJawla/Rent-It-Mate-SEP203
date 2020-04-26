@@ -24,11 +24,9 @@ import { getCategoryList } from '../../actions/category';
 import { getAllSubcategories } from '../../actions/subcategory';
 import 'react-datepicker/dist/react-datepicker.css';
 
-import image from 'assets/img/bg7.jpg';
-
 //Import register from other component
 import { createProduct } from '../../actions/product';
-import { setAlert } from 'actions/alert';
+
 
 const useStyles = makeStyles(styles);
 
@@ -67,8 +65,6 @@ function CreateProduct({
   });
   const [selectFromDate, setSelectFromDate] = React.useState(new Date());
   const [selectToDate, setSelectToDate] = React.useState(new Date());
-  var fromDateError = '';
-  var toDateError = '';
 
   // To select from list of subcategories
   const onSelectChange = (e) => {
@@ -132,7 +128,6 @@ function CreateProduct({
   // OnSubmit Event Handler
   const onSubmit = (e) => {
     e.preventDefault();
-    console.log('select to date', selectToDate);
     formData.set('shipping', switchShipping);
     formData.set('subcategory', selectSubCategory.selectSubCategory);
     formData.set('fromDate', selectFromDate);
