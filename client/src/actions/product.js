@@ -168,8 +168,13 @@ export const updateProduct = (formData, history, id, edit = false) => async (
  *
  */
 /* istanbul ignore next */
-export const searchProductWithKeyword = (searchKeyword) => async (dispatch) => {
-  console.log(searchKeyword + ' inside action Keyword ');
+export const searchProductWithKeyword = (
+  searchKeyword,
+  searchZipcode
+) => async (dispatch) => {
+  console.log(
+    searchKeyword + ' & ' + searchZipcode + ' inside action Keyword '
+  );
   try {
     /* istanbul ignore next */
     // const config = {

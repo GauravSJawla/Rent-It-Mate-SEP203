@@ -40,9 +40,10 @@ const HeaderLinks = ({
 
   const [searchData, setSearchData] = useState({
     searchKeyword: '',
+    searchZipcode: '',
   });
 
-  const { searchKeyword } = searchData;
+  const { searchKeyword, searchZipcode } = searchData;
 
   const onChange = (e) =>
     setSearchData({
@@ -55,9 +56,13 @@ const HeaderLinks = ({
     console.log(searchKeyword);
     // Alert for no search keyword
     if (searchKeyword == '') {
-      setAlert('No input in search tab!', 'danger');
+      setAlert('No input in search tab!', 'warning');
     } else {
-      searchProductWithKeyword(searchKeyword);
+      if (searchZipcode == '') {
+        setAlert('No Zipcode in search tab!', 'warning');
+      } else {
+        searchProductWithKeyword(searchKeyword, searchZipcode);
+      }
     }
   };
 
@@ -65,6 +70,24 @@ const HeaderLinks = ({
     <List className={classes.list}>
       <ListItem className={classes.listItem}>
         <form className={classes.form} onSubmit={(e) => onSubmit(e)}>
+          <CustomInput
+            white
+            id='searchZipcode'
+            name='searchZipcode'
+            formControlProps={{
+              className: navbarClasses.formControl,
+            }}
+            inputProps={{
+              placeholder: 'Zipcode',
+              inputProps: {
+                value: searchZipcode,
+                type: 'text',
+                onChange: (e) => onChange(e),
+                'aria-label': 'Search',
+                className: navbarClasses.searchInput,
+              },
+            }}
+          />
           <CustomInput
             white
             id='searchKeyword'
@@ -115,6 +138,24 @@ const HeaderLinks = ({
     <List className={classes.list}>
       <ListItem className={classes.listItem}>
         <form className={classes.form} onSubmit={(e) => onSubmit(e)}>
+          <CustomInput
+            white
+            id='searchZipcode'
+            name='searchZipcode'
+            formControlProps={{
+              className: navbarClasses.formControl,
+            }}
+            inputProps={{
+              placeholder: 'Zipcode',
+              inputProps: {
+                value: searchZipcode,
+                type: 'text',
+                onChange: (e) => onChange(e),
+                'aria-label': 'Search',
+                className: navbarClasses.searchInput,
+              },
+            }}
+          />
           <CustomInput
             white
             id='searchKeyword'

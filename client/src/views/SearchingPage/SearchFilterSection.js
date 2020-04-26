@@ -122,11 +122,7 @@ export default function SearchFilterSection() {
                       </GridItem>
                       <GridItem xs={12} sm={12} md={6}>
                         <CustomInput labelText='Min. Price' id='float' />
-                      </GridItem>
-                      <GridItem xs={12} sm={12} md={6}>
-                        <CustomInput labelText='Zipcode' id='float' />
-                      </GridItem>
-                      <GridItem xs={12} sm={12} md={6}>
+                        &nbsp;
                         <CustomInput labelText='Max. Price' id='float' />
                       </GridItem>
                       <GridItem xs={12} sm={12} md={4}></GridItem>
