@@ -17,6 +17,8 @@ import GridItem from 'components/Grid/GridItem.js';
 //import { loadUser } from 'actions/auth';
 import ProductDisplayLandingPage from '../LandingPage/ProductDisplayLandingPage';
 import SearchFilterSection from './SearchFilterSection.js';
+import Header from '../../components/Header/Header';
+import RightHeaderLinks from '../LandingPage/RightHeaderLinks';
 
 import { getAllSubcategories } from '../../actions/subcategory';
 import { getCategoryList } from '../../actions/category';
@@ -49,36 +51,39 @@ const SearchAllProduct = ({
     <Redirect to='/admin-Dashboard' />
   ) : (
     <div>
-      <h1 className={classes.title}> </h1>
-      <div className={classNames(classes.main, classes.mainRaised)}>
-        <div className={classes.container}>
+      <Header brand='Categories' rightLinks={<RightHeaderLinks />} />
+      <div>
+        <h1 className={classes.title}> </h1>
+        <div className={classNames(classes.main, classes.mainRaised)}>
           <div className={classes.container}>
-            <SearchFilterSection />
-            <h3 className={classes.title}>Products...</h3>
-            <ProductDisplayLandingPage />
-          </div>
-          <div>
-            <GridContainer justify='center'>
-              <GridItem xs={12} sm={12} md={4}>
-                <Paginations
-                  pages={[
-                    { text: 1 },
-                    { text: '...' },
-                    { text: 5 },
-                    { text: 6 },
-                    { active: true, text: 7 },
-                    { text: 8 },
-                    { text: 9 },
-                    { text: '...' },
-                    { text: 12 },
-                  ]}
-                />
-              </GridItem>
-            </GridContainer>
+            <div className={classes.container}>
+              <SearchFilterSection />
+              <h3 className={classes.title}>Products...</h3>
+              <ProductDisplayLandingPage />
+            </div>
+            <div>
+              <GridContainer justify='center'>
+                <GridItem xs={12} sm={12} md={4}>
+                  <Paginations
+                    pages={[
+                      { text: 1 },
+                      { text: '...' },
+                      { text: 5 },
+                      { text: 6 },
+                      { active: true, text: 7 },
+                      { text: 8 },
+                      { text: 9 },
+                      { text: '...' },
+                      { text: 12 },
+                    ]}
+                  />
+                </GridItem>
+              </GridContainer>
+            </div>
           </div>
         </div>
+        <Footer />
       </div>
-      <Footer />
     </div>
   );
 };

@@ -106,6 +106,17 @@ export default function SearchFilterSection() {
                               }
                               label='75 miles'
                             />
+                            <FormControlLabel
+                              value='More than 75 miles'
+                              control={
+                                <Radio
+                                  style={{
+                                    color: '#9C27B0',
+                                  }}
+                                />
+                              }
+                              label='More than 75 miles'
+                            />
                           </RadioGroup>
                         </FormControl>
                       </GridItem>
