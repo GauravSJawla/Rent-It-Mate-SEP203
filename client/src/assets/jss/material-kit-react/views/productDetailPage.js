@@ -37,11 +37,11 @@ const productDetailPage = {
       '0 4px 6px 0.5px rgba(0, 0, 0, 0.14), 0 2px 5px 1px rgba(0, 0, 0, 0.12), 0 2px 2.5px -1px rgba(0, 0, 0, 0.2)',
   },
   cardPic: {
-    height: '50vh',
+    minHeight: '50vh',
     justifyContent: 'center',
   },
   cardForm: {
-    height: '50vh',
+    minHeight: '50vh',
   },
   cardFooter: {
     justifyContent: 'center',

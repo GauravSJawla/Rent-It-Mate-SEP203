@@ -93,26 +93,8 @@ const ProductDetail = ({
 
   console.log('user is in product detail page');
 
-  function refreshPage() {
-    let time = 1;
-    if (time < 1) {
-      window.location.reload();
-      time++;
-    } else {
-    }
-  }
-
-  const loadingPage = () => {
-    return (
-      <div>
-        <Spinner />
-        {refreshPage()}
-      </div>
-    );
-  };
-
-  return loading ? (
-    loadingPage()
+  return !loading && product === null ? (
+    <Spinner />
   ) : (
     <div className={classes.root}>
       <div className={classes.mainRaised}>
