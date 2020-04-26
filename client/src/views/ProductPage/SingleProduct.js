@@ -1,4 +1,4 @@
-import React, { Fragment, useState } from 'react';
+import React from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
@@ -19,7 +19,7 @@ import { deleteProduct } from '../../actions/product';
 import ShowImage from './ShowImage';
 const styles = {
   ...imagesStyles,
-  cardTitle
+  cardTitle,
 };
 
 const useStyles = makeStyles(styles);
@@ -36,8 +36,8 @@ const SingleProduct = ({
     shipping,
     sold,
     category,
-    photo
-  }
+    photo,
+  },
 }) => {
   const classes = useStyles();
 
@@ -59,7 +59,7 @@ const SingleProduct = ({
               <Button
                 id={name}
                 color='danger'
-                onClick={e => deleteProduct(_id)}
+                onClick={(e) => deleteProduct(_id)}
               >
                 <DeleteIcon />
               </Button>
@@ -78,10 +78,10 @@ const SingleProduct = ({
 
 SingleProduct.propTypes = {
   product: PropTypes.object.isRequired,
-  deleteProduct: PropTypes.func.isRequired
+  deleteProduct: PropTypes.func.isRequired,
 };
-const mapStateToProps = state => ({
-  auth: state.auth
+const mapStateToProps = (state) => ({
+  auth: state.auth,
 });
 
 export default connect(

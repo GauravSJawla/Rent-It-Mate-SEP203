@@ -20,9 +20,9 @@ const productSchema = new mongoose.Schema(
       required: true,
       maxlength: 32
     },
-    category: {
+    subcategory: {
       type: ObjectId,
-      ref: 'Category',
+      ref: 'SubCategory',
       required: true
     },
     userId: {
@@ -44,6 +44,14 @@ const productSchema = new mongoose.Schema(
     shipping: {
       required: false,
       type: Boolean
+    },
+    fromDate: {
+      type : Date,
+      required : true
+    },
+    toDate: {
+      type : Date,
+      required : true
     }
   },
   { timestamps: true }

@@ -4,8 +4,9 @@ const auth = require("../../middleware/auth");
 const { validationResult } = require("express-validator");
 const Category = require("../../models/Category");
 const SubCategory = require("../../models/SubCategory");
+const Product = require('../../models/Product');
 
-// @route   POST api/subcategory525
+// @route   POST api/subcategory
 // @access  Private
 
 router.post("/", auth, async (req, res) => {
@@ -20,8 +21,6 @@ router.post("/", auth, async (req, res) => {
   const subCategoryFields = { name, categoryId };
   if (name) subCategoryFields.name = name;
   if (categoryId) subCategoryFields.categoryId = categoryId;
-  console.log(subCategoryFields);
-
   try {
     try {
       let category = await Category.findOne({ _id: categoryId });
@@ -54,7 +53,7 @@ router.post("/", auth, async (req, res) => {
 // @desc    Get all sub-categories
 // @access  Private
 
-router.get("/", auth, async (req, res) => {
+router.get("/", async (req, res) => {
   try {
     const subcategories = await SubCategory.find();
     res.json(subcategories);
@@ -121,12 +120,16 @@ router.post("/:subcategory_id", auth, async (req, res) => {
   }
 });
 
-// @route   DELETE api/category/:category_id
-// @desc    Delete category by category ID
+// @route   DELETE api/subcategory/:subcategory_id
+// @desc    Delete a subcategory by subcategory ID
 // @access  Private
 
 router.delete("/:subcategory_id", auth, async (req, res) => {
   try {
+    const productCount = await Product.find({subcategory:req.params.subcategory_id}).countDocuments();
+    if(productCount){
+      return res.json({msg:'Subcategory cannot be deleted'})
+    }
     await SubCategory.findOneAndRemove({
       _id: req.params.subcategory_id
     });

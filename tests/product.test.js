@@ -26,7 +26,7 @@ describe('product create/update/delete product', () => {
               name : 'test product',
               description :'test',
               price : 10,
-              category : '5e6a7a324ed00f15930538e7',
+              subcategory : '5e9611dbb95a645f9804c3f1',
               quantity : 1,
               shipping : true
             })
@@ -79,15 +79,19 @@ describe('product create/update/delete product', () => {
                                           .field('name','test product')
                                           .field('description' , 'test')
                                           .field('price',10)
-                                          .field('category', '5e6a7a324ed00f15930538e7')
+                                          .field('subcategory', '5e9611dbb95a645f9804c3f1')
                                           .field('quantity', 1)
                                           .field('shipping','true')
+                                          .field('zipcode', 52402)
                                           .attach('photo','./buffer/table.jpeg')
+                                          .field('fromDate', '2020-04-20')
+                                          .field('toDate','2020-05-20')
                                           .expect(response => {
                                           expect(response.status).toBe(200)})
     return expect(JSON.stringify(response.body)).toMatch('test product')
     });
-    it('can create a product - fail when fields are missing', async() => {
+
+    it('cannot create a product - fail when fields are missing', async() => {
       //creating a product in form
       var form = new FormData();
        const response = await request.post('/api/product/create')
@@ -96,24 +100,67 @@ describe('product create/update/delete product', () => {
                                           .field('name','test product')
                                           .field('description' , '')
                                           .field('price',10)
-                                          .field('category', '')
+                                          .field('zipcode', 52402)
+                                          .field('subcategory', '')
                                           .field('quantity', 1)
                                           .field('shipping','true')
                                           .attach('photo','./buffer/table.jpeg')
                                           .expect(response => {
                                           expect(response.status).toBe(400)})
     });
+
+    /**
+     * To validate if subcategory selection is empty
+     */
+    it('throw an error of all fields required if no subcategory is filled', async() => {
+      var form = new FormData();
+       const response = await request.post('/api/product/create')
+                                          .set('x-auth-token' , token)
+                                          .set('form-data' , form)
+                                          .field('name','test product')
+                                          .field('description' , 'test')
+                                          .field('price',10)
+                                          .field('quantity', 1)
+                                          .field('shipping','true')
+                                          .field('zipcode', 52402)
+                                          .attach('photo','./buffer/table.jpeg')
+                                          .field('fromDate', '2020-04-20')
+                                          .field('toDate','2020-05-20')
+                                          .expect(response => {
+                                          expect(response.status).toBe(400)})
+      return expect(JSON.stringify(response.body)).toMatch('All fields are required');
+    })
+
+    it('throw an error of smaller date id end date is smaller than start date', async() => {
+      var form = new FormData();
+       const response = await request.post('/api/product/create')
+                                          .set('x-auth-token' , token)
+                                          .set('form-data' , form)
+                                          .field('name','test product')
+                                          .field('description' , 'test')
+                                          .field('price',10)
+                                          .field('quantity', 1)
+                                          .field('shipping','true')
+                                          .field('subcategory', '5e9611dbb95a645f9804c3f1')
+                                          .field('zipcode', 52402)
+                                          .attach('photo','./buffer/table.jpeg')
+                                          .field('fromDate', '2020-04-20')
+                                          .field('toDate','2020-04-20')
+                                          .expect(response => {
+                                          expect(response.status).toBe(400)})
+      return expect(JSON.stringify(response.body)).toMatch('End date less than from date');
+    })
     /**
      * test for update - when one of the parameters does not exist
      */
-    it('can update a product - when some fields are missing', async() => {
+    it('cannot update a product - when some fields are missing', async() => {
       //creating a product in form
       var form = new FormData();
       duplicateProduct = await Product.findOne({
         name : 'test product',
         description :'test',
         price : 10,
-        category : '5e6a7a324ed00f15930538e7',
+        subcategory : '5e9611dbb95a645f9804c3f1',
         quantity : 1,
         shipping : true
       })
@@ -123,7 +170,8 @@ describe('product create/update/delete product', () => {
                                           .field('name','test product updated')
                                           .field('description' , '')
                                           .field('price',10)
-                                          .field('category', '')
+                                          .field('zipcode', 52402)
+                                          .field('subcategory', '')
                                           .field('quantity', 1)
                                           .field('shipping','true')
                                           .attach('photo','./buffer/table_01.jpeg')
@@ -133,14 +181,14 @@ describe('product create/update/delete product', () => {
     /**
      * test for update - when one of the parameters does not exist
      */
-    it('can update a product - when image is greater than 1mb', async() => {
+    it('cannot update a product - when image is greater than 1mb', async() => {
       //creating a product in form
       var form = new FormData();
       duplicateProduct = await Product.findOne({
         name : 'test product',
         description :'test',
         price : 10,
-        category : '5e6a7a324ed00f15930538e7',
+        subcategory : '5e9611dbb95a645f9804c3f1',
         quantity : 1,
         shipping : true
       })
@@ -148,12 +196,15 @@ describe('product create/update/delete product', () => {
                                           .set('x-auth-token' , token)
                                           .set('form-data' , form)
                                           .field('name','test product updated')
-                                          .field('description' , '')
+                                          .field('description' , 'description')
                                           .field('price',10)
-                                          .field('category', '')
+                                          .field('zipcode', 52402)
+                                          .field('subcategory', '5e9611dbb95a645f9804c3f1')
                                           .field('quantity', 1)
                                           .field('shipping','true')
                                           .attach('photo','./buffer/over_size.jpg')
+                                          .field('fromDate', '2020-04-20')
+                                          .field('toDate','2020-05-20')
                                           .expect(response => {
                                           expect(response.status).toBe(400)})
     });
@@ -167,20 +218,23 @@ describe('product create/update/delete product', () => {
         name : 'test product',
         description :'test',
         price : 10,
-        category : '5e6a7a324ed00f15930538e7',
+        subcategory : '5e9611dbb95a645f9804c3f1',
         quantity : 1,
         shipping : true
       })
-       const response = await request.put('/api/product/'+duplicateProduct._id)
+      await request.put('/api/product/'+duplicateProduct._id)
                                           .set('x-auth-token' , token)
                                           .set('form-data' , form)
                                           .field('name','test product updated')
                                           .field('description' , 'test')
                                           .field('price',10)
-                                          .field('category', '5e6a7a324ed00f15930538e7')
+                                          .field('subcategory', '5e9611dbb95a645f9804c3f1')
                                           .field('quantity', 1)
+                                          .field('zipcode', 52402)
                                           .field('shipping','true')
                                           .attach('photo','./buffer/table_01.jpeg')
+                                          .field('fromDate', '2020-04-20')
+                                          .field('toDate','2020-05-20')
                                           .expect(response => {
                                           expect(response.status).toBe(200)})
     });

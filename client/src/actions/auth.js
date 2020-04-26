@@ -18,7 +18,6 @@ import {
 } from './types';
 import setAuthToken from '../utils/setAuthToken';
 //import { getProfiles } from './profile';
-import { convertTypeAcquisitionFromJson } from 'typescript';
 
 // Load User
 export const loadUser = () => async dispatch => {
@@ -65,6 +64,7 @@ export const register = ({
     /* istanbul ignore next */
     var error;
     const errors = err.response.data.error;
+    console.log('inside register fail',errors);
     if (errors) {
       errors.forEach(err => {
         error = err.msg;

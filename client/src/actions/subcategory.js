@@ -1,12 +1,15 @@
 import axios from "axios";
-import { ADD_SUBCATEGORY, 
-      GET_SUBCATEGORY, 
-      SUBCATEGORY_DELETED, 
-      SUBCATEGORY_ERROR,
-      GET_SUBCATEGORIES
-    } from "./types";
+import React from "react";
+import { Redirect } from "react-router-dom";
+import {
+  ADD_SUBCATEGORY,
+  GET_SUBCATEGORIES,
+  UPDATE_SUBCATEGORY,
+  SUBCATEGORY_ERROR
+} from "./types";
+import { setAlert } from "./alert";
 
-//Create a Sub-Category
+// Create a Sub-Category
 
 export const createSubcategory = ({ name, categoryId }) => async (dispatch) => {
   const config = {
@@ -21,6 +24,8 @@ export const createSubcategory = ({ name, categoryId }) => async (dispatch) => {
       type: ADD_SUBCATEGORY,
       payload: res.data,
     });
+    dispatch(getAllSubcategories());
+    return <Redirect to="/admin-dashboard/all-subcategories" />;
   } catch (err) {
     /* istanbul ignore next */
     dispatch({
@@ -30,7 +35,7 @@ export const createSubcategory = ({ name, categoryId }) => async (dispatch) => {
   }
 };
 
-//Get all Sub-Categories
+// Get all Sub-Categories
 
 export const getAllSubcategories = () => async (dispatch) => {
   try {
@@ -48,20 +53,57 @@ export const getAllSubcategories = () => async (dispatch) => {
   }
 };
 
+// Update a Sub-Category
+
+export const updateSubcategory = (subcategoryId, formData) => async (dispatch) => {
+  try {
+    const config = {
+      headers: {
+        "Content-Type": "application/json",
+      },
+    };
+    const res = await axios.post(
+      `/api/subcategory/${subcategoryId}`,
+      formData,
+      config
+    );
+    console.log(res);
+    dispatch({
+      type: UPDATE_SUBCATEGORY,
+      payload: res.data,
+    });
+    dispatch(getAllSubcategories());
+    return <Redirect to="/admin-dashboard/all-subcategories" />;
+  } catch (err) {
+    /* istanbul ignore next */
+    dispatch({
+      type: SUBCATEGORY_ERROR,
+      payload: { msg: err.response.statusText, status: err.response.status },
+    });
+  }
+};
+
 // Delete a Sub-Category
 
-// export const deleteSubcategory = () => async (dispatch) => {
-//   if (window.confirm("Are you sure to delete this sub-category?")) {
-//     try {
-//       const res = await axios.delete("/api/subcategory");
-//       dispatch({
-//         type: SUBCATEGORY_DELETED,
-//       });
-//     } catch (err) {
-//       dispatch({
-//         type: SUBCATEGORY_ERROR,
-//         payload: { status: err },
-//       });
-//     }
-//   }
-// };
+export const deleteSubcategory = (subcategoryId) => async (dispatch) => {
+  if (window.confirm("Are you sure to delete this sub-category?")) {
+    /* istanbul ignore next */
+    try {
+      const res = await axios.delete(`/api/subcategory/${subcategoryId}`);
+      if(res.data.msg === 'Subcategory cannot be deleted'){
+        dispatch(setAlert('There are one or more products associated with this subcategory and so cannot be deleted!','danger'));
+      }
+      if(res.data.msg === 'Sub-Category has been deleted'){
+        dispatch(getAllSubcategories());
+        return <Redirect to="/admin-dashboard/all-subcategories" />;
+      }
+      
+    } catch (err) {
+      /* istanbul ignore next */
+      dispatch({
+        type: SUBCATEGORY_ERROR,
+        payload: { msg: err.response.statusText, status: err.response.status },
+      });
+    }
+  }
+};

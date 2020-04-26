@@ -1,10 +1,12 @@
 const SubCategory = require("../models/SubCategory");
+const Product = require('../models/Product');
 const config = require("config");
 const expect = require("expect");
 const MongoClient = require("mongodb");
 const supertest = require("supertest");
 const app = require("../server");
 const request = supertest(app);
+const FormData = require('formidable')
 
 describe("create/read/update/delete sub-category", () => {
   const mongoURI = config.get("mongoURI");
@@ -21,7 +23,6 @@ describe("create/read/update/delete sub-category", () => {
     });
 
     if (duplicateSubCategory) {
-      console.log("inside delete");
       await SubCategory.deleteOne(duplicateSubCategory);
     }
 
@@ -31,7 +32,6 @@ describe("create/read/update/delete sub-category", () => {
     });
 
     if (duplicateSubCategory2) {
-      console.log("inside delete2");
       await SubCategory.deleteOne(duplicateSubCategory2);
     }
   });
@@ -161,11 +161,34 @@ describe("create/read/update/delete sub-category", () => {
     return expect(JSON.stringify(response.body)).toMatch("test subcategory3");
   });
 
+  it('should not delete a subcategory if there are products to it', async() => {
+    const subCategory = await SubCategory.findOne({ name: 'test subcategory3' });
+    var form = new FormData();
+    const productRes = await request.post('/api/product/create')
+                            .set('x-auth-token',token)
+                            .set('form-data', form)
+                            .field('name','tp')
+                            .field('description','test')
+                            .field('price',11)
+                            .field('subcategory',`${subCategory._id}`)
+                            .field('quantity',1)
+                            .field('shipping',false)
+                            .field('fromDate', '2020-04-20')
+                            .field('toDate','2020-05-20')
+                            .expect(200);
+    const res = await request.delete('/api/subcategory/' + subCategory._id)
+                            .set('x-auth-token',token)
+    return expect(JSON.stringify(res.body))
+                    .toMatch('Subcategory cannot be deleted');
+  
+  })
+
   it("should delete a sub-category by the sub-category ID", async () => {
     const subcategory = await SubCategory.findOne({
       name: "test subcategory3",
     });
-    const subcategoryName = subcategory.name;
+    await Product.deleteMany({subcategory:subcategory._id})
+    // const subcategoryName = subcategory.name;
     const response = await request
       .delete("/api/subcategory/" + subcategory._id)
       .set("x-auth-token", token)

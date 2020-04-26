@@ -55,13 +55,14 @@ const ListUsers = ({getAllUsers,getProfiles,
                     <Info/>
                   </Button>
                   <div style={{ display: showProfile ? "block" : "none" }}>
-                    <p >User's current Address:
                         {profiles.map(profile => (profileId === profile.user ? (
-                        <div>
-                          <p> {profile.address.address1}, {profile.address.address2}, {profile.address.city} </p>
-                          <p> {profile.address.state}, {profile.address.country}, {profile.address.zipcode}</p>
-                        </div>) : (<p></p>)))}
-                    </p>
+                          profile.address !== undefined ? (<div>
+                            <p >User's current Address:
+                            <p> {profile.address.address1}, {profile.address.address2}, {profile.address.city} </p>
+                            <p> {profile.address.state}, {profile.address.country}, {profile.address.zipcode}</p>
+                            </p>
+                          </div>) : (<p>Only order history of the user is available</p>)
+                        ) : (<p></p>)))}
                   </div>
                 </Fragment>
                    

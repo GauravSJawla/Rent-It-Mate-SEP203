@@ -21,8 +21,9 @@ describe('create-profile page', () => {
         // cy.url({timeout:5000}).should('includes','/create-profile')
         cy.contains('Profile').click().then(() => {
             cy.get('a').contains('Dashboard').click()
-            cy.url({timeout:5000}).should('includes','/dashboard/user')
+            cy.url({timeout:5000}).should('includes','/dashboard')
         })
+        cy.contains('User Profile').click()
         const stub = cy.stub()
         cy.on('window:confirm',(str,stub) => {
             expect(str).to.equal('Are you sure to delete your account?')
@@ -31,7 +32,8 @@ describe('create-profile page', () => {
                     cy.url({timeout:5000}).should('includes','/dashboard')
                 })
         })
-        cy.get('a[href="/dashboard/user"]').click()
+        //cy.get('a[href="/dashboard/user"]').click()
+        cy.contains('User Profile').click()
         cy.contains('Create Profile').click()
         cy.url({timeout:5000}).should('includes','/create-profile')
     })
