@@ -170,26 +170,22 @@ export const updateProduct = (formData, history, id, edit = false) => async (
 /* istanbul ignore next */
 export const searchProductWithKeyword = (
   searchKeyword,
-  searchZipcode
+  searchZipcode,
+  searchDistance
 ) => async (dispatch) => {
-  console.log(
-    searchKeyword + ' & ' + searchZipcode + ' inside action Keyword '
-  );
   try {
-    /* istanbul ignore next */
-    // const config = {
-    //   headers: {
-    //     'Content-Type': 'application/json',
-    //   },
-    // };
-    // const res = await axios.put('/api/product/' + id, formData, config);
+    const zipcodeList = await axios.get(
+      '/api/product/getzipcodes?searchZipcode=' +
+        searchZipcode +
+        '&searchDistance=' +
+        searchDistance
+    );
+
+    console.log(zipcodeList);
     // dispatch({
-    //   type: UPDATE_PRODUCT,
+    //   type: SEARCH_PRODUCT,
     //   payload: res.data,
     // });
-    // if (!edit) {
-    //   history.push('/dashboard');
-    // }
   } catch (err) {
     /* istanbul ignore next */
     // dispatch({

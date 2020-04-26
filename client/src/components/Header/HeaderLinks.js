@@ -53,7 +53,8 @@ const HeaderLinks = ({
 
   const onSubmit = (e) => {
     e.preventDefault();
-    console.log(searchKeyword);
+    let searchDistance = 25;
+
     // Alert for no search keyword
     if (searchKeyword == '') {
       setAlert('No input in search tab!', 'warning');
@@ -61,7 +62,7 @@ const HeaderLinks = ({
       if (searchZipcode == '') {
         setAlert('No Zipcode in search tab!', 'warning');
       } else {
-        searchProductWithKeyword(searchKeyword, searchZipcode);
+        searchProductWithKeyword(searchKeyword, searchZipcode, searchDistance);
       }
     }
   };
