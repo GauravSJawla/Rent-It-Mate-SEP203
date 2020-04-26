@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { Link, Redirect } from 'react-router-dom';
 import propTypes from 'prop-types';
 import { connect } from 'react-redux';
@@ -9,9 +9,6 @@ import { makeStyles } from '@material-ui/core/styles';
 // enhancement packages
 // core components
 import Header from 'components/Header/Header';
-import CustomDropdown from 'components/CustomDropdown/CustomDropdown.js';
-import List from '@material-ui/core/List';
-import ListItem from '@material-ui/core/ListItem';
 import GridContainer from 'components/Grid/GridContainer.js';
 import GridItem from 'components/Grid/GridItem.js';
 import Button from 'components/CustomButtons/Button.js';
@@ -21,40 +18,13 @@ import Footer from 'components/Footer/Footer.js';
 
 // Sections for this page
 import Carousel from 'views/Components/Sections/SectionCarousel';
-//import { loadUser } from 'actions/auth';
 import ProductDisplayLandingPage from './ProductDisplayLandingPage';
-import navStyles from 'assets/jss/material-kit-react/components/headerLinksStyle.js';
-
-import { getAllSubcategories } from '../../actions/subcategory';
-import { getCategoryList } from '../../actions/category';
 import RightHeaderLinks from './RightHeaderLinks';
 
 const useStyles = makeStyles(styles);
-const useNavStyles = makeStyles(navStyles);
 
-const LandingPage = ({
-  auth: { user, isAuthenticated, loading },
-  getCategoryList,
-  categorylist: { categoryList },
-  getAllSubcategories,
-}) => {
+const LandingPage = ({ auth: { user, isAuthenticated, loading } }) => {
   const classes = useStyles();
-  const navClasses = useNavStyles();
-  useEffect(() => {
-    getCategoryList();
-    getAllSubcategories();
-  }, [getCategoryList, getAllSubcategories]);
-
-  // eslint-disable-next-line
-  const subCategoryList = [];
-
-  // eslint-disable-next-line
-  const category = [];
-
-  //console.log(categoryList);
-  //categoryList.map((cat) => {
-  //  category.push(cat._id);
-  //});
 
   const guestRender = (
     <Button color='danger' size='lg' component={Link} to='/register'>
@@ -65,12 +35,7 @@ const LandingPage = ({
     <Redirect to='/admin-Dashboard' />
   ) : (
     <div>
-      <Header
-        brand='Categories'
-        rightLinks={
-          <RightHeaderLinks/>
-        }
-      />
+      <Header brand='Categories' rightLinks={<RightHeaderLinks />} />
       <Parallax filter image={require('assets/img/landing-bg2.jpg')}>
         <div className={classes.container}>
           <GridContainer>
@@ -98,23 +63,11 @@ const LandingPage = ({
 };
 
 LandingPage.propTypes = {
-  //isAuthenticated: propTypes.bool
   auth: propTypes.object.isRequired,
-  getCategoryList: propTypes.func.isRequired,
-  getAllSubcategories: propTypes.func.isRequired,
-  categorylist: propTypes.object,
 };
 
 const mapStateToProps = (state) => ({
   auth: state.auth,
-  categorylist: state.categorylist.categoryList,
-  subcategory: state.subcategory,
 });
 
-export default connect(
-  mapStateToProps,
-  {
-    getCategoryList,
-    getAllSubcategories,
-  }
-)(LandingPage);
+export default connect(mapStateToProps)(LandingPage);
