@@ -67,7 +67,7 @@ function EditProfile({
       alternateEmail:
         loading || !profile.alternateEmail ? '' : profile.alternateEmail,
     });
-  }, [loading, getUserProfile, profile]);
+  }, [loading, getUserProfile]);
 
   const {
     address1,
