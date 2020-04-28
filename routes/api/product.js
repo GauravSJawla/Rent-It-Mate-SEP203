@@ -58,17 +58,22 @@ router.get('/products', async (req, res) => {
     });
 });
 /**
- * @route   GET api/product/getzipcodes?searchZipcode=val1&searchDistance=val2
- * @desc    get zipcodes from Zipcode API
- *          Using a zipcode and distance, find all other zipcodes within that
- *          distance's radius.
+ * @route   GET /api/product/seach?searchKeyword=val1&searchZipcode=val2&searchDistance=val3
+ * @desc    get zipcodes from Zipcode API (Using a zipcode and distance, find all other zipcodes
+ *          within input distance's radius from given input zipcode) and then search products using
+ *          newly generated nearby zipcodelist and keyword (ignoring current user's products).
  * @access  public
  */
-router.get('/getzipcodes', async (req, res) => {
-  let searchZipcode = req.query.searchZipcode
-    ? req.query.searchZipcode
-    : '52246';
+router.get('/seach', async (req, res) => {
+  let searchKeyword = req.query.searchKeyword ? req.query.searchKeyword : '';
+  let searchZipcode = req.query.searchZipcode ? req.query.searchZipcode : '';
   let searchDistance = req.query.searchDistance ? req.query.searchDistance : 25;
+  if (searchDistance == '' || searchZipcode == '') {
+    return res.status(400).json({
+      error: [{ msg: 'Either Keywords or Zipcode missing!' }],
+    });
+  }
+
   const url =
     'https://www.zipcodeapi.com/rest/AI17VCP3A4vKImo09G9c7QYOqBpL9jNT7lSgCM3YMPrzEc18LEPNACcfgKOuXUHw/radius.json/';
   const zip = searchZipcode;
@@ -79,13 +84,30 @@ router.get('/getzipcodes', async (req, res) => {
       {
         url: url + zip + '/' + distance + footer,
       },
-      (error, response, body) => {
+      async (error, response, body) => {
         if (error || response.statusCode !== 200) {
           return res
             .status(500)
             .json({ type: 'error', message: error.message });
         }
 
+        let zipcodelist = JSON.parse(body).zip_codes;
+        await Product.find({
+          $and: [
+            { $text: { $search: searchKeyword } },
+            { zipcode: { $in: zipcodelist } },
+          ],
+        }).exec((err, response) => {
+          if (err) {
+            return res.status(400).json({
+              error: 'Products not found',
+            });
+          }
+          console.log('SearchResult is : ' + response);
+          // res.json(response);
+        });
+        console.log('Zipcodelist of ' + zip + ' is : ' + zipcodelist[0]);
+        console.log('Zipcodelist Type of : ' + typeof zipcodelist[0]);
         res.json(JSON.parse(body));
       }
     );

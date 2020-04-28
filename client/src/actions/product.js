@@ -160,6 +160,8 @@ export const updateProduct = (formData, history, id, edit = false) => async (
 
 /**
  *
+ * @param {*} searchZipcode
+ * @param {*} searchDistance
  * @param {*} searchKeyword
  * @description This method is used for searching a product using keywowrd and *              zipcode a created product.
  *
@@ -171,14 +173,16 @@ export const searchProductWithKeyword = (
   searchDistance
 ) => async (dispatch) => {
   try {
-    const zipcodeList = await axios.get(
-      '/api/product/getzipcodes?searchZipcode=' +
+    const res = await axios.get(
+      '/api/product/seach?searchKeyword=' +
+        searchKeyword +
+        '&searchZipcode=' +
         searchZipcode +
         '&searchDistance=' +
         searchDistance
     );
 
-    console.log(zipcodeList);
+    console.log(res.data);
     // dispatch({
     //   type: SEARCH_PRODUCT,
     //   payload: res.data,
